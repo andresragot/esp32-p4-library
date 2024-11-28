@@ -1,0 +1,32 @@
+# Ignore editor backup files and macOS system metadata
+.DS_Store
+.*.swp
+.*.swo
+*~
+**/.component_hash
+
+# Ignore build folder
+*/build/
+*/.cache
+
+#Ignore files built by Visual Studio/Visual Micro
+[Dd]debug/
+[Rr]elease/
+.vs/
+__vm/
+*.vcxproj*
+.vscode/
+platform.sloeber.txt
+boards.sloeber.txt
+*/.devcontainer/
+*/.vscode/
+
+# Test log files
+*.log
+debug.cfg
+debug.svd
+debug_custom.json
+
+
+# Folders
+**/test_apps/
