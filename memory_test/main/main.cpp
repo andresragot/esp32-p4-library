@@ -54,6 +54,7 @@ extern "C" void app_main(void)
     {
         if (pointer_to_vector != &vector || i == 0)
         {
+            pointer_to_vector = &vector;
             ESP_LOGE (TAG, "Pointer to vector changed");
             memoryTest->printMemory();
             memoryTest->printPointerDirection(&vector);
@@ -61,8 +62,6 @@ extern "C" void app_main(void)
         }
         ++i;
         vector.emplace_back('a');
-
-        vTaskDelay (pdMS_TO_TICKS(10));
     }
     
 }
