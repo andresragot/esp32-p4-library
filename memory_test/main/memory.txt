@@ -1,0 +1,25 @@
+I (4065) heap_init: At 4FF12A00 len 000285C0 (161 KiB): RAM
+I (4070) heap_init: At 4FF3AFC0 len 00004BF0 (18 KiB): RAM
+I (4076) heap_init: At 4FF40000 len 00060000 (384 KiB): RAM
+I (4081) heap_init: At 50108080 len 00007F80 (31 KiB): RTCRAM
+I (4086) heap_init: At 30100068 len 00001F98 (7 KiB): TCM
+
+Heap summary for capabilities 0x00000004:
+  At 0x4ff16040 len 32767 free 32031 allocated 0 min_free 32031
+    largest_free_block 31744 alloc_blocks 0 free_blocks 1 total_blocks 1
+  At 0x48000000 len 33554432 free 33551708 allocated 144 min_free 33551708
+    largest_free_block 33030144 alloc_blocks 4 free_blocks 1 total_blocks 5
+  At 0x4ff12a00 len 165312 free 118524 allocated 45680 min_free 118524
+    largest_free_block 114688 alloc_blocks 42 free_blocks 1 total_blocks 43
+  At 0x4ff3afc0 len 19440 free 18704 allocated 0 min_free 18704
+    largest_free_block 18432 alloc_blocks 0 free_blocks 1 total_blocks 1
+  At 0x4ff40000 len 393216 free 391444 allocated 0 min_free 391444
+    largest_free_block 385024 alloc_blocks 0 free_blocks 1 total_blocks 1
+  At 0x50108080 len 32640 free 31904 allocated 0 min_free 31904
+    largest_free_block 31744 alloc_blocks 0 free_blocks 1 total_blocks 1
+  At 0x30100068 len 8088 free 7708 allocated 0 min_free 7708
+    largest_free_block 7680 alloc_blocks 0 free_blocks 1 total_blocks 1
+  Totals:
+    free 34152023 allocated 45824 min_free 34152023 largest_free_block 33030144
+
+PSRAM empieza en 0x48000000 y acaba en 0x4A000000
