@@ -6,6 +6,7 @@
 #include <cassert>
 #include "esp_log.h"
 #include <vector>
+#include "RamAllocator.hpp"
 
 using namespace Ragot;
 
@@ -46,7 +47,8 @@ extern "C" void app_main(void)
     delete[] pointer;
     memoryTest->printMemory();
 
-    std::vector < char > vector(10);
+    std::vector<char, PSRAMAllocator<char>> vector(10);
+    ESP_LOGI(TAG, "Vector created in PSRAM");
     uint32_t i = 0;
 
     void * pointer_to_vector = &vector;
@@ -58,10 +60,13 @@ extern "C" void app_main(void)
             ESP_LOGE (TAG, "Pointer to vector changed");
             memoryTest->printMemory();
             memoryTest->printPointerDirection(&vector);
-            ESP_LOGI (TAG, "Iteration: %d", i);
         }
         ++i;
-        vector.emplace_back('a');
+        if (i % 1024 == 0)
+            ESP_LOGI (TAG, "Iteration: %d", i);
+        
+            vector.emplace_back('a');
+        vTaskDelay (pdMS_TO_TICKS(1));
     }
     
 }
