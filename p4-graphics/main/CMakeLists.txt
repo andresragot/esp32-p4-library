@@ -1,2 +1,12 @@
-idf_component_register(SRCS "p4-graphics.c"
-                    INCLUDE_DIRS ".")
+idf_component_register(SRCS "main.cpp"
+                            "Scene.cpp" 
+                            "Camera.cpp" 
+                            "Assets.cpp"
+                            "ExtrudeMesh.cpp"
+                            "Framebuffer.cpp"
+                            "Mesh.cpp"
+                            "MeshSerializer.cpp"
+                            "Rasterizer.cpp"
+                            "Renderer.cpp"
+                            "RevolutionMesh.cpp"
+                    INCLUDE_DIRS "." "libraries/glm/include")
