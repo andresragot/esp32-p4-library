@@ -51,10 +51,12 @@ extern "C" void app_main(void)
     ESP_LOGI(TAG, "Vector created in PSRAM");
     uint32_t i = 0;
 
-    void * pointer_to_vector = &vector;
+    heaps_caps_malloc (232, MALLOC_CAP_8_BIT);
+
+    void * pointer_to_vector = vector.data();
     while (true)
     {
-        if (pointer_to_vector != &vector || i == 0)
+        if (pointer_to_vector != vector.data() || i == 0)
         {
             pointer_to_vector = &vector;
             ESP_LOGE (TAG, "Pointer to vector changed");

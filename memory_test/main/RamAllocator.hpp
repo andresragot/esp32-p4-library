@@ -30,7 +30,7 @@ namespace Ragot
         pointer allocate(size_type n) 
         {
             pointer p = static_cast<pointer>(heap_caps_malloc(n * sizeof(T), MALLOC_CAP_SPIRAM));
-            if (p == nullptr) 
+            if (not p)
             {
                 throw std::bad_alloc();
             }
