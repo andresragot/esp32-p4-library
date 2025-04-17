@@ -10,9 +10,12 @@
  */
 
 #include "driver_ek79007.hpp"
+#include "esp_lcd_ek79007.h"
 
 namespace Ragot
 {
+    static const char * TAG = "DriverEK79007";
+
     DriverEK79007::DriverEK79007()
     {
         init(GPIO_NUM_27, GPIO_NUM_26);
@@ -40,7 +43,73 @@ namespace Ragot
         mipi_lane_num      = 2;
         mipi_dsi_max_data_rate_mbps = 1000;
 
-        esp_ldo_channel_handle_t ldo_mini_phy = nullptr;
+        // Encender la fuente de alimentación de MIPI DSI PHY
+        esp_ldo_channel_handle_t ldo_mipi_phy = nullptr;
+        esp_ldo_channel_config_t ldo_mipi_phy_config ={
+            .chan_id = 3,
+            .voltage_mv = 2500
+        };
+        ESP_ERROR_CHECK (esp_ldo_acquire_channel (&ldo_mipi_phy_config, &ldo_mipi_phy));
+        ESP_LOGI (TAG, "MIPI DSI PHY Powered on");
+
+        // Crear el bus MIPI DSI
+        esp_lcd_dsi_bus_handle_t mipi_dsi_bus = nullptr;
+        esp_lcd_dsi_bus_config_t bus_config = {
+            .bus_id = 0,
+            .num_data_lanes = mipi_lane_num,
+            .lane_bit_rate_mbps = mipi_dsi_max_data_rate_mbps
+        };
+        ESP_ERROR_CHECK (esp_lcd_new_dsi_bus (&bus_config, &mipi_dsi_bus));
+
+        // Configurar y crear el IO de control del panel
+        esp_lcd_panel_io_handle_t mipi_dbi_io = nullptr;
+        esp_lcd_dbi_io_config_t dbi_config = {
+            .virtual_channel = 0,
+            .lcd_cmd_bits   = 8, // according to the panel datasheet
+            .lcd_param_bits = 8  // according to the panel datasheet
+        };
+        ESP_ERROR_CHECK (esp_lcd_new_panel_io_dbi (mipi_dsi_bus, &dbi_config, &mipi_dbi_io));
+
+        esp_lcd_dpi_panel_config_t panel_config = {
+            .virtual_channel = 0,
+            .dpi_clk_src = MIPI_DSI_DPI_CLK_SRC_DEFAULT,
+            .dpi_clock_freq_mhz = panel_clk_freq_mhz,
+            .pixel_format = pixel_format,
+            .video_timing = {
+                .h_size = height,
+                .v_size = width,
+                .hsync_pulse_width = hsync_pulse_width,
+                .hsync_back_porch = hsync_back_porch,
+                .hsync_front_porch = hsync_front_porch,
+                .vsync_pulse_width = vsync_pulse_width,
+                .vsync_back_porch = vsync_back_porch,
+                .vsync_front_porch = vsync_front_porch
+            },
+            .flags = {
+                .use_dma2d = true,
+                .disable_lp = false
+            }
+        };
+
+        ek79007_vendor_config_t vendor_config = {
+            .mipi_config = {
+                .dsi_bus = mipi_dsi_bus,
+                .dpi_config = &panel_config,
+            },
+        };
+
+        const esp_lcd_panel_dev_config_t lcd_dev_config = {
+            .reset_gpio_num = reset_pin,
+            .rgb_ele_order = LCD_RGB_ELEMENT_ORDER_RGB,
+            .bits_per_pixel = 16,
+            .vendor_config = &vendor_config,
+        };
+        ESP_ERROR_CHECK(esp_lcd_new_panel_ek79007(mipi_dbi_io, &lcd_dev_config, &handler));
+    
+        // Resetear e inicializar el panel
+        ESP_ERROR_CHECK(esp_lcd_panel_reset(handler));
+        ESP_ERROR_CHECK(esp_lcd_panel_init(handler));
+
 
         refresh_semaphore = xSemaphoreCreateBinary();
         if (refresh_semaphore == nullptr)
