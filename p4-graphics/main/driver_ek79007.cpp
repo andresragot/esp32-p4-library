@@ -16,6 +16,12 @@ namespace Ragot
 {
     static const char * TAG = "DriverEK79007";
 
+    static bool panel_refresh_callback (esp_lcd_panel_handle_t panel, esp_lcd_dpi_panel_event_data_t * edata, void * user_ctx)
+    {
+        DriverEK79007 * driver = static_cast < DriverEK79007 * > (user_ctx);
+        return driver->refresh_frame_buffer(panel, edata, driver->refresh_semaphore);
+    }
+
     DriverEK79007::DriverEK79007()
     {
         init(GPIO_NUM_27, GPIO_NUM_26);
@@ -28,6 +34,13 @@ namespace Ragot
 
     esp_err_t DriverEK79007::init(gpio_num_t reset_pin, gpio_num_t bk_pin)
     {
+
+        if (initialized)
+        {
+            ESP_LOGW(TAG, "Driver already initialized");
+            return ESP_OK;
+        }
+
         // Initialize the driver with the given parameters
         width = 600;
         height = 1024;
@@ -117,6 +130,77 @@ namespace Ragot
             return ESP_ERR_NO_MEM;
         }
 
+        esp_lcd_dpi_panel_event_callbacks_t cbs = {
+            .on_refresh_done = panel_refresh_callback,
+        };
+        ESP_ERROR_CHECK(esp_lcd_dpi_panel_register_event_callbacks(handler, &cbs, this));
+
+        bsp_enable_dsi_phy_power();
+        bsp_init_lcd_backlight(bk_pin);
+
+        initialized = true;
+        ESP_LOGI(TAG, "Driver initialized successfully");
+
         return ESP_OK;
     }
+
+    esp_err_t DriverEK79007::deinit()
+    {
+        if (handler)
+        {
+            esp_lcd_panel_del(handler);
+            handler = nullptr;
+        }
+
+        if (refresh_semaphore)
+        {
+            vSemaphoreDelete(refresh_semaphore);
+            refresh_semaphore = nullptr;
+        }
+
+        return ESP_OK;
+    }
+
+    esp_err_t DriverEK79007::send_frame_buffer(void * frame_buffer)
+    {
+        esp_err_t ret = ESP_OK;
+
+        if (handler)
+        {
+            xSemaphoreTake(refresh_semaphore, portMAX_DELAY);
+            esp_lcd_panel_draw_bitmap(handler, 0, 0, width, height, frame_buffer);
+        }
+        else
+        {
+            ESP_LOGE(TAG, "Panel handler is null");
+            ret = ESP_ERR_INVALID_STATE;
+        }
+
+        return ret;
+    }
+
+    void DriverEK79007::bsp_enable_dsi_phy_power()
+    {
+        esp_ldo_channel_handle_t ldo_mipi_phy = nullptr;
+        esp_ldo_channel_config_t ldo_mipi_phy_config ={
+            .chan_id = 3,
+            .voltage_mv = 2500
+        };
+        ESP_ERROR_CHECK (esp_ldo_acquire_channel (&ldo_mipi_phy_config, &ldo_mipi_phy));
+        ESP_LOGI (TAG, "MIPI DSI PHY Powered on");
+    }
+
+    void DriverEK79007::bsp_init_lcd_backlight(gpio_num_t bk_pin)
+    {
+        gpio_config_t bk_gpio_config = { 0 };
+        bk_gpio_config.mode = GPIO_MODE_OUTPUT;
+        bk_gpio_config.pin_bit_mask = (1ULL << bk_pin);
+        
+        ESP_ERROR_CHECK(gpio_config(&bk_gpio_config));
+        
+        gpio_set_level(bk_pin, 1);
+        ESP_LOGI(TAG, "Backlight powered on");
+    }
+
+
 }
