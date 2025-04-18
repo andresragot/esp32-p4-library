@@ -50,7 +50,11 @@ namespace Ragot
         const esp_lcd_panel_handle_t get_handler() const { return handler; }
               esp_lcd_panel_handle_t get_handler()       { return handler; }
 
+        const bool is_initialized() const { return initialized; }
+              bool is_initialized()       { return initialized; }
+
     protected:
+        bool initialized = false;
         size_t width;
         size_t height;
         lcd_color_rgb_pixel_format_t pixel_format;
