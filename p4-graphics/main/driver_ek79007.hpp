@@ -24,8 +24,18 @@ namespace Ragot
 
         esp_err_t init(gpio_num_t reset_pin, gpio_num_t bk_pin) override;
         esp_err_t deinit() override;
-        esp_err_t set_pixel(uint32_t x, uint32_t y, uint32_t color) override;
+        virtual esp_err_t set_pixel(uint32_t x, uint32_t y, uint32_t color) = 0;
         esp_err_t send_frame_buffer( void * frame_buffer) override;
+
+        IRAM_ATTR bool refresh_frame_buffer( esp_lcd_panel_handle_t panel, esp_lcd_dpi_panel_event_data_t * edata, void * user_ctx)
+        {
+            SemaphoreHandle_t refresh_semaphore = static_cast < SemaphoreHandle_t > (user_ctx);
+            BaseType_t need_yield = pdFALSE;
+
+            xSemaphoreGiveFromISR(refresh_semaphore, &need_yield);
+            
+            return (need_yield == pdTRUE);
+        }
 
     private:
         uint16_t panel_clk_freq_mhz;
@@ -38,6 +48,11 @@ namespace Ragot
         uint8_t  mipi_lane_num;
         uint16_t mipi_dsi_max_data_rate_mbps;
 
+    private:
+        void bsp_enable_dsi_phy_power();
+        void bsp_init_lcd_backlight(gpio_num_t bk_pin);
+
+    public:
         SemaphoreHandle_t refresh_semaphore;
     };
 }
