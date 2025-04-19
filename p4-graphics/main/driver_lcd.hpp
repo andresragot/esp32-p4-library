@@ -37,7 +37,7 @@ namespace Ragot
         virtual esp_err_t init(gpio_num_t reset_pin, gpio_num_t bk_pin) = 0;
         virtual esp_err_t deinit() = 0;
         virtual esp_err_t set_pixel(uint32_t x, uint32_t y, uint32_t color) = 0;
-        virtual esp_err_t send_frame_buffer( void * frame_buffer) = 0;
+        virtual esp_err_t send_frame_buffer( const void * frame_buffer) = 0;
 
         const size_t  get_width() const { return width; }
               size_t  get_width()       { return width; }
