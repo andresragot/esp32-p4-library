@@ -11,7 +11,7 @@
 
 #pragma once
 
-#include "driver_led.hpp"
+#include "driver_lcd.hpp"
 
 
 namespace Ragot
@@ -24,18 +24,10 @@ namespace Ragot
 
         esp_err_t init(gpio_num_t reset_pin, gpio_num_t bk_pin) override;
         esp_err_t deinit() override;
-        virtual esp_err_t set_pixel(uint32_t x, uint32_t y, uint32_t color) = 0;
-        esp_err_t send_frame_buffer( void * frame_buffer) override;
+        esp_err_t set_pixel(uint32_t x, uint32_t y, uint32_t color) override {return ESP_FAIL;};
+        esp_err_t send_frame_buffer(const void * frame_buffer) override;
 
-        IRAM_ATTR bool refresh_frame_buffer( esp_lcd_panel_handle_t panel, esp_lcd_dpi_panel_event_data_t * edata, void * user_ctx)
-        {
-            SemaphoreHandle_t refresh_semaphore = static_cast < SemaphoreHandle_t > (user_ctx);
-            BaseType_t need_yield = pdFALSE;
-
-            xSemaphoreGiveFromISR(refresh_semaphore, &need_yield);
-            
-            return (need_yield == pdTRUE);
-        }
+        IRAM_ATTR bool refresh_frame_buffer( esp_lcd_panel_handle_t panel, esp_lcd_dpi_panel_event_data_t * edata, void * user_ctx);
 
     private:
         uint16_t panel_clk_freq_mhz;

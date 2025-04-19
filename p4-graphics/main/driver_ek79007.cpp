@@ -17,9 +17,22 @@ namespace Ragot
     static const char * TAG = "DriverEK79007";
 
     static bool panel_refresh_callback (esp_lcd_panel_handle_t panel, esp_lcd_dpi_panel_event_data_t * edata, void * user_ctx)
-    {
+    {        
         DriverEK79007 * driver = static_cast < DriverEK79007 * > (user_ctx);
-        return driver->refresh_frame_buffer(panel, edata, driver->refresh_semaphore);
+        
+        if (driver == nullptr) 
+        {
+            return false;
+        }
+        
+        if (driver->refresh_semaphore == nullptr) 
+        {
+            return false;
+        }
+        
+        bool result = driver->refresh_frame_buffer(panel, edata, driver->refresh_semaphore);
+                
+        return result;
     }
 
     DriverEK79007::DriverEK79007()
@@ -42,8 +55,8 @@ namespace Ragot
         }
 
         // Initialize the driver with the given parameters
-        width = 600;
-        height = 1024;
+        width = 1024;
+        height = 600;
         pixel_format = LCD_COLOR_PIXEL_FORMAT_RGB565;
 
         panel_clk_freq_mhz = 52;
@@ -161,14 +174,40 @@ namespace Ragot
         return ESP_OK;
     }
 
-    esp_err_t DriverEK79007::send_frame_buffer(void * frame_buffer)
+    esp_err_t DriverEK79007::send_frame_buffer( const void * frame_buffer)
     {
+        ESP_LOGI(TAG, "send_frame_buffer() llamado con frame_buffer: %p", frame_buffer);
         esp_err_t ret = ESP_OK;
 
         if (handler)
         {
-            xSemaphoreTake(refresh_semaphore, portMAX_DELAY);
-            esp_lcd_panel_draw_bitmap(handler, 0, 0, width, height, frame_buffer);
+            if (refresh_semaphore == nullptr) {
+                ESP_LOGE(TAG, "CRÍTICO: refresh_semaphore es NULL");
+                return ESP_ERR_INVALID_STATE;
+            }
+            
+            // Verificar estado del semáforo
+            UBaseType_t sem_count = uxSemaphoreGetCount(refresh_semaphore);
+            ESP_LOGI(TAG, "Estado del semáforo antes de tomar: %u", sem_count);
+            
+            ESP_LOGI(TAG, "Intentando tomar semáforo...");
+            if (xSemaphoreTake(refresh_semaphore, pdMS_TO_TICKS(1000)) != pdTRUE) {
+                ESP_LOGE(TAG, "TIMEOUT esperando el semáforo");
+                return ESP_ERR_TIMEOUT;
+            }
+            ESP_LOGI(TAG, "Semáforo tomado correctamente");
+            
+            ESP_LOGI(TAG, "Dibujando bitmap en panel");
+            esp_err_t result = esp_lcd_panel_draw_bitmap(handler, 0, 0, width, height, frame_buffer);
+            if (result != ESP_OK) 
+            {
+                ESP_LOGE(TAG, "Error en esp_lcd_panel_draw_bitmap: %s", esp_err_to_name(result));
+                ret = result;
+            } 
+            else 
+            {
+                ESP_LOGI(TAG, "Bitmap dibujado correctamente");
+            }
         }
         else
         {
@@ -202,5 +241,31 @@ namespace Ragot
         ESP_LOGI(TAG, "Backlight powered on");
     }
 
+    IRAM_ATTR bool DriverEK79007::refresh_frame_buffer(esp_lcd_panel_handle_t panel, 
+                                                 esp_lcd_dpi_panel_event_data_t* edata, 
+                                                 void* user_ctx)
+    {        
+        // Validar argumentos
+        if (panel == nullptr) 
+        {
+            return false;
+        }
+        
+        // Para usar el semáforo necesitamos castearlo desde el void*
+        SemaphoreHandle_t refresh_sem = static_cast<SemaphoreHandle_t>(user_ctx);
+        if (refresh_sem == nullptr) 
+        {
+            return false;
+        }
+        
+        // Dar el semáforo
+        BaseType_t result = xSemaphoreGive(refresh_sem);
+        if (result != pdTRUE) 
+        {
+            return false;
+        }
+
+        return true;
+    }
 
 }
