@@ -70,6 +70,12 @@ namespace Ragot
         void fill_convex_polygon_z_buffer ( const glm::ivec4 * const vertices,
                                             const face_t     * const face
                                           );
+
+        void fill_convex_polygon_z_buffer (
+                                            const glm::ivec4 * const vertices, 
+                                            const int     * const indices_begin, 
+                                            const int     * const indices_end
+                                          );
                                           
     private:
         
