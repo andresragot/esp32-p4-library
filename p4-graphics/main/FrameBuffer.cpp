@@ -105,11 +105,11 @@ namespace Ragot
         this->color = color;
     }
     
-    #ifndef NDEBUG
+    #ifdef DEBUG
     template < typename Color >
     void FrameBuffer<Color>::print_buffer(Buffer buffer_to_print) const
     {
-        const std::vector<Color>* buffer = (buffer_to_print == CURRENT_BUFFER) ? current_buffer : next_buffer;
+        const std::vector < Color, PSRAMAllocator<Color, MALLOC_CAP_8BIT> > * buffer = (buffer_to_print == CURRENT_BUFFER) ? current_buffer : next_buffer;
 
         // Encabezado de columnas
         std::cout << " ";
@@ -131,8 +131,6 @@ namespace Ragot
             std::cout << std::endl;
         }
     }
-
-    
     #endif
     
     template class FrameBuffer<RGB565  >;

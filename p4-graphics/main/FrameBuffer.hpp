@@ -8,6 +8,7 @@
 #pragma once
 #include <vector>
 #include <cstdint>
+#include "RamAllocator.hpp"
 
 namespace Ragot
 {
@@ -34,10 +35,10 @@ namespace Ragot
         size_t width;
         size_t height;
         Color color;
-        std::vector < Color >   buffer_1;
-        std::vector < Color >   buffer_2;
-        std::vector < Color > * current_buffer;
-        std::vector < Color > * next_buffer;
+        std::vector < Color, PSRAMAllocator<Color, MALLOC_CAP_8BIT > >   buffer_1;
+        std::vector < Color, PSRAMAllocator<Color, MALLOC_CAP_8BIT > >   buffer_2;
+        std::vector < Color, PSRAMAllocator<Color, MALLOC_CAP_8BIT > > * current_buffer;
+        std::vector < Color, PSRAMAllocator<Color, MALLOC_CAP_8BIT > > * next_buffer;
         
     
     public:
@@ -65,7 +66,7 @@ namespace Ragot
         size_t get_height ()       { return height; }
         size_t get_height () const { return height; }
         
-        const std::vector < Color > * get_buffer() const { return current_buffer; }
+        const Color * get_buffer() const { return current_buffer->data(); }
         
         inline void blit_to_window () const
         {
@@ -73,7 +74,7 @@ namespace Ragot
             std::copy(current_buffer->begin(), current_buffer->end(), next_buffer->begin());
         }
         
-        #ifndef NDEBUG
+        #ifdef DEBUG
         void print_buffer ( Buffer buffer_to_print = CURRENT_BUFFER ) const;
         #endif
         
