@@ -12,12 +12,22 @@
 #include "Rasterizer.hpp"
 #include "Node.hpp"
 #include "Scene.hpp"
+#include "driver_ek79007.hpp"
 
 namespace Ragot
 {
     class Renderer
     {
     private:
+
+#ifdef DEBUG
+        static const int   vertices[][4];
+        static const float   colors[][3];
+        static const int  triangles[][3];
+#endif
+        
+
+        DriverEK79007 driver;
         FrameBuffer < RGB565 > frame_buffer;
         Scene * current_scene = nullptr;
         Rasterizer < RGB565 > rasterizer;
@@ -32,6 +42,12 @@ namespace Ragot
         Renderer (unsigned width, unsigned height);
        ~Renderer () = default;
        
+#ifdef DEBUG
+        std::vector < glm::fvec4 >    original_vertices;
+        std::vector < int >           original_indices;
+        std::vector <  RGB565 >       original_colors;
+#endif
+
         std::vector < glm::fvec4 > transformed_vertices;
         std::vector < glm::ivec4 > display_vertices;
        
@@ -41,6 +57,11 @@ namespace Ragot
 
         void render ();
         bool is_frontface (const glm::fvec4 * const projected_vertices, const face_t * const indices);
+#ifdef DEBUG
+        void render_debug();
+        bool is_frontface (const glm::fvec4 * const projected_vertices, const int * const indices);
+#endif
+
     };
 }
 
