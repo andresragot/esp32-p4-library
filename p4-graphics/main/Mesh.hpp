@@ -23,7 +23,7 @@ namespace Ragot
         std::vector < glm::fvec4 > vertices;
         std::vector <   face_t > faces;
         
-        int slices = 25;
+        int slices = 4;
         
     public:
         Mesh() = delete;
