@@ -132,4 +132,73 @@ namespace Ragot
             }
         }
     }
+
+    void ExtrudeMesh::generate_faces_direct(const Camera& cam) 
+    {
+        const auto& coords = mesh_info.coordinates;
+        size_t n = coords.size();
+        // Vector dirección de cámara (suponiendo que está normalizado)
+        glm::fvec3 viewDir = cam.get_view_direction();
+    
+        // Para cada arista del perfil
+        for (size_t i = 0; i < n; ++i) 
+        {
+            size_t j = (i + 1) % n;
+    
+            // Coordenadas 3D de los 4 vértices de la cara lateral
+            glm::fvec3 b0{ coords[i].x,     coords[i].y,     0.0f };
+            glm::fvec3 b1{ coords[j].x,     coords[j].y,     0.0f };
+            glm::fvec3 t0{ coords[i].x,     coords[i].y,     height };
+            glm::fvec3 t1{ coords[j].x,     coords[j].y,     height };
+    
+            // Normal “no normalizada” de todo el quad
+            glm::fvec3 normal = glm::cross(b1 - b0, t0 - b0);
+            // Culling: triángulo enfrente si dot(normal, viewDir) < 0
+            if (glm::dot(normal, viewDir) < 0.0f) 
+            {
+                // Emitir dos triángulos (indices relativos:  
+                // b0→i, b1→j, t0→i+n, t1→j+n)
+                face_t tri1{ static_cast<int>(i),
+                             static_cast<int>(j),
+                             static_cast<int>(i + n),
+                             0, false };
+                face_t tri2{ static_cast<int>(j),
+                             static_cast<int>(j + n),
+                             static_cast<int>(i + n),
+                             0, false };
+                faces.push_back(tri1);
+                faces.push_back(tri2);
+            }
+        }
+    
+        // --- tapas (puedes hacer un fan sin memoria extra) ---
+        // Centro de la base
+        glm::fvec3 baseC{ 0.0f, 0.0f, 0.0f };
+        // Normal de tapa base: (0,0,-1), compare con viewDir directamente
+        if (glm::dot(glm::fvec3{0,0,-1}, viewDir) < 0.0f) 
+        {
+            for (size_t i = 1; i + 1 < n; ++i) 
+            {
+                face_t f{  /*vCentro=*/static_cast<int>(2*n), 
+                           /*v1=*/static_cast<int>(i),
+                           /*v2=*/static_cast<int>(i+1),
+                           0, false };
+                faces.push_back(f);
+            }
+        }
+        // Centro de la tapa superior
+        glm::fvec3 topC{ 0.0f, 0.0f, height };
+        if (glm::dot(glm::fvec3{0,0,1}, viewDir) < 0.0f) 
+        {
+            for (size_t i = 1; i + 1 < n; ++i) 
+            {
+                face_t f{  /*vCentro=*/static_cast<int>(2*n+1), 
+                           /*v1=*/static_cast<int>(n + i + 1),
+                           /*v2=*/static_cast<int>(n + i),
+                           0, false };
+                faces.push_back(f);
+            }
+        }
+    }
+    
 }
