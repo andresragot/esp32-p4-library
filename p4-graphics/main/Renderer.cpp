@@ -158,8 +158,8 @@ namespace Ragot
                 total_vertices += mesh->get_total_vertices();
             }
             
-            transformed_vertices.reserve (total_vertices);
-                display_vertices.reserve (total_vertices);
+            transformed_vertices.resize (total_vertices);
+                display_vertices.resize (total_vertices);
             
             initialized = true;
         }
@@ -167,22 +167,30 @@ namespace Ragot
     
     void Renderer::render()
     {
+        ESP_LOGI(RENDERER_TAG, "==== Iniciando render() ====");
+        ESP_LOGI(RENDERER_TAG, "Memoria libre: %u bytes", esp_get_free_heap_size());
+        
         if (current_scene)
         {
+            ESP_LOGI(RENDERER_TAG, "Escena actual encontrada, obteniendo cámara principal");
             Camera * main_camera = current_scene->get_main_camera();
             
             Matrix4x4 view = main_camera->get_view_matrix();
+            ESP_LOGI(RENDERER_TAG, "Matriz de vista obtenida");
             
             std::vector < Mesh * > meshes = current_scene->collect_components<Mesh>();
+            ESP_LOGI(RENDERER_TAG, "Encontrados %zu meshes en la escena", meshes.size());
             
             Matrix4x4 projection = main_camera->get_projection_matrix();
+            ESP_LOGI(RENDERER_TAG, "Matriz de proyección obtenida (aspect ratio: %.3f)", float(height) / width);
 
             Matrix4x4 transformation;
                     
+            int total_vertices_transformed = 0;
             for (auto mesh : meshes)
             {
+                // ESP_LOGI(RENDERER_TAG, "Procesando mesh con %zu vértices", mesh->get_total_vertices());
                 transformation = projection * view * mesh->get_transform_matrix();
-                // projection * view * mesh;
                 
                 const std::vector < fvec4 > & vertices = mesh->get_vertices();
                 
@@ -196,46 +204,87 @@ namespace Ragot
                     vertex[1] *= divisor;
                     vertex[2] *= divisor;
                     vertex[3]  = 1.f;
+                    
+                    // if (index == 0 || index == mesh->get_total_vertices() - 1) 
+                    // {
+                    //     ESP_LOGI(RENDERER_TAG, "Vértice %zu transformado: (%.2f, %.2f, %.2f, %.2f)",
+                    //              index, vertex[0], vertex[1], vertex[2], vertex[3]);
+                    // }
                 }
+                total_vertices_transformed += mesh->get_total_vertices();
             }
+            ESP_LOGI(RENDERER_TAG, "Total de vértices transformados: %d", total_vertices_transformed);
             
+            ESP_LOGI(RENDERER_TAG, "Transformando a coordenadas de pantalla (width=%u, height=%u)", width, height);
             Matrix4x4 identity(1);
-            Matrix4x4 scaling = glm::scale (identity, glm::fvec3( float (width / 2), float (height / 2), 100000000.f ));
-            Matrix4x4 translation = glm::translate (identity, glm::fvec3 (float (width / 2), float (height / 2), 0.f));
+            Matrix4x4 scaling = glm::scale (identity, glm::fvec3( float (height / 2), float (width / 2), 100000000.f ));
+            Matrix4x4 translation = glm::translate (identity, glm::fvec3 (float (height / 2), float (width / 2), 0.f));
             transformation = translation * scaling;
             
+            ESP_LOGI(RENDERER_TAG, "Aplicando transformación de pantalla a %zu vértices", transformed_vertices.size());
             for (size_t index = 0, number_of_vertices = transformed_vertices.size (); index < number_of_vertices; ++index )
             {
                 display_vertices [index] = glm::fvec4 (transformation * transformed_vertices [index]);
+                
+                // if (index == 0 || index == number_of_vertices - 1) 
+                // {
+                //     ESP_LOGI(RENDERER_TAG, "Vértice %zu en pantalla: (%.2f, %.2f, %.2f, %.2f)",
+                //              index, display_vertices[index][0], display_vertices[index][1], 
+                //              display_vertices[index][2], display_vertices[index][3]);
+                // }
             }
             
-            frame_buffer.clear_buffer();
-            
+            ESP_LOGI(RENDERER_TAG, "Iniciando renderizado de triángulos");
+            int frontfaces = 0, backfaces = 0;
             for (auto mesh : meshes)
             {
                 const face_t * indices = mesh->get_faces().data();
                 const face_t * end = indices + mesh->get_faces().size();
+                // ESP_LOGI(RENDERER_TAG, "Procesando %zu caras", mesh->get_faces().size());
+                
                 for (; indices < end; )
                 {
                     if (is_frontface(transformed_vertices.data(), indices))
                     {
-                        rasterizer.set_color (RGB565(0xFF00FF));
+                        frontfaces++;
+                        rasterizer.set_color (RGB565(0xFFFFFF));
                         
+                        // ESP_LOGI(RENDERER_TAG, "Rasterizando cara %d (frontface)", frontfaces);
                         rasterizer.fill_convex_polygon_z_buffer (display_vertices.data(), indices);
+                    }
+                    else {
+                        backfaces++;
                     }
                     
                     ++indices;
                 }
             }
+            ESP_LOGI(RENDERER_TAG, "Total caras procesadas: %d frontfaces, %d backfaces", frontfaces, backfaces);
+
+            ESP_LOGI(RENDERER_TAG, "Enviando framebuffer al driver");
+            esp_err_t result = driver.send_frame_buffer(frame_buffer.get_buffer());
             
-            frame_buffer.blit_to_window();
+            if (result == ESP_OK) 
+            {
+                ESP_LOGI(RENDERER_TAG, "Framebuffer enviado correctamente");
+            } 
+            else 
+            {
+                ESP_LOGE(RENDERER_TAG, "Error al enviar framebuffer: %s", esp_err_to_name(result));
+            }
+            
+            ESP_LOGI(RENDERER_TAG, "Swapping y limpiando buffers");
             frame_buffer.swap_buffers();
+            frame_buffer.clear_buffer();
             
         }
         else
         {
+            ESP_LOGW(RENDERER_TAG, "No hay escena actual o cámara principal");
             std::cerr << "No Camera associated" << std::endl;
         }
+        
+        ESP_LOGI(RENDERER_TAG, "==== Render completado ====\n");
     }
     
     bool Renderer::is_frontface (const glm::fvec4 * const projected_vertices, const face_t * const indices )
