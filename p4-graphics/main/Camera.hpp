@@ -73,6 +73,13 @@ namespace Ragot
        
        vertex_t calculate_normal (const vertex_t & v1, const vertex_t & v2, const vertex_t & v3);
        bool is_face_visible (const vertex_t & v1, const vertex_t & v2, const vertex_t & v3);
+
+        /** Devuelve el vector (normalizado) que apunta desde la cámara hacia el target. */
+        glm::vec3 get_view_direction() const;
+        
+        /** Opcional: ejes local de la cámara */
+        glm::vec3 get_right_direction() const;
+        glm::vec3 get_up_direction() const;
        
     private:
         void normalize_direction();

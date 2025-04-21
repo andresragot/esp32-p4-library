@@ -7,6 +7,9 @@
 
 #include "Camera.hpp"
 #include <cmath>       /* sqrt */
+#include <gtx/transform.hpp>   // para cross, normalize, etc.
+
+#define GLM_ENABLE_EXPERIMENTAL
 
 namespace Ragot
 {
@@ -93,6 +96,33 @@ namespace Ragot
             transform.dir_y /= length;
             transform.dir_z /= length;
         }*/
+    }
+
+    glm::vec3 Camera::get_view_direction() const 
+    {
+        // Vector crudo de la cámara al target
+        glm::vec3 dir = glm::vec3(target) - glm::vec3(location);
+        // Evitar división por cero
+        if (glm::length2(dir) < 1e-8f) 
+        {
+            // Si location == target, caemos en un eje Z negativo por defecto
+            return glm::vec3(0.f, 0.f, -1.f);
+        }
+        return glm::normalize(dir);
+    }
+
+    glm::vec3 Camera::get_right_direction() const 
+    {
+        // Eje “up” del mundo
+        static const glm::vec3 worldUp{0.f,1.f,0.f};
+        // right = forward × up
+        return glm::normalize(glm::cross(get_view_direction(), worldUp));
+    }
+
+    glm::vec3 Camera::get_up_direction() const 
+    {
+        // up = right × forward
+        return glm::cross(get_right_direction(), get_view_direction());
     }
 }
     
