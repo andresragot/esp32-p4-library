@@ -59,6 +59,12 @@ namespace Ragot
         size_t vertex_amount = 0;
         render_flag_t render_flag = RENDER_NONE;
         std::vector < coordinates_t > coordinates;
+
+        mesh_info_t () = default;
+        mesh_info_t (std::vector < coordinates_t > & coords, render_flag_t flag)
+        : vertex_amount (coords.size ()), render_flag (flag), coordinates (coords)
+        {
+        }
     };
     
     constexpr float PI = 3.141592653f;
