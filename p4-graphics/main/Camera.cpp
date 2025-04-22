@@ -4,15 +4,36 @@
 //
 //  Created by Andrés Ragot on 11/2/25.
 //
+#define GLM_ENABLE_EXPERIMENTAL
 
 #include "Camera.hpp"
 #include <cmath>       /* sqrt */
 #include <gtx/transform.hpp>   // para cross, normalize, etc.
+#include <gtc/matrix_transform.hpp> // lookAt, perspective
+#include <glm.hpp>                  // vec3, dot, normalize
 
-#define GLM_ENABLE_EXPERIMENTAL
 
 namespace Ragot
 {
+    const char* Camera::CAMERA_TAG = "Camera";
+    
+    void Camera::log_camera_info() const
+    {
+        ESP_LOGI(CAMERA_TAG, "=== Camera Info ===");
+        ESP_LOGI(CAMERA_TAG, "Posición: (%.2f, %.2f, %.2f)", 
+                 position.x, position.y, position.z);
+        ESP_LOGI(CAMERA_TAG, "Target: (%.2f, %.2f, %.2f)", 
+                 target.x, target.y, target.z);
+        ESP_LOGI(CAMERA_TAG, "FOV: %.1f°", fov);
+        ESP_LOGI(CAMERA_TAG, "Aspect Ratio: %.3f", aspect_ratio);
+        ESP_LOGI(CAMERA_TAG, "Clipping: near=%.2f, far=%.2f", near_plane, far_plane);
+        
+        // Imprimir la dirección de vista (normalizada)
+        glm::vec3 view_direction = glm::normalize(target - position);
+        ESP_LOGI(CAMERA_TAG, "Dirección de vista: (%.2f, %.2f, %.2f)", 
+                 view_direction.x, view_direction.y, view_direction.z);
+    }
+
     vertex_t Camera::calculate_normal(const vertex_t & v1, const vertex_t & v2, const vertex_t & v3)
     {
         vertex_t u = { v2.x - v1.x, v2.y - v1.y, v2.z - v1.z };
@@ -86,43 +107,5 @@ namespace Ragot
         return dot > VISIBILITY_THRESHOLD && y_angle < VERTICAL_THRESHOLD;
 
     }
-    
-    void Camera::normalize_direction()
-    {
-        /*float length = std::sqrt(transform.dir_x * transform.dir_x + transform.dir_y * transform.dir_y + transform.dir_z * transform.dir_z);
-        if (length != 0.0f)
-        {
-            transform.dir_x /= length;
-            transform.dir_y /= length;
-            transform.dir_z /= length;
-        }*/
-    }
-
-    glm::vec3 Camera::get_view_direction() const 
-    {
-        // Vector crudo de la cámara al target
-        glm::vec3 dir = glm::vec3(target) - glm::vec3(location);
-        // Evitar división por cero
-        if (glm::length2(dir) < 1e-8f) 
-        {
-            // Si location == target, caemos en un eje Z negativo por defecto
-            return glm::vec3(0.f, 0.f, -1.f);
-        }
-        return glm::normalize(dir);
-    }
-
-    glm::vec3 Camera::get_right_direction() const 
-    {
-        // Eje “up” del mundo
-        static const glm::vec3 worldUp{0.f,1.f,0.f};
-        // right = forward × up
-        return glm::normalize(glm::cross(get_view_direction(), worldUp));
-    }
-
-    glm::vec3 Camera::get_up_direction() const 
-    {
-        // up = right × forward
-        return glm::cross(get_right_direction(), get_view_direction());
-    }
 }
-    
+
