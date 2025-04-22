@@ -20,6 +20,10 @@ namespace Ragot
     using Matrix4x4 = glm::mat4;
     using glm::fvec4;
     static const char* RENDERER_TAG = "Renderer";
+    static const char* MESH_TAG = "Mesh";
+    static const char* CAMERA_TAG = "Camera";
+    static const char* TRANSFORM_TAG = "Transform";
+    static const char* TRIANGLE_TAG = "Triangle";
 
 #ifdef DEBUG
     const int Renderer::vertices[][4] =
@@ -172,9 +176,20 @@ namespace Ragot
         
         if (current_scene)
         {
+            static float angle = 0.f;
+            static int frame_count = 0;
+            frame_count++;
+            angle += 0.025f * (1 + sin(angle * 0.1f)); // Varying rotation speed
+            float z_pos;
+
             ESP_LOGI(RENDERER_TAG, "Escena actual encontrada, obteniendo cámara principal");
             Camera * main_camera = current_scene->get_main_camera();
             
+            ESP_LOGI(CAMERA_TAG, "Cámara: posición=(%.2f, %.2f, %.2f), target=(%.2f, %.2f, %.2f), FOV=%.1f°", 
+                     main_camera->get_location().x, main_camera->get_location().y, main_camera->get_location().z,
+                     main_camera->get_target().x, main_camera->get_target().y, main_camera->get_target().z,
+                     main_camera->get_fov());
+
             Matrix4x4 view = main_camera->get_view_matrix();
             ESP_LOGI(RENDERER_TAG, "Matriz de vista obtenida");
             
@@ -189,7 +204,13 @@ namespace Ragot
             int total_vertices_transformed = 0;
             for (auto mesh : meshes)
             {
-                // ESP_LOGI(RENDERER_TAG, "Procesando mesh con %zu vértices", mesh->get_total_vertices());
+                ESP_LOGI(MESH_TAG, "Procesando mesh con %zu vértices, posición=(%.2f, %.2f, %.2f)", 
+                         mesh->get_total_vertices(),
+                         mesh->get_position().x, mesh->get_position().y, mesh->get_position().z);
+
+                mesh->rotate(angle, glm::fvec3(0.f, 1.f, 0.f));
+                z_pos = +5.f * sin(frame_count * 0.1f);
+                mesh->set_position(glm::fvec3(0.f, 0.f, z_pos));
                 transformation = projection * view * mesh->get_transform_matrix();
                 
                 const std::vector < fvec4 > & vertices = mesh->get_vertices();
@@ -205,11 +226,11 @@ namespace Ragot
                     vertex[2] *= divisor;
                     vertex[3]  = 1.f;
                     
-                    // if (index == 0 || index == mesh->get_total_vertices() - 1) 
-                    // {
-                    //     ESP_LOGI(RENDERER_TAG, "Vértice %zu transformado: (%.2f, %.2f, %.2f, %.2f)",
-                    //              index, vertex[0], vertex[1], vertex[2], vertex[3]);
-                    // }
+                    if (index == 0 || index == mesh->get_total_vertices() - 1) 
+                    {
+                        ESP_LOGI(TRANSFORM_TAG, "Vértice %zu transformado: (%.2f, %.2f, %.2f, %.2f)",
+                                 index, vertex[0], vertex[1], vertex[2], vertex[3]);
+                    }
                 }
                 total_vertices_transformed += mesh->get_total_vertices();
             }
@@ -217,39 +238,52 @@ namespace Ragot
             
             ESP_LOGI(RENDERER_TAG, "Transformando a coordenadas de pantalla (width=%u, height=%u)", width, height);
             Matrix4x4 identity(1);
-            Matrix4x4 scaling = glm::scale (identity, glm::fvec3( float (height / 2), float (width / 2), 100000000.f ));
-            Matrix4x4 translation = glm::translate (identity, glm::fvec3 (float (height / 2), float (width / 2), 0.f));
+            Matrix4x4 scaling = glm::scale (identity, glm::fvec3 (float(width / 4), float(height / 4), 100000000.f));
+            Matrix4x4 translation = glm::translate (identity, glm::fvec3{ float(width / 2), float(height / 2), 0.f });
             transformation = translation * scaling;
             
-            ESP_LOGI(RENDERER_TAG, "Aplicando transformación de pantalla a %zu vértices", transformed_vertices.size());
-            for (size_t index = 0, number_of_vertices = transformed_vertices.size (); index < number_of_vertices; ++index )
+            ESP_LOGI(RENDERER_TAG, "Aplicando transformación de pantalla a %zu vértices", transformed_vertices.size());            
+            // Transformación correcta de NDC a coordenadas de pantalla
+            for (size_t index = 0; index < transformed_vertices.size(); ++index) 
             {
-                display_vertices [index] = glm::fvec4 (transformation * transformed_vertices [index]);
+                // Los vértices ya están en espacio NDC (-1 a 1)
+                float x = transformed_vertices[index].x; 
+                float y = transformed_vertices[index].y;
                 
-                // if (index == 0 || index == number_of_vertices - 1) 
-                // {
-                //     ESP_LOGI(RENDERER_TAG, "Vértice %zu en pantalla: (%.2f, %.2f, %.2f, %.2f)",
-                //              index, display_vertices[index][0], display_vertices[index][1], 
-                //              display_vertices[index][2], display_vertices[index][3]);
-                // }
+                // Transforma de NDC a coordenadas de pantalla
+                display_vertices[index].x = std::min(width - 1.0f, std::max(0.0f, (x + 1.0f) * (width * 0.5f)));
+                display_vertices[index].y = std::min(height - 1.0f, std::max(0.0f, (1.0f - y) * (height * 0.5f)));
+                display_vertices[index].z = transformed_vertices[index].z;
+                display_vertices[index].w = 1.0f;
+                
+                ESP_LOGI(TRANSFORM_TAG, "NDC (%.2f, %.2f) → Pantalla (%d, %d)", 
+                         x, y, (int)display_vertices[index].x, (int)display_vertices[index].y);
             }
-            
+
             ESP_LOGI(RENDERER_TAG, "Iniciando renderizado de triángulos");
             int frontfaces = 0, backfaces = 0;
             for (auto mesh : meshes)
             {
                 const face_t * indices = mesh->get_faces().data();
                 const face_t * end = indices + mesh->get_faces().size();
-                // ESP_LOGI(RENDERER_TAG, "Procesando %zu caras", mesh->get_faces().size());
+                ESP_LOGI(RENDERER_TAG, "Procesando %zu caras", mesh->get_faces().size());
                 
                 for (; indices < end; )
                 {
                     if (is_frontface(transformed_vertices.data(), indices))
                     {
                         frontfaces++;
-                        rasterizer.set_color (RGB565(0xFFFFFF));
+                        rasterizer.set_color(RGB565(0x00FF00)); // Verde brillante
                         
-                        // ESP_LOGI(RENDERER_TAG, "Rasterizando cara %d (frontface)", frontfaces);
+                        if (frontfaces % 10 == 0) // Log solo algunas caras para no saturar
+                        {
+                            ESP_LOGI(TRIANGLE_TAG, "Rasterizando cara %d: v1=%d (%.1f,%.1f), v2=%d (%.1f,%.1f), v3=%d (%.1f,%.1f)", 
+                                     frontfaces, 
+                                     indices->v1, display_vertices[indices->v1][0], display_vertices[indices->v1][1],
+                                     indices->v2, display_vertices[indices->v2][0], display_vertices[indices->v2][1],
+                                     indices->v3, display_vertices[indices->v3][0], display_vertices[indices->v3][1]);
+                        }
+                        
                         rasterizer.fill_convex_polygon_z_buffer (display_vertices.data(), indices);
                     }
                     else {
@@ -375,8 +409,8 @@ namespace Ragot
         // rango de int (que es lo que espera fill_convex_polygon_z_buffer).
 
         identity = Matrix4x4(1);
-        scaling        = glm::scale (identity, glm::fvec3 (float(height / 2), float(width / 2), 100000000.f));
-        translation    = glm::translate (identity, glm::fvec3{ float(height / 2), float(width / 2), 0.f });
+        scaling        = glm::scale (identity, glm::fvec3 (float(width / 4), float(height / 4), 100000000.f));
+        translation    = glm::translate (identity, glm::fvec3{ float(width / 2), float(height / 2), 0.f });
         transformation = translation * scaling;
 
         for (size_t index = 0, number_of_vertices = transformed_vertices.size (); index < number_of_vertices; index++)
