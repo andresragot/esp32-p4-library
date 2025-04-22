@@ -10,6 +10,9 @@
 #include "CommonTypes.hpp"
 #include <glm.hpp>
 #include <cstdint>
+#include <vector>
+#include <algorithm>
+#include "esp_log.h"
 
 namespace Ragot
 {
@@ -30,6 +33,7 @@ namespace Ragot
         Color color;
         
         std::vector < int > z_buffer;
+        static const char* RASTER_TAG;
     
     public:
     
@@ -54,6 +58,7 @@ namespace Ragot
         
         void clear ()
         {
+            ESP_LOGI(RASTER_TAG, "Limpiando framebuffer");
             frame_buffer.clear_buffer();
             
             for (int * z = z_buffer.data(), * end = z + z_buffer.size(); z != end; ++z)
@@ -76,6 +81,9 @@ namespace Ragot
                                             const int     * const indices_begin, 
                                             const int     * const indices_end
                                           );
+                                          
+        // Logs debug para rasterizado
+        bool debug_enabled = true;
                                           
     private:
         
