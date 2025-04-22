@@ -28,7 +28,10 @@ extern "C" void app_main(void)
     uint32_t frame_count = 0;
     ESP_LOGI(MAIN_TAG, "Entrando en bucle de renderizado");
 
-    Camera camera(1.f, 0.1f, 1000.f, 60.f);
+    Camera camera(float (1024) / 600.f);
+    camera.set_location(glm::vec3(0.f, 0.f, -15.f));
+    camera.set_target(glm::vec3(0.f, 0.f, 0.f));
+
     Scene scene (&camera);
 
     vector < coordinates_t > coords = { { 0 ,  0 }, { 4 ,  0 },
@@ -47,16 +50,17 @@ extern "C" void app_main(void)
     mesh_info_t mesh_info_cube (coords_cube, RENDER_EXTRUDE);
 
     // RevolutionMesh mesh_cup  (mesh_info_cup );
-    ExtrudeMesh    mesh_cube (mesh_info_cube);
+    ExtrudeMesh    mesh_cube (mesh_info_cube, camera);
 
     // mesh_cup.set_position  (glm::vec3{ 0.f, 0.f, -5.f });
-    mesh_cube.set_position (glm::vec3{ 0.f, 0.f, -5.f });
-
+    mesh_cube.set_position (glm::vec3{ 0.f, 0.f, 0.f });
+    mesh_cube.set_scale    (glm::vec3{ 3.f, 3.f, 3.f });
 
     // scene.add_node(&mesh_cup , ID(COPA));
     scene.add_node(&mesh_cube, ID(CUBO));
 
     renderer.set_scene(&scene);
+    renderer.init();
 
     while (true)
     {
