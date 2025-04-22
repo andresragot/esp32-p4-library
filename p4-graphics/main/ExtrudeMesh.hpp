@@ -8,6 +8,8 @@
 #pragma once
 
 #include "Mesh.hpp"
+#include "Camera.hpp"
+#include "esp_log.h"
 #include <iostream>
 
 namespace Ragot
@@ -15,11 +17,16 @@ namespace Ragot
     class ExtrudeMesh : public Mesh
     {
     private:
+        static const char* EXTRUDE_TAG;
         float height = 1.0f;
         bool faces_can_be_quads = false;
+        
+        const Camera & cam;
+        glm::vec4 planes[4];
+        glm::vec3 camPos;
     
     public:
-        ExtrudeMesh (mesh_info_t & mesh_info) : Mesh (mesh_info)
+        ExtrudeMesh (mesh_info_t & mesh_info, const Camera & cam) : Mesh (mesh_info), cam (cam)
         {
             vertices.reserve (mesh_info.coordinates.size() * 2    );
                faces.reserve (mesh_info.coordinates.size() * 3 - 3);
@@ -32,7 +39,7 @@ namespace Ragot
             
             // % 8 porque como están las coordenadas duplicadas...
             faces_can_be_quads = (mesh_info.vertex_amount % 8 == 0 || mesh_info.vertex_amount == 4);
-            generate_vertices();
+            //generate_vertices();
             generate_faces();
             
             std::cout << "Etrude Vertices: " << vertices.size() << std::endl;
@@ -42,11 +49,12 @@ namespace Ragot
         
        ~ExtrudeMesh() = default;
         
-        void generate_vertices () override;
+        void generate_vertices () override {};
         void generate_faces    () override;
-        void generate_faces_direct(const Camera& cam);
         
         bool are_vertices_coplanar (const glm::fvec4 & v1, const glm::fvec4 & v2, const glm::fvec4 & v3, const glm::fvec4 & v4, float tolerance = 0.1f);
 
+        // Añadimos método debug
+        void log_mesh_info() const;
     };
 }
