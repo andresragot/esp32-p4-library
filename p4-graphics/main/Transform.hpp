@@ -33,6 +33,12 @@ namespace Ragot
         
         void set_rotation (const vec3 & rot) { rotation = rot; }
         vec3 get_rotation () const { return rotation; }
+
+        void rotate (const float angle, const vec3 & axis)
+        {
+            rotation += angle * axis;
+            if (rotation.x > 360.f) rotation.x -= 360.f;
+        }
         
         void set_scale (const vec3 & scale) {this->scale = scale; }
         vec3 get_scale () const { return scale; }
