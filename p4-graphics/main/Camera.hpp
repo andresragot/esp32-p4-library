@@ -37,7 +37,7 @@ namespace Ragot
         Camera(float aspect_ratio = 1.f,
                float near_plane   = 1.f,
                float far_plane    = 100.f,
-               float fov_deg      = 20.f)
+               float fov_deg      = 60.f)
             : fov(fov_deg), near_plane(near_plane), far_plane(far_plane), aspect_ratio(aspect_ratio)
         {
             set_position(glm::vec3(0.f));
@@ -52,6 +52,7 @@ namespace Ragot
         float get_aspect_ratio() const  { return aspect_ratio; }
         glm::vec3 get_location() const  { return get_position(); }
         glm::vec3 get_target() const    { return target; }
+        bool is_dirty() const { return projDirty || viewDirty || vpDirty; }
 
         // --- Setters (mark dirty) ---
         void set_fov(float deg)            { fov = deg; projDirty = true; vpDirty = true; }
