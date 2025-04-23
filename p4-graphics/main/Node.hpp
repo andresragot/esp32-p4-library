@@ -37,6 +37,8 @@ namespace Ragot
             {
                 children.emplace_back(child);
                 child->parent = this;
+                child->dirty = true;
+                dirty = true;
             }
         }
         
@@ -49,6 +51,7 @@ namespace Ragot
                 {
                     children.erase(it, children.end());
                     child->parent = nullptr;
+                    child->dirty = true;
                 }
             }
         }
@@ -60,7 +63,7 @@ namespace Ragot
             mat4 transform_matrix = Transform::get_transform_matrix();
             if (parent)
                 transform_matrix = parent->get_transform_matrix() * transform_matrix;
-                
+            
             return transform_matrix;
         }
         
