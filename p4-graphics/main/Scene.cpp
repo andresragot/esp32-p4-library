@@ -113,13 +113,21 @@ namespace Ragot
     
     void Scene::update(float delta_time)
     {
-        // Update all nodes in the scene
-        // This could handle animations, physics, or other time-based updates
-        traverse([delta_time](Node * node) 
+        static auto meshes = collect_components<Mesh>();
+
+        static float angle = 0.f;
+        static int frame_count = 0;
+        frame_count++;
+        angle += 0.025f * (1 + sin(angle * 0.1f)); // Varying rotation speed
+        float z_pos;
+
+        for (auto mesh : meshes)
         {
-            // Call update method if the node has one
-            // For now, we don't have an update method in Node, but you could add one
-        });
+            mesh->rotate(angle, glm::fvec3(0.f, 1.f, 0.f));
+            z_pos = +5.f * sin(frame_count * 0.1f);
+            mesh->set_position(glm::fvec3(0.f, 0.f, z_pos));
+        } 
+        
     }
     
     // Explicit template instantiations for common component types
