@@ -144,8 +144,8 @@ namespace Ragot
         const int * indices_back  = indices_end - 1;
 
         // Parámetros de pantalla
-        int width  = static_cast<int>(frame_buffer.get_width());
-        int height = static_cast<int>(frame_buffer.get_height());
+        int width  = static_cast<int>(frame_buffer.get_height());
+        int height = static_cast<int>(frame_buffer.get_width());
 
         // Determinamos Y mínimo y máximo
         const int * start_index = indices_begin;
@@ -257,6 +257,7 @@ namespace Ragot
                     frame_buffer.set_pixel(o, color);
                     z_buffer[o] = z;
                 }
+
                 z += dz;
                 o += (lr ? 1 : -1);
             }
@@ -273,7 +274,7 @@ namespace Ragot
     {
         // Se cachean algunos valores de interés:
 
-                int   pitch         = frame_buffer.get_width ();
+                int   pitch         = frame_buffer.get_height ();
                 int * offset_cache0 = this->offset_cache0;
                 int * offset_cache1 = this->offset_cache1;
                 int * z_cache0      = this->z_cache0;
