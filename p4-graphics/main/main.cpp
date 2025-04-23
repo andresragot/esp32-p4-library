@@ -17,7 +17,7 @@ using namespace Ragot;
 
 extern "C" void app_main(void)
 {
-    esp_log_level_set("*", ESP_LOG_INFO);
+    esp_log_level_set("*", ESP_LOG_NONE);
 
     ESP_LOGI(MAIN_TAG, "Iniciando aplicación");
     ESP_LOGI(MAIN_TAG, "Memoria libre inicial: %u bytes", esp_get_free_heap_size());
@@ -53,8 +53,8 @@ extern "C" void app_main(void)
     ExtrudeMesh    mesh_cube (mesh_info_cube, camera);
 
     // mesh_cup.set_position  (glm::vec3{ 0.f, 0.f, -5.f });
-    mesh_cube.set_position (glm::vec3{ 0.f, 0.f, 0.f });
-    mesh_cube.set_scale    (glm::vec3{ 3.f, 3.f, 3.f });
+    mesh_cube.set_position (glm::vec3{ 0.f, 10.f, 0.f });
+    mesh_cube.set_scale    (glm::vec3{ 0.5f, 0.5f, 0.5f });
 
     // scene.add_node(&mesh_cup , ID(COPA));
     scene.add_node(&mesh_cube, ID(CUBO));
@@ -62,10 +62,21 @@ extern "C" void app_main(void)
     renderer.set_scene(&scene);
     renderer.init();
 
+    bool update = true;
+
     while (true)
     {
         ESP_LOGI(MAIN_TAG, "\n--- Frame %u ---", frame_count);
         // renderer.render_debug();
+        if (update)
+        {
+            scene.update(0);
+            // update = false;
+        }
+        else
+        {
+            update = true;
+        }
         renderer.render();
         // ESP_LOGI(MAIN_TAG, "Esperando 50ms");
         // vTaskDelay(pdMS_TO_TICKS(50));
