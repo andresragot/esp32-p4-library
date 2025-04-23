@@ -39,5 +39,14 @@ namespace Ragot
         
         const size_t get_total_vertices() const { return vertices.size(); }
               size_t get_total_vertices()       { return vertices.size(); }
+
+        void recalculate()
+        {
+            vertices.clear();
+            faces.clear();
+
+            generate_vertices();
+            generate_faces();
+        }
     };
 }
