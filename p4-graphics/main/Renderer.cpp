@@ -12,8 +12,7 @@
 #include <gtc/matrix_transform.hpp>         // translate, rotate, scale, perspective
 #include <gtc/type_ptr.hpp>                 // value_ptr, quat
 #include "CommonTypes.hpp"
-#include "esp_log.h"
-#include "esp_heap_caps.h"
+#include "Logger.hpp"
 
 namespace Ragot
 {
@@ -91,7 +90,11 @@ namespace Ragot
     };
 #endif
     Renderer::Renderer (unsigned width, unsigned height) 
-    : driver(), frame_buffer(width, height, true), rasterizer(frame_buffer), width(width), height(height)
+    : 
+    #if ESP_PLATFORM == 1
+        driver(), 
+    #endif
+        frame_buffer(width, height, true), rasterizer(frame_buffer), width(width), height(height)
     {
 #ifdef DEBUG
         size_t number_of_vertices = sizeof(vertices) / sizeof(int) / 4;
@@ -171,23 +174,20 @@ namespace Ragot
     
     void Renderer::render()
     {
-        ESP_LOGI(RENDERER_TAG, "==== Iniciando render() ====");
-        ESP_LOGI(RENDERER_TAG, "Memoria libre: %u bytes", esp_get_free_heap_size());
-
+        logger.Log (RENDERER_TAG, 3, "==== Iniciando render() ====");
         
         if (current_scene)
         {
-
-            ESP_LOGI(RENDERER_TAG, "Escena actual encontrada, obteniendo cámara principal");
+            logger.Log (RENDERER_TAG, 3, "Escena actual encontrada, obteniendo cámara principal");
             Camera * main_camera = current_scene->get_main_camera();
             
-            ESP_LOGI(CAMERA_TAG, "Cámara: posición=(%.2f, %.2f, %.2f), target=(%.2f, %.2f, %.2f), FOV=%.1f°", 
+            logger.Log (CAMERA_TAG, 3, "Cámara: posición=(%.2f, %.2f, %.2f), target=(%.2f, %.2f, %.2f), FOV=%.1f°", 
                      main_camera->get_location().x, main_camera->get_location().y, main_camera->get_location().z,
                      main_camera->get_target().x, main_camera->get_target().y, main_camera->get_target().z,
                      main_camera->get_fov());
             
             std::vector < Mesh * > meshes = current_scene->collect_components<Mesh>();
-            ESP_LOGI(RENDERER_TAG, "Encontrados %zu meshes en la escena", meshes.size());
+            logger.Log (RENDERER_TAG, 3, "Encontrados %zu meshes en la escena", meshes.size());
 
             bool meshes_dirty = false;
             for (const auto mesh : meshes)
@@ -202,10 +202,11 @@ namespace Ragot
             if (main_camera->is_dirty() || meshes_dirty)
             {
                 Matrix4x4 view = main_camera->get_view_matrix();
-                ESP_LOGI(RENDERER_TAG, "Matriz de vista obtenida");
+                logger.Log (RENDERER_TAG, 3, "Matriz de vista obtenida");
 
                 Matrix4x4 projection = main_camera->get_projection_matrix();
-                ESP_LOGI(RENDERER_TAG, "Matriz de proyección obtenida (aspect ratio: %.3f)", float(width) / height);
+                logger.Log (RENDERER_TAG, 3, "Matriz de proyección obtenida (aspect ratio: %.3f)", 
+                        main_camera->get_aspect_ratio());
 
                 Matrix4x4 transformation;
 
@@ -215,7 +216,7 @@ namespace Ragot
                       * glm::scale    (identity_model, glm::fvec3{0.75f});     // escala ¾
 
 
-                ESP_LOGI(RENDERER_TAG, "Limpiando rasterizador");
+                logger.Log (RENDERER_TAG, 3, "Limpiando rasterizador");
                 // Se borra el framebúffer y se dibujan los triángulos:
 
                 rasterizer.clear ();
@@ -231,7 +232,7 @@ namespace Ragot
                     // Recalculamos los vertices que se verán ahora.
                     mesh->recalculate();
 
-                    ESP_LOGI(MESH_TAG, "Procesando mesh con %zu vértices, posición=(%.2f, %.2f, %.2f)", 
+                    logger.Log (MESH_TAG, 3, "Procesando mesh con %zu vértices, posición=(%.2f, %.2f, %.2f)", 
                             mesh->get_total_vertices(),
                             mesh->get_position().x, mesh->get_position().y, mesh->get_position().z);
                     
@@ -250,22 +251,22 @@ namespace Ragot
                         
                         if (index == 0 || index == mesh->get_total_vertices() - 1) 
                         {
-                            ESP_LOGI(TRANSFORM_TAG, "Vértice %zu transformado: (%.2f, %.2f, %.2f, %.2f)",
+                            logger.Log (TRANSFORM_TAG, 3, "Vértice %zu transformado: (%.2f, %.2f, %.2f, %.2f)",
                                     index, vertex[0], vertex[1], vertex[2], vertex[3]);
                         }
                     }
                     total_vertices_transformed += mesh->get_total_vertices();
                 }
-                ESP_LOGI(RENDERER_TAG, "Total de vértices transformados: %d", total_vertices_transformed);
+                logger.Log (RENDERER_TAG, 3, "Total de vértices transformados: %d", total_vertices_transformed);
                 
-                ESP_LOGI(RENDERER_TAG, "Transformando a coordenadas de pantalla (width=%u, height=%u)", width, height);
+                logger.Log (RENDERER_TAG, 3, "Transformando a coordenadas de pantalla (width=%u, height=%u)", width, height);
                 Matrix4x4 identity(1);
                 Matrix4x4     scaling = glm::scale    (identity, glm::fvec3 (width * 0.5f, height * 0.5f, 1.f));
                 Matrix4x4 translation = glm::translate(identity, glm::fvec3 (width * 0.5f, height * 0.5f, 0.f));
                 transformation = translation * scaling;
                         
                 
-                ESP_LOGI(RENDERER_TAG, "Aplicando transformación de pantalla a %zu vértices", transformed_vertices.size());            
+                logger.Log (RENDERER_TAG, 3, "Aplicando transformación de pantalla a %zu vértices", transformed_vertices.size());
                 // Transformación correcta de NDC a coordenadas de pantalla
                 for (size_t index = 0; index < transformed_vertices.size(); ++index) 
                 {
@@ -281,17 +282,17 @@ namespace Ragot
                     display_vertices[index].z = int(transformed_vertices[index].z * 100000000.0f);
                     display_vertices[index].w = 1.0f;
                     
-                    ESP_LOGI(TRANSFORM_TAG, "NDC (%.2f, %.2f) → Pantalla (%d, %d)", 
+                    logger.Log (TRANSFORM_TAG, 3, "NDC (%.2f, %.2f) → Pantalla (%d, %d)", 
                             x, y, (int)display_vertices[index].x, (int)display_vertices[index].y);
                 }
 
-                ESP_LOGI(RENDERER_TAG, "Iniciando renderizado de triángulos");
+                logger.Log (RENDERER_TAG, 3, "Iniciando renderizado de triángulos");
                 int frontfaces = 0, backfaces = 0;
                 for (auto mesh : meshes)
                 {
                     const face_t * indices = mesh->get_faces().data();
                     const face_t * end = indices + mesh->get_faces().size();
-                    ESP_LOGI(RENDERER_TAG, "Procesando %zu caras", mesh->get_faces().size());
+                    logger.Log (RENDERER_TAG, 3, "Procesando mesh con %zu caras", mesh->get_faces().size());
                     
                     for (; indices < end; )
                     {
@@ -302,7 +303,7 @@ namespace Ragot
                             
                             if (frontfaces % 10 == 0) // Log solo algunas caras para no saturar
                             {
-                                ESP_LOGI(TRIANGLE_TAG, "Rasterizando cara %d: v1=%d (%.1f,%.1f), v2=%d (%.1f,%.1f), v3=%d (%.1f,%.1f)", 
+                                logger.Log (TRIANGLE_TAG, 3, "Rasterizando cara %d: v1=%d (%.1f,%.1f), v2=%d (%.1f,%.1f), v3=%d (%.1f,%.1f)", 
                                         frontfaces, 
                                         indices->v1, display_vertices[indices->v1][0], display_vertices[indices->v1][1],
                                         indices->v2, display_vertices[indices->v2][0], display_vertices[indices->v2][1],
@@ -319,33 +320,37 @@ namespace Ragot
                         ++indices;
                     }
                 }
-                ESP_LOGI(RENDERER_TAG, "Total caras procesadas: %d frontfaces, %d backfaces", frontfaces, backfaces);
+                logger.Log (RENDERER_TAG, 3, "Total caras procesadas: %d frontfaces, %d backfaces", frontfaces, backfaces);
 
-                ESP_LOGI(RENDERER_TAG, "Enviando framebuffer al driver");
+                logger.Log (RENDERER_TAG, 3, "Enviando framebuffer al driver");
+                #if ESP_PLATFORM == 1
                 esp_err_t result = driver.send_frame_buffer(frame_buffer.get_buffer());
                 
                 if (result == ESP_OK) 
                 {
-                    ESP_LOGI(RENDERER_TAG, "Framebuffer enviado correctamente");
+                    logger.Log (RENDERER_TAG, 3, "Framebuffer enviado correctamente");
                 } 
                 else 
                 {
-                    ESP_LOGE(RENDERER_TAG, "Error al enviar framebuffer: %s", esp_err_to_name(result));
+                    logger.Log (RENDERER_TAG, 3, "Error al enviar framebuffer: %s", esp_err_to_name(result));
                 }
+                #endif
                 
-                ESP_LOGI(RENDERER_TAG, "Swapping y limpiando buffers");
+                logger.Log (RENDERER_TAG, 3, "Swapping y limpiando buffers");
                 frame_buffer.swap_buffers();
                 frame_buffer.clear_buffer();
-                
             }
             else
             {
                 frame_buffer.blit_to_window();
+                #if ESP_PLATFORM == 1
                 driver.send_frame_buffer(frame_buffer.get_buffer());
+                #endif
                 frame_buffer.swap_buffers();
             }
         }
-        ESP_LOGI(RENDERER_TAG, "==== Render completado ====\n");
+
+        logger.Log (RENDERER_TAG, 3, "==== Renderizado completado ====\n");
     }
     
     bool Renderer::is_frontface (const glm::fvec4 * const projected_vertices, const face_t * const indices )
@@ -378,18 +383,17 @@ namespace Ragot
 #ifdef DEBUG
     void Renderer::render_debug()
     {
-        ESP_LOGI(RENDERER_TAG, "==== Iniciando render_debug() ====");
-        ESP_LOGI(RENDERER_TAG, "Memoria libre: %u bytes", esp_get_free_heap_size());
+        logger.Log (RENDERER_TAG, 3, "==== Iniciando render_debug() ====");
         
         // Se actualizan los parámetros de transformatión (sólo se modifica el ángulo):
 
         static float angle = 0.f;
 
         angle += 0.025f;
-        ESP_LOGI(RENDERER_TAG, "Ángulo actualizado: %.3f", angle);
+        logger.Log (RENDERER_TAG, 3, "Ángulo de rotación: %.3f", angle);
 
         // Se crean las matrices de transformación:
-        ESP_LOGI(RENDERER_TAG, "Creando matrices de transformación");
+        logger.Log (RENDERER_TAG, 3, "Creando matrices de transformación");
 
         Matrix4x4 identity(1);
         Matrix4x4 scaling     = glm::scale           (identity, glm::fvec3(0.75f)); 
@@ -402,7 +406,7 @@ namespace Ragot
 
         Matrix4x4 transformation = projection * translation * rotation_x * rotation_y * scaling;
         
-        ESP_LOGI(RENDERER_TAG, "Transformando %zu vértices", original_vertices.size());
+        logger.Log (RENDERER_TAG, 3, "Transformando %zu vértices", original_vertices.size());
 
         // Se transforman todos los vértices usando la matriz de transformación resultante:
 
@@ -423,13 +427,14 @@ namespace Ragot
             vertex[2] *= divisor;
             vertex[3]  = 1.f;
             
-            if (index == 0 || index == number_of_vertices - 1) {
-                ESP_LOGI(RENDERER_TAG, "Vértice %zu transformado: (%.2f, %.2f, %.2f, %.2f)",
-                         index, vertex[0], vertex[1], vertex[2], vertex[3]);
+            if (index == 0 || index == number_of_vertices - 1) 
+            {
+                logger.Log (RENDERER_TAG, 3, "Vértice %zu transformado: (%.2f, %.2f, %.2f, %.2f)",
+                        index, vertex[0], vertex[1], vertex[2], vertex[3]);
             }
         }
 
-        ESP_LOGI(RENDERER_TAG, "Transformación a coordenadas de pantalla");
+        logger.Log (RENDERER_TAG, 3, "Transformación a coordenadas de pantalla");
         // Se convierten las coordenadas transformadas y proyectadas a coordenadas
         // de recorte (-1 a +1) en coordenadas de pantalla con el origen centrado.
         // La coordenada Z se escala a un valor suficientemente grande dentro del
@@ -444,19 +449,20 @@ namespace Ragot
         {
             display_vertices[index] = glm::ivec4( transformation * transformed_vertices[index] );
             
-            if (index == 0 || index == number_of_vertices - 1) {
-                ESP_LOGI(RENDERER_TAG, "Vértice %zu en pantalla: (%.2f, %.2f, %.2f, %.2f)",
-                         index, display_vertices[index][0], display_vertices[index][1], 
-                         display_vertices[index][2], display_vertices[index][3]);
+            if (index == 0 || index == number_of_vertices - 1) 
+            {
+                logger.Log (RENDERER_TAG, 3, "Vértice %zu en pantalla: (%.2f, %.2f, %.2f, %.2f)",
+                        index, display_vertices[index][0], display_vertices[index][1], 
+                        display_vertices[index][2], display_vertices[index][3]);
             }
         }
 
-        ESP_LOGI(RENDERER_TAG, "Limpiando rasterizador");
+        logger.Log (RENDERER_TAG, 3, "Limpiando rasterizador");
         // Se borra el framebúffer y se dibujan los triángulos:
 
         rasterizer.clear ();
 
-        ESP_LOGI(RENDERER_TAG, "Dibujando %zu triángulos", original_indices.size() / 3);
+        logger.Log (RENDERER_TAG, 3, "Dibujando %zu triángulos", original_indices.size() / 3);
         int frontfaces = 0;
         int backfaces = 0;
 
@@ -469,7 +475,7 @@ namespace Ragot
                 uint16_t color = original_colors[*indices];
                 rasterizer.set_color(color);
                 
-                ESP_LOGI(RENDERER_TAG, "Triángulo frontface %d: índices [%d, %d, %d], color: 0x%04X",
+                logger.Log (RENDERER_TAG, 3, "Triángulo frontface %d: índices [%d, %d, %d], color: 0x%04X",
                          frontfaces, indices[0], indices[1], indices[2], color);
 
                 // Se rellena el polígono:
@@ -480,40 +486,43 @@ namespace Ragot
                 backfaces++;
             }
         }
-        ESP_LOGI(RENDERER_TAG, "Total triángulos procesados: %d frontfaces, %d backfaces", frontfaces, backfaces);
+        logger.Log (RENDERER_TAG, 3, "Total triángulos procesados: %d frontfaces, %d backfaces", frontfaces, backfaces);
 
-        ESP_LOGI(RENDERER_TAG, "Enviando framebuffer al driver...");
+        logger.Log (RENDERER_TAG, 3, "Enviando framebuffer al driver...");
         // Verificar el buffer antes de enviarlo
+        #if ESP_PLATFORM == 1
         const void * buffer = frame_buffer.get_buffer();
         if (buffer == nullptr) 
         {
-            ESP_LOGE(RENDERER_TAG, "¡ERROR! El framebuffer es NULL");
+            logger.Log (RENDERER_TAG, 3, "¡ERROR! El framebuffer es NULL");
         } 
         else 
         {
-            ESP_LOGI(RENDERER_TAG, "Buffer en dirección: %p, tamaño: %u bytes", 
+            logger.Log (RENDERER_TAG, 3, "Buffer en dirección: %p, tamaño: %u bytes", 
                     buffer, width * height * sizeof(uint16_t));
         }
+        #endif
         
         // Se copia el framebúffer oculto en el framebúffer de la ventana:
-        ESP_LOGI(RENDERER_TAG, "Llamando a driver.send_frame_buffer()");
+        logger.Log (RENDERER_TAG, 3, "Llamando a driver.send_frame_buffer()");
+        #if ESP_PLATFORM == 1
         esp_err_t result = driver.send_frame_buffer(frame_buffer.get_buffer());
-        
         if (result == ESP_OK) 
         {
-            ESP_LOGI(RENDERER_TAG, "Framebuffer enviado correctamente");
+            logger.Log (RENDERER_TAG, 3, "Framebuffer enviado correctamente");
         } 
         else 
         {
-            ESP_LOGE(RENDERER_TAG, "Error al enviar framebuffer: %s", esp_err_to_name(result));
+            logger.Log (RENDERER_TAG, 3, "Error al enviar framebuffer: %s", esp_err_to_name(result));
         }
+        #endif
         
-        ESP_LOGI(RENDERER_TAG, "Llamando a frame_buffer.swap_buffers()");
+        logger.Log (RENDERER_TAG, 3, "Llamando a frame_buffer.blit_to_window()");
         frame_buffer.swap_buffers();
 
         frame_buffer.clear_buffer();
         
-        ESP_LOGI(RENDERER_TAG, "==== Render completado ====\n");
+        logger.Log (RENDERER_TAG, 3, "==== Render completado ====\n");
     }
 
     bool Renderer::is_frontface (const glm::fvec4 * const projected_vertices, const int * const indices)

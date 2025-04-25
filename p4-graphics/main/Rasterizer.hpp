@@ -12,7 +12,7 @@
 #include <cstdint>
 #include <vector>
 #include <algorithm>
-#include "esp_log.h"
+#include "Logger.hpp"
 
 namespace Ragot
 {
@@ -58,7 +58,7 @@ namespace Ragot
         
         void clear ()
         {
-            ESP_LOGI(RASTER_TAG, "Limpiando framebuffer");
+            logger.Log (RASTER_TAG, 3, "Limpiando framebuffer");
             frame_buffer.clear_buffer();
             
             for (int * z = z_buffer.data(), * end = z + z_buffer.size(); z != end; ++z)

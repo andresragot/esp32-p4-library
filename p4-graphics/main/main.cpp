@@ -1,13 +1,11 @@
 #include "Renderer.hpp"
-#include "esp_log.h"
-#include "freertos/FreeRTOS.h"
-#include "freertos/task.h"
 #include <vector>
 #include "CommonTypes.hpp"
 #include "Scene.hpp"
 #include "RevolutionMesh.hpp"
 #include "ExtrudeMesh.hpp"
 #include "Id.hpp"
+#include "Logger.hpp"
 
 
 static const char* MAIN_TAG = "Main";
@@ -15,18 +13,22 @@ static const char* MAIN_TAG = "Main";
 using namespace std;
 using namespace Ragot;
 
+#if ESP_PLATFORM == 1
 extern "C" void app_main(void)
+#else
+int main()
+#endif
 {
-    esp_log_level_set("*", ESP_LOG_NONE);
+    logger.setLogLevel (0); // 0 NONE, 1 ERROR, 2 WARNING, 3 INFO
 
-    ESP_LOGI(MAIN_TAG, "Iniciando aplicación");
-    ESP_LOGI(MAIN_TAG, "Memoria libre inicial: %u bytes", esp_get_free_heap_size());
+    logger.Log (MAIN_TAG, 3, "Iniciando aplicación");
+    // logger.Log (MAIN_TAG, 3, "Memoria libre inicial: %u bytes", esp_get_free_heap_size());
     
-    ESP_LOGI(MAIN_TAG, "Creando renderer (600x1024)");
+    logger.Log (MAIN_TAG, 3, "Creando renderer (600x1024)");
     Ragot::Renderer renderer(1024, 600);
     
     uint32_t frame_count = 0;
-    ESP_LOGI(MAIN_TAG, "Entrando en bucle de renderizado");
+    logger.Log (MAIN_TAG, 3, "Entrando en bucle de renderizado");
 
     Camera camera(float (1024) / 600.f);
     camera.set_location(glm::vec3(0.f, 0.f, -15.f));
@@ -66,7 +68,7 @@ extern "C" void app_main(void)
 
     while (true)
     {
-        ESP_LOGI(MAIN_TAG, "\n--- Frame %u ---", frame_count);
+        logger.Log (MAIN_TAG, 3, "\n--- Frame %u ---", frame_count);
         // renderer.render_debug();
         if (update)
         {
@@ -86,8 +88,8 @@ extern "C" void app_main(void)
         // Log periódico del estado de memoria
         if (frame_count % 100 == 0) 
         {
-            ESP_LOGI(MAIN_TAG, "Estado después de %u frames:", frame_count);
-            ESP_LOGI(MAIN_TAG, "Memoria libre: %u bytes", esp_get_free_heap_size());
+            logger.Log (MAIN_TAG, 3, "Estado después de %u frames:", frame_count);
+            // ESP_LOGI(MAIN_TAG, "Memoria libre: %u bytes", esp_get_free_heap_size());
         }
     }
 }

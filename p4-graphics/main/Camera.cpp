@@ -11,6 +11,7 @@
 #include <gtx/transform.hpp>   // para cross, normalize, etc.
 #include <gtc/matrix_transform.hpp> // lookAt, perspective
 #include <glm.hpp>                  // vec3, dot, normalize
+#include "Logger.hpp"
 
 
 namespace Ragot
@@ -19,18 +20,19 @@ namespace Ragot
     
     void Camera::log_camera_info() const
     {
-        ESP_LOGI(CAMERA_TAG, "=== Camera Info ===");
-        ESP_LOGI(CAMERA_TAG, "Posición: (%.2f, %.2f, %.2f)", 
-                 position.x, position.y, position.z);
-        ESP_LOGI(CAMERA_TAG, "Target: (%.2f, %.2f, %.2f)", 
-                 target.x, target.y, target.z);
-        ESP_LOGI(CAMERA_TAG, "FOV: %.1f°", fov);
-        ESP_LOGI(CAMERA_TAG, "Aspect Ratio: %.3f", aspect_ratio);
-        ESP_LOGI(CAMERA_TAG, "Clipping: near=%.2f, far=%.2f", near_plane, far_plane);
+        logger.Log (CAMERA_TAG, 3, "=== Camera Info ===");
+        
+        logger.Log (CAMERA_TAG, 3, "Posición: (%.2f, %.2f, %.2f)", 
+                    position.x, position.y, position.z);	
+        logger.Log (CAMERA_TAG, 3, "Target: (%.2f, %.2f, %.2f)", 
+                    target.x, target.y, target.z);
+        logger.Log (CAMERA_TAG, 3, "FOV: %.1f°", fov);
+        logger.Log (CAMERA_TAG, 3, "Aspect Ratio: %.3f", aspect_ratio);
+        logger.Log (CAMERA_TAG, 3, "Clipping: near=%.2f, far=%.2f", near_plane, far_plane);
         
         // Imprimir la dirección de vista (normalizada)
         glm::vec3 view_direction = glm::normalize(target - position);
-        ESP_LOGI(CAMERA_TAG, "Dirección de vista: (%.2f, %.2f, %.2f)", 
+        logger.Log (CAMERA_TAG, 3, "Dirección de vista: (%.2f, %.2f, %.2f)", 
                  view_direction.x, view_direction.y, view_direction.z);
     }
 

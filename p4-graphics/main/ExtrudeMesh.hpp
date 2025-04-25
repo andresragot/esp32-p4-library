@@ -9,7 +9,6 @@
 
 #include "Mesh.hpp"
 #include "Camera.hpp"
-#include "esp_log.h"
 #include <iostream>
 
 namespace Ragot

@@ -8,7 +8,9 @@
 #pragma once
 #include <vector>
 #include <cstdint>
+#if ESP_PLATFORM == 1
 #include "RamAllocator.hpp"
+#endif
 
 namespace Ragot
 {
@@ -29,16 +31,23 @@ namespace Ragot
     {
     public:
         using TYPE = Color;
+        #if ESP_PLATFORM == 1
+        using ColorVector = std::vector < Color, PSRAMAllocator<RGB565, MALLOC_CAP_8BIT > >;
+        #else
+        using ColorVector = std::vector < Color >;
+        #endif
+        
     private:
+
     
         bool double_buffer;
         size_t width;
         size_t height;
         Color color;
-        std::vector < Color, PSRAMAllocator<Color, MALLOC_CAP_8BIT > >   buffer_1;
-        std::vector < Color, PSRAMAllocator<Color, MALLOC_CAP_8BIT > >   buffer_2;
-        std::vector < Color, PSRAMAllocator<Color, MALLOC_CAP_8BIT > > * current_buffer;
-        std::vector < Color, PSRAMAllocator<Color, MALLOC_CAP_8BIT > > * next_buffer;
+        ColorVector   buffer_1;
+        ColorVector   buffer_2;
+        ColorVector * current_buffer;
+        ColorVector * next_buffer;
         
     
     public:

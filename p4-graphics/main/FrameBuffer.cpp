@@ -109,7 +109,7 @@ namespace Ragot
     template < typename Color >
     void FrameBuffer<Color>::print_buffer(Buffer buffer_to_print) const
     {
-        const std::vector < Color, PSRAMAllocator<Color, MALLOC_CAP_8BIT> > * buffer = (buffer_to_print == CURRENT_BUFFER) ? current_buffer : next_buffer;
+        const ColorVector * buffer = (buffer_to_print == CURRENT_BUFFER) ? current_buffer : next_buffer;
 
         // Encabezado de columnas
         std::cout << " ";

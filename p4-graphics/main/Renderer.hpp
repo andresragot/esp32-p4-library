@@ -12,7 +12,10 @@
 #include "Rasterizer.hpp"
 #include "Node.hpp"
 #include "Scene.hpp"
+
+#if ESP_PLATFORM == 1
 #include "driver_ek79007.hpp"
+#endif
 
 namespace Ragot
 {
@@ -26,8 +29,9 @@ namespace Ragot
         static const int  triangles[][3];
 #endif
         
-
+        #if ESP_PLATFORM == 1
         DriverEK79007 driver;
+        #endif
         FrameBuffer < RGB565 > frame_buffer;
         Scene * current_scene = nullptr;
         Rasterizer < RGB565 > rasterizer;

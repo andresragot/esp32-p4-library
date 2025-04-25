@@ -1,4 +1,4 @@
-idf_component_register(SRCS "FrameBuffer.cpp" "main.cpp"
+idf_component_register(SRCS "Logger.cpp" "FrameBuffer.cpp" "main.cpp"
                             "Scene.cpp" 
                             "Camera.cpp" 
                             "Assets.cpp"

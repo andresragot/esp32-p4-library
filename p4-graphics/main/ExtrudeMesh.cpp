@@ -1,5 +1,6 @@
 #include "ExtrudeMesh.hpp"
 #include <iostream>
+#include "Logger.hpp"
 
 namespace Ragot
 {
@@ -9,38 +10,38 @@ namespace Ragot
     
     void ExtrudeMesh::log_mesh_info() const
     {
-        ESP_LOGI(EXTRUDE_TAG, "=== ExtrudeMesh Info ===");
+        logger.Log (EXTRUDE_TAG, 3, "=== ExtrudeMesh Info ===");
         
         glm::vec3 position = get_position();
         glm::vec3 rotation = get_rotation();
         glm::vec3 scale = get_scale();
         
-        ESP_LOGI(EXTRUDE_TAG, "Posición: (%.2f, %.2f, %.2f)", 
-                 position.x, position.y, position.z);
-        ESP_LOGI(EXTRUDE_TAG, "Rotación: (%.2f, %.2f, %.2f)", 
-                 rotation.x, rotation.y, rotation.z);
-        ESP_LOGI(EXTRUDE_TAG, "Escala: (%.2f, %.2f, %.2f)", 
-                 scale.x, scale.y, scale.z);
+        logger.Log (EXTRUDE_TAG, 3, "Posición: (%.2f, %.2f, %.2f)", 
+                    position.x, position.y, position.z);
+        logger.Log (EXTRUDE_TAG, 3, "Rotación: (%.2f, %.2f, %.2f)", 
+                    rotation.x, rotation.y, rotation.z);
+        logger.Log (EXTRUDE_TAG, 3, "Escala: (%.2f, %.2f, %.2f)",
+                    scale.x, scale.y, scale.z);
         
-        ESP_LOGI(EXTRUDE_TAG, "Vértices: %zu", get_total_vertices());
-        ESP_LOGI(EXTRUDE_TAG, "Caras: %zu", get_faces().size());
+        logger.Log (EXTRUDE_TAG, 3, "Vértices: %zu", get_total_vertices());
+        logger.Log (EXTRUDE_TAG, 3, "Caras: %zu", get_faces().size());
         
         // Mostrar algunos vértices para depuración
         const auto& vertices = get_vertices();
         if (vertices.size() > 0)
         {
-            ESP_LOGI(EXTRUDE_TAG, "Muestra de vértices:");
+            logger.Log (EXTRUDE_TAG, 3, "Muestra de vértices:");
             
             // Mostrar primer vértice
-            ESP_LOGI(EXTRUDE_TAG, "  V[0] = (%.2f, %.2f, %.2f, %.2f)", 
-                     vertices[0][0], vertices[0][1], vertices[0][2], vertices[0][3]);
+            logger.Log (EXTRUDE_TAG, 3, "  V[0] = (%.2f, %.2f, %.2f, %.2f)", 
+                        vertices[0][0], vertices[0][1], vertices[0][2], vertices[0][3]);
             
             // Mostrar último vértice
             if (vertices.size() > 1)
             {
-                ESP_LOGI(EXTRUDE_TAG, "  V[último] = (%.2f, %.2f, %.2f, %.2f)", 
-                         vertices[vertices.size()-1][0], vertices[vertices.size()-1][1], 
-                         vertices[vertices.size()-1][2], vertices[vertices.size()-1][3]);
+                logger.Log (EXTRUDE_TAG, 3, "  V[último] = (%.2f, %.2f, %.2f, %.2f)", 
+                            vertices[vertices.size()-1][0], vertices[vertices.size()-1][1], 
+                            vertices[vertices.size()-1][2], vertices[vertices.size()-1][3]);
             }
         }
     }
@@ -49,7 +50,7 @@ namespace Ragot
     {
         faces.clear();
 
-        const auto &coords = mesh_info.coordinates;
+        const auto & coords = mesh_info.coordinates;
         int total = int(coords.size());
         if (total % 2 != 0)
         {

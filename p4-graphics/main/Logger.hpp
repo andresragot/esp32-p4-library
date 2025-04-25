@@ -7,7 +7,7 @@
 #include <iostream>
 #include <utility>
 
-#ifdef ESP_PLATFORM == 1
+#if ESP_PLATFORM == 1
 #include "esp_log.h"
 #endif
 
@@ -25,28 +25,13 @@ namespace Ragot
 
 
         template < typename... Args >
-        void Log (const char * TAG, uint_8 level, const char * fmt, Args... args)
+        void Log (const char * TAG, uint8_t level, const char * fmt, Args... args)
         {
             if (level > logLevel)
                 return;
 
-            #ifdef ESP_PLATFORM == 1
-            switch (level)
-            {
-                case 0:
-                case 1:
-                    ESP_LOGE (TAG, fmt, std::forward<Args>(args)...);
-                    break;
-                
-                case 2:
-                    ESP_LOGW (TAG, fmt, std::forward<Args>(args)...);
-                    break;
-                
-                case 3:
-                default:
-                    ESP_LOGI (TAG, fmt, std::forward<Args>(args)...);
-                    break;
-            }
+            #if ESP_PLATFORM == 1
+            esp_log_write ((esp_log_level_t)level, TAG, fmt, std::forward<Args>(args)...);
             #else
             std::cout << "[" << TAG << "]: ";
             ( (std::cout << std::forward<Args>(args)), ... );
@@ -71,7 +56,7 @@ namespace Ragot
         void setLogLevel (uint8_t level)
         {
             logLevel = level;
-            #ifdef ESP_PLATFORM == 1
+            #if ESP_PLATFORM == 1
             esp_log_level_set("*", (esp_log_level_t)level);
             #endif
         }
