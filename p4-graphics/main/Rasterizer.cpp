@@ -425,6 +425,7 @@ namespace Ragot
 
 
     template void Rasterizer<RGB565>::fill_convex_polygon_z_buffer(const glm::ivec4* const, const face_t* const);
+    template void Rasterizer<RGB565>::fill_convex_polygon_z_buffer(const glm::ivec4 *const vertices, const int *const indices_begin, const int *const indices_end);
     
     template < typename COLOR >
     template < typename VALUE_TYPE, size_t SHIFT >
