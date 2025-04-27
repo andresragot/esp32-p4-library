@@ -1,0 +1,397 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8EB4A7142DBE6BB200739118 /* Assets.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8EB4A6F92DBE6BB200739118 /* Assets.cpp */; };
+		8EB4A7152DBE6BB200739118 /* FrameBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8EB4A7022DBE6BB200739118 /* FrameBuffer.cpp */; };
+		8EB4A7162DBE6BB200739118 /* ExtrudeMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8EB4A6FF2DBE6BB200739118 /* ExtrudeMesh.cpp */; };
+		8EB4A7172DBE6BB200739118 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8EB4A7052DBE6BB200739118 /* main.cpp */; };
+		8EB4A7182DBE6BB200739118 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8EB4A7122DBE6BB200739118 /* Scene.cpp */; };
+		8EB4A7192DBE6BB200739118 /* RevolutionMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8EB4A7102DBE6BB200739118 /* RevolutionMesh.cpp */; };
+		8EB4A71A2DBE6BB200739118 /* MeshSerializer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8EB4A7092DBE6BB200739118 /* MeshSerializer.cpp */; };
+		8EB4A71B2DBE6BB200739118 /* Rasterizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8EB4A70C2DBE6BB200739118 /* Rasterizer.cpp */; };
+		8EB4A71C2DBE6BB200739118 /* Renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8EB4A70E2DBE6BB200739118 /* Renderer.cpp */; };
+		8EB4A71D2DBE6BB200739118 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8EB4A6FB2DBE6BB200739118 /* Camera.cpp */; };
+		8EB4A71E2DBE6BB200739118 /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8EB4A7072DBE6BB200739118 /* Mesh.cpp */; };
+		8EB4A7202DBE6D0100739118 /* Logger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8EB4A71F2DBE6D0100739118 /* Logger.cpp */; };
+		8EB4A7262DBECF7600739118 /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB4A7222DBECF7600739118 /* libSDL2.a */; };
+		8EB4A7272DBECF7600739118 /* libSDL2d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB4A7232DBECF7600739118 /* libSDL2d.a */; };
+		8EB4A7282DBECF7600739118 /* libSDL2main.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB4A7242DBECF7600739118 /* libSDL2main.a */; };
+		8EB4A7292DBECF7600739118 /* libSDL2maind.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB4A7252DBECF7600739118 /* libSDL2maind.a */; };
+		8EB4A72B2DBECF8A00739118 /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 8EB4A72A2DBECF8A00739118 /* glad.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8E04C5E92DBE6B42000010F2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		8E04C5EB2DBE6B42000010F2 /* p4-graphics */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "p4-graphics"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EB4A6F82DBE6BB200739118 /* Assets.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Assets.hpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/Assets.hpp"; sourceTree = "<absolute>"; };
+		8EB4A6F92DBE6BB200739118 /* Assets.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Assets.cpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/Assets.cpp"; sourceTree = "<absolute>"; };
+		8EB4A6FA2DBE6BB200739118 /* Camera.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Camera.hpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/Camera.hpp"; sourceTree = "<absolute>"; };
+		8EB4A6FB2DBE6BB200739118 /* Camera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Camera.cpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/Camera.cpp"; sourceTree = "<absolute>"; };
+		8EB4A6FC2DBE6BB200739118 /* CommonTypes.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = CommonTypes.hpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/CommonTypes.hpp"; sourceTree = "<absolute>"; };
+		8EB4A6FD2DBE6BB200739118 /* Components.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Components.hpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/Components.hpp"; sourceTree = "<absolute>"; };
+		8EB4A6FE2DBE6BB200739118 /* ExtrudeMesh.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = ExtrudeMesh.hpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/ExtrudeMesh.hpp"; sourceTree = "<absolute>"; };
+		8EB4A6FF2DBE6BB200739118 /* ExtrudeMesh.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ExtrudeMesh.cpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/ExtrudeMesh.cpp"; sourceTree = "<absolute>"; };
+		8EB4A7002DBE6BB200739118 /* fnv.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = fnv.hpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/fnv.hpp"; sourceTree = "<absolute>"; };
+		8EB4A7012DBE6BB200739118 /* FrameBuffer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = FrameBuffer.hpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/FrameBuffer.hpp"; sourceTree = "<absolute>"; };
+		8EB4A7022DBE6BB200739118 /* FrameBuffer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = FrameBuffer.cpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/FrameBuffer.cpp"; sourceTree = "<absolute>"; };
+		8EB4A7032DBE6BB200739118 /* Id.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Id.hpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/Id.hpp"; sourceTree = "<absolute>"; };
+		8EB4A7042DBE6BB200739118 /* Logger.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Logger.hpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/Logger.hpp"; sourceTree = "<absolute>"; };
+		8EB4A7052DBE6BB200739118 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/main.cpp"; sourceTree = "<absolute>"; };
+		8EB4A7062DBE6BB200739118 /* Mesh.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Mesh.hpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/Mesh.hpp"; sourceTree = "<absolute>"; };
+		8EB4A7072DBE6BB200739118 /* Mesh.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Mesh.cpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/Mesh.cpp"; sourceTree = "<absolute>"; };
+		8EB4A7082DBE6BB200739118 /* MeshSerializer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = MeshSerializer.hpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/MeshSerializer.hpp"; sourceTree = "<absolute>"; };
+		8EB4A7092DBE6BB200739118 /* MeshSerializer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MeshSerializer.cpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/MeshSerializer.cpp"; sourceTree = "<absolute>"; };
+		8EB4A70A2DBE6BB200739118 /* Node.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Node.hpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/Node.hpp"; sourceTree = "<absolute>"; };
+		8EB4A70B2DBE6BB200739118 /* Rasterizer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Rasterizer.hpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/Rasterizer.hpp"; sourceTree = "<absolute>"; };
+		8EB4A70C2DBE6BB200739118 /* Rasterizer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Rasterizer.cpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/Rasterizer.cpp"; sourceTree = "<absolute>"; };
+		8EB4A70D2DBE6BB200739118 /* Renderer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Renderer.hpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/Renderer.hpp"; sourceTree = "<absolute>"; };
+		8EB4A70E2DBE6BB200739118 /* Renderer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Renderer.cpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/Renderer.cpp"; sourceTree = "<absolute>"; };
+		8EB4A70F2DBE6BB200739118 /* RevolutionMesh.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = RevolutionMesh.hpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/RevolutionMesh.hpp"; sourceTree = "<absolute>"; };
+		8EB4A7102DBE6BB200739118 /* RevolutionMesh.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = RevolutionMesh.cpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/RevolutionMesh.cpp"; sourceTree = "<absolute>"; };
+		8EB4A7112DBE6BB200739118 /* Scene.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Scene.hpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/Scene.hpp"; sourceTree = "<absolute>"; };
+		8EB4A7122DBE6BB200739118 /* Scene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Scene.cpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/Scene.cpp"; sourceTree = "<absolute>"; };
+		8EB4A7132DBE6BB200739118 /* Transform.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Transform.hpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/Transform.hpp"; sourceTree = "<absolute>"; };
+		8EB4A71F2DBE6D0100739118 /* Logger.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Logger.cpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/Logger.cpp"; sourceTree = "<absolute>"; };
+		8EB4A7222DBECF7600739118 /* libSDL2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDL2.a; path = ../../../libraries/sdl/lib/macos/libSDL2.a; sourceTree = "<group>"; };
+		8EB4A7232DBECF7600739118 /* libSDL2d.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDL2d.a; path = ../../../libraries/sdl/lib/macos/libSDL2d.a; sourceTree = "<group>"; };
+		8EB4A7242DBECF7600739118 /* libSDL2main.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDL2main.a; path = ../../../libraries/sdl/lib/macos/libSDL2main.a; sourceTree = "<group>"; };
+		8EB4A7252DBECF7600739118 /* libSDL2maind.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDL2maind.a; path = ../../../libraries/sdl/lib/macos/libSDL2maind.a; sourceTree = "<group>"; };
+		8EB4A72A2DBECF8A00739118 /* glad.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = glad.c; path = ../../../libraries/glad/source/glad.c; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8E04C5E82DBE6B42000010F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EB4A7262DBECF7600739118 /* libSDL2.a in Frameworks */,
+				8EB4A7272DBECF7600739118 /* libSDL2d.a in Frameworks */,
+				8EB4A7282DBECF7600739118 /* libSDL2main.a in Frameworks */,
+				8EB4A7292DBECF7600739118 /* libSDL2maind.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8E04C5E22DBE6B42000010F2 = {
+			isa = PBXGroup;
+			children = (
+				8EB4A72A2DBECF8A00739118 /* glad.c */,
+				8EB4A6F82DBE6BB200739118 /* Assets.hpp */,
+				8EB4A6F92DBE6BB200739118 /* Assets.cpp */,
+				8EB4A6FA2DBE6BB200739118 /* Camera.hpp */,
+				8EB4A6FB2DBE6BB200739118 /* Camera.cpp */,
+				8EB4A6FC2DBE6BB200739118 /* CommonTypes.hpp */,
+				8EB4A6FD2DBE6BB200739118 /* Components.hpp */,
+				8EB4A6FE2DBE6BB200739118 /* ExtrudeMesh.hpp */,
+				8EB4A6FF2DBE6BB200739118 /* ExtrudeMesh.cpp */,
+				8EB4A7002DBE6BB200739118 /* fnv.hpp */,
+				8EB4A7012DBE6BB200739118 /* FrameBuffer.hpp */,
+				8EB4A7022DBE6BB200739118 /* FrameBuffer.cpp */,
+				8EB4A7032DBE6BB200739118 /* Id.hpp */,
+				8EB4A7042DBE6BB200739118 /* Logger.hpp */,
+				8EB4A71F2DBE6D0100739118 /* Logger.cpp */,
+				8EB4A7052DBE6BB200739118 /* main.cpp */,
+				8EB4A7062DBE6BB200739118 /* Mesh.hpp */,
+				8EB4A7072DBE6BB200739118 /* Mesh.cpp */,
+				8EB4A7082DBE6BB200739118 /* MeshSerializer.hpp */,
+				8EB4A7092DBE6BB200739118 /* MeshSerializer.cpp */,
+				8EB4A70A2DBE6BB200739118 /* Node.hpp */,
+				8EB4A70B2DBE6BB200739118 /* Rasterizer.hpp */,
+				8EB4A70C2DBE6BB200739118 /* Rasterizer.cpp */,
+				8EB4A70D2DBE6BB200739118 /* Renderer.hpp */,
+				8EB4A70E2DBE6BB200739118 /* Renderer.cpp */,
+				8EB4A70F2DBE6BB200739118 /* RevolutionMesh.hpp */,
+				8EB4A7102DBE6BB200739118 /* RevolutionMesh.cpp */,
+				8EB4A7112DBE6BB200739118 /* Scene.hpp */,
+				8EB4A7122DBE6BB200739118 /* Scene.cpp */,
+				8EB4A7132DBE6BB200739118 /* Transform.hpp */,
+				8EB4A7212DBECF7600739118 /* Frameworks */,
+				8E04C5EC2DBE6B42000010F2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8E04C5EC2DBE6B42000010F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8E04C5EB2DBE6B42000010F2 /* p4-graphics */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8EB4A7212DBECF7600739118 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8EB4A7222DBECF7600739118 /* libSDL2.a */,
+				8EB4A7232DBECF7600739118 /* libSDL2d.a */,
+				8EB4A7242DBECF7600739118 /* libSDL2main.a */,
+				8EB4A7252DBECF7600739118 /* libSDL2maind.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8E04C5EA2DBE6B42000010F2 /* p4-graphics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E04C5F22DBE6B42000010F2 /* Build configuration list for PBXNativeTarget "p4-graphics" */;
+			buildPhases = (
+				8E04C5E72DBE6B42000010F2 /* Sources */,
+				8E04C5E82DBE6B42000010F2 /* Frameworks */,
+				8E04C5E92DBE6B42000010F2 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "p4-graphics";
+			packageProductDependencies = (
+			);
+			productName = "p4-graphics";
+			productReference = 8E04C5EB2DBE6B42000010F2 /* p4-graphics */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8E04C5E32DBE6B42000010F2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1630;
+				TargetAttributes = {
+					8E04C5EA2DBE6B42000010F2 = {
+						CreatedOnToolsVersion = 16.3;
+					};
+				};
+			};
+			buildConfigurationList = 8E04C5E62DBE6B42000010F2 /* Build configuration list for PBXProject "p4-graphics" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8E04C5E22DBE6B42000010F2;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 8E04C5EC2DBE6B42000010F2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8E04C5EA2DBE6B42000010F2 /* p4-graphics */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8E04C5E72DBE6B42000010F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EB4A72B2DBECF8A00739118 /* glad.c in Sources */,
+				8EB4A7142DBE6BB200739118 /* Assets.cpp in Sources */,
+				8EB4A7152DBE6BB200739118 /* FrameBuffer.cpp in Sources */,
+				8EB4A7162DBE6BB200739118 /* ExtrudeMesh.cpp in Sources */,
+				8EB4A7172DBE6BB200739118 /* main.cpp in Sources */,
+				8EB4A7182DBE6BB200739118 /* Scene.cpp in Sources */,
+				8EB4A7192DBE6BB200739118 /* RevolutionMesh.cpp in Sources */,
+				8EB4A71A2DBE6BB200739118 /* MeshSerializer.cpp in Sources */,
+				8EB4A7202DBE6D0100739118 /* Logger.cpp in Sources */,
+				8EB4A71B2DBE6BB200739118 /* Rasterizer.cpp in Sources */,
+				8EB4A71C2DBE6BB200739118 /* Renderer.cpp in Sources */,
+				8EB4A71D2DBE6BB200739118 /* Camera.cpp in Sources */,
+				8EB4A71E2DBE6BB200739118 /* Mesh.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		8E04C5F02DBE6B42000010F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		8E04C5F12DBE6B42000010F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		8E04C5F32DBE6B42000010F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					../../main/libraries/glm/include,
+					../../../libraries/glad/include,
+					../../../libraries/sdl/include,
+				);
+				LIBRARY_SEARCH_PATHS = ../../../libraries/sdl/lib/macos;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8E04C5F42DBE6B42000010F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					../../main/libraries/glm/include,
+					../../../libraries/glad/include,
+					../../../libraries/sdl/include,
+				);
+				LIBRARY_SEARCH_PATHS = ../../../libraries/sdl/lib/macos;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8E04C5E62DBE6B42000010F2 /* Build configuration list for PBXProject "p4-graphics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E04C5F02DBE6B42000010F2 /* Debug */,
+				8E04C5F12DBE6B42000010F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8E04C5F22DBE6B42000010F2 /* Build configuration list for PBXNativeTarget "p4-graphics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E04C5F32DBE6B42000010F2 /* Debug */,
+				8E04C5F42DBE6B42000010F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8E04C5E32DBE6B42000010F2 /* Project object */;
+}
