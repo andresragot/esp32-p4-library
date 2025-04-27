@@ -10,6 +10,8 @@
 #include <cstdint>
 #if ESP_PLATFORM == 1
 #include "RamAllocator.hpp"
+#else
+#include <glad/glad.h>
 #endif
 
 namespace Ragot
@@ -87,5 +89,18 @@ namespace Ragot
         void print_buffer ( Buffer buffer_to_print = CURRENT_BUFFER ) const;
         #endif
         
+        
+        #if ESP_PLATFORM != 1
+        void initGLTexture();
+        
+        void sendGL() const;
+        
+        static GLenum getGLFormat();
+        static GLenum getGLType();
+    
+    private:
+    
+        GLuint gl_tex = 0;
+        #endif
     };
 }

@@ -13,6 +13,10 @@
 #include <iostream>
 #endif
 
+#if ESP_PLATFORM != 1
+#include <cassert>
+#endif
+
 namespace Ragot
 {
     template < typename Color >
@@ -132,6 +136,79 @@ namespace Ragot
         }
     }
     #endif
+    
+    
+    #if ESP_PLATFORM != 1
+    template < typename Color >
+    void FrameBuffer < Color >::initGLTexture()
+    {
+        if (gl_tex == 0)
+        {
+            glGenTextures(1, &gl_tex);
+            glBindTexture(GL_TEXTURE_2D, gl_tex);
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S,     GL_CLAMP_TO_EDGE);
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T,     GL_CLAMP_TO_EDGE);
+
+            // Reserva la textura (sin datos aún)
+            glTexImage2D(GL_TEXTURE_2D, 0,
+                         getGLFormat(),  // formato interno
+                         static_cast< GLsizei > (width) ,
+                         static_cast< GLsizei > (height),
+                         0,
+                         getGLFormat(),  // formato fuente
+                         getGLType(),    // tipo de dato
+                         nullptr);
+        }
+    }
+    
+    template<typename Color>
+    void FrameBuffer<Color>::sendGL() const
+    {
+        if (gl_tex == 0) return;  // no inicializado
+        glBindTexture(GL_TEXTURE_2D, gl_tex);
+
+        // Alineación a 1 byte (importante si width*bytesPorPixel no es múltiplo de 4)
+        glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+
+        // Actualiza sólo el contenido (más eficiente que glTexImage2D)
+        glTexSubImage2D(GL_TEXTURE_2D, 0,
+                        0, 0,
+                        static_cast<GLsizei>(width),
+                        static_cast<GLsizei>(height),
+                        getGLFormat(),
+                        getGLType(),
+                        current_buffer->data());
+    }
+
+    // Especializaciones helpers para los tipos que usas:
+    template<typename Color>
+    GLenum FrameBuffer<Color>::getGLFormat()
+    {
+        if constexpr (std::is_same_v<Color, RGBA8888>)
+            return GL_RGBA;
+        else if constexpr (std::is_same_v<Color, RGB888>)
+            return GL_RGB;
+        else if constexpr (std::is_same_v<Color, RGB565>)
+            return GL_RGB;
+        else
+            return GL_R8;
+    }
+
+    template<typename Color>
+    GLenum FrameBuffer<Color>::getGLType()
+    {
+        if constexpr (std::is_same_v<Color, RGBA8888> ||
+                      std::is_same_v<Color, RGB888>)
+            return GL_UNSIGNED_BYTE;
+        else if constexpr (std::is_same_v<Color, RGB565>)
+            return GL_UNSIGNED_SHORT_5_6_5;
+        else
+            return GL_BYTE;
+    }
+    #endif
+    
     
     template class FrameBuffer<RGB565  >;
     template class FrameBuffer<RGB888  >;
