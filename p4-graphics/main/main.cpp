@@ -11,6 +11,15 @@
 #include "Window.hpp"
 #endif
 
+// ESP Rasterization took 0.0789344  seconds.
+// MAC Rasterization took 0.00564271 seconds.
+
+// ESP Rasterization took 0.0787937 seconds.
+// MAC Rasterization took 0.00561047 seconds.
+
+
+
+
 static const char* MAIN_TAG = "Main";
 
 using namespace std;
@@ -81,13 +90,15 @@ extern "C" void app_main(void)
 int main(int argc, char * argv[])
 #endif
 {
-    logger.setLogLevel (3); // 0 NONE, 1 ERROR, 2 WARNING, 3 INFO
+    logger.setLogLevel (0); // 0 NONE, 1 ERROR, 2 WARNING, 3 INFO
 
     logger.Log (MAIN_TAG, 3, "Iniciando aplicación");
     // logger.Log (MAIN_TAG, 3, "Memoria libre inicial: %u bytes", esp_get_free_heap_size());
     
     logger.Log(MAIN_TAG, 3, "Iniciando Window");
+#if ESP_PLATFORM != 1
     Ragot::Window window ("P4-Test", Ragot::Window::Position::CENTERED, Ragot::Window::Position::CENTERED, 1024, 600, { 3, 3 });
+#endif
     
     logger.Log (MAIN_TAG, 3, "Creando renderer (600x1024)");
     Ragot::Renderer renderer(1024, 600);
@@ -128,5 +139,10 @@ int main(int argc, char * argv[])
     renderer.set_scene(&scene);
     renderer.init();
     
+#if ESP_PLATFORM == 1
+    main_loop(renderer, scene);
+#else
     main_loop(renderer, scene, window);
+#endif
+
 }

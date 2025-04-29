@@ -89,6 +89,39 @@ namespace Ragot
         
         template < typename VALUE_TYPE, size_t SHIFT >
         void interpolate (int * cache, int v0, int v1, int y_min, int y_max);
+        
+        template < unsigned COLOR_SIZE >
+        void fill_row (Color * start, unsigned left_offset, unsigned right_offset, const Color & color)
+        {
+            std::fill_n (start + left_offset, right_offset - left_offset, color);
+        }
+        
+        // dentro de Rasterizer<COLOR> o en un header común
+        template <unsigned COLOR_SIZE>
+        void fill_row_zbuffer(
+            Color *       start,        // puntero al primer píxel de la scanline
+            int   *       zbuffer,      // puntero al primer elemento del Z-buffer
+            unsigned      left_offset,  // offset inicial (inclusive)
+            unsigned      right_offset, // offset final   (exclusive)
+            int           z_start,      // profundidad en left_offset
+            int           dz,           // incremento de z por píxel
+            const Color & color         // color a pintar
+                                    )
+        {
+            unsigned length = right_offset - left_offset;
+            Color * pix = start   + left_offset;
+            int   * zb  = zbuffer + left_offset;
+
+            // Recorremos de 0 a length-1
+            for (unsigned i = 0; i < length; ++i, ++pix, ++zb, z_start += dz)
+            {
+                if (z_start < *zb)
+                {
+                    *pix = color;
+                    *zb  = z_start;
+                }
+            }
+        }
     };
     
     template class Rasterizer<RGB565>;

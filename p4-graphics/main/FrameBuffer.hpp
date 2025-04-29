@@ -34,7 +34,7 @@ namespace Ragot
     public:
         using TYPE = Color;
         #if ESP_PLATFORM == 1
-        using ColorVector = std::vector < Color, PSRAMAllocator<RGB565, MALLOC_CAP_8BIT > >;
+        using ColorVector = std::vector < Color, PSRAMAllocator< Color, MALLOC_CAP_8BIT > >;
         #else
         using ColorVector = std::vector < Color >;
         #endif
@@ -78,6 +78,7 @@ namespace Ragot
         size_t get_height () const { return height; }
         
         const Color * get_buffer() const { return current_buffer->data(); }
+              Color * get_buffer()       { return current_buffer->data(); }
         
         inline void blit_to_window () const
         {

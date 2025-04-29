@@ -26,7 +26,10 @@ namespace Ragot
     class Renderer
     {
     private:
-
+        
+        float accumulated_time = 0.f;
+        size_t iterations = 0;
+        static constexpr size_t number_of_iterations = 10000000000000000;
 #ifdef DEBUG
         static const int   vertices[][4];
         static const float   colors[][3];

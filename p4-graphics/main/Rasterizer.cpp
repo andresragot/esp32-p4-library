@@ -144,15 +144,16 @@ namespace Ragot
         const int * indices_back  = indices_end - 1;
 
         // Parámetros de pantalla
-        int width  = static_cast<int>(frame_buffer.get_width());
-        int height = static_cast<int>(frame_buffer.get_height());
+        int width  = static_cast<int>(frame_buffer.get_height());
+        int height = static_cast<int>(frame_buffer.get_width());
 
         // Determinamos Y mínimo y máximo
         const int * start_index = indices_begin;
         const int * end_index   = indices_begin;
         int start_y = vertices[*start_index][1];
         int end_y   = start_y;
-        for (const int * it = start_index + 1; it < indices_end; ++it)
+        
+        for (const int * it = start_index; ++it < indices_end;)
         {
             int cy = vertices[*it][1];
             if (cy < start_y)
@@ -244,22 +245,30 @@ namespace Ragot
             o_start = std::clamp(o_start, 0, fb_size - 1);
             o_end   = std::clamp(o_end,   0, fb_size - 1);
 
-            bool lr = (o_start < o_end);
             int len = std::abs(o_end - o_start);
             int dz  = (z_end - z_start) / (len > 0 ? len : 1);
-            int z   = z_start;
-            int o   = o_start;
 
-            for (int i = 0; i <= len; ++i)
+            auto pixels = this->frame_buffer.get_buffer();
+            auto zbuf   = this->z_buffer.data();
+
+           if (o_start < o_end)
+           {
+                fill_row_zbuffer < sizeof(COLOR) >(
+                    pixels, zbuf,
+                    o_start, o_end,
+                    z_start, dz,
+                    color
+                );
+            }
+            else
             {
-                if (z < z_buffer[o])
-                {
-                    frame_buffer.set_pixel(o, color);
-                    z_buffer[o] = z;
-                }
-
-                z += dz;
-                o += (lr ? 1 : -1);
+                // si va decreciendo, invierte el tramo y el signo de dz:
+                fill_row_zbuffer < sizeof(COLOR) >(
+                    pixels, zbuf,
+                    o_end, o_start,
+                    z_end,   -dz,
+                    color
+                );
             }
         }
     }
@@ -423,9 +432,6 @@ namespace Ragot
         }
     }
 
-
-    template void Rasterizer<RGB565>::fill_convex_polygon_z_buffer(const glm::ivec4* const, const face_t* const);
-    template void Rasterizer<RGB565>::fill_convex_polygon_z_buffer(const glm::ivec4 *const vertices, const int *const indices_begin, const int *const indices_end);
     
     template < typename COLOR >
     template < typename VALUE_TYPE, size_t SHIFT >
@@ -451,4 +457,65 @@ namespace Ragot
             value += step;
         }
     }
+    
+    
+    template < >
+    template < >
+    void Rasterizer<RGB565>::fill_row < 2 > (RGB565 * start, unsigned left_offset, unsigned right_offset, const RGB565 & color)
+    {
+        unsigned length = right_offset - left_offset;
+        
+        if (length < 128)
+        {
+            std::fill_n (start + left_offset, length, color);
+        }
+        else
+        {
+            uint8_t * pixel   = reinterpret_cast< uint8_t * >(start + left_offset);
+            uint8_t * left64  = pixel + ( left_offset & 7) + 8;
+            uint8_t * right64 = pixel + (right_offset & 7);
+            uint8_t * end     = pixel + length * 2;
+            
+            uint64_t color_pack = static_cast < uint64_t > (*reinterpret_cast< const uint16_t * >(&color));
+            
+            color_pack |= color_pack << 16;
+            color_pack |= color_pack << 32;
+            
+            for ( ; pixel < left64 ; pixel += 2) *reinterpret_cast< RGB565    * >(pixel) = color;
+            for ( ; pixel < right64; pixel += 8) *reinterpret_cast< uint64_t * >(pixel) = color_pack;
+            for ( ; pixel < end    ; pixel += 2) *reinterpret_cast< RGB565    * >(pixel) = color;
+        }
+    }
+    
+    // Especialización opcional para COLOR_SIZE==2 si quieres forzar inline u otras micro-optimizaciones:
+    // aquí sólo lo duplicamos para que el compilador genere un fill_row_zbuffer<2>
+    template < >
+    template < >
+    void Rasterizer<RGB565>::fill_row_zbuffer<2>(
+        RGB565 *      start,
+        int   *      zbuffer,
+        unsigned     left_offset,
+        unsigned     right_offset,
+        int          z_start,
+        int          dz,
+        const RGB565 & color
+    )
+    {
+        // idéntico al genérico
+        unsigned length = right_offset - left_offset;
+        RGB565 * pix = start   + left_offset;
+        int   * zb  = zbuffer + left_offset;
+        for (unsigned i = 0; i < length; ++i, ++pix, ++zb, z_start += dz)
+        {
+            if (z_start < *zb)
+            {
+                *pix = color;
+                *zb  = z_start;
+            }
+        }
+    }
+    
+    template void Rasterizer<RGB565>::fill_convex_polygon_z_buffer(const glm::ivec4* const, const face_t* const);
+    template void Rasterizer<RGB565>::fill_convex_polygon_z_buffer(const glm::ivec4 *const vertices, const int *const indices_begin, const int *const indices_end);
+
 }
