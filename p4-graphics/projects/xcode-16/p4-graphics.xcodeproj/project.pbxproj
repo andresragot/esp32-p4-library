@@ -24,6 +24,22 @@
 		8EB4A7282DBECF7600739118 /* libSDL2main.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB4A7242DBECF7600739118 /* libSDL2main.a */; };
 		8EB4A7292DBECF7600739118 /* libSDL2maind.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB4A7252DBECF7600739118 /* libSDL2maind.a */; };
 		8EB4A72B2DBECF8A00739118 /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 8EB4A72A2DBECF8A00739118 /* glad.c */; };
+		8EB4A72E2DBFAFA800739118 /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8EB4A72D2DBFAFA800739118 /* Window.cpp */; };
+		8EB4A7302DC1431D00739118 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB4A72F2DC1431D00739118 /* Cocoa.framework */; };
+		8EB4A7322DC1432400739118 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB4A7312DC1432400739118 /* Metal.framework */; };
+		8EB4A7342DC1432E00739118 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB4A7332DC1432E00739118 /* Carbon.framework */; };
+		8EB4A7362DC1433700739118 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB4A7352DC1433700739118 /* EventKit.framework */; };
+		8EB4A7382DC1433D00739118 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB4A7372DC1433D00739118 /* IOKit.framework */; };
+		8EB4A73A2DC1434500739118 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB4A7392DC1434500739118 /* GameController.framework */; };
+		8EB4A73C2DC1434B00739118 /* ForceFeedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB4A73B2DC1434B00739118 /* ForceFeedback.framework */; };
+		8EB4A73E2DC1435700739118 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB4A73D2DC1435700739118 /* CoreVideo.framework */; };
+		8EB4A7402DC1435F00739118 /* CoreHaptics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB4A73F2DC1435F00739118 /* CoreHaptics.framework */; };
+		8EB4A7422DC1437600739118 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB4A7412DC1437600739118 /* CoreGraphics.framework */; };
+		8EB4A7442DC1438200739118 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB4A7432DC1438200739118 /* CoreFoundation.framework */; };
+		8EB4A7462DC1438900739118 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB4A7452DC1438900739118 /* AudioToolbox.framework */; };
+		8EB4A7482DC1439300739118 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB4A7472DC1439300739118 /* CoreAudio.framework */; };
+		8EB4A74A2DC1511300739118 /* FrameBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8EB4A7492DC1511300739118 /* FrameBuffer.cpp */; };
+		8EB4A74D2DC1512600739118 /* Shader_Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8EB4A74C2DC1512600739118 /* Shader_Program.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -74,6 +90,24 @@
 		8EB4A7242DBECF7600739118 /* libSDL2main.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDL2main.a; path = ../../../libraries/sdl/lib/macos/libSDL2main.a; sourceTree = "<group>"; };
 		8EB4A7252DBECF7600739118 /* libSDL2maind.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDL2maind.a; path = ../../../libraries/sdl/lib/macos/libSDL2maind.a; sourceTree = "<group>"; };
 		8EB4A72A2DBECF8A00739118 /* glad.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = glad.c; path = ../../../libraries/glad/source/glad.c; sourceTree = "<group>"; };
+		8EB4A72C2DBFAFA800739118 /* Window.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Window.hpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/Window.hpp"; sourceTree = "<absolute>"; };
+		8EB4A72D2DBFAFA800739118 /* Window.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Window.cpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/Window.cpp"; sourceTree = "<absolute>"; };
+		8EB4A72F2DC1431D00739118 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		8EB4A7312DC1432400739118 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		8EB4A7332DC1432E00739118 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		8EB4A7352DC1433700739118 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		8EB4A7372DC1433D00739118 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		8EB4A7392DC1434500739118 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = System/Library/Frameworks/GameController.framework; sourceTree = SDKROOT; };
+		8EB4A73B2DC1434B00739118 /* ForceFeedback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ForceFeedback.framework; path = System/Library/Frameworks/ForceFeedback.framework; sourceTree = SDKROOT; };
+		8EB4A73D2DC1435700739118 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		8EB4A73F2DC1435F00739118 /* CoreHaptics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreHaptics.framework; path = System/Library/Frameworks/CoreHaptics.framework; sourceTree = SDKROOT; };
+		8EB4A7412DC1437600739118 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8EB4A7432DC1438200739118 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		8EB4A7452DC1438900739118 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		8EB4A7472DC1439300739118 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		8EB4A7492DC1511300739118 /* FrameBuffer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = FrameBuffer.cpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/FrameBuffer.cpp"; sourceTree = "<absolute>"; };
+		8EB4A74B2DC1512600739118 /* Shader_Program.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Shader_Program.hpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/Shader_Program.hpp"; sourceTree = "<absolute>"; };
+		8EB4A74C2DC1512600739118 /* Shader_Program.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Shader_Program.cpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/Shader_Program.cpp"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +115,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EB4A7482DC1439300739118 /* CoreAudio.framework in Frameworks */,
+				8EB4A7462DC1438900739118 /* AudioToolbox.framework in Frameworks */,
+				8EB4A7442DC1438200739118 /* CoreFoundation.framework in Frameworks */,
+				8EB4A7422DC1437600739118 /* CoreGraphics.framework in Frameworks */,
+				8EB4A7402DC1435F00739118 /* CoreHaptics.framework in Frameworks */,
+				8EB4A73E2DC1435700739118 /* CoreVideo.framework in Frameworks */,
+				8EB4A73C2DC1434B00739118 /* ForceFeedback.framework in Frameworks */,
+				8EB4A73A2DC1434500739118 /* GameController.framework in Frameworks */,
+				8EB4A7382DC1433D00739118 /* IOKit.framework in Frameworks */,
+				8EB4A7362DC1433700739118 /* EventKit.framework in Frameworks */,
+				8EB4A7342DC1432E00739118 /* Carbon.framework in Frameworks */,
+				8EB4A7322DC1432400739118 /* Metal.framework in Frameworks */,
+				8EB4A7302DC1431D00739118 /* Cocoa.framework in Frameworks */,
 				8EB4A7262DBECF7600739118 /* libSDL2.a in Frameworks */,
 				8EB4A7272DBECF7600739118 /* libSDL2d.a in Frameworks */,
 				8EB4A7282DBECF7600739118 /* libSDL2main.a in Frameworks */,
@@ -110,6 +157,8 @@
 				8EB4A7042DBE6BB200739118 /* Logger.hpp */,
 				8EB4A71F2DBE6D0100739118 /* Logger.cpp */,
 				8EB4A7052DBE6BB200739118 /* main.cpp */,
+				8EB4A72C2DBFAFA800739118 /* Window.hpp */,
+				8EB4A72D2DBFAFA800739118 /* Window.cpp */,
 				8EB4A7062DBE6BB200739118 /* Mesh.hpp */,
 				8EB4A7072DBE6BB200739118 /* Mesh.cpp */,
 				8EB4A7082DBE6BB200739118 /* MeshSerializer.hpp */,
@@ -119,6 +168,9 @@
 				8EB4A70C2DBE6BB200739118 /* Rasterizer.cpp */,
 				8EB4A70D2DBE6BB200739118 /* Renderer.hpp */,
 				8EB4A70E2DBE6BB200739118 /* Renderer.cpp */,
+				8EB4A7492DC1511300739118 /* FrameBuffer.cpp */,
+				8EB4A74B2DC1512600739118 /* Shader_Program.hpp */,
+				8EB4A74C2DC1512600739118 /* Shader_Program.cpp */,
 				8EB4A70F2DBE6BB200739118 /* RevolutionMesh.hpp */,
 				8EB4A7102DBE6BB200739118 /* RevolutionMesh.cpp */,
 				8EB4A7112DBE6BB200739118 /* Scene.hpp */,
@@ -140,6 +192,19 @@
 		8EB4A7212DBECF7600739118 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8EB4A7472DC1439300739118 /* CoreAudio.framework */,
+				8EB4A7452DC1438900739118 /* AudioToolbox.framework */,
+				8EB4A7432DC1438200739118 /* CoreFoundation.framework */,
+				8EB4A7412DC1437600739118 /* CoreGraphics.framework */,
+				8EB4A73F2DC1435F00739118 /* CoreHaptics.framework */,
+				8EB4A73D2DC1435700739118 /* CoreVideo.framework */,
+				8EB4A73B2DC1434B00739118 /* ForceFeedback.framework */,
+				8EB4A7392DC1434500739118 /* GameController.framework */,
+				8EB4A7372DC1433D00739118 /* IOKit.framework */,
+				8EB4A7352DC1433700739118 /* EventKit.framework */,
+				8EB4A7332DC1432E00739118 /* Carbon.framework */,
+				8EB4A7312DC1432400739118 /* Metal.framework */,
+				8EB4A72F2DC1431D00739118 /* Cocoa.framework */,
 				8EB4A7222DBECF7600739118 /* libSDL2.a */,
 				8EB4A7232DBECF7600739118 /* libSDL2d.a */,
 				8EB4A7242DBECF7600739118 /* libSDL2main.a */,
@@ -209,14 +274,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EB4A72B2DBECF8A00739118 /* glad.c in Sources */,
+				8EB4A74D2DC1512600739118 /* Shader_Program.cpp in Sources */,
 				8EB4A7142DBE6BB200739118 /* Assets.cpp in Sources */,
 				8EB4A7152DBE6BB200739118 /* FrameBuffer.cpp in Sources */,
 				8EB4A7162DBE6BB200739118 /* ExtrudeMesh.cpp in Sources */,
 				8EB4A7172DBE6BB200739118 /* main.cpp in Sources */,
 				8EB4A7182DBE6BB200739118 /* Scene.cpp in Sources */,
 				8EB4A7192DBE6BB200739118 /* RevolutionMesh.cpp in Sources */,
+				8EB4A72E2DBFAFA800739118 /* Window.cpp in Sources */,
 				8EB4A71A2DBE6BB200739118 /* MeshSerializer.cpp in Sources */,
 				8EB4A7202DBE6D0100739118 /* Logger.cpp in Sources */,
+				8EB4A74A2DC1511300739118 /* FrameBuffer.cpp in Sources */,
 				8EB4A71B2DBE6BB200739118 /* Rasterizer.cpp in Sources */,
 				8EB4A71C2DBE6BB200739118 /* Renderer.cpp in Sources */,
 				8EB4A71D2DBE6BB200739118 /* Camera.cpp in Sources */,

@@ -7,6 +7,9 @@
 #include "Id.hpp"
 #include "Logger.hpp"
 
+#if ESP_PLATFORM != 1
+#include "Window.hpp"
+#endif
 
 static const char* MAIN_TAG = "Main";
 
@@ -14,20 +17,81 @@ using namespace std;
 using namespace Ragot;
 
 #if ESP_PLATFORM == 1
+void main_loop (Renderer & renderer, Scene & scene)
+{
+    bool update = true;
+    unsigned frame_count;
+
+    while (true)
+    {
+        logger.Log (MAIN_TAG, 3, "\n--- Frame %u ---", frame_count);
+        // renderer.render_debug();
+        if (update)
+        {
+            scene.update(0);
+            // update = false;
+        }
+        else
+        {
+            update = true;
+        }
+        renderer.render();
+        
+        frame_count++;
+        
+        // Log periódico del estado de memoria
+        if (frame_count % 100 == 0)
+        {
+            logger.Log (MAIN_TAG, 3, "Estado después de %u frames:", frame_count);
+        }
+    }
+}
+#else
+void main_loop (Renderer & renderer, Scene & scene, Window & window)
+{
+    glViewport (0, 0, 1024, 600);
+
+    bool exit = false;
+    
+    while (!exit)
+    {
+        SDL_Event event;
+        
+        while (SDL_PollEvent(&event) > 0)
+        {
+            if (event.type == SDL_QUIT)
+            {
+                exit = true;
+            }
+        }
+        
+        scene.update(0);
+        
+        renderer.render();
+        
+        window.swap_buffers();
+    }
+}
+#endif
+
+
+#if ESP_PLATFORM == 1
 extern "C" void app_main(void)
 #else
-int main()
+int main(int argc, char * argv[])
 #endif
 {
-    logger.setLogLevel (0); // 0 NONE, 1 ERROR, 2 WARNING, 3 INFO
+    logger.setLogLevel (3); // 0 NONE, 1 ERROR, 2 WARNING, 3 INFO
 
     logger.Log (MAIN_TAG, 3, "Iniciando aplicación");
     // logger.Log (MAIN_TAG, 3, "Memoria libre inicial: %u bytes", esp_get_free_heap_size());
     
+    logger.Log(MAIN_TAG, 3, "Iniciando Window");
+    Ragot::Window window ("P4-Test", Ragot::Window::Position::CENTERED, Ragot::Window::Position::CENTERED, 1024, 600, { 3, 3 });
+    
     logger.Log (MAIN_TAG, 3, "Creando renderer (600x1024)");
     Ragot::Renderer renderer(1024, 600);
     
-    uint32_t frame_count = 0;
     logger.Log (MAIN_TAG, 3, "Entrando en bucle de renderizado");
 
     Camera camera(float (1024) / 600.f);
@@ -55,7 +119,7 @@ int main()
     ExtrudeMesh    mesh_cube (mesh_info_cube, camera);
 
     // mesh_cup.set_position  (glm::vec3{ 0.f, 0.f, -5.f });
-    mesh_cube.set_position (glm::vec3{ 0.f, 10.f, 0.f });
+    mesh_cube.set_position (glm::vec3{ 0.f, 0.f, 0.f });
     mesh_cube.set_scale    (glm::vec3{ 0.5f, 0.5f, 0.5f });
 
     // scene.add_node(&mesh_cup , ID(COPA));
@@ -63,33 +127,6 @@ int main()
 
     renderer.set_scene(&scene);
     renderer.init();
-
-    bool update = true;
-
-    while (true)
-    {
-        logger.Log (MAIN_TAG, 3, "\n--- Frame %u ---", frame_count);
-        // renderer.render_debug();
-        if (update)
-        {
-            scene.update(0);
-            // update = false;
-        }
-        else
-        {
-            update = true;
-        }
-        renderer.render();
-        // ESP_LOGI(MAIN_TAG, "Esperando 50ms");
-        // vTaskDelay(pdMS_TO_TICKS(50));
-        
-        frame_count++;
-        
-        // Log periódico del estado de memoria
-        if (frame_count % 100 == 0) 
-        {
-            logger.Log (MAIN_TAG, 3, "Estado después de %u frames:", frame_count);
-            // ESP_LOGI(MAIN_TAG, "Memoria libre: %u bytes", esp_get_free_heap_size());
-        }
-    }
+    
+    main_loop(renderer, scene, window);
 }

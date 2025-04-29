@@ -13,6 +13,7 @@
 #include <gtc/type_ptr.hpp>                 // value_ptr, quat
 #include "CommonTypes.hpp"
 #include "Logger.hpp"
+#include <memory>
 
 namespace Ragot
 {
@@ -23,6 +24,36 @@ namespace Ragot
     static const char* CAMERA_TAG = "Camera";
     static const char* TRANSFORM_TAG = "Transform";
     static const char* TRIANGLE_TAG = "Triangle";
+    
+#if ESP_PLATFORM != 1
+    
+    const string Renderer::vertex_shader_code =
+    "#version 330\n"
+    "layout(location = 0) in vec2 aPos;"   // [-1..+1]
+    "layout(location = 1) in vec2 aTex;"   // [0..1]
+    ""
+    "out vec2 vTex;"
+    ""
+    "void main()"
+    "{"
+    "   vTex = aTex;"
+    "   gl_Position = vec4(aPos, 0.0, 1.0);"
+    "}";
+    
+    const string Renderer::fragment_shader_code =
+    "#version 330\n"
+    "in vec2 vTex;"
+    "out vec4 FragColor;"
+    ""
+    "uniform sampler2D uSampler;"
+    ""
+    "void main()"
+    "{"
+    "    FragColor = texture(uSampler, vTex);"
+    "}";
+
+    
+#endif
 
 #ifdef DEBUG
     const int Renderer::vertices[][4] =
@@ -96,6 +127,15 @@ namespace Ragot
     #endif
         frame_buffer(width, height, true), rasterizer(frame_buffer), width(width), height(height)
     {
+#if ESP_PLATFORM != 1
+         quadShader = std::make_unique<Shader_Program>  (
+                                                            std::vector<std::string> { vertex_shader_code   },
+                                                            std::vector<std::string> { fragment_shader_code }
+                                                        );
+        
+        initFullScreenQuad();
+#endif
+    
 #ifdef DEBUG
         size_t number_of_vertices = sizeof(vertices) / sizeof(int) / 4;
 
@@ -334,6 +374,30 @@ namespace Ragot
                 {
                     logger.Log (RENDERER_TAG, 3, "Error al enviar framebuffer: %s", esp_err_to_name(result));
                 }
+                #else
+                // En Renderer::render(), en la sección #else de ESP_PLATFORM
+                frame_buffer.sendGL();
+
+                // Limpia la pantalla
+                glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
+                glClear(GL_COLOR_BUFFER_BIT);
+
+                // Dibuja el quad
+                quadShader->use();
+                glActiveTexture(GL_TEXTURE0);
+                glBindTexture(GL_TEXTURE_2D, frame_buffer.getGLTex());
+                GLuint loc = quadShader->get_uniform_location("uSampler");
+                glUniform1i(loc, 0);
+
+                glBindVertexArray(quadVAO);
+                glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
+                glBindVertexArray(0);
+
+                // Swap de buffers y limpieza de tu framebuffer
+                frame_buffer.swap_buffers();
+                frame_buffer.clear_buffer();
+
+                
                 #endif
                 
                 logger.Log (RENDERER_TAG, 3, "Swapping y limpiando buffers");
@@ -342,9 +406,12 @@ namespace Ragot
             }
             else
             {
+                logger.Log(RENDERER_TAG, 3, "Not diry");
                 frame_buffer.blit_to_window();
                 #if ESP_PLATFORM == 1
                 driver.send_frame_buffer(frame_buffer.get_buffer());
+                #else
+                frame_buffer.sendGL();
                 #endif
                 frame_buffer.swap_buffers();
             }
@@ -535,6 +602,41 @@ namespace Ragot
         // Se comprueba a qué lado de la línea que pasa por v0 y v1 queda el punto v2:
 
         return ((v1[0] - v0[0]) * (v2[1] - v0[1]) - (v2[0] - v0[0]) * (v1[1] - v0[1]) > 0.f);
+    }
+#endif
+
+#if ESP_PLATFORM != 1
+    void Renderer::initFullScreenQuad()
+    {
+        // Define vértices (pos XY + UV)
+        float quadVerts[] =
+        {
+            -1.f, -1.f, 0.f, 0.f,
+             1.f, -1.f, 1.f, 0.f,
+             1.f,  1.f, 1.f, 1.f,
+            -1.f,  1.f, 0.f, 1.f,
+        };
+        unsigned quadIdx[] = { 0,1,2, 2,3,0 };
+        
+        glGenVertexArrays(1, &quadVAO);
+        glGenBuffers(1, &quadVBO);
+        glGenBuffers(1, &quadEBO);
+        glBindVertexArray(quadVAO);
+        
+        glBindBuffer(GL_ARRAY_BUFFER, quadVBO);
+        glBufferData(GL_ARRAY_BUFFER, sizeof(quadVerts), quadVerts, GL_STATIC_DRAW);
+        
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, quadEBO);
+        glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(quadIdx), quadIdx, GL_STATIC_DRAW);
+        
+        // posición = layout(location=0)
+        glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 4*sizeof(float), (void*)0);
+        glEnableVertexAttribArray(0);
+        // UV = layout(location=1)
+        glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 4*sizeof(float), (void*)(2*sizeof(float)));
+        glEnableVertexAttribArray(1);
+        
+        glBindVertexArray(0);
     }
 #endif
     

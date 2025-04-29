@@ -38,6 +38,10 @@ namespace Ragot
         }
         
         fill (0, CURRENT_BUFFER);
+        
+    #if ESP_PLATFORM != 1
+        initGLTexture();
+    #endif
     }
     
     template < typename Color >
@@ -166,7 +170,6 @@ namespace Ragot
     template<typename Color>
     void FrameBuffer<Color>::sendGL() const
     {
-        if (gl_tex == 0) return;  // no inicializado
         glBindTexture(GL_TEXTURE_2D, gl_tex);
 
         // Alineación a 1 byte (importante si width*bytesPorPixel no es múltiplo de 4)
@@ -180,6 +183,14 @@ namespace Ragot
                         getGLFormat(),
                         getGLType(),
                         current_buffer->data());
+        
+        GLenum err = glGetError();
+        if (err != GL_NO_ERROR)
+        {
+            std::cerr << "OpenGL error: " << err << "\n";
+        }
+
+
     }
 
     // Especializaciones helpers para los tipos que usas:

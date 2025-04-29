@@ -144,8 +144,8 @@ namespace Ragot
         const int * indices_back  = indices_end - 1;
 
         // Parámetros de pantalla
-        int width  = static_cast<int>(frame_buffer.get_height());
-        int height = static_cast<int>(frame_buffer.get_width());
+        int width  = static_cast<int>(frame_buffer.get_width());
+        int height = static_cast<int>(frame_buffer.get_height());
 
         // Determinamos Y mínimo y máximo
         const int * start_index = indices_begin;

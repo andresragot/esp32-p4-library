@@ -97,6 +97,8 @@ namespace Ragot
         
         static GLenum getGLFormat();
         static GLenum getGLType();
+        
+        GLuint getGLTex () const { return gl_tex; }
     
     private:
     

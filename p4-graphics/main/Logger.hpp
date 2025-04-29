@@ -33,9 +33,15 @@ namespace Ragot
             #if ESP_PLATFORM == 1
             esp_log_write ((esp_log_level_t)level, TAG, fmt, std::forward<Args>(args)...);
             #else
-            std::cout << "[" << TAG << "]: ";
-            ( (std::cout << std::forward<Args>(args)), ... );
-            std::cout << std::endl;
+            // 1) Calculamos el tamaño del buffer necesario
+            int needed = std::snprintf(nullptr, 0, fmt, std::forward<Args>(args)...) + 1;
+            std::vector<char> buffer(needed);
+
+            // 2) Rellenamos el buffer con el texto formateado
+            std::snprintf(buffer.data(), buffer.size(), fmt, std::forward<Args>(args)...);
+
+            // 3) Lo imprimimos
+            std::cout << "[" << TAG << "]: " << buffer.data() << std::endl;
             #endif
         }
 
