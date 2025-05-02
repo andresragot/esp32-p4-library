@@ -195,7 +195,7 @@ namespace Ragot
     
     void Renderer::init()
     {
-        if (current_scene && !initialized)
+        if (current_scene)
         {
             size_t total_vertices = 0;
             
@@ -208,12 +208,10 @@ namespace Ragot
             
             transformed_vertices.resize (total_vertices);
                 display_vertices.resize (total_vertices);
-            
-            initialized = true;
         }
     }
     
-    void Renderer::render()
+    /*void Renderer::render()
     {
         if (iterations == number_of_iterations)
         {
@@ -243,13 +241,15 @@ namespace Ragot
                 {
                     if (mesh->is_dirty())
                     {
+                        mesh->recalculate();
                         meshes_dirty = true;
-                        break;
                     }
                 }
             
                 if (main_camera->is_dirty() || meshes_dirty)
                 {
+                    init();
+                
                     Matrix4x4 view = main_camera->get_view_matrix();
                     logger.Log (RENDERER_TAG, 3, "Matriz de vista obtenida");
 
@@ -298,9 +298,9 @@ namespace Ragot
                             vertex[2] *= divisor;
                             vertex[3]  = 1.f;
                             
-                            if (index == 0 || index == mesh->get_total_vertices() - 1)
+                            // if (index == 0 || index == mesh->get_total_vertices() - 1)
                             {
-                                logger.Log (TRANSFORM_TAG, 3, "Vértice %zu transformado: (%.2f, %.2f, %.2f, %.2f)",
+                                logger.Log (TRANSFORM_TAG, 1, "Vértice %zu transformado: (%.2f, %.2f, %.2f, %.2f)",
                                         index, vertex[0], vertex[1], vertex[2], vertex[3]);
                             }
                         }
@@ -334,6 +334,63 @@ namespace Ragot
                         logger.Log (TRANSFORM_TAG, 3, "NDC (%.2f, %.2f) → Pantalla (%d, %d)",
                                 x, y, (int)display_vertices[index].x, (int)display_vertices[index].y);
                     }
+                    
+                    for (const face_t & face : mesh->get_faces())
+                    {
+                        std::vector < glm::fvec4 > poly;
+                        poly.reserve(4);
+                        poly.push_back ( display_vertices [face.v1] );
+                        poly.push_back ( display_vertices [face.v2] );
+                        poly.push_back ( display_vertices [face.v3] );
+                        if (face.is_quad) poly.push_back( display_vertices [face.v4] );
+                        
+                        poly = clipAgainstPlane(poly,
+                            [](auto &v){ return v.x >= -v.w; },
+                            [](auto &A, auto &B){
+                                float t = (A.w + A.x) / ((A.w + A.x) - (B.w + B.x));
+                                return A + t*(B - A);
+                            });
+                        poly = clipAgainstPlane(poly,
+                            [](auto &v){ return v.x <=  v.w; },
+                            [](auto &A, auto &B){
+                                float t = (A.w - A.x) / ((A.w - A.x) - (B.w - B.x));
+                                return A + t*(B - A);
+                            });
+                        poly = clipAgainstPlane(poly,
+                            [](auto &v){ return v.y >= -v.w; },
+                            [](auto &A, auto &B){
+                                float t = (A.w + A.y) / ((A.w + A.y) - (B.w + B.y));
+                                return A + t*(B - A);
+                            });
+                        poly = clipAgainstPlane(poly,
+                            [](auto &v){ return v.y <=  v.w; },
+                            [](auto &A, auto &B){
+                                float t = (A.w - A.y) / ((A.w - A.y) - (B.w - B.y));
+                                return A + t*(B - A);
+                            });
+                        poly = clipAgainstPlane(poly,
+                            [](auto &v){ return v.z >= -v.w; },
+                            [](auto &A, auto &B){
+                                float t = (A.w + A.z) / ((A.w + A.z) - (B.w + B.z));
+                                return A + t*(B - A);
+                            });
+                        poly = clipAgainstPlane(poly,
+                            [](auto &v){ return v.z <=  v.w; },
+                            [](auto &A, auto &B){
+                                float t = (A.w - A.z) / ((A.w - A.z) - (B.w - B.z));
+                                return A + t*(B - A);
+                            });
+                            
+                        if (poly.size() < 3) continue;
+                        
+                        std::vector < fvec4 > screen_poly;
+                        screen_poly.reserve(poly.size());
+                        for (auto &v_clip : poly)
+                        {
+                            fvec4 v_ndc = v_clip / v_clip.w;
+                            fvec4 v_screen = transformation * v_ndc;
+                        }
+                    }
 
                     logger.Log (RENDERER_TAG, 3, "Iniciando renderizado de triángulos");
                     int frontfaces = 0, backfaces = 0;
@@ -348,9 +405,9 @@ namespace Ragot
                             if (is_frontface(transformed_vertices.data(), indices))
                             {
                                 frontfaces++;
-                                rasterizer.set_color(RGB565(0xFFFFFF));
+                                rasterizer.set_color(RGB565(0x000FF));
                                 
-                                if (frontfaces % 10 == 0) // Log solo algunas caras para no saturar
+                                // if (frontfaces % 10 == 0) // Log solo algunas caras para no saturar
                                 {
                                     logger.Log (TRIANGLE_TAG, 3, "Rasterizando cara %d: v1=%d (%.1f,%.1f), v2=%d (%.1f,%.1f), v3=%d (%.1f,%.1f)",
                                             frontfaces,
@@ -434,7 +491,213 @@ namespace Ragot
             
             accumulated_time += elapsed_seconds;
         }
+    }*/
+    
+    // Helper genérico de clipping
+    template<typename Inside, typename Intersect>
+    static std::vector<glm::fvec4> clipAgainstPlane(
+        const std::vector<glm::fvec4>& in,
+        Inside   inside,
+        Intersect intersect
+    )
+    {
+        std::vector<glm::fvec4> out;
+        int n = in.size();
+        out.reserve(n);
+        for (int i = 0; i < n; ++i)
+        {
+            const auto &A = in[i];
+            const auto &B = in[(i+1)%n];
+            bool inA = inside(A), inB = inside(B);
+            if (inA && inB)
+            {
+                // ambos dentro → guardo B
+                out.push_back(B);
+            }
+            else if (inA && !inB)
+            {
+                // sale → sólo el punto de cruce
+                out.push_back(intersect(A,B));
+            }
+            else if (!inA && inB)
+            {
+                // entra → cruce y luego B
+                out.push_back(intersect(A,B));
+                out.push_back(B);
+            }
+            // else ambos fuera → nada
+        }
+        return out;
     }
+
+    void Renderer::render()
+    {
+        if (!current_scene) return;
+        init();
+        rasterizer.clear();
+        rasterizer.set_color(RGB565(0x000FF));
+
+        // 1) Preparar matrices
+        Camera *cam = current_scene->get_main_camera();
+        Matrix4x4 view       = cam->get_view_matrix();
+        Matrix4x4 proj       = cam->get_projection_matrix();
+        Matrix4x4 I(1);
+        Matrix4x4 modelBase  = glm::translate(I, {0,0,-10}) * glm::scale(I, {0.75f,0.75f,0.75f});
+        Matrix4x4 screenTransform =
+            glm::translate(I, {width*0.5f, height*0.5f, 0.f})
+          * glm::scale     (I, {width*0.5f, height*0.5f, 1.f});
+
+        auto meshes = current_scene->collect_components<Mesh>();
+        logger.Log(RENDERER_TAG, 2, "Meshes en escena: %zu", meshes.size());
+
+        for (auto *mesh : meshes)
+        {
+            mesh->recalculate();
+            const auto &srcVerts = mesh->get_vertices();
+            logger.Log(RENDERER_TAG, 2, "Mesh tiene %zu vértices y %zu caras",
+                       srcVerts.size(), mesh->get_faces().size());
+            
+            // 2) Transformar a clip-space
+            Matrix4x4 clipM = proj * view * (modelBase * mesh->get_transform_matrix());
+            std::vector<glm::fvec4> clipVerts;
+            clipVerts.reserve(srcVerts.size());
+            for (size_t i = 0; i < srcVerts.size(); ++i) {
+                glm::fvec4 cv = clipM * srcVerts[i];
+                clipVerts.push_back(cv);
+                logger.Log(RENDERER_TAG, 3, "Clip V[%zu] = (%.2f,%.2f,%.2f,%.2f)",
+                           i, cv.x, cv.y, cv.z, cv.w);
+            }
+
+            // 3) Para cada cara: clipping, pantalla, raster
+            for (const auto &face : mesh->get_faces())
+            {
+                // 3.1 Montar el polígono inicial
+                std::vector<glm::fvec4> poly {
+                    clipVerts[face.v1],
+                    clipVerts[face.v2],
+                    clipVerts[face.v3]
+                };
+                if (face.is_quad) poly.push_back(clipVerts[face.v4]);
+                logger.Log(RENDERER_TAG, 3, "Polígono inicial (%zu vértices)", poly.size());
+
+                // 3.2 Clipping en los 6 planos
+                auto clipAndLog = [&](auto inside, auto intersect, const char* planeName) {
+                    size_t before = poly.size();
+                    poly = clipAgainstPlane(poly, inside, intersect);
+                    size_t after = poly.size();
+                    logger.Log(RENDERER_TAG, 3, "  Clip %s: %zu→%zu vértices",
+                               planeName, before, after);
+                };
+                
+                clipAndLog(
+                  [](auto &v){ return v.x >= -v.w; },
+                  [](auto &A,auto &B){ float t=(A.w+A.x)/((A.w+A.x)-(B.w+B.x)); return A+t*(B-A); },
+                  "Left");
+                clipAndLog(
+                  [](auto &v){ return v.x <=  v.w; },
+                  [](auto &A,auto &B){ float t=(A.w-A.x)/((A.w-A.x)-(B.w-B.x)); return A+t*(B-A); },
+                  "Right");
+                clipAndLog(
+                  [](auto &v){ return v.y >= -v.w; },
+                  [](auto &A,auto &B){ float t=(A.w+A.y)/((A.w+A.y)-(B.w+B.y)); return A+t*(B-A); },
+                  "Bottom");
+                clipAndLog(
+                  [](auto &v){ return v.y <=  v.w; },
+                  [](auto &A,auto &B){ float t=(A.w-A.y)/((A.w-A.y)-(B.w-B.y)); return A+t*(B-A); },
+                  "Top");
+                clipAndLog(
+                  [](auto &v){ return v.z >= -v.w; },
+                  [](auto &A,auto &B){ float t=(A.w+A.z)/((A.w+A.z)-(B.w+B.z)); return A+t*(B-A); },
+                  "Near");
+                clipAndLog(
+                  [](auto &v){ return v.z <=  v.w; },
+                  [](auto &A,auto &B){ float t=(A.w-A.z)/((A.w-A.z)-(B.w-B.z)); return A+t*(B-A); },
+                  "Far");
+
+                if (poly.size() < 3) {
+                    logger.Log(RENDERER_TAG, 3, "  → Descartada por tener %zu vértices tras clipping", poly.size());
+                    continue;
+                }
+
+                // 3.3 A pantalla
+                std::vector<glm::ivec4> screenPoly;
+                screenPoly.reserve(poly.size());
+                for (size_t i = 0; i < poly.size(); ++i) {
+                    glm::fvec4 ndc = poly[i] / poly[i].w;
+                    glm::vec4 scr = screenTransform * glm::vec4(ndc.x, ndc.y, ndc.z, 1.f);
+                    screenPoly.emplace_back(
+                        int(scr.x), int(scr.y), int(ndc.z * 1e8f), 1
+                    );
+                    logger.Log(RENDERER_TAG, 3,
+                               "  Screen[%zu] = (%d,%d) depth=%.2f",
+                               i, screenPoly.back().x, screenPoly.back().y, ndc.z);
+                }
+                logger.Log(RENDERER_TAG, 3, "  screenPoly size = %zu", screenPoly.size());
+
+                // 3.4 Rasterizar
+                if (screenPoly.size() == 4) {
+                    logger.Log(RENDERER_TAG, 3, "  Rasterizando quad");
+                    face_t q{ true, 0,1,2,3 };
+                    rasterizer.fill_convex_polygon_z_buffer(screenPoly.data(), &q);
+                }
+                else if (screenPoly.size() == 3) {
+                    logger.Log(RENDERER_TAG, 3, "  Rasterizando tri");
+                    face_t t{ false, 0,1,2,0 };
+                    rasterizer.fill_convex_polygon_z_buffer(screenPoly.data(), &t);
+                }
+                else {
+                    logger.Log(RENDERER_TAG, 3, "  Rasterizando %zu-tri fan", screenPoly.size()-2);
+                    for (size_t i = 1; i+1 < screenPoly.size(); ++i) {
+                        face_t t{ false, 0, int(i), int(i+1), 0 };
+                        rasterizer.fill_convex_polygon_z_buffer(screenPoly.data(), &t);
+                    }
+                }
+            }
+        }
+
+        logger.Log (RENDERER_TAG, 3, "Enviando framebuffer al driver");
+        #if ESP_PLATFORM == 1
+        esp_err_t result = driver.send_frame_buffer(frame_buffer.get_buffer());
+        
+        if (result == ESP_OK)
+        {
+            logger.Log (RENDERER_TAG, 3, "Framebuffer enviado correctamente");
+        }
+        else
+        {
+            logger.Log (RENDERER_TAG, 3, "Error al enviar framebuffer: %s", esp_err_to_name(result));
+        }
+        #else
+        // En Renderer::render(), en la sección #else de ESP_PLATFORM
+        frame_buffer.sendGL();
+
+        // Limpia la pantalla
+        glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT);
+
+        // Dibuja el quad
+        quadShader->use();
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D, frame_buffer.getGLTex());
+        GLuint loc = quadShader->get_uniform_location("uSampler");
+        glUniform1i(loc, 0);
+
+        glBindVertexArray(quadVAO);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
+        glBindVertexArray(0);
+
+        // Swap de buffers y limpieza de tu framebuffer
+        frame_buffer.swap_buffers();
+        frame_buffer.clear_buffer();
+
+        
+        #endif
+        
+        logger.Log (RENDERER_TAG, 3, "Swapping y limpiando buffers");
+        frame_buffer.swap_buffers();
+        frame_buffer.clear_buffer();
+    }
+
     
     bool Renderer::is_frontface (const glm::fvec4 * const projected_vertices, const face_t * const indices )
     {
