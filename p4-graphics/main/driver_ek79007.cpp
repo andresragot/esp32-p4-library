@@ -102,8 +102,8 @@ namespace Ragot
             .dpi_clock_freq_mhz = panel_clk_freq_mhz,
             .pixel_format = pixel_format,
             .video_timing = {
-                .h_size = height,
-                .v_size = width,
+                .h_size = width,
+                .v_size = height,
                 .hsync_pulse_width = hsync_pulse_width,
                 .hsync_back_porch = hsync_back_porch,
                 .hsync_front_porch = hsync_front_porch,
