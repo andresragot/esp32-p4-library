@@ -23,10 +23,13 @@ namespace Ragot
             
             for (const auto & coord : mesh_info.coordinates)
             {
-                fvec4 v;
-                v.x = coord.x * cos_theta;
-                v.y = coord.y;
-                v.z = coord.x * sin_theta;
+                fvec4 v (
+                        coord.x * cos_theta,
+                        coord.y,
+                        coord.x * sin_theta,
+                        1.0f
+                         );
+                
                 
                 vertices.push_back(v);
             }
