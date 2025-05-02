@@ -44,9 +44,20 @@ namespace Ragot
         {
             vertices.clear();
             faces.clear();
-
+            
             generate_vertices();
             generate_faces();
+            
+            apply_transform_to_vertices();
+        }
+        
+        void apply_transform_to_vertices()
+        {
+            glm::mat4 M = get_transform_matrix();
+            for (auto & v : vertices)
+            {
+                v = M * v;
+            }
         }
     };
 }

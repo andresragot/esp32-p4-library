@@ -1,3 +1,9 @@
+//  ExtrudeMesh.cpp
+//  FileToOBJ
+//
+//  Created by Andrés Ragot on 10/3/25.
+//
+
 #include "ExtrudeMesh.hpp"
 #include <iostream>
 #include "Logger.hpp"
@@ -48,126 +54,271 @@ namespace Ragot
 
     void ExtrudeMesh::generate_faces ()
     {
-        faces.clear();
+        // 1) Prepara espacio local
+        glm::mat4 worldToLocal   = glm::inverse(get_transform_matrix());
+        glm::vec3 camDirLocal3   = glm::normalize(glm::vec3(worldToLocal * glm::vec4(
+                                             cam.get_view_direction(), 0.0f)));
+        glm::vec2 view2D         = glm::normalize(glm::vec2(camDirLocal3.x, camDirLocal3.y));
 
-        const auto & coords = mesh_info.coordinates;
-        int total = int(coords.size());
-        if (total % 2 != 0)
+        const auto& coords = mesh_info.coordinates;
+        int n = int(coords.size());
+        std::vector<int> bottomIndex(n, -1), topIndex(n, -1);
+
+        auto addVertex = [&](int idx, float z, std::vector<int>& mapLayer)
         {
-            std::cerr << "Error: need even number of coords for bottom and top loops" << std::endl;
-            return;
-        }
-        int n = total / 2;
-
-        camPos = cam.get_position();
-
-        // Precompute View-Projection matrix once
-        glm::mat4 VP = cam.get_projection_matrix() * cam.get_view_matrix();
-
-        // Build and cull vértices por frustrum y profundidad
-        vertices.clear();
-        std::vector<int> indexMap(total, -1);
-        for (int i = 0; i < total; ++i)
-        {
-            const auto &pt = coords[i];
-            float z = (i < n) ? 0.0f : height;
-            glm::fvec4 worldPt(pt.x, pt.y, z, 1.0f);
-
-            glm::vec4 clip = VP * worldPt;
-            if (clip.w <= 0.0f) continue;
-            glm::vec3 ndc = glm::vec3(clip) / clip.w;
-            if (ndc.x < -1.0f || ndc.x > 1.0f ||
-                ndc.y < -1.0f || ndc.y > 1.0f ||
-                ndc.z <  0.0f || ndc.z > 1.0f)
-                continue;
-
-            // Depth cull
-            glm::vec3 forward = glm::normalize(cam.get_view_direction());
-            glm::vec3 dir   = glm::vec3(worldPt) - camPos;
-            float depth     = glm::dot(dir, forward);
-            if (depth < cam.get_near_plane() || depth > cam.get_far_plane())
-                continue;
-
-            indexMap[i] = int(vertices.size());
-            vertices.push_back(worldPt);
-        }
-
-        // función auxiliar para culling de back‐faces
-        auto is_face_visible = [&](const std::vector<int>& idxs) {
-            // construye normal con los primeros tres puntos (el orden CCW importa)
-            glm::vec3 p0 = glm::vec3(vertices[idxs[0]]);
-            glm::vec3 p1 = glm::vec3(vertices[idxs[1]]);
-            glm::vec3 p2 = glm::vec3(vertices[idxs[2]]);
-            glm::vec3 normal = glm::normalize(glm::cross(p1 - p0, p2 - p0));
-            glm::vec3 centroid(0.0f);
-            for (int id : idxs)
-                centroid += glm::vec3(vertices[id]);
-            centroid /= float(idxs.size());
-
-            glm::vec3 viewVec = glm::normalize(camPos - centroid);
-            // sólo si la normal apunta hacia la cámara
-            return glm::dot(normal, viewVec) > 0.0f;
+            if (mapLayer[idx] < 0)
+            {
+                glm::fvec4 v{ coords[idx].x, coords[idx].y, z, 1.0f };
+                mapLayer[idx] = int(vertices.size());
+                vertices.push_back(v);
+            }
+            return mapLayer[idx];
         };
 
-        // Side quads (CCW “outside”)
-        for (int i = 0; i < n; ++i)
+        // 2) Recorre cada arista y hace culling 2D
+        for(int i = 0; i < n; ++i)
         {
-            int j    = (i + 1) % n;
-            int b0   = indexMap[i],    b1 = indexMap[j];
-            int t0   = indexMap[i+n],  t1 = indexMap[j+n];
-            if (b0<0||b1<0||t0<0||t1<0) continue;
+            int j = (i+1) % n;
+            glm::vec2 pi{ coords[i].x, coords[i].y },
+                      pj{ coords[j].x, coords[j].y };
+            glm::vec2 e        = pj - pi;
+            glm::vec2 normal2D = glm::normalize(glm::vec2(e.y, -e.x));
 
-            std::vector<int> idxs = { b0, b1, t1, t0 };
-            if (!is_face_visible(idxs)) continue;
+            // descarta si no está de cara
+            if (glm::dot(normal2D, view2D) <= -0.8f)
+                continue;
 
-            faces.emplace_back(face_t{ true, b0, t0, t1, b1 });
+            // añade vértices
+            int i0 = addVertex(i,     0.0f, bottomIndex);
+            int i1 = addVertex(j,     0.0f, bottomIndex);
+            int i2 = addVertex(j, height,   topIndex);
+            int i3 = addVertex(i, height,   topIndex);
+
+            // genera QUAD con winding CCW “outward”
+            faces.emplace_back(face_t{
+                true,
+                i0, // base i
+                i1, // base j
+                i2, // top  j
+                i3  // top  i
+            });
         }
 
-        // Caps
+        // --- CAPS (suelo y tapa) ---
+        // 1) Calcula la normal del polígono base en XY
+        glm::vec3 p0 = glm::vec3(coords[0].x, coords[0].y, 0.0f);
+        glm::vec3 p1 = glm::vec3(coords[1].x, coords[1].y, 0.0f);
+        glm::vec3 p2 = glm::vec3(coords[2].x, coords[2].y, 0.0f);
+        glm::vec3 polyNormal = glm::normalize(glm::cross(p1 - p0, p2 - p0));
+        
+        // 2) Determina visibilidad respecto a la cámara en espacio local
+        bool bottomVisible = glm::dot(polyNormal, camDirLocal3) < -.8f;
+        bool topVisible    = glm::dot(polyNormal, camDirLocal3) > -.8f;
+
         if (faces_can_be_quads)
         {
-            // bottom quad (normal down)
+            // BOTTOM QUAD (normal hacia abajo)
+            if (bottomVisible)
             {
-                std::vector<int> idxs = { indexMap[0], indexMap[3], indexMap[2], indexMap[1] };
-                if (std::all_of(idxs.begin(), idxs.end(), [&](int v){ return v>=0; }) &&
-                    is_face_visible(idxs))
-                {
-                    faces.emplace_back(face_t{ true, idxs[0], idxs[1], idxs[2], idxs[3] });
-                }
+                // Asume al menos 4 vértices; si tu polígono no es rectangular, tendrás
+                // que explotar a fan de tris o un poly‐ngon, pero aquí tomamos 4 límites
+                int b0 = addVertex(0,       0.0f, bottomIndex);
+                int b1 = addVertex(1,       0.0f, bottomIndex);
+                int b2 = addVertex(n - 1,   0.0f, bottomIndex);
+                int b3 = addVertex(n - 2,   0.0f, bottomIndex);
+                faces.emplace_back(face_t{ true, b0, b1, b2, b3 });
             }
-            // top quad (normal up)
+
+            // TOP QUAD (normal hacia arriba)
+            if (topVisible)
             {
-                std::vector<int> idxs = { indexMap[n], indexMap[n+3], indexMap[n+2], indexMap[n+1] };
-                if (std::all_of(idxs.begin(), idxs.end(), [&](int v){ return v>=0; }) &&
-                    is_face_visible(idxs))
-                {
-                    faces.emplace_back(face_t{ true, idxs[0], idxs[1], idxs[2], idxs[3] });
-                }
+                int t0 = addVertex(0,     height, topIndex);
+                int t1 = addVertex(1,     height, topIndex);
+                int t2 = addVertex(n - 1, height, topIndex);
+                int t3 = addVertex(n - 2, height, topIndex);
+                faces.emplace_back(face_t{ true, t3, t0, t1, t2 });
             }
         }
         else
         {
-            // bottom fan triangles (CCW down)
-            int center = indexMap[0];
-            for (int i = 1; i + 1 < n; ++i)
+            // BOTTOM FAN TRIANGLES
+            if (bottomVisible)
             {
-                int v1 = indexMap [ i ], v2 = indexMap [ i + 1 ];
-                std::vector<int> idxs = { center, v1, v2 };
-                if (center<0||v1<0||v2<0) continue;
-                if (!is_face_visible(idxs)) continue;
-                faces.emplace_back(face_t{ false, center, v1, v2, 0 });
+                int center = addVertex(0, 0.0f, bottomIndex);
+                for (int i = 1; i + 1 < n; ++i)
+                {
+                    int v1 = addVertex(i,     0.0f, bottomIndex);
+                    int v2 = addVertex(i + 1, 0.0f, bottomIndex);
+                    faces.emplace_back(face_t{ false, center, v1, v2, 0 });
+                }
             }
-            // top fan triangles (CCW up)
-            center = indexMap[n];
-            for (int i = 1; i + 1 < n; ++i)
+            // TOP FAN TRIANGLES
+            if (topVisible)
             {
-                int v1 = indexMap [ n + i ], v2 = indexMap [ n + i + 1];
-                std::vector<int> idxs = { center, v1, v2 };
-                if (center < 0 || v1 < 0 || v2 < 0) continue;
-                if (!is_face_visible(idxs)) continue;
-                faces.emplace_back(face_t{ false, center, v2, v1, 0 });
+                int center = addVertex(0, height, topIndex);
+                for (int i = 1; i + 1 < n; ++i)
+                {
+                    int v1 = addVertex(i,     height, topIndex);
+                    int v2 = addVertex(i + 1, height, topIndex);
+                    faces.emplace_back(face_t{ false, center, v2, v1, 0 });
+                }
+            }
+        }
+
+    }
+
+
+    
+    bool ExtrudeMesh::are_vertices_coplanar (const fvec4 & v1,
+        const fvec4 & v2, const fvec4 & v3, const fvec4 & v4, float tolerance)
+    {
+        float nx1 = (v2.y - v1.y) * (v3.z - v1.z) - (v2.z - v1.z) * (v3.y - v1.y);
+        float ny1 = (v2.z - v1.z) * (v3.x - v1.x) - (v2.x - v1.x) * (v3.z - v1.z);
+        float nz1 = (v2.x - v1.x) * (v3.y - v1.y) - (v2.y - v1.y) * (v3.x - v1.x);
+        
+        float d = - (nx1 * v1.x + ny1 * v1.y + nz1 * v1.z);
+        float distance = (nx1 * v4.x + ny1 * v4.y + nz1 * v4.z + d) / sqrt(nx1 * nx1 + ny1 * ny1 + nz1 * nz1);
+        
+        return std::abs(distance) < tolerance;
+    }
+}
+
+/*//
+//  ExtrudeMesh.cpp
+//  FileToOBJ
+//
+//  Created by Andrés Ragot on 10/3/25.
+//
+
+#include "ExtrudeMesh.hpp"
+#include <iostream>
+
+namespace Ragot
+{
+    using glm::fvec4;
+
+    bool ExtrudeMesh::are_vertices_coplanar (const fvec4 & v1,
+        const fvec4 & v2, const fvec4 & v3, const fvec4 & v4, float tolerance)
+    {
+        float nx1 = (v2.y - v1.y) * (v3.z - v1.z) - (v2.z - v1.z) * (v3.y - v1.y);
+        float ny1 = (v2.z - v1.z) * (v3.x - v1.x) - (v2.x - v1.x) * (v3.z - v1.z);
+        float nz1 = (v2.x - v1.x) * (v3.y - v1.y) - (v2.y - v1.y) * (v3.x - v1.x);
+        
+        float d = - (nx1 * v1.x + ny1 * v1.y + nz1 * v1.z);
+        float distance = (nx1 * v4.x + ny1 * v4.y + nz1 * v4.z + d) / sqrt(nx1 * nx1 + ny1 * ny1 + nz1 * nz1);
+        
+        return std::abs(distance) < tolerance;
+    }
+
+    void ExtrudeMesh::generate_vertices()
+    {
+        vertices.clear();
+        float slice_height = height / 2;
+
+        for (int s = 0; s < 2; ++s)
+        {
+            float z = s * slice_height;
+            for (const auto& coord : mesh_info.coordinates)
+            {
+                fvec4 v (
+                        coord.x,
+                        coord.y,
+                        z,
+                        1.0f
+                         );
+                         
+                vertices.push_back(v);
+            }
+        }
+    }
+    
+    void ExtrudeMesh::generate_faces()
+    {
+        faces.clear();
+        
+        int vertices_per_layer = int(mesh_info.coordinates.size());
+        int top_offset = vertices_per_layer;
+
+        // Generar caras laterales
+        for (int i = 0; i < vertices_per_layer - 1; ++i)
+        {
+            const fvec4 & v1 = vertices [i];
+            const fvec4 & v2 = vertices [i + 1];
+            const fvec4 & v3 = vertices [top_offset + i];
+            const fvec4 & v4 = vertices [top_offset + i + 1];
+        
+            if (are_vertices_coplanar(v1, v2, v3, v4))
+            {
+                face_t quad;
+                quad.v1 = i;
+                quad.v2 = i + 1;
+                quad.v3 = top_offset + i + 1;
+                quad.v4 = top_offset + i;
+                quad.is_quad = true;
+                faces.emplace_back(quad);
+            }
+            else
+            {
+                face_t tri1;
+                tri1.v1 = i;
+                tri1.v2 = i + 1;
+                tri1.v3 = top_offset + i;
+                tri1.v4 = 0;
+                tri1.is_quad = false;
+                faces.emplace_back(tri1);
+                
+                face_t tri2;
+                tri2.v1 = i + 1;
+                tri2.v2 = top_offset + i + 1;
+                tri2.v3 = top_offset + i;
+                tri2.v4 = 0;
+                tri2.is_quad = false;
+                faces.emplace_back(tri2);
+            }
+        }
+
+        // Generar caras extremas (top y bottom)
+        if (faces_can_be_quads)
+        {
+            // Bottom face como un único quad
+            face_t bottom_quad;
+            bottom_quad.v1 = 1;
+            bottom_quad.v2 = 0;
+            bottom_quad.v3 = 3;
+            bottom_quad.v4 = 2;
+            bottom_quad.is_quad = true;
+            faces.emplace_back(bottom_quad);
+
+            // Top face como un único quad
+            face_t top_quad;
+            top_quad.v1 = top_offset + 0;
+            top_quad.v2 = top_offset + 1;
+            top_quad.v3 = top_offset + 2;
+            top_quad.v4 = top_offset + 3;
+            top_quad.is_quad = true;
+            faces.emplace_back(top_quad);
+        }
+        else
+        {
+            for (int i = 0; i < vertices_per_layer - 1; ++i)
+            {
+                face_t bottom_tri;
+                bottom_tri.v1 = 0;
+                bottom_tri.v2 = i + 1;
+                bottom_tri.v3 = i;
+                bottom_tri.v4 = 0;
+                bottom_tri.is_quad = false;
+                faces.emplace_back(bottom_tri);
+            
+                face_t top_tri;
+                top_tri.v1 = top_offset;
+                top_tri.v2 = top_offset + i;
+                top_tri.v3 = top_offset + i + 1;
+                top_tri.v4 = 0;
+                top_tri.is_quad = false;
+                faces.emplace_back(top_tri);
             }
         }
     }
 }
-
+*/

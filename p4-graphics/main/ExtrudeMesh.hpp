@@ -15,7 +15,7 @@ namespace Ragot
 {
     class ExtrudeMesh : public Mesh
     {
-    private:
+    protected:
         static const char* EXTRUDE_TAG;
         float height = 1.0f;
         bool faces_can_be_quads = false;
@@ -38,7 +38,7 @@ namespace Ragot
             
             // % 8 porque como están las coordenadas duplicadas...
             faces_can_be_quads = (mesh_info.vertex_amount % 8 == 0 || mesh_info.vertex_amount == 4);
-            //generate_vertices();
+            generate_vertices();
             generate_faces();
             
             std::cout << "Etrude Vertices: " << vertices.size() << std::endl;

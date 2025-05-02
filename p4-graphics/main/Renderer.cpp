@@ -542,7 +542,6 @@ namespace Ragot
         Matrix4x4 view       = cam->get_view_matrix();
         Matrix4x4 proj       = cam->get_projection_matrix();
         Matrix4x4 I(1);
-        Matrix4x4 modelBase  = glm::translate(I, {0,0,-10}) * glm::scale(I, {0.75f,0.75f,0.75f});
         Matrix4x4 screenTransform =
             glm::translate(I, {width*0.5f, height*0.5f, 0.f})
           * glm::scale     (I, {width*0.5f, height*0.5f, 1.f});
@@ -558,10 +557,11 @@ namespace Ragot
                        srcVerts.size(), mesh->get_faces().size());
             
             // 2) Transformar a clip-space
-            Matrix4x4 clipM = proj * view * (modelBase * mesh->get_transform_matrix());
+            Matrix4x4 clipM = proj * view * (mesh->get_transform_matrix());
             std::vector<glm::fvec4> clipVerts;
             clipVerts.reserve(srcVerts.size());
-            for (size_t i = 0; i < srcVerts.size(); ++i) {
+            for (size_t i = 0; i < srcVerts.size(); ++i)
+            {
                 glm::fvec4 cv = clipM * srcVerts[i];
                 clipVerts.push_back(cv);
                 logger.Log(RENDERER_TAG, 3, "Clip V[%zu] = (%.2f,%.2f,%.2f,%.2f)",
@@ -581,7 +581,8 @@ namespace Ragot
                 logger.Log(RENDERER_TAG, 3, "Polígono inicial (%zu vértices)", poly.size());
 
                 // 3.2 Clipping en los 6 planos
-                auto clipAndLog = [&](auto inside, auto intersect, const char* planeName) {
+                auto clipAndLog = [&](auto inside, auto intersect, const char* planeName)
+                {
                     size_t before = poly.size();
                     poly = clipAgainstPlane(poly, inside, intersect);
                     size_t after = poly.size();
@@ -614,7 +615,8 @@ namespace Ragot
                   [](auto &A,auto &B){ float t=(A.w-A.z)/((A.w-A.z)-(B.w-B.z)); return A+t*(B-A); },
                   "Far");
 
-                if (poly.size() < 3) {
+                if (poly.size() < 3)
+                {
                     logger.Log(RENDERER_TAG, 3, "  → Descartada por tener %zu vértices tras clipping", poly.size());
                     continue;
                 }
@@ -635,19 +637,23 @@ namespace Ragot
                 logger.Log(RENDERER_TAG, 3, "  screenPoly size = %zu", screenPoly.size());
 
                 // 3.4 Rasterizar
-                if (screenPoly.size() == 4) {
+                if (screenPoly.size() == 4)
+                {
                     logger.Log(RENDERER_TAG, 3, "  Rasterizando quad");
                     face_t q{ true, 0,1,2,3 };
                     rasterizer.fill_convex_polygon_z_buffer(screenPoly.data(), &q);
                 }
-                else if (screenPoly.size() == 3) {
+                else if (screenPoly.size() == 3)
+                {
                     logger.Log(RENDERER_TAG, 3, "  Rasterizando tri");
                     face_t t{ false, 0,1,2,0 };
                     rasterizer.fill_convex_polygon_z_buffer(screenPoly.data(), &t);
                 }
-                else {
+                else
+                {
                     logger.Log(RENDERER_TAG, 3, "  Rasterizando %zu-tri fan", screenPoly.size()-2);
-                    for (size_t i = 1; i+1 < screenPoly.size(); ++i) {
+                    for (size_t i = 1; i+1 < screenPoly.size(); ++i)
+                    {
                         face_t t{ false, 0, int(i), int(i+1), 0 };
                         rasterizer.fill_convex_polygon_z_buffer(screenPoly.data(), &t);
                     }

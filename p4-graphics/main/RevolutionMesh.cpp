@@ -10,7 +10,115 @@
 
 namespace Ragot
 {
-    using glm::fvec4;
+    using namespace glm;
+    
+    void RevolutionMesh::generate_faces()
+    {
+        vertices.clear();
+        faces.clear();
+
+        const auto& coords = mesh_info.coordinates;
+        int C = int(coords.size());
+        int S = slices;
+
+        // 1) calculamos dirección de vista en espacio local
+        mat4 worldToLocal = glm::inverse(get_transform_matrix());
+        vec3 viewDirLocal = glm::normalize(vec3(
+        worldToLocal * vec4(cam.get_view_direction(), 0.0f)));
+
+        // 2) mapa de índices [slice][coord] → índice en vertices[]
+        std::vector<std::vector<int>> indexMap(S+1, std::vector<int>(C, -1));
+
+        auto addVertex = [&](int slice, int j)
+        {
+            int &dest = indexMap[slice][j];
+            if (dest < 0)
+            {
+                float theta = (2.0f * PI * slice) / float(S);
+                float c = cos(theta), s = sin(theta);
+                auto &pt = coords[j];
+                // coordenadas en mesh local
+                fvec4 v{ pt.x * c, pt.y, pt.x * s, 1.0f };
+                dest = int(vertices.size());
+                vertices.push_back(v);
+            }
+            return dest;
+        };
+
+        // 3) recorremos cada quad potencial
+        for (int slice = 0; slice < S; ++slice)
+        {
+            int nextSlice = slice + 1;
+            for (int j = 0; j < C; ++j)
+            {
+                int j2 = (j+1) % C;
+
+                // obtener posiciones temporales para calcular normal
+                float t0 = (2.0f*PI*slice)   / float(S),
+                      t1 = (2.0f*PI*nextSlice)/ float(S);
+                auto &p0c = coords[j];
+                auto &p1c = coords[j2];
+
+                vec3 p0{ p0c.x * cos(t0), p0c.y, p0c.x * sin(t0) };
+                vec3 p1{ p0c.x * cos(t1), p0c.y, p0c.x * sin(t1) };
+                vec3 p2{ p1c.x * cos(t1), p1c.y, p1c.x * sin(t1) };
+
+                // normal del quad (p0,p1,p2)
+                vec3 normal = glm::normalize(glm::cross(p1 - p0, p2 - p0));
+                if (glm::dot(normal, viewDirLocal) <= -0.8f)
+                    continue;  // no está de cara
+
+                // si llegó acá, la cara se ve: añadimos vértices y el face
+                int v0 = addVertex(slice,   j);
+                int v1 = addVertex(slice,   j2);
+                int v2 = addVertex(nextSlice, j2);
+                int v3 = addVertex(nextSlice, j);
+
+                faces.emplace_back(face_t{
+                    /*is_quad=*/true,
+                    /*v1=*/v0,
+                    /*v2=*/v1,
+                    /*v3=*/v2,
+                    /*v4=*/v3
+                });
+            }
+        }
+
+        // --- capas (bottom & top) ---
+        // normal del perfil en z=0
+        vec3 a = vec3(coords[0].x, coords[0].y, 0.0f);
+        vec3 b = vec3(coords[1].x, coords[1].y, 0.0f);
+        vec3 c = vec3(coords[2].x, coords[2].y, 0.0f);
+        vec3 polyNormal = glm::normalize(glm::cross(b - a, c - a));
+
+        bool bottomVisible = glm::dot(polyNormal, viewDirLocal) < -0.8f;
+        bool   topVisible = glm::dot(polyNormal, viewDirLocal) > -0.8f;
+
+        if (bottomVisible)
+        {
+            // int center = addVertex(0, 0);
+            for (int j = 1; j + 1 < C; ++j)
+            {
+                int v1 = addVertex(0, j);
+                int v2 = addVertex(0, j+1);
+                // faces.emplace_back(face_t{false, 0, v1, v2, 0});
+            }
+        }
+        if (topVisible)
+        {
+            int center = addVertex(S, 0);
+            for (int j = 1; j + 1 < C; ++j)
+            {
+                int v1 = addVertex(S, j);
+                int v2 = addVertex(S, j+1);
+                // CW para que apunte hacia arriba
+                // faces.emplace_back(face_t{false, center, v2, v1, 0});
+            }
+        }
+    }
+
+    // Old way
+    /*using glm::fvec4;
     void RevolutionMesh::generate_vertices()
     {
         vertices.clear();
@@ -63,5 +171,5 @@ namespace Ragot
                 faces.emplace_back(face1);
             }
         }
-    }
+    }*/
 }
