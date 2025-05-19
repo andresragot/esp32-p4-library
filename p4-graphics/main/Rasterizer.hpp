@@ -33,7 +33,7 @@ namespace Ragot
         Color color;
         
         std::vector < int > z_buffer;
-        static constexpr char* RASTER_TAG = "Rasterizer";
+        static constexpr const char * RASTER_TAG = "Rasterizer";
     
     public:
     

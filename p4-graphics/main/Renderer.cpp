@@ -21,10 +21,6 @@ namespace Ragot
     using Matrix4x4 = glm::mat4;
     using glm::fvec4;
     static const char* RENDERER_TAG = "Renderer";
-    static const char* MESH_TAG = "Mesh";
-    static const char* CAMERA_TAG = "Camera";
-    static const char* TRANSFORM_TAG = "Transform";
-    static const char* TRIANGLE_TAG = "Triangle";
     
 #if ESP_PLATFORM != 1
     
@@ -502,7 +498,7 @@ namespace Ragot
     )
     {
         std::vector<glm::fvec4> out;
-        int n = in.size();
+        int n = static_cast < int >(in.size());
         out.reserve(n);
         for (int i = 0; i < n; ++i)
         {

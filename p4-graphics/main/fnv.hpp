@@ -91,7 +91,7 @@
             template< size_t LENGTH >
             constexpr unsigned static_fnv (const char (& chars)[LENGTH])
             {
-                return internal::static_fnv64< LENGTH > (chars);
+                return static_cast < unsigned > (internal::static_fnv64< LENGTH > (chars));
             }
 
         #endif

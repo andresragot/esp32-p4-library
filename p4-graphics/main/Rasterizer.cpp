@@ -283,7 +283,7 @@ namespace Ragot
     {
         // Se cachean algunos valores de interés:
 
-                int   pitch         = frame_buffer.get_height ();
+                int   pitch         = static_cast< int >(frame_buffer.get_height ());
                 int * offset_cache0 = this->offset_cache0;
                 int * offset_cache1 = this->offset_cache1;
                 int * z_cache0      = this->z_cache0;

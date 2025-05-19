@@ -32,7 +32,7 @@ namespace Ragot
 
             #if ESP_PLATFORM == 1
             esp_log_write ((esp_log_level_t)level, TAG, fmt, std::forward<Args>(args)...);
-            #else
+            #else           
             // 1) Calculamos el tamaño del buffer necesario
             int needed = std::snprintf(nullptr, 0, fmt, std::forward<Args>(args)...) + 1;
             std::vector<char> buffer(needed);

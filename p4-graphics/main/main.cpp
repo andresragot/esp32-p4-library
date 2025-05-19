@@ -73,12 +73,12 @@ void main_loop (Renderer & renderer, Scene & scene, Window & window)
                 exit = true;
             }
         }
-        
         scene.update(0);
         
         renderer.render();
         
         window.swap_buffers();
+        
     }
 }
 #endif
@@ -119,22 +119,20 @@ int main(int argc, char * argv[])
     vector < coordinates_t > coords_cube = { { 0 ,  0 } , { 1 ,  1 },
                                              { 2 ,  1 } , { 3 ,  0 },
                                              { 2 , -1 } , { 1 , -1 },
-                                             { 0 ,  0 } , { 1 ,  1 },
-                                             { 2 ,  1 } , { 3 ,  0 },
-                                             { 2 , -1 } , { 1 , -1 } };
+                                             { 0 ,  0 } };
 
     mesh_info_t mesh_info_cup  (coords, RENDER_REVOLUTION);
     mesh_info_t mesh_info_cube (coords_cube, RENDER_EXTRUDE);
 
-    // RevolutionMesh mesh_cup  (mesh_info_cup );
+    RevolutionMesh mesh_cup  (mesh_info_cup, camera );
     ExtrudeMesh    mesh_cube (mesh_info_cube, camera);
 
-    // mesh_cup.set_position  (glm::vec3{ 0.f, 0.f, -5.f });
+    mesh_cup.set_position  (glm::vec3{ 0.f, 8.f, -0.f });
     mesh_cube.set_position (glm::vec3{ 0.f, 0.f, 0.f });
-    mesh_cube.set_scale    (glm::vec3{ 0.5f, 0.5f, 0.5f });
+    // mesh_cup.set_scale    (glm::vec3{ 0.1f, 0.1f, 0.1f });
 
-    // scene.add_node(&mesh_cup , ID(COPA));
-    scene.add_node(&mesh_cube, ID(CUBO));
+    scene.add_node(&mesh_cup , ID(COPA));
+    // scene.add_node(&mesh_cube, ID(CUBO));
 
     renderer.set_scene(&scene);
     renderer.init();

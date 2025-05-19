@@ -99,18 +99,18 @@ namespace Ragot
             // int center = addVertex(0, 0);
             for (int j = 1; j + 1 < C; ++j)
             {
-                int v1 = addVertex(0, j);
-                int v2 = addVertex(0, j+1);
+                addVertex(0, j);
+                addVertex(0, j+1);
                 // faces.emplace_back(face_t{false, 0, v1, v2, 0});
             }
         }
         if (topVisible)
         {
-            int center = addVertex(S, 0);
+            addVertex(S, 0);
             for (int j = 1; j + 1 < C; ++j)
             {
-                int v1 = addVertex(S, j);
-                int v2 = addVertex(S, j+1);
+                addVertex(S, j);
+                addVertex(S, j+1);
                 // CW para que apunte hacia arriba
                 // faces.emplace_back(face_t{false, center, v2, v1, 0});
             }

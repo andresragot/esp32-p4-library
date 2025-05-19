@@ -125,7 +125,7 @@ namespace Ragot
         {
             mesh->rotate(angle, glm::fvec3(0.f, 1.f, 0.f));
             z_pos = +5.f * sin(frame_count * 0.1f);
-            mesh->set_position(glm::fvec3(0.f, 0.f, z_pos));
+            mesh->set_position(glm::fvec3(0.f, -1.f, z_pos));
         } 
         
     }
