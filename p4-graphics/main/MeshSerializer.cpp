@@ -7,7 +7,9 @@
 
 #include <iostream>
 #include <fstream>
+#include <cerrno>
 #include "MeshSerializer.hpp"
+#include <filesystem>
 
 namespace Ragot
 {
@@ -38,7 +40,12 @@ namespace Ragot
         }
         else
         {
-            std::cerr << "Error al abrir el archivo: " << path << std::endl;
+            // std::cerr << "Error al abrir el archivo: " << path << std::endl;
+            int err = errno;
+            std::cerr << "Error al abrir el archivo '" << path
+                      << "': " << std::strerror(err)
+                      << " (errno=" << err << ")\n";
+            std::cout << "Ruta completa: " << std::filesystem::absolute(path) << std::endl;
             return false;
         }
         

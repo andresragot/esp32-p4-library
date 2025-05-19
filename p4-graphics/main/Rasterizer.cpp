@@ -14,17 +14,16 @@ namespace Ragot
     template < class COLOR_BUFFER_TYPE > int Rasterizer< COLOR_BUFFER_TYPE >::offset_cache0 [1024];
     template < class COLOR_BUFFER_TYPE > int Rasterizer< COLOR_BUFFER_TYPE >::offset_cache1 [1024];
     
-    template < class COLOR_BUFFER_TYPE > int Rasterizer< COLOR_BUFFER_TYPE >::z_cache0 [1024];
-    template < class COLOR_BUFFER_TYPE > int Rasterizer< COLOR_BUFFER_TYPE >::z_cache1 [1024];
-    
     template <typename COLOR >
     void Rasterizer<COLOR>::fill_convex_polygon(const glm::ivec4 * const vertices,
                                                 const int        * const indices_begin,
                                                 const int        * const indices_end)
     {
-        int   pitch = frame_buffer.get_width ();
+        
         int * offset_cache0 = this->offset_cache0;
         int * offset_cache1 = this->offset_cache1;
+        
+        int   pitch = static_cast < int > (frame_buffer.get_width ());
         const int * indices_back = indices_end - 1;
         
       // Se busca el vértice de inicio (el que tiene menor Y) y el de terminación (el que tiene mayor Y):
@@ -61,11 +60,11 @@ namespace Ragot
         
         while (true)
         {
-            interpolate< int64_t, 32> (offset_cache0, o0, o1, y0, y1);
+            interpolate< int32_t, 11 > (offset_cache0, o0, o1, y0, y1);
             
             if (current_index == indices_begin) current_index = indices_back; else current_index--;
-            if (current_index == end_index) break;
-            if (current_index == indices_begin) next_index = indices_back; else next_index--;
+            if (current_index == end_index    ) break;
+            if (   next_index == indices_begin) next_index = indices_back; else next_index--;
             
             y0 = y1;
             y1 = vertices[*current_index][1];
@@ -76,7 +75,7 @@ namespace Ragot
         int end_offset = o1;
         
         current_index = start_index;
-           next_index = start_index > indices_begin ? start_index - 1 : indices_back;
+           next_index = start_index < indices_back ? start_index + 1 : indices_begin;
            
         y0 = vertices[*current_index][1];
         y1 = vertices[*   next_index][1];
@@ -85,10 +84,11 @@ namespace Ragot
         
         while (true)
         {
-            interpolate< int64_t, 32> (offset_cache1, o0, o1, y0, y1);
+            interpolate< int32_t, 11 > (offset_cache1, o0, o1, y0, y1);
+            
             if (current_index == indices_back) current_index = indices_begin; else current_index++;
-            if (current_index == end_index) break;
-            if (next_index == indices_back) next_index = indices_begin; else next_index++;
+            if (current_index == end_index   ) break;
+            if (   next_index == indices_back) next_index = indices_begin; else next_index++;
             
             y0 = y1;
             y1 = vertices[*current_index][1];
@@ -101,6 +101,8 @@ namespace Ragot
         offset_cache0 += start_y;
         offset_cache1 += start_y;
         
+        auto pixels = frame_buffer.get_buffer();
+        
         for (int y = start_y; y < end_y; ++y)
         {
             o0 = *offset_cache0++;
@@ -108,20 +110,37 @@ namespace Ragot
             
             if (o0 < o1)
             {
-                while (o0 < o1) frame_buffer.set_pixel(o0++);
-                
-                if (o0 > end_offset) break;
+                fill_row < sizeof (COLOR) > (pixels, o0, o1, color);
             }
             else
             {
-                while (o1 > o0) frame_buffer.set_pixel(o1++);
-                
-                if (o1 > end_offset) break;
+                fill_row < sizeof (COLOR) > (pixels, o1, o0, color);
             }
         }
     }
     
-    template <typename COLOR >
+    template < typename COLOR >
+    void Rasterizer<COLOR>::fill_convex_polygon(const glm::ivec4 *const vertices, const face_t *const face)
+    {
+        // Desempaquetamos los índices
+        int polygon_indices[4];
+        int vertex_count = 3;
+        polygon_indices [0] = face->v1;
+        polygon_indices [1] = face->v2;
+        polygon_indices [2] = face->v3;
+        if (face->is_quad)
+        {
+            polygon_indices [3] = face->v4;
+            vertex_count = 4;
+        }
+        
+        const int * indices_begin = polygon_indices;
+        const int * indices_end   = polygon_indices + vertex_count;
+        
+        fill_convex_polygon(vertices, indices_begin, indices_end);
+    }
+    
+    /*template <typename COLOR >
     void Rasterizer<COLOR>::fill_convex_polygon_z_buffer(
         const glm::ivec4 * const vertices,
         const face_t * const face
@@ -430,7 +449,7 @@ namespace Ragot
                 if (o1 > end_offset) break;
             }
         }
-    }
+    }*/
 
     
     template < typename COLOR >
@@ -444,46 +463,16 @@ namespace Ragot
         int   y_max
     )
     {
-        if (y_max <= y_min) return;
-        // Ajuste de límites para el array de 1024
-        int ym = std::clamp(y_min, 0, 1023);
-        int yM = std::clamp(y_max, 0, 1023);
-
-        VALUE_TYPE value = static_cast<VALUE_TYPE>(v0) << SHIFT;
-        VALUE_TYPE step  = (static_cast<VALUE_TYPE>(v1 - v0) << SHIFT) / (y_max - y_min);
-        for (int y = ym; y <= yM; ++y)
+        if (y_max > y_min)
         {
-            cache[y] = static_cast<int>(value >> SHIFT);
-            value += step;
-        }
-    }
-    
-    
-    template < >
-    template < >
-    void Rasterizer<RGB565>::fill_row < 2 > (RGB565 * start, unsigned left_offset, unsigned right_offset, const RGB565 & color)
-    {
-        unsigned length = right_offset - left_offset;
-        
-        if (length < 128)
-        {
-            std::fill_n (start + left_offset, length, color);
-        }
-        else
-        {
-            uint8_t * pixel   = reinterpret_cast< uint8_t * >(start + left_offset);
-            uint8_t * left64  = pixel + ( left_offset & 7) + 8;
-            uint8_t * right64 = pixel + (right_offset & 7);
-            uint8_t * end     = pixel + length * 2;
+            VALUE_TYPE value = (VALUE_TYPE (v0) << SHIFT);
+            VALUE_TYPE step  = (VALUE_TYPE (v1 - v0) << SHIFT) / (y_max - y_min);
             
-            uint64_t color_pack = static_cast < uint64_t > (*reinterpret_cast< const uint16_t * >(&color));
-            
-            color_pack |= color_pack << 16;
-            color_pack |= color_pack << 32;
-            
-            for ( ; pixel < left64 ; pixel += 2) *reinterpret_cast< RGB565    * >(pixel) = color;
-            for ( ; pixel < right64; pixel += 8) *reinterpret_cast< uint64_t * >(pixel) = color_pack;
-            for ( ; pixel < end    ; pixel += 2) *reinterpret_cast< RGB565    * >(pixel) = color;
+            for (int * iterator = cache + y_min, * end = cache + y_max; iterator <= end; ++iterator)
+            {
+                *iterator = static_cast < int >(value >> SHIFT);
+                 value += step;
+            }
         }
     }
     
@@ -515,7 +504,7 @@ namespace Ragot
         }
     }
     
-    template void Rasterizer<RGB565>::fill_convex_polygon_z_buffer(const glm::ivec4* const, const face_t* const);
-    template void Rasterizer<RGB565>::fill_convex_polygon_z_buffer(const glm::ivec4 *const vertices, const int *const indices_begin, const int *const indices_end);
-
+    // template void Rasterizer<RGB565>::fill_convex_polygon_z_buffer(const glm::ivec4* const, const face_t* const);
+    template void Rasterizer<RGB565>::fill_convex_polygon(const glm::ivec4* const, const face_t* const);
+    template void Rasterizer<RGB565>::fill_convex_polygon(const glm::ivec4* const, const int* const, const int* const);
 }

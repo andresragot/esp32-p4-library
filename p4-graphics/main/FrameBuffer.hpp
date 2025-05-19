@@ -86,10 +86,6 @@ namespace Ragot
             std::copy(current_buffer->begin(), current_buffer->end(), next_buffer->begin());
         }
         
-        #ifdef DEBUG
-        void print_buffer ( Buffer buffer_to_print = CURRENT_BUFFER ) const;
-        #endif
-        
         
         #if ESP_PLATFORM != 1
         void initGLTexture();

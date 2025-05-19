@@ -113,34 +113,6 @@ namespace Ragot
         this->color = color;
     }
     
-    #ifdef DEBUG
-    template < typename Color >
-    void FrameBuffer<Color>::print_buffer(Buffer buffer_to_print) const
-    {
-        const ColorVector * buffer = (buffer_to_print == CURRENT_BUFFER) ? current_buffer : next_buffer;
-
-        // Encabezado de columnas
-        std::cout << " ";
-        for (size_t col = 0; col < width; ++col)
-        {
-            std::cout << col << " ";
-        }
-        std::cout << std::endl;
-
-        // Filas con índice y valores
-        for (size_t row = 0; row < height; ++row)
-        {
-            std::cout << row << " "; // Índice de fila
-            for (size_t col = 0; col < width; ++col)
-            {
-                // Se asume que el buffer está en orden de filas: posición (col, row) en el índice row * width + col
-                std::cout << buffer->at(row * width + col) << " ";
-            }
-            std::cout << std::endl;
-        }
-    }
-    #endif
-    
     
     #if ESP_PLATFORM != 1
     template < typename Color >

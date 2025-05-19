@@ -118,16 +118,14 @@ namespace Ragot
         static float angle = 0.f;
         static int frame_count = 0;
         frame_count++;
-        angle += 0.025f * (1 + sin(angle * 0.1f)); // Varying rotation speed
-        float z_pos;
+        angle += 0.025f;
+        float z_pos = +5.f * sin(frame_count * 0.1f);
 
         for (auto mesh : meshes)
         {
             mesh->rotate(angle, glm::fvec3(0.f, 1.f, 0.f));
-            z_pos = +5.f * sin(frame_count * 0.1f);
             mesh->set_position(glm::fvec3(0.f, -1.f, z_pos));
         } 
-        
     }
     
     // Explicit template instantiations for common component types

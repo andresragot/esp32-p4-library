@@ -20,6 +20,7 @@ namespace Ragot
         const auto& coords = mesh_info.coordinates;
         int C = int(coords.size());
         int S = slices;
+        float inverseS = 1.0f / float(S);
 
         // 1) calculamos dirección de vista en espacio local
         mat4 worldToLocal = glm::inverse(get_transform_matrix());
@@ -34,7 +35,7 @@ namespace Ragot
             int &dest = indexMap[slice][j];
             if (dest < 0)
             {
-                float theta = (2.0f * PI * slice) / float(S);
+                float theta = (2.0f * PI * slice) * inverseS;
                 float c = cos(theta), s = sin(theta);
                 auto &pt = coords[j];
                 // coordenadas en mesh local
@@ -99,18 +100,18 @@ namespace Ragot
             // int center = addVertex(0, 0);
             for (int j = 1; j + 1 < C; ++j)
             {
-                addVertex(0, j);
-                addVertex(0, j+1);
+                int v1 = addVertex(0, j);
+                int v2 = addVertex(0, j+1);
                 // faces.emplace_back(face_t{false, 0, v1, v2, 0});
             }
         }
         if (topVisible)
         {
-            addVertex(S, 0);
+            int center = addVertex(S, 0);
             for (int j = 1; j + 1 < C; ++j)
             {
-                addVertex(S, j);
-                addVertex(S, j+1);
+                int v1 = addVertex(S, j);
+                int v2 = addVertex(S, j+1);
                 // CW para que apunte hacia arriba
                 // faces.emplace_back(face_t{false, center, v2, v1, 0});
             }

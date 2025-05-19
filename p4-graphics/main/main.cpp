@@ -6,6 +6,9 @@
 #include "ExtrudeMesh.hpp"
 #include "Id.hpp"
 #include "Logger.hpp"
+#include "MeshSerializer.hpp"
+#include "Assets.hpp"
+#include <thread>
 
 #if ESP_PLATFORM != 1
 #include "Window.hpp"
@@ -34,7 +37,6 @@ void main_loop (Renderer & renderer, Scene & scene)
     while (true)
     {
         logger.Log (MAIN_TAG, 3, "\n--- Frame %u ---", frame_count);
-        // renderer.render_debug();
         if (update)
         {
             scene.update(0);
@@ -59,11 +61,18 @@ void main_loop (Renderer & renderer, Scene & scene)
 void main_loop (Renderer & renderer, Scene & scene, Window & window)
 {
     glViewport (0, 0, 1024, 600);
+    
+    static bool update = true;
 
     bool exit = false;
     
+    std::chrono::high_resolution_clock::time_point last_tick = std::chrono::high_resolution_clock::now();
+    std::chrono::high_resolution_clock::time_point current_tick;
+    std::chrono::high_resolution_clock::duration elapsed_time;
+    
     while (!exit)
     {
+        current_tick = std::chrono::high_resolution_clock::now();
         SDL_Event event;
         
         while (SDL_PollEvent(&event) > 0)
@@ -73,12 +82,18 @@ void main_loop (Renderer & renderer, Scene & scene, Window & window)
                 exit = true;
             }
         }
-        scene.update(0);
+        if (update)
+        {
+            elapsed_time = std::chrono::duration_cast<std::chrono::milliseconds>(current_tick - last_tick);
+            scene.update(elapsed_time.count());
+            // update = false;
+        }
         
         renderer.render();
         
         window.swap_buffers();
         
+        last_tick = current_tick;
     }
 }
 #endif
@@ -97,6 +112,8 @@ int main(int argc, char * argv[])
     
     logger.Log(MAIN_TAG, 3, "Iniciando Window");
 #if ESP_PLATFORM != 1
+    assets.initialize(argv[0]);
+
     Ragot::Window window ("P4-Test", Ragot::Window::Position::CENTERED, Ragot::Window::Position::CENTERED, 1024, 600, { 3, 3 });
 #endif
     
