@@ -15,6 +15,7 @@
 #include <functional>
 #include <memory>
 #include "Id.hpp"
+#include <stop_token>
 
 namespace Ragot
 {
@@ -26,9 +27,9 @@ namespace Ragot
         std::unordered_map<basics::Id, Node*> named_nodes;
         
     public:
-        Scene() = default;
+        Scene();
        ~Scene() = default;
-        Scene (Camera * camera) : main_camera (camera) {}
+        Scene (Camera * camera);
         
         // Node management
         void add_node(Node* node, const basics::Id name);
@@ -52,5 +53,8 @@ namespace Ragot
         // Root node access
               Node * get_root()       { return &root_node; }
         const Node * get_root() const { return &root_node; }
+        
+    private:
+        void task_update (std::stop_token, float delta_time);
     };
 }

@@ -6,6 +6,7 @@
 #include "ExtrudeMesh.hpp"
 #include "Id.hpp"
 #include "Logger.hpp"
+#include "Thread_Pool.hpp"
 
 #if ESP_PLATFORM != 1
 #include "Window.hpp"
@@ -73,7 +74,7 @@ void main_loop (Renderer & renderer, Scene & scene, Window & window)
                 exit = true;
             }
         }
-        scene.update(0);
+//        scene.update(0);
         
         renderer.render();
         
@@ -90,12 +91,14 @@ extern "C" void app_main(void)
 int main(int argc, char * argv[])
 #endif
 {
-    logger.setLogLevel (0); // 0 NONE, 1 ERROR, 2 WARNING, 3 INFO
+    thread_pool.start();
+    
+    logger.setLogLevel (1); // 0 NONE, 1 ERROR, 2 WARNING, 3 INFO
 
     logger.Log (MAIN_TAG, 3, "Iniciando aplicación");
     // logger.Log (MAIN_TAG, 3, "Memoria libre inicial: %u bytes", esp_get_free_heap_size());
     
-    logger.Log(MAIN_TAG, 3, "Iniciando Window");
+    logger.Log (MAIN_TAG, 3, "Iniciando Window");
 #if ESP_PLATFORM != 1
     Ragot::Window window ("P4-Test", Ragot::Window::Position::CENTERED, Ragot::Window::Position::CENTERED, 1024, 600, { 3, 3 });
 #endif
@@ -132,7 +135,7 @@ int main(int argc, char * argv[])
     // mesh_cup.set_scale    (glm::vec3{ 0.1f, 0.1f, 0.1f });
 
     scene.add_node(&mesh_cup , ID(COPA));
-    // scene.add_node(&mesh_cube, ID(CUBO));
+    scene.add_node(&mesh_cube, ID(CUBO));
 
     renderer.set_scene(&scene);
     renderer.init();

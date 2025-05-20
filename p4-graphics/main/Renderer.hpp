@@ -77,6 +77,7 @@ namespace Ragot
         void init ();
 
         void render ();
+        void task_render (std::stop_token stop_token);
         bool is_frontface (const glm::fvec4 * const projected_vertices, const face_t * const indices);
 #ifdef DEBUG
         void render_debug();
