@@ -45,8 +45,7 @@ void main_loop (Renderer & renderer, Scene & scene)
         {
             update = true;
         }
-        renderer.render();
-        
+                
         frame_count++;
         
         // Log periódico del estado de memoria

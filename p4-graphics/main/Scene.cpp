@@ -146,7 +146,7 @@ namespace Ragot
     void Scene::task_update (std::stop_token stop_token, float delta_time)
     {    
         logger.Log ("SCENE", 1, "=== Iniciando task_update() ===");
-        
+
         auto meshes = collect_components<Mesh>();
         
         float angle = 0.f;
@@ -160,7 +160,6 @@ namespace Ragot
         
         while (not stop_token.stop_requested())
         {
-                
             z_pos = +5.f * sin(frame_count * 0.1f);
             frame_count ++;
             

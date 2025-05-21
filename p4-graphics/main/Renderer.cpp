@@ -124,10 +124,7 @@ namespace Ragot
         driver(), 
     #endif
         frame_buffer(width, height, true), rasterizer(frame_buffer), width(width), height(height)
-    {
-        
-        thread_pool.submit_with_stop(std::bind (&Renderer::task_render, this, std::placeholders::_1));
-    
+    {    
 #if ESP_PLATFORM != 1
          quadShader = std::make_unique<Shader_Program>  (
                                                             std::vector<std::string> { vertex_shader_code   },
@@ -137,60 +134,8 @@ namespace Ragot
         initFullScreenQuad();
 #endif
     
-#ifdef DEBUG
-        size_t number_of_vertices = sizeof(vertices) / sizeof(int) / 4;
-
-        original_vertices.resize (number_of_vertices);
-
-        for (size_t index = 0; index < number_of_vertices; index++)
-        {
-            original_vertices[index] = fvec4 (vertices[index][0], vertices[index][1], vertices[index][2], vertices[index][3]);
-        }
-
-        transformed_vertices.resize (number_of_vertices);
-            display_vertices.resize (number_of_vertices);
-
-        // Se definen los datos de color de los vértices:
-
-        size_t number_of_colors = sizeof(colors) / sizeof(int) / 3;
-
-        assert(number_of_colors == number_of_vertices);             // Debe haber el mismo número
-                                                                    // de colores que de vértices
-        original_colors.resize (number_of_colors);
-
-        for (size_t i = 0; i < number_of_colors; i++)
-        {
-                // Escalado y redondeo
-            int r = static_cast<int>(std::round(colors[i][0] * 31.0f));
-            int g = static_cast<int>(std::round(colors[i][1] * 63.0f));
-            int b = static_cast<int>(std::round(colors[i][2] * 31.0f));
-
-            // Clamp por si acaso
-            r = std::clamp(r, 0, 31);
-            g = std::clamp(g, 0, 63);
-            b = std::clamp(b, 0, 31);
-
-            // Empaquetar en 16 bits: RRRRRGGGGGGBBBBB
-            original_colors[i] = static_cast<uint16_t>((r << 11) | (g << 5) | b);
-        }
-
-        // Se generan los índices de los triángulos:
-
-        size_t number_of_triangles = sizeof(triangles) / sizeof(int) / 3;
-
-        original_indices.resize (number_of_triangles * 3);
-
-        std::vector < int >::iterator indices_iterator = original_indices.begin ();
-
-        for (size_t triangle_index = 0; triangle_index < number_of_triangles; triangle_index++)
-        {
-            *indices_iterator++ = triangles[triangle_index][0];
-            *indices_iterator++ = triangles[triangle_index][1];
-            *indices_iterator++ = triangles[triangle_index][2];
-        }
-#else
         init();
-#endif
+        thread_pool.submit_with_stop(std::bind (&Renderer::task_render, this, std::placeholders::_1));
     }
     
     void Renderer::init()
@@ -532,19 +477,9 @@ namespace Ragot
 
     void Renderer::render()
     {
+        #if ESP_PLATFORM != 1
         logger.Log (RENDERER_TAG, 3, "Enviando framebuffer al driver");
-        #if ESP_PLATFORM == 1
-        esp_err_t result = driver.send_frame_buffer(frame_buffer.get_buffer());
         
-        if (result == ESP_OK)
-        {
-            logger.Log (RENDERER_TAG, 3, "Framebuffer enviado correctamente");
-        }
-        else
-        {
-            logger.Log (RENDERER_TAG, 3, "Error al enviar framebuffer: %s", esp_err_to_name(result));
-        }
-        #else
         // En Renderer::render(), en la sección #else de ESP_PLATFORM
         frame_buffer.sendGL();
 
@@ -562,27 +497,26 @@ namespace Ragot
         glBindVertexArray(quadVAO);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
         glBindVertexArray(0);
-
-        // Swap de buffers y limpieza de tu framebuffer
-        frame_buffer.swap_buffers();
-        frame_buffer.clear_buffer();
-
-        
-        #endif
-        
+                
         logger.Log (RENDERER_TAG, 3, "Swapping y limpiando buffers");
         frame_buffer.swap_buffers();
         frame_buffer.clear_buffer();
+        #endif
     }
 
     void Renderer::task_render (std::stop_token stop_token)
     {
         while (!stop_token.stop_requested())
         {
-            if (!current_scene) continue;
+            if (!current_scene)
+            {
+                std::this_thread::sleep_for(std::chrono::milliseconds(100));
+                continue;
+            } 
+
             init ();
             rasterizer.clear();
-            rasterizer.set_color(RGB565(0x000FF));
+            rasterizer.set_color(RGB565(0xFFFFFF));
 
             // 1) Preparar matrices
             Camera *cam = current_scene->get_main_camera();
@@ -710,7 +644,24 @@ namespace Ragot
             }
 
             thread_pool.sem_render_done.release();
+            
+            #if ESP_PLATFORM == 1
+            esp_err_t result = driver.send_frame_buffer(frame_buffer.get_buffer());
+            
+            if (result == ESP_OK)
+            {
+                logger.Log (RENDERER_TAG, 3, "Framebuffer enviado correctamente");
+            }
+            else
+            {
+                logger.Log (RENDERER_TAG, 3, "Error al enviar framebuffer: %s", esp_err_to_name(result));
+            }
+
+            frame_buffer.swap_buffers();
+            frame_buffer.clear_buffer();
+            #endif
         }
+
     }
     
     
