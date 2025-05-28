@@ -1,0 +1,13 @@
+<map id="Ragot::Component::get_components" name="Ragot::Component::get_components">
+<area shape="rect" id="Node000001" title=" " alt="" coords="591,51,749,92"/>
+<area shape="rect" id="Node000002" href="$class_ragot_1_1_scene.html#a49a97f3f10afee472d2eb0c21fc90542" title=" " alt="" coords="396,51,543,92"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="576,74,544,74,544,69,576,69"/>
+<area shape="rect" id="Node000003" href="$class_ragot_1_1_scene.html#a625a17c7c3602bb5e779a8a64792d874" title=" " alt="" coords="207,22,341,62"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="380,61,341,55,341,50,381,56"/>
+<area shape="rect" id="Node000006" href="$class_ragot_1_1_scene.html#a2ff6f1b1c88e31f6e9e04ddb98021efe" title=" " alt="" coords="200,87,348,112"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="381,87,348,92,348,86,381,82"/>
+<area shape="rect" id="Node000004" href="$class_ragot_1_1_scene.html#a5ea6ad6ab81208e8d4d3e81d7e8657e9" title=" " alt="" coords="5,5,152,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="191,35,152,30,153,25,192,29"/>
+<area shape="rect" id="Node000005" href="$class_ragot_1_1_scene.html#a30ec692ca4bade6d6a1a08aaea7dc730" title=" " alt="" coords="5,55,152,80"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="192,55,153,61,152,55,191,50"/>
+</map>

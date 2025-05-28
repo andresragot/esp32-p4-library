@@ -1,0 +1,90 @@
+\doxysection{Ragot\+::Vertex\+\_\+\+Shader Class Reference}
+\hypertarget{class_ragot_1_1_vertex___shader}{}\label{class_ragot_1_1_vertex___shader}\index{Ragot::Vertex\_Shader@{Ragot::Vertex\_Shader}}
+
+
+Class for managing an Open\+GL vertex shader.  
+
+
+
+
+{\ttfamily \#include $<$Shader\+\_\+\+Program.\+hpp$>$}
+
+
+
+Inheritance diagram for Ragot\+::Vertex\+\_\+\+Shader\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{class_ragot_1_1_vertex___shader__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ragot\+::Vertex\+\_\+\+Shader\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{class_ragot_1_1_vertex___shader__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_vertex___shader_a3e4e876906918c7d690411085e39e832}{Vertex\+\_\+\+Shader}} (const vector$<$ string $>$ \&source\+\_\+code)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_ragot_1_1_vertex___shader}{Vertex\+\_\+\+Shader} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ragot_1_1_shader}{Ragot\+::\+Shader}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_shader_a5222f6344bc49011ae900aec54e79c80}{Shader}} ()=delete
+\begin{DoxyCompactList}\small\item\em Deleted default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_shader_aa93ddc91b6d5177f585dc95bcc1831d5}{\texorpdfstring{$\sim$}{\string~}\+Shader}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{class_ragot_1_1_shader}{Shader} class. \end{DoxyCompactList}\item 
+GLuint \mbox{\hyperlink{class_ragot_1_1_shader_aca28b2f89fb5d6b8ff3250e507bb25a2}{get\+\_\+id}} () const
+\begin{DoxyCompactList}\small\item\em Gets the shader ID. \end{DoxyCompactList}\item 
+string \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_ragot_1_1_shader_ac6fe6ea9a5bfda816c10b5e760f69194}{get\+\_\+error}} ()
+\begin{DoxyCompactList}\small\item\em Gets the compilation error message. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ragot_1_1_shader_a0b59e1cbc6484766fda1982bfc67d4a3}{is\+\_\+ok}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the shader is compiled successfully. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_ragot_1_1_shader}{Ragot\+::\+Shader}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_shader_afbc73bebee2deef956a80794aea9d26a}{Shader}} (const vector$<$ string $>$ \&source\+\_\+code, GLenum type)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_ragot_1_1_shader}{Shader} class. \end{DoxyCompactList}\item 
+GLuint \mbox{\hyperlink{class_ragot_1_1_shader_a6f5cb04ecb8f3c615107137b3e1ba63b}{compile\+\_\+shader}} ()
+\begin{DoxyCompactList}\small\item\em Compiles the shader. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_shader_ae99131dd0fee5e4c4ced5b3a89f005ed}{show\+\_\+compilation\+\_\+error}} ()
+\begin{DoxyCompactList}\small\item\em Displays compilation errors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for managing an Open\+GL vertex shader. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ragot_1_1_vertex___shader_a3e4e876906918c7d690411085e39e832}\index{Ragot::Vertex\_Shader@{Ragot::Vertex\_Shader}!Vertex\_Shader@{Vertex\_Shader}}
+\index{Vertex\_Shader@{Vertex\_Shader}!Ragot::Vertex\_Shader@{Ragot::Vertex\_Shader}}
+\doxysubsubsection{\texorpdfstring{Vertex\_Shader()}{Vertex\_Shader()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_vertex___shader_a3e4e876906918c7d690411085e39e832} 
+Ragot\+::\+Vertex\+\_\+\+Shader\+::\+Vertex\+\_\+\+Shader (\begin{DoxyParamCaption}\item[{const vector$<$ string $>$ \&}]{source\+\_\+code}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for the \doxylink{class_ragot_1_1_vertex___shader}{Vertex\+\_\+\+Shader} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source\+\_\+code} & Vector of vertex shader source code. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_vertex___shader_a3e4e876906918c7d690411085e39e832_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_shader___program_8hpp}{Shader\+\_\+\+Program.\+hpp}}\end{DoxyCompactItemize}

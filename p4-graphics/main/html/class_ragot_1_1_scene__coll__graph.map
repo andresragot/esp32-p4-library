@@ -1,0 +1,32 @@
+<map id="Ragot::Scene" name="Ragot::Scene">
+<area shape="rect" id="Node000001" title=" " alt="" coords="348,1784,496,2115"/>
+<area shape="rect" id="Node000002" href="$class_ragot_1_1_camera.html" title=" " alt="" coords="344,1147,500,1721"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="424,1721,424,1768,419,1768,419,1721"/>
+<area shape="rect" id="Node000003" href="$class_ragot_1_1_component.html" title=" " alt="" coords="92,810,238,1039"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="232,1050,346,1277,341,1280,227,1053"/>
+<area shape="rect" id="Node000004" href="$class_ragot_1_1_node.html" title=" " alt="" coords="5,497,160,747"/>
+<area shape="poly" id="edge16_Node000001_Node000004" title=" " alt="" coords="73,747,69,887,73,964,83,1038,104,1141,132,1245,164,1348,199,1447,273,1632,343,1786,338,1788,268,1634,194,1449,159,1349,127,1246,99,1142,78,1039,68,964,64,887,68,746"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="123,760,137,809,132,811,118,762"/>
+<area shape="poly" id="edge9_Node000004_Node000004" title=" " alt="" coords="162,592,180,602,187,622,184,635,178,644,173,641,180,632,182,622,176,606,159,597"/>
+<area shape="rect" id="Node000005" href="$class_ragot_1_1_transform.html" title=" " alt="" coords="557,165,712,434"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="545,343,402,412,323,454,246,500,162,559,159,555,243,495,320,450,400,407,543,338"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="846,5,885,72"/>
+<area shape="poly" id="edge13_Node000002_Node000006" title=" " alt="" coords="878,71,901,171,911,234,915,298,915,926,913,955,907,980,899,1002,886,1020,854,1048,813,1067,764,1081,711,1093,654,1107,596,1125,571,1131,551,1132,533,1136,514,1149,513,1150,509,1146,510,1145,531,1131,550,1127,570,1126,594,1120,652,1102,709,1088,763,1076,811,1062,851,1043,882,1016,894,999,902,978,908,954,910,925,910,298,906,235,896,172,872,72"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="848,63,726,201,722,197,844,60"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="526,5,560,72"/>
+<area shape="poly" id="edge15_Node000002_Node000007" title=" " alt="" coords="541,72,529,173,523,298,523,926,519,1025,504,1123,503,1130,498,1129,499,1122,514,1024,518,925,518,298,524,172,536,71"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="557,71,584,148,579,149,552,72"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="674,5,713,72"/>
+<area shape="poly" id="edge14_Node000002_Node000008" title=" " alt="" coords="715,56,730,74,741,95,759,149,764,194,760,298,760,926,758,951,753,973,744,991,732,1007,702,1030,666,1047,626,1064,585,1083,547,1110,514,1148,510,1155,506,1152,510,1145,544,1106,583,1078,624,1059,664,1042,699,1025,728,1003,739,988,748,971,753,950,755,925,755,298,758,195,754,150,736,97,725,77,711,60"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="676,53,653,72,635,97,627,122,622,148,617,147,622,120,630,94,649,68,672,49"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="6,266,160,333"/>
+<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="86,332,86,480,80,480,80,332"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="256,589,446,655"/>
+<area shape="poly" id="edge10_Node000003_Node000010" title=" " alt="" coords="334,656,247,797,242,794,329,653"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="263,891,380,957"/>
+<area shape="poly" id="edge11_Node000002_Node000011" title=" " alt="" coords="323,957,320,1063,318,1093,320,1122,341,1215,336,1216,315,1123,313,1093,315,1063,318,957"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="404,891,439,957"/>
+<area shape="poly" id="edge12_Node000002_Node000012" title=" " alt="" coords="424,957,424,1130,419,1130,419,957"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="524,1393,674,1475"/>
+<area shape="poly" id="edge17_Node000001_Node000013" title=" " alt="" coords="594,1475,564,1604,542,1683,516,1761,505,1790,500,1788,511,1759,537,1681,559,1602,589,1474"/>
+</map>

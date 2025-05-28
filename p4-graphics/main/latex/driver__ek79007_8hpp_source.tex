@@ -1,0 +1,46 @@
+\doxysection{driver\+\_\+ek79007.\+hpp}
+\hypertarget{driver__ek79007_8hpp_source}{}\label{driver__ek79007_8hpp_source}\mbox{\hyperlink{driver__ek79007_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{driver__lcd_8hpp}{driver\_lcd.hpp}}"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ragot}{Ragot}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a02dd8232c19c145a5dbf6c6df52aa1d4}{DriverEK79007}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_ragot_1_1_driver_l_e_d_abc32fe6ad3af685e1b5cc5864610e290}{DriverLED}}}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a02dd8232c19c145a5dbf6c6df52aa1d4}{DriverEK79007}}();}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a86f8d6b197d81cb5d93948f0f161a2e3}{\string~DriverEK79007}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ esp\_err\_t\ \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a8a1c7407a748ab546693e98d8193fe99}{init}}(gpio\_num\_t\ reset\_pin,\ gpio\_num\_t\ bk\_pin)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ esp\_err\_t\ \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a2ce6b59a5dbbeea913ecc838e60ce225}{deinit}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ esp\_err\_t\ \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a10f42392e8a22a31f58c25cf347c135c}{set\_pixel}}(uint32\_t\ x,\ uint32\_t\ y,\ uint32\_t\ color)\textcolor{keyword}{\ override\ }\{\textcolor{keywordflow}{return}\ ESP\_FAIL;\};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ esp\_err\_t\ \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a322d5272daf6853beda488ac5d378251}{send\_frame\_buffer}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *\ frame\_buffer)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ IRAM\_ATTR\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a98d423f9e1b66912256d7dc7466d1bcc}{refresh\_frame\_buffer}}(\ esp\_lcd\_panel\_handle\_t\ panel,\ esp\_lcd\_dpi\_panel\_event\_data\_t\ *\ edata,\ \textcolor{keywordtype}{void}\ *\ user\_ctx);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ uint16\_t\ \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_ae1c63f956a4c16bfc8e8d6e6e8066608}{panel\_clk\_freq\_mhz}};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a9a94e06d0f241425a34e68c1db73bbf1}{hsync\_pulse\_width}};\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a880e510ccc235bf2d70753efc963b04f}{hsync\_back\_porch}};\ \ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a1a252b6e4a658f5a6584656b0c364204}{hsync\_front\_porch}};\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a84b2e66d6d3a35fc594f1c2b7077c4ec}{vsync\_pulse\_width}};\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a740baa7482d5788f82c5766fa52038f1}{vsync\_back\_porch}};\ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a58120575ce06414bc2df4477e0e17160}{vsync\_front\_porch}};\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ uint8\_t\ \ \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a35fa4a94a39f7d2345a6939ce4da26a2}{mipi\_lane\_num}};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ uint16\_t\ \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a8723b29e136bcdb95d65c4e0149488a6}{mipi\_dsi\_max\_data\_rate\_mbps}};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_ae73131f8390097da642d352474a4c2bd}{bsp\_enable\_dsi\_phy\_power}}();}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a11876c2b65d5592bb71df4677e2752fc}{bsp\_init\_lcd\_backlight}}(gpio\_num\_t\ bk\_pin);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ SemaphoreHandle\_t\ \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a8c8f46fa1ebe0c01fb5e214ec432efe3}{refresh\_semaphore}};}
+\DoxyCodeLine{00049\ \ \ \ \ \};}
+\DoxyCodeLine{00050\ \}}
+
+\end{DoxyCode}

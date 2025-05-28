@@ -1,0 +1,11 @@
+<map id="Ragot::Scene::task_update" name="Ragot::Scene::task_update">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,35,140,75"/>
+<area shape="rect" id="Node000002" href="$class_ragot_1_1_scene.html#a49a97f3f10afee472d2eb0c21fc90542" title=" " alt="" coords="188,35,335,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,52,172,52,172,58,140,58"/>
+<area shape="rect" id="Node000003" href="$class_ragot_1_1_component.html#a7bbaf27138f0e39e296b800176343f38" title=" " alt="" coords="383,5,540,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="335,42,367,37,368,42,336,47"/>
+<area shape="rect" id="Node000004" href="$class_ragot_1_1_scene.html#a408133e4107f953ec101cb5f7174f21e" title=" " alt="" coords="384,70,540,96"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="336,63,368,67,368,73,335,68"/>
+<area shape="rect" id="Node000005" href="$class_ragot_1_1_node.html#a95173dd48c8eb29e553ae98b9f736523" title=" " alt="" coords="588,70,762,96"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="540,80,573,80,573,86,540,86"/>
+</map>

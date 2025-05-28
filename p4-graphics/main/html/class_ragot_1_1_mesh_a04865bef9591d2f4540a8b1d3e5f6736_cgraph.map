@@ -1,0 +1,13 @@
+<map id="Ragot::Mesh::recalculate" name="Ragot::Mesh::recalculate">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,78,173,104"/>
+<area shape="rect" id="Node000002" href="$class_ragot_1_1_mesh.html#ae2a6089b996177f9c207c88d6acadbe7" title=" " alt="" coords="221,5,375,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="132,75,215,49,217,54,133,80"/>
+<area shape="rect" id="Node000005" href="$class_ragot_1_1_mesh.html#a0c569357f4cac6c8612b3dcc4b6ab3b5" title=" " alt="" coords="221,71,375,111"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="173,88,205,88,205,94,173,94"/>
+<area shape="rect" id="Node000006" href="$class_ragot_1_1_mesh.html#a54b4d342f8fb1e51c9e0ad218340b4fa" title=" " alt="" coords="221,136,375,177"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="133,102,217,128,215,133,132,107"/>
+<area shape="rect" id="Node000003" href="$class_ragot_1_1_node.html#adf704afc3b1c3ca9a9819be9e319479b" title=" " alt="" coords="423,5,606,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="375,23,407,23,407,28,375,28"/>
+<area shape="rect" id="Node000004" href="$class_ragot_1_1_transform.html#a039cc1705ced81a3491e8ecd504c3942" title=" " alt="" coords="654,5,804,46"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="607,23,639,23,639,28,607,28"/>
+</map>

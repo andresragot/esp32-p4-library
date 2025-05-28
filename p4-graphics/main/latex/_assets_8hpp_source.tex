@@ -1,0 +1,62 @@
+\doxysection{Assets.\+hpp}
+\hypertarget{_assets_8hpp_source}{}\label{_assets_8hpp_source}\mbox{\hyperlink{_assets_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ \ Assets.hpp}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ \ FileToOBJ}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ \ Created\ by\ Andrés\ Ragot\ on\ 3/2/25.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ragot}{Ragot}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{using\ }std::string;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{using\ }std::filesystem::path;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ragot_1_1_assets_a2387c9d5b1229e353c6ee063f2e77aa7}{Assets}}}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ path\ \mbox{\hyperlink{class_ragot_1_1_assets_a573a2a986538d5241906d2e26ed21377}{base\_path}}\ =\ \textcolor{stringliteral}{"{}./"{}};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_ragot_1_1_assets_a2387c9d5b1229e353c6ee063f2e77aa7}{Assets}}\ \&\ \mbox{\hyperlink{class_ragot_1_1_assets_adf61260fb697f0c472d1aef463c7960b}{instance}}()}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_ragot_1_1_assets_a2387c9d5b1229e353c6ee063f2e77aa7}{Assets}}\ \mbox{\hyperlink{namespace_ragot_a71d1c0317289a8cbe5c5dfc508213166}{assets}};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespace_ragot_a71d1c0317289a8cbe5c5dfc508213166}{assets}};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_assets_a2387c9d5b1229e353c6ee063f2e77aa7}{Assets}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_assets_af50ae0547c0428044fd96ac06a411028}{Assets}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_assets_a2387c9d5b1229e353c6ee063f2e77aa7}{Assets}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_assets_a09daa20fc20152f1cb279c1442ec796f}{Assets}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_assets_a2387c9d5b1229e353c6ee063f2e77aa7}{Assets}}\&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_assets_a2387c9d5b1229e353c6ee063f2e77aa7}{Assets}}\&\ \mbox{\hyperlink{class_ragot_1_1_assets_ab80175da9b3352bd4a171dbe94e429b8}{operator\ =\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_assets_a2387c9d5b1229e353c6ee063f2e77aa7}{Assets}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_assets_a2387c9d5b1229e353c6ee063f2e77aa7}{Assets}}\&\ \mbox{\hyperlink{class_ragot_1_1_assets_ab80175da9b3352bd4a171dbe94e429b8}{operator\ =\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_assets_a2387c9d5b1229e353c6ee063f2e77aa7}{Assets}}\&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_assets_a3cf7e8dfd93e31c4f44cbb9713600937}{initialize}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ executable\_file\_path)}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#if\ defined\ NDEBUG}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_assets_a573a2a986538d5241906d2e26ed21377}{base\_path}}\ =\ path\{\ executable\_file\_path\ \}.parent\_path()\ /\ \textcolor{stringliteral}{"{}assets"{}};}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#else}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_assets_a573a2a986538d5241906d2e26ed21377}{base\_path}}\ =\ path\{\ \textcolor{stringliteral}{"{}../../assets/"{}}\ \};}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ path\ \mbox{\hyperlink{class_ragot_1_1_assets_a2698c28c6580d2dc9e504334e904a2a1}{get\_asset\_path}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&\ asset\_name)}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_ragot_1_1_assets_a573a2a986538d5241906d2e26ed21377}{base\_path}}/asset\_name;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \};}
+\DoxyCodeLine{00055\ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{extern}\ Assets\ \&\ \mbox{\hyperlink{namespace_ragot_a71d1c0317289a8cbe5c5dfc508213166}{assets}};}
+\DoxyCodeLine{00057\ \}}
+
+\end{DoxyCode}

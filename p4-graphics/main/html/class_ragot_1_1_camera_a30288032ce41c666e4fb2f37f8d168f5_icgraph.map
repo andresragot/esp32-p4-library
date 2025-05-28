@@ -1,0 +1,8 @@
+<map id="Ragot::Camera::get_view_direction" name="Ragot::Camera::get_view_direction">
+<area shape="rect" id="Node000001" title=" " alt="" coords="374,35,510,75"/>
+<area shape="rect" id="Node000002" href="$class_ragot_1_1_camera.html#a8ca889ab3cd7c393afe45163708ef297" title=" " alt="" coords="190,5,326,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="358,44,326,39,327,34,359,39"/>
+<area shape="rect" id="Node000003" href="$class_ragot_1_1_camera.html#a4d342cc17133f18dc93835e66975fc6c" title=" " alt="" coords="5,35,142,75"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="358,60,326,60,190,60,142,59,142,54,190,55,326,55,358,54"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="175,42,143,47,142,41,174,36"/>
+</map>

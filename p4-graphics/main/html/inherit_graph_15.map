@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$class_ragot_1_1_shader.html" title="Class for managing an OpenGL shader." alt="" coords="5,31,111,56"/>
+<area shape="rect" id="Node000001" href="$class_ragot_1_1_fragment___shader.html" title="Class for managing an OpenGL fragment shader." alt="" coords="159,5,326,31"/>
+<area shape="poly" id="edge2_Node000000_Node000001" title=" " alt="" coords="125,32,158,27,158,32,126,37"/>
+<area shape="rect" id="Node000002" href="$class_ragot_1_1_vertex___shader.html" title="Class for managing an OpenGL vertex shader." alt="" coords="167,55,318,80"/>
+<area shape="poly" id="edge3_Node000000_Node000002" title=" " alt="" coords="126,50,167,55,166,60,126,55"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="Ragot::Sync_Queue::Sync_Queue" name="Ragot::Sync_Queue::Sync_Queue">
+<area shape="rect" id="Node000001" title=" " alt="" coords="232,63,379,103"/>
+<area shape="rect" id="Node000002" href="$class_ragot_1_1_sync___queue.html#a2ab2ead3c0ef565076007b5fbd473c5b" title=" " alt="" coords="21,5,168,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="216,62,168,48,169,43,217,56"/>
+<area shape="rect" id="Node000003" href="$class_ragot_1_1_sync___queue.html#ae46e206be00102715d6647e5e3bc4571" title=" " alt="" coords="5,70,184,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="216,86,184,86,184,80,216,80"/>
+<area shape="rect" id="Node000004" href="$class_ragot_1_1_sync___queue.html#af47b08330016093fc31aa40278a81d86" title=" " alt="" coords="21,120,168,161"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="217,110,169,123,168,118,216,104"/>
+</map>

@@ -1,0 +1,309 @@
+\doxysection{Ragot\+::Rasterizer\texorpdfstring{$<$}{<} Color \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_ragot_1_1_rasterizer}{}\label{class_ragot_1_1_rasterizer}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+
+
+{\ttfamily \#include $<$Rasterizer.\+hpp$>$}
+
+
+
+Inheritance diagram for Ragot\+::Rasterizer\texorpdfstring{$<$}{<} Color \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_ragot_1_1_rasterizer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ragot\+::Rasterizer\texorpdfstring{$<$}{<} Color \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_rasterizer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_rasterizer_ac44ab168083551ec18b2211fcd032bfa}{Rasterizer}} (\mbox{\hyperlink{class_ragot_1_1_frame_buffer}{Frame\+Buffer}}$<$ Color $>$ \&frame)
+\item 
+\mbox{\hyperlink{class_ragot_1_1_rasterizer_ad2b50b7fbe56790541e32d40af5afd35}{Rasterizer}} ()=default
+\item 
+\mbox{\hyperlink{class_ragot_1_1_rasterizer_af028fb191116c365a78f67193d31f9d9}{\texorpdfstring{$\sim$}{\string~}\+Rasterizer}} ()=default
+\item 
+const \mbox{\hyperlink{class_ragot_1_1_frame_buffer}{Frame\+Buffer}}$<$ Color $>$ \& \mbox{\hyperlink{class_ragot_1_1_rasterizer_a523fbf480688e863dceca80cf69bb419}{get\+\_\+frame\+\_\+buffer}} () const
+\item 
+void \mbox{\hyperlink{class_ragot_1_1_rasterizer_a07a7e2f09eecba92428e8b23cb59ec24}{set\+\_\+color}} (const Color \&new\+\_\+color)
+\item 
+void \mbox{\hyperlink{class_ragot_1_1_rasterizer_a2df8e755c8ae708e3aeee43978155472}{clear}} ()
+\item 
+void \mbox{\hyperlink{class_ragot_1_1_rasterizer_a889d98752741917eae511058ef647159}{fill\+\_\+convex\+\_\+polygon}} (const glm\+::ivec4 \texorpdfstring{$\ast$}{*}const vertices, const int \texorpdfstring{$\ast$}{*}const indices\+\_\+begin, const int \texorpdfstring{$\ast$}{*}const indices\+\_\+end)
+\item 
+void \mbox{\hyperlink{class_ragot_1_1_rasterizer_ada80fbf86638e56a1ce93787d82040e5}{fill\+\_\+convex\+\_\+polygon}} (const glm\+::ivec4 \texorpdfstring{$\ast$}{*}const vertices, const \mbox{\hyperlink{struct_ragot_1_1face__t}{face\+\_\+t}} \texorpdfstring{$\ast$}{*}const face)
+\item 
+void \mbox{\hyperlink{class_ragot_1_1_rasterizer_a31a5a7d0ced4b723083bb0a8b236d164}{fill\+\_\+convex\+\_\+polygon\+\_\+z\+\_\+buffer}} (const glm\+::ivec4 \texorpdfstring{$\ast$}{*}const vertices, const \mbox{\hyperlink{struct_ragot_1_1face__t}{face\+\_\+t}} \texorpdfstring{$\ast$}{*}const face)
+\item 
+\texorpdfstring{$\ast$}{*}void \mbox{\hyperlink{class_ragot_1_1_rasterizer_a10ac6b7f0f3d22abd90a209519001f1e}{fill\+\_\+convex\+\_\+polygon\+\_\+z\+\_\+buffer}} (const glm\+::ivec4 \texorpdfstring{$\ast$}{*}const vertices, const int \texorpdfstring{$\ast$}{*}const indices\+\_\+begin, const int \texorpdfstring{$\ast$}{*}const indices\+\_\+end)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_ragot_1_1_rasterizer_abff857e3945cffb531efaf8c99e3b341}{debug\+\_\+enabled}} = true
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename VALUE\+\_\+\+TYPE, size\+\_\+t SHIFT$>$ }\\void \mbox{\hyperlink{class_ragot_1_1_rasterizer_ab0e24415f7e34a001cabe03ce0bb8c73}{interpolate}} (int \texorpdfstring{$\ast$}{*}cache, int v0, int v1, int y\+\_\+min, int y\+\_\+max)
+\item 
+{\footnotesize template$<$unsigned COLOR\+\_\+\+SIZE$>$ }\\void \mbox{\hyperlink{class_ragot_1_1_rasterizer_a5a7a2921b9d5f8a14b11f774bc7e682e}{fill\+\_\+row}} (Color \texorpdfstring{$\ast$}{*}start, unsigned left\+\_\+offset, unsigned right\+\_\+offset, const Color \&\mbox{\hyperlink{class_ragot_1_1_rasterizer_a4f9c07cb346a74679ae0d574ac786872}{color}})
+\item 
+{\footnotesize template$<$unsigned COLOR\+\_\+\+SIZE$>$ }\\void \mbox{\hyperlink{class_ragot_1_1_rasterizer_a549eab69a5b35d18a6b5cc59bb4988f1}{fill\+\_\+row\+\_\+zbuffer}} (Color \texorpdfstring{$\ast$}{*}start, int \texorpdfstring{$\ast$}{*}zbuffer, unsigned left\+\_\+offset, unsigned right\+\_\+offset, int z\+\_\+start, int dz, const Color \&\mbox{\hyperlink{class_ragot_1_1_rasterizer_a4f9c07cb346a74679ae0d574ac786872}{color}})
+\item 
+void \mbox{\hyperlink{class_ragot_1_1_rasterizer_a7ede8e2d5ad993f97263adeb090f8a96}{fill\+\_\+row}} (\mbox{\hyperlink{namespace_ragot_a30e07cad21ef68ef55cfdeb31712febd}{RGB565}} \texorpdfstring{$\ast$}{*}start, unsigned left\+\_\+offset, unsigned right\+\_\+offset, const \mbox{\hyperlink{namespace_ragot_a30e07cad21ef68ef55cfdeb31712febd}{RGB565}} \&\mbox{\hyperlink{class_ragot_1_1_rasterizer_a4f9c07cb346a74679ae0d574ac786872}{color}})
+\item 
+void \mbox{\hyperlink{class_ragot_1_1_rasterizer_a0432b567a85a6fb792f6d1881f27b7cd}{fill\+\_\+row\+\_\+zbuffer}} (\mbox{\hyperlink{namespace_ragot_a30e07cad21ef68ef55cfdeb31712febd}{RGB565}} \texorpdfstring{$\ast$}{*}start, int \texorpdfstring{$\ast$}{*}zbuffer, unsigned left\+\_\+offset, unsigned right\+\_\+offset, int z\+\_\+start, int dz, const \mbox{\hyperlink{namespace_ragot_a30e07cad21ef68ef55cfdeb31712febd}{RGB565}} \&\mbox{\hyperlink{class_ragot_1_1_rasterizer_a4f9c07cb346a74679ae0d574ac786872}{color}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_frame_buffer}{Frame\+Buffer}}$<$ Color $>$ \& \mbox{\hyperlink{class_ragot_1_1_rasterizer_acdd89dcfa9efd302fad6a3341ac85666}{frame\+\_\+buffer}}
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{class_ragot_1_1_rasterizer_aef43bbd4828564ee39bf405875872ef5}{z\+\_\+buffer}}
+\item 
+Color \mbox{\hyperlink{class_ragot_1_1_rasterizer_a4f9c07cb346a74679ae0d574ac786872}{color}}
+\item 
+Color \mbox{\hyperlink{class_ragot_1_1_rasterizer_a99fb7cbd32420964d66bf428482a9ee8}{clear\+\_\+color}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_ragot_1_1_rasterizer_a6a4d1a1807d7aae5e67e8c29639a1ab1}{offset\+\_\+cache0}} \mbox{[}1024\mbox{]}
+\item 
+static int \mbox{\hyperlink{class_ragot_1_1_rasterizer_a5d5ee39c722909831977ed1ffa3e256e}{offset\+\_\+cache1}} \mbox{[}1024\mbox{]}
+\item 
+static constexpr const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_ragot_1_1_rasterizer_a688211c2ce3a3366b63bc4a0e0e8c3a8}{RASTER\+\_\+\+TAG}} = "{}Rasterizer"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ragot_1_1_rasterizer_ac44ab168083551ec18b2211fcd032bfa}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!Rasterizer@{Rasterizer}}
+\index{Rasterizer@{Rasterizer}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{Rasterizer()}{Rasterizer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_ac44ab168083551ec18b2211fcd032bfa} 
+template$<$typename Color$>$ \\
+\mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::\+Rasterizer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ragot_1_1_frame_buffer}{Frame\+Buffer}}$<$ Color $>$ \&}]{frame}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_ragot_1_1_rasterizer_ad2b50b7fbe56790541e32d40af5afd35}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!Rasterizer@{Rasterizer}}
+\index{Rasterizer@{Rasterizer}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{Rasterizer()}{Rasterizer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_ad2b50b7fbe56790541e32d40af5afd35} 
+template$<$typename Color$>$ \\
+\mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::\+Rasterizer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_ragot_1_1_rasterizer_af028fb191116c365a78f67193d31f9d9}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!````~Rasterizer@{\texorpdfstring{$\sim$}{\string~}Rasterizer}}
+\index{````~Rasterizer@{\texorpdfstring{$\sim$}{\string~}Rasterizer}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Rasterizer()}{\string~Rasterizer()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_af028fb191116c365a78f67193d31f9d9} 
+template$<$typename Color$>$ \\
+\mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{class_ragot_1_1_rasterizer}{Rasterizer}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ragot_1_1_rasterizer_a2df8e755c8ae708e3aeee43978155472}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!clear@{clear}}
+\index{clear@{clear}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_a2df8e755c8ae708e3aeee43978155472} 
+template$<$typename Color$>$ \\
+void \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_ragot_1_1_rasterizer_ada80fbf86638e56a1ce93787d82040e5}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!fill\_convex\_polygon@{fill\_convex\_polygon}}
+\index{fill\_convex\_polygon@{fill\_convex\_polygon}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{fill\_convex\_polygon()}{fill\_convex\_polygon()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_ada80fbf86638e56a1ce93787d82040e5} 
+template$<$typename COLOR$>$ \\
+void \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ COLOR $>$\+::fill\+\_\+convex\+\_\+polygon (\begin{DoxyParamCaption}\item[{const glm\+::ivec4 \texorpdfstring{$\ast$}{*}const}]{vertices}{, }\item[{const \mbox{\hyperlink{struct_ragot_1_1face__t}{face\+\_\+t}} \texorpdfstring{$\ast$}{*}const}]{face}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_rasterizer_ada80fbf86638e56a1ce93787d82040e5_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_rasterizer_a889d98752741917eae511058ef647159}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!fill\_convex\_polygon@{fill\_convex\_polygon}}
+\index{fill\_convex\_polygon@{fill\_convex\_polygon}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{fill\_convex\_polygon()}{fill\_convex\_polygon()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_a889d98752741917eae511058ef647159} 
+template$<$typename COLOR$>$ \\
+void \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ COLOR $>$\+::fill\+\_\+convex\+\_\+polygon (\begin{DoxyParamCaption}\item[{const glm\+::ivec4 \texorpdfstring{$\ast$}{*}const}]{vertices}{, }\item[{const int \texorpdfstring{$\ast$}{*}const}]{indices\+\_\+begin}{, }\item[{const int \texorpdfstring{$\ast$}{*}const}]{indices\+\_\+end}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{class_ragot_1_1_rasterizer_a889d98752741917eae511058ef647159_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{class_ragot_1_1_rasterizer_a889d98752741917eae511058ef647159_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_rasterizer_a31a5a7d0ced4b723083bb0a8b236d164}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!fill\_convex\_polygon\_z\_buffer@{fill\_convex\_polygon\_z\_buffer}}
+\index{fill\_convex\_polygon\_z\_buffer@{fill\_convex\_polygon\_z\_buffer}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{fill\_convex\_polygon\_z\_buffer()}{fill\_convex\_polygon\_z\_buffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_a31a5a7d0ced4b723083bb0a8b236d164} 
+template$<$typename COLOR$>$ \\
+template void \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::fill\+\_\+convex\+\_\+polygon\+\_\+z\+\_\+buffer (\begin{DoxyParamCaption}\item[{const glm\+::ivec4 \texorpdfstring{$\ast$}{*}const}]{vertices}{, }\item[{const \mbox{\hyperlink{struct_ragot_1_1face__t}{face\+\_\+t}} \texorpdfstring{$\ast$}{*}const}]{face}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{class_ragot_1_1_rasterizer_a31a5a7d0ced4b723083bb0a8b236d164_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_rasterizer_a10ac6b7f0f3d22abd90a209519001f1e}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!fill\_convex\_polygon\_z\_buffer@{fill\_convex\_polygon\_z\_buffer}}
+\index{fill\_convex\_polygon\_z\_buffer@{fill\_convex\_polygon\_z\_buffer}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{fill\_convex\_polygon\_z\_buffer()}{fill\_convex\_polygon\_z\_buffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_a10ac6b7f0f3d22abd90a209519001f1e} 
+template$<$typename COLOR$>$ \\
+template void \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::fill\+\_\+convex\+\_\+polygon\+\_\+z\+\_\+buffer (\begin{DoxyParamCaption}\item[{const glm\+::ivec4 \texorpdfstring{$\ast$}{*}const}]{vertices}{, }\item[{const int \texorpdfstring{$\ast$}{*}const}]{indices\+\_\+begin}{, }\item[{const int \texorpdfstring{$\ast$}{*}const}]{indices\+\_\+end}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{class_ragot_1_1_rasterizer_a10ac6b7f0f3d22abd90a209519001f1e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_rasterizer_a5a7a2921b9d5f8a14b11f774bc7e682e}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!fill\_row@{fill\_row}}
+\index{fill\_row@{fill\_row}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{fill\_row()}{fill\_row()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_a5a7a2921b9d5f8a14b11f774bc7e682e} 
+template$<$typename Color$>$ \\
+template$<$unsigned COLOR\+\_\+\+SIZE$>$ \\
+void \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::fill\+\_\+row (\begin{DoxyParamCaption}\item[{Color \texorpdfstring{$\ast$}{*}}]{start}{, }\item[{unsigned}]{left\+\_\+offset}{, }\item[{unsigned}]{right\+\_\+offset}{, }\item[{const Color \&}]{color}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_ragot_1_1_rasterizer_a7ede8e2d5ad993f97263adeb090f8a96}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!fill\_row@{fill\_row}}
+\index{fill\_row@{fill\_row}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{fill\_row()}{fill\_row()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_a7ede8e2d5ad993f97263adeb090f8a96} 
+void \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ \mbox{\hyperlink{namespace_ragot_a30e07cad21ef68ef55cfdeb31712febd}{RGB565}} $>$\+::fill\+\_\+row$<$ 2 $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_ragot_a30e07cad21ef68ef55cfdeb31712febd}{RGB565}} \texorpdfstring{$\ast$}{*}}]{start}{, }\item[{unsigned}]{left\+\_\+offset}{, }\item[{unsigned}]{right\+\_\+offset}{, }\item[{const \mbox{\hyperlink{namespace_ragot_a30e07cad21ef68ef55cfdeb31712febd}{RGB565}} \&}]{color}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_ragot_1_1_rasterizer_a549eab69a5b35d18a6b5cc59bb4988f1}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!fill\_row\_zbuffer@{fill\_row\_zbuffer}}
+\index{fill\_row\_zbuffer@{fill\_row\_zbuffer}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{fill\_row\_zbuffer()}{fill\_row\_zbuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_a549eab69a5b35d18a6b5cc59bb4988f1} 
+template$<$typename Color$>$ \\
+template$<$unsigned COLOR\+\_\+\+SIZE$>$ \\
+void \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::fill\+\_\+row\+\_\+zbuffer (\begin{DoxyParamCaption}\item[{Color \texorpdfstring{$\ast$}{*}}]{start}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{zbuffer}{, }\item[{unsigned}]{left\+\_\+offset}{, }\item[{unsigned}]{right\+\_\+offset}{, }\item[{int}]{z\+\_\+start}{, }\item[{int}]{dz}{, }\item[{const Color \&}]{color}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_ragot_1_1_rasterizer_a0432b567a85a6fb792f6d1881f27b7cd}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!fill\_row\_zbuffer@{fill\_row\_zbuffer}}
+\index{fill\_row\_zbuffer@{fill\_row\_zbuffer}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{fill\_row\_zbuffer()}{fill\_row\_zbuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_a0432b567a85a6fb792f6d1881f27b7cd} 
+void \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ \mbox{\hyperlink{namespace_ragot_a30e07cad21ef68ef55cfdeb31712febd}{RGB565}} $>$\+::fill\+\_\+row\+\_\+zbuffer$<$ 2 $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_ragot_a30e07cad21ef68ef55cfdeb31712febd}{RGB565}} \texorpdfstring{$\ast$}{*}}]{start}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{zbuffer}{, }\item[{unsigned}]{left\+\_\+offset}{, }\item[{unsigned}]{right\+\_\+offset}{, }\item[{int}]{z\+\_\+start}{, }\item[{int}]{dz}{, }\item[{const \mbox{\hyperlink{namespace_ragot_a30e07cad21ef68ef55cfdeb31712febd}{RGB565}} \&}]{color}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_ragot_1_1_rasterizer_a523fbf480688e863dceca80cf69bb419}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!get\_frame\_buffer@{get\_frame\_buffer}}
+\index{get\_frame\_buffer@{get\_frame\_buffer}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{get\_frame\_buffer()}{get\_frame\_buffer()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_a523fbf480688e863dceca80cf69bb419} 
+template$<$typename Color$>$ \\
+const \mbox{\hyperlink{class_ragot_1_1_frame_buffer}{Frame\+Buffer}}$<$ Color $>$ \& \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::get\+\_\+frame\+\_\+buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_ragot_1_1_rasterizer_ab0e24415f7e34a001cabe03ce0bb8c73}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!interpolate@{interpolate}}
+\index{interpolate@{interpolate}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{interpolate()}{interpolate()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_ab0e24415f7e34a001cabe03ce0bb8c73} 
+template$<$typename COLOR$>$ \\
+template$<$typename VALUE\+\_\+\+TYPE, size\+\_\+t SHIFT$>$ \\
+void \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ COLOR $>$\+::interpolate (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{cache}{, }\item[{int}]{v0}{, }\item[{int}]{v1}{, }\item[{int}]{y\+\_\+min}{, }\item[{int}]{y\+\_\+max}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_rasterizer_ab0e24415f7e34a001cabe03ce0bb8c73_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_rasterizer_a07a7e2f09eecba92428e8b23cb59ec24}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!set\_color@{set\_color}}
+\index{set\_color@{set\_color}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{set\_color()}{set\_color()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_a07a7e2f09eecba92428e8b23cb59ec24} 
+template$<$typename Color$>$ \\
+void \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::set\+\_\+color (\begin{DoxyParamCaption}\item[{const Color \&}]{new\+\_\+color}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_ragot_1_1_rasterizer_a99fb7cbd32420964d66bf428482a9ee8}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!clear\_color@{clear\_color}}
+\index{clear\_color@{clear\_color}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{clear\_color}{clear\_color}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_a99fb7cbd32420964d66bf428482a9ee8} 
+template$<$typename Color$>$ \\
+Color \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::clear\+\_\+color\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_ragot_1_1_rasterizer_a4f9c07cb346a74679ae0d574ac786872}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!color@{color}}
+\index{color@{color}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{color}{color}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_a4f9c07cb346a74679ae0d574ac786872} 
+template$<$typename Color$>$ \\
+Color \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::color\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_ragot_1_1_rasterizer_abff857e3945cffb531efaf8c99e3b341}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!debug\_enabled@{debug\_enabled}}
+\index{debug\_enabled@{debug\_enabled}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{debug\_enabled}{debug\_enabled}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_abff857e3945cffb531efaf8c99e3b341} 
+template$<$typename Color$>$ \\
+bool \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::debug\+\_\+enabled = true}
+
+\Hypertarget{class_ragot_1_1_rasterizer_acdd89dcfa9efd302fad6a3341ac85666}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!frame\_buffer@{frame\_buffer}}
+\index{frame\_buffer@{frame\_buffer}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{frame\_buffer}{frame\_buffer}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_acdd89dcfa9efd302fad6a3341ac85666} 
+template$<$typename Color$>$ \\
+\mbox{\hyperlink{class_ragot_1_1_frame_buffer}{Frame\+Buffer}}$<$ Color $>$\& \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::frame\+\_\+buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_ragot_1_1_rasterizer_a6a4d1a1807d7aae5e67e8c29639a1ab1}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!offset\_cache0@{offset\_cache0}}
+\index{offset\_cache0@{offset\_cache0}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{offset\_cache0}{offset\_cache0}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_a6a4d1a1807d7aae5e67e8c29639a1ab1} 
+template$<$typename Color$>$ \\
+int \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::offset\+\_\+cache0\mbox{[}1024\mbox{]}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_ragot_1_1_rasterizer_a5d5ee39c722909831977ed1ffa3e256e}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!offset\_cache1@{offset\_cache1}}
+\index{offset\_cache1@{offset\_cache1}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{offset\_cache1}{offset\_cache1}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_a5d5ee39c722909831977ed1ffa3e256e} 
+template$<$typename Color$>$ \\
+int \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::offset\+\_\+cache1\mbox{[}1024\mbox{]}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_ragot_1_1_rasterizer_a688211c2ce3a3366b63bc4a0e0e8c3a8}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!RASTER\_TAG@{RASTER\_TAG}}
+\index{RASTER\_TAG@{RASTER\_TAG}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{RASTER\_TAG}{RASTER\_TAG}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_a688211c2ce3a3366b63bc4a0e0e8c3a8} 
+template$<$typename Color$>$ \\
+const char\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::\+RASTER\+\_\+\+TAG = "{}Rasterizer"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\Hypertarget{class_ragot_1_1_rasterizer_aef43bbd4828564ee39bf405875872ef5}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!z\_buffer@{z\_buffer}}
+\index{z\_buffer@{z\_buffer}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{z\_buffer}{z\_buffer}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_aef43bbd4828564ee39bf405875872ef5} 
+template$<$typename Color$>$ \\
+std\+::vector$<$ int $>$ \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::z\+\_\+buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_rasterizer_8hpp}{Rasterizer.\+hpp}}\item 
+\mbox{\hyperlink{_rasterizer_8cpp}{Rasterizer.\+cpp}}\end{DoxyCompactItemize}

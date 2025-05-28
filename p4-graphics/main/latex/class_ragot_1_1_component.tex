@@ -1,0 +1,244 @@
+\doxysection{Ragot\+::Component Class Reference}
+\hypertarget{class_ragot_1_1_component}{}\label{class_ragot_1_1_component}\index{Ragot::Component@{Ragot::Component}}
+
+
+{\ttfamily \#include $<$Components.\+hpp$>$}
+
+
+
+Inheritance diagram for Ragot\+::Component\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_ragot_1_1_component__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ragot\+::Component\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_ragot_1_1_component__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_component_a96cadec729b1265b3f30480fb060b942}{Component}} ()=default
+\item 
+virtual \mbox{\hyperlink{class_ragot_1_1_component_a21a3e09be8069d18aa88f5cd5be5ccb4}{\texorpdfstring{$\sim$}{\string~}\+Component}} ()=default
+\item 
+\mbox{\hyperlink{class_ragot_1_1_component_a44c3fa4a306939779086ebdce7574af2}{Component}} (const \mbox{\hyperlink{class_ragot_1_1_component}{Component}} \&)=delete
+\item 
+\mbox{\hyperlink{class_ragot_1_1_component_ad71e3d9be704be61fdd1074b5a1d4691}{Component}} (const \mbox{\hyperlink{class_ragot_1_1_component}{Component}} \&\&)=delete
+\item 
+\mbox{\hyperlink{class_ragot_1_1_component}{Component}} \& \mbox{\hyperlink{class_ragot_1_1_component_af3db7d65eeca5bd1d57309e30eb7afad}{operator=}} (const \mbox{\hyperlink{class_ragot_1_1_component}{Component}} \&)=delete
+\item 
+\mbox{\hyperlink{class_ragot_1_1_component}{Component}} \& \mbox{\hyperlink{class_ragot_1_1_component_ac3cf10a05f5314a464f05d6aeec0b0e4}{operator=}} (const \mbox{\hyperlink{class_ragot_1_1_component}{Component}} \&\&)=delete
+\item 
+void \mbox{\hyperlink{class_ragot_1_1_component_afd9d4648850080e8eb353093350fc83c}{add\+\_\+component}} (\mbox{\hyperlink{class_ragot_1_1_component}{Component}} \texorpdfstring{$\ast$}{*}component)
+\item 
+void \mbox{\hyperlink{class_ragot_1_1_component_aaea821cb4aa95b691922116c6272c5b7}{remove\+\_\+component}} (\mbox{\hyperlink{class_ragot_1_1_component}{Component}} \texorpdfstring{$\ast$}{*}component)
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{class_ragot_1_1_component}{Component}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{class_ragot_1_1_component_a7bbaf27138f0e39e296b800176343f38}{get\+\_\+components}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ragot_1_1_node}{Ragot\+::\+Node}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_node_af950cf77621bbb3f157b7bf3852dfd2b}{Node}} ()=default
+\item 
+virtual \mbox{\hyperlink{class_ragot_1_1_node_a51384a380fecebd14482c49f7fc60336}{\texorpdfstring{$\sim$}{\string~}\+Node}} ()=default
+\item 
+\mbox{\hyperlink{class_ragot_1_1_node_afb856f2743eed9ca04755107e5d2a49b}{Node}} (const \mbox{\hyperlink{class_ragot_1_1_node}{Node}} \&)=delete
+\item 
+\mbox{\hyperlink{class_ragot_1_1_node_a2cd800085d580d594ad5cb5ea55df009}{Node}} (const \mbox{\hyperlink{class_ragot_1_1_node}{Node}} \&\&)=delete
+\item 
+\mbox{\hyperlink{class_ragot_1_1_node}{Node}} \& \mbox{\hyperlink{class_ragot_1_1_node_a36d44666bd1c79342ca8e12341fd83c1}{operator=}} (const \mbox{\hyperlink{class_ragot_1_1_node}{Node}} \&)=delete
+\item 
+\mbox{\hyperlink{class_ragot_1_1_node}{Node}} \& \mbox{\hyperlink{class_ragot_1_1_node_aba99d61150423e3eaa0b99fe522a03a4}{operator=}} (const \mbox{\hyperlink{class_ragot_1_1_node}{Node}} \&\&)=delete
+\item 
+void \mbox{\hyperlink{class_ragot_1_1_node_a60041e115b425dc24d6210ad532bcb9d}{add\+\_\+child}} (\mbox{\hyperlink{class_ragot_1_1_node}{Node}} \texorpdfstring{$\ast$}{*}child)
+\item 
+void \mbox{\hyperlink{class_ragot_1_1_node_a9d4a258a65d3ca8a16251768013e2515}{remove\+\_\+child}} (\mbox{\hyperlink{class_ragot_1_1_node}{Node}} \texorpdfstring{$\ast$}{*}child)
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{class_ragot_1_1_node_a95173dd48c8eb29e553ae98b9f736523}{get\+\_\+children}} () const
+\item 
+mat4 \mbox{\hyperlink{class_ragot_1_1_node_adf704afc3b1c3ca9a9819be9e319479b}{get\+\_\+transform\+\_\+matrix}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ragot_1_1_transform}{Ragot\+::\+Transform}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_transform_a725154a65379853ad8fcb0263fedda6c}{Transform}} ()
+\item 
+virtual \mbox{\hyperlink{class_ragot_1_1_transform_a50798b680f8f6a40ec2c7ea9a6e1df08}{\texorpdfstring{$\sim$}{\string~}\+Transform}} ()=default
+\item 
+void \mbox{\hyperlink{class_ragot_1_1_transform_a7962797afae773a25fdebf76a8404a7a}{set\+\_\+position}} (const vec3 \&pos)
+\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_a1db9f8e84315c4296dfef46f1f17ce99}{get\+\_\+position}} () const
+\item 
+void \mbox{\hyperlink{class_ragot_1_1_transform_a7641b284077ae1fe1e0b7f3ffc788edb}{set\+\_\+rotation}} (const vec3 \&rot)
+\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_aa9a377ee1cc5eca48f62970e3d4016ab}{get\+\_\+rotation}} () const
+\item 
+void \mbox{\hyperlink{class_ragot_1_1_transform_a83714240213caa1528e9e75b1cb5a307}{rotate}} (const float angle, const vec3 \&axis)
+\item 
+void \mbox{\hyperlink{class_ragot_1_1_transform_ace83a2bcfdaffd808a1d89fe0cb48fce}{set\+\_\+scale}} (const vec3 \&\mbox{\hyperlink{class_ragot_1_1_transform_ad7da3cfaf66f95597dfbb6fcb8f838d7}{scale}})
+\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_a96a6f6bcff942294a7011dac4f235b92}{get\+\_\+scale}} () const
+\item 
+bool \mbox{\hyperlink{class_ragot_1_1_transform_acf0344728a251b9e04fbfb4ab05dd450}{is\+\_\+dirty}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_ragot_1_1_component}{Component}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_ragot_1_1_component_ace32bb6eb4bbdbdd55d0175ea0f06d66}{components}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_ragot_1_1_node}{Ragot\+::\+Node}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_ragot_1_1_node_af1827786c800c9daf6a4677ee6c02206}{children}}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_ragot_1_1_node_a64767f464d8abac9626bbf554de7904c}{parent}} = nullptr
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_ragot_1_1_transform}{Ragot\+::\+Transform}}}
+\begin{DoxyCompactItemize}
+\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_a431ca8e8bacefc052302557d46559f38}{position}}
+\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_a54eebc0ee4f13e8c0c30777a9ea2bf02}{rotation}}
+\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_ad7da3cfaf66f95597dfbb6fcb8f838d7}{scale}}
+\item 
+bool \mbox{\hyperlink{class_ragot_1_1_transform_a48016feecf3360fb60a42f48720c702f}{dirty}} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ragot_1_1_component_a96cadec729b1265b3f30480fb060b942}\index{Ragot::Component@{Ragot::Component}!Component@{Component}}
+\index{Component@{Component}!Ragot::Component@{Ragot::Component}}
+\doxysubsubsection{\texorpdfstring{Component()}{Component()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_component_a96cadec729b1265b3f30480fb060b942} 
+Ragot\+::\+Component\+::\+Component (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_component_a96cadec729b1265b3f30480fb060b942_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_component_a21a3e09be8069d18aa88f5cd5be5ccb4}\index{Ragot::Component@{Ragot::Component}!````~Component@{\texorpdfstring{$\sim$}{\string~}Component}}
+\index{````~Component@{\texorpdfstring{$\sim$}{\string~}Component}!Ragot::Component@{Ragot::Component}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Component()}{\string~Component()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_component_a21a3e09be8069d18aa88f5cd5be5ccb4} 
+virtual Ragot\+::\+Component\+::\texorpdfstring{$\sim$}{\string~}\+Component (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+\Hypertarget{class_ragot_1_1_component_a44c3fa4a306939779086ebdce7574af2}\index{Ragot::Component@{Ragot::Component}!Component@{Component}}
+\index{Component@{Component}!Ragot::Component@{Ragot::Component}}
+\doxysubsubsection{\texorpdfstring{Component()}{Component()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_component_a44c3fa4a306939779086ebdce7574af2} 
+Ragot\+::\+Component\+::\+Component (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ragot_1_1_component}{Component}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_component_a44c3fa4a306939779086ebdce7574af2_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_component_ad71e3d9be704be61fdd1074b5a1d4691}\index{Ragot::Component@{Ragot::Component}!Component@{Component}}
+\index{Component@{Component}!Ragot::Component@{Ragot::Component}}
+\doxysubsubsection{\texorpdfstring{Component()}{Component()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_component_ad71e3d9be704be61fdd1074b5a1d4691} 
+Ragot\+::\+Component\+::\+Component (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ragot_1_1_component}{Component}} \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_component_ad71e3d9be704be61fdd1074b5a1d4691_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ragot_1_1_component_afd9d4648850080e8eb353093350fc83c}\index{Ragot::Component@{Ragot::Component}!add\_component@{add\_component}}
+\index{add\_component@{add\_component}!Ragot::Component@{Ragot::Component}}
+\doxysubsubsection{\texorpdfstring{add\_component()}{add\_component()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_component_afd9d4648850080e8eb353093350fc83c} 
+void Ragot\+::\+Component\+::add\+\_\+component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ragot_1_1_component}{Component}} \texorpdfstring{$\ast$}{*}}]{component}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_component_afd9d4648850080e8eb353093350fc83c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_component_a7bbaf27138f0e39e296b800176343f38}\index{Ragot::Component@{Ragot::Component}!get\_components@{get\_components}}
+\index{get\_components@{get\_components}!Ragot::Component@{Ragot::Component}}
+\doxysubsubsection{\texorpdfstring{get\_components()}{get\_components()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_component_a7bbaf27138f0e39e296b800176343f38} 
+const std\+::vector$<$ \mbox{\hyperlink{class_ragot_1_1_component}{Component}} \texorpdfstring{$\ast$}{*} $>$ \& Ragot\+::\+Component\+::get\+\_\+components (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_component_a7bbaf27138f0e39e296b800176343f38_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_component_ac3cf10a05f5314a464f05d6aeec0b0e4}\index{Ragot::Component@{Ragot::Component}!operator=@{operator=}}
+\index{operator=@{operator=}!Ragot::Component@{Ragot::Component}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_component_ac3cf10a05f5314a464f05d6aeec0b0e4} 
+\mbox{\hyperlink{class_ragot_1_1_component}{Component}} \& Ragot\+::\+Component\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ragot_1_1_component}{Component}} \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_component_ac3cf10a05f5314a464f05d6aeec0b0e4_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_component_af3db7d65eeca5bd1d57309e30eb7afad}\index{Ragot::Component@{Ragot::Component}!operator=@{operator=}}
+\index{operator=@{operator=}!Ragot::Component@{Ragot::Component}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_component_af3db7d65eeca5bd1d57309e30eb7afad} 
+\mbox{\hyperlink{class_ragot_1_1_component}{Component}} \& Ragot\+::\+Component\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ragot_1_1_component}{Component}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_component_af3db7d65eeca5bd1d57309e30eb7afad_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_component_aaea821cb4aa95b691922116c6272c5b7}\index{Ragot::Component@{Ragot::Component}!remove\_component@{remove\_component}}
+\index{remove\_component@{remove\_component}!Ragot::Component@{Ragot::Component}}
+\doxysubsubsection{\texorpdfstring{remove\_component()}{remove\_component()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_component_aaea821cb4aa95b691922116c6272c5b7} 
+void Ragot\+::\+Component\+::remove\+\_\+component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ragot_1_1_component}{Component}} \texorpdfstring{$\ast$}{*}}]{component}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_component_aaea821cb4aa95b691922116c6272c5b7_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_ragot_1_1_component_ace32bb6eb4bbdbdd55d0175ea0f06d66}\index{Ragot::Component@{Ragot::Component}!components@{components}}
+\index{components@{components}!Ragot::Component@{Ragot::Component}}
+\doxysubsubsection{\texorpdfstring{components}{components}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_component_ace32bb6eb4bbdbdd55d0175ea0f06d66} 
+std\+::vector$<$ \mbox{\hyperlink{class_ragot_1_1_component}{Component}} \texorpdfstring{$\ast$}{*} $>$ Ragot\+::\+Component\+::components\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_components_8hpp}{Components.\+hpp}}\end{DoxyCompactItemize}

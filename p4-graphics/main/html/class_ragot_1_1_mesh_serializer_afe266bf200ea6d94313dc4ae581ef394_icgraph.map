@@ -1,0 +1,13 @@
+<map id="Ragot::MeshSerializer::MeshSerializer" name="Ragot::MeshSerializer::MeshSerializer">
+<area shape="rect" id="Node000001" title=" " alt="" coords="204,136,354,177"/>
+<area shape="rect" id="Node000002" href="$class_ragot_1_1_mesh_serializer.html#a011ab2e4148165ae8828bb08af31c0ca" title=" " alt="" coords="5,5,156,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="242,127,201,94,154,61,131,49,134,44,157,57,204,90,245,123"/>
+<area shape="rect" id="Node000003" href="$class_ragot_1_1_mesh_serializer.html#aadb1892c9c433279c8ff1d8b2387c42e" title=" " alt="" coords="5,71,156,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="200,133,144,115,146,109,201,128"/>
+<area shape="rect" id="Node000004" href="$class_ragot_1_1_mesh_serializer.html#a284acadf6f4f2857044b69d622e63262" title=" " alt="" coords="5,136,156,177"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="188,159,156,159,156,154,188,154"/>
+<area shape="rect" id="Node000005" href="$class_ragot_1_1_mesh_serializer.html#a68a19fc070eb76d8e8bba39eff8ca8a1" title=" " alt="" coords="5,201,156,242"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="201,185,146,203,144,198,200,180"/>
+<area shape="rect" id="Node000006" href="$class_ragot_1_1_mesh_serializer.html#a3741b9197ade45e64780f3257d3b897e" title=" " alt="" coords="5,267,156,307"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="245,189,204,223,157,256,134,268,131,264,154,251,201,219,242,185"/>
+</map>

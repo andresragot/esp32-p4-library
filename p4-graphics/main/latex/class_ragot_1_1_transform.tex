@@ -1,0 +1,216 @@
+\doxysection{Ragot\+::Transform Class Reference}
+\hypertarget{class_ragot_1_1_transform}{}\label{class_ragot_1_1_transform}\index{Ragot::Transform@{Ragot::Transform}}
+
+
+{\ttfamily \#include $<$Transform.\+hpp$>$}
+
+
+
+Inheritance diagram for Ragot\+::Transform\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_ragot_1_1_transform__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ragot\+::Transform\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{class_ragot_1_1_transform__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_transform_a725154a65379853ad8fcb0263fedda6c}{Transform}} ()
+\item 
+virtual \mbox{\hyperlink{class_ragot_1_1_transform_a50798b680f8f6a40ec2c7ea9a6e1df08}{\texorpdfstring{$\sim$}{\string~}\+Transform}} ()=default
+\item 
+void \mbox{\hyperlink{class_ragot_1_1_transform_a7962797afae773a25fdebf76a8404a7a}{set\+\_\+position}} (const vec3 \&pos)
+\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_a1db9f8e84315c4296dfef46f1f17ce99}{get\+\_\+position}} () const
+\item 
+void \mbox{\hyperlink{class_ragot_1_1_transform_a7641b284077ae1fe1e0b7f3ffc788edb}{set\+\_\+rotation}} (const vec3 \&rot)
+\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_aa9a377ee1cc5eca48f62970e3d4016ab}{get\+\_\+rotation}} () const
+\item 
+void \mbox{\hyperlink{class_ragot_1_1_transform_a83714240213caa1528e9e75b1cb5a307}{rotate}} (const float angle, const vec3 \&axis)
+\item 
+void \mbox{\hyperlink{class_ragot_1_1_transform_ace83a2bcfdaffd808a1d89fe0cb48fce}{set\+\_\+scale}} (const vec3 \&\mbox{\hyperlink{class_ragot_1_1_transform_ad7da3cfaf66f95597dfbb6fcb8f838d7}{scale}})
+\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_a96a6f6bcff942294a7011dac4f235b92}{get\+\_\+scale}} () const
+\item 
+bool \mbox{\hyperlink{class_ragot_1_1_transform_acf0344728a251b9e04fbfb4ab05dd450}{is\+\_\+dirty}} () const
+\item 
+virtual mat4 \mbox{\hyperlink{class_ragot_1_1_transform_a039cc1705ced81a3491e8ecd504c3942}{get\+\_\+transform\+\_\+matrix}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_a431ca8e8bacefc052302557d46559f38}{position}}
+\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_a54eebc0ee4f13e8c0c30777a9ea2bf02}{rotation}}
+\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_ad7da3cfaf66f95597dfbb6fcb8f838d7}{scale}}
+\item 
+bool \mbox{\hyperlink{class_ragot_1_1_transform_a48016feecf3360fb60a42f48720c702f}{dirty}} = true
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+mat4 \mbox{\hyperlink{class_ragot_1_1_transform_ab99865c250c5c144b71186dc888ee67c}{transform\+\_\+matrix}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ragot_1_1_transform_a725154a65379853ad8fcb0263fedda6c}\index{Ragot::Transform@{Ragot::Transform}!Transform@{Transform}}
+\index{Transform@{Transform}!Ragot::Transform@{Ragot::Transform}}
+\doxysubsubsection{\texorpdfstring{Transform()}{Transform()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_transform_a725154a65379853ad8fcb0263fedda6c} 
+Ragot\+::\+Transform\+::\+Transform (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_ragot_1_1_transform_a50798b680f8f6a40ec2c7ea9a6e1df08}\index{Ragot::Transform@{Ragot::Transform}!````~Transform@{\texorpdfstring{$\sim$}{\string~}Transform}}
+\index{````~Transform@{\texorpdfstring{$\sim$}{\string~}Transform}!Ragot::Transform@{Ragot::Transform}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Transform()}{\string~Transform()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_transform_a50798b680f8f6a40ec2c7ea9a6e1df08} 
+virtual Ragot\+::\+Transform\+::\texorpdfstring{$\sim$}{\string~}\+Transform (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ragot_1_1_transform_a1db9f8e84315c4296dfef46f1f17ce99}\index{Ragot::Transform@{Ragot::Transform}!get\_position@{get\_position}}
+\index{get\_position@{get\_position}!Ragot::Transform@{Ragot::Transform}}
+\doxysubsubsection{\texorpdfstring{get\_position()}{get\_position()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_transform_a1db9f8e84315c4296dfef46f1f17ce99} 
+vec3 Ragot\+::\+Transform\+::get\+\_\+position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_transform_a1db9f8e84315c4296dfef46f1f17ce99_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_transform_aa9a377ee1cc5eca48f62970e3d4016ab}\index{Ragot::Transform@{Ragot::Transform}!get\_rotation@{get\_rotation}}
+\index{get\_rotation@{get\_rotation}!Ragot::Transform@{Ragot::Transform}}
+\doxysubsubsection{\texorpdfstring{get\_rotation()}{get\_rotation()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_transform_aa9a377ee1cc5eca48f62970e3d4016ab} 
+vec3 Ragot\+::\+Transform\+::get\+\_\+rotation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{class_ragot_1_1_transform_aa9a377ee1cc5eca48f62970e3d4016ab_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_transform_a96a6f6bcff942294a7011dac4f235b92}\index{Ragot::Transform@{Ragot::Transform}!get\_scale@{get\_scale}}
+\index{get\_scale@{get\_scale}!Ragot::Transform@{Ragot::Transform}}
+\doxysubsubsection{\texorpdfstring{get\_scale()}{get\_scale()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_transform_a96a6f6bcff942294a7011dac4f235b92} 
+vec3 Ragot\+::\+Transform\+::get\+\_\+scale (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{class_ragot_1_1_transform_a96a6f6bcff942294a7011dac4f235b92_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_transform_a039cc1705ced81a3491e8ecd504c3942}\index{Ragot::Transform@{Ragot::Transform}!get\_transform\_matrix@{get\_transform\_matrix}}
+\index{get\_transform\_matrix@{get\_transform\_matrix}!Ragot::Transform@{Ragot::Transform}}
+\doxysubsubsection{\texorpdfstring{get\_transform\_matrix()}{get\_transform\_matrix()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_transform_a039cc1705ced81a3491e8ecd504c3942} 
+virtual mat4 Ragot\+::\+Transform\+::get\+\_\+transform\+\_\+matrix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_ragot_1_1_node_adf704afc3b1c3ca9a9819be9e319479b}{Ragot\+::\+Node}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_transform_a039cc1705ced81a3491e8ecd504c3942_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_transform_acf0344728a251b9e04fbfb4ab05dd450}\index{Ragot::Transform@{Ragot::Transform}!is\_dirty@{is\_dirty}}
+\index{is\_dirty@{is\_dirty}!Ragot::Transform@{Ragot::Transform}}
+\doxysubsubsection{\texorpdfstring{is\_dirty()}{is\_dirty()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_transform_acf0344728a251b9e04fbfb4ab05dd450} 
+bool Ragot\+::\+Transform\+::is\+\_\+dirty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_ragot_1_1_transform_a83714240213caa1528e9e75b1cb5a307}\index{Ragot::Transform@{Ragot::Transform}!rotate@{rotate}}
+\index{rotate@{rotate}!Ragot::Transform@{Ragot::Transform}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_transform_a83714240213caa1528e9e75b1cb5a307} 
+void Ragot\+::\+Transform\+::rotate (\begin{DoxyParamCaption}\item[{const float}]{angle}{, }\item[{const vec3 \&}]{axis}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_ragot_1_1_transform_a7962797afae773a25fdebf76a8404a7a}\index{Ragot::Transform@{Ragot::Transform}!set\_position@{set\_position}}
+\index{set\_position@{set\_position}!Ragot::Transform@{Ragot::Transform}}
+\doxysubsubsection{\texorpdfstring{set\_position()}{set\_position()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_transform_a7962797afae773a25fdebf76a8404a7a} 
+void Ragot\+::\+Transform\+::set\+\_\+position (\begin{DoxyParamCaption}\item[{const vec3 \&}]{pos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_transform_a7962797afae773a25fdebf76a8404a7a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_transform_a7641b284077ae1fe1e0b7f3ffc788edb}\index{Ragot::Transform@{Ragot::Transform}!set\_rotation@{set\_rotation}}
+\index{set\_rotation@{set\_rotation}!Ragot::Transform@{Ragot::Transform}}
+\doxysubsubsection{\texorpdfstring{set\_rotation()}{set\_rotation()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_transform_a7641b284077ae1fe1e0b7f3ffc788edb} 
+void Ragot\+::\+Transform\+::set\+\_\+rotation (\begin{DoxyParamCaption}\item[{const vec3 \&}]{rot}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_ragot_1_1_transform_ace83a2bcfdaffd808a1d89fe0cb48fce}\index{Ragot::Transform@{Ragot::Transform}!set\_scale@{set\_scale}}
+\index{set\_scale@{set\_scale}!Ragot::Transform@{Ragot::Transform}}
+\doxysubsubsection{\texorpdfstring{set\_scale()}{set\_scale()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_transform_ace83a2bcfdaffd808a1d89fe0cb48fce} 
+void Ragot\+::\+Transform\+::set\+\_\+scale (\begin{DoxyParamCaption}\item[{const vec3 \&}]{scale}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_ragot_1_1_transform_a48016feecf3360fb60a42f48720c702f}\index{Ragot::Transform@{Ragot::Transform}!dirty@{dirty}}
+\index{dirty@{dirty}!Ragot::Transform@{Ragot::Transform}}
+\doxysubsubsection{\texorpdfstring{dirty}{dirty}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_transform_a48016feecf3360fb60a42f48720c702f} 
+bool Ragot\+::\+Transform\+::dirty = true\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_ragot_1_1_transform_a431ca8e8bacefc052302557d46559f38}\index{Ragot::Transform@{Ragot::Transform}!position@{position}}
+\index{position@{position}!Ragot::Transform@{Ragot::Transform}}
+\doxysubsubsection{\texorpdfstring{position}{position}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_transform_a431ca8e8bacefc052302557d46559f38} 
+vec3 Ragot\+::\+Transform\+::position\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_ragot_1_1_transform_a54eebc0ee4f13e8c0c30777a9ea2bf02}\index{Ragot::Transform@{Ragot::Transform}!rotation@{rotation}}
+\index{rotation@{rotation}!Ragot::Transform@{Ragot::Transform}}
+\doxysubsubsection{\texorpdfstring{rotation}{rotation}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_transform_a54eebc0ee4f13e8c0c30777a9ea2bf02} 
+vec3 Ragot\+::\+Transform\+::rotation\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_ragot_1_1_transform_ad7da3cfaf66f95597dfbb6fcb8f838d7}\index{Ragot::Transform@{Ragot::Transform}!scale@{scale}}
+\index{scale@{scale}!Ragot::Transform@{Ragot::Transform}}
+\doxysubsubsection{\texorpdfstring{scale}{scale}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_transform_ad7da3cfaf66f95597dfbb6fcb8f838d7} 
+vec3 Ragot\+::\+Transform\+::scale\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_ragot_1_1_transform_ab99865c250c5c144b71186dc888ee67c}\index{Ragot::Transform@{Ragot::Transform}!transform\_matrix@{transform\_matrix}}
+\index{transform\_matrix@{transform\_matrix}!Ragot::Transform@{Ragot::Transform}}
+\doxysubsubsection{\texorpdfstring{transform\_matrix}{transform\_matrix}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_transform_ab99865c250c5c144b71186dc888ee67c} 
+mat4 Ragot\+::\+Transform\+::transform\+\_\+matrix\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_transform_8hpp}{Transform.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,275 @@
+\doxysection{Ragot\+::Renderer Class Reference}
+\hypertarget{class_ragot_1_1_renderer}{}\label{class_ragot_1_1_renderer}\index{Ragot::Renderer@{Ragot::Renderer}}
+
+
+{\ttfamily \#include $<$Renderer.\+hpp$>$}
+
+
+
+Collaboration diagram for Ragot\+::Renderer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_renderer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_renderer_a7b014b41ad61fce011463868b91ebf79}{Renderer}} ()=delete
+\item 
+\mbox{\hyperlink{class_ragot_1_1_renderer_a72e42229b1c05ab0ae910b20b6f41453}{Renderer}} (unsigned \mbox{\hyperlink{class_ragot_1_1_renderer_a1bdab02cd188930abd66ff311397658e}{width}}, unsigned \mbox{\hyperlink{class_ragot_1_1_renderer_aaadcb26ff7c8502d4dfdfae706d77610}{height}})
+\item 
+\mbox{\hyperlink{class_ragot_1_1_renderer_a0537d592db6f461dfafa9a2175b609b6}{\texorpdfstring{$\sim$}{\string~}\+Renderer}} ()=default
+\item 
+void \mbox{\hyperlink{class_ragot_1_1_renderer_aadafbf7ac26aedbf95b75dec92b691ad}{set\+\_\+scene}} (\mbox{\hyperlink{class_ragot_1_1_scene}{Scene}} \texorpdfstring{$\ast$}{*}scene)
+\item 
+void \mbox{\hyperlink{class_ragot_1_1_renderer_a514b54e15d0a6750797d397cccde4ef8}{init}} ()
+\item 
+void \mbox{\hyperlink{class_ragot_1_1_renderer_acc3bbc330b23f454ed5d01b85d4f8e98}{render}} ()
+\item 
+void \mbox{\hyperlink{class_ragot_1_1_renderer_a30c9db3883dcb090d6ddebd972809d55}{task\+\_\+render}} (std\+::stop\+\_\+token stop\+\_\+token)
+\item 
+bool \mbox{\hyperlink{class_ragot_1_1_renderer_ab2a21ea68f4dd927733084e6b043ed50}{is\+\_\+frontface}} (const glm\+::fvec4 \texorpdfstring{$\ast$}{*}const projected\+\_\+vertices, const \mbox{\hyperlink{struct_ragot_1_1face__t}{face\+\_\+t}} \texorpdfstring{$\ast$}{*}const indices)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ glm\+::fvec4 $>$ \mbox{\hyperlink{class_ragot_1_1_renderer_a38457ae0ab7e3abe2615dc32eb63bac9}{transformed\+\_\+vertices}}
+\item 
+std\+::vector$<$ glm\+::ivec4 $>$ \mbox{\hyperlink{class_ragot_1_1_renderer_a9190a22a63b5d5a32bcf4a20db22cc38}{display\+\_\+vertices}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_ragot_1_1_renderer_a6adf243a9b8bdb60cc962affc5ba4e9f}{init\+Full\+Screen\+Quad}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_ragot_1_1_renderer_a2b221c8714215ff28aa5d045bda2bb69}{accumulated\+\_\+time}} = 0.f
+\item 
+size\+\_\+t \mbox{\hyperlink{class_ragot_1_1_renderer_a81019c395b15cc01e73494c77e304aa2}{iterations}} = 0
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ \mbox{\hyperlink{class_ragot_1_1_renderer_aaef638571592dc30d0b75ae1c533ef8b}{quad\+Shader}} = nullptr
+\item 
+GLuint \mbox{\hyperlink{class_ragot_1_1_renderer_a4fb1cb268b0a5b5a4bd5b9bbce2e5aaf}{quad\+VAO}} = 0
+\item 
+GLuint \mbox{\hyperlink{class_ragot_1_1_renderer_a89d49bae23a921bb4b249ce51711dd10}{quad\+VBO}} = 0
+\item 
+GLuint \mbox{\hyperlink{class_ragot_1_1_renderer_a91830f9674076ff1af547feead7db823}{quad\+EBO}} = 0
+\item 
+\mbox{\hyperlink{class_ragot_1_1_frame_buffer}{Frame\+Buffer}}$<$ \mbox{\hyperlink{namespace_ragot_a30e07cad21ef68ef55cfdeb31712febd}{RGB565}} $>$ \mbox{\hyperlink{class_ragot_1_1_renderer_a89d4039e9bef0c938d1209c9284069b7}{frame\+\_\+buffer}}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_scene}{Scene}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_ragot_1_1_renderer_a70f783d1156fda99eaeb383f093b83c2}{current\+\_\+scene}} = nullptr
+\item 
+\mbox{\hyperlink{class_ragot_1_1_rasterizer}{Rasterizer}}$<$ \mbox{\hyperlink{namespace_ragot_a30e07cad21ef68ef55cfdeb31712febd}{RGB565}} $>$ \mbox{\hyperlink{class_ragot_1_1_renderer_ab9d54c2c1f9a93672063348de383d084}{rasterizer}}
+\item 
+unsigned \mbox{\hyperlink{class_ragot_1_1_renderer_a1bdab02cd188930abd66ff311397658e}{width}}
+\item 
+unsigned \mbox{\hyperlink{class_ragot_1_1_renderer_aaadcb26ff7c8502d4dfdfae706d77610}{height}}
+\item 
+bool \mbox{\hyperlink{class_ragot_1_1_renderer_a79599c95067b2ebef99577e339493742}{initialized}} = false
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr size\+\_\+t \mbox{\hyperlink{class_ragot_1_1_renderer_a5e9254923457cc88f1b417796cddf8a9}{number\+\_\+of\+\_\+iterations}} = 10000000000000000
+\item 
+static const std\+::string \mbox{\hyperlink{class_ragot_1_1_renderer_a9072d7d05eb2733f32fce8bb880ceaaf}{vertex\+\_\+shader\+\_\+code}}
+\item 
+static const std\+::string \mbox{\hyperlink{class_ragot_1_1_renderer_a012c2346e9b3251a6e0f761b05bf5b28}{fragment\+\_\+shader\+\_\+code}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ragot_1_1_renderer_a7b014b41ad61fce011463868b91ebf79}\index{Ragot::Renderer@{Ragot::Renderer}!Renderer@{Renderer}}
+\index{Renderer@{Renderer}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{Renderer()}{Renderer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a7b014b41ad61fce011463868b91ebf79} 
+Ragot\+::\+Renderer\+::\+Renderer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{class_ragot_1_1_renderer_a72e42229b1c05ab0ae910b20b6f41453}\index{Ragot::Renderer@{Ragot::Renderer}!Renderer@{Renderer}}
+\index{Renderer@{Renderer}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{Renderer()}{Renderer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a72e42229b1c05ab0ae910b20b6f41453} 
+Ragot\+::\+Renderer\+::\+Renderer (\begin{DoxyParamCaption}\item[{unsigned}]{width}{, }\item[{unsigned}]{height}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_ragot_1_1_renderer_a0537d592db6f461dfafa9a2175b609b6}\index{Ragot::Renderer@{Ragot::Renderer}!````~Renderer@{\texorpdfstring{$\sim$}{\string~}Renderer}}
+\index{````~Renderer@{\texorpdfstring{$\sim$}{\string~}Renderer}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Renderer()}{\string~Renderer()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a0537d592db6f461dfafa9a2175b609b6} 
+Ragot\+::\+Renderer\+::\texorpdfstring{$\sim$}{\string~}\+Renderer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ragot_1_1_renderer_a514b54e15d0a6750797d397cccde4ef8}\index{Ragot::Renderer@{Ragot::Renderer}!init@{init}}
+\index{init@{init}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a514b54e15d0a6750797d397cccde4ef8} 
+void Ragot\+::\+Renderer\+::init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{class_ragot_1_1_renderer_a514b54e15d0a6750797d397cccde4ef8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_renderer_a6adf243a9b8bdb60cc962affc5ba4e9f}\index{Ragot::Renderer@{Ragot::Renderer}!initFullScreenQuad@{initFullScreenQuad}}
+\index{initFullScreenQuad@{initFullScreenQuad}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{initFullScreenQuad()}{initFullScreenQuad()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a6adf243a9b8bdb60cc962affc5ba4e9f} 
+void Ragot\+::\+Renderer\+::init\+Full\+Screen\+Quad (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_ragot_1_1_renderer_ab2a21ea68f4dd927733084e6b043ed50}\index{Ragot::Renderer@{Ragot::Renderer}!is\_frontface@{is\_frontface}}
+\index{is\_frontface@{is\_frontface}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{is\_frontface()}{is\_frontface()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_ab2a21ea68f4dd927733084e6b043ed50} 
+bool Ragot\+::\+Renderer\+::is\+\_\+frontface (\begin{DoxyParamCaption}\item[{const glm\+::fvec4 \texorpdfstring{$\ast$}{*}const}]{projected\+\_\+vertices}{, }\item[{const \mbox{\hyperlink{struct_ragot_1_1face__t}{face\+\_\+t}} \texorpdfstring{$\ast$}{*}const}]{indices}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_ragot_1_1_renderer_acc3bbc330b23f454ed5d01b85d4f8e98}\index{Ragot::Renderer@{Ragot::Renderer}!render@{render}}
+\index{render@{render}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_acc3bbc330b23f454ed5d01b85d4f8e98} 
+void Ragot\+::\+Renderer\+::render (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_renderer_acc3bbc330b23f454ed5d01b85d4f8e98_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_renderer_aadafbf7ac26aedbf95b75dec92b691ad}\index{Ragot::Renderer@{Ragot::Renderer}!set\_scene@{set\_scene}}
+\index{set\_scene@{set\_scene}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{set\_scene()}{set\_scene()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_aadafbf7ac26aedbf95b75dec92b691ad} 
+void Ragot\+::\+Renderer\+::set\+\_\+scene (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ragot_1_1_scene}{Scene}} \texorpdfstring{$\ast$}{*}}]{scene}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{class_ragot_1_1_renderer_aadafbf7ac26aedbf95b75dec92b691ad_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_renderer_a30c9db3883dcb090d6ddebd972809d55}\index{Ragot::Renderer@{Ragot::Renderer}!task\_render@{task\_render}}
+\index{task\_render@{task\_render}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{task\_render()}{task\_render()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a30c9db3883dcb090d6ddebd972809d55} 
+void Ragot\+::\+Renderer\+::task\+\_\+render (\begin{DoxyParamCaption}\item[{std\+::stop\+\_\+token}]{stop\+\_\+token}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_ragot_1_1_renderer_a2b221c8714215ff28aa5d045bda2bb69}\index{Ragot::Renderer@{Ragot::Renderer}!accumulated\_time@{accumulated\_time}}
+\index{accumulated\_time@{accumulated\_time}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{accumulated\_time}{accumulated\_time}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a2b221c8714215ff28aa5d045bda2bb69} 
+float Ragot\+::\+Renderer\+::accumulated\+\_\+time = 0.f\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_ragot_1_1_renderer_a70f783d1156fda99eaeb383f093b83c2}\index{Ragot::Renderer@{Ragot::Renderer}!current\_scene@{current\_scene}}
+\index{current\_scene@{current\_scene}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{current\_scene}{current\_scene}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a70f783d1156fda99eaeb383f093b83c2} 
+\mbox{\hyperlink{class_ragot_1_1_scene}{Scene}}\texorpdfstring{$\ast$}{*} Ragot\+::\+Renderer\+::current\+\_\+scene = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_ragot_1_1_renderer_a9190a22a63b5d5a32bcf4a20db22cc38}\index{Ragot::Renderer@{Ragot::Renderer}!display\_vertices@{display\_vertices}}
+\index{display\_vertices@{display\_vertices}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{display\_vertices}{display\_vertices}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a9190a22a63b5d5a32bcf4a20db22cc38} 
+std\+::vector$<$ glm\+::ivec4 $>$ Ragot\+::\+Renderer\+::display\+\_\+vertices}
+
+\Hypertarget{class_ragot_1_1_renderer_a012c2346e9b3251a6e0f761b05bf5b28}\index{Ragot::Renderer@{Ragot::Renderer}!fragment\_shader\_code@{fragment\_shader\_code}}
+\index{fragment\_shader\_code@{fragment\_shader\_code}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{fragment\_shader\_code}{fragment\_shader\_code}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a012c2346e9b3251a6e0f761b05bf5b28} 
+const std\+::string Ragot\+::\+Renderer\+::fragment\+\_\+shader\+\_\+code\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_ragot_1_1_renderer_a89d4039e9bef0c938d1209c9284069b7}\index{Ragot::Renderer@{Ragot::Renderer}!frame\_buffer@{frame\_buffer}}
+\index{frame\_buffer@{frame\_buffer}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{frame\_buffer}{frame\_buffer}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a89d4039e9bef0c938d1209c9284069b7} 
+\mbox{\hyperlink{class_ragot_1_1_frame_buffer}{Frame\+Buffer}}$<$ \mbox{\hyperlink{namespace_ragot_a30e07cad21ef68ef55cfdeb31712febd}{RGB565}} $>$ Ragot\+::\+Renderer\+::frame\+\_\+buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_ragot_1_1_renderer_aaadcb26ff7c8502d4dfdfae706d77610}\index{Ragot::Renderer@{Ragot::Renderer}!height@{height}}
+\index{height@{height}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_aaadcb26ff7c8502d4dfdfae706d77610} 
+unsigned Ragot\+::\+Renderer\+::height\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_ragot_1_1_renderer_a79599c95067b2ebef99577e339493742}\index{Ragot::Renderer@{Ragot::Renderer}!initialized@{initialized}}
+\index{initialized@{initialized}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{initialized}{initialized}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a79599c95067b2ebef99577e339493742} 
+bool Ragot\+::\+Renderer\+::initialized = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_ragot_1_1_renderer_a81019c395b15cc01e73494c77e304aa2}\index{Ragot::Renderer@{Ragot::Renderer}!iterations@{iterations}}
+\index{iterations@{iterations}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{iterations}{iterations}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a81019c395b15cc01e73494c77e304aa2} 
+size\+\_\+t Ragot\+::\+Renderer\+::iterations = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_ragot_1_1_renderer_a5e9254923457cc88f1b417796cddf8a9}\index{Ragot::Renderer@{Ragot::Renderer}!number\_of\_iterations@{number\_of\_iterations}}
+\index{number\_of\_iterations@{number\_of\_iterations}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{number\_of\_iterations}{number\_of\_iterations}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a5e9254923457cc88f1b417796cddf8a9} 
+size\+\_\+t Ragot\+::\+Renderer\+::number\+\_\+of\+\_\+iterations = 10000000000000000\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\Hypertarget{class_ragot_1_1_renderer_a91830f9674076ff1af547feead7db823}\index{Ragot::Renderer@{Ragot::Renderer}!quadEBO@{quadEBO}}
+\index{quadEBO@{quadEBO}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{quadEBO}{quadEBO}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a91830f9674076ff1af547feead7db823} 
+GLuint Ragot\+::\+Renderer\+::quad\+EBO = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_ragot_1_1_renderer_aaef638571592dc30d0b75ae1c533ef8b}\index{Ragot::Renderer@{Ragot::Renderer}!quadShader@{quadShader}}
+\index{quadShader@{quadShader}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{quadShader}{quadShader}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_aaef638571592dc30d0b75ae1c533ef8b} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ Ragot\+::\+Renderer\+::quad\+Shader = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_ragot_1_1_renderer_a4fb1cb268b0a5b5a4bd5b9bbce2e5aaf}\index{Ragot::Renderer@{Ragot::Renderer}!quadVAO@{quadVAO}}
+\index{quadVAO@{quadVAO}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{quadVAO}{quadVAO}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a4fb1cb268b0a5b5a4bd5b9bbce2e5aaf} 
+GLuint Ragot\+::\+Renderer\+::quad\+VAO = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_ragot_1_1_renderer_a89d49bae23a921bb4b249ce51711dd10}\index{Ragot::Renderer@{Ragot::Renderer}!quadVBO@{quadVBO}}
+\index{quadVBO@{quadVBO}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{quadVBO}{quadVBO}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a89d49bae23a921bb4b249ce51711dd10} 
+GLuint Ragot\+::\+Renderer\+::quad\+VBO = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_ragot_1_1_renderer_ab9d54c2c1f9a93672063348de383d084}\index{Ragot::Renderer@{Ragot::Renderer}!rasterizer@{rasterizer}}
+\index{rasterizer@{rasterizer}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{rasterizer}{rasterizer}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_ab9d54c2c1f9a93672063348de383d084} 
+\mbox{\hyperlink{class_ragot_1_1_rasterizer}{Rasterizer}}$<$ \mbox{\hyperlink{namespace_ragot_a30e07cad21ef68ef55cfdeb31712febd}{RGB565}} $>$ Ragot\+::\+Renderer\+::rasterizer\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_ragot_1_1_renderer_a38457ae0ab7e3abe2615dc32eb63bac9}\index{Ragot::Renderer@{Ragot::Renderer}!transformed\_vertices@{transformed\_vertices}}
+\index{transformed\_vertices@{transformed\_vertices}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{transformed\_vertices}{transformed\_vertices}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a38457ae0ab7e3abe2615dc32eb63bac9} 
+std\+::vector$<$ glm\+::fvec4 $>$ Ragot\+::\+Renderer\+::transformed\+\_\+vertices}
+
+\Hypertarget{class_ragot_1_1_renderer_a9072d7d05eb2733f32fce8bb880ceaaf}\index{Ragot::Renderer@{Ragot::Renderer}!vertex\_shader\_code@{vertex\_shader\_code}}
+\index{vertex\_shader\_code@{vertex\_shader\_code}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{vertex\_shader\_code}{vertex\_shader\_code}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a9072d7d05eb2733f32fce8bb880ceaaf} 
+const std\+::string Ragot\+::\+Renderer\+::vertex\+\_\+shader\+\_\+code\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_ragot_1_1_renderer_a1bdab02cd188930abd66ff311397658e}\index{Ragot::Renderer@{Ragot::Renderer}!width@{width}}
+\index{width@{width}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a1bdab02cd188930abd66ff311397658e} 
+unsigned Ragot\+::\+Renderer\+::width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_renderer_8hpp}{Renderer.\+hpp}}\end{DoxyCompactItemize}

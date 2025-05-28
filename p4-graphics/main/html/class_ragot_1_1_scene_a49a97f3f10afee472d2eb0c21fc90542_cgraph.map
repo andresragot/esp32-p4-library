@@ -1,0 +1,9 @@
+<map id="Ragot::Scene::collect_components" name="Ragot::Scene::collect_components">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,35,153,75"/>
+<area shape="rect" id="Node000002" href="$class_ragot_1_1_component.html#a7bbaf27138f0e39e296b800176343f38" title=" " alt="" coords="201,5,358,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="152,42,185,37,185,42,153,47"/>
+<area shape="rect" id="Node000003" href="$class_ragot_1_1_scene.html#a408133e4107f953ec101cb5f7174f21e" title=" " alt="" coords="201,70,358,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="153,63,186,67,185,73,152,68"/>
+<area shape="rect" id="Node000004" href="$class_ragot_1_1_node.html#a95173dd48c8eb29e553ae98b9f736523" title=" " alt="" coords="406,70,579,96"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="358,80,390,80,390,86,358,86"/>
+</map>

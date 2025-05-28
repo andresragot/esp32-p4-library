@@ -1,0 +1,105 @@
+\doxysection{basics Namespace Reference}
+\hypertarget{namespacebasics}{}\label{namespacebasics}\index{basics@{basics}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacebasics_1_1internal}{internal}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned int \mbox{\hyperlink{namespacebasics_a302199d491be70388c151446cbbd92c8}{Id}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$size\+\_\+t LENGTH$>$ }\\constexpr uint32\+\_\+t \mbox{\hyperlink{namespacebasics_ab186a39d9bc371c051b72faee14861c3}{static\+\_\+fnv32}} (const char(\&chars)\mbox{[}LENGTH\mbox{]})
+\item 
+{\footnotesize template$<$size\+\_\+t LENGTH$>$ }\\constexpr uint64\+\_\+t \mbox{\hyperlink{namespacebasics_af96ca1163b2309ccb1c07998da473a6a}{static\+\_\+fnv64}} (const char(\&chars)\mbox{[}LENGTH\mbox{]})
+\item 
+{\footnotesize template$<$size\+\_\+t LENGTH$>$ }\\constexpr unsigned \mbox{\hyperlink{namespacebasics_aa127ae56739580bf5d6f994a3eca9782}{static\+\_\+fnv}} (const char(\&chars)\mbox{[}LENGTH\mbox{]})
+\item 
+{\footnotesize template$<$size\+\_\+t LENGTH$>$ }\\uint32\+\_\+t \mbox{\hyperlink{namespacebasics_ad2520039c77fabac5ba909591659cf57}{fnv32}} (const char(\&chars)\mbox{[}LENGTH\mbox{]})
+\item 
+uint32\+\_\+t \mbox{\hyperlink{namespacebasics_ad926f9f3c3f7bec0f5e43c06d9624e2d}{fnv32}} (const std\+::string \&s)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{namespacebasics_a302199d491be70388c151446cbbd92c8}\index{basics@{basics}!Id@{Id}}
+\index{Id@{Id}!basics@{basics}}
+\doxysubsubsection{\texorpdfstring{Id}{Id}}
+{\footnotesize\ttfamily \label{namespacebasics_a302199d491be70388c151446cbbd92c8} 
+typedef unsigned int \mbox{\hyperlink{namespacebasics_a302199d491be70388c151446cbbd92c8}{basics\+::\+Id}}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacebasics_ad2520039c77fabac5ba909591659cf57}\index{basics@{basics}!fnv32@{fnv32}}
+\index{fnv32@{fnv32}!basics@{basics}}
+\doxysubsubsection{\texorpdfstring{fnv32()}{fnv32()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{namespacebasics_ad2520039c77fabac5ba909591659cf57} 
+template$<$size\+\_\+t LENGTH$>$ \\
+uint32\+\_\+t basics\+::fnv32 (\begin{DoxyParamCaption}\item[{const char(\&)}]{chars}{\mbox{[}\+LENGTH\mbox{]}}\end{DoxyParamCaption})}
+
+\Hypertarget{namespacebasics_ad926f9f3c3f7bec0f5e43c06d9624e2d}\index{basics@{basics}!fnv32@{fnv32}}
+\index{fnv32@{fnv32}!basics@{basics}}
+\doxysubsubsection{\texorpdfstring{fnv32()}{fnv32()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{namespacebasics_ad926f9f3c3f7bec0f5e43c06d9624e2d} 
+uint32\+\_\+t basics\+::fnv32 (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespacebasics_aa127ae56739580bf5d6f994a3eca9782}\index{basics@{basics}!static\_fnv@{static\_fnv}}
+\index{static\_fnv@{static\_fnv}!basics@{basics}}
+\doxysubsubsection{\texorpdfstring{static\_fnv()}{static\_fnv()}}
+{\footnotesize\ttfamily \label{namespacebasics_aa127ae56739580bf5d6f994a3eca9782} 
+template$<$size\+\_\+t LENGTH$>$ \\
+unsigned basics\+::static\+\_\+fnv (\begin{DoxyParamCaption}\item[{const char(\&)}]{chars}{\mbox{[}\+LENGTH\mbox{]}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{namespacebasics_aa127ae56739580bf5d6f994a3eca9782_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespacebasics_ab186a39d9bc371c051b72faee14861c3}\index{basics@{basics}!static\_fnv32@{static\_fnv32}}
+\index{static\_fnv32@{static\_fnv32}!basics@{basics}}
+\doxysubsubsection{\texorpdfstring{static\_fnv32()}{static\_fnv32()}}
+{\footnotesize\ttfamily \label{namespacebasics_ab186a39d9bc371c051b72faee14861c3} 
+template$<$size\+\_\+t LENGTH$>$ \\
+uint32\+\_\+t basics\+::static\+\_\+fnv32 (\begin{DoxyParamCaption}\item[{const char(\&)}]{chars}{\mbox{[}\+LENGTH\mbox{]}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+Implements the Fowler–\+Noll–\+Vo hash function (FNV-\/1a) which calculates a 32 bit hash code from a C string literal (or array of chars) at compile time. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em LENGTH} & Length of the string literal or array of chars. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em chars} & The string literal or array of chars to hash. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The hash code. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{namespacebasics_ab186a39d9bc371c051b72faee14861c3_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespacebasics_af96ca1163b2309ccb1c07998da473a6a}\index{basics@{basics}!static\_fnv64@{static\_fnv64}}
+\index{static\_fnv64@{static\_fnv64}!basics@{basics}}
+\doxysubsubsection{\texorpdfstring{static\_fnv64()}{static\_fnv64()}}
+{\footnotesize\ttfamily \label{namespacebasics_af96ca1163b2309ccb1c07998da473a6a} 
+template$<$size\+\_\+t LENGTH$>$ \\
+uint64\+\_\+t basics\+::static\+\_\+fnv64 (\begin{DoxyParamCaption}\item[{const char(\&)}]{chars}{\mbox{[}\+LENGTH\mbox{]}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{namespacebasics_af96ca1163b2309ccb1c07998da473a6a_cgraph}
+\end{center}
+\end{figure}

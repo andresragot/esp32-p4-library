@@ -1,0 +1,135 @@
+\doxysection{Camera.\+hpp}
+\hypertarget{_camera_8hpp_source}{}\label{_camera_8hpp_source}\mbox{\hyperlink{_camera_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_common_types_8hpp}{CommonTypes.hpp}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_components_8hpp}{Components.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_transform_8hpp}{Transform.hpp}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <glm.hpp>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <gtc/matrix\_transform.hpp>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <gtc/type\_ptr.hpp>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ragot}{Ragot}}}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ragot_1_1_camera_a97b635c108f59f178dfd982bd2d8d8cd}{Camera}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_ragot_1_1_component_a96cadec729b1265b3f30480fb060b942}{Component}}}
+\DoxyCodeLine{00013\ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{class_ragot_1_1_camera_ac862c34902af3d068a7a20b832bc0dfe}{CAMERA\_TAG}};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_ragot_1_1_camera_a9a1fd20ff3afd39e3d078182c19515d3}{Matrix4x4}}\ =\ glm::mat4;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_ragot_1_1_camera_a3350c181d3cedae0d860b4bb50171cc8}{fov}};\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ vertical\ field\ of\ view\ in\ degrees}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_ragot_1_1_camera_a9148d7fe58ef54a6ee8e11d47f7ec8c3}{near\_plane}};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_ragot_1_1_camera_aee222417ed046527a02e27f2152f1840}{far\_plane}};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_ragot_1_1_camera_a405946f21acb2e3f44b0595cb656f104}{aspect\_ratio}};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ glm::vec3\ \mbox{\hyperlink{class_ragot_1_1_camera_a8f77af4bdf93ecf602f34fbfff4b052d}{target}};\ \ \ \ \ \ \textcolor{comment}{//\ world\ space\ look-\/at\ target}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{mutable}\ \mbox{\hyperlink{class_ragot_1_1_camera_a9a1fd20ff3afd39e3d078182c19515d3}{Matrix4x4}}\ \mbox{\hyperlink{class_ragot_1_1_camera_a59265b68a1ca7c213ad32a07c973ad1d}{projection\_matrix}};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{mutable}\ \mbox{\hyperlink{class_ragot_1_1_camera_a9a1fd20ff3afd39e3d078182c19515d3}{Matrix4x4}}\ \mbox{\hyperlink{class_ragot_1_1_camera_a74e7eb7f1e77185fb1f3037b63d57386}{view\_matrix}};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{mutable}\ \mbox{\hyperlink{class_ragot_1_1_camera_a9a1fd20ff3afd39e3d078182c19515d3}{Matrix4x4}}\ \mbox{\hyperlink{class_ragot_1_1_camera_a14b597fb38044c9f6ef6c7dcb384882a}{vp\_matrix}};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{mutable}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ragot_1_1_camera_ae0bf5665ce49ab0e93d2bf520efe19b0}{projDirty}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{mutable}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ragot_1_1_camera_ad975054d4af847e32126de3dfeb4a49c}{viewDirty}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{mutable}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ragot_1_1_camera_a787eb65de35f7df16a245e96e15e16d2}{vpDirty}}\ \ \ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_camera_a97b635c108f59f178dfd982bd2d8d8cd}{Camera}}()\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_camera_a4003c531ad3653b929bd10437f16e3e2}{Camera}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_ragot_1_1_camera_a405946f21acb2e3f44b0595cb656f104}{aspect\_ratio}}\ =\ 1.f,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_ragot_1_1_camera_a9148d7fe58ef54a6ee8e11d47f7ec8c3}{near\_plane}}\ \ \ =\ 1.f,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_ragot_1_1_camera_aee222417ed046527a02e27f2152f1840}{far\_plane}}\ \ \ \ =\ 100.f,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ fov\_deg\ \ \ \ \ \ =\ 60.f)}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_ragot_1_1_camera_a3350c181d3cedae0d860b4bb50171cc8}{fov}}(fov\_deg),\ \mbox{\hyperlink{class_ragot_1_1_camera_a9148d7fe58ef54a6ee8e11d47f7ec8c3}{near\_plane}}(\mbox{\hyperlink{class_ragot_1_1_camera_a9148d7fe58ef54a6ee8e11d47f7ec8c3}{near\_plane}}),\ \mbox{\hyperlink{class_ragot_1_1_camera_aee222417ed046527a02e27f2152f1840}{far\_plane}}(\mbox{\hyperlink{class_ragot_1_1_camera_aee222417ed046527a02e27f2152f1840}{far\_plane}}),\ \mbox{\hyperlink{class_ragot_1_1_camera_a405946f21acb2e3f44b0595cb656f104}{aspect\_ratio}}(\mbox{\hyperlink{class_ragot_1_1_camera_a405946f21acb2e3f44b0595cb656f104}{aspect\_ratio}})}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_transform_a7962797afae773a25fdebf76a8404a7a}{set\_position}}(glm::vec3(0.f));}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_camera_a8f77af4bdf93ecf602f34fbfff4b052d}{target}}\ =\ glm::vec3(0.f,\ 0.f,\ -\/1.f);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_camera_a99ed38d270bc0436000e413b315e0da7}{\string~Camera}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Getters\ -\/-\/-\/}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_ragot_1_1_camera_a0a78fecaa405fea8a5149fa6550e99b1}{get\_fov}}()\textcolor{keyword}{\ const\ \ \ \ \ \ \ \ \ \ \ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_ragot_1_1_camera_a3350c181d3cedae0d860b4bb50171cc8}{fov}};\ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_ragot_1_1_camera_ae42df26bd7aa79759b8f736c300542d5}{get\_near\_plane}}()\textcolor{keyword}{\ const\ \ \ \ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_ragot_1_1_camera_a9148d7fe58ef54a6ee8e11d47f7ec8c3}{near\_plane}};\ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_ragot_1_1_camera_aad711b75b691047d073e442b9927fbb9}{get\_far\_plane}}()\textcolor{keyword}{\ const\ \ \ \ \ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_ragot_1_1_camera_aee222417ed046527a02e27f2152f1840}{far\_plane}};\ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_ragot_1_1_camera_a043917bffed39267d3dceaad12c88427}{get\_aspect\_ratio}}()\textcolor{keyword}{\ const\ \ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_ragot_1_1_camera_a405946f21acb2e3f44b0595cb656f104}{aspect\_ratio}};\ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ glm::vec3\ \mbox{\hyperlink{class_ragot_1_1_camera_a48fcec455da6d500685a2f20a3431ac4}{get\_location}}()\textcolor{keyword}{\ const\ \ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_ragot_1_1_transform_a1db9f8e84315c4296dfef46f1f17ce99}{get\_position}}();\ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ glm::vec3\ \mbox{\hyperlink{class_ragot_1_1_camera_a81905b55fa882c4163eaddd932264ceb}{get\_target}}()\textcolor{keyword}{\ const\ \ \ \ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_ragot_1_1_camera_a8f77af4bdf93ecf602f34fbfff4b052d}{target}};\ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ragot_1_1_camera_aca374d52718b5cee02e9f2c62769fe47}{is\_dirty}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_ragot_1_1_camera_ae0bf5665ce49ab0e93d2bf520efe19b0}{projDirty}}\ ||\ \mbox{\hyperlink{class_ragot_1_1_camera_ad975054d4af847e32126de3dfeb4a49c}{viewDirty}}\ ||\ \mbox{\hyperlink{class_ragot_1_1_camera_a787eb65de35f7df16a245e96e15e16d2}{vpDirty}};\ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Setters\ (mark\ dirty)\ -\/-\/-\/}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_camera_a8cae2e18b67fe3472c832a014ed64b6d}{set\_fov}}(\textcolor{keywordtype}{float}\ deg)\ \ \ \ \ \ \ \ \ \ \ \ \{\ \mbox{\hyperlink{class_ragot_1_1_camera_a3350c181d3cedae0d860b4bb50171cc8}{fov}}\ =\ deg;\ \mbox{\hyperlink{class_ragot_1_1_camera_ae0bf5665ce49ab0e93d2bf520efe19b0}{projDirty}}\ =\ \textcolor{keyword}{true};\ \mbox{\hyperlink{class_ragot_1_1_camera_a787eb65de35f7df16a245e96e15e16d2}{vpDirty}}\ =\ \textcolor{keyword}{true};\ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_camera_a3a4139c62ee5f8f61c03906a9d7e91ff}{set\_near\_plane}}(\textcolor{keywordtype}{float}\ np)\ \ \ \ \ \ \{\ \mbox{\hyperlink{class_ragot_1_1_camera_a9148d7fe58ef54a6ee8e11d47f7ec8c3}{near\_plane}}\ =\ np;\ \mbox{\hyperlink{class_ragot_1_1_camera_ae0bf5665ce49ab0e93d2bf520efe19b0}{projDirty}}\ =\ \textcolor{keyword}{true};\ \mbox{\hyperlink{class_ragot_1_1_camera_a787eb65de35f7df16a245e96e15e16d2}{vpDirty}}\ =\ \textcolor{keyword}{true};\ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_camera_a36449c2ad1099e38751b29c737c9fe01}{set\_far\_plane}}(\textcolor{keywordtype}{float}\ fp)\ \ \ \ \ \ \ \{\ \mbox{\hyperlink{class_ragot_1_1_camera_aee222417ed046527a02e27f2152f1840}{far\_plane}}\ =\ fp;\ \mbox{\hyperlink{class_ragot_1_1_camera_ae0bf5665ce49ab0e93d2bf520efe19b0}{projDirty}}\ =\ \textcolor{keyword}{true};\ \mbox{\hyperlink{class_ragot_1_1_camera_a787eb65de35f7df16a245e96e15e16d2}{vpDirty}}\ =\ \textcolor{keyword}{true};\ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_camera_ac75d80a3159d1e664848c4ee192ba65c}{set\_aspect\_ratio}}(\textcolor{keywordtype}{float}\ ar)\ \ \ \ \{\ \mbox{\hyperlink{class_ragot_1_1_camera_a405946f21acb2e3f44b0595cb656f104}{aspect\_ratio}}\ =\ ar;\ \mbox{\hyperlink{class_ragot_1_1_camera_ae0bf5665ce49ab0e93d2bf520efe19b0}{projDirty}}\ =\ \textcolor{keyword}{true};\ \mbox{\hyperlink{class_ragot_1_1_camera_a787eb65de35f7df16a245e96e15e16d2}{vpDirty}}\ =\ \textcolor{keyword}{true};\ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_camera_a589b34b0d14c3c1b7e15e5388b9d0210}{set\_location}}(\textcolor{keyword}{const}\ glm::vec3\ \&p)\ \{\ \mbox{\hyperlink{class_ragot_1_1_transform_a7962797afae773a25fdebf76a8404a7a}{set\_position}}(p);\ \mbox{\hyperlink{class_ragot_1_1_camera_ad975054d4af847e32126de3dfeb4a49c}{viewDirty}}\ =\ \textcolor{keyword}{true};\ \mbox{\hyperlink{class_ragot_1_1_camera_a787eb65de35f7df16a245e96e15e16d2}{vpDirty}}\ =\ \textcolor{keyword}{true};\ \}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_camera_a4a6d2a312bc3ca80842770826ed3f9db}{set\_target}}(\textcolor{keyword}{const}\ glm::vec3\ \&t)\ \ \ \{\ \mbox{\hyperlink{class_ragot_1_1_camera_a8f77af4bdf93ecf602f34fbfff4b052d}{target}}\ =\ t;\ \mbox{\hyperlink{class_ragot_1_1_camera_ad975054d4af847e32126de3dfeb4a49c}{viewDirty}}\ =\ \textcolor{keyword}{true};\ \mbox{\hyperlink{class_ragot_1_1_camera_a787eb65de35f7df16a245e96e15e16d2}{vpDirty}}\ =\ \textcolor{keyword}{true};\ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Projection\ matrix\ cached}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_camera_a9a1fd20ff3afd39e3d078182c19515d3}{Matrix4x4}}\&\ \mbox{\hyperlink{class_ragot_1_1_camera_a4d9c6fd76db5bd6911281c5951cab4a9}{get\_projection\_matrix}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00066\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_ragot_1_1_camera_ae0bf5665ce49ab0e93d2bf520efe19b0}{projDirty}})}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_camera_a59265b68a1ca7c213ad32a07c973ad1d}{projection\_matrix}}\ =\ glm::perspective(glm::radians(\mbox{\hyperlink{class_ragot_1_1_camera_a3350c181d3cedae0d860b4bb50171cc8}{fov}}),\ \mbox{\hyperlink{class_ragot_1_1_camera_a405946f21acb2e3f44b0595cb656f104}{aspect\_ratio}},\ \mbox{\hyperlink{class_ragot_1_1_camera_a9148d7fe58ef54a6ee8e11d47f7ec8c3}{near\_plane}},\ \mbox{\hyperlink{class_ragot_1_1_camera_aee222417ed046527a02e27f2152f1840}{far\_plane}});}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_camera_ae0bf5665ce49ab0e93d2bf520efe19b0}{projDirty}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_ragot_1_1_camera_a59265b68a1ca7c213ad32a07c973ad1d}{projection\_matrix}};}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ View\ matrix\ cached}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_camera_a9a1fd20ff3afd39e3d078182c19515d3}{Matrix4x4}}\&\ \mbox{\hyperlink{class_ragot_1_1_camera_aa8fc7776eff63588634df880957ed04e}{get\_view\_matrix}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00077\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_ragot_1_1_camera_ad975054d4af847e32126de3dfeb4a49c}{viewDirty}})}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_camera_a74e7eb7f1e77185fb1f3037b63d57386}{view\_matrix}}\ =\ glm::lookAt(}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_transform_a1db9f8e84315c4296dfef46f1f17ce99}{get\_position}}(),}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_camera_a8f77af4bdf93ecf602f34fbfff4b052d}{target}},}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec3(0.f,1.f,0.f)}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_camera_ad975054d4af847e32126de3dfeb4a49c}{viewDirty}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_ragot_1_1_camera_a74e7eb7f1e77185fb1f3037b63d57386}{view\_matrix}};}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Combined\ VP\ matrix\ cached}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_camera_a9a1fd20ff3afd39e3d078182c19515d3}{Matrix4x4}}\&\ \mbox{\hyperlink{class_ragot_1_1_camera_a0eb49a8b33981535da1ac49070570787}{get\_vp\_matrix}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00092\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_ragot_1_1_camera_a787eb65de35f7df16a245e96e15e16d2}{vpDirty}})}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_camera_a14b597fb38044c9f6ef6c7dcb384882a}{vp\_matrix}}\ =\ \mbox{\hyperlink{class_ragot_1_1_camera_a4d9c6fd76db5bd6911281c5951cab4a9}{get\_projection\_matrix}}()\ *\ \mbox{\hyperlink{class_ragot_1_1_camera_aa8fc7776eff63588634df880957ed04e}{get\_view\_matrix}}();}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_camera_a787eb65de35f7df16a245e96e15e16d2}{vpDirty}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_ragot_1_1_camera_a14b597fb38044c9f6ef6c7dcb384882a}{vp\_matrix}};}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ glm::vec3\ \mbox{\hyperlink{class_ragot_1_1_camera_a30288032ce41c666e4fb2f37f8d168f5}{get\_view\_direction}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00103\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ glm::normalize(\mbox{\hyperlink{class_ragot_1_1_camera_a8f77af4bdf93ecf602f34fbfff4b052d}{target}}\ -\/\ \mbox{\hyperlink{class_ragot_1_1_transform_a1db9f8e84315c4296dfef46f1f17ce99}{get\_position}}());}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ glm::vec3\ \mbox{\hyperlink{class_ragot_1_1_camera_a8ca889ab3cd7c393afe45163708ef297}{get\_right\_direction}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00109\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ glm::normalize(glm::cross(\mbox{\hyperlink{class_ragot_1_1_camera_a30288032ce41c666e4fb2f37f8d168f5}{get\_view\_direction}}(),\ glm::vec3(0.f,1.f,0.f)));}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ glm::vec3\ \mbox{\hyperlink{class_ragot_1_1_camera_a4d342cc17133f18dc93835e66975fc6c}{get\_up\_direction}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00115\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ glm::normalize(glm::cross(\mbox{\hyperlink{class_ragot_1_1_camera_a8ca889ab3cd7c393afe45163708ef297}{get\_right\_direction}}(),\ \mbox{\hyperlink{class_ragot_1_1_camera_a30288032ce41c666e4fb2f37f8d168f5}{get\_view\_direction}}()));}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ glm::vec3\ \mbox{\hyperlink{class_ragot_1_1_camera_a49252f6f9a5e873836e42dd2a38515fd}{project\_to\_ndc}}(\textcolor{keyword}{const}\ glm::vec4\ \&worldPos)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00121\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec4\ clip\ =\ \mbox{\hyperlink{class_ragot_1_1_camera_a0eb49a8b33981535da1ac49070570787}{get\_vp\_matrix}}()\ *\ worldPos;}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (clip.w\ ==\ 0.f)\ ?\ glm::vec3(0.f)\ :\ glm::vec3(clip)\ /\ clip.w;}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Placeholder\ stubs\ to\ satisfy\ interface}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_ragot_1_1vertex__t}{vertex\_t}}\ \mbox{\hyperlink{class_ragot_1_1_camera_a87cda7dfebac0d0310e592eea9e9c3c3}{calculate\_normal}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_ragot_1_1vertex__t}{vertex\_t}}\ \&v1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_ragot_1_1vertex__t}{vertex\_t}}\ \&v2,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_ragot_1_1vertex__t}{vertex\_t}}\ \&v3);}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ragot_1_1_camera_a0b276715ecd2b50677b4cf0002847100}{is\_face\_visible}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_ragot_1_1vertex__t}{vertex\_t}}\ \&v1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_ragot_1_1vertex__t}{vertex\_t}}\ \&v2,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_ragot_1_1vertex__t}{vertex\_t}}\ \&v3);}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Método\ para\ depuración}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_camera_a9668a61516d1f807a19f007c717a3ecd}{log\_camera\_info}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \};}
+\DoxyCodeLine{00134\ \}}
+
+\end{DoxyCode}

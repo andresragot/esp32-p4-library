@@ -1,0 +1,274 @@
+\doxysection{Ragot\+::Thread\+\_\+\+Pool Class Reference}
+\hypertarget{class_ragot_1_1_thread___pool}{}\label{class_ragot_1_1_thread___pool}\index{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}}
+
+
+{\ttfamily \#include $<$Thread\+\_\+\+Pool.\+hpp$>$}
+
+
+
+Collaboration diagram for Ragot\+::Thread\+\_\+\+Pool\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_ragot_1_1_thread___pool__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{class_ragot_1_1_thread___pool_ab5043941a4baee7d04479ce9e094bfce}{Task}} = std\+::function $<$ void (std\+::stop\+\_\+token) $>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_ragot_1_1_thread___pool_ab9bdd9f1fb4c1caeb0294c2f31419c70}{start}} ()
+\item 
+void \mbox{\hyperlink{class_ragot_1_1_thread___pool_ae53b45f5a0f794f023bffb9abefb9645}{stop}} ()
+\item 
+{\footnotesize template$<$typename F, typename... Args$>$ }\\std\+::future$<$ std\+::invoke\+\_\+result\+\_\+t$<$ F, Args... $>$ $>$ \mbox{\hyperlink{class_ragot_1_1_thread___pool_a82b0be885444a8e6100d61f3b44e5a8f}{submit}} (F \&\&f, Args \&\&... args)
+\item 
+{\footnotesize template$<$typename F, typename... Args$>$ }\\std\+::future$<$ std\+::invoke\+\_\+result\+\_\+t$<$ F, std\+::stop\+\_\+token, Args... $>$ $>$ \mbox{\hyperlink{class_ragot_1_1_thread___pool_a9bf4077a299c94e78c09e7523391e426}{submit\+\_\+with\+\_\+stop}} (F \&\&f, Args \&\&... args)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_ragot_1_1_thread___pool}{Thread\+\_\+\+Pool}} \& \mbox{\hyperlink{class_ragot_1_1_thread___pool_a5ea82f25ae6c96c6e0770392b349eb34}{instance}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::binary\+\_\+semaphore \mbox{\hyperlink{class_ragot_1_1_thread___pool_a9afa50e6c51fd779eccb251780ace924}{sem\+\_\+mesh\+\_\+ready}} \{0\}
+\item 
+std\+::binary\+\_\+semaphore \mbox{\hyperlink{class_ragot_1_1_thread___pool_ab47666b5161db650d86600322909a285}{sem\+\_\+render\+\_\+done}} \{0\}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_thread___pool_a9c6809ce2a430abef3fbf5162ceb76bc}{Thread\+\_\+\+Pool}} ()
+\item 
+\mbox{\hyperlink{class_ragot_1_1_thread___pool_a20ecf9ad7f5c3323855f4b4afe51bf9b}{\texorpdfstring{$\sim$}{\string~}\+Thread\+\_\+\+Pool}} ()
+\item 
+\mbox{\hyperlink{class_ragot_1_1_thread___pool_a91256e522a6b6a2f262a2757a8f8e774}{Thread\+\_\+\+Pool}} (\mbox{\hyperlink{class_ragot_1_1_thread___pool}{Thread\+\_\+\+Pool}} \&)=delete
+\item 
+\mbox{\hyperlink{class_ragot_1_1_thread___pool_a00cde0b5d885dc0b2dfc9e74de3f26d6}{Thread\+\_\+\+Pool}} (\mbox{\hyperlink{class_ragot_1_1_thread___pool}{Thread\+\_\+\+Pool}} \&\&)=delete
+\item 
+\mbox{\hyperlink{class_ragot_1_1_thread___pool}{Thread\+\_\+\+Pool}} \& \mbox{\hyperlink{class_ragot_1_1_thread___pool_acf9fa7585a967a07e940b476492a7fff}{operator=}} (\mbox{\hyperlink{class_ragot_1_1_thread___pool}{Thread\+\_\+\+Pool}} \&)=delete
+\item 
+\mbox{\hyperlink{class_ragot_1_1_thread___pool}{Thread\+\_\+\+Pool}} \& \mbox{\hyperlink{class_ragot_1_1_thread___pool_ae842f8b5c10eb2352eb1f6ea7a59da9b}{operator=}} (\mbox{\hyperlink{class_ragot_1_1_thread___pool}{Thread\+\_\+\+Pool}} \&\&)=delete
+\item 
+void \mbox{\hyperlink{class_ragot_1_1_thread___pool_a2b539fc1c1f96647c4d7bb8a0c502e37}{thread\+\_\+function}} (std\+::stop\+\_\+token)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_sync___queue}{Sync\+\_\+\+Queue}}$<$ \mbox{\hyperlink{class_ragot_1_1_thread___pool_ab5043941a4baee7d04479ce9e094bfce}{Task}} $>$ \mbox{\hyperlink{class_ragot_1_1_thread___pool_a88de646cfc8a988eea17d6f5b3b7e8cc}{tasks}}
+\item 
+std\+::vector$<$ std\+::unique\+\_\+ptr$<$ std\+::jthread $>$ $>$ \mbox{\hyperlink{class_ragot_1_1_thread___pool_a08d480fb91e3549504c3e12935bdd57c}{threads}}
+\item 
+std\+::atomic$<$ bool $>$ \mbox{\hyperlink{class_ragot_1_1_thread___pool_a371ee38f9573f68e5c96bcc7da19400d}{started}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_ragot_1_1_thread___pool_ab5043941a4baee7d04479ce9e094bfce}\index{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!Task@{Task}}
+\index{Task@{Task}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}}
+\doxysubsubsection{\texorpdfstring{Task}{Task}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_thread___pool_ab5043941a4baee7d04479ce9e094bfce} 
+using \mbox{\hyperlink{class_ragot_1_1_thread___pool_ab5043941a4baee7d04479ce9e094bfce}{Ragot\+::\+Thread\+\_\+\+Pool\+::\+Task}} = std\+::function $<$ void (std\+::stop\+\_\+token) $>$}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ragot_1_1_thread___pool_a9c6809ce2a430abef3fbf5162ceb76bc}\index{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!Thread\_Pool@{Thread\_Pool}}
+\index{Thread\_Pool@{Thread\_Pool}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}}
+\doxysubsubsection{\texorpdfstring{Thread\_Pool()}{Thread\_Pool()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_thread___pool_a9c6809ce2a430abef3fbf5162ceb76bc} 
+Ragot\+::\+Thread\+\_\+\+Pool\+::\+Thread\+\_\+\+Pool (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{class_ragot_1_1_thread___pool_a9c6809ce2a430abef3fbf5162ceb76bc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_thread___pool_a20ecf9ad7f5c3323855f4b4afe51bf9b}\index{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!````~Thread\_Pool@{\texorpdfstring{$\sim$}{\string~}Thread\_Pool}}
+\index{````~Thread\_Pool@{\texorpdfstring{$\sim$}{\string~}Thread\_Pool}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Thread\_Pool()}{\string~Thread\_Pool()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_thread___pool_a20ecf9ad7f5c3323855f4b4afe51bf9b} 
+Ragot\+::\+Thread\+\_\+\+Pool\+::\texorpdfstring{$\sim$}{\string~}\+Thread\+\_\+\+Pool (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{class_ragot_1_1_thread___pool_a20ecf9ad7f5c3323855f4b4afe51bf9b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_thread___pool_a91256e522a6b6a2f262a2757a8f8e774}\index{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!Thread\_Pool@{Thread\_Pool}}
+\index{Thread\_Pool@{Thread\_Pool}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}}
+\doxysubsubsection{\texorpdfstring{Thread\_Pool()}{Thread\_Pool()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_thread___pool_a91256e522a6b6a2f262a2757a8f8e774} 
+Ragot\+::\+Thread\+\_\+\+Pool\+::\+Thread\+\_\+\+Pool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ragot_1_1_thread___pool}{Thread\+\_\+\+Pool}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{class_ragot_1_1_thread___pool_a91256e522a6b6a2f262a2757a8f8e774_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_thread___pool_a00cde0b5d885dc0b2dfc9e74de3f26d6}\index{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!Thread\_Pool@{Thread\_Pool}}
+\index{Thread\_Pool@{Thread\_Pool}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}}
+\doxysubsubsection{\texorpdfstring{Thread\_Pool()}{Thread\_Pool()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_thread___pool_a00cde0b5d885dc0b2dfc9e74de3f26d6} 
+Ragot\+::\+Thread\+\_\+\+Pool\+::\+Thread\+\_\+\+Pool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ragot_1_1_thread___pool}{Thread\+\_\+\+Pool}} \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{class_ragot_1_1_thread___pool_a00cde0b5d885dc0b2dfc9e74de3f26d6_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ragot_1_1_thread___pool_a5ea82f25ae6c96c6e0770392b349eb34}\index{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!instance@{instance}}
+\index{instance@{instance}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}}
+\doxysubsubsection{\texorpdfstring{instance()}{instance()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_thread___pool_a5ea82f25ae6c96c6e0770392b349eb34} 
+static \mbox{\hyperlink{class_ragot_1_1_thread___pool}{Thread\+\_\+\+Pool}} \& Ragot\+::\+Thread\+\_\+\+Pool\+::instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{class_ragot_1_1_thread___pool_a5ea82f25ae6c96c6e0770392b349eb34_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=183pt]{class_ragot_1_1_thread___pool_a5ea82f25ae6c96c6e0770392b349eb34_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_thread___pool_ae842f8b5c10eb2352eb1f6ea7a59da9b}\index{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!operator=@{operator=}}
+\index{operator=@{operator=}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_thread___pool_ae842f8b5c10eb2352eb1f6ea7a59da9b} 
+\mbox{\hyperlink{class_ragot_1_1_thread___pool}{Thread\+\_\+\+Pool}} \& Ragot\+::\+Thread\+\_\+\+Pool\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ragot_1_1_thread___pool}{Thread\+\_\+\+Pool}} \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{class_ragot_1_1_thread___pool_ae842f8b5c10eb2352eb1f6ea7a59da9b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_thread___pool_acf9fa7585a967a07e940b476492a7fff}\index{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!operator=@{operator=}}
+\index{operator=@{operator=}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_thread___pool_acf9fa7585a967a07e940b476492a7fff} 
+\mbox{\hyperlink{class_ragot_1_1_thread___pool}{Thread\+\_\+\+Pool}} \& Ragot\+::\+Thread\+\_\+\+Pool\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ragot_1_1_thread___pool}{Thread\+\_\+\+Pool}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{class_ragot_1_1_thread___pool_acf9fa7585a967a07e940b476492a7fff_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_thread___pool_ab9bdd9f1fb4c1caeb0294c2f31419c70}\index{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!start@{start}}
+\index{start@{start}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_thread___pool_ab9bdd9f1fb4c1caeb0294c2f31419c70} 
+void Ragot\+::\+Thread\+\_\+\+Pool\+::start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{class_ragot_1_1_thread___pool_ab9bdd9f1fb4c1caeb0294c2f31419c70_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_thread___pool_ae53b45f5a0f794f023bffb9abefb9645}\index{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!stop@{stop}}
+\index{stop@{stop}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_thread___pool_ae53b45f5a0f794f023bffb9abefb9645} 
+void Ragot\+::\+Thread\+\_\+\+Pool\+::stop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{class_ragot_1_1_thread___pool_ae53b45f5a0f794f023bffb9abefb9645_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_thread___pool_a82b0be885444a8e6100d61f3b44e5a8f}\index{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!submit@{submit}}
+\index{submit@{submit}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}}
+\doxysubsubsection{\texorpdfstring{submit()}{submit()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_thread___pool_a82b0be885444a8e6100d61f3b44e5a8f} 
+template$<$typename F, typename... Args$>$ \\
+std\+::future$<$ std\+::invoke\+\_\+result\+\_\+t$<$ F, Args... $>$ $>$ Ragot\+::\+Thread\+\_\+\+Pool\+::submit (\begin{DoxyParamCaption}\item[{F \&\&}]{f}{, }\item[{Args \&\&...}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_ragot_1_1_thread___pool_a9bf4077a299c94e78c09e7523391e426}\index{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!submit\_with\_stop@{submit\_with\_stop}}
+\index{submit\_with\_stop@{submit\_with\_stop}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}}
+\doxysubsubsection{\texorpdfstring{submit\_with\_stop()}{submit\_with\_stop()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_thread___pool_a9bf4077a299c94e78c09e7523391e426} 
+template$<$typename F, typename... Args$>$ \\
+std\+::future$<$ std\+::invoke\+\_\+result\+\_\+t$<$ F, std\+::stop\+\_\+token, Args... $>$ $>$ Ragot\+::\+Thread\+\_\+\+Pool\+::submit\+\_\+with\+\_\+stop (\begin{DoxyParamCaption}\item[{F \&\&}]{f}{, }\item[{Args \&\&...}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_ragot_1_1_thread___pool_a2b539fc1c1f96647c4d7bb8a0c502e37}\index{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!thread\_function@{thread\_function}}
+\index{thread\_function@{thread\_function}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}}
+\doxysubsubsection{\texorpdfstring{thread\_function()}{thread\_function()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_thread___pool_a2b539fc1c1f96647c4d7bb8a0c502e37} 
+void Ragot\+::\+Thread\+\_\+\+Pool\+::thread\+\_\+function (\begin{DoxyParamCaption}\item[{std\+::stop\+\_\+token}]{stop\+\_\+token}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{class_ragot_1_1_thread___pool_a2b539fc1c1f96647c4d7bb8a0c502e37_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_ragot_1_1_thread___pool_a9afa50e6c51fd779eccb251780ace924}\index{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!sem\_mesh\_ready@{sem\_mesh\_ready}}
+\index{sem\_mesh\_ready@{sem\_mesh\_ready}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}}
+\doxysubsubsection{\texorpdfstring{sem\_mesh\_ready}{sem\_mesh\_ready}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_thread___pool_a9afa50e6c51fd779eccb251780ace924} 
+std\+::binary\+\_\+semaphore Ragot\+::\+Thread\+\_\+\+Pool\+::sem\+\_\+mesh\+\_\+ready \{0\}}
+
+\Hypertarget{class_ragot_1_1_thread___pool_ab47666b5161db650d86600322909a285}\index{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!sem\_render\_done@{sem\_render\_done}}
+\index{sem\_render\_done@{sem\_render\_done}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}}
+\doxysubsubsection{\texorpdfstring{sem\_render\_done}{sem\_render\_done}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_thread___pool_ab47666b5161db650d86600322909a285} 
+std\+::binary\+\_\+semaphore Ragot\+::\+Thread\+\_\+\+Pool\+::sem\+\_\+render\+\_\+done \{0\}}
+
+\Hypertarget{class_ragot_1_1_thread___pool_a371ee38f9573f68e5c96bcc7da19400d}\index{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!started@{started}}
+\index{started@{started}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}}
+\doxysubsubsection{\texorpdfstring{started}{started}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_thread___pool_a371ee38f9573f68e5c96bcc7da19400d} 
+std\+::atomic$<$ bool $>$ Ragot\+::\+Thread\+\_\+\+Pool\+::started\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_ragot_1_1_thread___pool_a88de646cfc8a988eea17d6f5b3b7e8cc}\index{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!tasks@{tasks}}
+\index{tasks@{tasks}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}}
+\doxysubsubsection{\texorpdfstring{tasks}{tasks}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_thread___pool_a88de646cfc8a988eea17d6f5b3b7e8cc} 
+\mbox{\hyperlink{class_ragot_1_1_sync___queue}{Sync\+\_\+\+Queue}}$<$ \mbox{\hyperlink{class_ragot_1_1_thread___pool_ab5043941a4baee7d04479ce9e094bfce}{Task}} $>$ Ragot\+::\+Thread\+\_\+\+Pool\+::tasks\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_ragot_1_1_thread___pool_a08d480fb91e3549504c3e12935bdd57c}\index{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!threads@{threads}}
+\index{threads@{threads}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}}
+\doxysubsubsection{\texorpdfstring{threads}{threads}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_thread___pool_a08d480fb91e3549504c3e12935bdd57c} 
+std\+::vector$<$ std\+::unique\+\_\+ptr $<$ std\+::jthread $>$ $>$ Ragot\+::\+Thread\+\_\+\+Pool\+::threads\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_thread___pool_8hpp}{Thread\+\_\+\+Pool.\+hpp}}\item 
+\mbox{\hyperlink{_thread___pool_8cpp}{Thread\+\_\+\+Pool.\+cpp}}\end{DoxyCompactItemize}

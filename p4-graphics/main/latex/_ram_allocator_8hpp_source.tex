@@ -1,0 +1,51 @@
+\doxysection{Ram\+Allocator.\+hpp}
+\hypertarget{_ram_allocator_8hpp_source}{}\label{_ram_allocator_8hpp_source}\mbox{\hyperlink{_ram_allocator_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}esp\_heap\_caps.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ragot}{Ragot}}\ \{}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ u\textcolor{keywordtype}{int}16\_t\ Flag>}
+\DoxyCodeLine{00017\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ragot_1_1_p_s_r_a_m_allocator_ad155cf707aa60834b9c86dd66dfdf7e1}{PSRAMAllocator}}\ }
+\DoxyCodeLine{00018\ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_ragot_1_1_p_s_r_a_m_allocator_a6489f1ef3a1e977b4db1c753248d5e35}{value\_type}}\ \ \ \ =\ T;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_ragot_1_1_p_s_r_a_m_allocator_a2e1ebb21a1456057b69e38a47d657eec}{pointer}}\ \ \ \ \ \ \ =\ T*;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_ragot_1_1_p_s_r_a_m_allocator_a903a8fc570ca63d3eca9c3a0f411844c}{size\_type}}\ \ \ \ \ =\ std::size\_t;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_ragot_1_1_p_s_r_a_m_allocator_1_1rebind}{rebind}}\ \{\ \textcolor{keyword}{using\ }\mbox{\hyperlink{struct_ragot_1_1_p_s_r_a_m_allocator_1_1rebind_ae352e72fed0a17886276a505b5d3cedc}{other}}\ =\ \mbox{\hyperlink{class_ragot_1_1_p_s_r_a_m_allocator_ad155cf707aa60834b9c86dd66dfdf7e1}{PSRAMAllocator<U,\ Flag>}};\ \};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_p_s_r_a_m_allocator_ad155cf707aa60834b9c86dd66dfdf7e1}{PSRAMAllocator}}()\ noexcept\ \{\}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ U,\ u\textcolor{keywordtype}{int}16\_t\ F2>}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_p_s_r_a_m_allocator_ac5c3bd0a3e0aabaccebabd40f1da3422}{PSRAMAllocator}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_p_s_r_a_m_allocator_ad155cf707aa60834b9c86dd66dfdf7e1}{PSRAMAllocator<U,\ F2>}}\&)\ \textcolor{keyword}{noexcept}\ \{\}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ T*\ \mbox{\hyperlink{class_ragot_1_1_p_s_r_a_m_allocator_af915bda6d52b8149ac14d55070458b94}{allocate}}(\mbox{\hyperlink{class_ragot_1_1_p_s_r_a_m_allocator_a903a8fc570ca63d3eca9c3a0f411844c}{size\_type}}\ n)\ }
+\DoxyCodeLine{00032\ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ T*\ p\ =\ \textcolor{keyword}{static\_cast<}T*\textcolor{keyword}{>}(heap\_caps\_malloc(n\ *\ \textcolor{keyword}{sizeof}(T),\ Flag));}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (not\ p)\ \textcolor{keywordflow}{throw}\ std::bad\_alloc();}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ p;}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_p_s_r_a_m_allocator_a7bccb7896f6737079393f1e5d874e554}{deallocate}}(T*\ p,\ \mbox{\hyperlink{class_ragot_1_1_p_s_r_a_m_allocator_a903a8fc570ca63d3eca9c3a0f411844c}{size\_type}})\ \textcolor{keyword}{noexcept}\ }
+\DoxyCodeLine{00039\ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ heap\_caps\_free(p);}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \};}
+\DoxyCodeLine{00043\ \ \ }
+\DoxyCodeLine{00044\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ u\textcolor{keywordtype}{int}16\_t\ F1,\ \textcolor{keyword}{typename}\ U,\ u\textcolor{keywordtype}{int}16\_t\ F2>}
+\DoxyCodeLine{00045\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespace_ragot_a43435df08cf5aa5cc13fbc01d97fe010}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_p_s_r_a_m_allocator}{PSRAMAllocator<T,\ F1>}}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_p_s_r_a_m_allocator}{PSRAMAllocator<U,\ F2>}}\&)\ }
+\DoxyCodeLine{00046\ \ \ \{\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{return}\ F1\ ==\ F2;\ }
+\DoxyCodeLine{00048\ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ u\textcolor{keywordtype}{int}16\_t\ F1,\ \textcolor{keyword}{typename}\ U,\ u\textcolor{keywordtype}{int}16\_t\ F2>}
+\DoxyCodeLine{00050\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespace_ragot_a068951e1ef4b365fe6669436915c4f1c}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_p_s_r_a_m_allocator}{PSRAMAllocator<T,\ F1>}}\&\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_p_s_r_a_m_allocator}{PSRAMAllocator<U,\ F2>}}\&\ b)\ }
+\DoxyCodeLine{00051\ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordflow}{return}\ !(a\ ==\ b);}
+\DoxyCodeLine{00053\ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \}\ \textcolor{comment}{//\ namespace\ Ragot}}
+
+\end{DoxyCode}

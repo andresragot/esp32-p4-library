@@ -1,0 +1,11 @@
+<map id="Ragot::DriverLED" name="Ragot::DriverLED">
+<area shape="rect" id="Node000001" title=" " alt="" coords="94,165,234,536"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,13,40,79"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="31,78,48,140,88,223,83,225,43,142,26,80"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="80,13,126,79"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="112,79,126,147,121,149,107,80"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="150,5,272,87"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="207,87,198,148,192,147,202,86"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="296,13,446,79"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="351,81,246,234,241,231,347,78"/>
+</map>

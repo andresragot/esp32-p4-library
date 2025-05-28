@@ -1,0 +1,253 @@
+\doxysection{Ragot\+::Shader\+\_\+\+Program Class Reference}
+\hypertarget{class_ragot_1_1_shader___program}{}\label{class_ragot_1_1_shader___program}\index{Ragot::Shader\_Program@{Ragot::Shader\_Program}}
+
+
+Class for managing an Open\+GL shader program.  
+
+
+
+
+{\ttfamily \#include $<$Shader\+\_\+\+Program.\+hpp$>$}
+
+
+
+Collaboration diagram for Ragot\+::Shader\+\_\+\+Program\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{class_ragot_1_1_shader___program__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_shader___program_af635b0fd6d66b96b0e7f13ef240fa7d9}{Shader\+\_\+\+Program}} (const vector$<$ string $>$ \&source\+\_\+code\+\_\+vertex, const vector$<$ string $>$ \&source\+\_\+code\+\_\+fragment)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_ragot_1_1_shader___program}{Shader\+\_\+\+Program} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_shader___program_acd1067ef90415e8032c1e73e160d97ea}{Shader\+\_\+\+Program}} ()=delete
+\begin{DoxyCompactList}\small\item\em Deleted default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_shader___program_af43c0c562fabcc109b6280cf5bbeb4f7}{\texorpdfstring{$\sim$}{\string~}\+Shader\+\_\+\+Program}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{class_ragot_1_1_shader___program}{Shader\+\_\+\+Program} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_shader___program_a773967e995302a644933a18e52b04fb7}{use}} () const
+\begin{DoxyCompactList}\small\item\em Uses the shader program. \end{DoxyCompactList}\item 
+GLuint \mbox{\hyperlink{class_ragot_1_1_shader___program_afeceb2afbd09acde917c9e6abfc046ab}{get\+\_\+id}} () const
+\begin{DoxyCompactList}\small\item\em Gets the shader program ID. \end{DoxyCompactList}\item 
+GLuint \mbox{\hyperlink{class_ragot_1_1_shader___program_ad51ff79b0a4956ff84b91ee034d22841}{get\+\_\+uniform\+\_\+location}} (string uniform\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Gets the uniform location in the shader program. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_shader___program_a73641df3801836632f8e67d2f4f91848}{Shader\+\_\+\+Program}} (const \mbox{\hyperlink{class_ragot_1_1_shader___program}{Shader\+\_\+\+Program}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_shader___program}{Shader\+\_\+\+Program}} \& \mbox{\hyperlink{class_ragot_1_1_shader___program_a06a9ece7c1fbf8d86250c60d7ec0d49a}{operator=}} (const \mbox{\hyperlink{class_ragot_1_1_shader___program}{Shader\+\_\+\+Program}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy assignment operator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_shader___program_a9c0875ba845fc860b320b4c7d80b697b}{initialize}} (GLuint vertex\+\_\+shader\+\_\+id, GLuint fragment\+\_\+shader\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Initializes the shader program. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_shader___program_abe3586107608cba64c497a6802aa4ce9}{show\+\_\+linkage\+\_\+error}} ()
+\begin{DoxyCompactList}\small\item\em Displays linkage errors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+GLuint \mbox{\hyperlink{class_ragot_1_1_shader___program_a8bd9e821919cbe550a69dd66505a3bc2}{program\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_ragot_1_1_shader}{Shader} program ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for managing an Open\+GL shader program. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ragot_1_1_shader___program_af635b0fd6d66b96b0e7f13ef240fa7d9}\index{Ragot::Shader\_Program@{Ragot::Shader\_Program}!Shader\_Program@{Shader\_Program}}
+\index{Shader\_Program@{Shader\_Program}!Ragot::Shader\_Program@{Ragot::Shader\_Program}}
+\doxysubsubsection{\texorpdfstring{Shader\_Program()}{Shader\_Program()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_shader___program_af635b0fd6d66b96b0e7f13ef240fa7d9} 
+Ragot\+::\+Shader\+\_\+\+Program\+::\+Shader\+\_\+\+Program (\begin{DoxyParamCaption}\item[{const vector$<$ string $>$ \&}]{source\+\_\+code\+\_\+vertex}{, }\item[{const vector$<$ string $>$ \&}]{source\+\_\+code\+\_\+fragment}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{class_ragot_1_1_shader___program}{Shader\+\_\+\+Program} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source\+\_\+code\+\_\+vertex} & Vector of vertex shader source code. \\
+\hline
+{\em source\+\_\+code\+\_\+fragment} & Vector of fragment shader source code. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_shader___program_af635b0fd6d66b96b0e7f13ef240fa7d9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_shader___program_af635b0fd6d66b96b0e7f13ef240fa7d9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_shader___program_acd1067ef90415e8032c1e73e160d97ea}\index{Ragot::Shader\_Program@{Ragot::Shader\_Program}!Shader\_Program@{Shader\_Program}}
+\index{Shader\_Program@{Shader\_Program}!Ragot::Shader\_Program@{Ragot::Shader\_Program}}
+\doxysubsubsection{\texorpdfstring{Shader\_Program()}{Shader\_Program()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_shader___program_acd1067ef90415e8032c1e73e160d97ea} 
+Ragot\+::\+Shader\+\_\+\+Program\+::\+Shader\+\_\+\+Program (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Deleted default constructor. 
+
+\Hypertarget{class_ragot_1_1_shader___program_af43c0c562fabcc109b6280cf5bbeb4f7}\index{Ragot::Shader\_Program@{Ragot::Shader\_Program}!````~Shader\_Program@{\texorpdfstring{$\sim$}{\string~}Shader\_Program}}
+\index{````~Shader\_Program@{\texorpdfstring{$\sim$}{\string~}Shader\_Program}!Ragot::Shader\_Program@{Ragot::Shader\_Program}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Shader\_Program()}{\string~Shader\_Program()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_shader___program_af43c0c562fabcc109b6280cf5bbeb4f7} 
+Ragot\+::\+Shader\+\_\+\+Program\+::\texorpdfstring{$\sim$}{\string~}\+Shader\+\_\+\+Program (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor for the \doxylink{class_ragot_1_1_shader___program}{Shader\+\_\+\+Program} class. 
+
+\Hypertarget{class_ragot_1_1_shader___program_a73641df3801836632f8e67d2f4f91848}\index{Ragot::Shader\_Program@{Ragot::Shader\_Program}!Shader\_Program@{Shader\_Program}}
+\index{Shader\_Program@{Shader\_Program}!Ragot::Shader\_Program@{Ragot::Shader\_Program}}
+\doxysubsubsection{\texorpdfstring{Shader\_Program()}{Shader\_Program()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_shader___program_a73641df3801836632f8e67d2f4f91848} 
+Ragot\+::\+Shader\+\_\+\+Program\+::\+Shader\+\_\+\+Program (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ragot_1_1_shader___program}{Shader\+\_\+\+Program}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+
+
+Deleted copy constructor. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_shader___program_a73641df3801836632f8e67d2f4f91848_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ragot_1_1_shader___program_afeceb2afbd09acde917c9e6abfc046ab}\index{Ragot::Shader\_Program@{Ragot::Shader\_Program}!get\_id@{get\_id}}
+\index{get\_id@{get\_id}!Ragot::Shader\_Program@{Ragot::Shader\_Program}}
+\doxysubsubsection{\texorpdfstring{get\_id()}{get\_id()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_shader___program_afeceb2afbd09acde917c9e6abfc046ab} 
+GLuint Ragot\+::\+Shader\+\_\+\+Program\+::get\+\_\+id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the shader program ID. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_ragot_1_1_shader}{Shader} program ID. 
+\end{DoxyReturn}
+\Hypertarget{class_ragot_1_1_shader___program_ad51ff79b0a4956ff84b91ee034d22841}\index{Ragot::Shader\_Program@{Ragot::Shader\_Program}!get\_uniform\_location@{get\_uniform\_location}}
+\index{get\_uniform\_location@{get\_uniform\_location}!Ragot::Shader\_Program@{Ragot::Shader\_Program}}
+\doxysubsubsection{\texorpdfstring{get\_uniform\_location()}{get\_uniform\_location()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_shader___program_ad51ff79b0a4956ff84b91ee034d22841} 
+GLuint Ragot\+::\+Shader\+\_\+\+Program\+::get\+\_\+uniform\+\_\+location (\begin{DoxyParamCaption}\item[{string}]{uniform\+\_\+name}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the uniform location in the shader program. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uniform\+\_\+name} & Name of the uniform. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Uniform location. 
+\end{DoxyReturn}
+\Hypertarget{class_ragot_1_1_shader___program_a9c0875ba845fc860b320b4c7d80b697b}\index{Ragot::Shader\_Program@{Ragot::Shader\_Program}!initialize@{initialize}}
+\index{initialize@{initialize}!Ragot::Shader\_Program@{Ragot::Shader\_Program}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_shader___program_a9c0875ba845fc860b320b4c7d80b697b} 
+void Ragot\+::\+Shader\+\_\+\+Program\+::initialize (\begin{DoxyParamCaption}\item[{GLuint}]{vertex\+\_\+shader\+\_\+id}{, }\item[{GLuint}]{fragment\+\_\+shader\+\_\+id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initializes the shader program. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+\_\+shader\+\_\+id} & Vertex shader ID. \\
+\hline
+{\em fragment\+\_\+shader\+\_\+id} & Fragment shader ID. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_shader___program_a9c0875ba845fc860b320b4c7d80b697b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_shader___program_a9c0875ba845fc860b320b4c7d80b697b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_shader___program_a06a9ece7c1fbf8d86250c60d7ec0d49a}\index{Ragot::Shader\_Program@{Ragot::Shader\_Program}!operator=@{operator=}}
+\index{operator=@{operator=}!Ragot::Shader\_Program@{Ragot::Shader\_Program}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_shader___program_a06a9ece7c1fbf8d86250c60d7ec0d49a} 
+\mbox{\hyperlink{class_ragot_1_1_shader___program}{Shader\+\_\+\+Program}} \& Ragot\+::\+Shader\+\_\+\+Program\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ragot_1_1_shader___program}{Shader\+\_\+\+Program}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+
+
+Deleted copy assignment operator. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_shader___program_a06a9ece7c1fbf8d86250c60d7ec0d49a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_shader___program_abe3586107608cba64c497a6802aa4ce9}\index{Ragot::Shader\_Program@{Ragot::Shader\_Program}!show\_linkage\_error@{show\_linkage\_error}}
+\index{show\_linkage\_error@{show\_linkage\_error}!Ragot::Shader\_Program@{Ragot::Shader\_Program}}
+\doxysubsubsection{\texorpdfstring{show\_linkage\_error()}{show\_linkage\_error()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_shader___program_abe3586107608cba64c497a6802aa4ce9} 
+void Ragot\+::\+Shader\+\_\+\+Program\+::show\+\_\+linkage\+\_\+error (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Displays linkage errors. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_shader___program_abe3586107608cba64c497a6802aa4ce9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_shader___program_a773967e995302a644933a18e52b04fb7}\index{Ragot::Shader\_Program@{Ragot::Shader\_Program}!use@{use}}
+\index{use@{use}!Ragot::Shader\_Program@{Ragot::Shader\_Program}}
+\doxysubsubsection{\texorpdfstring{use()}{use()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_shader___program_a773967e995302a644933a18e52b04fb7} 
+void Ragot\+::\+Shader\+\_\+\+Program\+::use (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Uses the shader program. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_ragot_1_1_shader___program_a8bd9e821919cbe550a69dd66505a3bc2}\index{Ragot::Shader\_Program@{Ragot::Shader\_Program}!program\_id@{program\_id}}
+\index{program\_id@{program\_id}!Ragot::Shader\_Program@{Ragot::Shader\_Program}}
+\doxysubsubsection{\texorpdfstring{program\_id}{program\_id}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_shader___program_a8bd9e821919cbe550a69dd66505a3bc2} 
+GLuint Ragot\+::\+Shader\+\_\+\+Program\+::program\+\_\+id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{class_ragot_1_1_shader}{Shader} program ID. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_shader___program_8hpp}{Shader\+\_\+\+Program.\+hpp}}\item 
+\mbox{\hyperlink{_shader___program_8cpp}{Shader\+\_\+\+Program.\+cpp}}\end{DoxyCompactItemize}

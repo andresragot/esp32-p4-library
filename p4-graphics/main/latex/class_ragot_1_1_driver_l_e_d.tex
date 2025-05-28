@@ -1,0 +1,228 @@
+\doxysection{Ragot\+::Driver\+LED Class Reference}
+\hypertarget{class_ragot_1_1_driver_l_e_d}{}\label{class_ragot_1_1_driver_l_e_d}\index{Ragot::DriverLED@{Ragot::DriverLED}}
+
+
+{\ttfamily \#include $<$driver\+\_\+lcd.\+hpp$>$}
+
+
+
+Inheritance diagram for Ragot\+::Driver\+LED\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_ragot_1_1_driver_l_e_d__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ragot\+::Driver\+LED\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_driver_l_e_d__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_driver_l_e_d_abc32fe6ad3af685e1b5cc5864610e290}{Driver\+LED}} ()=default
+\item 
+virtual \mbox{\hyperlink{class_ragot_1_1_driver_l_e_d_a61fa7980e7f5bc7e675d294217de4b75}{\texorpdfstring{$\sim$}{\string~}\+Driver\+LED}} ()=default
+\item 
+virtual esp\+\_\+err\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_e_d_a854550f4c4722581770a14c0298e43b1}{init}} (gpio\+\_\+num\+\_\+t reset\+\_\+pin, gpio\+\_\+num\+\_\+t bk\+\_\+pin)=0
+\item 
+virtual esp\+\_\+err\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_e_d_a875dd6bdcd6ff337dab4161f26e54d3f}{deinit}} ()=0
+\item 
+virtual esp\+\_\+err\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_e_d_a669cc9e42afa83e7c822a562692829ea}{set\+\_\+pixel}} (uint32\+\_\+t x, uint32\+\_\+t y, uint32\+\_\+t color)=0
+\item 
+virtual esp\+\_\+err\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_e_d_afdd50ff9154a032a825b7aeb536ade37}{send\+\_\+frame\+\_\+buffer}} (const void \texorpdfstring{$\ast$}{*}frame\+\_\+buffer)=0
+\item 
+const size\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_e_d_aeadb7e7543a8598a182bec8fad3e43ea}{get\+\_\+width}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_e_d_a3fc493168fa0b960553525c98928da7c}{get\+\_\+width}} ()
+\item 
+const size\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_e_d_a21e831fbcc45d5aca8c9b2651efc4a23}{get\+\_\+height}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_e_d_aaad03c1bb291e531acf5d4ecd954613c}{get\+\_\+height}} ()
+\item 
+const lcd\+\_\+color\+\_\+rgb\+\_\+pixel\+\_\+format\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_e_d_a93420d60f4ddf8fc00c3382bbc9fba6e}{get\+\_\+pixel\+\_\+format}} () const
+\item 
+lcd\+\_\+color\+\_\+rgb\+\_\+pixel\+\_\+format\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_e_d_a90e9393373bcae919fc675de8ea7e307}{get\+\_\+pixel\+\_\+format}} ()
+\item 
+const esp\+\_\+lcd\+\_\+panel\+\_\+handle\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_e_d_a36a54a423ee8df1acee35e58f1acd9be}{get\+\_\+handler}} () const
+\item 
+esp\+\_\+lcd\+\_\+panel\+\_\+handle\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_e_d_ae6861acffa60642cc22fd59b1728ac19}{get\+\_\+handler}} ()
+\item 
+const bool \mbox{\hyperlink{class_ragot_1_1_driver_l_e_d_acbc72b2663e26ee2200725f938282e5d}{is\+\_\+initialized}} () const
+\item 
+bool \mbox{\hyperlink{class_ragot_1_1_driver_l_e_d_af74691f611ec5ab468796b0371b9686b}{is\+\_\+initialized}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_ragot_1_1_driver_l_e_d_ae88ed0ab2d20aa112b3e2454d9be6e68}{initialized}} = false
+\item 
+size\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_e_d_a5134b9b2aed6ba701d8b75beb280422a}{width}}
+\item 
+size\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_e_d_a46e35411cd76bea9904e9ff3aff49f1d}{height}}
+\item 
+lcd\+\_\+color\+\_\+rgb\+\_\+pixel\+\_\+format\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_e_d_ac53e133048f342c7d06cb47bd7d6da20}{pixel\+\_\+format}}
+\item 
+esp\+\_\+lcd\+\_\+panel\+\_\+handle\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_e_d_ace6a6cd0d74709bee7ef5fc08cc3bb7b}{handler}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ragot_1_1_driver_l_e_d_abc32fe6ad3af685e1b5cc5864610e290}\index{Ragot::DriverLED@{Ragot::DriverLED}!DriverLED@{DriverLED}}
+\index{DriverLED@{DriverLED}!Ragot::DriverLED@{Ragot::DriverLED}}
+\doxysubsubsection{\texorpdfstring{DriverLED()}{DriverLED()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_e_d_abc32fe6ad3af685e1b5cc5864610e290} 
+Ragot\+::\+Driver\+LED\+::\+Driver\+LED (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_ragot_1_1_driver_l_e_d_a61fa7980e7f5bc7e675d294217de4b75}\index{Ragot::DriverLED@{Ragot::DriverLED}!````~DriverLED@{\texorpdfstring{$\sim$}{\string~}DriverLED}}
+\index{````~DriverLED@{\texorpdfstring{$\sim$}{\string~}DriverLED}!Ragot::DriverLED@{Ragot::DriverLED}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DriverLED()}{\string~DriverLED()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_e_d_a61fa7980e7f5bc7e675d294217de4b75} 
+virtual Ragot\+::\+Driver\+LED\+::\texorpdfstring{$\sim$}{\string~}\+Driver\+LED (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ragot_1_1_driver_l_e_d_a875dd6bdcd6ff337dab4161f26e54d3f}\index{Ragot::DriverLED@{Ragot::DriverLED}!deinit@{deinit}}
+\index{deinit@{deinit}!Ragot::DriverLED@{Ragot::DriverLED}}
+\doxysubsubsection{\texorpdfstring{deinit()}{deinit()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_e_d_a875dd6bdcd6ff337dab4161f26e54d3f} 
+virtual esp\+\_\+err\+\_\+t Ragot\+::\+Driver\+LED\+::deinit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a2ce6b59a5dbbeea913ecc838e60ce225}{Ragot\+::\+Driver\+EK79007}}.
+
+\Hypertarget{class_ragot_1_1_driver_l_e_d_ae6861acffa60642cc22fd59b1728ac19}\index{Ragot::DriverLED@{Ragot::DriverLED}!get\_handler@{get\_handler}}
+\index{get\_handler@{get\_handler}!Ragot::DriverLED@{Ragot::DriverLED}}
+\doxysubsubsection{\texorpdfstring{get\_handler()}{get\_handler()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_e_d_ae6861acffa60642cc22fd59b1728ac19} 
+esp\+\_\+lcd\+\_\+panel\+\_\+handle\+\_\+t Ragot\+::\+Driver\+LED\+::get\+\_\+handler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_ragot_1_1_driver_l_e_d_a36a54a423ee8df1acee35e58f1acd9be}\index{Ragot::DriverLED@{Ragot::DriverLED}!get\_handler@{get\_handler}}
+\index{get\_handler@{get\_handler}!Ragot::DriverLED@{Ragot::DriverLED}}
+\doxysubsubsection{\texorpdfstring{get\_handler()}{get\_handler()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_e_d_a36a54a423ee8df1acee35e58f1acd9be} 
+const esp\+\_\+lcd\+\_\+panel\+\_\+handle\+\_\+t Ragot\+::\+Driver\+LED\+::get\+\_\+handler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_ragot_1_1_driver_l_e_d_aaad03c1bb291e531acf5d4ecd954613c}\index{Ragot::DriverLED@{Ragot::DriverLED}!get\_height@{get\_height}}
+\index{get\_height@{get\_height}!Ragot::DriverLED@{Ragot::DriverLED}}
+\doxysubsubsection{\texorpdfstring{get\_height()}{get\_height()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_e_d_aaad03c1bb291e531acf5d4ecd954613c} 
+size\+\_\+t Ragot\+::\+Driver\+LED\+::get\+\_\+height (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_ragot_1_1_driver_l_e_d_a21e831fbcc45d5aca8c9b2651efc4a23}\index{Ragot::DriverLED@{Ragot::DriverLED}!get\_height@{get\_height}}
+\index{get\_height@{get\_height}!Ragot::DriverLED@{Ragot::DriverLED}}
+\doxysubsubsection{\texorpdfstring{get\_height()}{get\_height()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_e_d_a21e831fbcc45d5aca8c9b2651efc4a23} 
+const size\+\_\+t Ragot\+::\+Driver\+LED\+::get\+\_\+height (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_ragot_1_1_driver_l_e_d_a90e9393373bcae919fc675de8ea7e307}\index{Ragot::DriverLED@{Ragot::DriverLED}!get\_pixel\_format@{get\_pixel\_format}}
+\index{get\_pixel\_format@{get\_pixel\_format}!Ragot::DriverLED@{Ragot::DriverLED}}
+\doxysubsubsection{\texorpdfstring{get\_pixel\_format()}{get\_pixel\_format()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_e_d_a90e9393373bcae919fc675de8ea7e307} 
+lcd\+\_\+color\+\_\+rgb\+\_\+pixel\+\_\+format\+\_\+t Ragot\+::\+Driver\+LED\+::get\+\_\+pixel\+\_\+format (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_ragot_1_1_driver_l_e_d_a93420d60f4ddf8fc00c3382bbc9fba6e}\index{Ragot::DriverLED@{Ragot::DriverLED}!get\_pixel\_format@{get\_pixel\_format}}
+\index{get\_pixel\_format@{get\_pixel\_format}!Ragot::DriverLED@{Ragot::DriverLED}}
+\doxysubsubsection{\texorpdfstring{get\_pixel\_format()}{get\_pixel\_format()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_e_d_a93420d60f4ddf8fc00c3382bbc9fba6e} 
+const lcd\+\_\+color\+\_\+rgb\+\_\+pixel\+\_\+format\+\_\+t Ragot\+::\+Driver\+LED\+::get\+\_\+pixel\+\_\+format (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_ragot_1_1_driver_l_e_d_a3fc493168fa0b960553525c98928da7c}\index{Ragot::DriverLED@{Ragot::DriverLED}!get\_width@{get\_width}}
+\index{get\_width@{get\_width}!Ragot::DriverLED@{Ragot::DriverLED}}
+\doxysubsubsection{\texorpdfstring{get\_width()}{get\_width()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_e_d_a3fc493168fa0b960553525c98928da7c} 
+size\+\_\+t Ragot\+::\+Driver\+LED\+::get\+\_\+width (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_ragot_1_1_driver_l_e_d_aeadb7e7543a8598a182bec8fad3e43ea}\index{Ragot::DriverLED@{Ragot::DriverLED}!get\_width@{get\_width}}
+\index{get\_width@{get\_width}!Ragot::DriverLED@{Ragot::DriverLED}}
+\doxysubsubsection{\texorpdfstring{get\_width()}{get\_width()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_e_d_aeadb7e7543a8598a182bec8fad3e43ea} 
+const size\+\_\+t Ragot\+::\+Driver\+LED\+::get\+\_\+width (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_ragot_1_1_driver_l_e_d_a854550f4c4722581770a14c0298e43b1}\index{Ragot::DriverLED@{Ragot::DriverLED}!init@{init}}
+\index{init@{init}!Ragot::DriverLED@{Ragot::DriverLED}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_e_d_a854550f4c4722581770a14c0298e43b1} 
+virtual esp\+\_\+err\+\_\+t Ragot\+::\+Driver\+LED\+::init (\begin{DoxyParamCaption}\item[{gpio\+\_\+num\+\_\+t}]{reset\+\_\+pin}{, }\item[{gpio\+\_\+num\+\_\+t}]{bk\+\_\+pin}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a8a1c7407a748ab546693e98d8193fe99}{Ragot\+::\+Driver\+EK79007}}.
+
+\Hypertarget{class_ragot_1_1_driver_l_e_d_af74691f611ec5ab468796b0371b9686b}\index{Ragot::DriverLED@{Ragot::DriverLED}!is\_initialized@{is\_initialized}}
+\index{is\_initialized@{is\_initialized}!Ragot::DriverLED@{Ragot::DriverLED}}
+\doxysubsubsection{\texorpdfstring{is\_initialized()}{is\_initialized()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_e_d_af74691f611ec5ab468796b0371b9686b} 
+bool Ragot\+::\+Driver\+LED\+::is\+\_\+initialized (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_ragot_1_1_driver_l_e_d_acbc72b2663e26ee2200725f938282e5d}\index{Ragot::DriverLED@{Ragot::DriverLED}!is\_initialized@{is\_initialized}}
+\index{is\_initialized@{is\_initialized}!Ragot::DriverLED@{Ragot::DriverLED}}
+\doxysubsubsection{\texorpdfstring{is\_initialized()}{is\_initialized()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_e_d_acbc72b2663e26ee2200725f938282e5d} 
+const bool Ragot\+::\+Driver\+LED\+::is\+\_\+initialized (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_ragot_1_1_driver_l_e_d_afdd50ff9154a032a825b7aeb536ade37}\index{Ragot::DriverLED@{Ragot::DriverLED}!send\_frame\_buffer@{send\_frame\_buffer}}
+\index{send\_frame\_buffer@{send\_frame\_buffer}!Ragot::DriverLED@{Ragot::DriverLED}}
+\doxysubsubsection{\texorpdfstring{send\_frame\_buffer()}{send\_frame\_buffer()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_e_d_afdd50ff9154a032a825b7aeb536ade37} 
+virtual esp\+\_\+err\+\_\+t Ragot\+::\+Driver\+LED\+::send\+\_\+frame\+\_\+buffer (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{frame\+\_\+buffer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a322d5272daf6853beda488ac5d378251}{Ragot\+::\+Driver\+EK79007}}.
+
+\Hypertarget{class_ragot_1_1_driver_l_e_d_a669cc9e42afa83e7c822a562692829ea}\index{Ragot::DriverLED@{Ragot::DriverLED}!set\_pixel@{set\_pixel}}
+\index{set\_pixel@{set\_pixel}!Ragot::DriverLED@{Ragot::DriverLED}}
+\doxysubsubsection{\texorpdfstring{set\_pixel()}{set\_pixel()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_e_d_a669cc9e42afa83e7c822a562692829ea} 
+virtual esp\+\_\+err\+\_\+t Ragot\+::\+Driver\+LED\+::set\+\_\+pixel (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{x}{, }\item[{uint32\+\_\+t}]{y}{, }\item[{uint32\+\_\+t}]{color}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a10f42392e8a22a31f58c25cf347c135c}{Ragot\+::\+Driver\+EK79007}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_ragot_1_1_driver_l_e_d_ace6a6cd0d74709bee7ef5fc08cc3bb7b}\index{Ragot::DriverLED@{Ragot::DriverLED}!handler@{handler}}
+\index{handler@{handler}!Ragot::DriverLED@{Ragot::DriverLED}}
+\doxysubsubsection{\texorpdfstring{handler}{handler}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_e_d_ace6a6cd0d74709bee7ef5fc08cc3bb7b} 
+esp\+\_\+lcd\+\_\+panel\+\_\+handle\+\_\+t Ragot\+::\+Driver\+LED\+::handler\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_ragot_1_1_driver_l_e_d_a46e35411cd76bea9904e9ff3aff49f1d}\index{Ragot::DriverLED@{Ragot::DriverLED}!height@{height}}
+\index{height@{height}!Ragot::DriverLED@{Ragot::DriverLED}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_e_d_a46e35411cd76bea9904e9ff3aff49f1d} 
+size\+\_\+t Ragot\+::\+Driver\+LED\+::height\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_ragot_1_1_driver_l_e_d_ae88ed0ab2d20aa112b3e2454d9be6e68}\index{Ragot::DriverLED@{Ragot::DriverLED}!initialized@{initialized}}
+\index{initialized@{initialized}!Ragot::DriverLED@{Ragot::DriverLED}}
+\doxysubsubsection{\texorpdfstring{initialized}{initialized}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_e_d_ae88ed0ab2d20aa112b3e2454d9be6e68} 
+bool Ragot\+::\+Driver\+LED\+::initialized = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_ragot_1_1_driver_l_e_d_ac53e133048f342c7d06cb47bd7d6da20}\index{Ragot::DriverLED@{Ragot::DriverLED}!pixel\_format@{pixel\_format}}
+\index{pixel\_format@{pixel\_format}!Ragot::DriverLED@{Ragot::DriverLED}}
+\doxysubsubsection{\texorpdfstring{pixel\_format}{pixel\_format}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_e_d_ac53e133048f342c7d06cb47bd7d6da20} 
+lcd\+\_\+color\+\_\+rgb\+\_\+pixel\+\_\+format\+\_\+t Ragot\+::\+Driver\+LED\+::pixel\+\_\+format\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_ragot_1_1_driver_l_e_d_a5134b9b2aed6ba701d8b75beb280422a}\index{Ragot::DriverLED@{Ragot::DriverLED}!width@{width}}
+\index{width@{width}!Ragot::DriverLED@{Ragot::DriverLED}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_e_d_a5134b9b2aed6ba701d8b75beb280422a} 
+size\+\_\+t Ragot\+::\+Driver\+LED\+::width\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{driver__lcd_8hpp}{driver\+\_\+lcd.\+hpp}}\end{DoxyCompactItemize}

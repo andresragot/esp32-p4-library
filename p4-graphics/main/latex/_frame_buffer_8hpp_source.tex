@@ -1,0 +1,110 @@
+\doxysection{Frame\+Buffer.\+hpp}
+\hypertarget{_frame_buffer_8hpp_source}{}\label{_frame_buffer_8hpp_source}\mbox{\hyperlink{_frame_buffer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ \ FrameBuffer.hpp}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ \ FileToOBJ}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ \ Created\ by\ Andrés\ Ragot\ on\ 1/4/25.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#if\ ESP\_PLATFORM\ ==\ 1}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_ram_allocator_8hpp}{RamAllocator.hpp}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <glad/glad.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ragot}{Ragot}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_ragot_a30e07cad21ef68ef55cfdeb31712febd}{RGB565}}\ \ \ =\ uint16\_t;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_ragot_a7737e1d00910b4f06077fa1f3a99318b}{RGB888}}\ \ \ =\ uint32\_t;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_ragot_afa044b0addd3ea90c63ddc881015fbf0}{RGBA8888}}\ =\ uint32\_t;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_ragot_af633fb115d10e1c1f40951bc6fda83f6}{RGB8}}\ \ \ \ \ =\ uint8\_t\ ;\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespace_ragot_ada28c33d8bad9f3d54d75d7996467b77}{Buffer}}\ :\ uint8\_t}
+\DoxyCodeLine{00025\ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_ragot_ada28c33d8bad9f3d54d75d7996467b77af75ad43b71f766a23c64091b09a9ae3d}{CURRENT\_BUFFER}}\ \ =\ (\ 1\ <<\ 0),}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_ragot_ada28c33d8bad9f3d54d75d7996467b77aaaf300379cdda6979454130901516296}{NEXT\_BUFFER}}\ \ \ \ \ =\ (\ 1\ <<\ 1),}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_ragot_ada28c33d8bad9f3d54d75d7996467b77a53057ba42a82a769c60b36088cb5d327}{MAX\_BUFFER}}\ \ \ \ \ \ =\ (\ 1\ <<\ 2)}
+\DoxyCodeLine{00029\ \ \ \ \ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Color>}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ragot_1_1_frame_buffer_a730a63c2264ceb6a9dad53f599af2403}{FrameBuffer}}}
+\DoxyCodeLine{00033\ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_ragot_1_1_frame_buffer_af75b3e9886225d05e3372201caa0ed0d}{TYPE}}\ =\ Color;}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#if\ ESP\_PLATFORM\ ==\ 1}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_ragot_1_1_frame_buffer_a1b348b26a07a3854985ee9f1d3343dc6}{ColorVector}}\ =\ std::vector\ <\ Color,\ PSRAMAllocator<\ Color,\ MALLOC\_CAP\_8BIT\ >\ >;}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#else}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_ragot_1_1_frame_buffer_a1b348b26a07a3854985ee9f1d3343dc6}{ColorVector}}\ =\ std::vector\ <\ Color\ >;}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a0fb8d4dd40a122515278783777ad946f}{double\_buffer}};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_ae5536121312b1880e5a23c59c8cc9e66}{width}};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a388509a67a9be982e9bd65a718b19bc5}{height}};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ Color\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_abba4739d88f87710840130dad3112a2f}{color}};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a1b348b26a07a3854985ee9f1d3343dc6}{ColorVector}}\ \ \ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a39cd8d2c7f06daca62b2d49195fe289d}{buffer\_1}};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a1b348b26a07a3854985ee9f1d3343dc6}{ColorVector}}\ \ \ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a761ad8a982c62bfb7da37738f9bb6119}{buffer\_2}};}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a1b348b26a07a3854985ee9f1d3343dc6}{ColorVector}}\ *\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a5725020dc0fda2b8bbd16daa76ec930c}{current\_buffer}};}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a1b348b26a07a3854985ee9f1d3343dc6}{ColorVector}}\ *\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a3a12b9b4def7dbfffa530efcf5ae7084}{next\_buffer}};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a3dfc03e7391e99cfaed6d4cae37ea0f1}{FrameBuffer}}\ (\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_ae5536121312b1880e5a23c59c8cc9e66}{width}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a388509a67a9be982e9bd65a718b19bc5}{height}},\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a0fb8d4dd40a122515278783777ad946f}{double\_buffer}});}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a3dfc03e7391e99cfaed6d4cae37ea0f1}{FrameBuffer}}\ ()\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a90086a46a35fb9244976305b96e475a9}{\string~FrameBuffer}}\ ()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Nada\ más\ queremos\ que\ haya\ un\ FrameBuffer\ por\ ahora.}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a9908132a9785622551d998067216932f}{FrameBuffer}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a730a63c2264ceb6a9dad53f599af2403}{FrameBuffer}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a0ee45c781564883a258bf127c26d4db1}{FrameBuffer}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a730a63c2264ceb6a9dad53f599af2403}{FrameBuffer}}\ \&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a730a63c2264ceb6a9dad53f599af2403}{FrameBuffer}}\ \&\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_ac1015732cc0c880099ae75ff53bb7507}{operator\ =\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a730a63c2264ceb6a9dad53f599af2403}{FrameBuffer}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a730a63c2264ceb6a9dad53f599af2403}{FrameBuffer}}\ \&\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_ac1015732cc0c880099ae75ff53bb7507}{operator\ =\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a730a63c2264ceb6a9dad53f599af2403}{FrameBuffer}}\ \&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a473c1a88fb2fbc244f2eca21fd153a78}{swap\_buffers}}();}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_ae789b02dcb09108a89fd3efb61413fd2}{clear\_buffer}}(\ \mbox{\hyperlink{namespace_ragot_ada28c33d8bad9f3d54d75d7996467b77}{Buffer}}\ buffer\_to\_clear\ =\ \mbox{\hyperlink{namespace_ragot_ada28c33d8bad9f3d54d75d7996467b77aaaf300379cdda6979454130901516296}{NEXT\_BUFFER}}\ );}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a45ab36d35b4f6e8c6cb385a281349330}{fill}}\ (Color\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_abba4739d88f87710840130dad3112a2f}{color}}\ =\ 0,\ \mbox{\hyperlink{namespace_ragot_ada28c33d8bad9f3d54d75d7996467b77}{Buffer}}\ buffer\_to\_fill\ =\ \mbox{\hyperlink{namespace_ragot_ada28c33d8bad9f3d54d75d7996467b77aaaf300379cdda6979454130901516296}{NEXT\_BUFFER}});}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_aabed7304cdf1612fdf4c5b88ea7acd8e}{set\_pixel}}\ (\textcolor{keywordtype}{size\_t}\ x,\ \textcolor{keywordtype}{size\_t}\ y,\ Color\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_abba4739d88f87710840130dad3112a2f}{color}});}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_aabed7304cdf1612fdf4c5b88ea7acd8e}{set\_pixel}}\ (\textcolor{keywordtype}{size\_t}\ offset,\ Color\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_abba4739d88f87710840130dad3112a2f}{color}});}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_aabed7304cdf1612fdf4c5b88ea7acd8e}{set\_pixel}}\ (\textcolor{keywordtype}{size\_t}\ offset);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_afde19647e4cf9ed6151f0f568d5b5a3a}{set\_color}}\ (Color\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_abba4739d88f87710840130dad3112a2f}{color}});}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ Color\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a0393a2e3229ecc0773d33645bc576ff5}{get\_pixel}}\ (\textcolor{keywordtype}{size\_t}\ x,\ \textcolor{keywordtype}{size\_t}\ y)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_aae21a3859d33e78364292dd3de8b626b}{get\_width}}\ ()\ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_ae5536121312b1880e5a23c59c8cc9e66}{width}};\ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a3eb38ffba08b31fa6892aa7f1dce305d}{get\_width}}\ ()\textcolor{keyword}{\ \ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_ae5536121312b1880e5a23c59c8cc9e66}{width}};\ \ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a9c12f11907ead8c754dd9fd71c549f16}{get\_height}}\ ()\ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a388509a67a9be982e9bd65a718b19bc5}{height}};\ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_adc356ac57fe2123d277ab2c431841f76}{get\_height}}\ ()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a388509a67a9be982e9bd65a718b19bc5}{height}};\ \}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Color\ *\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_aaf9028dd3427a2ce9192dbeffe70ccc4}{get\_buffer}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a5725020dc0fda2b8bbd16daa76ec930c}{current\_buffer}}-\/>data();\ \}}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Color\ *\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a6cc62875a4d14d00839102502e44ecd2}{get\_buffer}}()\ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a5725020dc0fda2b8bbd16daa76ec930c}{current\_buffer}}-\/>data();\ \}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a157d9f1216d9beeddff905387c2058e0}{blit\_to\_window}}\ ()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00084\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Implementar\ la\ función\ para\ blit\ a\ la\ ventana}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ std::copy(\mbox{\hyperlink{class_ragot_1_1_frame_buffer_a5725020dc0fda2b8bbd16daa76ec930c}{current\_buffer}}-\/>begin(),\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a5725020dc0fda2b8bbd16daa76ec930c}{current\_buffer}}-\/>end(),\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a3a12b9b4def7dbfffa530efcf5ae7084}{next\_buffer}}-\/>begin());}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#if\ ESP\_PLATFORM\ !=\ 1}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_aaef8a7c7cb53616a4aad4689561daa8c}{initGLTexture}}();}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a8a3cd0103aedc5ea435751e6f1d66255}{sendGL}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ GLenum\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a6f152e0bd04365c527009e6bc65da1af}{getGLFormat}}();}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ GLenum\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a10d01ccceabbd1e010f5cd1d1e5f30ee}{getGLType}}();}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ GLuint\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a9fbd6132b7eeb4e8e76186da064e9ab7}{getGLTex}}\ ()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a16b715ee2dbb5087d1ef3c544ab5909c}{gl\_tex}};\ \}}
+\DoxyCodeLine{00099\ \ \ \ \ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00101\ \ \ \ \ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ GLuint\ \mbox{\hyperlink{class_ragot_1_1_frame_buffer_a16b715ee2dbb5087d1ef3c544ab5909c}{gl\_tex}}\ =\ 0;}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{00104\ \ \ \ \ \};}
+\DoxyCodeLine{00105\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,10 @@
+<map id="Ragot::Transform::set_position" name="Ragot::Transform::set_position">
+<area shape="rect" id="Node000001" title=" " alt="" coords="315,48,464,89"/>
+<area shape="rect" id="Node000002" href="$class_ragot_1_1_camera.html#a4003c531ad3653b929bd10437f16e3e2" title=" " alt="" coords="103,5,267,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="299,49,239,34,240,29,301,44"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,85,55,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="299,79,55,99,55,94,299,74"/>
+<area shape="rect" id="Node000004" href="$class_ragot_1_1_camera.html#a589b34b0d14c3c1b7e15e5388b9d0210" title=" " alt="" coords="117,106,253,146"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="301,96,254,110,253,105,300,91"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="101,114,55,105,56,100,102,108"/>
+</map>

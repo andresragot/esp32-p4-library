@@ -1,0 +1,13 @@
+<map id="Ragot::Renderer::task_render" name="Ragot::Renderer::task_render">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,88,156,129"/>
+<area shape="rect" id="Node000002" href="$namespace_ragot.html#a4e4e92c27d1e87745116770411dacb3f" title=" " alt="" coords="204,5,365,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,86,203,41,221,34,223,39,205,46,118,90"/>
+<area shape="rect" id="Node000003" href="$class_ragot_1_1_camera.html#a4d9c6fd76db5bd6911281c5951cab4a9" title=" " alt="" coords="216,55,352,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="156,94,200,87,201,92,157,99"/>
+<area shape="rect" id="Node000004" href="$class_ragot_1_1_camera.html#aa8fc7776eff63588634df880957ed04e" title=" " alt="" coords="216,120,352,161"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="157,118,201,125,200,130,156,123"/>
+<area shape="rect" id="Node000006" href="$class_ragot_1_1_renderer.html#a514b54e15d0a6750797d397cccde4ef8" title=" " alt="" coords="213,185,356,211"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="118,127,205,170,223,177,221,182,203,175,116,132"/>
+<area shape="rect" id="Node000005" href="$class_ragot_1_1_transform.html#a1db9f8e84315c4296dfef46f1f17ce99" title=" " alt="" coords="413,120,562,161"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="353,138,397,138,397,144,353,144"/>
+</map>

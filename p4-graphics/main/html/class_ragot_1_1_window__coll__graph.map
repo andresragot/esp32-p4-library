@@ -1,0 +1,9 @@
+<map id="Ragot::Window" name="Ragot::Window">
+<area shape="rect" id="Node000001" title="Class for managing an SDL window with OpenGL context." alt="" coords="128,150,238,399"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,105,72"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,70,83,125,121,189,117,191,78,127,60,72"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="130,5,236,72"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="186,71,186,133,180,133,180,71"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="278,5,341,72"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="304,73,283,127,250,185,245,183,278,125,299,71"/>
+</map>

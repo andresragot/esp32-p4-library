@@ -1,0 +1,11 @@
+<map id="Ragot::Camera::project_to_ndc" name="Ragot::Camera::project_to_ndc">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,39,163,79"/>
+<area shape="rect" id="Node000002" href="$class_ragot_1_1_camera.html#a0eb49a8b33981535da1ac49070570787" title=" " alt="" coords="211,39,347,79"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,56,195,56,195,62,163,62"/>
+<area shape="rect" id="Node000003" href="$class_ragot_1_1_camera.html#a4d9c6fd76db5bd6911281c5951cab4a9" title=" " alt="" coords="395,5,531,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="347,44,379,38,380,43,348,49"/>
+<area shape="rect" id="Node000004" href="$class_ragot_1_1_camera.html#aa8fc7776eff63588634df880957ed04e" title=" " alt="" coords="395,71,531,111"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="348,68,380,74,379,79,347,73"/>
+<area shape="rect" id="Node000005" href="$class_ragot_1_1_transform.html#a1db9f8e84315c4296dfef46f1f17ce99" title=" " alt="" coords="579,71,729,111"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="532,88,564,88,564,94,532,94"/>
+</map>

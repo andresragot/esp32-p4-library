@@ -1,0 +1,76 @@
+\doxysection{Node.\+hpp}
+\hypertarget{_node_8hpp_source}{}\label{_node_8hpp_source}\mbox{\hyperlink{_node_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ \ Node.hpp}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ \ FileToOBJ}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ \ Created\ by\ Andrés\ Ragot\ on\ 1/4/25.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_common_types_8hpp}{CommonTypes.hpp}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_transform_8hpp}{Transform.hpp}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ragot}{Ragot}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{using\ }glm::mat4;}
+\DoxyCodeLine{00017\ \ \ \ \ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ragot_1_1_node_af950cf77621bbb3f157b7bf3852dfd2b}{Node}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_ragot_1_1_transform_a725154a65379853ad8fcb0263fedda6c}{Transform}}}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ std::vector\ <\ Node\ *\ >\ \mbox{\hyperlink{class_ragot_1_1_node_af1827786c800c9daf6a4677ee6c02206}{children}};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_node_af950cf77621bbb3f157b7bf3852dfd2b}{Node}}\ *\ \mbox{\hyperlink{class_ragot_1_1_node_a64767f464d8abac9626bbf554de7904c}{parent}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_node_af950cf77621bbb3f157b7bf3852dfd2b}{Node}}\ ()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_ragot_1_1_node_a51384a380fecebd14482c49f7fc60336}{\string~Node}}\ ()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_node_afb856f2743eed9ca04755107e5d2a49b}{Node}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_node_af950cf77621bbb3f157b7bf3852dfd2b}{Node}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_node_a2cd800085d580d594ad5cb5ea55df009}{Node}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_node_af950cf77621bbb3f157b7bf3852dfd2b}{Node}}\ \&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_node_af950cf77621bbb3f157b7bf3852dfd2b}{Node}}\ \&\ \mbox{\hyperlink{class_ragot_1_1_node_a36d44666bd1c79342ca8e12341fd83c1}{operator\ =\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_node_af950cf77621bbb3f157b7bf3852dfd2b}{Node}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_node_af950cf77621bbb3f157b7bf3852dfd2b}{Node}}\ \&\ \mbox{\hyperlink{class_ragot_1_1_node_a36d44666bd1c79342ca8e12341fd83c1}{operator\ =\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_node_af950cf77621bbb3f157b7bf3852dfd2b}{Node}}\ \&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_node_a60041e115b425dc24d6210ad532bcb9d}{add\_child}}\ (\mbox{\hyperlink{class_ragot_1_1_node_af950cf77621bbb3f157b7bf3852dfd2b}{Node}}\ *\ child)}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (child)}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_node_af1827786c800c9daf6a4677ee6c02206}{children}}.emplace\_back(child);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ child-\/>\mbox{\hyperlink{class_ragot_1_1_node_a64767f464d8abac9626bbf554de7904c}{parent}}\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ child-\/>\mbox{\hyperlink{class_ragot_1_1_transform_a48016feecf3360fb60a42f48720c702f}{dirty}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_transform_a48016feecf3360fb60a42f48720c702f}{dirty}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_node_a9d4a258a65d3ca8a16251768013e2515}{remove\_child}}\ (\mbox{\hyperlink{class_ragot_1_1_node_af950cf77621bbb3f157b7bf3852dfd2b}{Node}}\ *\ child)}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (child)}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ std::remove(\mbox{\hyperlink{class_ragot_1_1_node_af1827786c800c9daf6a4677ee6c02206}{children}}.begin(),\ \mbox{\hyperlink{class_ragot_1_1_node_af1827786c800c9daf6a4677ee6c02206}{children}}.end(),\ child);}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ \mbox{\hyperlink{class_ragot_1_1_node_af1827786c800c9daf6a4677ee6c02206}{children}}.end())}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_node_af1827786c800c9daf6a4677ee6c02206}{children}}.erase(it,\ \mbox{\hyperlink{class_ragot_1_1_node_af1827786c800c9daf6a4677ee6c02206}{children}}.end());}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ child-\/>\mbox{\hyperlink{class_ragot_1_1_node_a64767f464d8abac9626bbf554de7904c}{parent}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ child-\/>\mbox{\hyperlink{class_ragot_1_1_transform_a48016feecf3360fb60a42f48720c702f}{dirty}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Node*>\&\ \mbox{\hyperlink{class_ragot_1_1_node_a95173dd48c8eb29e553ae98b9f736523}{get\_children}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_ragot_1_1_node_af1827786c800c9daf6a4677ee6c02206}{children}};\ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ mat4\ \mbox{\hyperlink{class_ragot_1_1_node_adf704afc3b1c3ca9a9819be9e319479b}{get\_transform\_matrix}}()\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00062\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ mat4\ \mbox{\hyperlink{class_ragot_1_1_transform_ab99865c250c5c144b71186dc888ee67c}{transform\_matrix}}\ =\ \mbox{\hyperlink{class_ragot_1_1_transform_a039cc1705ced81a3491e8ecd504c3942}{Transform::get\_transform\_matrix}}();}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_ragot_1_1_node_a64767f464d8abac9626bbf554de7904c}{parent}})}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_transform_ab99865c250c5c144b71186dc888ee67c}{transform\_matrix}}\ =\ \mbox{\hyperlink{class_ragot_1_1_node_a64767f464d8abac9626bbf554de7904c}{parent}}-\/>get\_transform\_matrix()\ *\ \mbox{\hyperlink{class_ragot_1_1_transform_ab99865c250c5c144b71186dc888ee67c}{transform\_matrix}};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_ragot_1_1_transform_ab99865c250c5c144b71186dc888ee67c}{transform\_matrix}};}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00070\ \ \ \ \ \};}
+\DoxyCodeLine{00071\ \}}
+
+\end{DoxyCode}

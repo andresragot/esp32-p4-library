@@ -1,0 +1,79 @@
+\doxysection{Renderer.\+hpp}
+\hypertarget{_renderer_8hpp_source}{}\label{_renderer_8hpp_source}\mbox{\hyperlink{_renderer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ \ Renderer.hpp}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ \ FileToOBJ}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ \ Created\ by\ Andrés\ Ragot\ on\ 6/4/25.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_mesh_8hpp}{Mesh.hpp}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_frame_buffer_8hpp}{FrameBuffer.hpp}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_rasterizer_8hpp}{Rasterizer.hpp}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_node_8hpp}{Node.hpp}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_scene_8hpp}{Scene.hpp}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#if\ ESP\_PLATFORM\ ==\ 1}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{driver__ek79007_8hpp}{driver\_ek79007.hpp}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_shader___program_8hpp}{Shader\_Program.hpp}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ragot}{Ragot}}}
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ragot_1_1_renderer_a7b014b41ad61fce011463868b91ebf79}{Renderer}}}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_ragot_1_1_renderer_a2b221c8714215ff28aa5d045bda2bb69}{accumulated\_time}}\ =\ 0.f;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_ragot_1_1_renderer_a81019c395b15cc01e73494c77e304aa2}{iterations}}\ =\ 0;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_ragot_1_1_renderer_a5e9254923457cc88f1b417796cddf8a9}{number\_of\_iterations}}\ =\ 10000000000000000;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#if\ ESP\_PLATFORM\ ==\ 1}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007}{DriverEK79007}}\ driver;}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#else}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ std::unique\_ptr\ <\ Shader\_Program\ >\ \mbox{\hyperlink{class_ragot_1_1_renderer_aaef638571592dc30d0b75ae1c533ef8b}{quadShader}}\ \ \ \ \ \ \ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ GLuint\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_renderer_a4fb1cb268b0a5b5a4bd5b9bbce2e5aaf}{quadVAO}}\ \ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ GLuint\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_renderer_a89d49bae23a921bb4b249ce51711dd10}{quadVBO}}\ \ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ GLuint\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_renderer_a91830f9674076ff1af547feead7db823}{quadEBO}}\ \ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_renderer_a6adf243a9b8bdb60cc962affc5ba4e9f}{initFullScreenQuad}}();\ \ \textcolor{comment}{//\ helper\ para\ crear\ VAO/VBO}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::string\ \ \ \mbox{\hyperlink{class_ragot_1_1_renderer_a9072d7d05eb2733f32fce8bb880ceaaf}{vertex\_shader\_code}};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{class_ragot_1_1_renderer_a012c2346e9b3251a6e0f761b05bf5b28}{fragment\_shader\_code}};}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ FrameBuffer\ <\ RGB565\ >\ \mbox{\hyperlink{class_ragot_1_1_renderer_a89d4039e9bef0c938d1209c9284069b7}{frame\_buffer}};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_scene}{Scene}}\ *\ \mbox{\hyperlink{class_ragot_1_1_renderer_a70f783d1156fda99eaeb383f093b83c2}{current\_scene}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ Rasterizer\ <\ RGB565\ >\ \mbox{\hyperlink{class_ragot_1_1_renderer_ab9d54c2c1f9a93672063348de383d084}{rasterizer}};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \ \mbox{\hyperlink{class_ragot_1_1_renderer_a1bdab02cd188930abd66ff311397658e}{width}};}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{class_ragot_1_1_renderer_aaadcb26ff7c8502d4dfdfae706d77610}{height}};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ragot_1_1_renderer_a79599c95067b2ebef99577e339493742}{initialized}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_renderer_a7b014b41ad61fce011463868b91ebf79}{Renderer}}\ ()\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_renderer_a72e42229b1c05ab0ae910b20b6f41453}{Renderer}}\ (\textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{class_ragot_1_1_renderer_a1bdab02cd188930abd66ff311397658e}{width}},\ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{class_ragot_1_1_renderer_aaadcb26ff7c8502d4dfdfae706d77610}{height}});}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_renderer_a0537d592db6f461dfafa9a2175b609b6}{\string~Renderer}}\ ()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ std::vector\ <\ glm::fvec4\ >\ \mbox{\hyperlink{class_ragot_1_1_renderer_a38457ae0ab7e3abe2615dc32eb63bac9}{transformed\_vertices}};}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ std::vector\ <\ glm::ivec4\ >\ \mbox{\hyperlink{class_ragot_1_1_renderer_a9190a22a63b5d5a32bcf4a20db22cc38}{display\_vertices}};}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_renderer_aadafbf7ac26aedbf95b75dec92b691ad}{set\_scene}}\ (\mbox{\hyperlink{class_ragot_1_1_scene}{Scene}}\ *\ scene)\ \{\ \mbox{\hyperlink{class_ragot_1_1_renderer_a70f783d1156fda99eaeb383f093b83c2}{current\_scene}}\ =\ scene;\ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_renderer_a514b54e15d0a6750797d397cccde4ef8}{init}}\ ();}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_renderer_acc3bbc330b23f454ed5d01b85d4f8e98}{render}}\ ();}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_renderer_a30c9db3883dcb090d6ddebd972809d55}{task\_render}}\ (std::stop\_token\ stop\_token);}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ragot_1_1_renderer_ab2a21ea68f4dd927733084e6b043ed50}{is\_frontface}}\ (\textcolor{keyword}{const}\ glm::fvec4\ *\ \textcolor{keyword}{const}\ projected\_vertices,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_ragot_1_1face__t}{face\_t}}\ *\ \textcolor{keyword}{const}\ indices);}
+\DoxyCodeLine{00071\ \ \ \ \ \};}
+\DoxyCodeLine{00072\ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ }
+
+\end{DoxyCode}
