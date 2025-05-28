@@ -9,21 +9,25 @@
 #include "Mesh.hpp"
 #include <queue>
 #include <algorithm>
-#include "Thread_Pool.hpp"
 #include "Logger.hpp"
+#ifdef CONFIG_GRAPHICS_PARALLEL_ENABLED
+#include "Thread_Pool.hpp"
+#endif
 
 namespace Ragot
 {
     Scene::Scene ()
     {
-        std::cout << "Scene constructor" << std::endl;
+#ifdef CONFIG_GRAPHICS_PARALLEL_ENABLED
         thread_pool.submit_with_stop (std::bind (&Scene::task_update, this, std::placeholders::_1, 0.f));
+#endif
     }
     
     Scene::Scene (Camera * camera) : main_camera (camera)
     {
-        std::cout << "Scene constructor with camera" << std::endl;
+#ifdef CONFIG_GRAPHICS_PARALLEL_ENABLED
         thread_pool.submit_with_stop (std::bind (&Scene::task_update, this, std::placeholders::_1, 0.f));
+#endif
     }
 
     void Scene::add_node(Node* node, const basics::Id name)
@@ -145,8 +149,6 @@ namespace Ragot
     
     void Scene::task_update (std::stop_token stop_token, float delta_time)
     {    
-        logger.Log ("SCENE", 1, "=== Iniciando task_update() ===");
-
         auto meshes = collect_components<Mesh>();
         
         float angle = 0.f;
@@ -169,10 +171,12 @@ namespace Ragot
                 mesh->set_position(glm::fvec3(0.f, -1.f, z_pos));
                 mesh->recalculate ();
             }
-            
+
+#ifdef CONFIG_GRAPHICS_PARALLEL_ENABLED
             thread_pool.sem_mesh_ready.release();
 
             thread_pool.sem_render_done.acquire();
+#endif
             
             meshes = collect_components<Mesh>();
             // std::this_thread::sleep_for(std::chrono::milliseconds(time_ms)); ///< 60 fps.

@@ -48,7 +48,7 @@ namespace Ragot
         
        ~ExtrudeMesh() = default;
         
-        void generate_vertices () override {};
+        void generate_vertices () override;
         void generate_faces    () override;
         
         bool are_vertices_coplanar (const glm::fvec4 & v1, const glm::fvec4 & v2, const glm::fvec4 & v3, const glm::fvec4 & v4, float tolerance = 0.1f);

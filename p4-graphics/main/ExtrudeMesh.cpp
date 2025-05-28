@@ -52,6 +52,7 @@ namespace Ragot
         }
     }
 
+#ifdef CONFIG_GRAPHICS_OPTIMIZATION_ENABLED
     void ExtrudeMesh::generate_faces ()
     {
         // 1) Prepara espacio local
@@ -167,49 +168,8 @@ namespace Ragot
 
     }
 
-
-    
-    bool ExtrudeMesh::are_vertices_coplanar (const fvec4 & v1,
-        const fvec4 & v2, const fvec4 & v3, const fvec4 & v4, float tolerance)
-    {
-        float nx1 = (v2.y - v1.y) * (v3.z - v1.z) - (v2.z - v1.z) * (v3.y - v1.y);
-        float ny1 = (v2.z - v1.z) * (v3.x - v1.x) - (v2.x - v1.x) * (v3.z - v1.z);
-        float nz1 = (v2.x - v1.x) * (v3.y - v1.y) - (v2.y - v1.y) * (v3.x - v1.x);
-        
-        float d = - (nx1 * v1.x + ny1 * v1.y + nz1 * v1.z);
-        float distance = (nx1 * v4.x + ny1 * v4.y + nz1 * v4.z + d) / sqrt(nx1 * nx1 + ny1 * ny1 + nz1 * nz1);
-        
-        return std::abs(distance) < tolerance;
-    }
-}
-
-/*//
-//  ExtrudeMesh.cpp
-//  FileToOBJ
-//
-//  Created by Andrés Ragot on 10/3/25.
-//
-
-#include "ExtrudeMesh.hpp"
-#include <iostream>
-
-namespace Ragot
-{
-    using glm::fvec4;
-
-    bool ExtrudeMesh::are_vertices_coplanar (const fvec4 & v1,
-        const fvec4 & v2, const fvec4 & v3, const fvec4 & v4, float tolerance)
-    {
-        float nx1 = (v2.y - v1.y) * (v3.z - v1.z) - (v2.z - v1.z) * (v3.y - v1.y);
-        float ny1 = (v2.z - v1.z) * (v3.x - v1.x) - (v2.x - v1.x) * (v3.z - v1.z);
-        float nz1 = (v2.x - v1.x) * (v3.y - v1.y) - (v2.y - v1.y) * (v3.x - v1.x);
-        
-        float d = - (nx1 * v1.x + ny1 * v1.y + nz1 * v1.z);
-        float distance = (nx1 * v4.x + ny1 * v4.y + nz1 * v4.z + d) / sqrt(nx1 * nx1 + ny1 * ny1 + nz1 * nz1);
-        
-        return std::abs(distance) < tolerance;
-    }
-
+    void ExtrudeMesh::generate_vertices () {}
+#else
     void ExtrudeMesh::generate_vertices()
     {
         vertices.clear();
@@ -320,5 +280,18 @@ namespace Ragot
             }
         }
     }
+#endif
+
+    bool ExtrudeMesh::are_vertices_coplanar (const fvec4 & v1,
+        const fvec4 & v2, const fvec4 & v3, const fvec4 & v4, float tolerance)
+    {
+        float nx1 = (v2.y - v1.y) * (v3.z - v1.z) - (v2.z - v1.z) * (v3.y - v1.y);
+        float ny1 = (v2.z - v1.z) * (v3.x - v1.x) - (v2.x - v1.x) * (v3.z - v1.z);
+        float nz1 = (v2.x - v1.x) * (v3.y - v1.y) - (v2.y - v1.y) * (v3.x - v1.x);
+        
+        float d = - (nx1 * v1.x + ny1 * v1.y + nz1 * v1.z);
+        float distance = (nx1 * v4.x + ny1 * v4.y + nz1 * v4.z + d) / sqrt(nx1 * nx1 + ny1 * ny1 + nz1 * nz1);
+        
+        return std::abs(distance) < tolerance;
+    }
 }
-*/

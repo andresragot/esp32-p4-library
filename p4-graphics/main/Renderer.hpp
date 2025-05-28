@@ -30,11 +30,6 @@ namespace Ragot
         float accumulated_time = 0.f;
         size_t iterations = 0;
         static constexpr size_t number_of_iterations = 10000000000000000;
-#ifdef DEBUG
-        static const int   vertices[][4];
-        static const float   colors[][3];
-        static const int  triangles[][3];
-#endif
         
         #if ESP_PLATFORM == 1
         DriverEK79007 driver;
@@ -62,12 +57,6 @@ namespace Ragot
         Renderer () = delete;
         Renderer (unsigned width, unsigned height);
        ~Renderer () = default;
-       
-#ifdef DEBUG
-        std::vector < glm::fvec4 >    original_vertices;
-        std::vector < int >           original_indices;
-        std::vector <  RGB565 >       original_colors;
-#endif
 
         std::vector < glm::fvec4 > transformed_vertices;
         std::vector < glm::ivec4 > display_vertices;
@@ -79,11 +68,6 @@ namespace Ragot
         void render ();
         void task_render (std::stop_token stop_token);
         bool is_frontface (const glm::fvec4 * const projected_vertices, const face_t * const indices);
-#ifdef DEBUG
-        void render_debug();
-        bool is_frontface (const glm::fvec4 * const projected_vertices, const int * const indices);
-#endif
-
     };
 }
 

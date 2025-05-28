@@ -38,14 +38,19 @@ void main_loop (Renderer & renderer, Scene & scene)
         // renderer.render_debug();
         if (update)
         {
+#ifndef CONFIG_GRAPHICS_PARALLEL_ENABLED
             scene.update(0);
+#endif
             // update = false;
         }
         else
         {
             update = true;
         }
-                
+#ifndef CONFIG_GRAPHICS_PARALLEL_ENABLED            
+        renderer.render ();
+#endif
+        
         frame_count++;
         
         // Log periódico del estado de memoria
@@ -90,7 +95,9 @@ extern "C" void app_main(void)
 int main(int argc, char * argv[])
 #endif
 {
+#ifdef CONFIG_GRAPHICS_PARALLEL_ENABLED
     thread_pool.start();
+#endif
     
     logger.setLogLevel (1); // 0 NONE, 1 ERROR, 2 WARNING, 3 INFO
 

@@ -12,6 +12,7 @@ namespace Ragot
 {
     using namespace glm;
     
+#ifdef CONFIG_GRAPHICS_OPTIMIZATION_ENABLED
     void RevolutionMesh::generate_faces()
     {
         vertices.clear();
@@ -116,9 +117,11 @@ namespace Ragot
             }
         }
     }
-
+    
+    void RevolutionMesh::generate_vertices() {}
+#else
     // Old way
-    /*using glm::fvec4;
+    using glm::fvec4;
     void RevolutionMesh::generate_vertices()
     {
         vertices.clear();
@@ -171,5 +174,6 @@ namespace Ragot
                 faces.emplace_back(face1);
             }
         }
-    }*/
+    }
+#endif
 }

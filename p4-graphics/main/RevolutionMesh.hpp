@@ -35,7 +35,7 @@ namespace Ragot
         
        ~RevolutionMesh() = default;
         
-        void generate_vertices () override {};
+        void generate_vertices () override;
         void generate_faces    () override;
     };
 }
