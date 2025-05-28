@@ -121,7 +121,7 @@ namespace Ragot
         if (gl_tex == 0)
         {
             glGenTextures(1, &gl_tex);
-            glBindTexture(GL_TEXTURE_2D, gl_tex);
+            glBindTexture  (GL_TEXTURE_2D, gl_tex);
             glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
             glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
             glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S,     GL_CLAMP_TO_EDGE);

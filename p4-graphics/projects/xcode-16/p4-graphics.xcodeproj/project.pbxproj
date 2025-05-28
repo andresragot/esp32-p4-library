@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8EB341732DDD030D00D80146 /* Thread_Pool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8EB341722DDD030D00D80146 /* Thread_Pool.cpp */; };
 		8EB4A7142DBE6BB200739118 /* Assets.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8EB4A6F92DBE6BB200739118 /* Assets.cpp */; };
 		8EB4A7162DBE6BB200739118 /* ExtrudeMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8EB4A6FF2DBE6BB200739118 /* ExtrudeMesh.cpp */; };
 		8EB4A7172DBE6BB200739118 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8EB4A7052DBE6BB200739118 /* main.cpp */; };
@@ -55,6 +56,9 @@
 
 /* Begin PBXFileReference section */
 		8E04C5EB2DBE6B42000010F2 /* p4-graphics */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "p4-graphics"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EB341702DDD030D00D80146 /* Sync_Queue.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Sync_Queue.hpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/Sync_Queue.hpp"; sourceTree = "<absolute>"; };
+		8EB341712DDD030D00D80146 /* Thread_Pool.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Thread_Pool.hpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/Thread_Pool.hpp"; sourceTree = "<absolute>"; };
+		8EB341722DDD030D00D80146 /* Thread_Pool.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Thread_Pool.cpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/Thread_Pool.cpp"; sourceTree = "<absolute>"; };
 		8EB4A6F82DBE6BB200739118 /* Assets.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Assets.hpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/Assets.hpp"; sourceTree = "<absolute>"; };
 		8EB4A6F92DBE6BB200739118 /* Assets.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Assets.cpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/Assets.cpp"; sourceTree = "<absolute>"; };
 		8EB4A6FA2DBE6BB200739118 /* Camera.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Camera.hpp; path = "/Users/andresragot/projects/esp32-p4-library/p4-graphics/main/Camera.hpp"; sourceTree = "<absolute>"; };
@@ -177,6 +181,9 @@
 				8EB4A7132DBE6BB200739118 /* Transform.hpp */,
 				8EB4A7212DBECF7600739118 /* Frameworks */,
 				8E04C5EC2DBE6B42000010F2 /* Products */,
+				8EB341702DDD030D00D80146 /* Sync_Queue.hpp */,
+				8EB341712DDD030D00D80146 /* Thread_Pool.hpp */,
+				8EB341722DDD030D00D80146 /* Thread_Pool.cpp */,
 			);
 			sourceTree = "<group>";
 		};
@@ -273,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EB4A72B2DBECF8A00739118 /* glad.c in Sources */,
+				8EB341732DDD030D00D80146 /* Thread_Pool.cpp in Sources */,
 				8EB4A74D2DC1512600739118 /* Shader_Program.cpp in Sources */,
 				8EB4A7142DBE6BB200739118 /* Assets.cpp in Sources */,
 				8EB4A7162DBE6BB200739118 /* ExtrudeMesh.cpp in Sources */,
@@ -418,6 +426,10 @@
 					../../../libraries/sdl/include,
 				);
 				LIBRARY_SEARCH_PATHS = ../../../libraries/sdl/lib/macos;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-fexperimental-library",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -432,6 +444,10 @@
 					../../../libraries/sdl/include,
 				);
 				LIBRARY_SEARCH_PATHS = ../../../libraries/sdl/lib/macos;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-fexperimental-library",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

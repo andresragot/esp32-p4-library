@@ -6,9 +6,7 @@
 #include "ExtrudeMesh.hpp"
 #include "Id.hpp"
 #include "Logger.hpp"
-#include "MeshSerializer.hpp"
-#include "Assets.hpp"
-#include <thread>
+#include "Thread_Pool.hpp"
 
 #if ESP_PLATFORM != 1
 #include "Window.hpp"
@@ -39,14 +37,18 @@ void main_loop (Renderer & renderer, Scene & scene)
         logger.Log (MAIN_TAG, 3, "\n--- Frame %u ---", frame_count);
         if (update)
         {
+#ifndef CONFIG_GRAPHICS_PARALLEL_ENABLED
             scene.update(0);
+#endif
             // update = false;
         }
         else
         {
             update = true;
         }
-        renderer.render();
+#ifndef CONFIG_GRAPHICS_PARALLEL_ENABLED            
+        renderer.render ();
+#endif
         
         frame_count++;
         
@@ -82,12 +84,7 @@ void main_loop (Renderer & renderer, Scene & scene, Window & window)
                 exit = true;
             }
         }
-        if (update)
-        {
-            elapsed_time = std::chrono::duration_cast<std::chrono::milliseconds>(current_tick - last_tick);
-            scene.update(elapsed_time.count());
-            // update = false;
-        }
+//        scene.update(0);
         
         renderer.render();
         
@@ -105,12 +102,16 @@ extern "C" void app_main(void)
 int main(int argc, char * argv[])
 #endif
 {
-    logger.setLogLevel (0); // 0 NONE, 1 ERROR, 2 WARNING, 3 INFO
+#ifdef CONFIG_GRAPHICS_PARALLEL_ENABLED
+    thread_pool.start();
+#endif
+    
+    logger.setLogLevel (1); // 0 NONE, 1 ERROR, 2 WARNING, 3 INFO
 
     logger.Log (MAIN_TAG, 3, "Iniciando aplicación");
     // logger.Log (MAIN_TAG, 3, "Memoria libre inicial: %u bytes", esp_get_free_heap_size());
     
-    logger.Log(MAIN_TAG, 3, "Iniciando Window");
+    logger.Log (MAIN_TAG, 3, "Iniciando Window");
 #if ESP_PLATFORM != 1
     assets.initialize(argv[0]);
 
@@ -149,7 +150,7 @@ int main(int argc, char * argv[])
     // mesh_cup.set_scale    (glm::vec3{ 0.1f, 0.1f, 0.1f });
 
     scene.add_node(&mesh_cup , ID(COPA));
-    // scene.add_node(&mesh_cube, ID(CUBO));
+    scene.add_node(&mesh_cube, ID(CUBO));
 
     renderer.set_scene(&scene);
     renderer.init();

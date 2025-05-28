@@ -14,12 +14,17 @@ namespace Ragot
     template < class COLOR_BUFFER_TYPE > int Rasterizer< COLOR_BUFFER_TYPE >::offset_cache0 [1024];
     template < class COLOR_BUFFER_TYPE > int Rasterizer< COLOR_BUFFER_TYPE >::offset_cache1 [1024];
     
+#ifndef CONFIG_GRAPHICS_PAINTER_ALGO_ENABLED
+    template < class COLOR_BUFFER_TYPE > int Rasterizer< COLOR_BUFFER_TYPE >::z_cache0 [1024];
+    template < class COLOR_BUFFER_TYPE > int Rasterizer< COLOR_BUFFER_TYPE >::z_cache1 [1024];
+#endif // CONFIG_GRAPHICS_PAINTER_ALGO_ENABLED
+    
     template <typename COLOR >
     void Rasterizer<COLOR>::fill_convex_polygon(const glm::ivec4 * const vertices,
                                                 const int        * const indices_begin,
                                                 const int        * const indices_end)
     {
-        
+        int   pitch = static_cast < int > (frame_buffer.get_width ());
         int * offset_cache0 = this->offset_cache0;
         int * offset_cache1 = this->offset_cache1;
         
@@ -60,7 +65,7 @@ namespace Ragot
         
         while (true)
         {
-            interpolate< int32_t, 11 > (offset_cache0, o0, o1, y0, y1);
+            interpolate< int32_t, 11> (offset_cache0, o0, o1, y0, y1);
             
             if (current_index == indices_begin) current_index = indices_back; else current_index--;
             if (current_index == end_index    ) break;
@@ -85,7 +90,6 @@ namespace Ragot
         while (true)
         {
             interpolate< int32_t, 11 > (offset_cache1, o0, o1, y0, y1);
-            
             if (current_index == indices_back) current_index = indices_begin; else current_index++;
             if (current_index == end_index   ) break;
             if (   next_index == indices_back) next_index = indices_begin; else next_index++;
@@ -102,7 +106,6 @@ namespace Ragot
         offset_cache1 += start_y;
         
         auto pixels = frame_buffer.get_buffer();
-        
         for (int y = start_y; y < end_y; ++y)
         {
             o0 = *offset_cache0++;
@@ -139,8 +142,9 @@ namespace Ragot
         
         fill_convex_polygon(vertices, indices_begin, indices_end);
     }
-    
-    /*template <typename COLOR >
+
+#ifndef CONFIG_GRAPHICS_PAINTER_ALGO_ENABLED
+    template <typename COLOR >
     void Rasterizer<COLOR>::fill_convex_polygon_z_buffer(
         const glm::ivec4 * const vertices,
         const face_t * const face
@@ -449,8 +453,8 @@ namespace Ragot
                 if (o1 > end_offset) break;
             }
         }
-    }*/
-
+    }
+#endif // CONFIG_GRAPHICS_PAINTER_ALGO_ENABLED
     
     template < typename COLOR >
     template < typename VALUE_TYPE, size_t SHIFT >
@@ -465,8 +469,28 @@ namespace Ragot
     {
         if (y_max > y_min)
         {
-            VALUE_TYPE value = (VALUE_TYPE (v0) << SHIFT);
-            VALUE_TYPE step  = (VALUE_TYPE (v1 - v0) << SHIFT) / (y_max - y_min);
+            cache[y] = static_cast<int>(value >> SHIFT);
+            value += step;
+        }
+    }
+    
+
+     template < >
+    template < >
+    void Rasterizer<RGB565>::fill_row < 2 > (RGB565 * start, unsigned left_offset, unsigned right_offset, const RGB565 & color)
+    {
+        unsigned length = right_offset - left_offset;
+        
+        if (length < 128)
+        {
+            std::fill_n (start + left_offset, length, color);
+        }
+        else
+        {
+            uint8_t * pixel   = reinterpret_cast< uint8_t * >(start + left_offset);
+            uint8_t * left64  = pixel + ( left_offset & 7) + 8;
+            uint8_t * right64 = pixel + (right_offset & 7);
+            uint8_t * end     = pixel + length * 2;
             
             for (int * iterator = cache + y_min, * end = cache + y_max; iterator <= end; ++iterator)
             {
@@ -504,7 +528,9 @@ namespace Ragot
         }
     }
     
-    // template void Rasterizer<RGB565>::fill_convex_polygon_z_buffer(const glm::ivec4* const, const face_t* const);
-    template void Rasterizer<RGB565>::fill_convex_polygon(const glm::ivec4* const, const face_t* const);
-    template void Rasterizer<RGB565>::fill_convex_polygon(const glm::ivec4* const, const int* const, const int* const);
+#ifndef CONFIG_GRAPHICS_PAINTER_ALGO_ENABLED
+    template void Rasterizer<RGB565>::fill_convex_polygon_z_buffer(const glm::ivec4* const, const face_t* const);
+    template void Rasterizer<RGB565>::fill_convex_polygon_z_buffer(const glm::ivec4 *const vertices, const int *const indices_begin, const int *const indices_end);
+#endif // CONFIG_GRAPHICS_PAINTER_ALGO_ENABLED
+
 }

@@ -9,9 +9,27 @@
 #include "Mesh.hpp"
 #include <queue>
 #include <algorithm>
+#include "Logger.hpp"
+#ifdef CONFIG_GRAPHICS_PARALLEL_ENABLED
+#include "Thread_Pool.hpp"
+#endif
 
 namespace Ragot
-{    
+{
+    Scene::Scene ()
+    {
+#ifdef CONFIG_GRAPHICS_PARALLEL_ENABLED
+        thread_pool.submit_with_stop (std::bind (&Scene::task_update, this, std::placeholders::_1, 0.f));
+#endif
+    }
+    
+    Scene::Scene (Camera * camera) : main_camera (camera)
+    {
+#ifdef CONFIG_GRAPHICS_PARALLEL_ENABLED
+        thread_pool.submit_with_stop (std::bind (&Scene::task_update, this, std::placeholders::_1, 0.f));
+#endif
+    }
+
     void Scene::add_node(Node* node, const basics::Id name)
     {
         if (!node) return;
@@ -118,15 +136,53 @@ namespace Ragot
         static float angle = 0.f;
         static int frame_count = 0;
         frame_count++;
-        angle += 0.025f;
+        angle += 0.025f * (1 + sin(angle * 0.1f)); // Varying rotation speed
         float z_pos = +5.f * sin(frame_count * 0.1f);
 
         for (auto mesh : meshes)
         {
             mesh->rotate(angle, glm::fvec3(0.f, 1.f, 0.f));
             mesh->set_position(glm::fvec3(0.f, -1.f, z_pos));
-        } 
+            mesh->recalculate ();
+        }
     }
+    
+    void Scene::task_update (std::stop_token stop_token, float delta_time)
+    {    
+        auto meshes = collect_components<Mesh>();
+        
+        float angle = 0.f;
+        int frame_count = 0;
+        
+        angle += 0.025f * (1 + sin(angle * 0.1f)); // Varying rotation speed
+        float z_pos;
+        
+        float time = 1 / 60 * 1000; ///< 60 fps
+        long long int time_ms = static_cast<long long int>(time);
+        
+        while (not stop_token.stop_requested())
+        {
+            z_pos = +5.f * sin(frame_count * 0.1f);
+            frame_count ++;
+            
+            for (auto mesh : meshes)
+            {
+                mesh->rotate(angle, glm::fvec3(0.f, 1.f, 0.f));
+                mesh->set_position(glm::fvec3(0.f, -1.f, z_pos));
+                mesh->recalculate ();
+            }
+
+#ifdef CONFIG_GRAPHICS_PARALLEL_ENABLED
+            thread_pool.sem_mesh_ready.release();
+
+            thread_pool.sem_render_done.acquire();
+#endif
+            
+            meshes = collect_components<Mesh>();
+            // std::this_thread::sleep_for(std::chrono::milliseconds(time_ms)); ///< 60 fps.
+        }
+    }
+    
     
     // Explicit template instantiations for common component types
     template std::vector< Mesh   *> Scene::collect_components< Mesh   >();

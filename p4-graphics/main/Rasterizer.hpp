@@ -22,9 +22,14 @@ namespace Ragot
     
     private:
         FrameBuffer < Color > & frame_buffer;
-        
+
         static int offset_cache0 [1024];
         static int offset_cache1 [1024];
+#ifndef CONFIG_GRAPHICS_PAINTER_ALGO_ENABLED
+        
+        
+        std::vector < int > z_buffer;
+#endif // CONFIG_GRAPHICS_PAINTER_ALGO_ENABLED
         
         
         Color color;
@@ -35,19 +40,17 @@ namespace Ragot
     public:
     
         Rasterizer (FrameBuffer < Color > & frame) : frame_buffer (frame)
+#ifndef CONFIG_GRAPHICS_PAINTER_ALGO_ENABLED
+        , z_buffer(frame.get_width () * frame.get_height ())
+#endif // CONFIG_GRAPHICS_PAINTER_ALGO_ENABLED
         {
         }
         
         Rasterizer () = default;
        ~Rasterizer () = default;
         
-        const FrameBuffer < Color > & get_frame_buffer() const
-        {
-            return (frame_buffer);
-        }
-        
     public:
-        FrameBuffer < Color > & get_frame_buffer ()
+        const FrameBuffer < Color > & get_frame_buffer() const
         {
             return (frame_buffer);
         }
@@ -62,27 +65,36 @@ namespace Ragot
         {
             logger.Log (RASTER_TAG, 3, "Limpiando framebuffer");
             frame_buffer.clear_buffer();
-//            int height = static_cast <int>(frame_buffer.get_height());
-//            int width  = static_cast <int>(frame_buffer.get_width() );
-//            // Asumimos que -infinito clamp→0 y +infinito clamp→width*height-1
-//            std::fill(offset_cache0, offset_cache0 + height, 0);
-//            std::fill(offset_cache1, offset_cache1 + height, width * height - 1);
-
+            
+#ifndef CONFIG_GRAPHICS_PAINTER_ALGO_ENABLED
+            for (int * z = z_buffer.data(), * end = z + z_buffer.size(); z != end; ++z)
+            {
+                * z = std::numeric_limits< int >::max ();
+            }
+#endif // CONFIG_GRAPHICS_PAINTER_ALGO_ENABLED
         }
         
         void fill_convex_polygon (  const glm::ivec4 * const vertices,
                                     const int        * const indices_begin,
                                     const int        * const indices_end
                                  );
-                                 
+
         void fill_convex_polygon ( const glm::ivec4 * const vertices,
                                       const face_t     * const face
                                  );
-                                 
-        /*void fill_convex_polygon_z_buffer ( const glm::ivec4 * const vertices,
+
+#ifndef CONFIG_GRAPHICS_PAINTER_ALGO_ENABLED
+        void fill_convex_polygon_z_buffer ( const glm::ivec4 * const vertices,
                                             const face_t     * const face
                                           );*/
 
+        void fill_convex_polygon_z_buffer (
+                                            const glm::ivec4 * const vertices, 
+                                            const int     * const indices_begin, 
+                                            const int     * const indices_end
+                                          );
+#endif // CONFIG_GRAPHICS_PAINTER_ALGO_ENABLED
+                                          
         // Logs debug para rasterizado
         bool debug_enabled = true;
                                           
@@ -96,36 +108,7 @@ namespace Ragot
         {
             std::fill_n (start + left_offset, right_offset - left_offset, color);
         }
-        
-        template < >
-        void fill_row < 2 > (Color * start, unsigned left_offset, unsigned right_offset, const Color & color)
-        {
-            unsigned length = right_offset - left_offset;
 
-            if (length < 128)
-            {
-                std::fill_n (start + left_offset, length, color);
-            }
-            else
-            {
-                uint8_t * pixel   = reinterpret_cast< uint8_t * >(start + left_offset);
-                uint8_t * left64  = pixel + ( left_offset & 7) + 8;
-                uint8_t * right64 = pixel + (right_offset & 7);
-                uint8_t * end     = pixel + length * 2;
-
-                uint64_t color_pack = static_cast< uint64_t >(*reinterpret_cast< const uint16_t * >(&color));
-                
-                color_pack |= color_pack << 16;
-                color_pack |= color_pack << 32;
-
-                for ( ; pixel < left64 ; pixel += 2) *reinterpret_cast< Color    * >(pixel) = color;
-                for ( ; pixel < right64; pixel += 8) *reinterpret_cast< uint64_t * >(pixel) = color_pack;
-                for ( ; pixel < end    ; pixel += 2) *reinterpret_cast< Color    * >(pixel) = color;
-            }
-            
-
-        }
-        
         // dentro de Rasterizer<COLOR> o en un header común
         template <unsigned COLOR_SIZE>
         void fill_row_zbuffer(

@@ -1,0 +1,23 @@
+menu "ESP32 Graphics Library"
+    config GRAPHICS_PARALLEL_ENABLED
+        bool "Enable Parallel Graphics"
+        default n
+        help
+            Enable the parallel graphics library for ESP32. This allows for faster rendering
+            on displays that support parallel communication.
+    
+    config GRAPHICS_PAINTER_ALGO_ENABLED
+        bool "Enable Painter Algorithm"
+        default n
+        help
+            Enable the painter algorithm for rendering graphics. This is useful for drawing
+            shapes and images on the display.
+
+    config GRAPHICS_OPTIMIZATION_ENABLED
+        bool "Enable Graphics Optimization"
+        default n
+        help
+            Enable various optimizations for the graphics library to improve performance.
+            This may include caching, reduced memory usage, and faster rendering techniques.
+            
+endmenu

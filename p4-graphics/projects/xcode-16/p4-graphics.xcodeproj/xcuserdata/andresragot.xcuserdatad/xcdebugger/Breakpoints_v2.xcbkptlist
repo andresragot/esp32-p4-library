@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
-   uuid = "D910AB23-2A6A-4B6E-AB1F-4AA0280308EA"
+   uuid = "98E679A0-1EB7-46BC-A535-07BA2DB0B547"
    type = "1"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "53C7EAC5-91A1-4CFC-BBA5-3B2EB1DCC0AB"
+            uuid = "0ED712C2-4742-4D63-8C8F-3341BC0DEEAE"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../../main/main.cpp"
+            filePath = "../../main/Scene.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "main_loop(renderer, scene, window)"
-            landmarkType = "9">
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "Scene::task_update(stop_token, delta_time)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

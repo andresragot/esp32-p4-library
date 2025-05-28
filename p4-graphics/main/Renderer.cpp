@@ -17,7 +17,9 @@
 #include <chrono>
 #include <thread>
 
-#define PAINTER
+#ifdef CONFIG_GRAPHICS_PARALLEL_ENABLED
+#include "Thread_Pool.hpp"
+#endif
 
 namespace Ragot
 {
@@ -55,13 +57,13 @@ namespace Ragot
     
 #endif
 
-    Renderer::Renderer (unsigned width, unsigned height)
-    :
+    Renderer::Renderer (unsigned width, unsigned height) 
+    : 
     #if ESP_PLATFORM == 1
         driver(), 
     #endif
         frame_buffer(width, height, true), rasterizer(frame_buffer), width(width), height(height)
-    {
+    {    
 #if ESP_PLATFORM != 1
          quadShader = std::make_unique<Shader_Program>  (
                                                             std::vector<std::string> { vertex_shader_code   },
@@ -69,6 +71,11 @@ namespace Ragot
                                                         );
         
         initFullScreenQuad();
+#endif
+    
+        init();
+#ifdef CONFIG_GRAPHICS_PARALLEL_ENABLED  
+        thread_pool.submit_with_stop(std::bind (&Renderer::task_render, this, std::placeholders::_1));
 #endif
     }
     
@@ -417,6 +424,21 @@ namespace Ragot
         rasterizer.clear();
         rasterizer.set_color(RGB565(0x000FF));
 
+
+#ifdef CONFIG_GRAPHICS_PAINTER_ALGO_ENABLED
+    void Renderer::render()
+    {
+        if (!current_scene) 
+        {
+#ifdef CONFIG_GRAPHICS_PARALLEL_ENABLED
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+#endif
+            return;
+        }
+        init();
+        rasterizer.clear();
+        rasterizer.set_color(RGB565(0x000FF));
+
         // 1) Preparar matrices
         Camera *cam = current_scene->get_main_camera();
         Matrix4x4 view       = cam->get_view_matrix();
@@ -430,11 +452,12 @@ namespace Ragot
             std::vector<glm::fvec4> poly;  // vértices en clip-space tras clipping
             float                   depth; // profundidad promedio en NDC
         };
-
+#ifdef CONFIG_GRAPHICS_PARALLEL_ENABLED
+            thread_pool.sem_mesh_ready.acquire ();
+#endif
         auto meshes = current_scene->collect_components<Mesh>();
         for (auto *mesh : meshes)
         {
-            mesh->recalculate();
             const auto &srcVerts = mesh->get_vertices();
             Matrix4x4 model = mesh->get_transform_matrix();
             Matrix4x4 clipM  = proj * view * model;
@@ -499,6 +522,9 @@ namespace Ragot
                 drawList.push_back({ std::move(poly), depth });
             }
 
+#ifdef CONFIG_GRAPHICS_PARALLEL_ENABLED
+            thread_pool.sem_render_done.release();
+#endif
             // 3) Ordenar de menor a mayor depth (más lejano primero)
             std::sort(drawList.begin(), drawList.end(),
                       [](auto &a, auto &b){ return a.depth < b.depth; });
@@ -595,10 +621,17 @@ namespace Ragot
 #else
     void Renderer::render()
     {
-        if (!current_scene) return;
-        init();
+        if (!current_scene) 
+        { 
+#ifdef CONFIG_GRAPHICS_PARALLEL_ENABLED
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+#endif
+            return; 
+        } 
+
+        init ();
         rasterizer.clear();
-        rasterizer.set_color(RGB565(0x000FF));
+        rasterizer.set_color(RGB565(0xFFFFFF));
 
         // 1) Preparar matrices
         Camera *cam = current_scene->get_main_camera();
@@ -607,17 +640,20 @@ namespace Ragot
         Matrix4x4 I(1);
         Matrix4x4 screenTransform =
             glm::translate(I, {width*0.5f, height*0.5f, 0.f})
-          * glm::scale     (I, {width*0.5f, height*0.5f, 1.f});
+            * glm::scale     (I, {width*0.5f, height*0.5f, 1.f});
 
+#ifdef CONFIG_GRAPHICS_PARALLEL_ENABLED
+        thread_pool.sem_mesh_ready.acquire();
+#endif
+        
         auto meshes = current_scene->collect_components<Mesh>();
         logger.Log(RENDERER_TAG, 2, "Meshes en escena: %zu", meshes.size());
 
         for (auto *mesh : meshes)
         {
-            mesh->recalculate();
             const auto &srcVerts = mesh->get_vertices();
             logger.Log(RENDERER_TAG, 2, "Mesh tiene %zu vértices y %zu caras",
-                       srcVerts.size(), mesh->get_faces().size());
+                        srcVerts.size(), mesh->get_faces().size());
             
             // 2) Transformar a clip-space
             Matrix4x4 model = mesh->get_transform_matrix();
@@ -629,7 +665,7 @@ namespace Ragot
                 glm::fvec4 cv = clipM * srcVerts[i];
                 clipVerts.push_back(cv);
                 logger.Log(RENDERER_TAG, 3, "Clip V[%zu] = (%.2f,%.2f,%.2f,%.2f)",
-                           i, cv.x, cv.y, cv.z, cv.w);
+                            i, cv.x, cv.y, cv.z, cv.w);
             }
 
             // 3) Para cada cara: clipping, pantalla, raster
@@ -652,33 +688,33 @@ namespace Ragot
                     poly = clipAgainstPlane(poly, inside, intersect);
                     size_t after = poly.size();
                     logger.Log(RENDERER_TAG, 3, "  Clip %s: %zu→%zu vértices",
-                               planeName, before, after);
+                                planeName, before, after);
                 };
                 
                 clipAndLog(
-                  [](auto &v){ return v.x >= -v.w; },
-                  [](auto &A,auto &B){ float t=(A.w+A.x)/((A.w+A.x)-(B.w+B.x)); return A+t*(B-A); },
-                  "Left");
+                    [](auto &v){ return v.x >= -v.w; },
+                    [](auto &A,auto &B){ float t=(A.w+A.x)/((A.w+A.x)-(B.w+B.x)); return A+t*(B-A); },
+                    "Left");
                 clipAndLog(
-                  [](auto &v){ return v.x <=  v.w; },
-                  [](auto &A,auto &B){ float t=(A.w-A.x)/((A.w-A.x)-(B.w-B.x)); return A+t*(B-A); },
-                  "Right");
+                    [](auto &v){ return v.x <=  v.w; },
+                    [](auto &A,auto &B){ float t=(A.w-A.x)/((A.w-A.x)-(B.w-B.x)); return A+t*(B-A); },
+                    "Right");
                 clipAndLog(
-                  [](auto &v){ return v.y >= -v.w; },
-                  [](auto &A,auto &B){ float t=(A.w+A.y)/((A.w+A.y)-(B.w+B.y)); return A+t*(B-A); },
-                  "Bottom");
+                    [](auto &v){ return v.y >= -v.w; },
+                    [](auto &A,auto &B){ float t=(A.w+A.y)/((A.w+A.y)-(B.w+B.y)); return A+t*(B-A); },
+                    "Bottom");
                 clipAndLog(
-                  [](auto &v){ return v.y <=  v.w; },
-                  [](auto &A,auto &B){ float t=(A.w-A.y)/((A.w-A.y)-(B.w-B.y)); return A+t*(B-A); },
-                  "Top");
+                    [](auto &v){ return v.y <=  v.w; },
+                    [](auto &A,auto &B){ float t=(A.w-A.y)/((A.w-A.y)-(B.w-B.y)); return A+t*(B-A); },
+                    "Top");
                 clipAndLog(
-                  [](auto &v){ return v.z >= -v.w; },
-                  [](auto &A,auto &B){ float t=(A.w+A.z)/((A.w+A.z)-(B.w+B.z)); return A+t*(B-A); },
-                  "Near");
+                    [](auto &v){ return v.z >= -v.w; },
+                    [](auto &A,auto &B){ float t=(A.w+A.z)/((A.w+A.z)-(B.w+B.z)); return A+t*(B-A); },
+                    "Near");
                 clipAndLog(
-                  [](auto &v){ return v.z <=  v.w; },
-                  [](auto &A,auto &B){ float t=(A.w-A.z)/((A.w-A.z)-(B.w-B.z)); return A+t*(B-A); },
-                  "Far");
+                    [](auto &v){ return v.z <=  v.w; },
+                    [](auto &A,auto &B){ float t=(A.w-A.z)/((A.w-A.z)-(B.w-B.z)); return A+t*(B-A); },
+                    "Far");
 
                 if (poly.size() < 3)
                 {
@@ -696,8 +732,8 @@ namespace Ragot
                         int(scr.x), int(scr.y), int(ndc.z * 1e8f), 1
                     );
                     logger.Log(RENDERER_TAG, 3,
-                               "  Screen[%zu] = (%d,%d) depth=%.2f",
-                               i, screenPoly.back().x, screenPoly.back().y, ndc.z);
+                                "  Screen[%zu] = (%d,%d) depth=%.2f",
+                                i, screenPoly.back().x, screenPoly.back().y, ndc.z);
                 }
                 logger.Log(RENDERER_TAG, 3, "  screenPoly size = %zu", screenPoly.size());
 
@@ -726,7 +762,10 @@ namespace Ragot
             }
         }
 
-        logger.Log (RENDERER_TAG, 3, "Enviando framebuffer al driver");
+#ifdef CONFIG_GRAPHICS_PARALLEL_ENABLED
+        thread_pool.sem_render_done.release();
+#endif
+        
         #if ESP_PLATFORM == 1
         esp_err_t result = driver.send_frame_buffer(frame_buffer.get_buffer());
         
@@ -738,7 +777,12 @@ namespace Ragot
         {
             logger.Log (RENDERER_TAG, 3, "Error al enviar framebuffer: %s", esp_err_to_name(result));
         }
+
+        frame_buffer.swap_buffers();
+        frame_buffer.clear_buffer();
         #else
+        logger.Log (RENDERER_TAG, 3, "Enviando framebuffer al driver");
+        
         // En Renderer::render(), en la sección #else de ESP_PLATFORM
         frame_buffer.sendGL();
 
@@ -756,19 +800,23 @@ namespace Ragot
         glBindVertexArray(quadVAO);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
         glBindVertexArray(0);
-
-        // Swap de buffers y limpieza de tu framebuffer
-        frame_buffer.swap_buffers();
-        frame_buffer.clear_buffer();
-
-        
-        #endif
-        
+                
         logger.Log (RENDERER_TAG, 3, "Swapping y limpiando buffers");
         frame_buffer.swap_buffers();
         frame_buffer.clear_buffer();
+        #endif
     }
 #endif
+    
+    void Renderer::task_render (std::stop_token stop_token)
+    {
+        while (!stop_token.stop_requested())
+        {
+            render();
+        }
+
+    }
+    
     
     bool Renderer::is_frontface (const glm::fvec4 * const projected_vertices, const face_t * const indices )
     {
@@ -795,41 +843,5 @@ namespace Ragot
         }
         
         return response;
-    }
-
-#if ESP_PLATFORM != 1
-    void Renderer::initFullScreenQuad()
-    {
-        // Define vértices (pos XY + UV)
-        float quadVerts[] =
-        {
-            -1.f, -1.f, 0.f, 0.f,
-             1.f, -1.f, 1.f, 0.f,
-             1.f,  1.f, 1.f, 1.f,
-            -1.f,  1.f, 0.f, 1.f,
-        };
-        unsigned quadIdx[] = { 0,1,2, 2,3,0 };
-        
-        glGenVertexArrays(1, &quadVAO);
-        glGenBuffers(1, &quadVBO);
-        glGenBuffers(1, &quadEBO);
-        glBindVertexArray(quadVAO);
-        
-        glBindBuffer(GL_ARRAY_BUFFER, quadVBO);
-        glBufferData(GL_ARRAY_BUFFER, sizeof(quadVerts), quadVerts, GL_STATIC_DRAW);
-        
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, quadEBO);
-        glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(quadIdx), quadIdx, GL_STATIC_DRAW);
-        
-        // posición = layout(location=0)
-        glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 4*sizeof(float), (void*)0);
-        glEnableVertexAttribArray(0);
-        // UV = layout(location=1)
-        glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 4*sizeof(float), (void*)(2*sizeof(float)));
-        glEnableVertexAttribArray(1);
-        
-        glBindVertexArray(0);
-    }
-#endif
-    
+    }    
 } // namespace Ragot
