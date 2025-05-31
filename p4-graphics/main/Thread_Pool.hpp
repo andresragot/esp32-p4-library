@@ -29,7 +29,8 @@ namespace Ragot
         
         std::vector < std::unique_ptr < std::jthread > > threads;
         
-        std::atomic < bool > started;
+        // std::atomic < bool > started;
+        bool started;
 
     public:
         static Thread_Pool & instance ()

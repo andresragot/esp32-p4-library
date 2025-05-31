@@ -26,10 +26,10 @@ namespace Ragot
         Component & operator = (const Component &&) = delete;
         
     protected:
-        std::vector < Component * > components;
+        std::vector < std::shared_ptr < Component > > components;
         
     public:
-        void add_component(Component * component)
+        void add_component(std::shared_ptr < Component > component)
         {
             if (component)
             {
@@ -38,7 +38,7 @@ namespace Ragot
             }
         }
         
-        void remove_component (Component * component)
+        void remove_component (std::shared_ptr < Component > component)
         {
             if (component)
             {
@@ -51,7 +51,7 @@ namespace Ragot
             }
         }
 
-        const std::vector<Component*>& get_components() const { return components; }
+        const std::vector<std::shared_ptr < Component > > get_components() const { return components; }
         
     };
 }

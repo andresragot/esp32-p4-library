@@ -1,4 +1,4 @@
-idf_component_register(SRCS "Thread_Pool.cpp" "Logger.cpp" "FrameBuffer.cpp" "main.cpp"
+idf_component_register(SRCS "Driver_ST7789.cpp" "Thread_Pool.cpp" "Logger.cpp" "FrameBuffer.cpp" "main.cpp"
                             "Scene.cpp" 
                             "Camera.cpp" 
                             "Assets.cpp"
@@ -8,8 +8,8 @@ idf_component_register(SRCS "Thread_Pool.cpp" "Logger.cpp" "FrameBuffer.cpp" "ma
                             "MeshSerializer.cpp"
                             "Rasterizer.cpp"
                             "Renderer.cpp"
-                            "RevolutionMesh.cpp"
-                            "driver_ek79007.cpp" 
+                            "RevolutionMesh.cpp" 
+                            "atomic_stubs.c"
                     INCLUDE_DIRS "." "libraries/glm/include"
                     REQUIRES driver
                     REQUIRES esp_lcd

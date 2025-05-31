@@ -12,7 +12,6 @@
 #pragma once
 
 #include "esp_lcd_panel_ops.h"
-#include "esp_lcd_mipi_dsi.h"
 #include "esp_ldo_regulator.h"
 #include "esp_lcd_panel_vendor.h"
 #include "esp_lcd_panel_interface.h"
@@ -25,14 +24,17 @@
 #include "freertos/queue.h"
 #include "freertos/semphr.h"
 #include "driver/gpio.h"
+#ifdef CONFIG_IDF_TARGET_ESP32P4
+#include "esp_lcd_mipi_dsi.h"
+#endif
 
 namespace Ragot
 {
-    class DriverLED
+    class DriverLCD
     {
     public:
-        DriverLED() = default;
-        virtual ~DriverLED() = default;
+        DriverLCD() = default;
+        virtual ~DriverLCD() = default;
 
         virtual esp_err_t init(gpio_num_t reset_pin, gpio_num_t bk_pin) = 0;
         virtual esp_err_t deinit() = 0;

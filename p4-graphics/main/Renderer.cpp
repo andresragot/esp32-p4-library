@@ -26,6 +26,7 @@ namespace Ragot
     using Matrix4x4 = glm::mat4;
     using glm::fvec4;
     static const char* RENDERER_TAG = "Renderer";
+    static const char* MAIN_TAG = "Main";
     
 #if ESP_PLATFORM != 1
     
@@ -85,7 +86,7 @@ namespace Ragot
         {
             size_t total_vertices = 0;
             
-            std::vector < Mesh * > meshes = current_scene->collect_components<Mesh>();
+            auto meshes = current_scene->collect_components<Mesh>();
             
             for (auto mesh : meshes)
             {
@@ -416,15 +417,6 @@ namespace Ragot
         return out;
     }
     
-#ifdef PAINTER
-    void Renderer::render()
-    {
-        if (!current_scene) return;
-        init();
-        rasterizer.clear();
-        rasterizer.set_color(RGB565(0x000FF));
-
-
 #ifdef CONFIG_GRAPHICS_PAINTER_ALGO_ENABLED
     void Renderer::render()
     {
@@ -437,7 +429,6 @@ namespace Ragot
         }
         init();
         rasterizer.clear();
-        rasterizer.set_color(RGB565(0x000FF));
 
         // 1) Preparar matrices
         Camera *cam = current_scene->get_main_camera();
@@ -451,12 +442,13 @@ namespace Ragot
         struct FaceToDraw {
             std::vector<glm::fvec4> poly;  // vértices en clip-space tras clipping
             float                   depth; // profundidad promedio en NDC
+            uint16_t color; // color del mesh
         };
 #ifdef CONFIG_GRAPHICS_PARALLEL_ENABLED
             thread_pool.sem_mesh_ready.acquire ();
 #endif
         auto meshes = current_scene->collect_components<Mesh>();
-        for (auto *mesh : meshes)
+        for (auto mesh : meshes)
         {
             const auto &srcVerts = mesh->get_vertices();
             Matrix4x4 model = mesh->get_transform_matrix();
@@ -519,12 +511,9 @@ namespace Ragot
                     depth += (v.z / v.w);
                 depth /= float(poly.size());
 
-                drawList.push_back({ std::move(poly), depth });
+                drawList.push_back({ std::move(poly), depth, mesh->get_color() });
             }
 
-#ifdef CONFIG_GRAPHICS_PARALLEL_ENABLED
-            thread_pool.sem_render_done.release();
-#endif
             // 3) Ordenar de menor a mayor depth (más lejano primero)
             std::sort(drawList.begin(), drawList.end(),
                       [](auto &a, auto &b){ return a.depth < b.depth; });
@@ -554,6 +543,7 @@ namespace Ragot
                 if (std::abs(area2) < 1e-2f)
                     continue;  // polígono degenerado, no rasterizar
 
+                rasterizer.set_color(fd.color);
                 // 4.2) Llamada al rasterizer
                 if (screenPoly.size() == 4)
                 {
@@ -575,6 +565,9 @@ namespace Ragot
                 }
             }
         }
+        #ifdef CONFIG_GRAPHICS_PARALLEL_ENABLED
+            thread_pool.sem_render_done.release();
+        #endif
 
         logger.Log (RENDERER_TAG, 3, "Enviando framebuffer al driver");
         #if ESP_PLATFORM == 1
@@ -631,7 +624,6 @@ namespace Ragot
 
         init ();
         rasterizer.clear();
-        rasterizer.set_color(RGB565(0xFFFFFF));
 
         // 1) Preparar matrices
         Camera *cam = current_scene->get_main_camera();
@@ -645,12 +637,12 @@ namespace Ragot
 #ifdef CONFIG_GRAPHICS_PARALLEL_ENABLED
         thread_pool.sem_mesh_ready.acquire();
 #endif
-        
         auto meshes = current_scene->collect_components<Mesh>();
         logger.Log(RENDERER_TAG, 2, "Meshes en escena: %zu", meshes.size());
 
-        for (auto *mesh : meshes)
+        for (auto mesh : meshes)
         {
+            rasterizer.set_color(mesh->get_color());
             const auto &srcVerts = mesh->get_vertices();
             logger.Log(RENDERER_TAG, 2, "Mesh tiene %zu vértices y %zu caras",
                         srcVerts.size(), mesh->get_faces().size());
@@ -765,7 +757,6 @@ namespace Ragot
 #ifdef CONFIG_GRAPHICS_PARALLEL_ENABLED
         thread_pool.sem_render_done.release();
 #endif
-        
         #if ESP_PLATFORM == 1
         esp_err_t result = driver.send_frame_buffer(frame_buffer.get_buffer());
         
@@ -810,9 +801,34 @@ namespace Ragot
     
     void Renderer::task_render (std::stop_token stop_token)
     {
+        while (not running)
+        {
+            std::this_thread::sleep_for(std::chrono::milliseconds(100)); // Espera activa para evitar saturar el CPU
+        }
+
+        unsigned frame_count = 0;
+        size_t ram_usage = 0;
+
+        std::chrono::high_resolution_clock::time_point last_tick = std::chrono::high_resolution_clock::now();
+        std::chrono::high_resolution_clock::time_point current_tick;
+        std::chrono::high_resolution_clock::duration elapsed_time;
+
         while (!stop_token.stop_requested())
         {
+            current_tick = std::chrono::high_resolution_clock::now();
             render();
+            
+            frame_count++;
+
+            elapsed_time = current_tick - last_tick;
+            last_tick = current_tick;
+            ram_usage = esp_get_free_heap_size();
+            logger.Log (MAIN_TAG, 1, "Tiempo transcurrido: %.6f segundos\n", std::chrono::duration<float>(elapsed_time).count());
+            logger.Log (MAIN_TAG, 1, "Frames renderizados: %u\n", frame_count);
+            logger.Log (MAIN_TAG, 1, "FPS: %.2f\n", 1.f / std::chrono::duration<float>(elapsed_time).count());
+            logger.Log (MAIN_TAG, 1, "Uso de RAM: %zu bytes\n", ram_usage);
+            
+            // std::this_thread::sleep_for(std::chrono::milliseconds(1)); // Simula un frame de 60 FPS
         }
 
     }

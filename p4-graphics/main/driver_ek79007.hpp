@@ -16,7 +16,7 @@
 
 namespace Ragot
 {
-    class DriverEK79007 : public DriverLED
+    class DriverEK79007 : public DriverLCD
     {
     public:
         DriverEK79007();

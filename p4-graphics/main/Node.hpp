@@ -10,6 +10,7 @@
 #include <vector>
 #include "Transform.hpp"
 #include <algorithm>
+#include <memory>
 
 namespace Ragot
 {
@@ -19,7 +20,7 @@ namespace Ragot
     {
     
     protected:
-        std::vector < Node * > children;
+        std::vector < std::shared_ptr < Node > > children;
         Node * parent = nullptr;
         
     public:
@@ -31,7 +32,7 @@ namespace Ragot
         Node & operator = (const Node &) = delete;
         Node & operator = (const Node &&) = delete;
     public:
-        void add_child (Node * child)
+        void add_child (std::shared_ptr < Node > child)
         {
             if (child)
             {
@@ -42,7 +43,7 @@ namespace Ragot
             }
         }
         
-        void remove_child (Node * child)
+        void remove_child (std::shared_ptr < Node > child)
         {
             if (child)
             {
@@ -56,7 +57,7 @@ namespace Ragot
             }
         }
         
-        const std::vector<Node*>& get_children() const { return children; }
+        const std::vector< std::shared_ptr < Node > >& get_children() const { return children; }
         
         mat4 get_transform_matrix() override
         {

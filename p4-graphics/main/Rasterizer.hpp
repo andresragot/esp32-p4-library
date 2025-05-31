@@ -27,6 +27,8 @@ namespace Ragot
         static int offset_cache1 [1024];
 #ifndef CONFIG_GRAPHICS_PAINTER_ALGO_ENABLED
         
+        static int z_cache0 [1024];
+        static int z_cache1 [1024];
         
         std::vector < int > z_buffer;
 #endif // CONFIG_GRAPHICS_PAINTER_ALGO_ENABLED
@@ -86,7 +88,7 @@ namespace Ragot
 #ifndef CONFIG_GRAPHICS_PAINTER_ALGO_ENABLED
         void fill_convex_polygon_z_buffer ( const glm::ivec4 * const vertices,
                                             const face_t     * const face
-                                          );*/
+                                          );
 
         void fill_convex_polygon_z_buffer (
                                             const glm::ivec4 * const vertices, 

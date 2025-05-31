@@ -27,8 +27,7 @@ namespace Ragot
         int   pitch = static_cast < int > (frame_buffer.get_width ());
         int * offset_cache0 = this->offset_cache0;
         int * offset_cache1 = this->offset_cache1;
-        
-        int   pitch = static_cast < int > (frame_buffer.get_width ());
+
         const int * indices_back = indices_end - 1;
         
       // Se busca el vértice de inicio (el que tiene menor Y) y el de terminación (el que tiene mayor Y):
@@ -467,7 +466,14 @@ namespace Ragot
         int   y_max
     )
     {
-        if (y_max > y_min)
+        if (y_max <= y_min) return;
+        // Ajuste de límites para el array de 1024
+        int ym = std::clamp(y_min, 0, 1023);
+        int yM = std::clamp(y_max, 0, 1023);
+
+        VALUE_TYPE value = static_cast<VALUE_TYPE>(v0) << SHIFT;
+        VALUE_TYPE step  = (static_cast<VALUE_TYPE>(v1 - v0) << SHIFT) / (y_max - y_min);
+        for (int y = ym; y <= yM; ++y)
         {
             cache[y] = static_cast<int>(value >> SHIFT);
             value += step;
@@ -475,7 +481,7 @@ namespace Ragot
     }
     
 
-     template < >
+    template < >
     template < >
     void Rasterizer<RGB565>::fill_row < 2 > (RGB565 * start, unsigned left_offset, unsigned right_offset, const RGB565 & color)
     {
@@ -492,11 +498,14 @@ namespace Ragot
             uint8_t * right64 = pixel + (right_offset & 7);
             uint8_t * end     = pixel + length * 2;
             
-            for (int * iterator = cache + y_min, * end = cache + y_max; iterator <= end; ++iterator)
-            {
-                *iterator = static_cast < int >(value >> SHIFT);
-                 value += step;
-            }
+            uint64_t color_pack = static_cast < uint64_t > (*reinterpret_cast< const uint16_t * >(&color));
+            
+            color_pack |= color_pack << 16;
+            color_pack |= color_pack << 32;
+            
+            for ( ; pixel < left64 ; pixel += 2) *reinterpret_cast< RGB565    * >(pixel) = color;
+            for ( ; pixel < right64; pixel += 8) *reinterpret_cast< uint64_t * >(pixel) = color_pack;
+            for ( ; pixel < end    ; pixel += 2) *reinterpret_cast< RGB565    * >(pixel) = color;
         }
     }
     

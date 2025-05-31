@@ -16,7 +16,11 @@
 #include <string>
 
 #if ESP_PLATFORM == 1
+#ifdef CONFIG_IDF_TARGET_ESP32P4
 #include "driver_ek79007.hpp"
+#elif CONFIG_IDF_TARGET_ESP32S3
+#include "Driver_ST7789.hpp"
+#endif
 #else
 #include "Shader_Program.hpp"
 #endif
@@ -32,7 +36,11 @@ namespace Ragot
         static constexpr size_t number_of_iterations = 10000000000000000;
         
         #if ESP_PLATFORM == 1
+        #ifdef CONFIG_IDF_TARGET_ESP32P4
         DriverEK79007 driver;
+        #elif CONFIG_IDF_TARGET_ESP32S3
+        Driver_ST7789 driver;
+        #endif
         #else
         std::unique_ptr < Shader_Program > quadShader       = nullptr;
         GLuint           quadVAO         = 0;
@@ -52,6 +60,8 @@ namespace Ragot
         unsigned height;
         
         bool initialized = false;
+
+        std::atomic<bool> running = false;
         
     public:
         Renderer () = delete;
@@ -68,6 +78,9 @@ namespace Ragot
         void render ();
         void task_render (std::stop_token stop_token);
         bool is_frontface (const glm::fvec4 * const projected_vertices, const face_t * const indices);
+
+        void start() { running = true;  }
+        void  stop() { running = false; }
     };
 }
 

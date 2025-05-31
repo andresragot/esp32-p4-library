@@ -19,6 +19,7 @@ namespace Ragot
     {
     protected:
         mesh_info_t mesh_info;
+        uint16_t color = 0xFFFF; // Default color (white in RGB565)
         
         std::vector < glm::fvec4 > vertices;
         std::vector <   face_t > faces;
@@ -58,6 +59,16 @@ namespace Ragot
             {
                 v = M * v;
             }
+        }
+
+        void set_color(uint16_t new_color)
+        {
+            color = new_color;
+        }
+
+        uint16_t get_color() const
+        {
+            return color;
         }
     };
 }
