@@ -1,0 +1,1063 @@
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.077954 segundos
+Frames renderizados: 1372
+FPS: 12.83
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.079065 segundos
+Frames renderizados: 1373
+FPS: 12.65
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.079755 segundos
+Frames renderizados: 1374
+FPS: 12.54
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.078964 segundos
+Frames renderizados: 1375
+FPS: 12.66
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.080244 segundos
+Frames renderizados: 1376
+FPS: 12.46
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.081820 segundos
+Frames renderizados: 1377
+FPS: 12.22
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.080082 segundos
+Frames renderizados: 1378
+FPS: 12.49
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.081008 segundos
+Frames renderizados: 1379
+FPS: 12.34
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.079856 segundos
+Frames renderizados: 1380
+FPS: 12.52
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.081317 segundos
+Frames renderizados: 1381
+FPS: 12.30
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.080813 segundos
+Frames renderizados: 1382
+FPS: 12.37
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.081209 segundos
+Frames renderizados: 1383
+FPS: 12.31
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.080708 segundos
+Frames renderizados: 1384
+FPS: 12.39
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.081537 segundos
+Frames renderizados: 1385
+FPS: 12.26
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.080174 segundos
+Frames renderizados: 1386
+FPS: 12.47
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.079727 segundos
+Frames renderizados: 1387
+FPS: 12.54
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.079166 segundos
+Frames renderizados: 1388
+FPS: 12.63
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.080561 segundos
+Frames renderizados: 1389
+FPS: 12.41
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.078781 segundos
+Frames renderizados: 1390
+FPS: 12.69
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.078779 segundos
+Frames renderizados: 1391
+FPS: 12.69
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.078903 segundos
+Frames renderizados: 1392
+FPS: 12.67
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.078700 segundos
+Frames renderizados: 1393
+FPS: 12.71
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.079190 segundos
+Frames renderizados: 1394
+FPS: 12.63
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.078865 segundos
+Frames renderizados: 1395
+FPS: 12.68
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.078081 segundos
+Frames renderizados: 1396
+FPS: 12.81
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.078279 segundos
+Frames renderizados: 1397
+FPS: 12.77
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.077234 segundos
+Frames renderizados: 1398
+FPS: 12.95
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.079682 segundos
+Frames renderizados: 1399
+FPS: 12.55
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.078861 segundos
+Frames renderizados: 1400
+FPS: 12.68
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.079472 segundos
+Frames renderizados: 1401
+FPS: 12.58
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.079271 segundos
+Frames renderizados: 1402
+FPS: 12.61
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.079742 segundos
+Frames renderizados: 1403
+FPS: 12.54
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.079076 segundos
+Frames renderizados: 1404
+FPS: 12.65
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.079324 segundos
+Frames renderizados: 1405
+FPS: 12.61
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.077708 segundos
+Frames renderizados: 1406
+FPS: 12.87
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.078266 segundos
+Frames renderizados: 1407
+FPS: 12.78
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.078080 segundos
+Frames renderizados: 1408
+FPS: 12.81
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.078188 segundos
+Frames renderizados: 1409
+FPS: 12.79
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.077423 segundos
+Frames renderizados: 1410
+FPS: 12.92
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076783 segundos
+Frames renderizados: 1411
+FPS: 13.02
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.077600 segundos
+Frames renderizados: 1412
+FPS: 12.89
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.077402 segundos
+Frames renderizados: 1413
+FPS: 12.92
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075950 segundos
+Frames renderizados: 1414
+FPS: 13.17
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076553 segundos
+Frames renderizados: 1415
+FPS: 13.06
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.077528 segundos
+Frames renderizados: 1416
+FPS: 12.90
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.077318 segundos
+Frames renderizados: 1417
+FPS: 12.93
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076758 segundos
+Frames renderizados: 1418
+FPS: 13.03
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.078301 segundos
+Frames renderizados: 1419
+FPS: 12.77
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.078872 segundos
+Frames renderizados: 1420
+FPS: 12.68
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.077847 segundos
+Frames renderizados: 1421
+FPS: 12.85
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.077468 segundos
+Frames renderizados: 1422
+FPS: 12.91
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.077937 segundos
+Frames renderizados: 1423
+FPS: 12.83
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.077790 segundos
+Frames renderizados: 1424
+FPS: 12.86
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076269 segundos
+Frames renderizados: 1425
+FPS: 13.11
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076247 segundos
+Frames renderizados: 1426
+FPS: 13.12
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076712 segundos
+Frames renderizados: 1427
+FPS: 13.04
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.077248 segundos
+Frames renderizados: 1428
+FPS: 12.95
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076802 segundos
+Frames renderizados: 1429
+FPS: 13.02
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076619 segundos
+Frames renderizados: 1430
+FPS: 13.05
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076337 segundos
+Frames renderizados: 1431
+FPS: 13.10
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074673 segundos
+Frames renderizados: 1432
+FPS: 13.39
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075203 segundos
+Frames renderizados: 1433
+FPS: 13.30
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075344 segundos
+Frames renderizados: 1434
+FPS: 13.27
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076561 segundos
+Frames renderizados: 1435
+FPS: 13.06
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076844 segundos
+Frames renderizados: 1436
+FPS: 13.01
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076260 segundos
+Frames renderizados: 1437
+FPS: 13.11
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075909 segundos
+Frames renderizados: 1438
+FPS: 13.17
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075504 segundos
+Frames renderizados: 1439
+FPS: 13.24
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075834 segundos
+Frames renderizados: 1440
+FPS: 13.19
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076371 segundos
+Frames renderizados: 1441
+FPS: 13.09
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076710 segundos
+Frames renderizados: 1442
+FPS: 13.04
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076172 segundos
+Frames renderizados: 1443
+FPS: 13.13
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075938 segundos
+Frames renderizados: 1444
+FPS: 13.17
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075629 segundos
+Frames renderizados: 1445
+FPS: 13.22
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076276 segundos
+Frames renderizados: 1446
+FPS: 13.11
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076137 segundos
+Frames renderizados: 1447
+FPS: 13.13
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076035 segundos
+Frames renderizados: 1448
+FPS: 13.15
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074714 segundos
+Frames renderizados: 1449
+FPS: 13.38
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074940 segundos
+Frames renderizados: 1450
+FPS: 13.34
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075583 segundos
+Frames renderizados: 1451
+FPS: 13.23
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.073841 segundos
+Frames renderizados: 1452
+FPS: 13.54
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.073494 segundos
+Frames renderizados: 1453
+FPS: 13.61
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075002 segundos
+Frames renderizados: 1454
+FPS: 13.33
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076093 segundos
+Frames renderizados: 1455
+FPS: 13.14
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075179 segundos
+Frames renderizados: 1456
+FPS: 13.30
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075124 segundos
+Frames renderizados: 1457
+FPS: 13.31
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074712 segundos
+Frames renderizados: 1458
+FPS: 13.38
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074686 segundos
+Frames renderizados: 1459
+FPS: 13.39
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074925 segundos
+Frames renderizados: 1460
+FPS: 13.35
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075891 segundos
+Frames renderizados: 1461
+FPS: 13.18
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074913 segundos
+Frames renderizados: 1462
+FPS: 13.35
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075481 segundos
+Frames renderizados: 1463
+FPS: 13.25
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075890 segundos
+Frames renderizados: 1464
+FPS: 13.18
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075527 segundos
+Frames renderizados: 1465
+FPS: 13.24
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076717 segundos
+Frames renderizados: 1466
+FPS: 13.03
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075789 segundos
+Frames renderizados: 1467
+FPS: 13.19
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074766 segundos
+Frames renderizados: 1468
+FPS: 13.38
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075559 segundos
+Frames renderizados: 1469
+FPS: 13.23
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074972 segundos
+Frames renderizados: 1470
+FPS: 13.34
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075844 segundos
+Frames renderizados: 1471
+FPS: 13.18
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076124 segundos
+Frames renderizados: 1472
+FPS: 13.14
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074745 segundos
+Frames renderizados: 1473
+FPS: 13.38
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076184 segundos
+Frames renderizados: 1474
+FPS: 13.13
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076760 segundos
+Frames renderizados: 1475
+FPS: 13.03
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076986 segundos
+Frames renderizados: 1476
+FPS: 12.99
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075546 segundos
+Frames renderizados: 1477
+FPS: 13.24
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076572 segundos
+Frames renderizados: 1478
+FPS: 13.06
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076164 segundos
+Frames renderizados: 1479
+FPS: 13.13
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076468 segundos
+Frames renderizados: 1480
+FPS: 13.08
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075346 segundos
+Frames renderizados: 1481
+FPS: 13.27
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075357 segundos
+Frames renderizados: 1482
+FPS: 13.27
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075191 segundos
+Frames renderizados: 1483
+FPS: 13.30
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075287 segundos
+Frames renderizados: 1484
+FPS: 13.28
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074324 segundos
+Frames renderizados: 1485
+FPS: 13.45
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074306 segundos
+Frames renderizados: 1486
+FPS: 13.46
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.073598 segundos
+Frames renderizados: 1487
+FPS: 13.59
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074459 segundos
+Frames renderizados: 1488
+FPS: 13.43
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074642 segundos
+Frames renderizados: 1489
+FPS: 13.40
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074685 segundos
+Frames renderizados: 1490
+FPS: 13.39
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074364 segundos
+Frames renderizados: 1491
+FPS: 13.45
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.072189 segundos
+Frames renderizados: 1492
+FPS: 13.85
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.073756 segundos
+Frames renderizados: 1493
+FPS: 13.56
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.073270 segundos
+Frames renderizados: 1494
+FPS: 13.65
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075697 segundos
+Frames renderizados: 1495
+FPS: 13.21
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074121 segundos
+Frames renderizados: 1496
+FPS: 13.49
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075424 segundos
+Frames renderizados: 1497
+FPS: 13.26
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.073505 segundos
+Frames renderizados: 1498
+FPS: 13.60
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074671 segundos
+Frames renderizados: 1499
+FPS: 13.39
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074004 segundos
+Frames renderizados: 1500
+FPS: 13.51
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075459 segundos
+Frames renderizados: 1501
+FPS: 13.25
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074779 segundos
+Frames renderizados: 1502
+FPS: 13.37
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075174 segundos
+Frames renderizados: 1503
+FPS: 13.30
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.073585 segundos
+Frames renderizados: 1504
+FPS: 13.59
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074644 segundos
+Frames renderizados: 1505
+FPS: 13.40
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.073843 segundos
+Frames renderizados: 1506
+FPS: 13.54
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075411 segundos
+Frames renderizados: 1507
+FPS: 13.26
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.072883 segundos
+Frames renderizados: 1508
+FPS: 13.72
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075181 segundos
+Frames renderizados: 1509
+FPS: 13.30
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076130 segundos
+Frames renderizados: 1510
+FPS: 13.14
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.073645 segundos
+Frames renderizados: 1511
+FPS: 13.58
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.072266 segundos
+Frames renderizados: 1512
+FPS: 13.84
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076298 segundos
+Frames renderizados: 1513
+FPS: 13.11
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.072958 segundos
+Frames renderizados: 1514
+FPS: 13.71
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075320 segundos
+Frames renderizados: 1515
+FPS: 13.28
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074894 segundos
+Frames renderizados: 1516
+FPS: 13.35
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075581 segundos
+Frames renderizados: 1517
+FPS: 13.23
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.073490 segundos
+Frames renderizados: 1518
+FPS: 13.61
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074318 segundos
+Frames renderizados: 1519
+FPS: 13.46
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074411 segundos
+Frames renderizados: 1520
+FPS: 13.44
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074207 segundos
+Frames renderizados: 1521
+FPS: 13.48
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.073415 segundos
+Frames renderizados: 1522
+FPS: 13.62
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.073147 segundos
+Frames renderizados: 1523
+FPS: 13.67
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074407 segundos
+Frames renderizados: 1524
+FPS: 13.44
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.073600 segundos
+Frames renderizados: 1525
+FPS: 13.59
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075305 segundos
+Frames renderizados: 1526
+FPS: 13.28
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074492 segundos
+Frames renderizados: 1527
+FPS: 13.42
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.071382 segundos
+Frames renderizados: 1528
+FPS: 14.01
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.072156 segundos
+Frames renderizados: 1529
+FPS: 13.86
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.071540 segundos
+Frames renderizados: 1530
+FPS: 13.98
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.070968 segundos
+Frames renderizados: 1531
+FPS: 14.09
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.072945 segundos
+Frames renderizados: 1532
+FPS: 13.71
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.072228 segundos
+Frames renderizados: 1533
+FPS: 13.85
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.073179 segundos
+Frames renderizados: 1534
+FPS: 13.67
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.072234 segundos
+Frames renderizados: 1535
+FPS: 13.84
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074499 segundos
+Frames renderizados: 1536
+FPS: 13.42
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074637 segundos
+Frames renderizados: 1537
+FPS: 13.40
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.072878 segundos
+Frames renderizados: 1538
+FPS: 13.72
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.072389 segundos
+Frames renderizados: 1539
+FPS: 13.81
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.072992 segundos
+Frames renderizados: 1540
+FPS: 13.70
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074117 segundos
+Frames renderizados: 1541
+FPS: 13.49
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.072341 segundos
+Frames renderizados: 1542
+FPS: 13.82
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.073770 segundos
+Frames renderizados: 1543
+FPS: 13.56
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.072061 segundos
+Frames renderizados: 1544
+FPS: 13.88
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.073949 segundos
+Frames renderizados: 1545
+FPS: 13.52
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.073453 segundos
+Frames renderizados: 1546
+FPS: 13.61
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.072946 segundos
+Frames renderizados: 1547
+FPS: 13.71
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.073676 segundos
+Frames renderizados: 1548
+FPS: 13.57
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.073836 segundos
+Frames renderizados: 1549
+FPS: 13.54
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.072193 segundos
+Frames renderizados: 1550
+FPS: 13.85
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.072264 segundos
+Frames renderizados: 1551
+FPS: 13.84
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.071910 segundos
+Frames renderizados: 1552
+FPS: 13.91
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.072745 segundos
+Frames renderizados: 1553
+FPS: 13.75
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074273 segundos
+Frames renderizados: 1554
+FPS: 13.46
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074422 segundos
+Frames renderizados: 1555
+FPS: 13.44
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.073590 segundos
+Frames renderizados: 1556
+FPS: 13.59
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075027 segundos
+Frames renderizados: 1557
+FPS: 13.33
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074326 segundos
+Frames renderizados: 1558
+FPS: 13.45
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.073752 segundos
+Frames renderizados: 1559
+FPS: 13.56
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074416 segundos
+Frames renderizados: 1560
+FPS: 13.44
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.073985 segundos
+Frames renderizados: 1561
+FPS: 13.52
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074817 segundos
+Frames renderizados: 1562
+FPS: 13.37
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.073698 segundos
+Frames renderizados: 1563
+FPS: 13.57
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.073909 segundos
+Frames renderizados: 1564
+FPS: 13.53
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.073996 segundos
+Frames renderizados: 1565
+FPS: 13.51
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.072856 segundos
+Frames renderizados: 1566
+FPS: 13.73
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.072845 segundos
+Frames renderizados: 1567
+FPS: 13.73
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.072616 segundos
+Frames renderizados: 1568
+FPS: 13.77
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.073742 segundos
+Frames renderizados: 1569
+FPS: 13.56
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.073574 segundos
+Frames renderizados: 1570
+FPS: 13.59
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074063 segundos
+Frames renderizados: 1571
+FPS: 13.50
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074634 segundos
+Frames renderizados: 1572
+FPS: 13.40
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074483 segundos
+Frames renderizados: 1573
+FPS: 13.43
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.073386 segundos
+Frames renderizados: 1574
+FPS: 13.63
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074997 segundos
+Frames renderizados: 1575
+FPS: 13.33
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074615 segundos
+Frames renderizados: 1576
+FPS: 13.40
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075324 segundos
+Frames renderizados: 1577
+FPS: 13.28
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075061 segundos
+Frames renderizados: 1578
+FPS: 13.32
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074754 segundos
+Frames renderizados: 1579
+FPS: 13.38
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075046 segundos
+Frames renderizados: 1580
+FPS: 13.33
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074991 segundos
+Frames renderizados: 1581
+FPS: 13.33
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076277 segundos
+Frames renderizados: 1582
+FPS: 13.11
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075699 segundos
+Frames renderizados: 1583
+FPS: 13.21
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075865 segundos
+Frames renderizados: 1584
+FPS: 13.18
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075923 segundos
+Frames renderizados: 1585
+FPS: 13.17
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076097 segundos
+Frames renderizados: 1586
+FPS: 13.14
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076357 segundos
+Frames renderizados: 1587
+FPS: 13.10
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.075021 segundos
+Frames renderizados: 1588
+FPS: 13.33
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.077219 segundos
+Frames renderizados: 1589
+FPS: 12.95
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076493 segundos
+Frames renderizados: 1590
+FPS: 13.07
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.074699 segundos
+Frames renderizados: 1591
+FPS: 13.39
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076422 segundos
+Frames renderizados: 1592
+FPS: 13.09
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076742 segundos
+Frames renderizados: 1593
+FPS: 13.03
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076016 segundos
+Frames renderizados: 1594
+FPS: 13.16
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.077388 segundos
+Frames renderizados: 1595
+FPS: 12.92
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.077942 segundos
+Frames renderizados: 1596
+FPS: 12.83
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.078619 segundos
+Frames renderizados: 1597
+FPS: 12.72
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076840 segundos
+Frames renderizados: 1598
+FPS: 13.01
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.078199 segundos
+Frames renderizados: 1599
+FPS: 12.79
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.078032 segundos
+Frames renderizados: 1600
+FPS: 12.82
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.077510 segundos
+Frames renderizados: 1601
+FPS: 12.90
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.077039 segundos
+Frames renderizados: 1602
+FPS: 12.98
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.078614 segundos
+Frames renderizados: 1603
+FPS: 12.72
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.079030 segundos
+Frames renderizados: 1604
+FPS: 12.65
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.078721 segundos
+Frames renderizados: 1605
+FPS: 12.70
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076715 segundos
+Frames renderizados: 1606
+FPS: 13.04
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.077562 segundos
+Frames renderizados: 1607
+FPS: 12.89
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.077331 segundos
+Frames renderizados: 1608
+FPS: 12.93
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.077302 segundos
+Frames renderizados: 1609
+FPS: 12.94
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076657 segundos
+Frames renderizados: 1610
+FPS: 13.05
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.078005 segundos
+Frames renderizados: 1611
+FPS: 12.82
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.078312 segundos
+Frames renderizados: 1612
+FPS: 12.77
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.079636 segundos
+Frames renderizados: 1613
+FPS: 12.56
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.078396 segundos
+Frames renderizados: 1614
+FPS: 12.76
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.082044 segundos
+Frames renderizados: 1615
+FPS: 12.19
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.079481 segundos
+Frames renderizados: 1616
+FPS: 12.58
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.081252 segundos
+Frames renderizados: 1617
+FPS: 12.31
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.077864 segundos
+Frames renderizados: 1618
+FPS: 12.84
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.077021 segundos
+Frames renderizados: 1619
+FPS: 12.98
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.077887 segundos
+Frames renderizados: 1620
+FPS: 12.84
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.079012 segundos
+Frames renderizados: 1621
+FPS: 12.66
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.078384 segundos
+Frames renderizados: 1622
+FPS: 12.76
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.079029 segundos
+Frames renderizados: 1623
+FPS: 12.65
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.077525 segundos
+Frames renderizados: 1624
+FPS: 12.90
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.078530 segundos
+Frames renderizados: 1625
+FPS: 12.73
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076451 segundos
+Frames renderizados: 1626
+FPS: 13.08
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076737 segundos
+Frames renderizados: 1627
+FPS: 13.03
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.077050 segundos
+Frames renderizados: 1628
+FPS: 12.98
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076657 segundos
+Frames renderizados: 1629
+FPS: 13.05
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.076780 segundos
+Frames renderizados: 1630
+FPS: 13.02
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.077881 segundos
+Frames renderizados: 1631
+FPS: 12.84
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.077999 segundos
+Frames renderizados: 1632
+FPS: 12.82
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.077551 segundos
+Frames renderizados: 1633
+FPS: 12.89
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.079042 segundos
+Frames renderizados: 1634
+FPS: 12.65
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.077786 segundos
+Frames renderizados: 1635
+FPS: 12.86
+Uso de RAM: 30308160 bytes
+Tiempo transcurrido: 0.078140 segundos
+Frames renderizados: 1636
+FPS: 12.80
+Uso de RAM: 30308160 bytes
+
+andresragot@Andress-MacBook-Pro p4-graphics %

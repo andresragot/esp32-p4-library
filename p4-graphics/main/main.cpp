@@ -167,7 +167,7 @@ namespace
             std::shared_ptr < RevolutionMesh > mesh_vaso = std::make_shared < RevolutionMesh >(mesh_info_vaso, camera);
             mesh_vaso->set_position(vec3(-3.0f, 0.0f,  0.0f));  // a la izquierda del cilindro
             mesh_vaso->set_color (0xF800); // Color vaso (Rojo)
-            // scene.add_node(mesh_vaso, ID(VASO));
+            scene.add_node(mesh_vaso, ID(VASO));
         }
 
         // ---------------------------------------------------
@@ -191,7 +191,7 @@ namespace
             std::shared_ptr < RevolutionMesh > mesh_semiesfera = std::make_shared < RevolutionMesh > (mesh_info_semiesf, camera);
             mesh_semiesfera->set_position(vec3( 0.0f, 2.5f,  0.0f)); // encima del cilindro/cono/vaso
             mesh_semiesfera-> set_color (0x07F0); // Color semiesfera (Verde claro)
-            // scene.add_node(mesh_semiesfera, ID(SEMIESFERA));
+            scene.add_node(mesh_semiesfera, ID(SEMIESFERA));
         }
 
         // ---------------------------------------------------
@@ -240,7 +240,7 @@ namespace
             mesh_prisma_triang->set_scale(vec3(1.0f));                // tamaño base 1
 
             mesh_prisma_triang->set_color (0xFFE0); // Color prisma triangular (Amarillo claro)
-            // scene.add_node(mesh_prisma_triang, ID(PRISMA_TRIANG));
+            scene.add_node(mesh_prisma_triang, ID(PRISMA_TRIANG));
         }
 
         // ---------------------------------------------------
@@ -284,7 +284,7 @@ namespace
             mesh_estrella->set_position(vec3( 0.0f,  0.0f,  3.0f)); // “adelante” de la fila principal
             mesh_estrella->set_scale(vec3(1.0f));
             mesh_estrella->set_color (0xF81F); // Color estrella (Magenta)
-            // scene.add_node(mesh_estrella, ID(ESTRELLA));
+            scene.add_node(mesh_estrella, ID(ESTRELLA));
         }
 
         // ---------------------------------------------------
@@ -309,7 +309,7 @@ namespace
             mesh_letra_c->set_position(vec3(-3.0f, -2.5f,  0.0f)); // esquina inferior izquierda
             mesh_letra_c->set_scale(vec3(1.0f));
             mesh_letra_c->set_color (0xFBE0); // Color letra C (Amarillo claro)
-            // scene.add_node(mesh_letra_c, ID(LETRA_C));
+            scene.add_node(mesh_letra_c, ID(LETRA_C));
         }
 
         // ---------------------------------------------------
@@ -360,7 +360,7 @@ int main(int argc, char * argv[])
     
     logger.Log (MAIN_TAG, 3, "Entrando en bucle de renderizado");
 
-    Camera camera(float (320) / 240.f);
+    Camera camera(float (1024) / 600.f);
     camera.set_location(glm::vec3(0.f, 0.f, -15.f));
     camera.set_target(glm::vec3(0.f, 0.f, 0.f));
 
@@ -392,7 +392,7 @@ int main(int argc, char * argv[])
     setupScene(scene, camera);
 
     logger.Log (MAIN_TAG, 3, "Creando renderer (600x1024)");
-    Ragot::Renderer renderer(320, 240);
+    Ragot::Renderer renderer(1024, 600);
     renderer.set_scene(&scene);
     renderer.init();
 

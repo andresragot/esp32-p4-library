@@ -33,5 +33,5 @@ direct_dependencies:
 - espressif/esp_lcd_ek79007
 - idf
 manifest_hash: 43a119546b59fb1fba9f7dbd542ecd46b8f1e3d835e39db6883da87df1a7ac09
-target: esp32s3
+target: esp32p4
 version: 2.0.0
