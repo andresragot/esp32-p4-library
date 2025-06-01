@@ -1,9 +1,6 @@
-//
-//  Rasterizer.cpp
-//  FileToOBJ
-//
-//  Created by Andrés Ragot on 9/4/25.
-//
+/**
+ * 
+ */
 
 #include "Rasterizer.hpp"
 #include <stdio.h>

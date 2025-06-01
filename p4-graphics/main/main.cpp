@@ -1,3 +1,37 @@
+/**
+ * @file main.cpp
+ * @author Andrés Ragot (github.com/andresragot)
+ * @brief This file contains the main function for the Ragot engine, which initializes the renderer and scene,
+ * and starts the main rendering loop.
+ * @version 1.0
+ * @date 2025-06-01
+ * 
+ * @copyright Copyright (c) 2025
+ * MIT License
+ * 
+ * Copyright (c) 2025 Andrés Ragot 
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+
+
 #include "Renderer.hpp"
 #include <vector>
 #include "CommonTypes.hpp"
@@ -12,21 +46,18 @@
 #include "Window.hpp"
 #endif
 
-// ESP Rasterization took 0.0789344  seconds.
-// MAC Rasterization took 0.00564271 seconds.
-
-// ESP Rasterization took 0.0787937 seconds.
-// MAC Rasterization took 0.00561047 seconds.
-
-
-
-
 static const char* MAIN_TAG = "Main";
 
 using namespace std;
 using namespace Ragot;
 
 #if ESP_PLATFORM == 1
+/**
+ * @brief Main loop for the Ragot engine on ESP platform.
+ * 
+ * @param renderer 
+ * @param scene 
+ */
 void main_loop (Renderer & renderer, Scene & scene)
 {
     bool update = true;
@@ -75,6 +106,13 @@ void main_loop (Renderer & renderer, Scene & scene)
     }
 }
 #else
+/**
+ * @brief Main loop for the Ragot engine on non-ESP platforms.
+ * 
+ * @param renderer Renderer instance to handle rendering.
+ * @param scene Scene instance containing the 3D objects.
+ * @param window Window instance for displaying the rendered output.
+ */
 void main_loop (Renderer & renderer, Scene & scene, Window & window)
 {
     glViewport (0, 0, 1024, 600);
@@ -113,6 +151,12 @@ void main_loop (Renderer & renderer, Scene & scene, Window & window)
 
 namespace
 {
+    /**
+     * @brief Sets up the scene with various 3D objects.
+     * 
+     * @param scene The scene to set up with 3D objects.
+     * @param camera The camera to use for rendering the scene.
+     */
     void setupScene(Ragot::Scene& scene, Ragot::Camera& camera)
     {
         using namespace Ragot;
@@ -336,6 +380,14 @@ namespace
 
 }
 
+/**
+ * @brief Main function for the Ragot engine.
+ * 
+ * This function initializes the logger, sets up the scene, creates the renderer,
+ * and enters the main rendering loop.
+ * 
+ * @return int Exit status of the program.
+ */
 #if ESP_PLATFORM == 1
 extern "C" void app_main(void)
 #else
