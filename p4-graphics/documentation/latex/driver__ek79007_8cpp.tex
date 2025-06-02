@@ -1,0 +1,55 @@
+\doxysection{main/driver\+\_\+ek79007.cpp File Reference}
+\hypertarget{driver__ek79007_8cpp}{}\label{driver__ek79007_8cpp}\index{main/driver\_ek79007.cpp@{main/driver\_ek79007.cpp}}
+
+
+This file implements the Driver\+EK79007 class, which manages the initialization and operation of the EK79007 LCD panel driver. The Driver\+EK79007 class inherits from the Driver\+LCD class and provides methods to initialize, deinitialize, and send frame buffers to the LCD panel.  
+
+
+{\ttfamily \#include "{}driver\+\_\+ek79007.\+hpp"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+lcd\+\_\+ek79007.\+h"{}}\newline
+Include dependency graph for driver\+\_\+ek79007.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{driver__ek79007_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_ragot}{Ragot}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{namespace_ragot_a8d0f502808ea7fb84dddefa85ca744c0}{Ragot\+::panel\+\_\+refresh\+\_\+callback}} (esp\+\_\+lcd\+\_\+panel\+\_\+handle\+\_\+t panel, esp\+\_\+lcd\+\_\+dpi\+\_\+panel\+\_\+event\+\_\+data\+\_\+t \texorpdfstring{$\ast$}{*}edata, void \texorpdfstring{$\ast$}{*}user\+\_\+ctx)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespace_ragot_aa2b36fe144b31e0887ebb2444fe2212b}{Ragot\+::\+TAG}} = "{}Driver\+EK79007"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file implements the Driver\+EK79007 class, which manages the initialization and operation of the EK79007 LCD panel driver. The Driver\+EK79007 class inherits from the Driver\+LCD class and provides methods to initialize, deinitialize, and send frame buffers to the LCD panel. 
+
+\begin{DoxyAuthor}{Author}
+Andrés \doxylink{namespace_ragot}{Ragot} (github.\+com/andresragot) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/04-\/17
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 Andrés \doxylink{namespace_ragot}{Ragot} MIT License
+\end{DoxyCopyright}
+Copyright (c) 2025 Andrés \doxylink{namespace_ragot}{Ragot}
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "{}\+Software"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\+:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "{}\+AS IS"{}, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 

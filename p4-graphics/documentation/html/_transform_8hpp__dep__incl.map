@@ -1,0 +1,51 @@
+<map id="main/Transform.hpp" name="main/Transform.hpp">
+<area shape="rect" id="Node000001" title="Implementation of the Transform class for 3D transformations." alt="" coords="350,5,487,31"/>
+<area shape="rect" id="Node000002" href="$_camera_8hpp.html" title="This file implements the Camera class, which manages camera properties and operations in a 3D space." alt="" coords="387,226,511,252"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="449,39,498,86,522,117,540,152,543,166,540,179,528,196,514,209,482,228,479,223,511,205,524,192,535,177,538,166,535,154,517,120,494,90,445,43"/>
+<area shape="rect" id="Node000017" href="$_node_8hpp.html" title="This file implements the Node class, which represents a node in a scene graph for 3D rendering." alt="" coords="220,79,329,105"/>
+<area shape="poly" id="edge24_Node000001_Node000017" title=" " alt="" coords="382,41,300,81,298,76,379,36"/>
+<area shape="rect" id="Node000003" href="$_camera_8cpp.html" title="This file implements the Camera class, which manages camera properties and operations in a 3D space." alt="" coords="387,300,511,326"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="452,267,452,300,446,300,446,267"/>
+<area shape="rect" id="Node000004" href="$_extrude_mesh_8hpp.html" title="This file implements the ExtrudeMesh class, which manages the extrusion of a mesh in 3D space...." alt="" coords="717,374,872,399"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="523,254,589,272,658,298,727,335,780,371,777,375,725,340,656,302,588,277,521,259"/>
+<area shape="rect" id="Node000007" href="$_mesh_8hpp.html" title="This file implements the Mesh class, which represents a 3D mesh in the Ragot engine." alt="" coords="535,300,646,326"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="488,257,568,297,565,302,485,262"/>
+<area shape="rect" id="Node000012" href="$_renderer_8cpp.html" title="Implementation of the Renderer class for rendering scenes in the Ragot engine." alt="" coords="5,447,136,473"/>
+<area shape="poly" id="edge18_Node000002_Node000012" title=" " alt="" coords="372,249,260,267,200,282,141,303,76,328,52,345,32,375,28,394,34,413,60,445,55,449,30,415,23,394,27,373,49,341,73,323,139,297,198,277,259,262,371,244"/>
+<area shape="rect" id="Node000013" href="$_revolution_mesh_8hpp.html" title="Implementation of the RevolutionMesh class for generating revolution meshes." alt="" coords="386,374,558,399"/>
+<area shape="poly" id="edge19_Node000002_Node000013" title=" " alt="" coords="414,262,395,276,381,291,374,307,377,325,388,340,403,352,436,371,434,375,400,357,384,343,372,327,368,307,376,288,392,272,411,258"/>
+<area shape="rect" id="Node000016" href="$_scene_8hpp.html" title="Implementation of the Scene class for managing 3D scenes." alt="" coords="152,300,267,326"/>
+<area shape="poly" id="edge20_Node000002_Node000016" title=" " alt="" coords="395,259,251,302,249,297,394,254"/>
+<area shape="rect" id="Node000005" href="$_extrude_mesh_8cpp.html" title="This file implements the ExtrudeMesh class, which manages the extrusion of a mesh in 3D space...." alt="" coords="717,447,872,473"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="797,415,797,447,792,447,792,415"/>
+<area shape="rect" id="Node000006" href="$main_8cpp.html" title="This file contains the main function for the Ragot engine, which initializes the renderer and scene,..." alt="" coords="191,447,297,473"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="701,403,298,455,297,449,701,397"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="640,329,761,371,759,376,638,334"/>
+<area shape="rect" id="Node000008" href="$_mesh_8cpp.html" title="This file implements the Mesh class, which represents a 3D mesh in the Ragot engine." alt="" coords="582,374,692,399"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="609,337,632,372,627,375,604,340"/>
+<area shape="rect" id="Node000009" href="$_mesh_serializer_8hpp.html" title="This file implements the MeshSerializer class, which provides methods to serialize a Mesh object to a..." alt="" coords="897,374,1060,399"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="662,324,913,370,912,376,661,330"/>
+<area shape="rect" id="Node000011" href="$_renderer_8hpp.html" title="Implementation of the Renderer class for rendering scenes in the Ragot engine." alt="" coords="41,374,172,399"/>
+<area shape="poly" id="edge11_Node000007_Node000011" title=" " alt="" coords="520,329,172,379,172,374,519,324"/>
+<area shape="poly" id="edge14_Node000007_Node000013" title=" " alt="" coords="559,336,493,375,491,371,556,332"/>
+<area shape="rect" id="Node000015" href="$_scene_8cpp.html" title="Implementation of the Scene class for managing 3D scenes." alt="" coords="246,374,362,399"/>
+<area shape="poly" id="edge17_Node000007_Node000015" title=" " alt="" coords="528,332,353,376,352,370,527,327"/>
+<area shape="rect" id="Node000010" href="$_mesh_serializer_8cpp.html" title="This file implements the MeshSerializer class, which provides methods to serialize a Mesh object to a..." alt="" coords="897,447,1060,473"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="981,415,981,447,976,447,976,415"/>
+<area shape="poly" id="edge13_Node000011_Node000006" title=" " alt="" coords="145,404,222,444,219,449,142,409"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="96,414,79,448,74,446,91,412"/>
+<area shape="poly" id="edge16_Node000013_Node000006" title=" " alt="" coords="419,407,283,449,282,444,418,402"/>
+<area shape="rect" id="Node000014" href="$_revolution_mesh_8cpp.html" title="Implementation of the RevolutionMesh class for generating revolution meshes." alt="" coords="386,447,558,473"/>
+<area shape="poly" id="edge15_Node000013_Node000014" title=" " alt="" coords="474,415,474,447,469,447,469,415"/>
+<area shape="poly" id="edge23_Node000016_Node000006" title=" " alt="" coords="218,340,244,446,238,447,213,341"/>
+<area shape="poly" id="edge21_Node000016_Node000011" title=" " alt="" coords="181,337,126,375,122,371,178,332"/>
+<area shape="poly" id="edge22_Node000016_Node000015" title=" " alt="" coords="239,333,290,371,286,375,236,338"/>
+<area shape="poly" id="edge29_Node000017_Node000011" title=" " alt="" coords="229,114,200,131,175,154,157,182,143,213,123,276,113,333,110,373,104,373,108,333,118,275,138,211,152,180,171,151,197,127,226,109"/>
+<area shape="poly" id="edge30_Node000017_Node000016" title=" " alt="" coords="232,115,208,132,190,154,183,173,180,193,183,234,194,271,205,298,201,301,189,273,178,235,175,193,178,171,186,151,204,128,229,110"/>
+<area shape="rect" id="Node000018" href="$_components_8hpp.html" title="This file defines the Component class, which serves as a base class for components in the Ragot engin..." alt="" coords="373,153,525,178"/>
+<area shape="poly" id="edge25_Node000017_Node000018" title=" " alt="" coords="319,108,420,150,418,155,317,113"/>
+<area shape="rect" id="Node000019" href="$_frame_buffer_8cpp.html" title="This file implements the FrameBuffer class, which manages a frame buffer for rendering graphics." alt="" coords="200,153,349,178"/>
+<area shape="poly" id="edge28_Node000017_Node000019" title=" " alt="" coords="277,120,277,152,272,152,272,120"/>
+<area shape="poly" id="edge26_Node000018_Node000002" title=" " alt="" coords="452,194,452,226,446,226,446,194"/>
+<area shape="poly" id="edge27_Node000018_Node000007" title=" " alt="" coords="480,186,526,224,560,264,585,298,580,301,556,267,522,228,477,190"/>
+</map>

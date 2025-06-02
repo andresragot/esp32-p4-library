@@ -1,7 +1,0 @@
-<map id="Ragot::face_t" name="Ragot::face_t">
-<area shape="rect" id="Node000001" title=" " alt="" coords="22,180,112,246"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,40,72"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="21,71,19,112,27,155,31,164,26,166,22,156,14,112,15,71"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="98,5,123,72"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="105,72,84,156,82,164,77,163,79,155,100,71"/>
-</map>

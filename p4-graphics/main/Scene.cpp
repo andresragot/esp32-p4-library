@@ -126,7 +126,6 @@ namespace Ragot
     template<typename T>
     std::vector<std::shared_ptr < T > > Scene::collect_components()
     {
-        ///< @todo sacar este vector.
         std::vector< std::shared_ptr < T > > result;
         
         traverse([&result](std::shared_ptr < Node > node) 

@@ -1,0 +1,15 @@
+<map id="Ragot::Scene::update" name="Ragot::Scene::update">
+<area shape="rect" id="Node000001" title="Updates the scene with a specified delta time." alt="" coords="5,112,154,137"/>
+<area shape="rect" id="Node000002" href="$class_ragot_1_1_scene.html#a7a1dcaed66fa5eb3af89519a7f4f9c8f" title="Collects all components of a specified type from the scene." alt="" coords="209,5,356,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,109,200,57,214,50,216,55,203,61,105,113"/>
+<area shape="rect" id="Node000004" href="$class_ragot_1_1_scene.html#af788c910cd73bf3265901862d32113ba" title="Gets the main camera of the scene." alt="" coords="202,71,364,111"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="153,110,186,104,187,109,154,115"/>
+<area shape="rect" id="Node000005" href="$class_ragot_1_1_camera.html#a589b34b0d14c3c1b7e15e5388b9d0210" title="Set the camera&#39;s position in world space." alt="" coords="215,136,351,177"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="154,133,200,141,199,146,153,139"/>
+<area shape="rect" id="Node000007" href="$class_ragot_1_1_camera.html#a4a6d2a312bc3ca80842770826ed3f9db" title="Set the camera&#39;s target position in world space." alt="" coords="215,201,351,242"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="106,135,203,186,217,192,215,197,200,191,103,140"/>
+<area shape="rect" id="Node000003" href="$class_ragot_1_1_scene.html#a11db92312f88cbc07fa66bdc07cbfc48" title="Traverses the scene graph and applies a callback function to each node." alt="" coords="412,13,568,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="357,23,396,23,396,28,357,28"/>
+<area shape="rect" id="Node000006" href="$class_ragot_1_1_transform.html#a7962797afae773a25fdebf76a8404a7a" title="Sets the position of the object." alt="" coords="416,136,565,177"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="351,154,400,154,400,159,351,159"/>
+</map>

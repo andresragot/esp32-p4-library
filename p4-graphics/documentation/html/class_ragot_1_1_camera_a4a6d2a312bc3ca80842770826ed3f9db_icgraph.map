@@ -1,0 +1,13 @@
+<map id="Ragot::Camera::set_target" name="Ragot::Camera::set_target">
+<area shape="rect" id="Node000001" title="Set the camera&#39;s target position in world space." alt="" coords="396,55,532,96"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main function for the Ragot engine." alt="" coords="249,5,298,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="380,53,298,28,300,23,382,48"/>
+<area shape="rect" id="Node000003" href="$class_ragot_1_1_scene.html#a625a17c7c3602bb5e779a8a64792d874" title="Task to update the scene in a separate thread." alt="" coords="207,55,341,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="380,78,341,78,341,73,380,73"/>
+<area shape="rect" id="Node000006" href="$class_ragot_1_1_scene.html#a2ff6f1b1c88e31f6e9e04ddb98021efe" title="Updates the scene with a specified delta time." alt="" coords="200,120,348,146"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="382,103,320,122,318,117,380,98"/>
+<area shape="rect" id="Node000004" href="$class_ragot_1_1_scene.html#a5ea6ad6ab81208e8d4d3e81d7e8657e9" title="Default constructor for the Scene class." alt="" coords="5,39,152,64"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="191,68,152,63,153,58,192,63"/>
+<area shape="rect" id="Node000005" href="$class_ragot_1_1_scene.html#a30ec692ca4bade6d6a1a08aaea7dc730" title="Construct a new Scene object." alt="" coords="5,88,152,114"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="192,89,153,94,152,89,191,84"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Ragot::Scene::task_update" name="Ragot::Scene::task_update">
+<area shape="rect" id="Node000001" title="Task to update the scene in a separate thread." alt="" coords="200,23,334,64"/>
+<area shape="rect" id="Node000002" href="$class_ragot_1_1_scene.html#a5ea6ad6ab81208e8d4d3e81d7e8657e9" title="Default constructor for the Scene class." alt="" coords="5,5,152,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,35,152,31,152,25,185,30"/>
+<area shape="rect" id="Node000003" href="$class_ragot_1_1_scene.html#a30ec692ca4bade6d6a1a08aaea7dc730" title="Construct a new Scene object." alt="" coords="5,55,152,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="185,57,152,61,152,56,184,51"/>
+</map>

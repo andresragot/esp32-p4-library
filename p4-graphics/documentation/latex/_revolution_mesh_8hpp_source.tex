@@ -1,0 +1,43 @@
+\doxysection{Revolution\+Mesh.\+hpp}
+\hypertarget{_revolution_mesh_8hpp_source}{}\label{_revolution_mesh_8hpp_source}\index{main/RevolutionMesh.hpp@{main/RevolutionMesh.hpp}}
+\mbox{\hyperlink{_revolution_mesh_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_mesh_8hpp}{Mesh.hpp}}"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_camera_8hpp}{Camera.hpp}}"{}}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ragot}{Ragot}}}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ragot_1_1_revolution_mesh_a8312f8b683aef373487305a3f52dc7d1}{RevolutionMesh}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_ragot_1_1_mesh_aac138f7285e29a384d6268a9d041a1ec}{Mesh}}}
+\DoxyCodeLine{00049\ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_camera}{Camera}}\ \&\ \mbox{\hyperlink{class_ragot_1_1_revolution_mesh_a188fd8dd15d02734bab92079b3d8c66a}{cam}};\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ragot_1_1_revolution_mesh_a6791ff511ab518112b79d5c39000642d}{faces\_can\_be\_quads}};\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_ragot_1_1_revolution_mesh_a5794edc5b86a10f6b4e71534e044bd02}{PI}}\ =\ 3.14159265358979323846f;\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_revolution_mesh_a8312f8b683aef373487305a3f52dc7d1}{RevolutionMesh}}\ (\mbox{\hyperlink{struct_ragot_1_1mesh__info__t}{mesh\_info\_t}}\ \&\ \mbox{\hyperlink{class_ragot_1_1_mesh_a4404a17582591ce49c5e41c7316cf1e4}{mesh\_info}},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_camera}{Camera}}\ \&\ \mbox{\hyperlink{class_ragot_1_1_revolution_mesh_a188fd8dd15d02734bab92079b3d8c66a}{cam}})\ :\ \mbox{\hyperlink{class_ragot_1_1_mesh_aac138f7285e29a384d6268a9d041a1ec}{Mesh}}\ (\mbox{\hyperlink{class_ragot_1_1_mesh_a4404a17582591ce49c5e41c7316cf1e4}{mesh\_info}}),\ \mbox{\hyperlink{class_ragot_1_1_revolution_mesh_a188fd8dd15d02734bab92079b3d8c66a}{cam}}\ (\mbox{\hyperlink{class_ragot_1_1_revolution_mesh_a188fd8dd15d02734bab92079b3d8c66a}{cam}})}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_revolution_mesh_a6791ff511ab518112b79d5c39000642d}{faces\_can\_be\_quads}}\ =\ (\mbox{\hyperlink{class_ragot_1_1_mesh_a4404a17582591ce49c5e41c7316cf1e4}{mesh\_info}}.vertex\_amount\ \%\ 8\ ==\ 0\ ||\ \mbox{\hyperlink{class_ragot_1_1_mesh_a4404a17582591ce49c5e41c7316cf1e4}{mesh\_info}}.vertex\_amount\ ==\ 4);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_mesh_a707a1ddfc3419edf404b26a06d655ccb}{vertices}}.reserve\ (\mbox{\hyperlink{class_ragot_1_1_mesh_a4404a17582591ce49c5e41c7316cf1e4}{mesh\_info}}.coordinates.size()\ *\ (\mbox{\hyperlink{class_ragot_1_1_mesh_a8cab67a3713ecc68ffe4896e6c1bdefc}{slices}}\ +\ 1));}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_mesh_a0dd6468b18ce988a6c542efb4eb0c97e}{faces}}.reserve\ (\mbox{\hyperlink{class_ragot_1_1_mesh_a4404a17582591ce49c5e41c7316cf1e4}{mesh\_info}}.coordinates.size()\ *\ \ \mbox{\hyperlink{class_ragot_1_1_mesh_a8cab67a3713ecc68ffe4896e6c1bdefc}{slices}});}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_revolution_mesh_a705d1514d45f5c7e1f4e59b9dc8f95c4}{generate\_vertices}}();}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_revolution_mesh_a0fb0d4595e92bf52d8d8bf76dfec6c55}{generate\_faces}}();}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Revolution\ Vertices:\ "{}}\ <<\ \mbox{\hyperlink{class_ragot_1_1_mesh_a707a1ddfc3419edf404b26a06d655ccb}{vertices}}.size()\ <<\ std::endl;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Revolution\ Faces:\ "{}}\ <<\ \mbox{\hyperlink{class_ragot_1_1_mesh_a0dd6468b18ce988a6c542efb4eb0c97e}{faces}}.size()\ <<\ std::endl;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_revolution_mesh_a9cfd878d21100fb16a21f45e5d3ec113}{\string~RevolutionMesh}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_revolution_mesh_a705d1514d45f5c7e1f4e59b9dc8f95c4}{generate\_vertices}}\ ()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_revolution_mesh_a0fb0d4595e92bf52d8d8bf76dfec6c55}{generate\_faces}}\ \ \ \ ()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00098\ \ \ \ \ \};}
+\DoxyCodeLine{00099\ \}}
+
+\end{DoxyCode}

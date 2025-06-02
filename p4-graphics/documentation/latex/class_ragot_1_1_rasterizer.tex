@@ -1,0 +1,533 @@
+\doxysection{Ragot\+::Rasterizer\texorpdfstring{$<$}{<} Color \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_ragot_1_1_rasterizer}{}\label{class_ragot_1_1_rasterizer}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+
+
+Class for rasterizing polygons in a frame buffer.  
+
+
+
+
+{\ttfamily \#include $<$Rasterizer.\+hpp$>$}
+
+
+
+Inheritance diagram for Ragot\+::Rasterizer\texorpdfstring{$<$}{<} Color \texorpdfstring{$>$}{>}\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_ragot_1_1_rasterizer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ragot\+::Rasterizer\texorpdfstring{$<$}{<} Color \texorpdfstring{$>$}{>}\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_rasterizer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_rasterizer_ac44ab168083551ec18b2211fcd032bfa}{Rasterizer}} (\mbox{\hyperlink{class_ragot_1_1_frame_buffer}{Frame\+Buffer}}$<$ Color $>$ \&frame)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_ragot_1_1_rasterizer}{Rasterizer} with a given frame buffer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_rasterizer_ad2b50b7fbe56790541e32d40af5afd35}{Rasterizer}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{class_ragot_1_1_rasterizer}{Rasterizer} class (Default). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_rasterizer_af028fb191116c365a78f67193d31f9d9}{\texorpdfstring{$\sim$}{\string~}\+Rasterizer}} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor for the \doxylink{class_ragot_1_1_rasterizer}{Rasterizer} class. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_ragot_1_1_frame_buffer}{Frame\+Buffer}}$<$ Color $>$ \& \mbox{\hyperlink{class_ragot_1_1_rasterizer_a523fbf480688e863dceca80cf69bb419}{get\+\_\+frame\+\_\+buffer}} () const
+\begin{DoxyCompactList}\small\item\em Gets the frame buffer associated with this rasterizer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_rasterizer_a07a7e2f09eecba92428e8b23cb59ec24}{set\+\_\+color}} (const Color \&new\+\_\+color)
+\begin{DoxyCompactList}\small\item\em Gets the current color used for drawing polygons. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_rasterizer_a2df8e755c8ae708e3aeee43978155472}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current color used for clearing the frame buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_rasterizer_a889d98752741917eae511058ef647159}{fill\+\_\+convex\+\_\+polygon}} (const glm\+::ivec4 \texorpdfstring{$\ast$}{*}const vertices, const int \texorpdfstring{$\ast$}{*}const indices\+\_\+begin, const int \texorpdfstring{$\ast$}{*}const indices\+\_\+end)
+\begin{DoxyCompactList}\small\item\em Fills a convex polygon defined by its vertices and indices. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_rasterizer_ada80fbf86638e56a1ce93787d82040e5}{fill\+\_\+convex\+\_\+polygon}} (const glm\+::ivec4 \texorpdfstring{$\ast$}{*}const vertices, const \mbox{\hyperlink{struct_ragot_1_1face__t}{face\+\_\+t}} \texorpdfstring{$\ast$}{*}const face)
+\begin{DoxyCompactList}\small\item\em Fills a convex polygon defined by its vertices and face structure. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_rasterizer_a31a5a7d0ced4b723083bb0a8b236d164}{fill\+\_\+convex\+\_\+polygon\+\_\+z\+\_\+buffer}} (const glm\+::ivec4 \texorpdfstring{$\ast$}{*}const vertices, const \mbox{\hyperlink{struct_ragot_1_1face__t}{face\+\_\+t}} \texorpdfstring{$\ast$}{*}const face)
+\begin{DoxyCompactList}\small\item\em Fills a convex polygon in the Z-\/buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_rasterizer_a10ac6b7f0f3d22abd90a209519001f1e}{fill\+\_\+convex\+\_\+polygon\+\_\+z\+\_\+buffer}} (const glm\+::ivec4 \texorpdfstring{$\ast$}{*}const vertices, const int \texorpdfstring{$\ast$}{*}const indices\+\_\+begin, const int \texorpdfstring{$\ast$}{*}const indices\+\_\+end)
+\begin{DoxyCompactList}\small\item\em Fills a convex polygon in the Z-\/buffer using vertex indices. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_ragot_1_1_rasterizer_abff857e3945cffb531efaf8c99e3b341}{debug\+\_\+enabled}} = true
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename VALUE\+\_\+\+TYPE, size\+\_\+t SHIFT$>$ }\\void \mbox{\hyperlink{class_ragot_1_1_rasterizer_ab0e24415f7e34a001cabe03ce0bb8c73}{interpolate}} (int \texorpdfstring{$\ast$}{*}cache, int v0, int v1, int y\+\_\+min, int y\+\_\+max)
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Enable or disable debug logging for rasterization operations. \end{DoxyCompactList}\item 
+{\footnotesize template$<$unsigned COLOR\+\_\+\+SIZE$>$ }\\void \mbox{\hyperlink{class_ragot_1_1_rasterizer_a5a7a2921b9d5f8a14b11f774bc7e682e}{fill\+\_\+row}} (Color \texorpdfstring{$\ast$}{*}start, unsigned left\+\_\+offset, unsigned right\+\_\+offset, const Color \&\mbox{\hyperlink{class_ragot_1_1_rasterizer_a4f9c07cb346a74679ae0d574ac786872}{color}})
+\begin{DoxyCompactList}\small\item\em Fills a row of pixels in the frame buffer with a specified color. \end{DoxyCompactList}\item 
+{\footnotesize template$<$unsigned COLOR\+\_\+\+SIZE$>$ }\\void \mbox{\hyperlink{class_ragot_1_1_rasterizer_a549eab69a5b35d18a6b5cc59bb4988f1}{fill\+\_\+row\+\_\+zbuffer}} (Color \texorpdfstring{$\ast$}{*}start, int \texorpdfstring{$\ast$}{*}zbuffer, unsigned left\+\_\+offset, unsigned right\+\_\+offset, int z\+\_\+start, int dz, const Color \&\mbox{\hyperlink{class_ragot_1_1_rasterizer_a4f9c07cb346a74679ae0d574ac786872}{color}})
+\begin{DoxyCompactList}\small\item\em Fills a row of pixels in the frame buffer with a specified color using Z-\/buffering. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_rasterizer_a7ede8e2d5ad993f97263adeb090f8a96}{fill\+\_\+row}} (\mbox{\hyperlink{namespace_ragot_a30e07cad21ef68ef55cfdeb31712febd}{RGB565}} \texorpdfstring{$\ast$}{*}start, unsigned left\+\_\+offset, unsigned right\+\_\+offset, const \mbox{\hyperlink{namespace_ragot_a30e07cad21ef68ef55cfdeb31712febd}{RGB565}} \&\mbox{\hyperlink{class_ragot_1_1_rasterizer_a4f9c07cb346a74679ae0d574ac786872}{color}})
+\item 
+void \mbox{\hyperlink{class_ragot_1_1_rasterizer_a0432b567a85a6fb792f6d1881f27b7cd}{fill\+\_\+row\+\_\+zbuffer}} (\mbox{\hyperlink{namespace_ragot_a30e07cad21ef68ef55cfdeb31712febd}{RGB565}} \texorpdfstring{$\ast$}{*}start, int \texorpdfstring{$\ast$}{*}zbuffer, unsigned left\+\_\+offset, unsigned right\+\_\+offset, int z\+\_\+start, int dz, const \mbox{\hyperlink{namespace_ragot_a30e07cad21ef68ef55cfdeb31712febd}{RGB565}} \&\mbox{\hyperlink{class_ragot_1_1_rasterizer_a4f9c07cb346a74679ae0d574ac786872}{color}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_frame_buffer}{Frame\+Buffer}}$<$ Color $>$ \& \mbox{\hyperlink{class_ragot_1_1_rasterizer_acdd89dcfa9efd302fad6a3341ac85666}{frame\+\_\+buffer}}
+\begin{DoxyCompactList}\small\item\em Reference to the frame buffer where polygons will be drawn. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{class_ragot_1_1_rasterizer_aef43bbd4828564ee39bf405875872ef5}{z\+\_\+buffer}}
+\begin{DoxyCompactList}\small\item\em Z-\/buffer for depth testing, used when painter\textquotesingle{}s algorithm is disabled. \end{DoxyCompactList}\item 
+Color \mbox{\hyperlink{class_ragot_1_1_rasterizer_a4f9c07cb346a74679ae0d574ac786872}{color}}
+\begin{DoxyCompactList}\small\item\em Current color to be used for drawing polygons. \end{DoxyCompactList}\item 
+Color \mbox{\hyperlink{class_ragot_1_1_rasterizer_a99fb7cbd32420964d66bf428482a9ee8}{clear\+\_\+color}}
+\begin{DoxyCompactList}\small\item\em Color used to clear the frame buffer, default is black. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_ragot_1_1_rasterizer_a6a4d1a1807d7aae5e67e8c29639a1ab1}{offset\+\_\+cache0}} \mbox{[}1024\mbox{]}
+\begin{DoxyCompactList}\small\item\em Cache for left offsets of scanlines \texorpdfstring{$>$}{>} \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_ragot_1_1_rasterizer_a5d5ee39c722909831977ed1ffa3e256e}{offset\+\_\+cache1}} \mbox{[}1024\mbox{]}
+\begin{DoxyCompactList}\small\item\em Cache for right offsets of scanlines. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_ragot_1_1_rasterizer_a4edba59c0f0ff1de2666971de9cc8a06}{z\+\_\+cache0}} \mbox{[}1024\mbox{]}
+\begin{DoxyCompactList}\small\item\em Cache for Z-\/buffer values for left offsets. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_ragot_1_1_rasterizer_a81c8b9a5d195cdcd1966914427965a3c}{z\+\_\+cache1}} \mbox{[}1024\mbox{]}
+\begin{DoxyCompactList}\small\item\em Cache for Z-\/buffer values for right offsets. \end{DoxyCompactList}\item 
+static constexpr const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_ragot_1_1_rasterizer_a688211c2ce3a3366b63bc4a0e0e8c3a8}{RASTER\+\_\+\+TAG}} = "{}Rasterizer"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Color$>$\newline
+class Ragot\+::\+Rasterizer$<$ Color $>$}
+Class for rasterizing polygons in a frame buffer. 
+
+This class provides methods to fill convex polygons in a frame buffer with a specified color. It supports both standard rasterization and Z-\/buffering techniques.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Color} & The color type used for the frame buffer (e.\+g., \doxylink{namespace_ragot_a30e07cad21ef68ef55cfdeb31712febd}{RGB565}). \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ragot_1_1_rasterizer_ac44ab168083551ec18b2211fcd032bfa}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!Rasterizer@{Rasterizer}}
+\index{Rasterizer@{Rasterizer}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{Rasterizer()}{Rasterizer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_ac44ab168083551ec18b2211fcd032bfa} 
+template$<$typename Color$>$ \\
+\mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::\+Rasterizer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ragot_1_1_frame_buffer}{Frame\+Buffer}}$<$ Color $>$ \&}]{frame}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \doxylink{class_ragot_1_1_rasterizer}{Rasterizer} with a given frame buffer. 
+
+Initializes the rasterizer with the specified frame buffer and prepares the Z-\/buffer if needed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame} & Reference to the frame buffer where polygons will be drawn. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ragot_1_1_rasterizer_ad2b50b7fbe56790541e32d40af5afd35}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!Rasterizer@{Rasterizer}}
+\index{Rasterizer@{Rasterizer}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{Rasterizer()}{Rasterizer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_ad2b50b7fbe56790541e32d40af5afd35} 
+template$<$typename Color$>$ \\
+\mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::\+Rasterizer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor for the \doxylink{class_ragot_1_1_rasterizer}{Rasterizer} class (Default). 
+
+\Hypertarget{class_ragot_1_1_rasterizer_af028fb191116c365a78f67193d31f9d9}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!````~Rasterizer@{\texorpdfstring{$\sim$}{\string~}Rasterizer}}
+\index{````~Rasterizer@{\texorpdfstring{$\sim$}{\string~}Rasterizer}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Rasterizer()}{\string~Rasterizer()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_af028fb191116c365a78f67193d31f9d9} 
+template$<$typename Color$>$ \\
+\mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{class_ragot_1_1_rasterizer}{Rasterizer}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default destructor for the \doxylink{class_ragot_1_1_rasterizer}{Rasterizer} class. 
+
+Cleans up resources used by the rasterizer. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ragot_1_1_rasterizer_a2df8e755c8ae708e3aeee43978155472}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!clear@{clear}}
+\index{clear@{clear}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_a2df8e755c8ae708e3aeee43978155472} 
+template$<$typename Color$>$ \\
+void \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the current color used for clearing the frame buffer. 
+
+This method returns the color that will be used to clear the frame buffer.
+
+\begin{DoxyReturn}{Returns}
+const Color\& Reference to the clear color. 
+\end{DoxyReturn}
+\Hypertarget{class_ragot_1_1_rasterizer_ada80fbf86638e56a1ce93787d82040e5}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!fill\_convex\_polygon@{fill\_convex\_polygon}}
+\index{fill\_convex\_polygon@{fill\_convex\_polygon}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{fill\_convex\_polygon()}{fill\_convex\_polygon()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_ada80fbf86638e56a1ce93787d82040e5} 
+template$<$typename COLOR$>$ \\
+void \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ COLOR $>$\+::fill\+\_\+convex\+\_\+polygon (\begin{DoxyParamCaption}\item[{const glm\+::ivec4 \texorpdfstring{$\ast$}{*}const}]{vertices}{, }\item[{const \mbox{\hyperlink{struct_ragot_1_1face__t}{face\+\_\+t}} \texorpdfstring{$\ast$}{*}const}]{face}{}\end{DoxyParamCaption})}
+
+
+
+Fills a convex polygon defined by its vertices and face structure. 
+
+This method fills a convex polygon in the frame buffer using the specified vertices and face structure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertices} & Pointer to an array of vertices defining the polygon. \\
+\hline
+{\em face} & Pointer to the face structure containing vertex indices. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ragot_1_1_rasterizer_a889d98752741917eae511058ef647159}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!fill\_convex\_polygon@{fill\_convex\_polygon}}
+\index{fill\_convex\_polygon@{fill\_convex\_polygon}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{fill\_convex\_polygon()}{fill\_convex\_polygon()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_a889d98752741917eae511058ef647159} 
+template$<$typename COLOR$>$ \\
+void \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ COLOR $>$\+::fill\+\_\+convex\+\_\+polygon (\begin{DoxyParamCaption}\item[{const glm\+::ivec4 \texorpdfstring{$\ast$}{*}const}]{vertices}{, }\item[{const int \texorpdfstring{$\ast$}{*}const}]{indices\+\_\+begin}{, }\item[{const int \texorpdfstring{$\ast$}{*}const}]{indices\+\_\+end}{}\end{DoxyParamCaption})}
+
+
+
+Fills a convex polygon defined by its vertices and indices. 
+
+This method fills a convex polygon in the frame buffer using the specified vertices and indices.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertices} & Pointer to an array of vertices defining the polygon. \\
+\hline
+{\em indices\+\_\+begin} & Pointer to the beginning of the indices array. \\
+\hline
+{\em indices\+\_\+end} & Pointer to the end of the indices array. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{class_ragot_1_1_rasterizer_a889d98752741917eae511058ef647159_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_rasterizer_a31a5a7d0ced4b723083bb0a8b236d164}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!fill\_convex\_polygon\_z\_buffer@{fill\_convex\_polygon\_z\_buffer}}
+\index{fill\_convex\_polygon\_z\_buffer@{fill\_convex\_polygon\_z\_buffer}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{fill\_convex\_polygon\_z\_buffer()}{fill\_convex\_polygon\_z\_buffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_a31a5a7d0ced4b723083bb0a8b236d164} 
+template$<$typename COLOR$>$ \\
+template void \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::fill\+\_\+convex\+\_\+polygon\+\_\+z\+\_\+buffer (\begin{DoxyParamCaption}\item[{const glm\+::ivec4 \texorpdfstring{$\ast$}{*}const}]{vertices}{, }\item[{const \mbox{\hyperlink{struct_ragot_1_1face__t}{face\+\_\+t}} \texorpdfstring{$\ast$}{*}const}]{face}{}\end{DoxyParamCaption})}
+
+
+
+Fills a convex polygon in the Z-\/buffer. 
+
+This method fills a convex polygon in the Z-\/buffer using the specified vertices and face structure. It performs depth testing to ensure correct rendering order.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertices} & Pointer to an array of vertices defining the polygon. \\
+\hline
+{\em face} & Pointer to the face structure containing vertex indices. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ragot_1_1_rasterizer_a10ac6b7f0f3d22abd90a209519001f1e}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!fill\_convex\_polygon\_z\_buffer@{fill\_convex\_polygon\_z\_buffer}}
+\index{fill\_convex\_polygon\_z\_buffer@{fill\_convex\_polygon\_z\_buffer}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{fill\_convex\_polygon\_z\_buffer()}{fill\_convex\_polygon\_z\_buffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_a10ac6b7f0f3d22abd90a209519001f1e} 
+template$<$typename COLOR$>$ \\
+template void \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::fill\+\_\+convex\+\_\+polygon\+\_\+z\+\_\+buffer (\begin{DoxyParamCaption}\item[{const glm\+::ivec4 \texorpdfstring{$\ast$}{*}const}]{vertices}{, }\item[{const int \texorpdfstring{$\ast$}{*}const}]{indices\+\_\+begin}{, }\item[{const int \texorpdfstring{$\ast$}{*}const}]{indices\+\_\+end}{}\end{DoxyParamCaption})}
+
+
+
+Fills a convex polygon in the Z-\/buffer using vertex indices. 
+
+
+\begin{DoxyItemize}
+\item This method fills a convex polygon in the Z-\/buffer using the specified vertices and indices. It performs depth testing to ensure correct rendering order. 
+\begin{DoxyParams}{Parameters}
+{\em vertices} & Pointer to an array of vertices defining the polygon. \\
+\hline
+{\em indices\+\_\+begin} & Pointer to the beginning of the indices array. \\
+\hline
+{\em indices\+\_\+end} & Pointer to the end of the indices array. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{class_ragot_1_1_rasterizer_a10ac6b7f0f3d22abd90a209519001f1e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_rasterizer_a5a7a2921b9d5f8a14b11f774bc7e682e}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!fill\_row@{fill\_row}}
+\index{fill\_row@{fill\_row}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{fill\_row()}{fill\_row()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_a5a7a2921b9d5f8a14b11f774bc7e682e} 
+template$<$typename Color$>$ \\
+template$<$unsigned COLOR\+\_\+\+SIZE$>$ \\
+void \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::fill\+\_\+row (\begin{DoxyParamCaption}\item[{Color \texorpdfstring{$\ast$}{*}}]{start}{, }\item[{unsigned}]{left\+\_\+offset}{, }\item[{unsigned}]{right\+\_\+offset}{, }\item[{const Color \&}]{color}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Fills a row of pixels in the frame buffer with a specified color. 
+
+This method fills a row of pixels in the frame buffer with the specified color, from left\+\_\+offset to right\+\_\+offset.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em COLOR\+\_\+\+SIZE} & The size of the color type in bytes. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Pointer to the first pixel of the scanline. \\
+\hline
+{\em left\+\_\+offset} & The starting offset (inclusive). \\
+\hline
+{\em right\+\_\+offset} & The ending offset (exclusive). \\
+\hline
+{\em color} & The color to fill the row with. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ragot_1_1_rasterizer_a7ede8e2d5ad993f97263adeb090f8a96}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!fill\_row@{fill\_row}}
+\index{fill\_row@{fill\_row}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{fill\_row()}{fill\_row()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_a7ede8e2d5ad993f97263adeb090f8a96} 
+void \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ \mbox{\hyperlink{namespace_ragot_a30e07cad21ef68ef55cfdeb31712febd}{RGB565}} $>$\+::fill\+\_\+row$<$ 2 $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_ragot_a30e07cad21ef68ef55cfdeb31712febd}{RGB565}} \texorpdfstring{$\ast$}{*}}]{start}{, }\item[{unsigned}]{left\+\_\+offset}{, }\item[{unsigned}]{right\+\_\+offset}{, }\item[{const \mbox{\hyperlink{namespace_ragot_a30e07cad21ef68ef55cfdeb31712febd}{RGB565}} \&}]{color}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_ragot_1_1_rasterizer_a549eab69a5b35d18a6b5cc59bb4988f1}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!fill\_row\_zbuffer@{fill\_row\_zbuffer}}
+\index{fill\_row\_zbuffer@{fill\_row\_zbuffer}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{fill\_row\_zbuffer()}{fill\_row\_zbuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_a549eab69a5b35d18a6b5cc59bb4988f1} 
+template$<$typename Color$>$ \\
+template$<$unsigned COLOR\+\_\+\+SIZE$>$ \\
+void \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::fill\+\_\+row\+\_\+zbuffer (\begin{DoxyParamCaption}\item[{Color \texorpdfstring{$\ast$}{*}}]{start}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{zbuffer}{, }\item[{unsigned}]{left\+\_\+offset}{, }\item[{unsigned}]{right\+\_\+offset}{, }\item[{int}]{z\+\_\+start}{, }\item[{int}]{dz}{, }\item[{const Color \&}]{color}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Fills a row of pixels in the frame buffer with a specified color using Z-\/buffering. 
+
+This method fills a row of pixels in the frame buffer with the specified color, from left\+\_\+offset to right\+\_\+offset, while performing depth testing using the Z-\/buffer.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em COLOR\+\_\+\+SIZE} & The size of the color type in bytes. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Pointer to the first pixel of the scanline. \\
+\hline
+{\em zbuffer} & Pointer to the first element of the Z-\/buffer. \\
+\hline
+{\em left\+\_\+offset} & The starting offset (inclusive). \\
+\hline
+{\em right\+\_\+offset} & The ending offset (exclusive). \\
+\hline
+{\em z\+\_\+start} & The initial depth value at left\+\_\+offset. \\
+\hline
+{\em dz} & The increment of depth per pixel. \\
+\hline
+{\em color} & The color to fill the row with. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ragot_1_1_rasterizer_a0432b567a85a6fb792f6d1881f27b7cd}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!fill\_row\_zbuffer@{fill\_row\_zbuffer}}
+\index{fill\_row\_zbuffer@{fill\_row\_zbuffer}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{fill\_row\_zbuffer()}{fill\_row\_zbuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_a0432b567a85a6fb792f6d1881f27b7cd} 
+void \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ \mbox{\hyperlink{namespace_ragot_a30e07cad21ef68ef55cfdeb31712febd}{RGB565}} $>$\+::fill\+\_\+row\+\_\+zbuffer$<$ 2 $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_ragot_a30e07cad21ef68ef55cfdeb31712febd}{RGB565}} \texorpdfstring{$\ast$}{*}}]{start}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{zbuffer}{, }\item[{unsigned}]{left\+\_\+offset}{, }\item[{unsigned}]{right\+\_\+offset}{, }\item[{int}]{z\+\_\+start}{, }\item[{int}]{dz}{, }\item[{const \mbox{\hyperlink{namespace_ragot_a30e07cad21ef68ef55cfdeb31712febd}{RGB565}} \&}]{color}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_ragot_1_1_rasterizer_a523fbf480688e863dceca80cf69bb419}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!get\_frame\_buffer@{get\_frame\_buffer}}
+\index{get\_frame\_buffer@{get\_frame\_buffer}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{get\_frame\_buffer()}{get\_frame\_buffer()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_a523fbf480688e863dceca80cf69bb419} 
+template$<$typename Color$>$ \\
+const \mbox{\hyperlink{class_ragot_1_1_frame_buffer}{Frame\+Buffer}}$<$ Color $>$ \& \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::get\+\_\+frame\+\_\+buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the frame buffer associated with this rasterizer. 
+
+This method returns a reference to the frame buffer where polygons will be drawn.
+
+\begin{DoxyReturn}{Returns}
+const \doxylink{class_ragot_1_1_frame_buffer}{Frame\+Buffer$<$\+Color$>$}\& Reference to the frame buffer. 
+\end{DoxyReturn}
+\Hypertarget{class_ragot_1_1_rasterizer_ab0e24415f7e34a001cabe03ce0bb8c73}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!interpolate@{interpolate}}
+\index{interpolate@{interpolate}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{interpolate()}{interpolate()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_ab0e24415f7e34a001cabe03ce0bb8c73} 
+template$<$typename COLOR$>$ \\
+template$<$typename VALUE\+\_\+\+TYPE, size\+\_\+t SHIFT$>$ \\
+void \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ COLOR $>$\+::interpolate (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{cache}{, }\item[{int}]{v0}{, }\item[{int}]{v1}{, }\item[{int}]{y\+\_\+min}{, }\item[{int}]{y\+\_\+max}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\texorpdfstring{$<$}{<} Enable or disable debug logging for rasterization operations. 
+
+Interpolates pixel offsets for a scanline.
+
+This method interpolates pixel offsets for a scanline based on the provided vertex values and Y range. It fills the offset cache with calculated pixel offsets.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em VALUE\+\_\+\+TYPE} & The type of value used for interpolation (e.\+g., int32\+\_\+t). \\
+\hline
+{\em SHIFT} & The bit shift value used for scaling the interpolation. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em cache} & Pointer to the cache where interpolated offsets will be stored. \\
+\hline
+{\em v0} & The starting vertex value. \\
+\hline
+{\em v1} & The ending vertex value. \\
+\hline
+{\em y\+\_\+min} & The minimum Y coordinate of the scanline. \\
+\hline
+{\em y\+\_\+max} & The maximum Y coordinate of the scanline. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{class_ragot_1_1_rasterizer_ab0e24415f7e34a001cabe03ce0bb8c73_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_rasterizer_a07a7e2f09eecba92428e8b23cb59ec24}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!set\_color@{set\_color}}
+\index{set\_color@{set\_color}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{set\_color()}{set\_color()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_a07a7e2f09eecba92428e8b23cb59ec24} 
+template$<$typename Color$>$ \\
+void \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::set\+\_\+color (\begin{DoxyParamCaption}\item[{const Color \&}]{new\+\_\+color}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the current color used for drawing polygons. 
+
+This method returns the current color that will be used to fill polygons.
+
+\begin{DoxyReturn}{Returns}
+const Color\& Reference to the current color. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_ragot_1_1_rasterizer_a99fb7cbd32420964d66bf428482a9ee8}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!clear\_color@{clear\_color}}
+\index{clear\_color@{clear\_color}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{clear\_color}{clear\_color}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_a99fb7cbd32420964d66bf428482a9ee8} 
+template$<$typename Color$>$ \\
+Color \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::clear\+\_\+color\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Color used to clear the frame buffer, default is black. 
+
+\Hypertarget{class_ragot_1_1_rasterizer_a4f9c07cb346a74679ae0d574ac786872}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!color@{color}}
+\index{color@{color}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{color}{color}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_a4f9c07cb346a74679ae0d574ac786872} 
+template$<$typename Color$>$ \\
+Color \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::color\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current color to be used for drawing polygons. 
+
+\Hypertarget{class_ragot_1_1_rasterizer_abff857e3945cffb531efaf8c99e3b341}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!debug\_enabled@{debug\_enabled}}
+\index{debug\_enabled@{debug\_enabled}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{debug\_enabled}{debug\_enabled}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_abff857e3945cffb531efaf8c99e3b341} 
+template$<$typename Color$>$ \\
+bool \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::debug\+\_\+enabled = true}
+
+\Hypertarget{class_ragot_1_1_rasterizer_acdd89dcfa9efd302fad6a3341ac85666}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!frame\_buffer@{frame\_buffer}}
+\index{frame\_buffer@{frame\_buffer}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{frame\_buffer}{frame\_buffer}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_acdd89dcfa9efd302fad6a3341ac85666} 
+template$<$typename Color$>$ \\
+\mbox{\hyperlink{class_ragot_1_1_frame_buffer}{Frame\+Buffer}}$<$ Color $>$\& \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::frame\+\_\+buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reference to the frame buffer where polygons will be drawn. 
+
+\Hypertarget{class_ragot_1_1_rasterizer_a6a4d1a1807d7aae5e67e8c29639a1ab1}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!offset\_cache0@{offset\_cache0}}
+\index{offset\_cache0@{offset\_cache0}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{offset\_cache0}{offset\_cache0}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_a6a4d1a1807d7aae5e67e8c29639a1ab1} 
+template$<$typename Color$>$ \\
+int \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::offset\+\_\+cache0\mbox{[}1024\mbox{]}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Cache for left offsets of scanlines \texorpdfstring{$>$}{>} 
+
+\Hypertarget{class_ragot_1_1_rasterizer_a5d5ee39c722909831977ed1ffa3e256e}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!offset\_cache1@{offset\_cache1}}
+\index{offset\_cache1@{offset\_cache1}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{offset\_cache1}{offset\_cache1}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_a5d5ee39c722909831977ed1ffa3e256e} 
+template$<$typename Color$>$ \\
+int \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::offset\+\_\+cache1\mbox{[}1024\mbox{]}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Cache for right offsets of scanlines. 
+
+\Hypertarget{class_ragot_1_1_rasterizer_a688211c2ce3a3366b63bc4a0e0e8c3a8}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!RASTER\_TAG@{RASTER\_TAG}}
+\index{RASTER\_TAG@{RASTER\_TAG}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{RASTER\_TAG}{RASTER\_TAG}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_a688211c2ce3a3366b63bc4a0e0e8c3a8} 
+template$<$typename Color$>$ \\
+const char\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::\+RASTER\+\_\+\+TAG = "{}Rasterizer"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\Hypertarget{class_ragot_1_1_rasterizer_aef43bbd4828564ee39bf405875872ef5}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!z\_buffer@{z\_buffer}}
+\index{z\_buffer@{z\_buffer}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{z\_buffer}{z\_buffer}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_aef43bbd4828564ee39bf405875872ef5} 
+template$<$typename Color$>$ \\
+std\+::vector$<$ int $>$ \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::z\+\_\+buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Z-\/buffer for depth testing, used when painter\textquotesingle{}s algorithm is disabled. 
+
+\Hypertarget{class_ragot_1_1_rasterizer_a4edba59c0f0ff1de2666971de9cc8a06}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!z\_cache0@{z\_cache0}}
+\index{z\_cache0@{z\_cache0}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{z\_cache0}{z\_cache0}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_a4edba59c0f0ff1de2666971de9cc8a06} 
+template$<$typename Color$>$ \\
+int \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::z\+\_\+cache0\mbox{[}1024\mbox{]}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Cache for Z-\/buffer values for left offsets. 
+
+\Hypertarget{class_ragot_1_1_rasterizer_a81c8b9a5d195cdcd1966914427965a3c}\index{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!z\_cache1@{z\_cache1}}
+\index{z\_cache1@{z\_cache1}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}}
+\doxysubsubsection{\texorpdfstring{z\_cache1}{z\_cache1}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_rasterizer_a81c8b9a5d195cdcd1966914427965a3c} 
+template$<$typename Color$>$ \\
+int \mbox{\hyperlink{class_ragot_1_1_rasterizer}{Ragot\+::\+Rasterizer}}$<$ Color $>$\+::z\+\_\+cache1\mbox{[}1024\mbox{]}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Cache for Z-\/buffer values for right offsets. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+main/\mbox{\hyperlink{_rasterizer_8hpp}{Rasterizer.\+hpp}}\item 
+main/\mbox{\hyperlink{_rasterizer_8cpp}{Rasterizer.\+cpp}}\end{DoxyCompactItemize}

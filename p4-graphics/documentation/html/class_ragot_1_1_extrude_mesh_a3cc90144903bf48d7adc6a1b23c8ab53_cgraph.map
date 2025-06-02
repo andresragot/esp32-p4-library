@@ -1,0 +1,15 @@
+<map id="Ragot::ExtrudeMesh::log_mesh_info" name="Ragot::ExtrudeMesh::log_mesh_info">
+<area shape="rect" id="Node000001" title="Logs detailed information about the mesh." alt="" coords="5,154,147,194"/>
+<area shape="rect" id="Node000002" href="$class_ragot_1_1_mesh.html#a8c6fa8b74fa74ca5a2a0f399709a5af9" title="Get the faces object." alt="" coords="202,5,363,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,152,131,97,160,67,193,41,204,35,207,40,196,46,164,71,135,100,93,155"/>
+<area shape="rect" id="Node000003" href="$class_ragot_1_1_transform.html#a1db9f8e84315c4296dfef46f1f17ce99" title="Gets the current position of the object." alt="" coords="208,55,357,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="110,151,193,106,208,100,210,105,196,111,113,156"/>
+<area shape="rect" id="Node000004" href="$class_ragot_1_1_transform.html#aa9a377ee1cc5eca48f62970e3d4016ab" title="Gets the current rotation of the object." alt="" coords="208,120,357,161"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="146,160,192,153,193,158,147,165"/>
+<area shape="rect" id="Node000005" href="$class_ragot_1_1_transform.html#a96a6f6bcff942294a7011dac4f235b92" title="Sets the scale of the object uniformly." alt="" coords="208,186,357,226"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="147,182,193,190,192,195,146,188"/>
+<area shape="rect" id="Node000006" href="$class_ragot_1_1_mesh.html#aea29fdf830f1bc4a6ee276f009d846f7" title="Get the total vertices object." alt="" coords="205,251,360,292"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="114,193,196,236,211,243,209,247,194,241,111,197"/>
+<area shape="rect" id="Node000007" href="$class_ragot_1_1_mesh.html#ab9d135d5f1653e6d07a4e9a269a5064b" title="Get the vertices object." alt="" coords="195,316,370,342"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="93,193,135,247,164,276,196,301,207,307,204,312,193,306,160,280,131,251,89,197"/>
+</map>

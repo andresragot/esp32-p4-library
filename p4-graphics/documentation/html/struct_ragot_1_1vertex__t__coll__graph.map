@@ -1,0 +1,5 @@
+<map id="Ragot::vertex_t" name="Ragot::vertex_t">
+<area shape="rect" id="Node000001" title="Represents a vertex in 3D space." alt="" coords="5,165,106,231"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="38,5,74,72"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="58,72,58,148,53,148,53,72"/>
+</map>

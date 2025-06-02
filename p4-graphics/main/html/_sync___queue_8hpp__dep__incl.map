@@ -1,9 +1,0 @@
-<map id="Sync_Queue.hpp" name="Sync_Queue.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="64,5,186,31"/>
-<area shape="rect" id="Node000002" href="$_thread___pool_8hpp.html" title=" " alt="" coords="65,79,185,105"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="128,46,128,79,122,79,122,46"/>
-<area shape="rect" id="Node000003" href="$_thread___pool_8cpp.html" title=" " alt="" coords="5,153,125,178"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="107,118,77,154,73,150,103,115"/>
-<area shape="rect" id="Node000004" href="$main_8cpp.html" title=" " alt="" coords="149,153,224,178"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="147,115,178,150,174,154,143,118"/>
-</map>

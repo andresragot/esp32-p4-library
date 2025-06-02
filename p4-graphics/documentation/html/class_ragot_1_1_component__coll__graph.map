@@ -1,0 +1,18 @@
+<map id="Ragot::Component" name="Ragot::Component">
+<area shape="rect" id="Node000001" title="Base class for components in the Ragot engine." alt="" coords="256,810,402,1039"/>
+<area shape="rect" id="Node000002" href="$class_ragot_1_1_node.html" title="Represents a node in a scene graph for 3D rendering." alt="" coords="120,497,276,747"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="260,759,282,809,277,811,255,761"/>
+<area shape="poly" id="edge7_Node000002_Node000002" title=" " alt="" coords="277,592,295,602,302,622,300,635,293,644,289,641,295,632,297,622,291,606,274,597"/>
+<area shape="rect" id="Node000003" href="$class_ragot_1_1_transform.html" title="A class representing a 3D transformation with position, rotation, and scale." alt="" coords="34,165,189,434"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="154,448,167,497,162,498,149,449"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,5,44,72"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="34,71,53,140,55,148,50,149,47,141,29,72"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="94,5,129,72"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="114,72,114,148,109,148,109,72"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="158,5,198,72"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="172,72,153,149,148,147,167,71"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="213,259,356,340"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="277,341,238,482,233,480,271,339"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="370,581,549,663"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="445,664,387,796,382,794,440,661"/>
+</map>

@@ -1,0 +1,325 @@
+\doxysection{Ragot\+::Driver\+\_\+\+ST7789 Class Reference}
+\hypertarget{class_ragot_1_1_driver___s_t7789}{}\label{class_ragot_1_1_driver___s_t7789}\index{Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}}
+
+
+Driver for the ST7789 LCD panel.  
+
+
+
+
+{\ttfamily \#include $<$Driver\+\_\+\+ST7789.\+hpp$>$}
+
+
+
+Inheritance diagram for Ragot\+::Driver\+\_\+\+ST7789\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_ragot_1_1_driver___s_t7789__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ragot\+::Driver\+\_\+\+ST7789\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_driver___s_t7789__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_driver___s_t7789_a931851a60d57e6d09df68ca727aaeb8e}{Driver\+\_\+\+ST7789}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{class_ragot_1_1_driver___s_t7789}{Driver\+\_\+\+ST7789} class. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_ragot_1_1_driver___s_t7789_abf6ed84cc7fd4f89f83bef3a472e6997}{\texorpdfstring{$\sim$}{\string~}\+Driver\+\_\+\+ST7789}} ()=default
+\begin{DoxyCompactList}\small\item\em Default virtual destructor for the \doxylink{class_ragot_1_1_driver___s_t7789}{Driver\+\_\+\+ST7789} class. \end{DoxyCompactList}\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver___s_t7789_af667ca9cc03e0082326f3ab040077858}{init}} (gpio\+\_\+num\+\_\+t reset\+\_\+pin, gpio\+\_\+num\+\_\+t bk\+\_\+pin) override
+\begin{DoxyCompactList}\small\item\em Initializes the ST7789 LCD panel driver. \end{DoxyCompactList}\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver___s_t7789_a5c36b130dfd428e70ab930fa174f593e}{deinit}} () override
+\begin{DoxyCompactList}\small\item\em Deinitializes the ST7789 LCD panel driver. \end{DoxyCompactList}\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver___s_t7789_a05e007cb9597f94269e9667e1b04a798}{set\+\_\+pixel}} (uint32\+\_\+t x, uint32\+\_\+t y, uint32\+\_\+t color) override
+\begin{DoxyCompactList}\small\item\em Sets a pixel at the specified coordinates to the given color. \end{DoxyCompactList}\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver___s_t7789_a3871b65220c0b86d845a7a04aca79784}{send\+\_\+frame\+\_\+buffer}} (const void \texorpdfstring{$\ast$}{*}frame\+\_\+buffer) override
+\begin{DoxyCompactList}\small\item\em Sends a frame buffer to the ST7789 LCD panel. \end{DoxyCompactList}\item 
+IRAM\+\_\+\+ATTR bool \mbox{\hyperlink{class_ragot_1_1_driver___s_t7789_a66159f3d2001ac6c42d8016ee60e8e9a}{refresh\+\_\+frame\+\_\+buffer}} (void \texorpdfstring{$\ast$}{*}user\+\_\+ctx)
+\begin{DoxyCompactList}\small\item\em Refreshes the frame buffer for the ST7789 LCD panel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d}{Ragot\+::\+Driver\+LCD}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a5d59da0a6fe68f5ceaa2bb2cf0116c93}{Driver\+LCD}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{class_ragot_1_1_driver_l_c_d}{Driver\+LCD} class. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a93e4f7281b161d888363133e670b4fd3}{\texorpdfstring{$\sim$}{\string~}\+Driver\+LCD}} ()=default
+\begin{DoxyCompactList}\small\item\em Default virtual destructor for the \doxylink{class_ragot_1_1_driver_l_c_d}{Driver\+LCD} class. \end{DoxyCompactList}\item 
+const size\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a8de7acc7c2526478dc7e365d5ce9a023}{get\+\_\+width}} () const
+\begin{DoxyCompactList}\small\item\em Gets the width of the LCD panel. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_ac64b56d5d57abad2ad607da03ef6f802}{get\+\_\+width}} ()
+\begin{DoxyCompactList}\small\item\em Gets the height of the LCD panel. \end{DoxyCompactList}\item 
+const size\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a27a7bca69f4e4f6a91e855bc380d4114}{get\+\_\+height}} () const
+\begin{DoxyCompactList}\small\item\em Gets the height of the LCD panel. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a5b01bf60de32f1804a6bf0590c96e77e}{get\+\_\+height}} ()
+\begin{DoxyCompactList}\small\item\em Gets the height of the LCD panel. \end{DoxyCompactList}\item 
+const lcd\+\_\+color\+\_\+rgb\+\_\+pixel\+\_\+format\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a9b0b1572929a769d1dd33e58b6591b39}{get\+\_\+pixel\+\_\+format}} () const
+\begin{DoxyCompactList}\small\item\em Get the pixel format object. \end{DoxyCompactList}\item 
+lcd\+\_\+color\+\_\+rgb\+\_\+pixel\+\_\+format\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_acee901748eb441a4e8b2957679190893}{get\+\_\+pixel\+\_\+format}} ()
+\begin{DoxyCompactList}\small\item\em Get the pixel format object. \end{DoxyCompactList}\item 
+const esp\+\_\+lcd\+\_\+panel\+\_\+handle\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a908e3da421ac831ecfebf95743744757}{get\+\_\+handler}} () const
+\begin{DoxyCompactList}\small\item\em Get the handler object. \end{DoxyCompactList}\item 
+esp\+\_\+lcd\+\_\+panel\+\_\+handle\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a955026607dfec2c8f2d420a19e57fda8}{get\+\_\+handler}} ()
+\begin{DoxyCompactList}\small\item\em Get the handler object. \end{DoxyCompactList}\item 
+const bool \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a816d9d9f589aa8eb0e5d5255b16d00bf}{is\+\_\+initialized}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the LCD driver is initialized. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a9455a2ac06d5dfcb2d1c3a583ee567e0}{is\+\_\+initialized}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the LCD driver is initialized. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Semaphore\+Handle\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver___s_t7789_ad55e67fe699156d32f3913b78fe1302f}{refresh\+\_\+semaphore}}
+\begin{DoxyCompactList}\small\item\em Refresh semaphore for synchronizing frame buffer updates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_ragot_1_1_driver___s_t7789_a86f85555e1f6fd5021fe8a1f324d86ef}{bsp\+\_\+init\+\_\+lcd\+\_\+backlight}} (gpio\+\_\+num\+\_\+t bk\+\_\+pin)
+\begin{DoxyCompactList}\small\item\em Initializes the LCD backlight GPIO pin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_ragot_1_1_driver___s_t7789_a1a26f036279ae089763246f717c073d6}{TAG}} = "{}\mbox{[}Driver\+\_\+\+ST7789\mbox{]}..."{}
+\begin{DoxyCompactList}\small\item\em Tag for logging messages related to the ST7789 driver. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d}{Ragot\+::\+Driver\+LCD}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a6be782d59665875e378e4d2d302139a0}{initialized}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating if the LCD driver is initialized. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_aca57cd81e8f72097133fac225042e862}{width}}
+\begin{DoxyCompactList}\small\item\em Width of the LCD panel in pixels. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_af4948a7d9e6fc0a95b8ad9f87cd79650}{height}}
+\begin{DoxyCompactList}\small\item\em Height of the LCD panel in pixels. \end{DoxyCompactList}\item 
+lcd\+\_\+color\+\_\+rgb\+\_\+pixel\+\_\+format\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_ae11560e32f9d316196d353014303e1f1}{pixel\+\_\+format}}
+\begin{DoxyCompactList}\small\item\em Pixel format of the LCD panel. \end{DoxyCompactList}\item 
+esp\+\_\+lcd\+\_\+panel\+\_\+handle\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_ace26f4ba9ac1e2424bf618b39299ed85}{handler}}
+\begin{DoxyCompactList}\small\item\em Handle to the LCD panel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Driver for the ST7789 LCD panel. 
+
+This class provides methods to initialize, deinitialize, and send frame buffers to the ST7789 LCD panel. It inherits from the \doxylink{class_ragot_1_1_driver_l_c_d}{Driver\+LCD} class and implements the necessary methods for LCD operations. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ragot_1_1_driver___s_t7789_a931851a60d57e6d09df68ca727aaeb8e}\index{Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}!Driver\_ST7789@{Driver\_ST7789}}
+\index{Driver\_ST7789@{Driver\_ST7789}!Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}}
+\doxysubsubsection{\texorpdfstring{Driver\_ST7789()}{Driver\_ST7789()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver___s_t7789_a931851a60d57e6d09df68ca727aaeb8e} 
+Ragot\+::\+Driver\+\_\+\+ST7789\+::\+Driver\+\_\+\+ST7789 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor for the \doxylink{class_ragot_1_1_driver___s_t7789}{Driver\+\_\+\+ST7789} class. 
+
+Initializes the LCD driver with default values. Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_driver___s_t7789_a931851a60d57e6d09df68ca727aaeb8e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_driver___s_t7789_abf6ed84cc7fd4f89f83bef3a472e6997}\index{Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}!````~Driver\_ST7789@{\texorpdfstring{$\sim$}{\string~}Driver\_ST7789}}
+\index{````~Driver\_ST7789@{\texorpdfstring{$\sim$}{\string~}Driver\_ST7789}!Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Driver\_ST7789()}{\string~Driver\_ST7789()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver___s_t7789_abf6ed84cc7fd4f89f83bef3a472e6997} 
+virtual Ragot\+::\+Driver\+\_\+\+ST7789\+::\texorpdfstring{$\sim$}{\string~}\+Driver\+\_\+\+ST7789 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Default virtual destructor for the \doxylink{class_ragot_1_1_driver___s_t7789}{Driver\+\_\+\+ST7789} class. 
+
+Cleans up resources used by the LCD driver. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ragot_1_1_driver___s_t7789_a86f85555e1f6fd5021fe8a1f324d86ef}\index{Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}!bsp\_init\_lcd\_backlight@{bsp\_init\_lcd\_backlight}}
+\index{bsp\_init\_lcd\_backlight@{bsp\_init\_lcd\_backlight}!Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}}
+\doxysubsubsection{\texorpdfstring{bsp\_init\_lcd\_backlight()}{bsp\_init\_lcd\_backlight()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver___s_t7789_a86f85555e1f6fd5021fe8a1f324d86ef} 
+void Ragot\+::\+Driver\+\_\+\+ST7789\+::bsp\+\_\+init\+\_\+lcd\+\_\+backlight (\begin{DoxyParamCaption}\item[{gpio\+\_\+num\+\_\+t}]{bk\+\_\+pin}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initializes the LCD backlight GPIO pin. 
+
+This method sets up the specified GPIO pin for controlling the LCD backlight.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bk\+\_\+pin} & GPIO pin for backlight control. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ragot_1_1_driver___s_t7789_a5c36b130dfd428e70ab930fa174f593e}\index{Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}!deinit@{deinit}}
+\index{deinit@{deinit}!Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}}
+\doxysubsubsection{\texorpdfstring{deinit()}{deinit()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver___s_t7789_a5c36b130dfd428e70ab930fa174f593e} 
+esp\+\_\+err\+\_\+t Ragot\+::\+Driver\+\_\+\+ST7789\+::deinit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Deinitializes the ST7789 LCD panel driver. 
+
+This method cleans up resources used by the driver, including deleting the panel handler and freeing the refresh semaphore.
+
+\begin{DoxyReturn}{Returns}
+esp\+\_\+err\+\_\+t ESP\+\_\+\+OK on success, or an error code on failure. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a338f115108d3d08feae810ac8bca895b}{Ragot\+::\+Driver\+LCD}}.
+
+\Hypertarget{class_ragot_1_1_driver___s_t7789_af667ca9cc03e0082326f3ab040077858}\index{Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}!init@{init}}
+\index{init@{init}!Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver___s_t7789_af667ca9cc03e0082326f3ab040077858} 
+esp\+\_\+err\+\_\+t Ragot\+::\+Driver\+\_\+\+ST7789\+::init (\begin{DoxyParamCaption}\item[{gpio\+\_\+num\+\_\+t}]{reset\+\_\+pin}{, }\item[{gpio\+\_\+num\+\_\+t}]{bk\+\_\+pin}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Initializes the ST7789 LCD panel driver. 
+
+This method sets up the LCD panel with the specified reset and backlight GPIO pins. It configures the panel\textquotesingle{}s pixel format, width, height, and other parameters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em reset\+\_\+pin} & GPIO pin for panel reset. \\
+\hline
+{\em bk\+\_\+pin} & GPIO pin for backlight control. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+esp\+\_\+err\+\_\+t ESP\+\_\+\+OK on success, or an error code on failure. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_acfe2fda139ba2b052f0ce4b28e26a980}{Ragot\+::\+Driver\+LCD}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_driver___s_t7789_af667ca9cc03e0082326f3ab040077858_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{class_ragot_1_1_driver___s_t7789_af667ca9cc03e0082326f3ab040077858_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_driver___s_t7789_a66159f3d2001ac6c42d8016ee60e8e9a}\index{Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}!refresh\_frame\_buffer@{refresh\_frame\_buffer}}
+\index{refresh\_frame\_buffer@{refresh\_frame\_buffer}!Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}}
+\doxysubsubsection{\texorpdfstring{refresh\_frame\_buffer()}{refresh\_frame\_buffer()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver___s_t7789_a66159f3d2001ac6c42d8016ee60e8e9a} 
+IRAM\+\_\+\+ATTR bool Ragot\+::\+Driver\+\_\+\+ST7789\+::refresh\+\_\+frame\+\_\+buffer (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{user\+\_\+ctx}{}\end{DoxyParamCaption})}
+
+
+
+Refreshes the frame buffer for the ST7789 LCD panel. 
+
+\begin{DoxyNote}{Note}
+This method is called from the ISR context and should be used to signal that the frame buffer has been updated.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em user\+\_\+ctx} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if the frame buffer was refreshed successfully, false otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_ragot_1_1_driver___s_t7789_a66159f3d2001ac6c42d8016ee60e8e9a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_driver___s_t7789_a3871b65220c0b86d845a7a04aca79784}\index{Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}!send\_frame\_buffer@{send\_frame\_buffer}}
+\index{send\_frame\_buffer@{send\_frame\_buffer}!Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}}
+\doxysubsubsection{\texorpdfstring{send\_frame\_buffer()}{send\_frame\_buffer()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver___s_t7789_a3871b65220c0b86d845a7a04aca79784} 
+esp\+\_\+err\+\_\+t Ragot\+::\+Driver\+\_\+\+ST7789\+::send\+\_\+frame\+\_\+buffer (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{frame\+\_\+buffer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sends a frame buffer to the ST7789 LCD panel. 
+
+This method sends the provided frame buffer to the panel for display. It waits for the refresh semaphore to be available before sending the frame buffer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame\+\_\+buffer} & Pointer to the frame buffer data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+esp\+\_\+err\+\_\+t ESP\+\_\+\+OK on success, or an error code on failure. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a183dc9f5770163e5815528978e9be89a}{Ragot\+::\+Driver\+LCD}}.
+
+\Hypertarget{class_ragot_1_1_driver___s_t7789_a05e007cb9597f94269e9667e1b04a798}\index{Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}!set\_pixel@{set\_pixel}}
+\index{set\_pixel@{set\_pixel}!Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}}
+\doxysubsubsection{\texorpdfstring{set\_pixel()}{set\_pixel()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver___s_t7789_a05e007cb9597f94269e9667e1b04a798} 
+esp\+\_\+err\+\_\+t Ragot\+::\+Driver\+\_\+\+ST7789\+::set\+\_\+pixel (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{x}{, }\item[{uint32\+\_\+t}]{y}{, }\item[{uint32\+\_\+t}]{color}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets a pixel at the specified coordinates to the given color. 
+
+This method is not implemented for the ST7789 driver and will return ESP\+\_\+\+FAIL.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate of the pixel. \\
+\hline
+{\em y} & Y coordinate of the pixel. \\
+\hline
+{\em color} & Color value for the pixel. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+esp\+\_\+err\+\_\+t ESP\+\_\+\+FAIL as this method is not implemented. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a290a043148c1a35cb6321b9d2f87a771}{Ragot\+::\+Driver\+LCD}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_ragot_1_1_driver___s_t7789_ad55e67fe699156d32f3913b78fe1302f}\index{Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}!refresh\_semaphore@{refresh\_semaphore}}
+\index{refresh\_semaphore@{refresh\_semaphore}!Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}}
+\doxysubsubsection{\texorpdfstring{refresh\_semaphore}{refresh\_semaphore}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver___s_t7789_ad55e67fe699156d32f3913b78fe1302f} 
+Semaphore\+Handle\+\_\+t Ragot\+::\+Driver\+\_\+\+ST7789\+::refresh\+\_\+semaphore}
+
+
+
+Refresh semaphore for synchronizing frame buffer updates. 
+
+\Hypertarget{class_ragot_1_1_driver___s_t7789_a1a26f036279ae089763246f717c073d6}\index{Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}!TAG@{TAG}}
+\index{TAG@{TAG}!Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}}
+\doxysubsubsection{\texorpdfstring{TAG}{TAG}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver___s_t7789_a1a26f036279ae089763246f717c073d6} 
+const char\texorpdfstring{$\ast$}{*} Ragot\+::\+Driver\+\_\+\+ST7789\+::\+TAG = "{}\mbox{[}Driver\+\_\+\+ST7789\mbox{]}..."{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+
+
+Tag for logging messages related to the ST7789 driver. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+main/\mbox{\hyperlink{_driver___s_t7789_8hpp}{Driver\+\_\+\+ST7789.\+hpp}}\item 
+main/\mbox{\hyperlink{_driver___s_t7789_8cpp}{Driver\+\_\+\+ST7789.\+cpp}}\end{DoxyCompactItemize}

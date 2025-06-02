@@ -1,0 +1,63 @@
+\doxysection{Extrude\+Mesh.\+hpp}
+\hypertarget{_extrude_mesh_8hpp_source}{}\label{_extrude_mesh_8hpp_source}\index{main/ExtrudeMesh.hpp@{main/ExtrudeMesh.hpp}}
+\mbox{\hyperlink{_extrude_mesh_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_mesh_8hpp}{Mesh.hpp}}"{}}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_camera_8hpp}{Camera.hpp}}"{}}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ragot}{Ragot}}}
+\DoxyCodeLine{00044\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ragot_1_1_extrude_mesh_a411f2f6aa1a78393baa78148320b1394}{ExtrudeMesh}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_ragot_1_1_mesh_aac138f7285e29a384d6268a9d041a1ec}{Mesh}}}
+\DoxyCodeLine{00055\ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{class_ragot_1_1_extrude_mesh_aa5042e1c9693caf71869b18d0e07fd76}{EXTRUDE\_TAG}};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_ragot_1_1_extrude_mesh_a1f8612cc963aa07dc7e62dfc36c460aa}{height}}\ =\ 1.0f;}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ragot_1_1_extrude_mesh_addfa9632beaa009c94118c79fb3af13a}{faces\_can\_be\_quads}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_camera}{Camera}}\ \&\ \mbox{\hyperlink{class_ragot_1_1_extrude_mesh_a88cefb17920a8eb4de3075568e38b2e4}{cam}};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ glm::vec4\ \mbox{\hyperlink{class_ragot_1_1_extrude_mesh_a3f46a4d183d813f7455e5f7b1835e102}{planes}}[4];}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ glm::vec3\ \mbox{\hyperlink{class_ragot_1_1_extrude_mesh_a567856c0a37422ce7a53848bcc280a90}{camPos}};}
+\DoxyCodeLine{00099\ \ \ \ \ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_extrude_mesh_a411f2f6aa1a78393baa78148320b1394}{ExtrudeMesh}}\ (\mbox{\hyperlink{struct_ragot_1_1mesh__info__t}{mesh\_info\_t}}\ \&\ \mbox{\hyperlink{class_ragot_1_1_mesh_a4404a17582591ce49c5e41c7316cf1e4}{mesh\_info}},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_camera}{Camera}}\ \&\ \mbox{\hyperlink{class_ragot_1_1_extrude_mesh_a88cefb17920a8eb4de3075568e38b2e4}{cam}})\ :\ \mbox{\hyperlink{class_ragot_1_1_mesh_aac138f7285e29a384d6268a9d041a1ec}{Mesh}}\ (\mbox{\hyperlink{class_ragot_1_1_mesh_a4404a17582591ce49c5e41c7316cf1e4}{mesh\_info}}),\ \mbox{\hyperlink{class_ragot_1_1_extrude_mesh_a88cefb17920a8eb4de3075568e38b2e4}{cam}}\ (\mbox{\hyperlink{class_ragot_1_1_extrude_mesh_a88cefb17920a8eb4de3075568e38b2e4}{cam}})}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_mesh_a707a1ddfc3419edf404b26a06d655ccb}{vertices}}.reserve\ (\mbox{\hyperlink{class_ragot_1_1_mesh_a4404a17582591ce49c5e41c7316cf1e4}{mesh\_info}}.coordinates.size()\ *\ 2\ \ \ \ );}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_mesh_a0dd6468b18ce988a6c542efb4eb0c97e}{faces}}.reserve\ (\mbox{\hyperlink{class_ragot_1_1_mesh_a4404a17582591ce49c5e41c7316cf1e4}{mesh\_info}}.coordinates.size()\ *\ 3\ -\/\ 3);}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Si\ son\ 14\ vertices\ -\/>\ 39\ -\/\ 28\ =\ 11}}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Si\ son\ 12\ vertices\ -\/>\ 33\ -\/\ 24\ =\ 9}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Si\ son\ 10\ vertices\ -\/>\ 27\ -\/\ 20\ =\ 7}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Si\ son\ \ 8\ vertices\ -\/>\ \ 9\ -\/\ 16\ =\ -\/7}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Si\ son\ \ 6\ vertices\ -\/>\ 15\ -\/\ 12\ =\ 3}}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Si\ son\ 4\ vertices\ -\/>\ \ \ 9\ -\/\ \ 5\ =\ 4}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \%\ 8\ porque\ como\ están\ las\ coordenadas\ duplicadas...}}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_extrude_mesh_addfa9632beaa009c94118c79fb3af13a}{faces\_can\_be\_quads}}\ =\ (\mbox{\hyperlink{class_ragot_1_1_mesh_a4404a17582591ce49c5e41c7316cf1e4}{mesh\_info}}.vertex\_amount\ \%\ 8\ ==\ 0\ ||\ \mbox{\hyperlink{class_ragot_1_1_mesh_a4404a17582591ce49c5e41c7316cf1e4}{mesh\_info}}.vertex\_amount\ ==\ 4);}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_extrude_mesh_a8739a5246afdef28a96782e5471042ee}{generate\_vertices}}();}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_extrude_mesh_a7433d915f8ea8a5b08b036b1d346118c}{generate\_faces}}();}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Etrude\ Vertices:\ "{}}\ <<\ \mbox{\hyperlink{class_ragot_1_1_mesh_a707a1ddfc3419edf404b26a06d655ccb}{vertices}}.size()\ <<\ std::endl;}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Extrude\ Faces:\ "{}}\ <<\ \mbox{\hyperlink{class_ragot_1_1_mesh_a0dd6468b18ce988a6c542efb4eb0c97e}{faces}}.size()\ <<\ std::endl;\ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_extrude_mesh_a3cfcf4a41584f7c127cc22fa6f6b6664}{\string~ExtrudeMesh}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_extrude_mesh_a8739a5246afdef28a96782e5471042ee}{generate\_vertices}}\ ()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_extrude_mesh_a7433d915f8ea8a5b08b036b1d346118c}{generate\_faces}}\ \ \ \ ()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ragot_1_1_extrude_mesh_acd3bc2b69406b8155004382ba7942591}{are\_vertices\_coplanar}}\ (\textcolor{keyword}{const}\ glm::fvec4\ \&\ v1,\ \textcolor{keyword}{const}\ glm::fvec4\ \&\ v2,\ \textcolor{keyword}{const}\ glm::fvec4\ \&\ v3,\ \textcolor{keyword}{const}\ glm::fvec4\ \&\ v4,\ \textcolor{keywordtype}{float}\ tolerance\ =\ 0.1f);}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_extrude_mesh_a3cc90144903bf48d7adc6a1b23c8ab53}{log\_mesh\_info}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00171\ \ \ \ \ \};}
+\DoxyCodeLine{00172\ \}}
+
+\end{DoxyCode}

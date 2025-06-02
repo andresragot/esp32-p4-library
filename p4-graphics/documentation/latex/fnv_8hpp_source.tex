@@ -1,0 +1,140 @@
+\doxysection{fnv.\+hpp}
+\hypertarget{fnv_8hpp_source}{}\label{fnv_8hpp_source}\index{main/fnv.hpp@{main/fnv.hpp}}
+\mbox{\hyperlink{fnv_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ FNV}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ ©\ 2017+\ Ángel\ Rodríguez\ Ballesteros}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Distributed\ under\ the\ Boost\ Software\ License,\ version\ \ 1.0}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ See\ documents/LICENSE.TXT\ or\ www.boost.org/LICENSE\_1\_0.txt}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ angel.rodriguez@esne.edu}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ C1712171830}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ BASICS\_FNV\_HEADER}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ BASICS\_FNV\_HEADER}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\ \ \ \ \#include\ <string>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\ \ \ \ \#include\ <cstdint>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacebasics}{basics}}}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacebasics_1_1internal}{internal}}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ uint32\_t\ \mbox{\hyperlink{namespacebasics_1_1internal_af4925b8d884d7ffc1963c053c8f2bf2b}{fnv\_basis\_32}}\ =\ 0x811c9dc5u;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ uint32\_t\ \mbox{\hyperlink{namespacebasics_1_1internal_a867d8f8d6cb582f0fc867ab196d78261}{fnv\_prime\_32}}\ =\ 0x01000193u;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ uint64\_t\ \mbox{\hyperlink{namespacebasics_1_1internal_ad47ea399688dade6d03b71827f28e4f9}{fnv\_basis\_64}}\ =\ 0xcbf29ce484222325u;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ uint64\_t\ \mbox{\hyperlink{namespacebasics_1_1internal_ad01464c52af608284bc063b0f8bee2c2}{fnv\_prime\_64}}\ =\ 0x00000100000001b3u;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\ \textcolor{keywordtype}{size\_t}\ LENGTH\ >}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ uint32\_t\ \mbox{\hyperlink{namespacebasics_1_1internal_a4f1effbfc48710452e4b37b582d38503}{static\_fnv32}}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ chars)}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{namespacebasics_1_1internal_a4f1effbfc48710452e4b37b582d38503}{static\_fnv32<\ LENGTH\ -\/\ 1\ >}}\ (chars)\ \string^\ chars[LENGTH\ -\/\ 2])\ *\ \mbox{\hyperlink{namespacebasics_1_1internal_a867d8f8d6cb582f0fc867ab196d78261}{fnv\_prime\_32}};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\ >}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ uint32\_t\ \mbox{\hyperlink{namespacebasics_1_1internal_a9b38333f7afa85ffa2b62311341dbf13}{static\_fnv32<\ 1\ >}}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ )}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacebasics_1_1internal_af4925b8d884d7ffc1963c053c8f2bf2b}{fnv\_basis\_32}};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\ \textcolor{keywordtype}{size\_t}\ LENGTH\ >}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ uint64\_t\ \mbox{\hyperlink{namespacebasics_1_1internal_a866519fc94ea4b0774208845369649a0}{static\_fnv64}}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ chars)}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{namespacebasics_1_1internal_a866519fc94ea4b0774208845369649a0}{static\_fnv64<\ LENGTH\ -\/\ 1\ >}}\ (chars)\ \string^\ chars[LENGTH\ -\/\ 2])\ *\ \mbox{\hyperlink{namespacebasics_1_1internal_ad01464c52af608284bc063b0f8bee2c2}{fnv\_prime\_64}};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\ >}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ uint64\_t\ \mbox{\hyperlink{namespacebasics_1_1internal_ac8cf390538f7d5b9f5d76f6946dbf6d4}{static\_fnv64<\ 1\ >}}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ )}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacebasics_1_1internal_ad47ea399688dade6d03b71827f28e4f9}{fnv\_basis\_64}};}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\ \textcolor{keywordtype}{size\_t}\ LENGTH\ >}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ uint32\_t\ \mbox{\hyperlink{namespacebasics_ab186a39d9bc371c051b72faee14861c3}{static\_fnv32}}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ (\&\ chars)[LENGTH])}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacebasics_1_1internal_a4f1effbfc48710452e4b37b582d38503}{internal::static\_fnv32<\ LENGTH\ >}}\ (chars);}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\ \textcolor{keywordtype}{size\_t}\ LENGTH\ >}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ uint64\_t\ \mbox{\hyperlink{namespacebasics_af96ca1163b2309ccb1c07998da473a6a}{static\_fnv64}}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ (\&\ chars)[LENGTH])}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacebasics_1_1internal_a866519fc94ea4b0774208845369649a0}{internal::static\_fnv64<\ LENGTH\ >}}\ (chars);}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#if\ BASICS\_INT\_SIZE\ ==\ 4}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\ \textcolor{keywordtype}{size\_t}\ LENGTH\ >}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{namespacebasics_aa127ae56739580bf5d6f994a3eca9782}{static\_fnv}}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ (\&\ chars)[LENGTH])}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacebasics_1_1internal_a4f1effbfc48710452e4b37b582d38503}{internal::static\_fnv32<\ LENGTH\ >}}\ (chars);}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#else}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\ \textcolor{keywordtype}{size\_t}\ LENGTH\ >}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{namespacebasics_aa127ae56739580bf5d6f994a3eca9782}{static\_fnv}}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ (\&\ chars)[LENGTH])}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast\ <}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keyword}{>}\ (\mbox{\hyperlink{namespacebasics_1_1internal_a866519fc94ea4b0774208845369649a0}{internal::static\_fnv64<\ LENGTH\ >}}\ (chars));}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\ \textcolor{keywordtype}{size\_t}\ LENGTH\ >}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{namespacebasics_ad2520039c77fabac5ba909591659cf57}{fnv32}}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ (\&\ chars)[LENGTH])}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ hash\ =\ \mbox{\hyperlink{namespacebasics_1_1internal_af4925b8d884d7ffc1963c053c8f2bf2b}{internal::fnv\_basis\_32}};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ index\ =\ 0;\ index\ <\ LENGTH;\ ++index)}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hash\ \string^=\ chars[index];\ \ \textcolor{comment}{//\ Use\ array\ indexing\ instead}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hash\ *=\ \mbox{\hyperlink{namespacebasics_1_1internal_a867d8f8d6cb582f0fc867ab196d78261}{internal::fnv\_prime\_32}};}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ hash;}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ uint32\_t\ \mbox{\hyperlink{namespacebasics_ad2520039c77fabac5ba909591659cf57}{fnv32}}\ (\textcolor{keyword}{const}\ std::string\ \&\ s)}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ hash\ =\ \mbox{\hyperlink{namespacebasics_1_1internal_af4925b8d884d7ffc1963c053c8f2bf2b}{internal::fnv\_basis\_32}};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ c\ :\ s)}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hash\ \string^=\ c;}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hash\ *=\ \mbox{\hyperlink{namespacebasics_1_1internal_a867d8f8d6cb582f0fc867ab196d78261}{internal::fnv\_prime\_32}};}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ hash;}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keyword}{operator}\ \textcolor{stringliteral}{"{}"{}}\ \_fnv\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ c)}
+\DoxyCodeLine{00131\ \ \ \ \ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ c\ ?\ 1\ :\ \textcolor{keyword}{operator}\ \textcolor{stringliteral}{"{}"{}}\ \_fnv\ (\textcolor{stringliteral}{"{}2"{}});}
+\DoxyCodeLine{00133\ \ \ \ \ \}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\ \ \ \ \#define\ FNV(X)\ \ \ basics::static\_fnv\ \ \ (\#X)}}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\ \ \ \ \#define\ FNV32(X)\ basics::static\_fnv32\ (\#X)}}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\ \ \ \ \#define\ FNV64(X)\ basics::static\_fnv64\ (\#X)}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

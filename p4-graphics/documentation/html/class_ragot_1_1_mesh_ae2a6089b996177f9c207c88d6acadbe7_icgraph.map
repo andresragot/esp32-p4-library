@@ -1,0 +1,5 @@
+<map id="Ragot::Mesh::apply_transform_to_vertices" name="Ragot::Mesh::apply_transform_to_vertices">
+<area shape="rect" id="Node000001" title="Apply the current transformation to the vertices of the mesh. This method applies the transformation ..." alt="" coords="221,5,375,46"/>
+<area shape="rect" id="Node000002" href="$class_ragot_1_1_mesh.html#a04865bef9591d2f4540a8b1d3e5f6736" title="Recalculate the mesh vertices and faces." alt="" coords="5,13,173,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="205,28,173,28,173,23,205,23"/>
+</map>

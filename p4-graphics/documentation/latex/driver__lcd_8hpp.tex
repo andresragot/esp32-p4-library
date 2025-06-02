@@ -1,0 +1,70 @@
+\doxysection{main/driver\+\_\+lcd.hpp File Reference}
+\hypertarget{driver__lcd_8hpp}{}\label{driver__lcd_8hpp}\index{main/driver\_lcd.hpp@{main/driver\_lcd.hpp}}
+
+
+This file defines the Driver\+LCD class, which serves as a base class for LCD drivers in the \doxylink{namespace_ragot}{Ragot} engine.  
+
+
+{\ttfamily \#include "{}esp\+\_\+lcd\+\_\+panel\+\_\+ops.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+ldo\+\_\+regulator.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+lcd\+\_\+panel\+\_\+vendor.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+lcd\+\_\+panel\+\_\+interface.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+lcd\+\_\+panel\+\_\+commands.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+timer.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+err.\+h"{}}\newline
+{\ttfamily \#include "{}esp\+\_\+log.\+h"{}}\newline
+{\ttfamily \#include "{}freertos/\+Free\+RTOS.\+h"{}}\newline
+{\ttfamily \#include "{}freertos/task.\+h"{}}\newline
+{\ttfamily \#include "{}freertos/queue.\+h"{}}\newline
+{\ttfamily \#include "{}freertos/semphr.\+h"{}}\newline
+{\ttfamily \#include "{}driver/gpio.\+h"{}}\newline
+Include dependency graph for driver\+\_\+lcd.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{driver__lcd_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{driver__lcd_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d}{Ragot\+::\+Driver\+LCD}}
+\begin{DoxyCompactList}\small\item\em Base class for LCD drivers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_ragot}{Ragot}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file defines the Driver\+LCD class, which serves as a base class for LCD drivers in the \doxylink{namespace_ragot}{Ragot} engine. 
+
+\begin{DoxyAuthor}{Author}
+Andrés \doxylink{namespace_ragot}{Ragot} (github.\+com/andresragot)
+\end{DoxyAuthor}
+The Driver\+LCD class provides an interface for initializing, deinitializing, setting pixels, and sending frame buffers to an LCD panel. It includes methods to get the width, height, pixel format, and handler of the LCD panel. The class is designed to be inherited by specific LCD driver implementations, such as the EK79007 driver. \begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/06-\/01
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025
+\end{DoxyCopyright}
+MIT License
+
+Copyright (c) 2025 Andrés \doxylink{namespace_ragot}{Ragot}
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "{}\+Software"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\+:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "{}\+AS IS"{}, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 

@@ -1,0 +1,20 @@
+<map id="Ragot::Renderer::Renderer" name="Ragot::Renderer::Renderer">
+<area shape="rect" id="Node000001" title="Constructs a Renderer with the specified width and height." alt="" coords="5,59,184,84"/>
+<area shape="rect" id="Node000002" href="$class_ragot_1_1_renderer.html#a514b54e15d0a6750797d397cccde4ef8" title="Gets the current scene being rendered." alt="" coords="662,5,804,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,55,231,37,343,25,456,18,646,14,647,20,456,23,344,30,232,42,144,61"/>
+<area shape="rect" id="Node000003" href="$class_ragot_1_1_renderer.html#a6adf243a9b8bdb60cc962affc5ba4e9f" title="Initializes the full&#45;screen quad for rendering, used in non&#45;ESP platforms." alt="" coords="232,51,395,92"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="184,69,216,69,216,74,184,74"/>
+<area shape="rect" id="Node000004" href="$class_ragot_1_1_renderer.html#a30c9db3883dcb090d6ddebd972809d55" title="Performs the rendering task in a separate thread." alt="" coords="238,116,388,157"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="141,82,229,109,227,114,139,87"/>
+<area shape="rect" id="Node000005" href="$class_ragot_1_1_renderer.html#acc3bbc330b23f454ed5d01b85d4f8e98" title="Renders the current scene." alt="" coords="443,120,604,146"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="389,133,427,132,428,137,389,138"/>
+<area shape="poly" id="edge9_Node000005_Node000002" title=" " alt="" coords="542,117,590,84,651,48,679,35,682,39,654,53,593,88,545,122"/>
+<area shape="rect" id="Node000006" href="$namespace_ragot.html#a4e4e92c27d1e87745116770411dacb3f" title=" " alt="" coords="652,63,814,88"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="573,117,668,90,669,96,574,122"/>
+<area shape="rect" id="Node000007" href="$class_ragot_1_1_camera.html#a4d9c6fd76db5bd6911281c5951cab4a9" title="Get the projection matrix object." alt="" coords="665,112,801,153"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="605,130,650,130,650,136,605,136"/>
+<area shape="rect" id="Node000008" href="$class_ragot_1_1_camera.html#aa8fc7776eff63588634df880957ed04e" title="Get the view matrix object." alt="" coords="665,178,801,218"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="568,144,652,170,650,175,567,149"/>
+<area shape="rect" id="Node000009" href="$class_ragot_1_1_transform.html#a1db9f8e84315c4296dfef46f1f17ce99" title="Gets the current position of the object." alt="" coords="862,178,1011,218"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="802,196,846,196,846,201,802,201"/>
+</map>

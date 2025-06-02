@@ -1,0 +1,5 @@
+<map id="Ragot::Assets::operator=" name="Ragot::Assets::operator=">
+<area shape="rect" id="Node000001" title="Assignment operator is deleted to prevent copying the Assets instance." alt="" coords="5,5,174,31"/>
+<area shape="rect" id="Node000002" href="$class_ragot_1_1_assets.html#a2387c9d5b1229e353c6ee063f2e77aa7" title="Construct a new Assets object." alt="" coords="222,5,376,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,16,206,16,206,21,174,21"/>
+</map>

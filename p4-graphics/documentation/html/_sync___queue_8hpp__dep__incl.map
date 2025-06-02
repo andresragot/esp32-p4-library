@@ -1,0 +1,9 @@
+<map id="main/Sync_Queue.hpp" name="main/Sync_Queue.hpp">
+<area shape="rect" id="Node000001" title="Implementation of a synchronized queue for thread&#45;safe operations." alt="" coords="80,5,234,31"/>
+<area shape="rect" id="Node000002" href="$_thread___pool_8hpp.html" title=" " alt="" coords="81,79,233,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,46,160,79,154,79,154,46"/>
+<area shape="rect" id="Node000003" href="$_thread___pool_8cpp.html" title="Implementation of the Thread_Pool class for managing a pool of threads." alt="" coords="5,153,157,178"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="135,117,96,154,92,150,131,114"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html" title="This file contains the main function for the Ragot engine, which initializes the renderer and scene,..." alt="" coords="181,153,288,178"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="183,114,223,150,220,154,180,117"/>
+</map>

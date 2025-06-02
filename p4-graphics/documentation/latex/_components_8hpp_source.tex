@@ -1,0 +1,65 @@
+\doxysection{Components.\+hpp}
+\hypertarget{_components_8hpp_source}{}\label{_components_8hpp_source}\index{main/Components.hpp@{main/Components.hpp}}
+\mbox{\hyperlink{_components_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_node_8hpp}{Node.hpp}}"{}}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ragot}{Ragot}}}
+\DoxyCodeLine{00042\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ragot_1_1_component_a96cadec729b1265b3f30480fb060b942}{Component}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_ragot_1_1_node_af950cf77621bbb3f157b7bf3852dfd2b}{Node}}}
+\DoxyCodeLine{00052\ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_component_a96cadec729b1265b3f30480fb060b942}{Component}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_ragot_1_1_component_a21a3e09be8069d18aa88f5cd5be5ccb4}{\string~Component}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_component_a44c3fa4a306939779086ebdce7574af2}{Component}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_component_a96cadec729b1265b3f30480fb060b942}{Component}}\ \&\ )\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_component_ad71e3d9be704be61fdd1074b5a1d4691}{Component}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_component_a96cadec729b1265b3f30480fb060b942}{Component}}\ \&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_component_a96cadec729b1265b3f30480fb060b942}{Component}}\ \&\ \mbox{\hyperlink{class_ragot_1_1_component_af3db7d65eeca5bd1d57309e30eb7afad}{operator\ =\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_component_a96cadec729b1265b3f30480fb060b942}{Component}}\ \&\ )\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_component_a96cadec729b1265b3f30480fb060b942}{Component}}\ \&\ \mbox{\hyperlink{class_ragot_1_1_component_af3db7d65eeca5bd1d57309e30eb7afad}{operator\ =\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_component_a96cadec729b1265b3f30480fb060b942}{Component}}\ \&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ std::vector\ <\ std::shared\_ptr\ <\ Component\ >\ >\ \mbox{\hyperlink{class_ragot_1_1_component_a8029b480482519b4a3a2885c7da21bf7}{components}};}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_component_a0185e6750172704061e5595a6281afb6}{add\_component}}(std::shared\_ptr\ <\ Component\ >\ component)}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (component)}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_component_a8029b480482519b4a3a2885c7da21bf7}{components}}.emplace\_back(component);}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ component-\/>parent\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_component_aa5027faece5c55d50eb4408ae039b81a}{remove\_component}}\ (std::shared\_ptr\ <\ Component\ >\ component)}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (component)}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ std::remove(\mbox{\hyperlink{class_ragot_1_1_component_a8029b480482519b4a3a2885c7da21bf7}{components}}.begin(),\ \mbox{\hyperlink{class_ragot_1_1_component_a8029b480482519b4a3a2885c7da21bf7}{components}}.end(),\ component);}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ \mbox{\hyperlink{class_ragot_1_1_component_a8029b480482519b4a3a2885c7da21bf7}{components}}.end())}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_component_a8029b480482519b4a3a2885c7da21bf7}{components}}.erase(it,\ \mbox{\hyperlink{class_ragot_1_1_component_a8029b480482519b4a3a2885c7da21bf7}{components}}.end());}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ component-\/>parent\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::shared\_ptr\ <\ Component\ >\ >\ \mbox{\hyperlink{class_ragot_1_1_component_ad05ecadb2595b73b6fbb9643ed7473ec}{get\_components}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_ragot_1_1_component_a8029b480482519b4a3a2885c7da21bf7}{components}};\ \}}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00151\ \ \ \ \ \};}
+\DoxyCodeLine{00152\ \}}
+
+\end{DoxyCode}

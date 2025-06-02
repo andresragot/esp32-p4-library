@@ -1,0 +1,30 @@
+<map id="Ragot::Transform::get_position" name="Ragot::Transform::get_position">
+<area shape="rect" id="Node000001" title="Gets the current position of the object." alt="" coords="836,104,985,145"/>
+<area shape="rect" id="Node000002" href="$class_ragot_1_1_camera.html#a48fcec455da6d500685a2f20a3431ac4" title="Returns the camera&#39;s position in world space." alt="" coords="649,5,785,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="857,99,786,61,761,49,764,44,789,57,860,94"/>
+<area shape="rect" id="Node000003" href="$class_ragot_1_1_camera.html#a30288032ce41c666e4fb2f37f8d168f5" title="Get the view direction object." alt="" coords="649,71,785,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="820,111,785,105,786,100,821,106"/>
+<area shape="rect" id="Node000006" href="$class_ragot_1_1_camera.html#aa8fc7776eff63588634df880957ed04e" title="Get the view matrix object." alt="" coords="649,136,785,177"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="821,142,786,148,785,142,820,137"/>
+<area shape="rect" id="Node000014" href="$class_ragot_1_1_extrude_mesh.html#a3cc90144903bf48d7adc6a1b23c8ab53" title="Logs detailed information about the mesh." alt="" coords="646,201,788,242"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="858,155,789,191,764,203,761,198,786,186,856,150"/>
+<area shape="rect" id="Node000004" href="$class_ragot_1_1_camera.html#a8ca889ab3cd7c393afe45163708ef297" title="Get the right direction object." alt="" coords="450,16,586,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="633,71,586,58,587,53,635,66"/>
+<area shape="rect" id="Node000005" href="$class_ragot_1_1_camera.html#a4d342cc17133f18dc93835e66975fc6c" title="Get the up direction object." alt="" coords="242,43,378,83"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="633,88,379,70,379,65,634,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="434,50,379,57,378,52,434,44"/>
+<area shape="rect" id="Node000007" href="$class_ragot_1_1_camera.html#a0eb49a8b33981535da1ac49070570787" title="Get the vp matrix object." alt="" coords="450,135,586,175"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="633,158,586,158,587,153,633,153"/>
+<area shape="rect" id="Node000009" href="$class_ragot_1_1_renderer.html#acc3bbc330b23f454ed5d01b85d4f8e98" title="Renders the current scene." alt="" coords="437,200,598,225"/>
+<area shape="poly" id="edge9_Node000006_Node000009" title=" " alt="" coords="635,182,567,202,565,196,634,177"/>
+<area shape="rect" id="Node000008" href="$class_ragot_1_1_camera.html#a49252f6f9a5e873836e42dd2a38515fd" title=" " alt="" coords="232,135,389,175"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="434,158,389,158,389,152,434,152"/>
+<area shape="rect" id="Node000010" href="$main_8cpp.html#a987c89a3f1d482254025c345f19b183a" title="Main loop for the Ragot engine on non&#45;ESP platforms." alt="" coords="270,200,350,225"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="421,215,351,215,351,210,421,210"/>
+<area shape="rect" id="Node000012" href="$class_ragot_1_1_renderer.html#a30c9db3883dcb090d6ddebd972809d55" title="Performs the rendering task in a separate thread." alt="" coords="235,249,386,290"/>
+<area shape="poly" id="edge12_Node000009_Node000012" title=" " alt="" coords="455,232,387,251,385,246,453,227"/>
+<area shape="rect" id="Node000011" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main function for the Ragot engine." alt="" coords="70,200,119,225"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="255,215,119,215,119,210,255,210"/>
+<area shape="rect" id="Node000013" href="$class_ragot_1_1_renderer.html#a72e42229b1c05ab0ae910b20b6f41453" title="Constructs a Renderer with the specified width and height." alt="" coords="5,257,184,282"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="220,272,184,272,184,267,220,267"/>
+</map>

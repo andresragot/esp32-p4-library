@@ -1,0 +1,113 @@
+\doxysection{main/fnv.hpp File Reference}
+\hypertarget{fnv_8hpp}{}\label{fnv_8hpp}\index{main/fnv.hpp@{main/fnv.hpp}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+Include dependency graph for fnv.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{fnv_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fnv_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacebasics}{basics}}
+\item 
+namespace \mbox{\hyperlink{namespacebasics_1_1internal}{basics\+::internal}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{fnv_8hpp_a415c3c6e35d7d7cc7e9c4bb624cfa3d2}{FNV}}(X)
+\item 
+\#define \mbox{\hyperlink{fnv_8hpp_a07ce2b2a12101e7b2cafa5a2527f8bc6}{FNV32}}(X)
+\item 
+\#define \mbox{\hyperlink{fnv_8hpp_a2b96c21c343637823b8cf79cbeb892e8}{FNV64}}(X)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$size\+\_\+t LENGTH$>$ }\\constexpr uint32\+\_\+t \mbox{\hyperlink{namespacebasics_1_1internal_a4f1effbfc48710452e4b37b582d38503}{basics\+::internal\+::static\+\_\+fnv32}} (const char \texorpdfstring{$\ast$}{*}chars)
+\item 
+template$<$$>$ constexpr uint32\+\_\+t \mbox{\hyperlink{namespacebasics_1_1internal_a9b38333f7afa85ffa2b62311341dbf13}{basics\+::internal\+::static\+\_\+fnv32$<$ 1 $>$}} (const char \texorpdfstring{$\ast$}{*})
+\item 
+{\footnotesize template$<$size\+\_\+t LENGTH$>$ }\\constexpr uint64\+\_\+t \mbox{\hyperlink{namespacebasics_1_1internal_a866519fc94ea4b0774208845369649a0}{basics\+::internal\+::static\+\_\+fnv64}} (const char \texorpdfstring{$\ast$}{*}chars)
+\item 
+template$<$$>$ constexpr uint64\+\_\+t \mbox{\hyperlink{namespacebasics_1_1internal_ac8cf390538f7d5b9f5d76f6946dbf6d4}{basics\+::internal\+::static\+\_\+fnv64$<$ 1 $>$}} (const char \texorpdfstring{$\ast$}{*})
+\item 
+{\footnotesize template$<$size\+\_\+t LENGTH$>$ }\\constexpr uint32\+\_\+t \mbox{\hyperlink{namespacebasics_ab186a39d9bc371c051b72faee14861c3}{basics\+::static\+\_\+fnv32}} (const char(\&chars)\mbox{[}LENGTH\mbox{]})
+\item 
+{\footnotesize template$<$size\+\_\+t LENGTH$>$ }\\constexpr uint64\+\_\+t \mbox{\hyperlink{namespacebasics_af96ca1163b2309ccb1c07998da473a6a}{basics\+::static\+\_\+fnv64}} (const char(\&chars)\mbox{[}LENGTH\mbox{]})
+\item 
+{\footnotesize template$<$size\+\_\+t LENGTH$>$ }\\constexpr unsigned \mbox{\hyperlink{namespacebasics_aa127ae56739580bf5d6f994a3eca9782}{basics\+::static\+\_\+fnv}} (const char(\&chars)\mbox{[}LENGTH\mbox{]})
+\item 
+{\footnotesize template$<$size\+\_\+t LENGTH$>$ }\\uint32\+\_\+t \mbox{\hyperlink{namespacebasics_ad2520039c77fabac5ba909591659cf57}{basics\+::fnv32}} (const char(\&chars)\mbox{[}LENGTH\mbox{]})
+\item 
+uint32\+\_\+t \mbox{\hyperlink{namespacebasics_ad926f9f3c3f7bec0f5e43c06d9624e2d}{basics\+::fnv32}} (const std\+::string \&s)
+\item 
+constexpr unsigned \mbox{\hyperlink{fnv_8hpp_a1222de3a202e8a51dfccf9a5d8884775}{operator"{}"{}\+\_\+fnv}} (const char \texorpdfstring{$\ast$}{*}c)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr uint32\+\_\+t \mbox{\hyperlink{namespacebasics_1_1internal_af4925b8d884d7ffc1963c053c8f2bf2b}{basics\+::internal\+::fnv\+\_\+basis\+\_\+32}} = 0x811c9dc5u
+\item 
+constexpr uint32\+\_\+t \mbox{\hyperlink{namespacebasics_1_1internal_a867d8f8d6cb582f0fc867ab196d78261}{basics\+::internal\+::fnv\+\_\+prime\+\_\+32}} = 0x01000193u
+\item 
+constexpr uint64\+\_\+t \mbox{\hyperlink{namespacebasics_1_1internal_ad47ea399688dade6d03b71827f28e4f9}{basics\+::internal\+::fnv\+\_\+basis\+\_\+64}} = 0xcbf29ce484222325u
+\item 
+constexpr uint64\+\_\+t \mbox{\hyperlink{namespacebasics_1_1internal_ad01464c52af608284bc063b0f8bee2c2}{basics\+::internal\+::fnv\+\_\+prime\+\_\+64}} = 0x00000100000001b3u
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{fnv_8hpp_a415c3c6e35d7d7cc7e9c4bb624cfa3d2}\index{fnv.hpp@{fnv.hpp}!FNV@{FNV}}
+\index{FNV@{FNV}!fnv.hpp@{fnv.hpp}}
+\doxysubsubsection{\texorpdfstring{FNV}{FNV}}
+{\footnotesize\ttfamily \label{fnv_8hpp_a415c3c6e35d7d7cc7e9c4bb624cfa3d2} 
+\#define FNV(\begin{DoxyParamCaption}\item[{}]{X}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespacebasics_aa127ae56739580bf5d6f994a3eca9782}{basics::static\_fnv}}\ \ \ (\#X)}
+
+\end{DoxyCode}
+\Hypertarget{fnv_8hpp_a07ce2b2a12101e7b2cafa5a2527f8bc6}\index{fnv.hpp@{fnv.hpp}!FNV32@{FNV32}}
+\index{FNV32@{FNV32}!fnv.hpp@{fnv.hpp}}
+\doxysubsubsection{\texorpdfstring{FNV32}{FNV32}}
+{\footnotesize\ttfamily \label{fnv_8hpp_a07ce2b2a12101e7b2cafa5a2527f8bc6} 
+\#define FNV32(\begin{DoxyParamCaption}\item[{}]{X}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespacebasics_ab186a39d9bc371c051b72faee14861c3}{basics::static\_fnv32}}\ (\#X)}
+
+\end{DoxyCode}
+\Hypertarget{fnv_8hpp_a2b96c21c343637823b8cf79cbeb892e8}\index{fnv.hpp@{fnv.hpp}!FNV64@{FNV64}}
+\index{FNV64@{FNV64}!fnv.hpp@{fnv.hpp}}
+\doxysubsubsection{\texorpdfstring{FNV64}{FNV64}}
+{\footnotesize\ttfamily \label{fnv_8hpp_a2b96c21c343637823b8cf79cbeb892e8} 
+\#define FNV64(\begin{DoxyParamCaption}\item[{}]{X}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespacebasics_af96ca1163b2309ccb1c07998da473a6a}{basics::static\_fnv64}}\ (\#X)}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{fnv_8hpp_a1222de3a202e8a51dfccf9a5d8884775}\index{fnv.hpp@{fnv.hpp}!operator"{}"{}\_fnv@{operator""""\_fnv}}
+\index{operator"{}"{}\_fnv@{operator""""\_fnv}!fnv.hpp@{fnv.hpp}}
+\doxysubsubsection{\texorpdfstring{operator""""\_fnv()}{operator""\_fnv()}}
+{\footnotesize\ttfamily \label{fnv_8hpp_a1222de3a202e8a51dfccf9a5d8884775} 
+unsigned operator"{}"{}\+\_\+fnv (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{c}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+

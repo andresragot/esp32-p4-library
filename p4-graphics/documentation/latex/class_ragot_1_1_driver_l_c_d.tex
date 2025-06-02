@@ -1,0 +1,397 @@
+\doxysection{Ragot\+::Driver\+LCD Class Reference}
+\hypertarget{class_ragot_1_1_driver_l_c_d}{}\label{class_ragot_1_1_driver_l_c_d}\index{Ragot::DriverLCD@{Ragot::DriverLCD}}
+
+
+Base class for LCD drivers.  
+
+
+
+
+{\ttfamily \#include $<$driver\+\_\+lcd.\+hpp$>$}
+
+
+
+Inheritance diagram for Ragot\+::Driver\+LCD\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_ragot_1_1_driver_l_c_d__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ragot\+::Driver\+LCD\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_driver_l_c_d__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a5d59da0a6fe68f5ceaa2bb2cf0116c93}{Driver\+LCD}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{class_ragot_1_1_driver_l_c_d}{Driver\+LCD} class. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a93e4f7281b161d888363133e670b4fd3}{\texorpdfstring{$\sim$}{\string~}\+Driver\+LCD}} ()=default
+\begin{DoxyCompactList}\small\item\em Default virtual destructor for the \doxylink{class_ragot_1_1_driver_l_c_d}{Driver\+LCD} class. \end{DoxyCompactList}\item 
+virtual esp\+\_\+err\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_acfe2fda139ba2b052f0ce4b28e26a980}{init}} (gpio\+\_\+num\+\_\+t reset\+\_\+pin, gpio\+\_\+num\+\_\+t bk\+\_\+pin)=0
+\begin{DoxyCompactList}\small\item\em Initializes the LCD driver with the specified reset and backlight GPIO pins. \end{DoxyCompactList}\item 
+virtual esp\+\_\+err\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a338f115108d3d08feae810ac8bca895b}{deinit}} ()=0
+\begin{DoxyCompactList}\small\item\em Deinitializes the LCD driver. \end{DoxyCompactList}\item 
+virtual esp\+\_\+err\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a290a043148c1a35cb6321b9d2f87a771}{set\+\_\+pixel}} (uint32\+\_\+t x, uint32\+\_\+t y, uint32\+\_\+t color)=0
+\begin{DoxyCompactList}\small\item\em Sets a pixel at the specified coordinates to the given color. \end{DoxyCompactList}\item 
+virtual esp\+\_\+err\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a183dc9f5770163e5815528978e9be89a}{send\+\_\+frame\+\_\+buffer}} (const void \texorpdfstring{$\ast$}{*}frame\+\_\+buffer)=0
+\begin{DoxyCompactList}\small\item\em Sends a frame buffer to the LCD panel. \end{DoxyCompactList}\item 
+const size\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a8de7acc7c2526478dc7e365d5ce9a023}{get\+\_\+width}} () const
+\begin{DoxyCompactList}\small\item\em Gets the width of the LCD panel. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_ac64b56d5d57abad2ad607da03ef6f802}{get\+\_\+width}} ()
+\begin{DoxyCompactList}\small\item\em Gets the height of the LCD panel. \end{DoxyCompactList}\item 
+const size\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a27a7bca69f4e4f6a91e855bc380d4114}{get\+\_\+height}} () const
+\begin{DoxyCompactList}\small\item\em Gets the height of the LCD panel. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a5b01bf60de32f1804a6bf0590c96e77e}{get\+\_\+height}} ()
+\begin{DoxyCompactList}\small\item\em Gets the height of the LCD panel. \end{DoxyCompactList}\item 
+const lcd\+\_\+color\+\_\+rgb\+\_\+pixel\+\_\+format\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a9b0b1572929a769d1dd33e58b6591b39}{get\+\_\+pixel\+\_\+format}} () const
+\begin{DoxyCompactList}\small\item\em Get the pixel format object. \end{DoxyCompactList}\item 
+lcd\+\_\+color\+\_\+rgb\+\_\+pixel\+\_\+format\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_acee901748eb441a4e8b2957679190893}{get\+\_\+pixel\+\_\+format}} ()
+\begin{DoxyCompactList}\small\item\em Get the pixel format object. \end{DoxyCompactList}\item 
+const esp\+\_\+lcd\+\_\+panel\+\_\+handle\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a908e3da421ac831ecfebf95743744757}{get\+\_\+handler}} () const
+\begin{DoxyCompactList}\small\item\em Get the handler object. \end{DoxyCompactList}\item 
+esp\+\_\+lcd\+\_\+panel\+\_\+handle\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a955026607dfec2c8f2d420a19e57fda8}{get\+\_\+handler}} ()
+\begin{DoxyCompactList}\small\item\em Get the handler object. \end{DoxyCompactList}\item 
+const bool \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a816d9d9f589aa8eb0e5d5255b16d00bf}{is\+\_\+initialized}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the LCD driver is initialized. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a9455a2ac06d5dfcb2d1c3a583ee567e0}{is\+\_\+initialized}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the LCD driver is initialized. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a6be782d59665875e378e4d2d302139a0}{initialized}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating if the LCD driver is initialized. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_aca57cd81e8f72097133fac225042e862}{width}}
+\begin{DoxyCompactList}\small\item\em Width of the LCD panel in pixels. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_af4948a7d9e6fc0a95b8ad9f87cd79650}{height}}
+\begin{DoxyCompactList}\small\item\em Height of the LCD panel in pixels. \end{DoxyCompactList}\item 
+lcd\+\_\+color\+\_\+rgb\+\_\+pixel\+\_\+format\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_ae11560e32f9d316196d353014303e1f1}{pixel\+\_\+format}}
+\begin{DoxyCompactList}\small\item\em Pixel format of the LCD panel. \end{DoxyCompactList}\item 
+esp\+\_\+lcd\+\_\+panel\+\_\+handle\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_ace26f4ba9ac1e2424bf618b39299ed85}{handler}}
+\begin{DoxyCompactList}\small\item\em Handle to the LCD panel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for LCD drivers. 
+
+This class provides an interface for LCD drivers, including methods for initialization, deinitialization, setting pixels, and sending frame buffers. It also provides access to the LCD panel\textquotesingle{}s width, height, pixel format, and handler. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ragot_1_1_driver_l_c_d_a5d59da0a6fe68f5ceaa2bb2cf0116c93}\index{Ragot::DriverLCD@{Ragot::DriverLCD}!DriverLCD@{DriverLCD}}
+\index{DriverLCD@{DriverLCD}!Ragot::DriverLCD@{Ragot::DriverLCD}}
+\doxysubsubsection{\texorpdfstring{DriverLCD()}{DriverLCD()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_c_d_a5d59da0a6fe68f5ceaa2bb2cf0116c93} 
+Ragot\+::\+Driver\+LCD\+::\+Driver\+LCD (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor for the \doxylink{class_ragot_1_1_driver_l_c_d}{Driver\+LCD} class. 
+
+Initializes the LCD driver with default values. \Hypertarget{class_ragot_1_1_driver_l_c_d_a93e4f7281b161d888363133e670b4fd3}\index{Ragot::DriverLCD@{Ragot::DriverLCD}!````~DriverLCD@{\texorpdfstring{$\sim$}{\string~}DriverLCD}}
+\index{````~DriverLCD@{\texorpdfstring{$\sim$}{\string~}DriverLCD}!Ragot::DriverLCD@{Ragot::DriverLCD}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DriverLCD()}{\string~DriverLCD()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_c_d_a93e4f7281b161d888363133e670b4fd3} 
+virtual Ragot\+::\+Driver\+LCD\+::\texorpdfstring{$\sim$}{\string~}\+Driver\+LCD (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Default virtual destructor for the \doxylink{class_ragot_1_1_driver_l_c_d}{Driver\+LCD} class. 
+
+Cleans up resources used by the LCD driver. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ragot_1_1_driver_l_c_d_a338f115108d3d08feae810ac8bca895b}\index{Ragot::DriverLCD@{Ragot::DriverLCD}!deinit@{deinit}}
+\index{deinit@{deinit}!Ragot::DriverLCD@{Ragot::DriverLCD}}
+\doxysubsubsection{\texorpdfstring{deinit()}{deinit()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_c_d_a338f115108d3d08feae810ac8bca895b} 
+virtual esp\+\_\+err\+\_\+t Ragot\+::\+Driver\+LCD\+::deinit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Deinitializes the LCD driver. 
+
+This method should be implemented by derived classes to clean up resources used by the LCD panel.
+
+\begin{DoxyReturn}{Returns}
+esp\+\_\+err\+\_\+t ESP\+\_\+\+OK on success, or an error code on failure. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_ragot_1_1_driver___s_t7789_a5c36b130dfd428e70ab930fa174f593e}{Ragot\+::\+Driver\+\_\+\+ST7789}}, and \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a2ce6b59a5dbbeea913ecc838e60ce225}{Ragot\+::\+Driver\+EK79007}}.
+
+\Hypertarget{class_ragot_1_1_driver_l_c_d_a955026607dfec2c8f2d420a19e57fda8}\index{Ragot::DriverLCD@{Ragot::DriverLCD}!get\_handler@{get\_handler}}
+\index{get\_handler@{get\_handler}!Ragot::DriverLCD@{Ragot::DriverLCD}}
+\doxysubsubsection{\texorpdfstring{get\_handler()}{get\_handler()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_c_d_a955026607dfec2c8f2d420a19e57fda8} 
+esp\+\_\+lcd\+\_\+panel\+\_\+handle\+\_\+t Ragot\+::\+Driver\+LCD\+::get\+\_\+handler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the handler object. 
+
+\begin{DoxyReturn}{Returns}
+esp\+\_\+lcd\+\_\+panel\+\_\+handle\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{class_ragot_1_1_driver_l_c_d_a908e3da421ac831ecfebf95743744757}\index{Ragot::DriverLCD@{Ragot::DriverLCD}!get\_handler@{get\_handler}}
+\index{get\_handler@{get\_handler}!Ragot::DriverLCD@{Ragot::DriverLCD}}
+\doxysubsubsection{\texorpdfstring{get\_handler()}{get\_handler()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_c_d_a908e3da421ac831ecfebf95743744757} 
+const esp\+\_\+lcd\+\_\+panel\+\_\+handle\+\_\+t Ragot\+::\+Driver\+LCD\+::get\+\_\+handler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the handler object. 
+
+\begin{DoxyReturn}{Returns}
+const esp\+\_\+lcd\+\_\+panel\+\_\+handle\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{class_ragot_1_1_driver_l_c_d_a5b01bf60de32f1804a6bf0590c96e77e}\index{Ragot::DriverLCD@{Ragot::DriverLCD}!get\_height@{get\_height}}
+\index{get\_height@{get\_height}!Ragot::DriverLCD@{Ragot::DriverLCD}}
+\doxysubsubsection{\texorpdfstring{get\_height()}{get\_height()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_c_d_a5b01bf60de32f1804a6bf0590c96e77e} 
+size\+\_\+t Ragot\+::\+Driver\+LCD\+::get\+\_\+height (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the height of the LCD panel. 
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+t Height of the LCD panel in pixels. 
+\end{DoxyReturn}
+\Hypertarget{class_ragot_1_1_driver_l_c_d_a27a7bca69f4e4f6a91e855bc380d4114}\index{Ragot::DriverLCD@{Ragot::DriverLCD}!get\_height@{get\_height}}
+\index{get\_height@{get\_height}!Ragot::DriverLCD@{Ragot::DriverLCD}}
+\doxysubsubsection{\texorpdfstring{get\_height()}{get\_height()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_c_d_a27a7bca69f4e4f6a91e855bc380d4114} 
+const size\+\_\+t Ragot\+::\+Driver\+LCD\+::get\+\_\+height (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the height of the LCD panel. 
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+t Height of the LCD panel in pixels. 
+\end{DoxyReturn}
+\Hypertarget{class_ragot_1_1_driver_l_c_d_acee901748eb441a4e8b2957679190893}\index{Ragot::DriverLCD@{Ragot::DriverLCD}!get\_pixel\_format@{get\_pixel\_format}}
+\index{get\_pixel\_format@{get\_pixel\_format}!Ragot::DriverLCD@{Ragot::DriverLCD}}
+\doxysubsubsection{\texorpdfstring{get\_pixel\_format()}{get\_pixel\_format()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_c_d_acee901748eb441a4e8b2957679190893} 
+lcd\+\_\+color\+\_\+rgb\+\_\+pixel\+\_\+format\+\_\+t Ragot\+::\+Driver\+LCD\+::get\+\_\+pixel\+\_\+format (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the pixel format object. 
+
+\begin{DoxyReturn}{Returns}
+lcd\+\_\+color\+\_\+rgb\+\_\+pixel\+\_\+format\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{class_ragot_1_1_driver_l_c_d_a9b0b1572929a769d1dd33e58b6591b39}\index{Ragot::DriverLCD@{Ragot::DriverLCD}!get\_pixel\_format@{get\_pixel\_format}}
+\index{get\_pixel\_format@{get\_pixel\_format}!Ragot::DriverLCD@{Ragot::DriverLCD}}
+\doxysubsubsection{\texorpdfstring{get\_pixel\_format()}{get\_pixel\_format()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_c_d_a9b0b1572929a769d1dd33e58b6591b39} 
+const lcd\+\_\+color\+\_\+rgb\+\_\+pixel\+\_\+format\+\_\+t Ragot\+::\+Driver\+LCD\+::get\+\_\+pixel\+\_\+format (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the pixel format object. 
+
+\begin{DoxyReturn}{Returns}
+const lcd\+\_\+color\+\_\+rgb\+\_\+pixel\+\_\+format\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{class_ragot_1_1_driver_l_c_d_ac64b56d5d57abad2ad607da03ef6f802}\index{Ragot::DriverLCD@{Ragot::DriverLCD}!get\_width@{get\_width}}
+\index{get\_width@{get\_width}!Ragot::DriverLCD@{Ragot::DriverLCD}}
+\doxysubsubsection{\texorpdfstring{get\_width()}{get\_width()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_c_d_ac64b56d5d57abad2ad607da03ef6f802} 
+size\+\_\+t Ragot\+::\+Driver\+LCD\+::get\+\_\+width (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the height of the LCD panel. 
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+t Height of the LCD panel in pixels. 
+\end{DoxyReturn}
+\Hypertarget{class_ragot_1_1_driver_l_c_d_a8de7acc7c2526478dc7e365d5ce9a023}\index{Ragot::DriverLCD@{Ragot::DriverLCD}!get\_width@{get\_width}}
+\index{get\_width@{get\_width}!Ragot::DriverLCD@{Ragot::DriverLCD}}
+\doxysubsubsection{\texorpdfstring{get\_width()}{get\_width()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_c_d_a8de7acc7c2526478dc7e365d5ce9a023} 
+const size\+\_\+t Ragot\+::\+Driver\+LCD\+::get\+\_\+width (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the width of the LCD panel. 
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+t Width of the LCD panel in pixels. 
+\end{DoxyReturn}
+\Hypertarget{class_ragot_1_1_driver_l_c_d_acfe2fda139ba2b052f0ce4b28e26a980}\index{Ragot::DriverLCD@{Ragot::DriverLCD}!init@{init}}
+\index{init@{init}!Ragot::DriverLCD@{Ragot::DriverLCD}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_c_d_acfe2fda139ba2b052f0ce4b28e26a980} 
+virtual esp\+\_\+err\+\_\+t Ragot\+::\+Driver\+LCD\+::init (\begin{DoxyParamCaption}\item[{gpio\+\_\+num\+\_\+t}]{reset\+\_\+pin}{, }\item[{gpio\+\_\+num\+\_\+t}]{bk\+\_\+pin}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Initializes the LCD driver with the specified reset and backlight GPIO pins. 
+
+This method should be implemented by derived classes to set up the LCD panel.
+
+
+\begin{DoxyParams}{Parameters}
+{\em reset\+\_\+pin} & GPIO pin for panel reset. \\
+\hline
+{\em bk\+\_\+pin} & GPIO pin for backlight control. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+esp\+\_\+err\+\_\+t ESP\+\_\+\+OK on success, or an error code on failure. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_ragot_1_1_driver___s_t7789_af667ca9cc03e0082326f3ab040077858}{Ragot\+::\+Driver\+\_\+\+ST7789}}, and \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a8a1c7407a748ab546693e98d8193fe99}{Ragot\+::\+Driver\+EK79007}}.
+
+\Hypertarget{class_ragot_1_1_driver_l_c_d_a9455a2ac06d5dfcb2d1c3a583ee567e0}\index{Ragot::DriverLCD@{Ragot::DriverLCD}!is\_initialized@{is\_initialized}}
+\index{is\_initialized@{is\_initialized}!Ragot::DriverLCD@{Ragot::DriverLCD}}
+\doxysubsubsection{\texorpdfstring{is\_initialized()}{is\_initialized()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_c_d_a9455a2ac06d5dfcb2d1c3a583ee567e0} 
+bool Ragot\+::\+Driver\+LCD\+::is\+\_\+initialized (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if the LCD driver is initialized. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\Hypertarget{class_ragot_1_1_driver_l_c_d_a816d9d9f589aa8eb0e5d5255b16d00bf}\index{Ragot::DriverLCD@{Ragot::DriverLCD}!is\_initialized@{is\_initialized}}
+\index{is\_initialized@{is\_initialized}!Ragot::DriverLCD@{Ragot::DriverLCD}}
+\doxysubsubsection{\texorpdfstring{is\_initialized()}{is\_initialized()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_c_d_a816d9d9f589aa8eb0e5d5255b16d00bf} 
+const bool Ragot\+::\+Driver\+LCD\+::is\+\_\+initialized (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if the LCD driver is initialized. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\Hypertarget{class_ragot_1_1_driver_l_c_d_a183dc9f5770163e5815528978e9be89a}\index{Ragot::DriverLCD@{Ragot::DriverLCD}!send\_frame\_buffer@{send\_frame\_buffer}}
+\index{send\_frame\_buffer@{send\_frame\_buffer}!Ragot::DriverLCD@{Ragot::DriverLCD}}
+\doxysubsubsection{\texorpdfstring{send\_frame\_buffer()}{send\_frame\_buffer()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_c_d_a183dc9f5770163e5815528978e9be89a} 
+virtual esp\+\_\+err\+\_\+t Ragot\+::\+Driver\+LCD\+::send\+\_\+frame\+\_\+buffer (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{frame\+\_\+buffer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sends a frame buffer to the LCD panel. 
+
+This method should be implemented by derived classes to send the provided frame buffer to the panel for display.
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame\+\_\+buffer} & Pointer to the frame buffer data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+esp\+\_\+err\+\_\+t ESP\+\_\+\+OK on success, or an error code on failure. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_ragot_1_1_driver___s_t7789_a3871b65220c0b86d845a7a04aca79784}{Ragot\+::\+Driver\+\_\+\+ST7789}}, and \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a322d5272daf6853beda488ac5d378251}{Ragot\+::\+Driver\+EK79007}}.
+
+\Hypertarget{class_ragot_1_1_driver_l_c_d_a290a043148c1a35cb6321b9d2f87a771}\index{Ragot::DriverLCD@{Ragot::DriverLCD}!set\_pixel@{set\_pixel}}
+\index{set\_pixel@{set\_pixel}!Ragot::DriverLCD@{Ragot::DriverLCD}}
+\doxysubsubsection{\texorpdfstring{set\_pixel()}{set\_pixel()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_c_d_a290a043148c1a35cb6321b9d2f87a771} 
+virtual esp\+\_\+err\+\_\+t Ragot\+::\+Driver\+LCD\+::set\+\_\+pixel (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{x}{, }\item[{uint32\+\_\+t}]{y}{, }\item[{uint32\+\_\+t}]{color}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sets a pixel at the specified coordinates to the given color. 
+
+This method should be implemented by derived classes to set a pixel on the LCD panel.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate of the pixel. \\
+\hline
+{\em y} & Y coordinate of the pixel. \\
+\hline
+{\em color} & Color value for the pixel. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+esp\+\_\+err\+\_\+t ESP\+\_\+\+OK on success, or an error code on failure. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_ragot_1_1_driver___s_t7789_a05e007cb9597f94269e9667e1b04a798}{Ragot\+::\+Driver\+\_\+\+ST7789}}, and \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a10f42392e8a22a31f58c25cf347c135c}{Ragot\+::\+Driver\+EK79007}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_ragot_1_1_driver_l_c_d_ace26f4ba9ac1e2424bf618b39299ed85}\index{Ragot::DriverLCD@{Ragot::DriverLCD}!handler@{handler}}
+\index{handler@{handler}!Ragot::DriverLCD@{Ragot::DriverLCD}}
+\doxysubsubsection{\texorpdfstring{handler}{handler}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_c_d_ace26f4ba9ac1e2424bf618b39299ed85} 
+esp\+\_\+lcd\+\_\+panel\+\_\+handle\+\_\+t Ragot\+::\+Driver\+LCD\+::handler\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Handle to the LCD panel. 
+
+\Hypertarget{class_ragot_1_1_driver_l_c_d_af4948a7d9e6fc0a95b8ad9f87cd79650}\index{Ragot::DriverLCD@{Ragot::DriverLCD}!height@{height}}
+\index{height@{height}!Ragot::DriverLCD@{Ragot::DriverLCD}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_c_d_af4948a7d9e6fc0a95b8ad9f87cd79650} 
+size\+\_\+t Ragot\+::\+Driver\+LCD\+::height\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Height of the LCD panel in pixels. 
+
+\Hypertarget{class_ragot_1_1_driver_l_c_d_a6be782d59665875e378e4d2d302139a0}\index{Ragot::DriverLCD@{Ragot::DriverLCD}!initialized@{initialized}}
+\index{initialized@{initialized}!Ragot::DriverLCD@{Ragot::DriverLCD}}
+\doxysubsubsection{\texorpdfstring{initialized}{initialized}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_c_d_a6be782d59665875e378e4d2d302139a0} 
+bool Ragot\+::\+Driver\+LCD\+::initialized = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Flag indicating if the LCD driver is initialized. 
+
+\Hypertarget{class_ragot_1_1_driver_l_c_d_ae11560e32f9d316196d353014303e1f1}\index{Ragot::DriverLCD@{Ragot::DriverLCD}!pixel\_format@{pixel\_format}}
+\index{pixel\_format@{pixel\_format}!Ragot::DriverLCD@{Ragot::DriverLCD}}
+\doxysubsubsection{\texorpdfstring{pixel\_format}{pixel\_format}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_c_d_ae11560e32f9d316196d353014303e1f1} 
+lcd\+\_\+color\+\_\+rgb\+\_\+pixel\+\_\+format\+\_\+t Ragot\+::\+Driver\+LCD\+::pixel\+\_\+format\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Pixel format of the LCD panel. 
+
+\Hypertarget{class_ragot_1_1_driver_l_c_d_aca57cd81e8f72097133fac225042e862}\index{Ragot::DriverLCD@{Ragot::DriverLCD}!width@{width}}
+\index{width@{width}!Ragot::DriverLCD@{Ragot::DriverLCD}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_l_c_d_aca57cd81e8f72097133fac225042e862} 
+size\+\_\+t Ragot\+::\+Driver\+LCD\+::width\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Width of the LCD panel in pixels. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+main/\mbox{\hyperlink{driver__lcd_8hpp}{driver\+\_\+lcd.\+hpp}}\end{DoxyCompactItemize}

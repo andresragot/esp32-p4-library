@@ -1,0 +1,40 @@
+\doxysection{Driver\+\_\+\+ST7789.\+hpp}
+\hypertarget{_driver___s_t7789_8hpp_source}{}\label{_driver___s_t7789_8hpp_source}\index{main/Driver\_ST7789.hpp@{main/Driver\_ST7789.hpp}}
+\mbox{\hyperlink{_driver___s_t7789_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{driver__lcd_8hpp}{driver\_lcd.hpp}}"{}}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ragot}{Ragot}}}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ragot_1_1_driver___s_t7789_a931851a60d57e6d09df68ca727aaeb8e}{Driver\_ST7789}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a5d59da0a6fe68f5ceaa2bb2cf0116c93}{DriverLCD}}}
+\DoxyCodeLine{00046\ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \mbox{\hyperlink{class_ragot_1_1_driver___s_t7789_a1a26f036279ae089763246f717c073d6}{TAG}}\ =\ \textcolor{stringliteral}{"{}[Driver\_ST7789]..."{}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_driver___s_t7789_a931851a60d57e6d09df68ca727aaeb8e}{Driver\_ST7789}}\ ();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_ragot_1_1_driver___s_t7789_abf6ed84cc7fd4f89f83bef3a472e6997}{\string~Driver\_ST7789}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ esp\_err\_t\ \mbox{\hyperlink{class_ragot_1_1_driver___s_t7789_af667ca9cc03e0082326f3ab040077858}{init}}(gpio\_num\_t\ reset\_pin,\ gpio\_num\_t\ bk\_pin)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ esp\_err\_t\ \mbox{\hyperlink{class_ragot_1_1_driver___s_t7789_a5c36b130dfd428e70ab930fa174f593e}{deinit}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ esp\_err\_t\ \mbox{\hyperlink{class_ragot_1_1_driver___s_t7789_a05e007cb9597f94269e9667e1b04a798}{set\_pixel}}(uint32\_t\ x,\ uint32\_t\ y,\ uint32\_t\ color)\textcolor{keyword}{\ override\ }\{\textcolor{keywordflow}{return}\ ESP\_FAIL;\};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ esp\_err\_t\ \mbox{\hyperlink{class_ragot_1_1_driver___s_t7789_a3871b65220c0b86d845a7a04aca79784}{send\_frame\_buffer}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *\ frame\_buffer)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ IRAM\_ATTR\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ragot_1_1_driver___s_t7789_a66159f3d2001ac6c42d8016ee60e8e9a}{refresh\_frame\_buffer}}(\textcolor{keywordtype}{void}\ *\ user\_ctx);}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_driver___s_t7789_a86f85555e1f6fd5021fe8a1f324d86ef}{bsp\_init\_lcd\_backlight}}(gpio\_num\_t\ bk\_pin);}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ SemaphoreHandle\_t\ \mbox{\hyperlink{class_ragot_1_1_driver___s_t7789_ad55e67fe699156d32f3913b78fe1302f}{refresh\_semaphore}};}
+\DoxyCodeLine{00138\ \ \ \ \ \};}
+\DoxyCodeLine{00139\ \}}
+
+\end{DoxyCode}

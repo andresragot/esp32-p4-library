@@ -1,0 +1,58 @@
+\doxysection{main/\+Extrude\+Mesh.hpp File Reference}
+\hypertarget{_extrude_mesh_8hpp}{}\label{_extrude_mesh_8hpp}\index{main/ExtrudeMesh.hpp@{main/ExtrudeMesh.hpp}}
+
+
+This file implements the Extrude\+Mesh class, which manages the extrusion of a mesh in 3D space. The Extrude\+Mesh class inherits from the Mesh class and provides methods to generate vertices and faces for the extruded mesh. It also includes methods for culling faces based on the camera\textquotesingle{}s view direction and logging mesh information.  
+
+
+{\ttfamily \#include "{}Mesh.\+hpp"{}}\newline
+{\ttfamily \#include "{}Camera.\+hpp"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for Extrude\+Mesh.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_extrude_mesh_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{_extrude_mesh_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_ragot_1_1_extrude_mesh}{Ragot\+::\+Extrude\+Mesh}}
+\begin{DoxyCompactList}\small\item\em Represents a 3D mesh created by extruding a 2D shape along a specified height. This class inherits from the \doxylink{class_ragot_1_1_mesh}{Mesh} class and provides methods to generate vertices and faces for the extruded mesh. It also includes methods for culling faces based on the camera\textquotesingle{}s view direction and logging mesh information. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_ragot}{Ragot}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file implements the Extrude\+Mesh class, which manages the extrusion of a mesh in 3D space. The Extrude\+Mesh class inherits from the Mesh class and provides methods to generate vertices and faces for the extruded mesh. It also includes methods for culling faces based on the camera\textquotesingle{}s view direction and logging mesh information. 
+
+\begin{DoxyAuthor}{Author}
+Andrés \doxylink{namespace_ragot}{Ragot} (github.\+com/andresragot)
+\end{DoxyAuthor}
+The Extrude\+Mesh class is designed to create a 3D mesh by extruding a 2D shape along a specified height. It uses the GLM library for vector and matrix operations, and includes functionality for face culling based on the camera\textquotesingle{}s view direction. The class also provides a method to log detailed information about the mesh, including its position, rotation, scale, and vertex data. \begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/06-\/01
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 MIT License
+\end{DoxyCopyright}
+Copyright (c) 2025 Andrés \doxylink{namespace_ragot}{Ragot}
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "{}\+Software"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\+:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "{}\+AS IS"{}, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 

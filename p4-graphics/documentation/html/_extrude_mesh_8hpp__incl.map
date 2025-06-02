@@ -1,0 +1,44 @@
+<map id="main/ExtrudeMesh.hpp" name="main/ExtrudeMesh.hpp">
+<area shape="rect" id="Node000001" title="This file implements the ExtrudeMesh class, which manages the extrusion of a mesh in 3D space...." alt="" coords="446,5,602,31"/>
+<area shape="rect" id="Node000002" href="$_mesh_8hpp.html" title="This file implements the Mesh class, which represents a 3D mesh in the Ragot engine." alt="" coords="392,79,470,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="510,34,460,72,457,67,507,29"/>
+<area shape="rect" id="Node000006" href="$_camera_8hpp.html" title="This file implements the Camera class, which manages camera properties and operations in a 3D space." alt="" coords="502,153,594,178"/>
+<area shape="poly" id="edge26_Node000001_Node000006" title=" " alt="" coords="529,31,546,137,541,138,523,32"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="562,79,633,105"/>
+<area shape="poly" id="edge27_Node000001_Node000015" title=" " alt="" coords="538,29,576,66,572,70,534,33"/>
+<area shape="rect" id="Node000003" href="$_common_types_8hpp.html" title="This file defines common types and structures used in the Ragot engine, including camera transformati..." alt="" coords="336,374,470,399"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="432,105,408,359,403,358,427,105"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="102,447,159,473"/>
+<area shape="poly" id="edge23_Node000002_Node000004" title=" " alt="" coords="391,101,287,117,159,145,100,164,52,186,20,211,11,224,8,238,8,314,10,334,17,353,39,387,68,415,98,437,94,441,64,419,35,390,12,355,5,335,3,314,3,238,6,222,16,207,49,181,99,159,158,140,286,112,391,95"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="452,103,517,142,514,147,449,107"/>
+<area shape="rect" id="Node000007" href="$_components_8hpp.html" title="This file defines the Component class, which serves as a base class for components in the Ragot engin..." alt="" coords="217,226,338,252"/>
+<area shape="poly" id="edge24_Node000002_Node000007" title=" " alt="" coords="420,107,303,218,299,214,416,103"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="500,447,567,473"/>
+<area shape="poly" id="edge25_Node000002_Node000010" title=" " alt="" coords="437,105,528,432,523,433,432,106"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="357,402,175,450,174,445,356,397"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="372,447,433,473"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="405,400,405,432,400,432,400,400"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="542,180,421,362,417,359,538,177"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="503,181,339,224,338,219,501,176"/>
+<area shape="rect" id="Node000009" href="$_transform_8hpp.html" title="Implementation of the Transform class for 3D transformations." alt="" coords="595,374,701,399"/>
+<area shape="poly" id="edge19_Node000006_Node000009" title=" " alt="" coords="556,178,578,225,639,358,634,360,574,227,551,180"/>
+<area shape="poly" id="edge20_Node000006_Node000010" title=" " alt="" coords="550,179,537,432,532,432,545,179"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="729,447,895,473"/>
+<area shape="poly" id="edge21_Node000006_Node000011" title=" " alt="" coords="574,176,610,197,647,224,698,277,741,335,801,432,796,435,737,338,694,281,644,228,607,201,572,181"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="591,447,705,473"/>
+<area shape="poly" id="edge22_Node000006_Node000012" title=" " alt="" coords="565,177,599,207,642,252,684,309,702,340,716,373,719,387,716,400,701,423,682,440,679,436,697,419,711,398,714,387,711,374,697,342,680,312,638,256,595,211,561,181"/>
+<area shape="poly" id="edge17_Node000007_Node000004" title=" " alt="" coords="243,255,203,273,158,298,116,332,98,352,84,375,80,390,84,406,106,435,102,438,80,408,75,390,79,373,94,349,112,328,155,294,201,268,241,250"/>
+<area shape="rect" id="Node000008" href="$_node_8hpp.html" title="This file implements the Node class, which represents a node in a scene graph for 3D rendering." alt="" coords="239,300,316,326"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="280,252,280,284,275,284,275,252"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="94,374,168,399"/>
+<area shape="poly" id="edge18_Node000007_Node000013" title=" " alt="" coords="267,254,156,364,152,361,263,250"/>
+<area shape="poly" id="edge9_Node000008_Node000003" title=" " alt="" coords="300,324,370,363,367,368,297,329"/>
+<area shape="poly" id="edge10_Node000008_Node000004" title=" " alt="" coords="267,328,156,438,152,434,263,324"/>
+<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="317,319,581,370,580,375,316,324"/>
+<area shape="poly" id="edge15_Node000008_Node000013" title=" " alt="" coords="254,329,171,369,168,364,251,324"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="243,374,312,399"/>
+<area shape="poly" id="edge16_Node000008_Node000014" title=" " alt="" coords="280,326,280,358,275,358,275,326"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="630,402,567,441,564,436,627,398"/>
+<area shape="poly" id="edge13_Node000009_Node000011" title=" " alt="" coords="677,397,771,438,769,443,675,402"/>
+<area shape="poly" id="edge14_Node000009_Node000012" title=" " alt="" coords="651,400,651,432,645,432,645,400"/>
+</map>

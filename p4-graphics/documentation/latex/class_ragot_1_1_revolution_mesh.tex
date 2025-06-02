@@ -1,0 +1,308 @@
+\doxysection{Ragot\+::Revolution\+Mesh Class Reference}
+\hypertarget{class_ragot_1_1_revolution_mesh}{}\label{class_ragot_1_1_revolution_mesh}\index{Ragot::RevolutionMesh@{Ragot::RevolutionMesh}}
+
+
+Class for generating revolution meshes.  
+
+
+
+
+{\ttfamily \#include $<$Revolution\+Mesh.\+hpp$>$}
+
+
+
+Inheritance diagram for Ragot\+::Revolution\+Mesh\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_ragot_1_1_revolution_mesh__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ragot\+::Revolution\+Mesh\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_revolution_mesh__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_revolution_mesh_a8312f8b683aef373487305a3f52dc7d1}{Revolution\+Mesh}} (\mbox{\hyperlink{struct_ragot_1_1mesh__info__t}{mesh\+\_\+info\+\_\+t}} \&\mbox{\hyperlink{class_ragot_1_1_mesh_a4404a17582591ce49c5e41c7316cf1e4}{mesh\+\_\+info}}, const \mbox{\hyperlink{class_ragot_1_1_camera}{Camera}} \&\mbox{\hyperlink{class_ragot_1_1_revolution_mesh_a188fd8dd15d02734bab92079b3d8c66a}{cam}})
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_ragot_1_1_revolution_mesh}{Revolution\+Mesh} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_revolution_mesh_a9cfd878d21100fb16a21f45e5d3ec113}{\texorpdfstring{$\sim$}{\string~}\+Revolution\+Mesh}} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor for the \doxylink{class_ragot_1_1_revolution_mesh}{Revolution\+Mesh} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_revolution_mesh_a705d1514d45f5c7e1f4e59b9dc8f95c4}{generate\+\_\+vertices}} () override
+\begin{DoxyCompactList}\small\item\em Generates the vertices for the revolution mesh. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_revolution_mesh_a0fb0d4595e92bf52d8d8bf76dfec6c55}{generate\+\_\+faces}} () override
+\begin{DoxyCompactList}\small\item\em Generates the faces for the revolution mesh. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ragot_1_1_mesh}{Ragot\+::\+Mesh}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_mesh_aac138f7285e29a384d6268a9d041a1ec}{Mesh}} ()=delete
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_ragot_1_1_mesh}{Mesh} object (deleted constructor). \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_ragot_1_1_mesh_acb885fc9df54ec574e392b3c2d8ae555}{\texorpdfstring{$\sim$}{\string~}\+Mesh}} ()=default
+\begin{DoxyCompactList}\small\item\em Default virtual destructor for the \doxylink{class_ragot_1_1_mesh}{Mesh} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_mesh_a2d1a653103d8ea53107a54c26745733d}{Mesh}} (\mbox{\hyperlink{struct_ragot_1_1mesh__info__t}{mesh\+\_\+info\+\_\+t}} \&\mbox{\hyperlink{class_ragot_1_1_mesh_a4404a17582591ce49c5e41c7316cf1e4}{mesh\+\_\+info}})
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_ragot_1_1_mesh}{Mesh} object with mesh information. \end{DoxyCompactList}\item 
+const std\+::vector$<$ glm\+::fvec4 $>$ \& \mbox{\hyperlink{class_ragot_1_1_mesh_ab9d135d5f1653e6d07a4e9a269a5064b}{get\+\_\+vertices}} () const
+\begin{DoxyCompactList}\small\item\em Get the vertices object. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \mbox{\hyperlink{struct_ragot_1_1face__t}{face\+\_\+t}} $>$ \& \mbox{\hyperlink{class_ragot_1_1_mesh_a8c6fa8b74fa74ca5a2a0f399709a5af9}{get\+\_\+faces}} () const
+\begin{DoxyCompactList}\small\item\em Get the faces object. \end{DoxyCompactList}\item 
+const size\+\_\+t \mbox{\hyperlink{class_ragot_1_1_mesh_aea29fdf830f1bc4a6ee276f009d846f7}{get\+\_\+total\+\_\+vertices}} () const
+\begin{DoxyCompactList}\small\item\em Get the total vertices object. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_ragot_1_1_mesh_a3f6804a41ee9c30aa0c130b75adf4315}{get\+\_\+total\+\_\+vertices}} ()
+\begin{DoxyCompactList}\small\item\em Get the total vertices object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_mesh_a04865bef9591d2f4540a8b1d3e5f6736}{recalculate}} ()
+\begin{DoxyCompactList}\small\item\em Recalculate the mesh vertices and faces. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_mesh_ae2a6089b996177f9c207c88d6acadbe7}{apply\+\_\+transform\+\_\+to\+\_\+vertices}} ()
+\begin{DoxyCompactList}\small\item\em Apply the current transformation to the vertices of the mesh. This method applies the transformation matrix obtained from the \doxylink{class_ragot_1_1_transform}{Transform} class to each vertex in the mesh. This is useful for updating the mesh vertices after any transformation has been applied, such as translation, rotation, or scaling. It modifies the vertices in place, transforming them according to the current transformation matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_mesh_a3d12a9c802c818cbac63a10d6f32f438}{set\+\_\+color}} (uint16\+\_\+t new\+\_\+color)
+\begin{DoxyCompactList}\small\item\em Set the color of the mesh. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_ragot_1_1_mesh_af24e210c2100b02bc25f79766f98e39d}{get\+\_\+color}} () const
+\begin{DoxyCompactList}\small\item\em Get the color of the mesh. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ragot_1_1_component}{Ragot\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_component_a96cadec729b1265b3f30480fb060b942}{Component}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{class_ragot_1_1_component}{Component} class. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_ragot_1_1_component_a21a3e09be8069d18aa88f5cd5be5ccb4}{\texorpdfstring{$\sim$}{\string~}\+Component}} ()=default
+\begin{DoxyCompactList}\small\item\em Default virtual destructor for the \doxylink{class_ragot_1_1_component}{Component} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_component_a44c3fa4a306939779086ebdce7574af2}{Component}} (const \mbox{\hyperlink{class_ragot_1_1_component}{Component}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy constructor for the \doxylink{class_ragot_1_1_component}{Component} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_component_ad71e3d9be704be61fdd1074b5a1d4691}{Component}} (const \mbox{\hyperlink{class_ragot_1_1_component}{Component}} \&\&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted move constructor for the \doxylink{class_ragot_1_1_component}{Component} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_component}{Component}} \& \mbox{\hyperlink{class_ragot_1_1_component_af3db7d65eeca5bd1d57309e30eb7afad}{operator=}} (const \mbox{\hyperlink{class_ragot_1_1_component}{Component}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted assignment operator for the \doxylink{class_ragot_1_1_component}{Component} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_component}{Component}} \& \mbox{\hyperlink{class_ragot_1_1_component_ac3cf10a05f5314a464f05d6aeec0b0e4}{operator=}} (const \mbox{\hyperlink{class_ragot_1_1_component}{Component}} \&\&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted move assignment operator for the \doxylink{class_ragot_1_1_component}{Component} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_component_a0185e6750172704061e5595a6281afb6}{add\+\_\+component}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_component}{Component}} $>$ component)
+\begin{DoxyCompactList}\small\item\em Adds a component to the collection. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_component_aa5027faece5c55d50eb4408ae039b81a}{remove\+\_\+component}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_component}{Component}} $>$ component)
+\begin{DoxyCompactList}\small\item\em Removes a component from the collection. \end{DoxyCompactList}\item 
+const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_component}{Component}} $>$ $>$ \mbox{\hyperlink{class_ragot_1_1_component_ad05ecadb2595b73b6fbb9643ed7473ec}{get\+\_\+components}} () const
+\begin{DoxyCompactList}\small\item\em Gets the collection of components. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ragot_1_1_node}{Ragot\+::\+Node}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_node_af950cf77621bbb3f157b7bf3852dfd2b}{Node}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor for \doxylink{class_ragot_1_1_node}{Node}. Initializes an empty node with no parent and no children. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_ragot_1_1_node_a51384a380fecebd14482c49f7fc60336}{\texorpdfstring{$\sim$}{\string~}\+Node}} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor for \doxylink{class_ragot_1_1_node}{Node}. Cleans up the node and its children. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_node_afb856f2743eed9ca04755107e5d2a49b}{Node}} (const \mbox{\hyperlink{class_ragot_1_1_node}{Node}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy constructor for \doxylink{class_ragot_1_1_node}{Node}. Prevents copying of \doxylink{class_ragot_1_1_node}{Node} instances. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_node_a2cd800085d580d594ad5cb5ea55df009}{Node}} (const \mbox{\hyperlink{class_ragot_1_1_node}{Node}} \&\&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted move constructor for \doxylink{class_ragot_1_1_node}{Node}. Prevents moving of \doxylink{class_ragot_1_1_node}{Node} instances. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_node}{Node}} \& \mbox{\hyperlink{class_ragot_1_1_node_a36d44666bd1c79342ca8e12341fd83c1}{operator=}} (const \mbox{\hyperlink{class_ragot_1_1_node}{Node}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted assignment operator for \doxylink{class_ragot_1_1_node}{Node}. Prevents assignment of \doxylink{class_ragot_1_1_node}{Node} instances. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_node}{Node}} \& \mbox{\hyperlink{class_ragot_1_1_node_aba99d61150423e3eaa0b99fe522a03a4}{operator=}} (const \mbox{\hyperlink{class_ragot_1_1_node}{Node}} \&\&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted move assignment operator for \doxylink{class_ragot_1_1_node}{Node}. Prevents moving of \doxylink{class_ragot_1_1_node}{Node} instances. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_node_a32b4ac99143d362f0f0c5176e52e39f5}{add\+\_\+child}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$ child)
+\begin{DoxyCompactList}\small\item\em Get the parent node. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_node_a83168b2c88ef5387b1e768f0a7328479}{remove\+\_\+child}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$ child)
+\begin{DoxyCompactList}\small\item\em Remove a child node. \end{DoxyCompactList}\item 
+const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$ $>$ \& \mbox{\hyperlink{class_ragot_1_1_node_a18af54a13e0c49864ac4095e1ec5f87c}{get\+\_\+children}} () const
+\begin{DoxyCompactList}\small\item\em Get the parent node. \end{DoxyCompactList}\item 
+mat4 \mbox{\hyperlink{class_ragot_1_1_node_adf704afc3b1c3ca9a9819be9e319479b}{get\+\_\+transform\+\_\+matrix}} () override
+\begin{DoxyCompactList}\small\item\em Get the transform matrix object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ragot_1_1_transform}{Ragot\+::\+Transform}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_transform_a725154a65379853ad8fcb0263fedda6c}{Transform}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{class_ragot_1_1_transform}{Transform} class. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_ragot_1_1_transform_a50798b680f8f6a40ec2c7ea9a6e1df08}{\texorpdfstring{$\sim$}{\string~}\+Transform}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{class_ragot_1_1_transform}{Transform} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_transform_a7962797afae773a25fdebf76a8404a7a}{set\+\_\+position}} (const vec3 \&pos)
+\begin{DoxyCompactList}\small\item\em Sets the position of the object. \end{DoxyCompactList}\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_a1db9f8e84315c4296dfef46f1f17ce99}{get\+\_\+position}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current position of the object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_transform_a7641b284077ae1fe1e0b7f3ffc788edb}{set\+\_\+rotation}} (const vec3 \&rot)
+\begin{DoxyCompactList}\small\item\em Moves the object by a specified vector. \end{DoxyCompactList}\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_aa9a377ee1cc5eca48f62970e3d4016ab}{get\+\_\+rotation}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current rotation of the object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_transform_a83714240213caa1528e9e75b1cb5a307}{rotate}} (const float angle, const vec3 \&axis)
+\begin{DoxyCompactList}\small\item\em Rotates the object by a specified angle around a given axis. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_transform_ace83a2bcfdaffd808a1d89fe0cb48fce}{set\+\_\+scale}} (const vec3 \&\mbox{\hyperlink{class_ragot_1_1_transform_ad7da3cfaf66f95597dfbb6fcb8f838d7}{scale}})
+\begin{DoxyCompactList}\small\item\em Sets the scale of the object. \end{DoxyCompactList}\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_a96a6f6bcff942294a7011dac4f235b92}{get\+\_\+scale}} () const
+\begin{DoxyCompactList}\small\item\em Sets the scale of the object uniformly. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ragot_1_1_transform_acf0344728a251b9e04fbfb4ab05dd450}{is\+\_\+dirty}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the transformation matrix is dirty (needs recalculation). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{class_ragot_1_1_camera}{Camera}} \& \mbox{\hyperlink{class_ragot_1_1_revolution_mesh_a188fd8dd15d02734bab92079b3d8c66a}{cam}}
+\begin{DoxyCompactList}\small\item\em Reference to the camera used for rendering, providing view direction and other properties. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ragot_1_1_revolution_mesh_a6791ff511ab518112b79d5c39000642d}{faces\+\_\+can\+\_\+be\+\_\+quads}}
+\begin{DoxyCompactList}\small\item\em Flag indicating whether the faces can be rendered as quads or triangles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_ragot_1_1_mesh}{Ragot\+::\+Mesh}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_ragot_1_1mesh__info__t}{mesh\+\_\+info\+\_\+t}} \mbox{\hyperlink{class_ragot_1_1_mesh_a4404a17582591ce49c5e41c7316cf1e4}{mesh\+\_\+info}}
+\begin{DoxyCompactList}\small\item\em Information about the mesh, including coordinates and rendering type. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_ragot_1_1_mesh_a4605a0ac952bd7e21966866a18ea1d6c}{color}} = 0x\+FFFF
+\begin{DoxyCompactList}\small\item\em Color of the mesh, default is white (0x\+FFFF). \end{DoxyCompactList}\item 
+std\+::vector$<$ glm\+::fvec4 $>$ \mbox{\hyperlink{class_ragot_1_1_mesh_a707a1ddfc3419edf404b26a06d655ccb}{vertices}}
+\begin{DoxyCompactList}\small\item\em Vector of vertices representing the mesh in 3D space. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_ragot_1_1face__t}{face\+\_\+t}} $>$ \mbox{\hyperlink{class_ragot_1_1_mesh_a0dd6468b18ce988a6c542efb4eb0c97e}{faces}}
+\begin{DoxyCompactList}\small\item\em Vector of faces representing the mesh, each face can be a triangle or a quad. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_ragot_1_1_mesh_a8cab67a3713ecc68ffe4896e6c1bdefc}{slices}} = 16
+\begin{DoxyCompactList}\small\item\em Number of slices for generating the mesh, default is 16. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_ragot_1_1_component}{Ragot\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_component}{Component}} $>$ $>$ \mbox{\hyperlink{class_ragot_1_1_component_a8029b480482519b4a3a2885c7da21bf7}{components}}
+\begin{DoxyCompactList}\small\item\em Collection of components managed by this \doxylink{class_ragot_1_1_component}{Component} instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_ragot_1_1_node}{Ragot\+::\+Node}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$ $>$ \mbox{\hyperlink{class_ragot_1_1_node_a281bc24957901ca61a4af20346a4005d}{children}}
+\begin{DoxyCompactList}\small\item\em List of child nodes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_ragot_1_1_node_a64767f464d8abac9626bbf554de7904c}{parent}} = nullptr
+\begin{DoxyCompactList}\small\item\em Pointer to the parent node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_ragot_1_1_transform}{Ragot\+::\+Transform}}}
+\begin{DoxyCompactItemize}
+\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_a431ca8e8bacefc052302557d46559f38}{position}}
+\begin{DoxyCompactList}\small\item\em The position of the object in 3D space. \end{DoxyCompactList}\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_a54eebc0ee4f13e8c0c30777a9ea2bf02}{rotation}}
+\begin{DoxyCompactList}\small\item\em The rotation of the object in degrees around each axis (x, y, z). \end{DoxyCompactList}\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_ad7da3cfaf66f95597dfbb6fcb8f838d7}{scale}}
+\begin{DoxyCompactList}\small\item\em The scale of the object in 3D space, default is (1, 1, 1). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ragot_1_1_transform_a48016feecf3360fb60a42f48720c702f}{dirty}} = true
+\begin{DoxyCompactList}\small\item\em Flag indicating whether the transformation matrix needs to be recalculated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr float \mbox{\hyperlink{class_ragot_1_1_revolution_mesh_a5794edc5b86a10f6b4e71534e044bd02}{PI}} = 3.\+14159265358979323846f
+\begin{DoxyCompactList}\small\item\em Constant value for Pi, used in calculations involving angles and rotations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for generating revolution meshes. 
+
+This class generates a mesh by revolving a 2D profile around an axis. It inherits from the \doxylink{class_ragot_1_1_mesh}{Mesh} class and implements the methods to generate vertices and faces. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ragot_1_1_revolution_mesh_a8312f8b683aef373487305a3f52dc7d1}\index{Ragot::RevolutionMesh@{Ragot::RevolutionMesh}!RevolutionMesh@{RevolutionMesh}}
+\index{RevolutionMesh@{RevolutionMesh}!Ragot::RevolutionMesh@{Ragot::RevolutionMesh}}
+\doxysubsubsection{\texorpdfstring{RevolutionMesh()}{RevolutionMesh()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_revolution_mesh_a8312f8b683aef373487305a3f52dc7d1} 
+Ragot\+::\+Revolution\+Mesh\+::\+Revolution\+Mesh (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_ragot_1_1mesh__info__t}{mesh\+\_\+info\+\_\+t}} \&}]{mesh\+\_\+info}{, }\item[{const \mbox{\hyperlink{class_ragot_1_1_camera}{Camera}} \&}]{cam}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for the \doxylink{class_ragot_1_1_revolution_mesh}{Revolution\+Mesh} class. 
+
+Initializes the mesh with the provided mesh information and camera.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh\+\_\+info} & Information about the mesh, including coordinates and rendering type. \\
+\hline
+{\em cam} & Reference to the camera used for rendering. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_revolution_mesh_a8312f8b683aef373487305a3f52dc7d1_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_revolution_mesh_a9cfd878d21100fb16a21f45e5d3ec113}\index{Ragot::RevolutionMesh@{Ragot::RevolutionMesh}!````~RevolutionMesh@{\texorpdfstring{$\sim$}{\string~}RevolutionMesh}}
+\index{````~RevolutionMesh@{\texorpdfstring{$\sim$}{\string~}RevolutionMesh}!Ragot::RevolutionMesh@{Ragot::RevolutionMesh}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}RevolutionMesh()}{\string~RevolutionMesh()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_revolution_mesh_a9cfd878d21100fb16a21f45e5d3ec113} 
+Ragot\+::\+Revolution\+Mesh\+::\texorpdfstring{$\sim$}{\string~}\+Revolution\+Mesh (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default destructor for the \doxylink{class_ragot_1_1_revolution_mesh}{Revolution\+Mesh} class. 
+
+Cleans up resources used by the mesh. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ragot_1_1_revolution_mesh_a0fb0d4595e92bf52d8d8bf76dfec6c55}\index{Ragot::RevolutionMesh@{Ragot::RevolutionMesh}!generate\_faces@{generate\_faces}}
+\index{generate\_faces@{generate\_faces}!Ragot::RevolutionMesh@{Ragot::RevolutionMesh}}
+\doxysubsubsection{\texorpdfstring{generate\_faces()}{generate\_faces()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_revolution_mesh_a0fb0d4595e92bf52d8d8bf76dfec6c55} 
+void Ragot\+::\+Revolution\+Mesh\+::generate\+\_\+faces (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Generates the faces for the revolution mesh. 
+
+This method creates the faces of the mesh by connecting the vertices generated by generate\+\_\+vertices. It can create either triangles or quads based on the mesh information and the flag faces\+\_\+can\+\_\+be\+\_\+quads. 
+
+Implements \mbox{\hyperlink{class_ragot_1_1_mesh_a0c569357f4cac6c8612b3dcc4b6ab3b5}{Ragot\+::\+Mesh}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_revolution_mesh_a0fb0d4595e92bf52d8d8bf76dfec6c55_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_revolution_mesh_a705d1514d45f5c7e1f4e59b9dc8f95c4}\index{Ragot::RevolutionMesh@{Ragot::RevolutionMesh}!generate\_vertices@{generate\_vertices}}
+\index{generate\_vertices@{generate\_vertices}!Ragot::RevolutionMesh@{Ragot::RevolutionMesh}}
+\doxysubsubsection{\texorpdfstring{generate\_vertices()}{generate\_vertices()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_revolution_mesh_a705d1514d45f5c7e1f4e59b9dc8f95c4} 
+void Ragot\+::\+Revolution\+Mesh\+::generate\+\_\+vertices (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Generates the vertices for the revolution mesh. 
+
+This method calculates the vertices by revolving the 2D profile around the specified axis. It uses the camera\textquotesingle{}s view direction to determine the local space for the vertices. 
+
+Implements \mbox{\hyperlink{class_ragot_1_1_mesh_a54b4d342f8fb1e51c9e0ad218340b4fa}{Ragot\+::\+Mesh}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_revolution_mesh_a705d1514d45f5c7e1f4e59b9dc8f95c4_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_ragot_1_1_revolution_mesh_a188fd8dd15d02734bab92079b3d8c66a}\index{Ragot::RevolutionMesh@{Ragot::RevolutionMesh}!cam@{cam}}
+\index{cam@{cam}!Ragot::RevolutionMesh@{Ragot::RevolutionMesh}}
+\doxysubsubsection{\texorpdfstring{cam}{cam}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_revolution_mesh_a188fd8dd15d02734bab92079b3d8c66a} 
+const \mbox{\hyperlink{class_ragot_1_1_camera}{Camera}}\& Ragot\+::\+Revolution\+Mesh\+::cam\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Reference to the camera used for rendering, providing view direction and other properties. 
+
+\Hypertarget{class_ragot_1_1_revolution_mesh_a6791ff511ab518112b79d5c39000642d}\index{Ragot::RevolutionMesh@{Ragot::RevolutionMesh}!faces\_can\_be\_quads@{faces\_can\_be\_quads}}
+\index{faces\_can\_be\_quads@{faces\_can\_be\_quads}!Ragot::RevolutionMesh@{Ragot::RevolutionMesh}}
+\doxysubsubsection{\texorpdfstring{faces\_can\_be\_quads}{faces\_can\_be\_quads}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_revolution_mesh_a6791ff511ab518112b79d5c39000642d} 
+bool Ragot\+::\+Revolution\+Mesh\+::faces\+\_\+can\+\_\+be\+\_\+quads\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Flag indicating whether the faces can be rendered as quads or triangles. 
+
+\Hypertarget{class_ragot_1_1_revolution_mesh_a5794edc5b86a10f6b4e71534e044bd02}\index{Ragot::RevolutionMesh@{Ragot::RevolutionMesh}!PI@{PI}}
+\index{PI@{PI}!Ragot::RevolutionMesh@{Ragot::RevolutionMesh}}
+\doxysubsubsection{\texorpdfstring{PI}{PI}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_revolution_mesh_a5794edc5b86a10f6b4e71534e044bd02} 
+float Ragot\+::\+Revolution\+Mesh\+::\+PI = 3.\+14159265358979323846f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [protected]}}
+
+
+
+Constant value for Pi, used in calculations involving angles and rotations. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+main/\mbox{\hyperlink{_revolution_mesh_8hpp}{Revolution\+Mesh.\+hpp}}\item 
+main/\mbox{\hyperlink{_revolution_mesh_8cpp}{Revolution\+Mesh.\+cpp}}\end{DoxyCompactItemize}

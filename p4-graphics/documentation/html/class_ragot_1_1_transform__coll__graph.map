@@ -1,0 +1,9 @@
+<map id="Ragot::Transform" name="Ragot::Transform">
+<area shape="rect" id="Node000001" title="A class representing a 3D transformation with position, rotation, and scale." alt="" coords="34,165,189,434"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,44,72"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="34,71,53,140,55,148,50,149,47,141,29,72"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="94,5,129,72"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="114,72,114,148,109,148,109,72"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="158,5,198,72"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="172,72,153,149,148,147,167,71"/>
+</map>

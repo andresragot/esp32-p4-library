@@ -1,0 +1,130 @@
+\doxysection{Sync\+\_\+\+Queue.\+hpp}
+\hypertarget{_sync___queue_8hpp_source}{}\label{_sync___queue_8hpp_source}\index{main/Sync\_Queue.hpp@{main/Sync\_Queue.hpp}}
+\mbox{\hyperlink{_sync___queue_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <condition\_variable>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ragot}{Ragot}}}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ragot_1_1_sync___queue_af28a8d17f5b8161457e7f907e61c402d}{Sync\_Queue}}}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_ragot_1_1_sync___queue_adaa6b1aec1b54d8b22f323dfa0380907}{value\_type}}\ =\ T;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_sync___queue_af28a8d17f5b8161457e7f907e61c402d}{Sync\_Queue}}\ ()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_sync___queue_aef33769179162e8ec64dfbce8f080f65}{\string~Sync\_Queue}}\ ()}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_sync___queue_a24f7d5fd8bcaeca82aca743fc19cbd72}{close}}\ ();}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_sync___queue_af47b08330016093fc31aa40278a81d86}{Sync\_Queue}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_sync___queue_af28a8d17f5b8161457e7f907e61c402d}{Sync\_Queue}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_sync___queue_af28a8d17f5b8161457e7f907e61c402d}{Sync\_Queue}}\ \&\ \mbox{\hyperlink{class_ragot_1_1_sync___queue_a2ab2ead3c0ef565076007b5fbd473c5b}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_sync___queue_af28a8d17f5b8161457e7f907e61c402d}{Sync\_Queue}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ std::queue<T>\ \mbox{\hyperlink{class_ragot_1_1_sync___queue_a47f093eee0959fa7f60ff609f0f71dd5}{queue}};\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keyword}{mutable}\ std::mutex\ \mbox{\hyperlink{class_ragot_1_1_sync___queue_a5d4425295a44d1de5ac244aa93c844c2}{mutex}};\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ std::condition\_variable\ \mbox{\hyperlink{class_ragot_1_1_sync___queue_af22a2cf014f431cae6a910d2ae5776a8}{condition}};\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ragot_1_1_sync___queue_aed13181f04ebfcd78f3e7d0332164cfd}{closed}}\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ std::optional\ <\ value\_type\ >\ \mbox{\hyperlink{class_ragot_1_1_sync___queue_aad4e87aa0fc1dccb917d082ddaf92e18}{get}}()}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ std::unique\_lock<std::mutex>\ lock(\mbox{\hyperlink{class_ragot_1_1_sync___queue_a5d4425295a44d1de5ac244aa93c844c2}{mutex}});}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_sync___queue_af22a2cf014f431cae6a910d2ae5776a8}{condition}}.wait(lock,\ [\textcolor{keyword}{this}]\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_ragot_1_1_sync___queue_aed13181f04ebfcd78f3e7d0332164cfd}{closed}}\ ||\ !\mbox{\hyperlink{class_ragot_1_1_sync___queue_a47f093eee0959fa7f60ff609f0f71dd5}{queue}}.empty();\ \});}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (not\ \mbox{\hyperlink{class_ragot_1_1_sync___queue_aed13181f04ebfcd78f3e7d0332164cfd}{closed}})}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_sync___queue_adaa6b1aec1b54d8b22f323dfa0380907}{value\_type}}\ value\ =\ \mbox{\hyperlink{class_ragot_1_1_sync___queue_a47f093eee0959fa7f60ff609f0f71dd5}{queue}}.front();}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_sync___queue_a47f093eee0959fa7f60ff609f0f71dd5}{queue}}.pop();}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value;}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::nullopt;}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_sync___queue_ae329ef44313f0b193206fe215b17b8f1}{push}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_sync___queue_adaa6b1aec1b54d8b22f323dfa0380907}{value\_type}}\ \&\ value)}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ lock(\mbox{\hyperlink{class_ragot_1_1_sync___queue_a5d4425295a44d1de5ac244aa93c844c2}{mutex}});}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (not\ \mbox{\hyperlink{class_ragot_1_1_sync___queue_aed13181f04ebfcd78f3e7d0332164cfd}{closed}})}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_sync___queue_a47f093eee0959fa7f60ff609f0f71dd5}{queue}}.push(value);}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_sync___queue_af22a2cf014f431cae6a910d2ae5776a8}{condition}}.notify\_one\ ();}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\ \textcolor{keyword}{typename}\ ...ARGUMENTS\ >}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_sync___queue_a6a6857e6b4f081c051cc350adad77d79}{push}}\ (ARGUMENTS\ \&\&\ ...arguments)}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ lock(\mbox{\hyperlink{class_ragot_1_1_sync___queue_a5d4425295a44d1de5ac244aa93c844c2}{mutex}});}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (not\ \mbox{\hyperlink{class_ragot_1_1_sync___queue_aed13181f04ebfcd78f3e7d0332164cfd}{closed}})}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_sync___queue_a47f093eee0959fa7f60ff609f0f71dd5}{queue}}.push\ (std::forward\ <\ ARGUMENTS\ >\ (arguments)...);}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_sync___queue_af22a2cf014f431cae6a910d2ae5776a8}{condition}}.notify\_one\ ();}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\ \textcolor{keyword}{typename}\ ...ARGUMENTS\ >}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_sync___queue_a7f390cf6a19fe5c1f785e5f8ffbaeb96}{emplace}}\ (ARGUMENTS\ \&\&\ ...arguments)}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ lock(\mbox{\hyperlink{class_ragot_1_1_sync___queue_a5d4425295a44d1de5ac244aa93c844c2}{mutex}});}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (not\ \mbox{\hyperlink{class_ragot_1_1_sync___queue_aed13181f04ebfcd78f3e7d0332164cfd}{closed}})}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_sync___queue_a47f093eee0959fa7f60ff609f0f71dd5}{queue}}.emplace(std::forward<ARGUMENTS>(arguments)...);}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_sync___queue_af22a2cf014f431cae6a910d2ae5776a8}{condition}}.notify\_one\ ();}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_sync___queue_adaa6b1aec1b54d8b22f323dfa0380907}{value\_type}}\ \&\ \mbox{\hyperlink{class_ragot_1_1_sync___queue_a9d6be9759ebb9e02541dc1883da30b54}{back}}\ ()}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ lock(\mbox{\hyperlink{class_ragot_1_1_sync___queue_a5d4425295a44d1de5ac244aa93c844c2}{mutex}});}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_ragot_1_1_sync___queue_a47f093eee0959fa7f60ff609f0f71dd5}{queue}}.back();}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_sync___queue_a24f7d5fd8bcaeca82aca743fc19cbd72}{close}}\ ()}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ lock(\mbox{\hyperlink{class_ragot_1_1_sync___queue_a5d4425295a44d1de5ac244aa93c844c2}{mutex}});}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_sync___queue_aed13181f04ebfcd78f3e7d0332164cfd}{closed}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_sync___queue_af22a2cf014f431cae6a910d2ae5776a8}{condition}}.notify\_all();}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_sync___queue_a14a13fb1bdf611a72c83341e2d4c23f6}{clear}}\ ()}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ std::queue\ <\ value\_type\ >\ \ \mbox{\hyperlink{class_ragot_1_1_sync___queue_aa4c259b216de114396b0430611ab7dae}{empty}};}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ std::lock\_guard\ <\ std::mutex\ >\ lock(\mbox{\hyperlink{class_ragot_1_1_sync___queue_a5d4425295a44d1de5ac244aa93c844c2}{mutex}});}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_sync___queue_a47f093eee0959fa7f60ff609f0f71dd5}{queue}}.swap(\mbox{\hyperlink{class_ragot_1_1_sync___queue_aa4c259b216de114396b0430611ab7dae}{empty}});}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_sync___queue_ae46e206be00102715d6647e5e3bc4571}{swap}}\ (\mbox{\hyperlink{class_ragot_1_1_sync___queue_af28a8d17f5b8161457e7f907e61c402d}{Sync\_Queue}}\ \&\ other)}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ std::lock(\mbox{\hyperlink{class_ragot_1_1_sync___queue_a5d4425295a44d1de5ac244aa93c844c2}{mutex}},\ other.\mbox{\hyperlink{class_ragot_1_1_sync___queue_a5d4425295a44d1de5ac244aa93c844c2}{mutex}});}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ lock1(this-\/>mutex,\ std::adopt\_lock);}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ lock2(other.\mbox{\hyperlink{class_ragot_1_1_sync___queue_a5d4425295a44d1de5ac244aa93c844c2}{mutex}},\ std::adopt\_lock);}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_sync___queue_a47f093eee0959fa7f60ff609f0f71dd5}{queue}}.swap(other.\mbox{\hyperlink{class_ragot_1_1_sync___queue_a47f093eee0959fa7f60ff609f0f71dd5}{queue}});}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ragot_1_1_sync___queue_aa4c259b216de114396b0430611ab7dae}{empty}}\ ()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00239\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ lock(\mbox{\hyperlink{class_ragot_1_1_sync___queue_a5d4425295a44d1de5ac244aa93c844c2}{mutex}});}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_ragot_1_1_sync___queue_a47f093eee0959fa7f60ff609f0f71dd5}{queue}}.empty\ ();}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_ragot_1_1_sync___queue_a82a62dc029ea468a5d0d11ffbde0901b}{size}}\ ()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00253\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ lock(\mbox{\hyperlink{class_ragot_1_1_sync___queue_a5d4425295a44d1de5ac244aa93c844c2}{mutex}});}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_ragot_1_1_sync___queue_a47f093eee0959fa7f60ff609f0f71dd5}{queue}}.size\ ();}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00257\ \ \ \ \ \};}
+\DoxyCodeLine{00258\ \}}
+
+\end{DoxyCode}

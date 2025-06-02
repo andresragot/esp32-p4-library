@@ -1,0 +1,58 @@
+\doxysection{main/\+Ram\+Allocator.hpp File Reference}
+\hypertarget{_ram_allocator_8hpp}{}\label{_ram_allocator_8hpp}\index{main/RamAllocator.hpp@{main/RamAllocator.hpp}}
+
+
+This file implements a custom memory allocator for PSRAM in the \doxylink{namespace_ragot}{Ragot} engine.  
+
+
+{\ttfamily \#include "{}esp\+\_\+heap\+\_\+caps.\+h"{}}\newline
+Include dependency graph for Ram\+Allocator.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{_ram_allocator_8hpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_ragot_1_1_p_s_r_a_m_allocator}{Ragot\+::\+PSRAMAllocator$<$ T, Flag $>$}}
+\begin{DoxyCompactList}\small\item\em Custom memory allocator for PSRAM. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_ragot_1_1_p_s_r_a_m_allocator_1_1rebind}{Ragot\+::\+PSRAMAllocator$<$ T, Flag $>$\+::rebind$<$ U $>$}}
+\begin{DoxyCompactList}\small\item\em Rebinds the allocator to a different type. This struct allows the \doxylink{class_ragot_1_1_p_s_r_a_m_allocator}{PSRAMAllocator} to be used with different types while maintaining the same allocation flags. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_ragot}{Ragot}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T, uint16\+\_\+t F1, typename U, uint16\+\_\+t F2$>$ }\\bool \mbox{\hyperlink{namespace_ragot_a43435df08cf5aa5cc13fbc01d97fe010}{Ragot\+::operator==}} (const \mbox{\hyperlink{class_ragot_1_1_p_s_r_a_m_allocator}{PSRAMAllocator}}$<$ T, F1 $>$ \&, const \mbox{\hyperlink{class_ragot_1_1_p_s_r_a_m_allocator}{PSRAMAllocator}}$<$ U, F2 $>$ \&)
+\begin{DoxyCompactList}\small\item\em Equality operator for \doxylink{class_ragot_1_1_p_s_r_a_m_allocator}{PSRAMAllocator}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T, uint16\+\_\+t F1, typename U, uint16\+\_\+t F2$>$ }\\bool \mbox{\hyperlink{namespace_ragot_a068951e1ef4b365fe6669436915c4f1c}{Ragot\+::operator!=}} (const \mbox{\hyperlink{class_ragot_1_1_p_s_r_a_m_allocator}{PSRAMAllocator}}$<$ T, F1 $>$ \&a, const \mbox{\hyperlink{class_ragot_1_1_p_s_r_a_m_allocator}{PSRAMAllocator}}$<$ U, F2 $>$ \&b)
+\begin{DoxyCompactList}\small\item\em Inequality operator for \doxylink{class_ragot_1_1_p_s_r_a_m_allocator}{PSRAMAllocator}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file implements a custom memory allocator for PSRAM in the \doxylink{namespace_ragot}{Ragot} engine. 
+
+\begin{DoxyAuthor}{Author}
+Andrés \doxylink{namespace_ragot}{Ragot} (github.\+com/andresragot)
+\end{DoxyAuthor}
+The PSRAMAllocator class provides a way to allocate and deallocate memory in PSRAM with specific flags. It is designed to be used with standard containers like std\+::vector, allowing for efficient memory management in embedded systems. The allocator uses ESP-\/\+IDF\textquotesingle{}s heap\+\_\+caps\+\_\+malloc and heap\+\_\+caps\+\_\+free functions to manage memory. \begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/06-\/01
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 MIT License
+\end{DoxyCopyright}
+Copyright (c) 2025 Andrés \doxylink{namespace_ragot}{Ragot}
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "{}\+Software"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\+:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "{}\+AS IS"{}, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 

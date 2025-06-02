@@ -1,7 +1,0 @@
-<map id="Ragot::Node::get_transform_matrix" name="Ragot::Node::get_transform_matrix">
-<area shape="rect" id="Node000001" title=" " alt="" coords="423,5,606,46"/>
-<area shape="rect" id="Node000002" href="$class_ragot_1_1_mesh.html#ae2a6089b996177f9c207c88d6acadbe7" title=" " alt="" coords="221,5,375,46"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="407,28,375,28,375,23,407,23"/>
-<area shape="rect" id="Node000003" href="$class_ragot_1_1_mesh.html#a04865bef9591d2f4540a8b1d3e5f6736" title=" " alt="" coords="5,13,173,38"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="205,28,173,28,173,23,205,23"/>
-</map>

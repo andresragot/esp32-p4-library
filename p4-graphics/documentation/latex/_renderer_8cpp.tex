@@ -1,0 +1,71 @@
+\doxysection{main/\+Renderer.cpp File Reference}
+\hypertarget{_renderer_8cpp}{}\label{_renderer_8cpp}\index{main/Renderer.cpp@{main/Renderer.cpp}}
+
+
+Implementation of the Renderer class for rendering scenes in the \doxylink{namespace_ragot}{Ragot} engine.  
+
+
+{\ttfamily \#include "{}Renderer.\+hpp"{}}\newline
+{\ttfamily \#include "{}Camera.\+hpp"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$glm.\+hpp$>$}\newline
+{\ttfamily \#include $<$gtc/matrix\+\_\+transform.\+hpp$>$}\newline
+{\ttfamily \#include $<$gtc/type\+\_\+ptr.\+hpp$>$}\newline
+{\ttfamily \#include "{}Common\+Types.\+hpp"{}}\newline
+{\ttfamily \#include "{}Logger.\+hpp"{}}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+Include dependency graph for Renderer.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_renderer_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_ragot}{Ragot}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespace_ragot_a199750468cf6ef1b972b87d47c73b3ae}{Ragot\+::\+Matrix4x4}} = glm\+::mat4
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Inside, typename Intersect$>$ }\\static std\+::vector$<$ glm\+::fvec4 $>$ \mbox{\hyperlink{namespace_ragot_a4e4e92c27d1e87745116770411dacb3f}{Ragot\+::clip\+Against\+Plane}} (const std\+::vector$<$ glm\+::fvec4 $>$ \&in, Inside inside, Intersect intersect)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespace_ragot_a4490e388bba7a42097f41de505f33c7b}{Ragot\+::\+RENDERER\+\_\+\+TAG}} = "{}Renderer"{}
+\item 
+static const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespace_ragot_a3329d3266492116744965de49b945b46}{Ragot\+::\+MAIN\+\_\+\+TAG}} = "{}Main"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the Renderer class for rendering scenes in the \doxylink{namespace_ragot}{Ragot} engine. 
+
+\begin{DoxyAuthor}{Author}
+Andrés \doxylink{namespace_ragot}{Ragot} (github.\+com/andresragot)
+\end{DoxyAuthor}
+The Renderer class is responsible for rendering 3D scenes using a rasterization approach. \begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/06-\/01
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 MIT License
+\end{DoxyCopyright}
+Copyright (c) 2025 Andrés \doxylink{namespace_ragot}{Ragot}
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "{}\+Software"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\+:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "{}\+AS IS"{}, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 

@@ -1,0 +1,88 @@
+\doxysection{Logger.\+hpp}
+\hypertarget{_logger_8hpp_source}{}\label{_logger_8hpp_source}\index{main/Logger.hpp@{main/Logger.hpp}}
+\mbox{\hyperlink{_logger_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#if\ ESP\_PLATFORM\ ==\ 1}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ "{}esp\_log.h"{}}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ragot}{Ragot}}}
+\DoxyCodeLine{00046\ \{\ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ragot_1_1_logger_a5e35bd21aa0be676bf970e125b4f3877}{Logger}}}
+\DoxyCodeLine{00055\ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_ragot_1_1_logger_a5e35bd21aa0be676bf970e125b4f3877}{Logger}}\ \&\mbox{\hyperlink{class_ragot_1_1_logger_a2542d6b1f1cf400a69f5e8dd767d065f}{instance}}()}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_ragot_1_1_logger_a5e35bd21aa0be676bf970e125b4f3877}{Logger}}\ \mbox{\hyperlink{class_ragot_1_1_logger_a2542d6b1f1cf400a69f5e8dd767d065f}{instance}};}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_ragot_1_1_logger_a2542d6b1f1cf400a69f5e8dd767d065f}{instance}};}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\ \textcolor{keyword}{typename}...\ Args\ >}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_logger_a2c212ee2e264ea8d699ff6bf74cb4d12}{Log}}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \mbox{\hyperlink{namespace_ragot_aa2b36fe144b31e0887ebb2444fe2212b}{TAG}},\ uint8\_t\ level,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ fmt,\ Args...\ args)}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ >\ \mbox{\hyperlink{class_ragot_1_1_logger_a17b3e6ba8d44ace4a05d6d31b8da69f5}{logLevel}})}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#if\ ESP\_PLATFORM\ ==\ 1}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ esp\_log\_write\ ((esp\_log\_level\_t)level,\ \mbox{\hyperlink{namespace_ragot_aa2b36fe144b31e0887ebb2444fe2212b}{TAG}},\ fmt,\ std::forward<Args>(args)...);}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#else\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 1)\ Calculamos\ el\ tamaño\ del\ buffer\ necesario}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ needed\ =\ std::snprintf(\textcolor{keyword}{nullptr},\ 0,\ fmt,\ std::forward<Args>(args)...)\ +\ 1;}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<char>\ buffer(needed);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 2)\ Rellenamos\ el\ buffer\ con\ el\ texto\ formateado}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ std::snprintf(buffer.data(),\ buffer.size(),\ fmt,\ std::forward<Args>(args)...);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 3)\ Lo\ imprimimos}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}["{}}\ <<\ \mbox{\hyperlink{namespace_ragot_aa2b36fe144b31e0887ebb2444fe2212b}{TAG}}\ <<\ \textcolor{stringliteral}{"{}]:\ "{}}\ <<\ buffer.data()\ <<\ std::endl;}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_logger_a5e35bd21aa0be676bf970e125b4f3877}{Logger}}\ ()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_logger_aba36378a9c93f4b8d3d1e01e26803f78}{\string~Logger}}\ ()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_logger_ab57ae2229a5f1be802e2b11a0252406e}{Logger}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_logger_a5e35bd21aa0be676bf970e125b4f3877}{Logger}}\ \&\ )\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_logger_a82d1cdf440938d3a53d0bb68c00ad51a}{Logger}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_logger_a5e35bd21aa0be676bf970e125b4f3877}{Logger}}\ \&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_logger_a5e35bd21aa0be676bf970e125b4f3877}{Logger}}\ \&\ \mbox{\hyperlink{class_ragot_1_1_logger_a2dd0e1d526a4a4b1ae6a261dd39272a7}{operator\ =\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_logger_a5e35bd21aa0be676bf970e125b4f3877}{Logger}}\ \&\ )\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_logger_a5e35bd21aa0be676bf970e125b4f3877}{Logger}}\ \&\ \mbox{\hyperlink{class_ragot_1_1_logger_a2dd0e1d526a4a4b1ae6a261dd39272a7}{operator\ =\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_logger_a5e35bd21aa0be676bf970e125b4f3877}{Logger}}\ \&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{class_ragot_1_1_logger_a17b3e6ba8d44ace4a05d6d31b8da69f5}{logLevel}}\ =\ 0;\ \textcolor{comment}{//\ 0\ =\ INFO,\ 1\ =\ WARNING,\ 2\ =\ ERROR}}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_logger_a84f6adfdeee57a0b83229b01cf82c6d2}{setLogLevel}}\ (uint8\_t\ level)}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_logger_a17b3e6ba8d44ace4a05d6d31b8da69f5}{logLevel}}\ =\ level;}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#if\ ESP\_PLATFORM\ ==\ 1}}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ esp\_log\_level\_set(\textcolor{stringliteral}{"{}*"{}},\ (esp\_log\_level\_t)level);}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{class_ragot_1_1_logger_abc9f3a8edb8f5185e30850d7e23ac566}{getLogLevel}}\ ()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00184\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_ragot_1_1_logger_a17b3e6ba8d44ace4a05d6d31b8da69f5}{logLevel}};}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00188\ \ \ \ \ \};}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keyword}{extern}\ Logger\ \&\ \mbox{\hyperlink{namespace_ragot_aaf684bb5c8c5ae2ecdea7c93fa40b9e3}{logger}};}
+\DoxyCodeLine{00191\ \}}
+
+\end{DoxyCode}

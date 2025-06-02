@@ -1,0 +1,17 @@
+<map id="Ragot::Camera::get_projection_matrix" name="Ragot::Camera::get_projection_matrix">
+<area shape="rect" id="Node000001" title="Get the projection matrix object." alt="" coords="646,35,783,75"/>
+<area shape="rect" id="Node000002" href="$class_ragot_1_1_camera.html#a0eb49a8b33981535da1ac49070570787" title="Get the vp matrix object." alt="" coords="450,5,586,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="631,45,586,38,587,33,631,40"/>
+<area shape="rect" id="Node000004" href="$class_ragot_1_1_renderer.html#acc3bbc330b23f454ed5d01b85d4f8e98" title="Renders the current scene." alt="" coords="437,70,598,96"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="631,70,599,74,599,69,630,64"/>
+<area shape="rect" id="Node000003" href="$class_ragot_1_1_camera.html#a49252f6f9a5e873836e42dd2a38515fd" title=" " alt="" coords="232,5,389,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="434,28,389,28,389,23,434,23"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html#a987c89a3f1d482254025c345f19b183a" title="Main loop for the Ragot engine on non&#45;ESP platforms." alt="" coords="270,70,350,96"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="421,86,351,86,351,80,421,80"/>
+<area shape="rect" id="Node000007" href="$class_ragot_1_1_renderer.html#a30c9db3883dcb090d6ddebd972809d55" title="Performs the rendering task in a separate thread." alt="" coords="235,120,386,161"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="455,103,387,122,385,117,453,98"/>
+<area shape="rect" id="Node000006" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main function for the Ragot engine." alt="" coords="70,70,119,96"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="255,86,119,86,119,80,255,80"/>
+<area shape="rect" id="Node000008" href="$class_ragot_1_1_renderer.html#a72e42229b1c05ab0ae910b20b6f41453" title="Constructs a Renderer with the specified width and height." alt="" coords="5,128,184,153"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="220,143,184,143,184,138,220,138"/>
+</map>

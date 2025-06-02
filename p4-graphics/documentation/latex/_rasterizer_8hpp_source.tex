@@ -1,0 +1,146 @@
+\doxysection{Rasterizer.\+hpp}
+\hypertarget{_rasterizer_8hpp_source}{}\label{_rasterizer_8hpp_source}\index{main/Rasterizer.hpp@{main/Rasterizer.hpp}}
+\mbox{\hyperlink{_rasterizer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_frame_buffer_8hpp}{FrameBuffer.hpp}}"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_common_types_8hpp}{CommonTypes.hpp}}"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <glm.hpp>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_logger_8hpp}{Logger.hpp}}"{}}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ragot}{Ragot}}}
+\DoxyCodeLine{00043\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Color>}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ragot_1_1_rasterizer_ac44ab168083551ec18b2211fcd032bfa}{Rasterizer}}}
+\DoxyCodeLine{00055\ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ FrameBuffer\ <\ Color\ >\ \&\ \mbox{\hyperlink{class_ragot_1_1_rasterizer_acdd89dcfa9efd302fad6a3341ac85666}{frame\_buffer}};\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_ragot_1_1_rasterizer_a6a4d1a1807d7aae5e67e8c29639a1ab1}{offset\_cache0}}\ [1024];\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_ragot_1_1_rasterizer_a5d5ee39c722909831977ed1ffa3e256e}{offset\_cache1}}\ [1024];\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#ifndef\ CONFIG\_GRAPHICS\_PAINTER\_ALGO\_ENABLED}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_ragot_1_1_rasterizer_a4edba59c0f0ff1de2666971de9cc8a06}{z\_cache0}}\ [1024];\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_ragot_1_1_rasterizer_a81c8b9a5d195cdcd1966914427965a3c}{z\_cache1}}\ [1024];\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ std::vector\ <\ int\ >\ \mbox{\hyperlink{class_ragot_1_1_rasterizer_aef43bbd4828564ee39bf405875872ef5}{z\_buffer}};\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CONFIG\_GRAPHICS\_PAINTER\_ALGO\_ENABLED}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ Color\ \mbox{\hyperlink{class_ragot_1_1_rasterizer_a4f9c07cb346a74679ae0d574ac786872}{color}};\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ Color\ \mbox{\hyperlink{class_ragot_1_1_rasterizer_a99fb7cbd32420964d66bf428482a9ee8}{clear\_color}};\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \mbox{\hyperlink{class_ragot_1_1_rasterizer_a688211c2ce3a3366b63bc4a0e0e8c3a8}{RASTER\_TAG}}\ =\ \textcolor{stringliteral}{"{}Rasterizer"{}};}
+\DoxyCodeLine{00075\ \ \ \ \ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_rasterizer_ac44ab168083551ec18b2211fcd032bfa}{Rasterizer}}\ (FrameBuffer\ <\ Color\ >\ \&\ frame)\ :\ \mbox{\hyperlink{class_ragot_1_1_rasterizer_acdd89dcfa9efd302fad6a3341ac85666}{frame\_buffer}}\ (frame)}
+\DoxyCodeLine{00086\ \#ifndef\ CONFIG\_GRAPHICS\_PAINTER\_ALGO\_ENABLED}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ ,\ \mbox{\hyperlink{class_ragot_1_1_rasterizer_aef43bbd4828564ee39bf405875872ef5}{z\_buffer}}(frame.get\_width\ ()\ *\ frame.get\_height\ ())}
+\DoxyCodeLine{00088\ \#endif\ \textcolor{comment}{//\ CONFIG\_GRAPHICS\_PAINTER\_ALGO\_ENABLED}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_rasterizer_ad2b50b7fbe56790541e32d40af5afd35}{Rasterizer}}\ ()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_rasterizer_af028fb191116c365a78f67193d31f9d9}{\string~Rasterizer}}\ ()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ FrameBuffer\ <\ Color\ >\ \&\ \mbox{\hyperlink{class_ragot_1_1_rasterizer_a523fbf480688e863dceca80cf69bb419}{get\_frame\_buffer}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00113\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{class_ragot_1_1_rasterizer_acdd89dcfa9efd302fad6a3341ac85666}{frame\_buffer}});}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_rasterizer_a07a7e2f09eecba92428e8b23cb59ec24}{set\_color}}\ (\textcolor{keyword}{const}\ Color\ \&\ new\_color)}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_rasterizer_a4f9c07cb346a74679ae0d574ac786872}{color}}\ =\ new\_color;}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ frame\_buffer.set\_color\ (new\_color);}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_rasterizer_a2df8e755c8ae708e3aeee43978155472}{clear}}\ ()}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_ragot_aaf684bb5c8c5ae2ecdea7c93fa40b9e3}{logger}}.Log\ (\mbox{\hyperlink{class_ragot_1_1_rasterizer_a688211c2ce3a3366b63bc4a0e0e8c3a8}{RASTER\_TAG}},\ 3,\ \textcolor{stringliteral}{"{}Limpiando\ framebuffer"{}});}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_rasterizer_acdd89dcfa9efd302fad6a3341ac85666}{frame\_buffer}}.clear\_buffer();}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#ifndef\ CONFIG\_GRAPHICS\_PAINTER\_ALGO\_ENABLED}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ *\ z\ =\ \mbox{\hyperlink{class_ragot_1_1_rasterizer_aef43bbd4828564ee39bf405875872ef5}{z\_buffer}}.data(),\ *\ end\ =\ z\ +\ \mbox{\hyperlink{class_ragot_1_1_rasterizer_aef43bbd4828564ee39bf405875872ef5}{z\_buffer}}.size();\ z\ !=\ end;\ ++z)}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\ z\ =\ std::numeric\_limits<\ int\ >::max\ ();}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CONFIG\_GRAPHICS\_PAINTER\_ALGO\_ENABLED}}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_rasterizer_a889d98752741917eae511058ef647159}{fill\_convex\_polygon}}\ (\ \ \textcolor{keyword}{const}\ glm::ivec4\ *\ \textcolor{keyword}{const}\ vertices,}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ *\ \textcolor{keyword}{const}\ indices\_begin,}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ *\ \textcolor{keyword}{const}\ indices\_end}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_rasterizer_a889d98752741917eae511058ef647159}{fill\_convex\_polygon}}\ (\ \textcolor{keyword}{const}\ glm::ivec4\ *\ \textcolor{keyword}{const}\ vertices,}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_ragot_1_1face__t}{face\_t}}\ \ \ \ \ *\ \textcolor{keyword}{const}\ face}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#ifndef\ CONFIG\_GRAPHICS\_PAINTER\_ALGO\_ENABLED}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_rasterizer_a31a5a7d0ced4b723083bb0a8b236d164}{fill\_convex\_polygon\_z\_buffer}}\ (\ \textcolor{keyword}{const}\ glm::ivec4\ *\ \textcolor{keyword}{const}\ vertices,}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_ragot_1_1face__t}{face\_t}}\ \ \ \ \ *\ \textcolor{keyword}{const}\ face}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_rasterizer_a31a5a7d0ced4b723083bb0a8b236d164}{fill\_convex\_polygon\_z\_buffer}}\ (}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ glm::ivec4\ *\ \textcolor{keyword}{const}\ vertices,\ }
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \ \ \ \ *\ \textcolor{keyword}{const}\ indices\_begin,\ }
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \ \ \ \ *\ \textcolor{keyword}{const}\ indices\_end}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CONFIG\_GRAPHICS\_PAINTER\_ALGO\_ENABLED}}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Logs\ debug\ para\ rasterizado}}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ragot_1_1_rasterizer_abff857e3945cffb531efaf8c99e3b341}{debug\_enabled}}\ =\ \textcolor{keyword}{true};\ }
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\ \textcolor{keyword}{typename}\ VALUE\_TYPE,\ \textcolor{keywordtype}{size\_t}\ SHIFT\ >}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_rasterizer_ab0e24415f7e34a001cabe03ce0bb8c73}{interpolate}}\ (\textcolor{keywordtype}{int}\ *\ cache,\ \textcolor{keywordtype}{int}\ v0,\ \textcolor{keywordtype}{int}\ v1,\ \textcolor{keywordtype}{int}\ y\_min,\ \textcolor{keywordtype}{int}\ y\_max);}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\ \textcolor{keywordtype}{unsigned}\ COLOR\_SIZE\ >}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_rasterizer_a5a7a2921b9d5f8a14b11f774bc7e682e}{fill\_row}}\ (Color\ *\ start,\ \textcolor{keywordtype}{unsigned}\ left\_offset,\ \textcolor{keywordtype}{unsigned}\ right\_offset,\ \textcolor{keyword}{const}\ Color\ \&\ \mbox{\hyperlink{class_ragot_1_1_rasterizer_a4f9c07cb346a74679ae0d574ac786872}{color}})}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ std::fill\_n\ (start\ +\ left\_offset,\ right\_offset\ -\/\ left\_offset,\ \mbox{\hyperlink{class_ragot_1_1_rasterizer_a4f9c07cb346a74679ae0d574ac786872}{color}});}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ dentro\ de\ Rasterizer<COLOR>\ o\ en\ un\ header\ común}}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keywordtype}{unsigned}\ COLOR\_SIZE>}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_rasterizer_a549eab69a5b35d18a6b5cc59bb4988f1}{fill\_row\_zbuffer}}\ (}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ Color\ *\ \ \ \ \ \ \ start,\ \ \ \ \ \ \ \ \textcolor{comment}{//\ puntero\ al\ primer\ píxel\ de\ la\ scanline}}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ *\ \ \ \ \ \ \ zbuffer,\ \ \ \ \ \ \textcolor{comment}{//\ puntero\ al\ primer\ elemento\ del\ Z-\/buffer}}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \ \ \ \ \ left\_offset,\ \ \textcolor{comment}{//\ offset\ inicial\ (inclusive)}}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \ \ \ \ \ right\_offset,\ \textcolor{comment}{//\ offset\ final\ \ \ (exclusive)}}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ z\_start,\ \ \ \ \ \ \textcolor{comment}{//\ profundidad\ en\ left\_offset}}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ dz,\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ incremento\ de\ z\ por\ píxel}}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Color\ \&\ \mbox{\hyperlink{class_ragot_1_1_rasterizer_a4f9c07cb346a74679ae0d574ac786872}{color}}\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ color\ a\ pintar}}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ length\ =\ right\_offset\ -\/\ left\_offset;}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ Color\ *\ pix\ =\ start\ \ \ +\ left\_offset;}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ *\ zb\ \ =\ zbuffer\ +\ left\_offset;}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Recorremos\ de\ 0\ a\ length-\/1}}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ i\ =\ 0;\ i\ <\ length;\ ++i,\ ++pix,\ ++zb,\ z\_start\ +=\ dz)}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (z\_start\ <\ *zb)}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *pix\ =\ \mbox{\hyperlink{class_ragot_1_1_rasterizer_a4f9c07cb346a74679ae0d574ac786872}{color}};}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *zb\ \ =\ z\_start;}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00286\ \ \ \ \ \};}
+\DoxyCodeLine{00287\ \ \ \ \ }
+\DoxyCodeLine{00288\ \ \ \ \ \textcolor{keyword}{template}\ \textcolor{keyword}{class\ }Rasterizer<RGB565>;\ }
+\DoxyCodeLine{00289\ \}}
+
+\end{DoxyCode}

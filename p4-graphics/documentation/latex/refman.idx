@@ -1,0 +1,1062 @@
+\indexentry{basics@{basics}|hyperpage}{11}
+\indexentry{basics@{basics}!Id@{Id}|hyperpage}{11}
+\indexentry{Id@{Id}!basics@{basics}|hyperpage}{11}
+\indexentry{basics@{basics}!fnv32@{fnv32}|hyperpage}{11}
+\indexentry{fnv32@{fnv32}!basics@{basics}|hyperpage}{11}
+\indexentry{basics@{basics}!fnv32@{fnv32}|hyperpage}{11}
+\indexentry{fnv32@{fnv32}!basics@{basics}|hyperpage}{11}
+\indexentry{basics@{basics}!static\_fnv@{static\_fnv}|hyperpage}{12}
+\indexentry{static\_fnv@{static\_fnv}!basics@{basics}|hyperpage}{12}
+\indexentry{basics@{basics}!static\_fnv32@{static\_fnv32}|hyperpage}{12}
+\indexentry{static\_fnv32@{static\_fnv32}!basics@{basics}|hyperpage}{12}
+\indexentry{basics@{basics}!static\_fnv64@{static\_fnv64}|hyperpage}{13}
+\indexentry{static\_fnv64@{static\_fnv64}!basics@{basics}|hyperpage}{13}
+\indexentry{basics::internal@{basics::internal}|hyperpage}{13}
+\indexentry{basics::internal@{basics::internal}!static\_fnv32@{static\_fnv32}|hyperpage}{14}
+\indexentry{static\_fnv32@{static\_fnv32}!basics::internal@{basics::internal}|hyperpage}{14}
+\indexentry{basics::internal@{basics::internal}!static\_fnv32$<$ 1 $>$@{static\_fnv32$<$ 1 $>$}|hyperpage}{14}
+\indexentry{static\_fnv32$<$ 1 $>$@{static\_fnv32$<$ 1 $>$}!basics::internal@{basics::internal}|hyperpage}{14}
+\indexentry{basics::internal@{basics::internal}!static\_fnv64@{static\_fnv64}|hyperpage}{14}
+\indexentry{static\_fnv64@{static\_fnv64}!basics::internal@{basics::internal}|hyperpage}{14}
+\indexentry{basics::internal@{basics::internal}!static\_fnv64$<$ 1 $>$@{static\_fnv64$<$ 1 $>$}|hyperpage}{15}
+\indexentry{static\_fnv64$<$ 1 $>$@{static\_fnv64$<$ 1 $>$}!basics::internal@{basics::internal}|hyperpage}{15}
+\indexentry{basics::internal@{basics::internal}!fnv\_basis\_32@{fnv\_basis\_32}|hyperpage}{15}
+\indexentry{fnv\_basis\_32@{fnv\_basis\_32}!basics::internal@{basics::internal}|hyperpage}{15}
+\indexentry{basics::internal@{basics::internal}!fnv\_basis\_64@{fnv\_basis\_64}|hyperpage}{15}
+\indexentry{fnv\_basis\_64@{fnv\_basis\_64}!basics::internal@{basics::internal}|hyperpage}{15}
+\indexentry{basics::internal@{basics::internal}!fnv\_prime\_32@{fnv\_prime\_32}|hyperpage}{15}
+\indexentry{fnv\_prime\_32@{fnv\_prime\_32}!basics::internal@{basics::internal}|hyperpage}{15}
+\indexentry{basics::internal@{basics::internal}!fnv\_prime\_64@{fnv\_prime\_64}|hyperpage}{16}
+\indexentry{fnv\_prime\_64@{fnv\_prime\_64}!basics::internal@{basics::internal}|hyperpage}{16}
+\indexentry{Ragot@{Ragot}|hyperpage}{16}
+\indexentry{Ragot@{Ragot}!Matrix4x4@{Matrix4x4}|hyperpage}{18}
+\indexentry{Matrix4x4@{Matrix4x4}!Ragot@{Ragot}|hyperpage}{18}
+\indexentry{Ragot@{Ragot}!RGB565@{RGB565}|hyperpage}{18}
+\indexentry{RGB565@{RGB565}!Ragot@{Ragot}|hyperpage}{18}
+\indexentry{Ragot@{Ragot}!RGB8@{RGB8}|hyperpage}{18}
+\indexentry{RGB8@{RGB8}!Ragot@{Ragot}|hyperpage}{18}
+\indexentry{Ragot@{Ragot}!RGB888@{RGB888}|hyperpage}{18}
+\indexentry{RGB888@{RGB888}!Ragot@{Ragot}|hyperpage}{18}
+\indexentry{Ragot@{Ragot}!RGBA8888@{RGBA8888}|hyperpage}{19}
+\indexentry{RGBA8888@{RGBA8888}!Ragot@{Ragot}|hyperpage}{19}
+\indexentry{Ragot@{Ragot}!Buffer@{Buffer}|hyperpage}{19}
+\indexentry{Buffer@{Buffer}!Ragot@{Ragot}|hyperpage}{19}
+\indexentry{CURRENT\_BUFFER@{CURRENT\_BUFFER}!Ragot@{Ragot}|hyperpage}{19}
+\indexentry{Ragot@{Ragot}!CURRENT\_BUFFER@{CURRENT\_BUFFER}|hyperpage}{19}
+\indexentry{NEXT\_BUFFER@{NEXT\_BUFFER}!Ragot@{Ragot}|hyperpage}{19}
+\indexentry{Ragot@{Ragot}!NEXT\_BUFFER@{NEXT\_BUFFER}|hyperpage}{19}
+\indexentry{MAX\_BUFFER@{MAX\_BUFFER}!Ragot@{Ragot}|hyperpage}{19}
+\indexentry{Ragot@{Ragot}!MAX\_BUFFER@{MAX\_BUFFER}|hyperpage}{19}
+\indexentry{Ragot@{Ragot}!render\_flag\_t@{render\_flag\_t}|hyperpage}{19}
+\indexentry{render\_flag\_t@{render\_flag\_t}!Ragot@{Ragot}|hyperpage}{19}
+\indexentry{RENDER\_NONE@{RENDER\_NONE}!Ragot@{Ragot}|hyperpage}{19}
+\indexentry{Ragot@{Ragot}!RENDER\_NONE@{RENDER\_NONE}|hyperpage}{19}
+\indexentry{RENDER\_REVOLUTION@{RENDER\_REVOLUTION}!Ragot@{Ragot}|hyperpage}{19}
+\indexentry{Ragot@{Ragot}!RENDER\_REVOLUTION@{RENDER\_REVOLUTION}|hyperpage}{19}
+\indexentry{RENDER\_EXTRUDE@{RENDER\_EXTRUDE}!Ragot@{Ragot}|hyperpage}{19}
+\indexentry{Ragot@{Ragot}!RENDER\_EXTRUDE@{RENDER\_EXTRUDE}|hyperpage}{19}
+\indexentry{RENDER\_MAX@{RENDER\_MAX}!Ragot@{Ragot}|hyperpage}{19}
+\indexentry{Ragot@{Ragot}!RENDER\_MAX@{RENDER\_MAX}|hyperpage}{19}
+\indexentry{Ragot@{Ragot}!clipAgainstPlane@{clipAgainstPlane}|hyperpage}{20}
+\indexentry{clipAgainstPlane@{clipAgainstPlane}!Ragot@{Ragot}|hyperpage}{20}
+\indexentry{Ragot@{Ragot}!operator"!=@{operator"!=}|hyperpage}{20}
+\indexentry{operator"!=@{operator"!=}!Ragot@{Ragot}|hyperpage}{20}
+\indexentry{Ragot@{Ragot}!operator==@{operator==}|hyperpage}{20}
+\indexentry{operator==@{operator==}!Ragot@{Ragot}|hyperpage}{20}
+\indexentry{Ragot@{Ragot}!panel\_refresh\_callback@{panel\_refresh\_callback}|hyperpage}{21}
+\indexentry{panel\_refresh\_callback@{panel\_refresh\_callback}!Ragot@{Ragot}|hyperpage}{21}
+\indexentry{Ragot@{Ragot}!panel\_refresh\_callback@{panel\_refresh\_callback}|hyperpage}{21}
+\indexentry{panel\_refresh\_callback@{panel\_refresh\_callback}!Ragot@{Ragot}|hyperpage}{21}
+\indexentry{Ragot@{Ragot}!assets@{assets}|hyperpage}{22}
+\indexentry{assets@{assets}!Ragot@{Ragot}|hyperpage}{22}
+\indexentry{Ragot@{Ragot}!logger@{logger}|hyperpage}{22}
+\indexentry{logger@{logger}!Ragot@{Ragot}|hyperpage}{22}
+\indexentry{Ragot@{Ragot}!MAIN\_TAG@{MAIN\_TAG}|hyperpage}{22}
+\indexentry{MAIN\_TAG@{MAIN\_TAG}!Ragot@{Ragot}|hyperpage}{22}
+\indexentry{Ragot@{Ragot}!PI@{PI}|hyperpage}{22}
+\indexentry{PI@{PI}!Ragot@{Ragot}|hyperpage}{22}
+\indexentry{Ragot@{Ragot}!Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$::offset\_cache0@{Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$::offset\_cache0}|hyperpage}{22}
+\indexentry{Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$::offset\_cache0@{Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$::offset\_cache0}!Ragot@{Ragot}|hyperpage}{22}
+\indexentry{Ragot@{Ragot}!Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$::offset\_cache1@{Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$::offset\_cache1}|hyperpage}{22}
+\indexentry{Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$::offset\_cache1@{Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$::offset\_cache1}!Ragot@{Ragot}|hyperpage}{22}
+\indexentry{Ragot@{Ragot}!Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$::z\_cache0@{Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$::z\_cache0}|hyperpage}{23}
+\indexentry{Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$::z\_cache0@{Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$::z\_cache0}!Ragot@{Ragot}|hyperpage}{23}
+\indexentry{Ragot@{Ragot}!Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$::z\_cache1@{Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$::z\_cache1}|hyperpage}{23}
+\indexentry{Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$::z\_cache1@{Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$::z\_cache1}!Ragot@{Ragot}|hyperpage}{23}
+\indexentry{Ragot@{Ragot}!RENDERER\_TAG@{RENDERER\_TAG}|hyperpage}{23}
+\indexentry{RENDERER\_TAG@{RENDERER\_TAG}!Ragot@{Ragot}|hyperpage}{23}
+\indexentry{Ragot@{Ragot}!serializer@{serializer}|hyperpage}{23}
+\indexentry{serializer@{serializer}!Ragot@{Ragot}|hyperpage}{23}
+\indexentry{Ragot@{Ragot}!TAG@{TAG}|hyperpage}{23}
+\indexentry{TAG@{TAG}!Ragot@{Ragot}|hyperpage}{23}
+\indexentry{Ragot@{Ragot}!thread\_pool@{thread\_pool}|hyperpage}{23}
+\indexentry{thread\_pool@{thread\_pool}!Ragot@{Ragot}|hyperpage}{23}
+\indexentry{Ragot::Assets@{Ragot::Assets}|hyperpage}{25}
+\indexentry{Ragot::Assets@{Ragot::Assets}!Assets@{Assets}|hyperpage}{27}
+\indexentry{Assets@{Assets}!Ragot::Assets@{Ragot::Assets}|hyperpage}{27}
+\indexentry{Ragot::Assets@{Ragot::Assets}!Assets@{Assets}|hyperpage}{27}
+\indexentry{Assets@{Assets}!Ragot::Assets@{Ragot::Assets}|hyperpage}{27}
+\indexentry{Ragot::Assets@{Ragot::Assets}!Assets@{Assets}|hyperpage}{27}
+\indexentry{Assets@{Assets}!Ragot::Assets@{Ragot::Assets}|hyperpage}{27}
+\indexentry{Ragot::Assets@{Ragot::Assets}!get\_asset\_path@{get\_asset\_path}|hyperpage}{28}
+\indexentry{get\_asset\_path@{get\_asset\_path}!Ragot::Assets@{Ragot::Assets}|hyperpage}{28}
+\indexentry{Ragot::Assets@{Ragot::Assets}!initialize@{initialize}|hyperpage}{28}
+\indexentry{initialize@{initialize}!Ragot::Assets@{Ragot::Assets}|hyperpage}{28}
+\indexentry{Ragot::Assets@{Ragot::Assets}!instance@{instance}|hyperpage}{28}
+\indexentry{instance@{instance}!Ragot::Assets@{Ragot::Assets}|hyperpage}{28}
+\indexentry{Ragot::Assets@{Ragot::Assets}!operator=@{operator=}|hyperpage}{29}
+\indexentry{operator=@{operator=}!Ragot::Assets@{Ragot::Assets}|hyperpage}{29}
+\indexentry{Ragot::Assets@{Ragot::Assets}!operator=@{operator=}|hyperpage}{29}
+\indexentry{operator=@{operator=}!Ragot::Assets@{Ragot::Assets}|hyperpage}{29}
+\indexentry{Ragot::Assets@{Ragot::Assets}!base\_path@{base\_path}|hyperpage}{30}
+\indexentry{base\_path@{base\_path}!Ragot::Assets@{Ragot::Assets}|hyperpage}{30}
+\indexentry{Ragot::Camera@{Ragot::Camera}|hyperpage}{30}
+\indexentry{Ragot::Camera@{Ragot::Camera}!Matrix4x4@{Matrix4x4}|hyperpage}{36}
+\indexentry{Matrix4x4@{Matrix4x4}!Ragot::Camera@{Ragot::Camera}|hyperpage}{36}
+\indexentry{Ragot::Camera@{Ragot::Camera}!Camera@{Camera}|hyperpage}{37}
+\indexentry{Camera@{Camera}!Ragot::Camera@{Ragot::Camera}|hyperpage}{37}
+\indexentry{Ragot::Camera@{Ragot::Camera}!Camera@{Camera}|hyperpage}{37}
+\indexentry{Camera@{Camera}!Ragot::Camera@{Ragot::Camera}|hyperpage}{37}
+\indexentry{Ragot::Camera@{Ragot::Camera}!````~Camera@{\texorpdfstring{$\sim$}{\string~}Camera}|hyperpage}{37}
+\indexentry{````~Camera@{\texorpdfstring{$\sim$}{\string~}Camera}!Ragot::Camera@{Ragot::Camera}|hyperpage}{37}
+\indexentry{Ragot::Camera@{Ragot::Camera}!calculate\_normal@{calculate\_normal}|hyperpage}{37}
+\indexentry{calculate\_normal@{calculate\_normal}!Ragot::Camera@{Ragot::Camera}|hyperpage}{37}
+\indexentry{Ragot::Camera@{Ragot::Camera}!get\_aspect\_ratio@{get\_aspect\_ratio}|hyperpage}{38}
+\indexentry{get\_aspect\_ratio@{get\_aspect\_ratio}!Ragot::Camera@{Ragot::Camera}|hyperpage}{38}
+\indexentry{Ragot::Camera@{Ragot::Camera}!get\_far\_plane@{get\_far\_plane}|hyperpage}{38}
+\indexentry{get\_far\_plane@{get\_far\_plane}!Ragot::Camera@{Ragot::Camera}|hyperpage}{38}
+\indexentry{Ragot::Camera@{Ragot::Camera}!get\_fov@{get\_fov}|hyperpage}{38}
+\indexentry{get\_fov@{get\_fov}!Ragot::Camera@{Ragot::Camera}|hyperpage}{38}
+\indexentry{Ragot::Camera@{Ragot::Camera}!get\_location@{get\_location}|hyperpage}{38}
+\indexentry{get\_location@{get\_location}!Ragot::Camera@{Ragot::Camera}|hyperpage}{38}
+\indexentry{Ragot::Camera@{Ragot::Camera}!get\_near\_plane@{get\_near\_plane}|hyperpage}{39}
+\indexentry{get\_near\_plane@{get\_near\_plane}!Ragot::Camera@{Ragot::Camera}|hyperpage}{39}
+\indexentry{Ragot::Camera@{Ragot::Camera}!get\_projection\_matrix@{get\_projection\_matrix}|hyperpage}{39}
+\indexentry{get\_projection\_matrix@{get\_projection\_matrix}!Ragot::Camera@{Ragot::Camera}|hyperpage}{39}
+\indexentry{Ragot::Camera@{Ragot::Camera}!get\_right\_direction@{get\_right\_direction}|hyperpage}{39}
+\indexentry{get\_right\_direction@{get\_right\_direction}!Ragot::Camera@{Ragot::Camera}|hyperpage}{39}
+\indexentry{Ragot::Camera@{Ragot::Camera}!get\_target@{get\_target}|hyperpage}{40}
+\indexentry{get\_target@{get\_target}!Ragot::Camera@{Ragot::Camera}|hyperpage}{40}
+\indexentry{Ragot::Camera@{Ragot::Camera}!get\_up\_direction@{get\_up\_direction}|hyperpage}{40}
+\indexentry{get\_up\_direction@{get\_up\_direction}!Ragot::Camera@{Ragot::Camera}|hyperpage}{40}
+\indexentry{Ragot::Camera@{Ragot::Camera}!get\_view\_direction@{get\_view\_direction}|hyperpage}{41}
+\indexentry{get\_view\_direction@{get\_view\_direction}!Ragot::Camera@{Ragot::Camera}|hyperpage}{41}
+\indexentry{Ragot::Camera@{Ragot::Camera}!get\_view\_matrix@{get\_view\_matrix}|hyperpage}{41}
+\indexentry{get\_view\_matrix@{get\_view\_matrix}!Ragot::Camera@{Ragot::Camera}|hyperpage}{41}
+\indexentry{Ragot::Camera@{Ragot::Camera}!get\_vp\_matrix@{get\_vp\_matrix}|hyperpage}{42}
+\indexentry{get\_vp\_matrix@{get\_vp\_matrix}!Ragot::Camera@{Ragot::Camera}|hyperpage}{42}
+\indexentry{Ragot::Camera@{Ragot::Camera}!is\_dirty@{is\_dirty}|hyperpage}{43}
+\indexentry{is\_dirty@{is\_dirty}!Ragot::Camera@{Ragot::Camera}|hyperpage}{43}
+\indexentry{Ragot::Camera@{Ragot::Camera}!is\_face\_visible@{is\_face\_visible}|hyperpage}{43}
+\indexentry{is\_face\_visible@{is\_face\_visible}!Ragot::Camera@{Ragot::Camera}|hyperpage}{43}
+\indexentry{Ragot::Camera@{Ragot::Camera}!log\_camera\_info@{log\_camera\_info}|hyperpage}{44}
+\indexentry{log\_camera\_info@{log\_camera\_info}!Ragot::Camera@{Ragot::Camera}|hyperpage}{44}
+\indexentry{Ragot::Camera@{Ragot::Camera}!project\_to\_ndc@{project\_to\_ndc}|hyperpage}{44}
+\indexentry{project\_to\_ndc@{project\_to\_ndc}!Ragot::Camera@{Ragot::Camera}|hyperpage}{44}
+\indexentry{Ragot::Camera@{Ragot::Camera}!set\_aspect\_ratio@{set\_aspect\_ratio}|hyperpage}{44}
+\indexentry{set\_aspect\_ratio@{set\_aspect\_ratio}!Ragot::Camera@{Ragot::Camera}|hyperpage}{44}
+\indexentry{Ragot::Camera@{Ragot::Camera}!set\_far\_plane@{set\_far\_plane}|hyperpage}{45}
+\indexentry{set\_far\_plane@{set\_far\_plane}!Ragot::Camera@{Ragot::Camera}|hyperpage}{45}
+\indexentry{Ragot::Camera@{Ragot::Camera}!set\_fov@{set\_fov}|hyperpage}{45}
+\indexentry{set\_fov@{set\_fov}!Ragot::Camera@{Ragot::Camera}|hyperpage}{45}
+\indexentry{Ragot::Camera@{Ragot::Camera}!set\_location@{set\_location}|hyperpage}{45}
+\indexentry{set\_location@{set\_location}!Ragot::Camera@{Ragot::Camera}|hyperpage}{45}
+\indexentry{Ragot::Camera@{Ragot::Camera}!set\_near\_plane@{set\_near\_plane}|hyperpage}{46}
+\indexentry{set\_near\_plane@{set\_near\_plane}!Ragot::Camera@{Ragot::Camera}|hyperpage}{46}
+\indexentry{Ragot::Camera@{Ragot::Camera}!set\_target@{set\_target}|hyperpage}{46}
+\indexentry{set\_target@{set\_target}!Ragot::Camera@{Ragot::Camera}|hyperpage}{46}
+\indexentry{Ragot::Camera@{Ragot::Camera}!aspect\_ratio@{aspect\_ratio}|hyperpage}{47}
+\indexentry{aspect\_ratio@{aspect\_ratio}!Ragot::Camera@{Ragot::Camera}|hyperpage}{47}
+\indexentry{Ragot::Camera@{Ragot::Camera}!CAMERA\_TAG@{CAMERA\_TAG}|hyperpage}{47}
+\indexentry{CAMERA\_TAG@{CAMERA\_TAG}!Ragot::Camera@{Ragot::Camera}|hyperpage}{47}
+\indexentry{Ragot::Camera@{Ragot::Camera}!far\_plane@{far\_plane}|hyperpage}{47}
+\indexentry{far\_plane@{far\_plane}!Ragot::Camera@{Ragot::Camera}|hyperpage}{47}
+\indexentry{Ragot::Camera@{Ragot::Camera}!fov@{fov}|hyperpage}{47}
+\indexentry{fov@{fov}!Ragot::Camera@{Ragot::Camera}|hyperpage}{47}
+\indexentry{Ragot::Camera@{Ragot::Camera}!near\_plane@{near\_plane}|hyperpage}{47}
+\indexentry{near\_plane@{near\_plane}!Ragot::Camera@{Ragot::Camera}|hyperpage}{47}
+\indexentry{Ragot::Camera@{Ragot::Camera}!projDirty@{projDirty}|hyperpage}{48}
+\indexentry{projDirty@{projDirty}!Ragot::Camera@{Ragot::Camera}|hyperpage}{48}
+\indexentry{Ragot::Camera@{Ragot::Camera}!projection\_matrix@{projection\_matrix}|hyperpage}{48}
+\indexentry{projection\_matrix@{projection\_matrix}!Ragot::Camera@{Ragot::Camera}|hyperpage}{48}
+\indexentry{Ragot::Camera@{Ragot::Camera}!target@{target}|hyperpage}{48}
+\indexentry{target@{target}!Ragot::Camera@{Ragot::Camera}|hyperpage}{48}
+\indexentry{Ragot::Camera@{Ragot::Camera}!view\_matrix@{view\_matrix}|hyperpage}{48}
+\indexentry{view\_matrix@{view\_matrix}!Ragot::Camera@{Ragot::Camera}|hyperpage}{48}
+\indexentry{Ragot::Camera@{Ragot::Camera}!viewDirty@{viewDirty}|hyperpage}{48}
+\indexentry{viewDirty@{viewDirty}!Ragot::Camera@{Ragot::Camera}|hyperpage}{48}
+\indexentry{Ragot::Camera@{Ragot::Camera}!vp\_matrix@{vp\_matrix}|hyperpage}{48}
+\indexentry{vp\_matrix@{vp\_matrix}!Ragot::Camera@{Ragot::Camera}|hyperpage}{48}
+\indexentry{Ragot::Camera@{Ragot::Camera}!vpDirty@{vpDirty}|hyperpage}{48}
+\indexentry{vpDirty@{vpDirty}!Ragot::Camera@{Ragot::Camera}|hyperpage}{48}
+\indexentry{Ragot::Camera\_Transform@{Ragot::Camera\_Transform}|hyperpage}{49}
+\indexentry{Ragot::Camera\_Transform@{Ragot::Camera\_Transform}!dir\_x@{dir\_x}|hyperpage}{50}
+\indexentry{dir\_x@{dir\_x}!Ragot::Camera\_Transform@{Ragot::Camera\_Transform}|hyperpage}{50}
+\indexentry{Ragot::Camera\_Transform@{Ragot::Camera\_Transform}!dir\_y@{dir\_y}|hyperpage}{50}
+\indexentry{dir\_y@{dir\_y}!Ragot::Camera\_Transform@{Ragot::Camera\_Transform}|hyperpage}{50}
+\indexentry{Ragot::Camera\_Transform@{Ragot::Camera\_Transform}!dir\_z@{dir\_z}|hyperpage}{50}
+\indexentry{dir\_z@{dir\_z}!Ragot::Camera\_Transform@{Ragot::Camera\_Transform}|hyperpage}{50}
+\indexentry{Ragot::Camera\_Transform@{Ragot::Camera\_Transform}!x@{x}|hyperpage}{50}
+\indexentry{x@{x}!Ragot::Camera\_Transform@{Ragot::Camera\_Transform}|hyperpage}{50}
+\indexentry{Ragot::Camera\_Transform@{Ragot::Camera\_Transform}!y@{y}|hyperpage}{50}
+\indexentry{y@{y}!Ragot::Camera\_Transform@{Ragot::Camera\_Transform}|hyperpage}{50}
+\indexentry{Ragot::Camera\_Transform@{Ragot::Camera\_Transform}!z@{z}|hyperpage}{50}
+\indexentry{z@{z}!Ragot::Camera\_Transform@{Ragot::Camera\_Transform}|hyperpage}{50}
+\indexentry{Ragot::Component@{Ragot::Component}|hyperpage}{51}
+\indexentry{Ragot::Component@{Ragot::Component}!Component@{Component}|hyperpage}{55}
+\indexentry{Component@{Component}!Ragot::Component@{Ragot::Component}|hyperpage}{55}
+\indexentry{Ragot::Component@{Ragot::Component}!````~Component@{\texorpdfstring{$\sim$}{\string~}Component}|hyperpage}{55}
+\indexentry{````~Component@{\texorpdfstring{$\sim$}{\string~}Component}!Ragot::Component@{Ragot::Component}|hyperpage}{55}
+\indexentry{Ragot::Component@{Ragot::Component}!Component@{Component}|hyperpage}{55}
+\indexentry{Component@{Component}!Ragot::Component@{Ragot::Component}|hyperpage}{55}
+\indexentry{Ragot::Component@{Ragot::Component}!Component@{Component}|hyperpage}{55}
+\indexentry{Component@{Component}!Ragot::Component@{Ragot::Component}|hyperpage}{55}
+\indexentry{Ragot::Component@{Ragot::Component}!add\_component@{add\_component}|hyperpage}{56}
+\indexentry{add\_component@{add\_component}!Ragot::Component@{Ragot::Component}|hyperpage}{56}
+\indexentry{Ragot::Component@{Ragot::Component}!get\_components@{get\_components}|hyperpage}{56}
+\indexentry{get\_components@{get\_components}!Ragot::Component@{Ragot::Component}|hyperpage}{56}
+\indexentry{Ragot::Component@{Ragot::Component}!operator=@{operator=}|hyperpage}{56}
+\indexentry{operator=@{operator=}!Ragot::Component@{Ragot::Component}|hyperpage}{56}
+\indexentry{Ragot::Component@{Ragot::Component}!operator=@{operator=}|hyperpage}{57}
+\indexentry{operator=@{operator=}!Ragot::Component@{Ragot::Component}|hyperpage}{57}
+\indexentry{Ragot::Component@{Ragot::Component}!remove\_component@{remove\_component}|hyperpage}{57}
+\indexentry{remove\_component@{remove\_component}!Ragot::Component@{Ragot::Component}|hyperpage}{57}
+\indexentry{Ragot::Component@{Ragot::Component}!components@{components}|hyperpage}{58}
+\indexentry{components@{components}!Ragot::Component@{Ragot::Component}|hyperpage}{58}
+\indexentry{Ragot::coordinates\_t@{Ragot::coordinates\_t}|hyperpage}{58}
+\indexentry{Ragot::coordinates\_t@{Ragot::coordinates\_t}!x@{x}|hyperpage}{59}
+\indexentry{x@{x}!Ragot::coordinates\_t@{Ragot::coordinates\_t}|hyperpage}{59}
+\indexentry{Ragot::coordinates\_t@{Ragot::coordinates\_t}!y@{y}|hyperpage}{59}
+\indexentry{y@{y}!Ragot::coordinates\_t@{Ragot::coordinates\_t}|hyperpage}{59}
+\indexentry{Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}|hyperpage}{59}
+\indexentry{Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}!Driver\_ST7789@{Driver\_ST7789}|hyperpage}{63}
+\indexentry{Driver\_ST7789@{Driver\_ST7789}!Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}|hyperpage}{63}
+\indexentry{Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}!````~Driver\_ST7789@{\texorpdfstring{$\sim$}{\string~}Driver\_ST7789}|hyperpage}{63}
+\indexentry{````~Driver\_ST7789@{\texorpdfstring{$\sim$}{\string~}Driver\_ST7789}!Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}|hyperpage}{63}
+\indexentry{Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}!bsp\_init\_lcd\_backlight@{bsp\_init\_lcd\_backlight}|hyperpage}{63}
+\indexentry{bsp\_init\_lcd\_backlight@{bsp\_init\_lcd\_backlight}!Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}|hyperpage}{63}
+\indexentry{Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}!deinit@{deinit}|hyperpage}{64}
+\indexentry{deinit@{deinit}!Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}|hyperpage}{64}
+\indexentry{Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}!init@{init}|hyperpage}{64}
+\indexentry{init@{init}!Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}|hyperpage}{64}
+\indexentry{Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}!refresh\_frame\_buffer@{refresh\_frame\_buffer}|hyperpage}{65}
+\indexentry{refresh\_frame\_buffer@{refresh\_frame\_buffer}!Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}|hyperpage}{65}
+\indexentry{Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}!send\_frame\_buffer@{send\_frame\_buffer}|hyperpage}{65}
+\indexentry{send\_frame\_buffer@{send\_frame\_buffer}!Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}|hyperpage}{65}
+\indexentry{Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}!set\_pixel@{set\_pixel}|hyperpage}{66}
+\indexentry{set\_pixel@{set\_pixel}!Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}|hyperpage}{66}
+\indexentry{Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}!refresh\_semaphore@{refresh\_semaphore}|hyperpage}{66}
+\indexentry{refresh\_semaphore@{refresh\_semaphore}!Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}|hyperpage}{66}
+\indexentry{Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}!TAG@{TAG}|hyperpage}{66}
+\indexentry{TAG@{TAG}!Ragot::Driver\_ST7789@{Ragot::Driver\_ST7789}|hyperpage}{66}
+\indexentry{Ragot::DriverEK79007@{Ragot::DriverEK79007}|hyperpage}{67}
+\indexentry{Ragot::DriverEK79007@{Ragot::DriverEK79007}!DriverEK79007@{DriverEK79007}|hyperpage}{70}
+\indexentry{DriverEK79007@{DriverEK79007}!Ragot::DriverEK79007@{Ragot::DriverEK79007}|hyperpage}{70}
+\indexentry{Ragot::DriverEK79007@{Ragot::DriverEK79007}!````~DriverEK79007@{\texorpdfstring{$\sim$}{\string~}DriverEK79007}|hyperpage}{70}
+\indexentry{````~DriverEK79007@{\texorpdfstring{$\sim$}{\string~}DriverEK79007}!Ragot::DriverEK79007@{Ragot::DriverEK79007}|hyperpage}{70}
+\indexentry{Ragot::DriverEK79007@{Ragot::DriverEK79007}!bsp\_enable\_dsi\_phy\_power@{bsp\_enable\_dsi\_phy\_power}|hyperpage}{71}
+\indexentry{bsp\_enable\_dsi\_phy\_power@{bsp\_enable\_dsi\_phy\_power}!Ragot::DriverEK79007@{Ragot::DriverEK79007}|hyperpage}{71}
+\indexentry{Ragot::DriverEK79007@{Ragot::DriverEK79007}!bsp\_init\_lcd\_backlight@{bsp\_init\_lcd\_backlight}|hyperpage}{71}
+\indexentry{bsp\_init\_lcd\_backlight@{bsp\_init\_lcd\_backlight}!Ragot::DriverEK79007@{Ragot::DriverEK79007}|hyperpage}{71}
+\indexentry{Ragot::DriverEK79007@{Ragot::DriverEK79007}!deinit@{deinit}|hyperpage}{72}
+\indexentry{deinit@{deinit}!Ragot::DriverEK79007@{Ragot::DriverEK79007}|hyperpage}{72}
+\indexentry{Ragot::DriverEK79007@{Ragot::DriverEK79007}!init@{init}|hyperpage}{72}
+\indexentry{init@{init}!Ragot::DriverEK79007@{Ragot::DriverEK79007}|hyperpage}{72}
+\indexentry{Ragot::DriverEK79007@{Ragot::DriverEK79007}!refresh\_frame\_buffer@{refresh\_frame\_buffer}|hyperpage}{73}
+\indexentry{refresh\_frame\_buffer@{refresh\_frame\_buffer}!Ragot::DriverEK79007@{Ragot::DriverEK79007}|hyperpage}{73}
+\indexentry{Ragot::DriverEK79007@{Ragot::DriverEK79007}!send\_frame\_buffer@{send\_frame\_buffer}|hyperpage}{74}
+\indexentry{send\_frame\_buffer@{send\_frame\_buffer}!Ragot::DriverEK79007@{Ragot::DriverEK79007}|hyperpage}{74}
+\indexentry{Ragot::DriverEK79007@{Ragot::DriverEK79007}!set\_pixel@{set\_pixel}|hyperpage}{74}
+\indexentry{set\_pixel@{set\_pixel}!Ragot::DriverEK79007@{Ragot::DriverEK79007}|hyperpage}{74}
+\indexentry{Ragot::DriverEK79007@{Ragot::DriverEK79007}!hsync\_back\_porch@{hsync\_back\_porch}|hyperpage}{75}
+\indexentry{hsync\_back\_porch@{hsync\_back\_porch}!Ragot::DriverEK79007@{Ragot::DriverEK79007}|hyperpage}{75}
+\indexentry{Ragot::DriverEK79007@{Ragot::DriverEK79007}!hsync\_front\_porch@{hsync\_front\_porch}|hyperpage}{75}
+\indexentry{hsync\_front\_porch@{hsync\_front\_porch}!Ragot::DriverEK79007@{Ragot::DriverEK79007}|hyperpage}{75}
+\indexentry{Ragot::DriverEK79007@{Ragot::DriverEK79007}!hsync\_pulse\_width@{hsync\_pulse\_width}|hyperpage}{75}
+\indexentry{hsync\_pulse\_width@{hsync\_pulse\_width}!Ragot::DriverEK79007@{Ragot::DriverEK79007}|hyperpage}{75}
+\indexentry{Ragot::DriverEK79007@{Ragot::DriverEK79007}!mipi\_dsi\_max\_data\_rate\_mbps@{mipi\_dsi\_max\_data\_rate\_mbps}|hyperpage}{75}
+\indexentry{mipi\_dsi\_max\_data\_rate\_mbps@{mipi\_dsi\_max\_data\_rate\_mbps}!Ragot::DriverEK79007@{Ragot::DriverEK79007}|hyperpage}{75}
+\indexentry{Ragot::DriverEK79007@{Ragot::DriverEK79007}!mipi\_lane\_num@{mipi\_lane\_num}|hyperpage}{75}
+\indexentry{mipi\_lane\_num@{mipi\_lane\_num}!Ragot::DriverEK79007@{Ragot::DriverEK79007}|hyperpage}{75}
+\indexentry{Ragot::DriverEK79007@{Ragot::DriverEK79007}!panel\_clk\_freq\_mhz@{panel\_clk\_freq\_mhz}|hyperpage}{75}
+\indexentry{panel\_clk\_freq\_mhz@{panel\_clk\_freq\_mhz}!Ragot::DriverEK79007@{Ragot::DriverEK79007}|hyperpage}{75}
+\indexentry{Ragot::DriverEK79007@{Ragot::DriverEK79007}!refresh\_semaphore@{refresh\_semaphore}|hyperpage}{76}
+\indexentry{refresh\_semaphore@{refresh\_semaphore}!Ragot::DriverEK79007@{Ragot::DriverEK79007}|hyperpage}{76}
+\indexentry{Ragot::DriverEK79007@{Ragot::DriverEK79007}!vsync\_back\_porch@{vsync\_back\_porch}|hyperpage}{76}
+\indexentry{vsync\_back\_porch@{vsync\_back\_porch}!Ragot::DriverEK79007@{Ragot::DriverEK79007}|hyperpage}{76}
+\indexentry{Ragot::DriverEK79007@{Ragot::DriverEK79007}!vsync\_front\_porch@{vsync\_front\_porch}|hyperpage}{76}
+\indexentry{vsync\_front\_porch@{vsync\_front\_porch}!Ragot::DriverEK79007@{Ragot::DriverEK79007}|hyperpage}{76}
+\indexentry{Ragot::DriverEK79007@{Ragot::DriverEK79007}!vsync\_pulse\_width@{vsync\_pulse\_width}|hyperpage}{76}
+\indexentry{vsync\_pulse\_width@{vsync\_pulse\_width}!Ragot::DriverEK79007@{Ragot::DriverEK79007}|hyperpage}{76}
+\indexentry{Ragot::DriverLCD@{Ragot::DriverLCD}|hyperpage}{77}
+\indexentry{Ragot::DriverLCD@{Ragot::DriverLCD}!DriverLCD@{DriverLCD}|hyperpage}{79}
+\indexentry{DriverLCD@{DriverLCD}!Ragot::DriverLCD@{Ragot::DriverLCD}|hyperpage}{79}
+\indexentry{Ragot::DriverLCD@{Ragot::DriverLCD}!````~DriverLCD@{\texorpdfstring{$\sim$}{\string~}DriverLCD}|hyperpage}{79}
+\indexentry{````~DriverLCD@{\texorpdfstring{$\sim$}{\string~}DriverLCD}!Ragot::DriverLCD@{Ragot::DriverLCD}|hyperpage}{79}
+\indexentry{Ragot::DriverLCD@{Ragot::DriverLCD}!deinit@{deinit}|hyperpage}{80}
+\indexentry{deinit@{deinit}!Ragot::DriverLCD@{Ragot::DriverLCD}|hyperpage}{80}
+\indexentry{Ragot::DriverLCD@{Ragot::DriverLCD}!get\_handler@{get\_handler}|hyperpage}{80}
+\indexentry{get\_handler@{get\_handler}!Ragot::DriverLCD@{Ragot::DriverLCD}|hyperpage}{80}
+\indexentry{Ragot::DriverLCD@{Ragot::DriverLCD}!get\_handler@{get\_handler}|hyperpage}{80}
+\indexentry{get\_handler@{get\_handler}!Ragot::DriverLCD@{Ragot::DriverLCD}|hyperpage}{80}
+\indexentry{Ragot::DriverLCD@{Ragot::DriverLCD}!get\_height@{get\_height}|hyperpage}{80}
+\indexentry{get\_height@{get\_height}!Ragot::DriverLCD@{Ragot::DriverLCD}|hyperpage}{80}
+\indexentry{Ragot::DriverLCD@{Ragot::DriverLCD}!get\_height@{get\_height}|hyperpage}{81}
+\indexentry{get\_height@{get\_height}!Ragot::DriverLCD@{Ragot::DriverLCD}|hyperpage}{81}
+\indexentry{Ragot::DriverLCD@{Ragot::DriverLCD}!get\_pixel\_format@{get\_pixel\_format}|hyperpage}{81}
+\indexentry{get\_pixel\_format@{get\_pixel\_format}!Ragot::DriverLCD@{Ragot::DriverLCD}|hyperpage}{81}
+\indexentry{Ragot::DriverLCD@{Ragot::DriverLCD}!get\_pixel\_format@{get\_pixel\_format}|hyperpage}{81}
+\indexentry{get\_pixel\_format@{get\_pixel\_format}!Ragot::DriverLCD@{Ragot::DriverLCD}|hyperpage}{81}
+\indexentry{Ragot::DriverLCD@{Ragot::DriverLCD}!get\_width@{get\_width}|hyperpage}{81}
+\indexentry{get\_width@{get\_width}!Ragot::DriverLCD@{Ragot::DriverLCD}|hyperpage}{81}
+\indexentry{Ragot::DriverLCD@{Ragot::DriverLCD}!get\_width@{get\_width}|hyperpage}{81}
+\indexentry{get\_width@{get\_width}!Ragot::DriverLCD@{Ragot::DriverLCD}|hyperpage}{81}
+\indexentry{Ragot::DriverLCD@{Ragot::DriverLCD}!init@{init}|hyperpage}{82}
+\indexentry{init@{init}!Ragot::DriverLCD@{Ragot::DriverLCD}|hyperpage}{82}
+\indexentry{Ragot::DriverLCD@{Ragot::DriverLCD}!is\_initialized@{is\_initialized}|hyperpage}{82}
+\indexentry{is\_initialized@{is\_initialized}!Ragot::DriverLCD@{Ragot::DriverLCD}|hyperpage}{82}
+\indexentry{Ragot::DriverLCD@{Ragot::DriverLCD}!is\_initialized@{is\_initialized}|hyperpage}{82}
+\indexentry{is\_initialized@{is\_initialized}!Ragot::DriverLCD@{Ragot::DriverLCD}|hyperpage}{82}
+\indexentry{Ragot::DriverLCD@{Ragot::DriverLCD}!send\_frame\_buffer@{send\_frame\_buffer}|hyperpage}{82}
+\indexentry{send\_frame\_buffer@{send\_frame\_buffer}!Ragot::DriverLCD@{Ragot::DriverLCD}|hyperpage}{82}
+\indexentry{Ragot::DriverLCD@{Ragot::DriverLCD}!set\_pixel@{set\_pixel}|hyperpage}{83}
+\indexentry{set\_pixel@{set\_pixel}!Ragot::DriverLCD@{Ragot::DriverLCD}|hyperpage}{83}
+\indexentry{Ragot::DriverLCD@{Ragot::DriverLCD}!handler@{handler}|hyperpage}{83}
+\indexentry{handler@{handler}!Ragot::DriverLCD@{Ragot::DriverLCD}|hyperpage}{83}
+\indexentry{Ragot::DriverLCD@{Ragot::DriverLCD}!height@{height}|hyperpage}{83}
+\indexentry{height@{height}!Ragot::DriverLCD@{Ragot::DriverLCD}|hyperpage}{83}
+\indexentry{Ragot::DriverLCD@{Ragot::DriverLCD}!initialized@{initialized}|hyperpage}{83}
+\indexentry{initialized@{initialized}!Ragot::DriverLCD@{Ragot::DriverLCD}|hyperpage}{83}
+\indexentry{Ragot::DriverLCD@{Ragot::DriverLCD}!pixel\_format@{pixel\_format}|hyperpage}{84}
+\indexentry{pixel\_format@{pixel\_format}!Ragot::DriverLCD@{Ragot::DriverLCD}|hyperpage}{84}
+\indexentry{Ragot::DriverLCD@{Ragot::DriverLCD}!width@{width}|hyperpage}{84}
+\indexentry{width@{width}!Ragot::DriverLCD@{Ragot::DriverLCD}|hyperpage}{84}
+\indexentry{Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}|hyperpage}{84}
+\indexentry{Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}!ExtrudeMesh@{ExtrudeMesh}|hyperpage}{90}
+\indexentry{ExtrudeMesh@{ExtrudeMesh}!Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}|hyperpage}{90}
+\indexentry{Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}!````~ExtrudeMesh@{\texorpdfstring{$\sim$}{\string~}ExtrudeMesh}|hyperpage}{90}
+\indexentry{````~ExtrudeMesh@{\texorpdfstring{$\sim$}{\string~}ExtrudeMesh}!Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}|hyperpage}{90}
+\indexentry{Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}!are\_vertices\_coplanar@{are\_vertices\_coplanar}|hyperpage}{91}
+\indexentry{are\_vertices\_coplanar@{are\_vertices\_coplanar}!Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}|hyperpage}{91}
+\indexentry{Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}!generate\_faces@{generate\_faces}|hyperpage}{91}
+\indexentry{generate\_faces@{generate\_faces}!Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}|hyperpage}{91}
+\indexentry{Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}!generate\_vertices@{generate\_vertices}|hyperpage}{92}
+\indexentry{generate\_vertices@{generate\_vertices}!Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}|hyperpage}{92}
+\indexentry{Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}!log\_mesh\_info@{log\_mesh\_info}|hyperpage}{92}
+\indexentry{log\_mesh\_info@{log\_mesh\_info}!Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}|hyperpage}{92}
+\indexentry{Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}!cam@{cam}|hyperpage}{93}
+\indexentry{cam@{cam}!Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}|hyperpage}{93}
+\indexentry{Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}!camPos@{camPos}|hyperpage}{93}
+\indexentry{camPos@{camPos}!Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}|hyperpage}{93}
+\indexentry{Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}!EXTRUDE\_TAG@{EXTRUDE\_TAG}|hyperpage}{93}
+\indexentry{EXTRUDE\_TAG@{EXTRUDE\_TAG}!Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}|hyperpage}{93}
+\indexentry{Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}!faces\_can\_be\_quads@{faces\_can\_be\_quads}|hyperpage}{94}
+\indexentry{faces\_can\_be\_quads@{faces\_can\_be\_quads}!Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}|hyperpage}{94}
+\indexentry{Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}!height@{height}|hyperpage}{94}
+\indexentry{height@{height}!Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}|hyperpage}{94}
+\indexentry{Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}!planes@{planes}|hyperpage}{94}
+\indexentry{planes@{planes}!Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}|hyperpage}{94}
+\indexentry{Ragot::face\_t@{Ragot::face\_t}|hyperpage}{95}
+\indexentry{Ragot::face\_t@{Ragot::face\_t}!is\_quad@{is\_quad}|hyperpage}{95}
+\indexentry{is\_quad@{is\_quad}!Ragot::face\_t@{Ragot::face\_t}|hyperpage}{95}
+\indexentry{Ragot::face\_t@{Ragot::face\_t}!v1@{v1}|hyperpage}{95}
+\indexentry{v1@{v1}!Ragot::face\_t@{Ragot::face\_t}|hyperpage}{95}
+\indexentry{Ragot::face\_t@{Ragot::face\_t}!v2@{v2}|hyperpage}{96}
+\indexentry{v2@{v2}!Ragot::face\_t@{Ragot::face\_t}|hyperpage}{96}
+\indexentry{Ragot::face\_t@{Ragot::face\_t}!v3@{v3}|hyperpage}{96}
+\indexentry{v3@{v3}!Ragot::face\_t@{Ragot::face\_t}|hyperpage}{96}
+\indexentry{Ragot::face\_t@{Ragot::face\_t}!v4@{v4}|hyperpage}{96}
+\indexentry{v4@{v4}!Ragot::face\_t@{Ragot::face\_t}|hyperpage}{96}
+\indexentry{Ragot::Fragment\_Shader@{Ragot::Fragment\_Shader}|hyperpage}{96}
+\indexentry{Ragot::Fragment\_Shader@{Ragot::Fragment\_Shader}!Fragment\_Shader@{Fragment\_Shader}|hyperpage}{99}
+\indexentry{Fragment\_Shader@{Fragment\_Shader}!Ragot::Fragment\_Shader@{Ragot::Fragment\_Shader}|hyperpage}{99}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{100}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!ColorVector@{ColorVector}|hyperpage}{103}
+\indexentry{ColorVector@{ColorVector}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{103}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!TYPE@{TYPE}|hyperpage}{103}
+\indexentry{TYPE@{TYPE}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{103}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!FrameBuffer@{FrameBuffer}|hyperpage}{104}
+\indexentry{FrameBuffer@{FrameBuffer}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{104}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!FrameBuffer@{FrameBuffer}|hyperpage}{105}
+\indexentry{FrameBuffer@{FrameBuffer}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{105}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!````~FrameBuffer@{\texorpdfstring{$\sim$}{\string~}FrameBuffer}|hyperpage}{105}
+\indexentry{````~FrameBuffer@{\texorpdfstring{$\sim$}{\string~}FrameBuffer}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{105}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!FrameBuffer@{FrameBuffer}|hyperpage}{106}
+\indexentry{FrameBuffer@{FrameBuffer}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{106}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!FrameBuffer@{FrameBuffer}|hyperpage}{106}
+\indexentry{FrameBuffer@{FrameBuffer}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{106}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!blit\_to\_window@{blit\_to\_window}|hyperpage}{107}
+\indexentry{blit\_to\_window@{blit\_to\_window}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{107}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!clear\_buffer@{clear\_buffer}|hyperpage}{107}
+\indexentry{clear\_buffer@{clear\_buffer}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{107}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!fill@{fill}|hyperpage}{107}
+\indexentry{fill@{fill}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{107}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!get\_buffer@{get\_buffer}|hyperpage}{108}
+\indexentry{get\_buffer@{get\_buffer}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{108}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!get\_buffer@{get\_buffer}|hyperpage}{108}
+\indexentry{get\_buffer@{get\_buffer}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{108}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!get\_height@{get\_height}|hyperpage}{108}
+\indexentry{get\_height@{get\_height}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{108}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!get\_height@{get\_height}|hyperpage}{108}
+\indexentry{get\_height@{get\_height}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{108}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!get\_pixel@{get\_pixel}|hyperpage}{109}
+\indexentry{get\_pixel@{get\_pixel}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{109}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!get\_width@{get\_width}|hyperpage}{109}
+\indexentry{get\_width@{get\_width}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{109}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!get\_width@{get\_width}|hyperpage}{109}
+\indexentry{get\_width@{get\_width}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{109}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!getGLFormat@{getGLFormat}|hyperpage}{110}
+\indexentry{getGLFormat@{getGLFormat}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{110}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!getGLTex@{getGLTex}|hyperpage}{110}
+\indexentry{getGLTex@{getGLTex}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{110}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!getGLType@{getGLType}|hyperpage}{110}
+\indexentry{getGLType@{getGLType}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{110}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!initGLTexture@{initGLTexture}|hyperpage}{110}
+\indexentry{initGLTexture@{initGLTexture}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{110}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!operator=@{operator=}|hyperpage}{111}
+\indexentry{operator=@{operator=}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{111}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!operator=@{operator=}|hyperpage}{111}
+\indexentry{operator=@{operator=}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{111}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!sendGL@{sendGL}|hyperpage}{112}
+\indexentry{sendGL@{sendGL}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{112}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!set\_color@{set\_color}|hyperpage}{112}
+\indexentry{set\_color@{set\_color}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{112}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!set\_pixel@{set\_pixel}|hyperpage}{112}
+\indexentry{set\_pixel@{set\_pixel}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{112}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!set\_pixel@{set\_pixel}|hyperpage}{113}
+\indexentry{set\_pixel@{set\_pixel}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{113}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!set\_pixel@{set\_pixel}|hyperpage}{113}
+\indexentry{set\_pixel@{set\_pixel}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{113}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!swap\_buffers@{swap\_buffers}|hyperpage}{113}
+\indexentry{swap\_buffers@{swap\_buffers}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{113}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!buffer\_1@{buffer\_1}|hyperpage}{113}
+\indexentry{buffer\_1@{buffer\_1}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{113}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!buffer\_2@{buffer\_2}|hyperpage}{113}
+\indexentry{buffer\_2@{buffer\_2}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{113}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!color@{color}|hyperpage}{114}
+\indexentry{color@{color}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{114}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!current\_buffer@{current\_buffer}|hyperpage}{114}
+\indexentry{current\_buffer@{current\_buffer}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{114}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!double\_buffer@{double\_buffer}|hyperpage}{114}
+\indexentry{double\_buffer@{double\_buffer}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{114}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!gl\_tex@{gl\_tex}|hyperpage}{114}
+\indexentry{gl\_tex@{gl\_tex}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{114}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!height@{height}|hyperpage}{114}
+\indexentry{height@{height}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{114}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!next\_buffer@{next\_buffer}|hyperpage}{114}
+\indexentry{next\_buffer@{next\_buffer}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{114}
+\indexentry{Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}!width@{width}|hyperpage}{115}
+\indexentry{width@{width}!Ragot::FrameBuffer$<$ Color $>$@{Ragot::FrameBuffer$<$ Color $>$}|hyperpage}{115}
+\indexentry{Ragot::Logger@{Ragot::Logger}|hyperpage}{115}
+\indexentry{Ragot::Logger@{Ragot::Logger}!Logger@{Logger}|hyperpage}{117}
+\indexentry{Logger@{Logger}!Ragot::Logger@{Ragot::Logger}|hyperpage}{117}
+\indexentry{Ragot::Logger@{Ragot::Logger}!````~Logger@{\texorpdfstring{$\sim$}{\string~}Logger}|hyperpage}{117}
+\indexentry{````~Logger@{\texorpdfstring{$\sim$}{\string~}Logger}!Ragot::Logger@{Ragot::Logger}|hyperpage}{117}
+\indexentry{Ragot::Logger@{Ragot::Logger}!Logger@{Logger}|hyperpage}{117}
+\indexentry{Logger@{Logger}!Ragot::Logger@{Ragot::Logger}|hyperpage}{117}
+\indexentry{Ragot::Logger@{Ragot::Logger}!Logger@{Logger}|hyperpage}{117}
+\indexentry{Logger@{Logger}!Ragot::Logger@{Ragot::Logger}|hyperpage}{117}
+\indexentry{Ragot::Logger@{Ragot::Logger}!getLogLevel@{getLogLevel}|hyperpage}{118}
+\indexentry{getLogLevel@{getLogLevel}!Ragot::Logger@{Ragot::Logger}|hyperpage}{118}
+\indexentry{Ragot::Logger@{Ragot::Logger}!instance@{instance}|hyperpage}{118}
+\indexentry{instance@{instance}!Ragot::Logger@{Ragot::Logger}|hyperpage}{118}
+\indexentry{Ragot::Logger@{Ragot::Logger}!Log@{Log}|hyperpage}{119}
+\indexentry{Log@{Log}!Ragot::Logger@{Ragot::Logger}|hyperpage}{119}
+\indexentry{Ragot::Logger@{Ragot::Logger}!operator=@{operator=}|hyperpage}{119}
+\indexentry{operator=@{operator=}!Ragot::Logger@{Ragot::Logger}|hyperpage}{119}
+\indexentry{Ragot::Logger@{Ragot::Logger}!operator=@{operator=}|hyperpage}{120}
+\indexentry{operator=@{operator=}!Ragot::Logger@{Ragot::Logger}|hyperpage}{120}
+\indexentry{Ragot::Logger@{Ragot::Logger}!setLogLevel@{setLogLevel}|hyperpage}{120}
+\indexentry{setLogLevel@{setLogLevel}!Ragot::Logger@{Ragot::Logger}|hyperpage}{120}
+\indexentry{Ragot::Logger@{Ragot::Logger}!logLevel@{logLevel}|hyperpage}{121}
+\indexentry{logLevel@{logLevel}!Ragot::Logger@{Ragot::Logger}|hyperpage}{121}
+\indexentry{Ragot::Mesh@{Ragot::Mesh}|hyperpage}{121}
+\indexentry{Ragot::Mesh@{Ragot::Mesh}!Mesh@{Mesh}|hyperpage}{126}
+\indexentry{Mesh@{Mesh}!Ragot::Mesh@{Ragot::Mesh}|hyperpage}{126}
+\indexentry{Ragot::Mesh@{Ragot::Mesh}!````~Mesh@{\texorpdfstring{$\sim$}{\string~}Mesh}|hyperpage}{126}
+\indexentry{````~Mesh@{\texorpdfstring{$\sim$}{\string~}Mesh}!Ragot::Mesh@{Ragot::Mesh}|hyperpage}{126}
+\indexentry{Ragot::Mesh@{Ragot::Mesh}!Mesh@{Mesh}|hyperpage}{127}
+\indexentry{Mesh@{Mesh}!Ragot::Mesh@{Ragot::Mesh}|hyperpage}{127}
+\indexentry{Ragot::Mesh@{Ragot::Mesh}!apply\_transform\_to\_vertices@{apply\_transform\_to\_vertices}|hyperpage}{127}
+\indexentry{apply\_transform\_to\_vertices@{apply\_transform\_to\_vertices}!Ragot::Mesh@{Ragot::Mesh}|hyperpage}{127}
+\indexentry{Ragot::Mesh@{Ragot::Mesh}!generate\_faces@{generate\_faces}|hyperpage}{127}
+\indexentry{generate\_faces@{generate\_faces}!Ragot::Mesh@{Ragot::Mesh}|hyperpage}{127}
+\indexentry{Ragot::Mesh@{Ragot::Mesh}!generate\_vertices@{generate\_vertices}|hyperpage}{128}
+\indexentry{generate\_vertices@{generate\_vertices}!Ragot::Mesh@{Ragot::Mesh}|hyperpage}{128}
+\indexentry{Ragot::Mesh@{Ragot::Mesh}!get\_color@{get\_color}|hyperpage}{128}
+\indexentry{get\_color@{get\_color}!Ragot::Mesh@{Ragot::Mesh}|hyperpage}{128}
+\indexentry{Ragot::Mesh@{Ragot::Mesh}!get\_faces@{get\_faces}|hyperpage}{129}
+\indexentry{get\_faces@{get\_faces}!Ragot::Mesh@{Ragot::Mesh}|hyperpage}{129}
+\indexentry{Ragot::Mesh@{Ragot::Mesh}!get\_total\_vertices@{get\_total\_vertices}|hyperpage}{129}
+\indexentry{get\_total\_vertices@{get\_total\_vertices}!Ragot::Mesh@{Ragot::Mesh}|hyperpage}{129}
+\indexentry{Ragot::Mesh@{Ragot::Mesh}!get\_total\_vertices@{get\_total\_vertices}|hyperpage}{129}
+\indexentry{get\_total\_vertices@{get\_total\_vertices}!Ragot::Mesh@{Ragot::Mesh}|hyperpage}{129}
+\indexentry{Ragot::Mesh@{Ragot::Mesh}!get\_vertices@{get\_vertices}|hyperpage}{130}
+\indexentry{get\_vertices@{get\_vertices}!Ragot::Mesh@{Ragot::Mesh}|hyperpage}{130}
+\indexentry{Ragot::Mesh@{Ragot::Mesh}!recalculate@{recalculate}|hyperpage}{130}
+\indexentry{recalculate@{recalculate}!Ragot::Mesh@{Ragot::Mesh}|hyperpage}{130}
+\indexentry{Ragot::Mesh@{Ragot::Mesh}!set\_color@{set\_color}|hyperpage}{131}
+\indexentry{set\_color@{set\_color}!Ragot::Mesh@{Ragot::Mesh}|hyperpage}{131}
+\indexentry{Ragot::Mesh@{Ragot::Mesh}!color@{color}|hyperpage}{131}
+\indexentry{color@{color}!Ragot::Mesh@{Ragot::Mesh}|hyperpage}{131}
+\indexentry{Ragot::Mesh@{Ragot::Mesh}!faces@{faces}|hyperpage}{131}
+\indexentry{faces@{faces}!Ragot::Mesh@{Ragot::Mesh}|hyperpage}{131}
+\indexentry{Ragot::Mesh@{Ragot::Mesh}!mesh\_info@{mesh\_info}|hyperpage}{131}
+\indexentry{mesh\_info@{mesh\_info}!Ragot::Mesh@{Ragot::Mesh}|hyperpage}{131}
+\indexentry{Ragot::Mesh@{Ragot::Mesh}!slices@{slices}|hyperpage}{132}
+\indexentry{slices@{slices}!Ragot::Mesh@{Ragot::Mesh}|hyperpage}{132}
+\indexentry{Ragot::Mesh@{Ragot::Mesh}!vertices@{vertices}|hyperpage}{132}
+\indexentry{vertices@{vertices}!Ragot::Mesh@{Ragot::Mesh}|hyperpage}{132}
+\indexentry{Ragot::mesh\_info\_t@{Ragot::mesh\_info\_t}|hyperpage}{132}
+\indexentry{Ragot::mesh\_info\_t@{Ragot::mesh\_info\_t}!mesh\_info\_t@{mesh\_info\_t}|hyperpage}{133}
+\indexentry{mesh\_info\_t@{mesh\_info\_t}!Ragot::mesh\_info\_t@{Ragot::mesh\_info\_t}|hyperpage}{133}
+\indexentry{Ragot::mesh\_info\_t@{Ragot::mesh\_info\_t}!mesh\_info\_t@{mesh\_info\_t}|hyperpage}{133}
+\indexentry{mesh\_info\_t@{mesh\_info\_t}!Ragot::mesh\_info\_t@{Ragot::mesh\_info\_t}|hyperpage}{133}
+\indexentry{Ragot::mesh\_info\_t@{Ragot::mesh\_info\_t}!coordinates@{coordinates}|hyperpage}{133}
+\indexentry{coordinates@{coordinates}!Ragot::mesh\_info\_t@{Ragot::mesh\_info\_t}|hyperpage}{133}
+\indexentry{Ragot::mesh\_info\_t@{Ragot::mesh\_info\_t}!render\_flag@{render\_flag}|hyperpage}{133}
+\indexentry{render\_flag@{render\_flag}!Ragot::mesh\_info\_t@{Ragot::mesh\_info\_t}|hyperpage}{133}
+\indexentry{Ragot::mesh\_info\_t@{Ragot::mesh\_info\_t}!vertex\_amount@{vertex\_amount}|hyperpage}{133}
+\indexentry{vertex\_amount@{vertex\_amount}!Ragot::mesh\_info\_t@{Ragot::mesh\_info\_t}|hyperpage}{133}
+\indexentry{Ragot::MeshSerializer@{Ragot::MeshSerializer}|hyperpage}{134}
+\indexentry{Ragot::MeshSerializer@{Ragot::MeshSerializer}!MeshSerializer@{MeshSerializer}|hyperpage}{135}
+\indexentry{MeshSerializer@{MeshSerializer}!Ragot::MeshSerializer@{Ragot::MeshSerializer}|hyperpage}{135}
+\indexentry{Ragot::MeshSerializer@{Ragot::MeshSerializer}!MeshSerializer@{MeshSerializer}|hyperpage}{135}
+\indexentry{MeshSerializer@{MeshSerializer}!Ragot::MeshSerializer@{Ragot::MeshSerializer}|hyperpage}{135}
+\indexentry{Ragot::MeshSerializer@{Ragot::MeshSerializer}!MeshSerializer@{MeshSerializer}|hyperpage}{136}
+\indexentry{MeshSerializer@{MeshSerializer}!Ragot::MeshSerializer@{Ragot::MeshSerializer}|hyperpage}{136}
+\indexentry{Ragot::MeshSerializer@{Ragot::MeshSerializer}!instance@{instance}|hyperpage}{136}
+\indexentry{instance@{instance}!Ragot::MeshSerializer@{Ragot::MeshSerializer}|hyperpage}{136}
+\indexentry{Ragot::MeshSerializer@{Ragot::MeshSerializer}!operator=@{operator=}|hyperpage}{136}
+\indexentry{operator=@{operator=}!Ragot::MeshSerializer@{Ragot::MeshSerializer}|hyperpage}{136}
+\indexentry{Ragot::MeshSerializer@{Ragot::MeshSerializer}!operator=@{operator=}|hyperpage}{137}
+\indexentry{operator=@{operator=}!Ragot::MeshSerializer@{Ragot::MeshSerializer}|hyperpage}{137}
+\indexentry{Ragot::MeshSerializer@{Ragot::MeshSerializer}!save\_to\_obj@{save\_to\_obj}|hyperpage}{137}
+\indexentry{save\_to\_obj@{save\_to\_obj}!Ragot::MeshSerializer@{Ragot::MeshSerializer}|hyperpage}{137}
+\indexentry{Ragot::Node@{Ragot::Node}|hyperpage}{138}
+\indexentry{Ragot::Node@{Ragot::Node}!Node@{Node}|hyperpage}{142}
+\indexentry{Node@{Node}!Ragot::Node@{Ragot::Node}|hyperpage}{142}
+\indexentry{Ragot::Node@{Ragot::Node}!````~Node@{\texorpdfstring{$\sim$}{\string~}Node}|hyperpage}{142}
+\indexentry{````~Node@{\texorpdfstring{$\sim$}{\string~}Node}!Ragot::Node@{Ragot::Node}|hyperpage}{142}
+\indexentry{Ragot::Node@{Ragot::Node}!Node@{Node}|hyperpage}{142}
+\indexentry{Node@{Node}!Ragot::Node@{Ragot::Node}|hyperpage}{142}
+\indexentry{Ragot::Node@{Ragot::Node}!Node@{Node}|hyperpage}{143}
+\indexentry{Node@{Node}!Ragot::Node@{Ragot::Node}|hyperpage}{143}
+\indexentry{Ragot::Node@{Ragot::Node}!add\_child@{add\_child}|hyperpage}{143}
+\indexentry{add\_child@{add\_child}!Ragot::Node@{Ragot::Node}|hyperpage}{143}
+\indexentry{Ragot::Node@{Ragot::Node}!get\_children@{get\_children}|hyperpage}{143}
+\indexentry{get\_children@{get\_children}!Ragot::Node@{Ragot::Node}|hyperpage}{143}
+\indexentry{Ragot::Node@{Ragot::Node}!get\_transform\_matrix@{get\_transform\_matrix}|hyperpage}{144}
+\indexentry{get\_transform\_matrix@{get\_transform\_matrix}!Ragot::Node@{Ragot::Node}|hyperpage}{144}
+\indexentry{Ragot::Node@{Ragot::Node}!operator=@{operator=}|hyperpage}{144}
+\indexentry{operator=@{operator=}!Ragot::Node@{Ragot::Node}|hyperpage}{144}
+\indexentry{Ragot::Node@{Ragot::Node}!operator=@{operator=}|hyperpage}{145}
+\indexentry{operator=@{operator=}!Ragot::Node@{Ragot::Node}|hyperpage}{145}
+\indexentry{Ragot::Node@{Ragot::Node}!remove\_child@{remove\_child}|hyperpage}{145}
+\indexentry{remove\_child@{remove\_child}!Ragot::Node@{Ragot::Node}|hyperpage}{145}
+\indexentry{Ragot::Node@{Ragot::Node}!children@{children}|hyperpage}{146}
+\indexentry{children@{children}!Ragot::Node@{Ragot::Node}|hyperpage}{146}
+\indexentry{Ragot::Node@{Ragot::Node}!parent@{parent}|hyperpage}{146}
+\indexentry{parent@{parent}!Ragot::Node@{Ragot::Node}|hyperpage}{146}
+\indexentry{Ragot::Window::OpenGL\_Context\_Settings@{Ragot::Window::OpenGL\_Context\_Settings}|hyperpage}{146}
+\indexentry{Ragot::Window::OpenGL\_Context\_Settings@{Ragot::Window::OpenGL\_Context\_Settings}!core\_profile@{core\_profile}|hyperpage}{147}
+\indexentry{core\_profile@{core\_profile}!Ragot::Window::OpenGL\_Context\_Settings@{Ragot::Window::OpenGL\_Context\_Settings}|hyperpage}{147}
+\indexentry{Ragot::Window::OpenGL\_Context\_Settings@{Ragot::Window::OpenGL\_Context\_Settings}!depth\_buffer\_size@{depth\_buffer\_size}|hyperpage}{147}
+\indexentry{depth\_buffer\_size@{depth\_buffer\_size}!Ragot::Window::OpenGL\_Context\_Settings@{Ragot::Window::OpenGL\_Context\_Settings}|hyperpage}{147}
+\indexentry{Ragot::Window::OpenGL\_Context\_Settings@{Ragot::Window::OpenGL\_Context\_Settings}!enable\_vsync@{enable\_vsync}|hyperpage}{147}
+\indexentry{enable\_vsync@{enable\_vsync}!Ragot::Window::OpenGL\_Context\_Settings@{Ragot::Window::OpenGL\_Context\_Settings}|hyperpage}{147}
+\indexentry{Ragot::Window::OpenGL\_Context\_Settings@{Ragot::Window::OpenGL\_Context\_Settings}!stencil\_buffer\_size@{stencil\_buffer\_size}|hyperpage}{147}
+\indexentry{stencil\_buffer\_size@{stencil\_buffer\_size}!Ragot::Window::OpenGL\_Context\_Settings@{Ragot::Window::OpenGL\_Context\_Settings}|hyperpage}{147}
+\indexentry{Ragot::Window::OpenGL\_Context\_Settings@{Ragot::Window::OpenGL\_Context\_Settings}!version\_major@{version\_major}|hyperpage}{147}
+\indexentry{version\_major@{version\_major}!Ragot::Window::OpenGL\_Context\_Settings@{Ragot::Window::OpenGL\_Context\_Settings}|hyperpage}{147}
+\indexentry{Ragot::Window::OpenGL\_Context\_Settings@{Ragot::Window::OpenGL\_Context\_Settings}!version\_minor@{version\_minor}|hyperpage}{148}
+\indexentry{version\_minor@{version\_minor}!Ragot::Window::OpenGL\_Context\_Settings@{Ragot::Window::OpenGL\_Context\_Settings}|hyperpage}{148}
+\indexentry{Ragot::PSRAMAllocator$<$ T, Flag $>$@{Ragot::PSRAMAllocator$<$ T, Flag $>$}|hyperpage}{148}
+\indexentry{Ragot::PSRAMAllocator$<$ T, Flag $>$@{Ragot::PSRAMAllocator$<$ T, Flag $>$}!pointer@{pointer}|hyperpage}{150}
+\indexentry{pointer@{pointer}!Ragot::PSRAMAllocator$<$ T, Flag $>$@{Ragot::PSRAMAllocator$<$ T, Flag $>$}|hyperpage}{150}
+\indexentry{Ragot::PSRAMAllocator$<$ T, Flag $>$@{Ragot::PSRAMAllocator$<$ T, Flag $>$}!size\_type@{size\_type}|hyperpage}{150}
+\indexentry{size\_type@{size\_type}!Ragot::PSRAMAllocator$<$ T, Flag $>$@{Ragot::PSRAMAllocator$<$ T, Flag $>$}|hyperpage}{150}
+\indexentry{Ragot::PSRAMAllocator$<$ T, Flag $>$@{Ragot::PSRAMAllocator$<$ T, Flag $>$}!value\_type@{value\_type}|hyperpage}{150}
+\indexentry{value\_type@{value\_type}!Ragot::PSRAMAllocator$<$ T, Flag $>$@{Ragot::PSRAMAllocator$<$ T, Flag $>$}|hyperpage}{150}
+\indexentry{Ragot::PSRAMAllocator$<$ T, Flag $>$@{Ragot::PSRAMAllocator$<$ T, Flag $>$}!PSRAMAllocator@{PSRAMAllocator}|hyperpage}{150}
+\indexentry{PSRAMAllocator@{PSRAMAllocator}!Ragot::PSRAMAllocator$<$ T, Flag $>$@{Ragot::PSRAMAllocator$<$ T, Flag $>$}|hyperpage}{150}
+\indexentry{Ragot::PSRAMAllocator$<$ T, Flag $>$@{Ragot::PSRAMAllocator$<$ T, Flag $>$}!PSRAMAllocator@{PSRAMAllocator}|hyperpage}{150}
+\indexentry{PSRAMAllocator@{PSRAMAllocator}!Ragot::PSRAMAllocator$<$ T, Flag $>$@{Ragot::PSRAMAllocator$<$ T, Flag $>$}|hyperpage}{150}
+\indexentry{Ragot::PSRAMAllocator$<$ T, Flag $>$@{Ragot::PSRAMAllocator$<$ T, Flag $>$}!allocate@{allocate}|hyperpage}{151}
+\indexentry{allocate@{allocate}!Ragot::PSRAMAllocator$<$ T, Flag $>$@{Ragot::PSRAMAllocator$<$ T, Flag $>$}|hyperpage}{151}
+\indexentry{Ragot::PSRAMAllocator$<$ T, Flag $>$@{Ragot::PSRAMAllocator$<$ T, Flag $>$}!deallocate@{deallocate}|hyperpage}{151}
+\indexentry{deallocate@{deallocate}!Ragot::PSRAMAllocator$<$ T, Flag $>$@{Ragot::PSRAMAllocator$<$ T, Flag $>$}|hyperpage}{151}
+\indexentry{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}|hyperpage}{152}
+\indexentry{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!Rasterizer@{Rasterizer}|hyperpage}{155}
+\indexentry{Rasterizer@{Rasterizer}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}|hyperpage}{155}
+\indexentry{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!Rasterizer@{Rasterizer}|hyperpage}{155}
+\indexentry{Rasterizer@{Rasterizer}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}|hyperpage}{155}
+\indexentry{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!````~Rasterizer@{\texorpdfstring{$\sim$}{\string~}Rasterizer}|hyperpage}{155}
+\indexentry{````~Rasterizer@{\texorpdfstring{$\sim$}{\string~}Rasterizer}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}|hyperpage}{155}
+\indexentry{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!clear@{clear}|hyperpage}{155}
+\indexentry{clear@{clear}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}|hyperpage}{155}
+\indexentry{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!fill\_convex\_polygon@{fill\_convex\_polygon}|hyperpage}{155}
+\indexentry{fill\_convex\_polygon@{fill\_convex\_polygon}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}|hyperpage}{155}
+\indexentry{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!fill\_convex\_polygon@{fill\_convex\_polygon}|hyperpage}{156}
+\indexentry{fill\_convex\_polygon@{fill\_convex\_polygon}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}|hyperpage}{156}
+\indexentry{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!fill\_convex\_polygon\_z\_buffer@{fill\_convex\_polygon\_z\_buffer}|hyperpage}{156}
+\indexentry{fill\_convex\_polygon\_z\_buffer@{fill\_convex\_polygon\_z\_buffer}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}|hyperpage}{156}
+\indexentry{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!fill\_convex\_polygon\_z\_buffer@{fill\_convex\_polygon\_z\_buffer}|hyperpage}{157}
+\indexentry{fill\_convex\_polygon\_z\_buffer@{fill\_convex\_polygon\_z\_buffer}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}|hyperpage}{157}
+\indexentry{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!fill\_row@{fill\_row}|hyperpage}{157}
+\indexentry{fill\_row@{fill\_row}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}|hyperpage}{157}
+\indexentry{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!fill\_row@{fill\_row}|hyperpage}{158}
+\indexentry{fill\_row@{fill\_row}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}|hyperpage}{158}
+\indexentry{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!fill\_row\_zbuffer@{fill\_row\_zbuffer}|hyperpage}{158}
+\indexentry{fill\_row\_zbuffer@{fill\_row\_zbuffer}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}|hyperpage}{158}
+\indexentry{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!fill\_row\_zbuffer@{fill\_row\_zbuffer}|hyperpage}{158}
+\indexentry{fill\_row\_zbuffer@{fill\_row\_zbuffer}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}|hyperpage}{158}
+\indexentry{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!get\_frame\_buffer@{get\_frame\_buffer}|hyperpage}{159}
+\indexentry{get\_frame\_buffer@{get\_frame\_buffer}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}|hyperpage}{159}
+\indexentry{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!interpolate@{interpolate}|hyperpage}{159}
+\indexentry{interpolate@{interpolate}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}|hyperpage}{159}
+\indexentry{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!set\_color@{set\_color}|hyperpage}{160}
+\indexentry{set\_color@{set\_color}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}|hyperpage}{160}
+\indexentry{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!clear\_color@{clear\_color}|hyperpage}{160}
+\indexentry{clear\_color@{clear\_color}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}|hyperpage}{160}
+\indexentry{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!color@{color}|hyperpage}{160}
+\indexentry{color@{color}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}|hyperpage}{160}
+\indexentry{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!debug\_enabled@{debug\_enabled}|hyperpage}{160}
+\indexentry{debug\_enabled@{debug\_enabled}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}|hyperpage}{160}
+\indexentry{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!frame\_buffer@{frame\_buffer}|hyperpage}{161}
+\indexentry{frame\_buffer@{frame\_buffer}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}|hyperpage}{161}
+\indexentry{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!offset\_cache0@{offset\_cache0}|hyperpage}{161}
+\indexentry{offset\_cache0@{offset\_cache0}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}|hyperpage}{161}
+\indexentry{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!offset\_cache1@{offset\_cache1}|hyperpage}{161}
+\indexentry{offset\_cache1@{offset\_cache1}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}|hyperpage}{161}
+\indexentry{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!RASTER\_TAG@{RASTER\_TAG}|hyperpage}{161}
+\indexentry{RASTER\_TAG@{RASTER\_TAG}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}|hyperpage}{161}
+\indexentry{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!z\_buffer@{z\_buffer}|hyperpage}{161}
+\indexentry{z\_buffer@{z\_buffer}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}|hyperpage}{161}
+\indexentry{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!z\_cache0@{z\_cache0}|hyperpage}{161}
+\indexentry{z\_cache0@{z\_cache0}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}|hyperpage}{161}
+\indexentry{Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}!z\_cache1@{z\_cache1}|hyperpage}{161}
+\indexentry{z\_cache1@{z\_cache1}!Ragot::Rasterizer$<$ Color $>$@{Ragot::Rasterizer$<$ Color $>$}|hyperpage}{161}
+\indexentry{Ragot::PSRAMAllocator$<$ T, Flag $>$::rebind$<$ U $>$@{Ragot::PSRAMAllocator$<$ T, Flag $>$::rebind$<$ U $>$}|hyperpage}{162}
+\indexentry{Ragot::PSRAMAllocator$<$ T, Flag $>$::rebind$<$ U $>$@{Ragot::PSRAMAllocator$<$ T, Flag $>$::rebind$<$ U $>$}!other@{other}|hyperpage}{163}
+\indexentry{other@{other}!Ragot::PSRAMAllocator$<$ T, Flag $>$::rebind$<$ U $>$@{Ragot::PSRAMAllocator$<$ T, Flag $>$::rebind$<$ U $>$}|hyperpage}{163}
+\indexentry{Ragot::Renderer@{Ragot::Renderer}|hyperpage}{163}
+\indexentry{Ragot::Renderer@{Ragot::Renderer}!Renderer@{Renderer}|hyperpage}{166}
+\indexentry{Renderer@{Renderer}!Ragot::Renderer@{Ragot::Renderer}|hyperpage}{166}
+\indexentry{Ragot::Renderer@{Ragot::Renderer}!Renderer@{Renderer}|hyperpage}{166}
+\indexentry{Renderer@{Renderer}!Ragot::Renderer@{Ragot::Renderer}|hyperpage}{166}
+\indexentry{Ragot::Renderer@{Ragot::Renderer}!````~Renderer@{\texorpdfstring{$\sim$}{\string~}Renderer}|hyperpage}{166}
+\indexentry{````~Renderer@{\texorpdfstring{$\sim$}{\string~}Renderer}!Ragot::Renderer@{Ragot::Renderer}|hyperpage}{166}
+\indexentry{Ragot::Renderer@{Ragot::Renderer}!init@{init}|hyperpage}{167}
+\indexentry{init@{init}!Ragot::Renderer@{Ragot::Renderer}|hyperpage}{167}
+\indexentry{Ragot::Renderer@{Ragot::Renderer}!initFullScreenQuad@{initFullScreenQuad}|hyperpage}{167}
+\indexentry{initFullScreenQuad@{initFullScreenQuad}!Ragot::Renderer@{Ragot::Renderer}|hyperpage}{167}
+\indexentry{Ragot::Renderer@{Ragot::Renderer}!is\_frontface@{is\_frontface}|hyperpage}{167}
+\indexentry{is\_frontface@{is\_frontface}!Ragot::Renderer@{Ragot::Renderer}|hyperpage}{167}
+\indexentry{Ragot::Renderer@{Ragot::Renderer}!render@{render}|hyperpage}{168}
+\indexentry{render@{render}!Ragot::Renderer@{Ragot::Renderer}|hyperpage}{168}
+\indexentry{Ragot::Renderer@{Ragot::Renderer}!set\_scene@{set\_scene}|hyperpage}{168}
+\indexentry{set\_scene@{set\_scene}!Ragot::Renderer@{Ragot::Renderer}|hyperpage}{168}
+\indexentry{Ragot::Renderer@{Ragot::Renderer}!start@{start}|hyperpage}{169}
+\indexentry{start@{start}!Ragot::Renderer@{Ragot::Renderer}|hyperpage}{169}
+\indexentry{Ragot::Renderer@{Ragot::Renderer}!stop@{stop}|hyperpage}{169}
+\indexentry{stop@{stop}!Ragot::Renderer@{Ragot::Renderer}|hyperpage}{169}
+\indexentry{Ragot::Renderer@{Ragot::Renderer}!task\_render@{task\_render}|hyperpage}{169}
+\indexentry{task\_render@{task\_render}!Ragot::Renderer@{Ragot::Renderer}|hyperpage}{169}
+\indexentry{Ragot::Renderer@{Ragot::Renderer}!accumulated\_time@{accumulated\_time}|hyperpage}{170}
+\indexentry{accumulated\_time@{accumulated\_time}!Ragot::Renderer@{Ragot::Renderer}|hyperpage}{170}
+\indexentry{Ragot::Renderer@{Ragot::Renderer}!current\_scene@{current\_scene}|hyperpage}{170}
+\indexentry{current\_scene@{current\_scene}!Ragot::Renderer@{Ragot::Renderer}|hyperpage}{170}
+\indexentry{Ragot::Renderer@{Ragot::Renderer}!display\_vertices@{display\_vertices}|hyperpage}{170}
+\indexentry{display\_vertices@{display\_vertices}!Ragot::Renderer@{Ragot::Renderer}|hyperpage}{170}
+\indexentry{Ragot::Renderer@{Ragot::Renderer}!fragment\_shader\_code@{fragment\_shader\_code}|hyperpage}{171}
+\indexentry{fragment\_shader\_code@{fragment\_shader\_code}!Ragot::Renderer@{Ragot::Renderer}|hyperpage}{171}
+\indexentry{Ragot::Renderer@{Ragot::Renderer}!frame\_buffer@{frame\_buffer}|hyperpage}{171}
+\indexentry{frame\_buffer@{frame\_buffer}!Ragot::Renderer@{Ragot::Renderer}|hyperpage}{171}
+\indexentry{Ragot::Renderer@{Ragot::Renderer}!height@{height}|hyperpage}{171}
+\indexentry{height@{height}!Ragot::Renderer@{Ragot::Renderer}|hyperpage}{171}
+\indexentry{Ragot::Renderer@{Ragot::Renderer}!initialized@{initialized}|hyperpage}{171}
+\indexentry{initialized@{initialized}!Ragot::Renderer@{Ragot::Renderer}|hyperpage}{171}
+\indexentry{Ragot::Renderer@{Ragot::Renderer}!iterations@{iterations}|hyperpage}{171}
+\indexentry{iterations@{iterations}!Ragot::Renderer@{Ragot::Renderer}|hyperpage}{171}
+\indexentry{Ragot::Renderer@{Ragot::Renderer}!number\_of\_iterations@{number\_of\_iterations}|hyperpage}{171}
+\indexentry{number\_of\_iterations@{number\_of\_iterations}!Ragot::Renderer@{Ragot::Renderer}|hyperpage}{171}
+\indexentry{Ragot::Renderer@{Ragot::Renderer}!quadEBO@{quadEBO}|hyperpage}{172}
+\indexentry{quadEBO@{quadEBO}!Ragot::Renderer@{Ragot::Renderer}|hyperpage}{172}
+\indexentry{Ragot::Renderer@{Ragot::Renderer}!quadShader@{quadShader}|hyperpage}{172}
+\indexentry{quadShader@{quadShader}!Ragot::Renderer@{Ragot::Renderer}|hyperpage}{172}
+\indexentry{Ragot::Renderer@{Ragot::Renderer}!quadVAO@{quadVAO}|hyperpage}{172}
+\indexentry{quadVAO@{quadVAO}!Ragot::Renderer@{Ragot::Renderer}|hyperpage}{172}
+\indexentry{Ragot::Renderer@{Ragot::Renderer}!quadVBO@{quadVBO}|hyperpage}{172}
+\indexentry{quadVBO@{quadVBO}!Ragot::Renderer@{Ragot::Renderer}|hyperpage}{172}
+\indexentry{Ragot::Renderer@{Ragot::Renderer}!rasterizer@{rasterizer}|hyperpage}{172}
+\indexentry{rasterizer@{rasterizer}!Ragot::Renderer@{Ragot::Renderer}|hyperpage}{172}
+\indexentry{Ragot::Renderer@{Ragot::Renderer}!running@{running}|hyperpage}{172}
+\indexentry{running@{running}!Ragot::Renderer@{Ragot::Renderer}|hyperpage}{172}
+\indexentry{Ragot::Renderer@{Ragot::Renderer}!transformed\_vertices@{transformed\_vertices}|hyperpage}{172}
+\indexentry{transformed\_vertices@{transformed\_vertices}!Ragot::Renderer@{Ragot::Renderer}|hyperpage}{172}
+\indexentry{Ragot::Renderer@{Ragot::Renderer}!vertex\_shader\_code@{vertex\_shader\_code}|hyperpage}{173}
+\indexentry{vertex\_shader\_code@{vertex\_shader\_code}!Ragot::Renderer@{Ragot::Renderer}|hyperpage}{173}
+\indexentry{Ragot::Renderer@{Ragot::Renderer}!width@{width}|hyperpage}{173}
+\indexentry{width@{width}!Ragot::Renderer@{Ragot::Renderer}|hyperpage}{173}
+\indexentry{Ragot::RevolutionMesh@{Ragot::RevolutionMesh}|hyperpage}{173}
+\indexentry{Ragot::RevolutionMesh@{Ragot::RevolutionMesh}!RevolutionMesh@{RevolutionMesh}|hyperpage}{179}
+\indexentry{RevolutionMesh@{RevolutionMesh}!Ragot::RevolutionMesh@{Ragot::RevolutionMesh}|hyperpage}{179}
+\indexentry{Ragot::RevolutionMesh@{Ragot::RevolutionMesh}!````~RevolutionMesh@{\texorpdfstring{$\sim$}{\string~}RevolutionMesh}|hyperpage}{179}
+\indexentry{````~RevolutionMesh@{\texorpdfstring{$\sim$}{\string~}RevolutionMesh}!Ragot::RevolutionMesh@{Ragot::RevolutionMesh}|hyperpage}{179}
+\indexentry{Ragot::RevolutionMesh@{Ragot::RevolutionMesh}!generate\_faces@{generate\_faces}|hyperpage}{180}
+\indexentry{generate\_faces@{generate\_faces}!Ragot::RevolutionMesh@{Ragot::RevolutionMesh}|hyperpage}{180}
+\indexentry{Ragot::RevolutionMesh@{Ragot::RevolutionMesh}!generate\_vertices@{generate\_vertices}|hyperpage}{180}
+\indexentry{generate\_vertices@{generate\_vertices}!Ragot::RevolutionMesh@{Ragot::RevolutionMesh}|hyperpage}{180}
+\indexentry{Ragot::RevolutionMesh@{Ragot::RevolutionMesh}!cam@{cam}|hyperpage}{181}
+\indexentry{cam@{cam}!Ragot::RevolutionMesh@{Ragot::RevolutionMesh}|hyperpage}{181}
+\indexentry{Ragot::RevolutionMesh@{Ragot::RevolutionMesh}!faces\_can\_be\_quads@{faces\_can\_be\_quads}|hyperpage}{181}
+\indexentry{faces\_can\_be\_quads@{faces\_can\_be\_quads}!Ragot::RevolutionMesh@{Ragot::RevolutionMesh}|hyperpage}{181}
+\indexentry{Ragot::RevolutionMesh@{Ragot::RevolutionMesh}!PI@{PI}|hyperpage}{181}
+\indexentry{PI@{PI}!Ragot::RevolutionMesh@{Ragot::RevolutionMesh}|hyperpage}{181}
+\indexentry{Ragot::Scene@{Ragot::Scene}|hyperpage}{181}
+\indexentry{Ragot::Scene@{Ragot::Scene}!Scene@{Scene}|hyperpage}{184}
+\indexentry{Scene@{Scene}!Ragot::Scene@{Ragot::Scene}|hyperpage}{184}
+\indexentry{Ragot::Scene@{Ragot::Scene}!````~Scene@{\texorpdfstring{$\sim$}{\string~}Scene}|hyperpage}{184}
+\indexentry{````~Scene@{\texorpdfstring{$\sim$}{\string~}Scene}!Ragot::Scene@{Ragot::Scene}|hyperpage}{184}
+\indexentry{Ragot::Scene@{Ragot::Scene}!Scene@{Scene}|hyperpage}{184}
+\indexentry{Scene@{Scene}!Ragot::Scene@{Ragot::Scene}|hyperpage}{184}
+\indexentry{Ragot::Scene@{Ragot::Scene}!add\_node@{add\_node}|hyperpage}{185}
+\indexentry{add\_node@{add\_node}!Ragot::Scene@{Ragot::Scene}|hyperpage}{185}
+\indexentry{Ragot::Scene@{Ragot::Scene}!collect\_components@{collect\_components}|hyperpage}{185}
+\indexentry{collect\_components@{collect\_components}!Ragot::Scene@{Ragot::Scene}|hyperpage}{185}
+\indexentry{Ragot::Scene@{Ragot::Scene}!find\_node@{find\_node}|hyperpage}{185}
+\indexentry{find\_node@{find\_node}!Ragot::Scene@{Ragot::Scene}|hyperpage}{185}
+\indexentry{Ragot::Scene@{Ragot::Scene}!get\_main\_camera@{get\_main\_camera}|hyperpage}{186}
+\indexentry{get\_main\_camera@{get\_main\_camera}!Ragot::Scene@{Ragot::Scene}|hyperpage}{186}
+\indexentry{Ragot::Scene@{Ragot::Scene}!get\_root@{get\_root}|hyperpage}{186}
+\indexentry{get\_root@{get\_root}!Ragot::Scene@{Ragot::Scene}|hyperpage}{186}
+\indexentry{Ragot::Scene@{Ragot::Scene}!get\_root@{get\_root}|hyperpage}{186}
+\indexentry{get\_root@{get\_root}!Ragot::Scene@{Ragot::Scene}|hyperpage}{186}
+\indexentry{Ragot::Scene@{Ragot::Scene}!remove\_node@{remove\_node}|hyperpage}{187}
+\indexentry{remove\_node@{remove\_node}!Ragot::Scene@{Ragot::Scene}|hyperpage}{187}
+\indexentry{Ragot::Scene@{Ragot::Scene}!set\_main\_camera@{set\_main\_camera}|hyperpage}{187}
+\indexentry{set\_main\_camera@{set\_main\_camera}!Ragot::Scene@{Ragot::Scene}|hyperpage}{187}
+\indexentry{Ragot::Scene@{Ragot::Scene}!start@{start}|hyperpage}{187}
+\indexentry{start@{start}!Ragot::Scene@{Ragot::Scene}|hyperpage}{187}
+\indexentry{Ragot::Scene@{Ragot::Scene}!stop@{stop}|hyperpage}{187}
+\indexentry{stop@{stop}!Ragot::Scene@{Ragot::Scene}|hyperpage}{187}
+\indexentry{Ragot::Scene@{Ragot::Scene}!task\_update@{task\_update}|hyperpage}{188}
+\indexentry{task\_update@{task\_update}!Ragot::Scene@{Ragot::Scene}|hyperpage}{188}
+\indexentry{Ragot::Scene@{Ragot::Scene}!traverse@{traverse}|hyperpage}{188}
+\indexentry{traverse@{traverse}!Ragot::Scene@{Ragot::Scene}|hyperpage}{188}
+\indexentry{Ragot::Scene@{Ragot::Scene}!update@{update}|hyperpage}{189}
+\indexentry{update@{update}!Ragot::Scene@{Ragot::Scene}|hyperpage}{189}
+\indexentry{Ragot::Scene@{Ragot::Scene}!main\_camera@{main\_camera}|hyperpage}{190}
+\indexentry{main\_camera@{main\_camera}!Ragot::Scene@{Ragot::Scene}|hyperpage}{190}
+\indexentry{Ragot::Scene@{Ragot::Scene}!named\_nodes@{named\_nodes}|hyperpage}{190}
+\indexentry{named\_nodes@{named\_nodes}!Ragot::Scene@{Ragot::Scene}|hyperpage}{190}
+\indexentry{Ragot::Scene@{Ragot::Scene}!root\_node@{root\_node}|hyperpage}{190}
+\indexentry{root\_node@{root\_node}!Ragot::Scene@{Ragot::Scene}|hyperpage}{190}
+\indexentry{Ragot::Scene@{Ragot::Scene}!running@{running}|hyperpage}{190}
+\indexentry{running@{running}!Ragot::Scene@{Ragot::Scene}|hyperpage}{190}
+\indexentry{Ragot::Shader@{Ragot::Shader}|hyperpage}{190}
+\indexentry{Ragot::Shader@{Ragot::Shader}!Shader@{Shader}|hyperpage}{193}
+\indexentry{Shader@{Shader}!Ragot::Shader@{Ragot::Shader}|hyperpage}{193}
+\indexentry{Ragot::Shader@{Ragot::Shader}!Shader@{Shader}|hyperpage}{194}
+\indexentry{Shader@{Shader}!Ragot::Shader@{Ragot::Shader}|hyperpage}{194}
+\indexentry{Ragot::Shader@{Ragot::Shader}!````~Shader@{\texorpdfstring{$\sim$}{\string~}Shader}|hyperpage}{194}
+\indexentry{````~Shader@{\texorpdfstring{$\sim$}{\string~}Shader}!Ragot::Shader@{Ragot::Shader}|hyperpage}{194}
+\indexentry{Ragot::Shader@{Ragot::Shader}!compile\_shader@{compile\_shader}|hyperpage}{194}
+\indexentry{compile\_shader@{compile\_shader}!Ragot::Shader@{Ragot::Shader}|hyperpage}{194}
+\indexentry{Ragot::Shader@{Ragot::Shader}!get\_error@{get\_error}|hyperpage}{194}
+\indexentry{get\_error@{get\_error}!Ragot::Shader@{Ragot::Shader}|hyperpage}{194}
+\indexentry{Ragot::Shader@{Ragot::Shader}!get\_id@{get\_id}|hyperpage}{194}
+\indexentry{get\_id@{get\_id}!Ragot::Shader@{Ragot::Shader}|hyperpage}{194}
+\indexentry{Ragot::Shader@{Ragot::Shader}!is\_ok@{is\_ok}|hyperpage}{194}
+\indexentry{is\_ok@{is\_ok}!Ragot::Shader@{Ragot::Shader}|hyperpage}{194}
+\indexentry{Ragot::Shader@{Ragot::Shader}!show\_compilation\_error@{show\_compilation\_error}|hyperpage}{195}
+\indexentry{show\_compilation\_error@{show\_compilation\_error}!Ragot::Shader@{Ragot::Shader}|hyperpage}{195}
+\indexentry{Ragot::Shader@{Ragot::Shader}!compilation\_succeeded@{compilation\_succeeded}|hyperpage}{195}
+\indexentry{compilation\_succeeded@{compilation\_succeeded}!Ragot::Shader@{Ragot::Shader}|hyperpage}{195}
+\indexentry{Ragot::Shader@{Ragot::Shader}!error@{error}|hyperpage}{195}
+\indexentry{error@{error}!Ragot::Shader@{Ragot::Shader}|hyperpage}{195}
+\indexentry{Ragot::Shader@{Ragot::Shader}!id@{id}|hyperpage}{195}
+\indexentry{id@{id}!Ragot::Shader@{Ragot::Shader}|hyperpage}{195}
+\indexentry{Ragot::Shader\_Program@{Ragot::Shader\_Program}|hyperpage}{196}
+\indexentry{Ragot::Shader\_Program@{Ragot::Shader\_Program}!Shader\_Program@{Shader\_Program}|hyperpage}{197}
+\indexentry{Shader\_Program@{Shader\_Program}!Ragot::Shader\_Program@{Ragot::Shader\_Program}|hyperpage}{197}
+\indexentry{Ragot::Shader\_Program@{Ragot::Shader\_Program}!Shader\_Program@{Shader\_Program}|hyperpage}{198}
+\indexentry{Shader\_Program@{Shader\_Program}!Ragot::Shader\_Program@{Ragot::Shader\_Program}|hyperpage}{198}
+\indexentry{Ragot::Shader\_Program@{Ragot::Shader\_Program}!````~Shader\_Program@{\texorpdfstring{$\sim$}{\string~}Shader\_Program}|hyperpage}{198}
+\indexentry{````~Shader\_Program@{\texorpdfstring{$\sim$}{\string~}Shader\_Program}!Ragot::Shader\_Program@{Ragot::Shader\_Program}|hyperpage}{198}
+\indexentry{Ragot::Shader\_Program@{Ragot::Shader\_Program}!Shader\_Program@{Shader\_Program}|hyperpage}{198}
+\indexentry{Shader\_Program@{Shader\_Program}!Ragot::Shader\_Program@{Ragot::Shader\_Program}|hyperpage}{198}
+\indexentry{Ragot::Shader\_Program@{Ragot::Shader\_Program}!get\_id@{get\_id}|hyperpage}{199}
+\indexentry{get\_id@{get\_id}!Ragot::Shader\_Program@{Ragot::Shader\_Program}|hyperpage}{199}
+\indexentry{Ragot::Shader\_Program@{Ragot::Shader\_Program}!get\_uniform\_location@{get\_uniform\_location}|hyperpage}{199}
+\indexentry{get\_uniform\_location@{get\_uniform\_location}!Ragot::Shader\_Program@{Ragot::Shader\_Program}|hyperpage}{199}
+\indexentry{Ragot::Shader\_Program@{Ragot::Shader\_Program}!initialize@{initialize}|hyperpage}{199}
+\indexentry{initialize@{initialize}!Ragot::Shader\_Program@{Ragot::Shader\_Program}|hyperpage}{199}
+\indexentry{Ragot::Shader\_Program@{Ragot::Shader\_Program}!operator=@{operator=}|hyperpage}{200}
+\indexentry{operator=@{operator=}!Ragot::Shader\_Program@{Ragot::Shader\_Program}|hyperpage}{200}
+\indexentry{Ragot::Shader\_Program@{Ragot::Shader\_Program}!show\_linkage\_error@{show\_linkage\_error}|hyperpage}{200}
+\indexentry{show\_linkage\_error@{show\_linkage\_error}!Ragot::Shader\_Program@{Ragot::Shader\_Program}|hyperpage}{200}
+\indexentry{Ragot::Shader\_Program@{Ragot::Shader\_Program}!use@{use}|hyperpage}{200}
+\indexentry{use@{use}!Ragot::Shader\_Program@{Ragot::Shader\_Program}|hyperpage}{200}
+\indexentry{Ragot::Shader\_Program@{Ragot::Shader\_Program}!program\_id@{program\_id}|hyperpage}{201}
+\indexentry{program\_id@{program\_id}!Ragot::Shader\_Program@{Ragot::Shader\_Program}|hyperpage}{201}
+\indexentry{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}|hyperpage}{201}
+\indexentry{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!value\_type@{value\_type}|hyperpage}{204}
+\indexentry{value\_type@{value\_type}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}|hyperpage}{204}
+\indexentry{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!Sync\_Queue@{Sync\_Queue}|hyperpage}{205}
+\indexentry{Sync\_Queue@{Sync\_Queue}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}|hyperpage}{205}
+\indexentry{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!````~Sync\_Queue@{\texorpdfstring{$\sim$}{\string~}Sync\_Queue}|hyperpage}{205}
+\indexentry{````~Sync\_Queue@{\texorpdfstring{$\sim$}{\string~}Sync\_Queue}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}|hyperpage}{205}
+\indexentry{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!Sync\_Queue@{Sync\_Queue}|hyperpage}{205}
+\indexentry{Sync\_Queue@{Sync\_Queue}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}|hyperpage}{205}
+\indexentry{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!back@{back}|hyperpage}{206}
+\indexentry{back@{back}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}|hyperpage}{206}
+\indexentry{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!clear@{clear}|hyperpage}{206}
+\indexentry{clear@{clear}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}|hyperpage}{206}
+\indexentry{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!close@{close}|hyperpage}{206}
+\indexentry{close@{close}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}|hyperpage}{206}
+\indexentry{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!emplace@{emplace}|hyperpage}{207}
+\indexentry{emplace@{emplace}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}|hyperpage}{207}
+\indexentry{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!empty@{empty}|hyperpage}{207}
+\indexentry{empty@{empty}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}|hyperpage}{207}
+\indexentry{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!get@{get}|hyperpage}{208}
+\indexentry{get@{get}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}|hyperpage}{208}
+\indexentry{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!operator=@{operator=}|hyperpage}{208}
+\indexentry{operator=@{operator=}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}|hyperpage}{208}
+\indexentry{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!push@{push}|hyperpage}{208}
+\indexentry{push@{push}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}|hyperpage}{208}
+\indexentry{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!push@{push}|hyperpage}{209}
+\indexentry{push@{push}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}|hyperpage}{209}
+\indexentry{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!size@{size}|hyperpage}{209}
+\indexentry{size@{size}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}|hyperpage}{209}
+\indexentry{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!swap@{swap}|hyperpage}{209}
+\indexentry{swap@{swap}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}|hyperpage}{209}
+\indexentry{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!closed@{closed}|hyperpage}{210}
+\indexentry{closed@{closed}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}|hyperpage}{210}
+\indexentry{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!condition@{condition}|hyperpage}{210}
+\indexentry{condition@{condition}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}|hyperpage}{210}
+\indexentry{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!mutex@{mutex}|hyperpage}{210}
+\indexentry{mutex@{mutex}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}|hyperpage}{210}
+\indexentry{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!queue@{queue}|hyperpage}{210}
+\indexentry{queue@{queue}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}|hyperpage}{210}
+\indexentry{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}|hyperpage}{211}
+\indexentry{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!Task@{Task}|hyperpage}{213}
+\indexentry{Task@{Task}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}|hyperpage}{213}
+\indexentry{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!Thread\_Pool@{Thread\_Pool}|hyperpage}{213}
+\indexentry{Thread\_Pool@{Thread\_Pool}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}|hyperpage}{213}
+\indexentry{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!````~Thread\_Pool@{\texorpdfstring{$\sim$}{\string~}Thread\_Pool}|hyperpage}{214}
+\indexentry{````~Thread\_Pool@{\texorpdfstring{$\sim$}{\string~}Thread\_Pool}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}|hyperpage}{214}
+\indexentry{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!Thread\_Pool@{Thread\_Pool}|hyperpage}{214}
+\indexentry{Thread\_Pool@{Thread\_Pool}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}|hyperpage}{214}
+\indexentry{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!Thread\_Pool@{Thread\_Pool}|hyperpage}{215}
+\indexentry{Thread\_Pool@{Thread\_Pool}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}|hyperpage}{215}
+\indexentry{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!instance@{instance}|hyperpage}{215}
+\indexentry{instance@{instance}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}|hyperpage}{215}
+\indexentry{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!operator=@{operator=}|hyperpage}{216}
+\indexentry{operator=@{operator=}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}|hyperpage}{216}
+\indexentry{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!operator=@{operator=}|hyperpage}{216}
+\indexentry{operator=@{operator=}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}|hyperpage}{216}
+\indexentry{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!start@{start}|hyperpage}{217}
+\indexentry{start@{start}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}|hyperpage}{217}
+\indexentry{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!stop@{stop}|hyperpage}{217}
+\indexentry{stop@{stop}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}|hyperpage}{217}
+\indexentry{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!submit@{submit}|hyperpage}{218}
+\indexentry{submit@{submit}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}|hyperpage}{218}
+\indexentry{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!submit\_with\_stop@{submit\_with\_stop}|hyperpage}{218}
+\indexentry{submit\_with\_stop@{submit\_with\_stop}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}|hyperpage}{218}
+\indexentry{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!thread\_function@{thread\_function}|hyperpage}{219}
+\indexentry{thread\_function@{thread\_function}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}|hyperpage}{219}
+\indexentry{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!sem\_mesh\_ready@{sem\_mesh\_ready}|hyperpage}{219}
+\indexentry{sem\_mesh\_ready@{sem\_mesh\_ready}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}|hyperpage}{219}
+\indexentry{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!sem\_render\_done@{sem\_render\_done}|hyperpage}{219}
+\indexentry{sem\_render\_done@{sem\_render\_done}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}|hyperpage}{219}
+\indexentry{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!started@{started}|hyperpage}{220}
+\indexentry{started@{started}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}|hyperpage}{220}
+\indexentry{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!tasks@{tasks}|hyperpage}{220}
+\indexentry{tasks@{tasks}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}|hyperpage}{220}
+\indexentry{Ragot::Thread\_Pool@{Ragot::Thread\_Pool}!threads@{threads}|hyperpage}{220}
+\indexentry{threads@{threads}!Ragot::Thread\_Pool@{Ragot::Thread\_Pool}|hyperpage}{220}
+\indexentry{Ragot::Transform@{Ragot::Transform}|hyperpage}{221}
+\indexentry{Ragot::Transform@{Ragot::Transform}!Transform@{Transform}|hyperpage}{223}
+\indexentry{Transform@{Transform}!Ragot::Transform@{Ragot::Transform}|hyperpage}{223}
+\indexentry{Ragot::Transform@{Ragot::Transform}!````~Transform@{\texorpdfstring{$\sim$}{\string~}Transform}|hyperpage}{223}
+\indexentry{````~Transform@{\texorpdfstring{$\sim$}{\string~}Transform}!Ragot::Transform@{Ragot::Transform}|hyperpage}{223}
+\indexentry{Ragot::Transform@{Ragot::Transform}!get\_position@{get\_position}|hyperpage}{224}
+\indexentry{get\_position@{get\_position}!Ragot::Transform@{Ragot::Transform}|hyperpage}{224}
+\indexentry{Ragot::Transform@{Ragot::Transform}!get\_rotation@{get\_rotation}|hyperpage}{224}
+\indexentry{get\_rotation@{get\_rotation}!Ragot::Transform@{Ragot::Transform}|hyperpage}{224}
+\indexentry{Ragot::Transform@{Ragot::Transform}!get\_scale@{get\_scale}|hyperpage}{224}
+\indexentry{get\_scale@{get\_scale}!Ragot::Transform@{Ragot::Transform}|hyperpage}{224}
+\indexentry{Ragot::Transform@{Ragot::Transform}!get\_transform\_matrix@{get\_transform\_matrix}|hyperpage}{225}
+\indexentry{get\_transform\_matrix@{get\_transform\_matrix}!Ragot::Transform@{Ragot::Transform}|hyperpage}{225}
+\indexentry{Ragot::Transform@{Ragot::Transform}!is\_dirty@{is\_dirty}|hyperpage}{225}
+\indexentry{is\_dirty@{is\_dirty}!Ragot::Transform@{Ragot::Transform}|hyperpage}{225}
+\indexentry{Ragot::Transform@{Ragot::Transform}!rotate@{rotate}|hyperpage}{225}
+\indexentry{rotate@{rotate}!Ragot::Transform@{Ragot::Transform}|hyperpage}{225}
+\indexentry{Ragot::Transform@{Ragot::Transform}!set\_position@{set\_position}|hyperpage}{226}
+\indexentry{set\_position@{set\_position}!Ragot::Transform@{Ragot::Transform}|hyperpage}{226}
+\indexentry{Ragot::Transform@{Ragot::Transform}!set\_rotation@{set\_rotation}|hyperpage}{226}
+\indexentry{set\_rotation@{set\_rotation}!Ragot::Transform@{Ragot::Transform}|hyperpage}{226}
+\indexentry{Ragot::Transform@{Ragot::Transform}!set\_scale@{set\_scale}|hyperpage}{226}
+\indexentry{set\_scale@{set\_scale}!Ragot::Transform@{Ragot::Transform}|hyperpage}{226}
+\indexentry{Ragot::Transform@{Ragot::Transform}!dirty@{dirty}|hyperpage}{227}
+\indexentry{dirty@{dirty}!Ragot::Transform@{Ragot::Transform}|hyperpage}{227}
+\indexentry{Ragot::Transform@{Ragot::Transform}!position@{position}|hyperpage}{227}
+\indexentry{position@{position}!Ragot::Transform@{Ragot::Transform}|hyperpage}{227}
+\indexentry{Ragot::Transform@{Ragot::Transform}!rotation@{rotation}|hyperpage}{227}
+\indexentry{rotation@{rotation}!Ragot::Transform@{Ragot::Transform}|hyperpage}{227}
+\indexentry{Ragot::Transform@{Ragot::Transform}!scale@{scale}|hyperpage}{227}
+\indexentry{scale@{scale}!Ragot::Transform@{Ragot::Transform}|hyperpage}{227}
+\indexentry{Ragot::Transform@{Ragot::Transform}!transform\_matrix@{transform\_matrix}|hyperpage}{227}
+\indexentry{transform\_matrix@{transform\_matrix}!Ragot::Transform@{Ragot::Transform}|hyperpage}{227}
+\indexentry{Ragot::transform\_t@{Ragot::transform\_t}|hyperpage}{228}
+\indexentry{Ragot::transform\_t@{Ragot::transform\_t}!alpha@{alpha}|hyperpage}{229}
+\indexentry{alpha@{alpha}!Ragot::transform\_t@{Ragot::transform\_t}|hyperpage}{229}
+\indexentry{Ragot::transform\_t@{Ragot::transform\_t}!beta@{beta}|hyperpage}{229}
+\indexentry{beta@{beta}!Ragot::transform\_t@{Ragot::transform\_t}|hyperpage}{229}
+\indexentry{Ragot::transform\_t@{Ragot::transform\_t}!gamma@{gamma}|hyperpage}{229}
+\indexentry{gamma@{gamma}!Ragot::transform\_t@{Ragot::transform\_t}|hyperpage}{229}
+\indexentry{Ragot::transform\_t@{Ragot::transform\_t}!scale@{scale}|hyperpage}{229}
+\indexentry{scale@{scale}!Ragot::transform\_t@{Ragot::transform\_t}|hyperpage}{229}
+\indexentry{Ragot::transform\_t@{Ragot::transform\_t}!x@{x}|hyperpage}{229}
+\indexentry{x@{x}!Ragot::transform\_t@{Ragot::transform\_t}|hyperpage}{229}
+\indexentry{Ragot::transform\_t@{Ragot::transform\_t}!y@{y}|hyperpage}{229}
+\indexentry{y@{y}!Ragot::transform\_t@{Ragot::transform\_t}|hyperpage}{229}
+\indexentry{Ragot::transform\_t@{Ragot::transform\_t}!z@{z}|hyperpage}{229}
+\indexentry{z@{z}!Ragot::transform\_t@{Ragot::transform\_t}|hyperpage}{229}
+\indexentry{Ragot::Vertex\_Shader@{Ragot::Vertex\_Shader}|hyperpage}{230}
+\indexentry{Ragot::Vertex\_Shader@{Ragot::Vertex\_Shader}!Vertex\_Shader@{Vertex\_Shader}|hyperpage}{232}
+\indexentry{Vertex\_Shader@{Vertex\_Shader}!Ragot::Vertex\_Shader@{Ragot::Vertex\_Shader}|hyperpage}{232}
+\indexentry{Ragot::vertex\_t@{Ragot::vertex\_t}|hyperpage}{233}
+\indexentry{Ragot::vertex\_t@{Ragot::vertex\_t}!x@{x}|hyperpage}{233}
+\indexentry{x@{x}!Ragot::vertex\_t@{Ragot::vertex\_t}|hyperpage}{233}
+\indexentry{Ragot::vertex\_t@{Ragot::vertex\_t}!y@{y}|hyperpage}{233}
+\indexentry{y@{y}!Ragot::vertex\_t@{Ragot::vertex\_t}|hyperpage}{233}
+\indexentry{Ragot::vertex\_t@{Ragot::vertex\_t}!z@{z}|hyperpage}{233}
+\indexentry{z@{z}!Ragot::vertex\_t@{Ragot::vertex\_t}|hyperpage}{233}
+\indexentry{Ragot::Window@{Ragot::Window}|hyperpage}{234}
+\indexentry{Ragot::Window@{Ragot::Window}!Position@{Position}|hyperpage}{235}
+\indexentry{Position@{Position}!Ragot::Window@{Ragot::Window}|hyperpage}{235}
+\indexentry{UNDEFINED@{UNDEFINED}!Ragot::Window@{Ragot::Window}|hyperpage}{236}
+\indexentry{Ragot::Window@{Ragot::Window}!UNDEFINED@{UNDEFINED}|hyperpage}{236}
+\indexentry{CENTERED@{CENTERED}!Ragot::Window@{Ragot::Window}|hyperpage}{236}
+\indexentry{Ragot::Window@{Ragot::Window}!CENTERED@{CENTERED}|hyperpage}{236}
+\indexentry{Ragot::Window@{Ragot::Window}!Window@{Window}|hyperpage}{236}
+\indexentry{Window@{Window}!Ragot::Window@{Ragot::Window}|hyperpage}{236}
+\indexentry{Ragot::Window@{Ragot::Window}!Window@{Window}|hyperpage}{237}
+\indexentry{Window@{Window}!Ragot::Window@{Ragot::Window}|hyperpage}{237}
+\indexentry{Ragot::Window@{Ragot::Window}!````~Window@{\texorpdfstring{$\sim$}{\string~}Window}|hyperpage}{237}
+\indexentry{````~Window@{\texorpdfstring{$\sim$}{\string~}Window}!Ragot::Window@{Ragot::Window}|hyperpage}{237}
+\indexentry{Ragot::Window@{Ragot::Window}!Window@{Window}|hyperpage}{237}
+\indexentry{Window@{Window}!Ragot::Window@{Ragot::Window}|hyperpage}{237}
+\indexentry{Ragot::Window@{Ragot::Window}!Window@{Window}|hyperpage}{238}
+\indexentry{Window@{Window}!Ragot::Window@{Ragot::Window}|hyperpage}{238}
+\indexentry{Ragot::Window@{Ragot::Window}!get\_height@{get\_height}|hyperpage}{238}
+\indexentry{get\_height@{get\_height}!Ragot::Window@{Ragot::Window}|hyperpage}{238}
+\indexentry{Ragot::Window@{Ragot::Window}!get\_width@{get\_width}|hyperpage}{238}
+\indexentry{get\_width@{get\_width}!Ragot::Window@{Ragot::Window}|hyperpage}{238}
+\indexentry{Ragot::Window@{Ragot::Window}!operator=@{operator=}|hyperpage}{239}
+\indexentry{operator=@{operator=}!Ragot::Window@{Ragot::Window}|hyperpage}{239}
+\indexentry{Ragot::Window@{Ragot::Window}!operator=@{operator=}|hyperpage}{239}
+\indexentry{operator=@{operator=}!Ragot::Window@{Ragot::Window}|hyperpage}{239}
+\indexentry{Ragot::Window@{Ragot::Window}!swap\_buffers@{swap\_buffers}|hyperpage}{239}
+\indexentry{swap\_buffers@{swap\_buffers}!Ragot::Window@{Ragot::Window}|hyperpage}{239}
+\indexentry{Ragot::Window@{Ragot::Window}!height@{height}|hyperpage}{240}
+\indexentry{height@{height}!Ragot::Window@{Ragot::Window}|hyperpage}{240}
+\indexentry{Ragot::Window@{Ragot::Window}!opengl\_context@{opengl\_context}|hyperpage}{240}
+\indexentry{opengl\_context@{opengl\_context}!Ragot::Window@{Ragot::Window}|hyperpage}{240}
+\indexentry{Ragot::Window@{Ragot::Window}!width@{width}|hyperpage}{240}
+\indexentry{width@{width}!Ragot::Window@{Ragot::Window}|hyperpage}{240}
+\indexentry{Ragot::Window@{Ragot::Window}!window\_handle@{window\_handle}|hyperpage}{240}
+\indexentry{window\_handle@{window\_handle}!Ragot::Window@{Ragot::Window}|hyperpage}{240}
+\indexentry{main/Assets.cpp@{main/Assets.cpp}|hyperpage}{241}
+\indexentry{main/Assets.hpp@{main/Assets.hpp}|hyperpage}{242}
+\indexentry{main/Assets.hpp@{main/Assets.hpp}|hyperpage}{244}
+\indexentry{main/atomic\_stubs.c@{main/atomic\_stubs.c}|hyperpage}{245}
+\indexentry{atomic\_stubs.c@{atomic\_stubs.c}!\_\_atomic\_clear@{\_\_atomic\_clear}|hyperpage}{246}
+\indexentry{\_\_atomic\_clear@{\_\_atomic\_clear}!atomic\_stubs.c@{atomic\_stubs.c}|hyperpage}{246}
+\indexentry{atomic\_stubs.c@{atomic\_stubs.c}!\_\_atomic\_test\_and\_set@{\_\_atomic\_test\_and\_set}|hyperpage}{246}
+\indexentry{\_\_atomic\_test\_and\_set@{\_\_atomic\_test\_and\_set}!atomic\_stubs.c@{atomic\_stubs.c}|hyperpage}{246}
+\indexentry{main/Camera.cpp@{main/Camera.cpp}|hyperpage}{247}
+\indexentry{Camera.cpp@{Camera.cpp}!GLM\_ENABLE\_EXPERIMENTAL@{GLM\_ENABLE\_EXPERIMENTAL}|hyperpage}{248}
+\indexentry{GLM\_ENABLE\_EXPERIMENTAL@{GLM\_ENABLE\_EXPERIMENTAL}!Camera.cpp@{Camera.cpp}|hyperpage}{248}
+\indexentry{main/Camera.hpp@{main/Camera.hpp}|hyperpage}{248}
+\indexentry{main/Camera.hpp@{main/Camera.hpp}|hyperpage}{250}
+\indexentry{main/CommonTypes.hpp@{main/CommonTypes.hpp}|hyperpage}{251}
+\indexentry{main/CommonTypes.hpp@{main/CommonTypes.hpp}|hyperpage}{254}
+\indexentry{main/Components.hpp@{main/Components.hpp}|hyperpage}{254}
+\indexentry{main/Components.hpp@{main/Components.hpp}|hyperpage}{256}
+\indexentry{main/driver\_ek79007.cpp@{main/driver\_ek79007.cpp}|hyperpage}{257}
+\indexentry{main/driver\_ek79007.hpp@{main/driver\_ek79007.hpp}|hyperpage}{258}
+\indexentry{main/driver\_ek79007.hpp@{main/driver\_ek79007.hpp}|hyperpage}{260}
+\indexentry{main/driver\_lcd.hpp@{main/driver\_lcd.hpp}|hyperpage}{261}
+\indexentry{main/driver\_lcd.hpp@{main/driver\_lcd.hpp}|hyperpage}{263}
+\indexentry{main/Driver\_ST7789.cpp@{main/Driver\_ST7789.cpp}|hyperpage}{263}
+\indexentry{main/Driver\_ST7789.hpp@{main/Driver\_ST7789.hpp}|hyperpage}{265}
+\indexentry{main/Driver\_ST7789.hpp@{main/Driver\_ST7789.hpp}|hyperpage}{266}
+\indexentry{main/ExtrudeMesh.cpp@{main/ExtrudeMesh.cpp}|hyperpage}{267}
+\indexentry{main/ExtrudeMesh.hpp@{main/ExtrudeMesh.hpp}|hyperpage}{268}
+\indexentry{main/ExtrudeMesh.hpp@{main/ExtrudeMesh.hpp}|hyperpage}{270}
+\indexentry{main/fnv.hpp@{main/fnv.hpp}|hyperpage}{271}
+\indexentry{fnv.hpp@{fnv.hpp}!FNV@{FNV}|hyperpage}{273}
+\indexentry{FNV@{FNV}!fnv.hpp@{fnv.hpp}|hyperpage}{273}
+\indexentry{fnv.hpp@{fnv.hpp}!FNV32@{FNV32}|hyperpage}{273}
+\indexentry{FNV32@{FNV32}!fnv.hpp@{fnv.hpp}|hyperpage}{273}
+\indexentry{fnv.hpp@{fnv.hpp}!FNV64@{FNV64}|hyperpage}{273}
+\indexentry{FNV64@{FNV64}!fnv.hpp@{fnv.hpp}|hyperpage}{273}
+\indexentry{fnv.hpp@{fnv.hpp}!operator"{}"{}\_fnv@{operator""""\_fnv}|hyperpage}{273}
+\indexentry{operator"{}"{}\_fnv@{operator""""\_fnv}!fnv.hpp@{fnv.hpp}|hyperpage}{273}
+\indexentry{main/fnv.hpp@{main/fnv.hpp}|hyperpage}{274}
+\indexentry{main/FrameBuffer.cpp@{main/FrameBuffer.cpp}|hyperpage}{275}
+\indexentry{main/FrameBuffer.hpp@{main/FrameBuffer.hpp}|hyperpage}{277}
+\indexentry{main/FrameBuffer.hpp@{main/FrameBuffer.hpp}|hyperpage}{278}
+\indexentry{main/Id.hpp@{main/Id.hpp}|hyperpage}{280}
+\indexentry{Id.hpp@{Id.hpp}!ID@{ID}|hyperpage}{281}
+\indexentry{ID@{ID}!Id.hpp@{Id.hpp}|hyperpage}{281}
+\indexentry{main/Id.hpp@{main/Id.hpp}|hyperpage}{281}
+\indexentry{main/Logger.cpp@{main/Logger.cpp}|hyperpage}{281}
+\indexentry{main/Logger.hpp@{main/Logger.hpp}|hyperpage}{283}
+\indexentry{main/Logger.hpp@{main/Logger.hpp}|hyperpage}{285}
+\indexentry{main/main.cpp@{main/main.cpp}|hyperpage}{286}
+\indexentry{main.cpp@{main.cpp}!main@{main}|hyperpage}{287}
+\indexentry{main@{main}!main.cpp@{main.cpp}|hyperpage}{287}
+\indexentry{main.cpp@{main.cpp}!main\_loop@{main\_loop}|hyperpage}{287}
+\indexentry{main\_loop@{main\_loop}!main.cpp@{main.cpp}|hyperpage}{287}
+\indexentry{main.cpp@{main.cpp}!MAIN\_TAG@{MAIN\_TAG}|hyperpage}{288}
+\indexentry{MAIN\_TAG@{MAIN\_TAG}!main.cpp@{main.cpp}|hyperpage}{288}
+\indexentry{main/Mesh.cpp@{main/Mesh.cpp}|hyperpage}{289}
+\indexentry{main/Mesh.hpp@{main/Mesh.hpp}|hyperpage}{290}
+\indexentry{main/Mesh.hpp@{main/Mesh.hpp}|hyperpage}{292}
+\indexentry{main/MeshSerializer.cpp@{main/MeshSerializer.cpp}|hyperpage}{293}
+\indexentry{main/MeshSerializer.hpp@{main/MeshSerializer.hpp}|hyperpage}{294}
+\indexentry{main/MeshSerializer.hpp@{main/MeshSerializer.hpp}|hyperpage}{296}
+\indexentry{main/Node.hpp@{main/Node.hpp}|hyperpage}{297}
+\indexentry{main/Node.hpp@{main/Node.hpp}|hyperpage}{299}
+\indexentry{main/RamAllocator.hpp@{main/RamAllocator.hpp}|hyperpage}{299}
+\indexentry{main/RamAllocator.hpp@{main/RamAllocator.hpp}|hyperpage}{301}
+\indexentry{main/Rasterizer.cpp@{main/Rasterizer.cpp}|hyperpage}{302}
+\indexentry{main/Rasterizer.hpp@{main/Rasterizer.hpp}|hyperpage}{303}
+\indexentry{main/Rasterizer.hpp@{main/Rasterizer.hpp}|hyperpage}{305}
+\indexentry{main/Renderer.cpp@{main/Renderer.cpp}|hyperpage}{307}
+\indexentry{main/Renderer.hpp@{main/Renderer.hpp}|hyperpage}{309}
+\indexentry{main/Renderer.hpp@{main/Renderer.hpp}|hyperpage}{310}
+\indexentry{main/RevolutionMesh.cpp@{main/RevolutionMesh.cpp}|hyperpage}{311}
+\indexentry{main/RevolutionMesh.hpp@{main/RevolutionMesh.hpp}|hyperpage}{313}
+\indexentry{main/RevolutionMesh.hpp@{main/RevolutionMesh.hpp}|hyperpage}{315}
+\indexentry{main/Scene.cpp@{main/Scene.cpp}|hyperpage}{316}
+\indexentry{main/Scene.hpp@{main/Scene.hpp}|hyperpage}{317}
+\indexentry{main/Scene.hpp@{main/Scene.hpp}|hyperpage}{319}
+\indexentry{main/Shader\_Program.cpp@{main/Shader\_Program.cpp}|hyperpage}{320}
+\indexentry{main/Shader\_Program.hpp@{main/Shader\_Program.hpp}|hyperpage}{320}
+\indexentry{main/Shader\_Program.hpp@{main/Shader\_Program.hpp}|hyperpage}{322}
+\indexentry{main/Sync\_Queue.hpp@{main/Sync\_Queue.hpp}|hyperpage}{323}
+\indexentry{main/Sync\_Queue.hpp@{main/Sync\_Queue.hpp}|hyperpage}{325}
+\indexentry{main/Thread\_Pool.cpp@{main/Thread\_Pool.cpp}|hyperpage}{327}
+\indexentry{main/Thread\_Pool.hpp@{main/Thread\_Pool.hpp}|hyperpage}{328}
+\indexentry{main/Thread\_Pool.hpp@{main/Thread\_Pool.hpp}|hyperpage}{329}
+\indexentry{main/Transform.hpp@{main/Transform.hpp}|hyperpage}{331}
+\indexentry{main/Transform.hpp@{main/Transform.hpp}|hyperpage}{333}
+\indexentry{main/Window.cpp@{main/Window.cpp}|hyperpage}{334}
+\indexentry{main/Window.hpp@{main/Window.hpp}|hyperpage}{335}
+\indexentry{main/Window.hpp@{main/Window.hpp}|hyperpage}{336}

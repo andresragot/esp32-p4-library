@@ -1,0 +1,5 @@
+<map id="Ragot::panel_refresh_callback" name="Ragot::panel_refresh_callback">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,148,46"/>
+<area shape="rect" id="Node000002" href="$class_ragot_1_1_driver___s_t7789.html#a66159f3d2001ac6c42d8016ee60e8e9a" title="Refreshes the frame buffer for the ST7789 LCD panel." alt="" coords="196,5,347,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,23,180,23,180,28,148,28"/>
+</map>

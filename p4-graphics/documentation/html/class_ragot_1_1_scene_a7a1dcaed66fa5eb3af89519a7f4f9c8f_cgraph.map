@@ -1,0 +1,5 @@
+<map id="Ragot::Scene::collect_components" name="Ragot::Scene::collect_components">
+<area shape="rect" id="Node000001" title="Collects all components of a specified type from the scene." alt="" coords="5,5,153,46"/>
+<area shape="rect" id="Node000002" href="$class_ragot_1_1_scene.html#a11db92312f88cbc07fa66bdc07cbfc48" title="Traverses the scene graph and applies a callback function to each node." alt="" coords="201,13,357,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="153,23,185,23,185,28,153,28"/>
+</map>

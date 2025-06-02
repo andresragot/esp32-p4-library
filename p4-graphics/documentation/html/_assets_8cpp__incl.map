@@ -1,0 +1,9 @@
+<map id="main/Assets.cpp" name="main/Assets.cpp">
+<area shape="rect" id="Node000001" title="This file implements the Assets class, which manages the asset paths for the application." alt="" coords="32,5,151,31"/>
+<area shape="rect" id="Node000002" href="$_assets_8hpp.html" title="This file defines the Assets class, which manages the asset paths for the application...." alt="" coords="48,79,135,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,31,94,63,89,63,89,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,153,87,178"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="86,106,64,141,59,138,82,103"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="111,153,165,178"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="101,103,124,138,120,141,97,106"/>
+</map>

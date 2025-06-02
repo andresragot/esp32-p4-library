@@ -1,0 +1,11 @@
+<map id="Ragot::Node::Node" name="Ragot::Node::Node">
+<area shape="rect" id="Node000001" title="Default constructor for Node. Initializes an empty node with no parent and no children." alt="" coords="212,80,346,106"/>
+<area shape="rect" id="Node000002" href="$class_ragot_1_1_node.html#a2cd800085d580d594ad5cb5ea55df009" title="Deleted move constructor for Node. Prevents moving of Node instances." alt="" coords="17,5,152,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="235,75,163,45,132,34,134,29,165,40,237,70"/>
+<area shape="rect" id="Node000003" href="$class_ragot_1_1_node.html#afb856f2743eed9ca04755107e5d2a49b" title="Deleted copy constructor for Node. Prevents copying of Node instances." alt="" coords="17,55,152,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="196,85,152,79,153,74,196,79"/>
+<area shape="rect" id="Node000004" href="$class_ragot_1_1_node.html#aba99d61150423e3eaa0b99fe522a03a4" title="Deleted move assignment operator for Node. Prevents moving of Node instances." alt="" coords="5,104,164,130"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="196,106,164,110,164,104,195,100"/>
+<area shape="rect" id="Node000005" href="$class_ragot_1_1_node.html#a36d44666bd1c79342ca8e12341fd83c1" title="Deleted assignment operator for Node. Prevents assignment of Node instances." alt="" coords="5,153,164,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="236,115,165,145,133,155,131,150,163,140,234,110"/>
+</map>

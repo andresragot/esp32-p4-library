@@ -68,11 +68,7 @@ namespace Ragot
         Scene();
         
         /**
-         * @brief Constructs a Scene object with a specified camera.
-         * 
-         * Initializes the scene with a root node and sets the main camera.
-         * 
-         * @param camera Pointer to the Camera object to be used as the main camera for the scene.
+         * @brief Destructor for the Scene class.
          */
        ~Scene() = default;
 

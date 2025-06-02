@@ -1,0 +1,65 @@
+\doxysection{Scene.\+hpp}
+\hypertarget{_scene_8hpp_source}{}\label{_scene_8hpp_source}\index{main/Scene.hpp@{main/Scene.hpp}}
+\mbox{\hyperlink{_scene_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_node_8hpp}{Node.hpp}}"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_camera_8hpp}{Camera.hpp}}"{}}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <typeindex>}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_id_8hpp}{Id.hpp}}"{}}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ <stop\_token>}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ragot}{Ragot}}}
+\DoxyCodeLine{00046\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ragot_1_1_scene_a5ea6ad6ab81208e8d4d3e81d7e8657e9}{Scene}}}
+\DoxyCodeLine{00055\ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_camera}{Camera}}\ *\ \mbox{\hyperlink{class_ragot_1_1_scene_a238411f32f8d5c8071fc842c0be07ac7}{main\_camera}}\ =\ \textcolor{keyword}{nullptr};\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ std::shared\_ptr\ <\ Node\ >\ \mbox{\hyperlink{class_ragot_1_1_scene_a48a1aeacd4f272d71982d38984565eba}{root\_node}};\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ std::unordered\_map<basics::Id,\ std::shared\_ptr\ <\ Node\ >\ >\ \mbox{\hyperlink{class_ragot_1_1_scene_a4a9193649eb27ffac2dccae7c3d4b22b}{named\_nodes}};\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ std::atomic<bool>\ \mbox{\hyperlink{class_ragot_1_1_scene_ae1c7592dd90c6c3f52f7af1cfef58793}{running}}\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_scene_a5ea6ad6ab81208e8d4d3e81d7e8657e9}{Scene}}();}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_scene_aa3a52fe2e10ca16bc23a5ad9472e981e}{\string~Scene}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_scene_a5ea6ad6ab81208e8d4d3e81d7e8657e9}{Scene}}\ (\mbox{\hyperlink{class_ragot_1_1_camera}{Camera}}\ *\ camera);}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_scene_adc84d8a6d23a38bc213e12356db8328e}{add\_node}}(std::shared\_ptr\ <\ Node\ >\ node,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespacebasics_a302199d491be70388c151446cbbd92c8}{basics::Id}}\ name);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_scene_a26456d81a591afeaa167ed803ef397b6}{remove\_node}}(std::shared\_ptr\ <\ Node\ >\ node);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ std::shared\_ptr\ <\ Node\ >\ \mbox{\hyperlink{class_ragot_1_1_scene_add27a1ec3347b79b384db0b6b91262fa}{find\_node}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespacebasics_a302199d491be70388c151446cbbd92c8}{basics::Id}}\ name);}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_scene_aa472d87b474a956decab5b86be2c0f0c}{set\_main\_camera}}(\mbox{\hyperlink{class_ragot_1_1_camera}{Camera}}\ *\ camera);}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_camera}{Camera}}\ *\ \mbox{\hyperlink{class_ragot_1_1_scene_af788c910cd73bf3265901862d32113ba}{get\_main\_camera}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_ragot_1_1_scene_a238411f32f8d5c8071fc842c0be07ac7}{main\_camera}};\ \}}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_scene_a11db92312f88cbc07fa66bdc07cbfc48}{traverse}}(\textcolor{keyword}{const}\ std::function<\textcolor{keywordtype}{void}(std::shared\_ptr\ <\ Node\ >)\ >\&\ callback);}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ std::vector<std::shared\_ptr\ <\ T\ >\ >\ \mbox{\hyperlink{class_ragot_1_1_scene_a7a1dcaed66fa5eb3af89519a7f4f9c8f}{collect\_components}}();}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_scene_a2ff6f1b1c88e31f6e9e04ddb98021efe}{update}}(\textcolor{keywordtype}{float}\ delta\_time);}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr\ <\ Node\ >\ \mbox{\hyperlink{class_ragot_1_1_scene_a453ac93381ff7b7f1f387c62b933c37d}{get\_root}}()\ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_ragot_1_1_scene_a48a1aeacd4f272d71982d38984565eba}{root\_node}};\ \}}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::shared\_ptr\ <\ Node\ >\ \mbox{\hyperlink{class_ragot_1_1_scene_ab995ac535d181c2890d7b8c7f51b5ebe}{get\_root}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_ragot_1_1_scene_a48a1aeacd4f272d71982d38984565eba}{root\_node}};\ \}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_scene_a4f90507572175cc171fad04dbfb05075}{start}}()\ \{\ \mbox{\hyperlink{class_ragot_1_1_scene_ae1c7592dd90c6c3f52f7af1cfef58793}{running}}\ =\ \textcolor{keyword}{true};\ \}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_scene_a8401b63fe0a26ccd0d75bca9d2e8eb06}{stop}}()\ \{\ \mbox{\hyperlink{class_ragot_1_1_scene_ae1c7592dd90c6c3f52f7af1cfef58793}{running}}\ =\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_scene_a625a17c7c3602bb5e779a8a64792d874}{task\_update}}\ (std::stop\_token,\ \textcolor{keywordtype}{float}\ delta\_time);}
+\DoxyCodeLine{00186\ \ \ \ \ \};}
+\DoxyCodeLine{00187\ \}}
+
+\end{DoxyCode}

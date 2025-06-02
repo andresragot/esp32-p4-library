@@ -1,0 +1,855 @@
+\doxysection{Ragot\+::Camera Class Reference}
+\hypertarget{class_ragot_1_1_camera}{}\label{class_ragot_1_1_camera}\index{Ragot::Camera@{Ragot::Camera}}
+
+
+Represents a camera in a 3D space, managing its properties and transformations.  
+
+
+
+
+{\ttfamily \#include $<$Camera.\+hpp$>$}
+
+
+
+Inheritance diagram for Ragot\+::Camera\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_ragot_1_1_camera__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ragot\+::Camera\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_ragot_1_1_camera__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{class_ragot_1_1_camera_a9a1fd20ff3afd39e3d078182c19515d3}{Matrix4x4}} = glm\+::mat4
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_camera_a97b635c108f59f178dfd982bd2d8d8cd}{Camera}} ()=delete
+\begin{DoxyCompactList}\small\item\em Delete default constructor to prevent instantiation without parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_camera_a4003c531ad3653b929bd10437f16e3e2}{Camera}} (float \mbox{\hyperlink{class_ragot_1_1_camera_a405946f21acb2e3f44b0595cb656f104}{aspect\+\_\+ratio}}=1.f, float \mbox{\hyperlink{class_ragot_1_1_camera_a9148d7fe58ef54a6ee8e11d47f7ec8c3}{near\+\_\+plane}}=1.f, float \mbox{\hyperlink{class_ragot_1_1_camera_aee222417ed046527a02e27f2152f1840}{far\+\_\+plane}}=100.f, float fov\+\_\+deg=60.f)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_ragot_1_1_camera}{Camera} object with specified parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_camera_a99ed38d270bc0436000e413b315e0da7}{\texorpdfstring{$\sim$}{\string~}\+Camera}} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor for \doxylink{class_ragot_1_1_camera}{Camera} class. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_ragot_1_1_camera_a0a78fecaa405fea8a5149fa6550e99b1}{get\+\_\+fov}} () const
+\begin{DoxyCompactList}\small\item\em Returns the camera\textquotesingle{}s field of view in degrees. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_ragot_1_1_camera_ae42df26bd7aa79759b8f736c300542d5}{get\+\_\+near\+\_\+plane}} () const
+\begin{DoxyCompactList}\small\item\em Returns the camera\textquotesingle{}s near clipping plane distance. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_ragot_1_1_camera_aad711b75b691047d073e442b9927fbb9}{get\+\_\+far\+\_\+plane}} () const
+\begin{DoxyCompactList}\small\item\em Returns the camera\textquotesingle{}s far clipping plane distance. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_ragot_1_1_camera_a043917bffed39267d3dceaad12c88427}{get\+\_\+aspect\+\_\+ratio}} () const
+\begin{DoxyCompactList}\small\item\em Returns the camera\textquotesingle{}s aspect ratio (width/height). \end{DoxyCompactList}\item 
+glm\+::vec3 \mbox{\hyperlink{class_ragot_1_1_camera_a48fcec455da6d500685a2f20a3431ac4}{get\+\_\+location}} () const
+\begin{DoxyCompactList}\small\item\em Returns the camera\textquotesingle{}s position in world space. \end{DoxyCompactList}\item 
+glm\+::vec3 \mbox{\hyperlink{class_ragot_1_1_camera_a81905b55fa882c4163eaddd932264ceb}{get\+\_\+target}} () const
+\begin{DoxyCompactList}\small\item\em Returns the camera\textquotesingle{}s target position in world space. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ragot_1_1_camera_aca374d52718b5cee02e9f2c62769fe47}{is\+\_\+dirty}} () const
+\begin{DoxyCompactList}\small\item\em Returns the camera\textquotesingle{}s position in world space. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_camera_a8cae2e18b67fe3472c832a014ed64b6d}{set\+\_\+fov}} (float deg)
+\begin{DoxyCompactList}\small\item\em Set the fov object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_camera_a3a4139c62ee5f8f61c03906a9d7e91ff}{set\+\_\+near\+\_\+plane}} (float np)
+\begin{DoxyCompactList}\small\item\em Set the near clipping plane distance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_camera_a36449c2ad1099e38751b29c737c9fe01}{set\+\_\+far\+\_\+plane}} (float fp)
+\begin{DoxyCompactList}\small\item\em Set the far clipping plane distance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_camera_ac75d80a3159d1e664848c4ee192ba65c}{set\+\_\+aspect\+\_\+ratio}} (float ar)
+\begin{DoxyCompactList}\small\item\em Set the aspect ratio of the camera. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_camera_a589b34b0d14c3c1b7e15e5388b9d0210}{set\+\_\+location}} (const glm\+::vec3 \&p)
+\begin{DoxyCompactList}\small\item\em Set the camera\textquotesingle{}s position in world space. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_camera_a4a6d2a312bc3ca80842770826ed3f9db}{set\+\_\+target}} (const glm\+::vec3 \&t)
+\begin{DoxyCompactList}\small\item\em Set the camera\textquotesingle{}s target position in world space. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_ragot_1_1_camera_a9a1fd20ff3afd39e3d078182c19515d3}{Matrix4x4}} \& \mbox{\hyperlink{class_ragot_1_1_camera_a4d9c6fd76db5bd6911281c5951cab4a9}{get\+\_\+projection\+\_\+matrix}} () const
+\begin{DoxyCompactList}\small\item\em Get the projection matrix object. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_ragot_1_1_camera_a9a1fd20ff3afd39e3d078182c19515d3}{Matrix4x4}} \& \mbox{\hyperlink{class_ragot_1_1_camera_aa8fc7776eff63588634df880957ed04e}{get\+\_\+view\+\_\+matrix}} () const
+\begin{DoxyCompactList}\small\item\em Get the view matrix object. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_ragot_1_1_camera_a9a1fd20ff3afd39e3d078182c19515d3}{Matrix4x4}} \& \mbox{\hyperlink{class_ragot_1_1_camera_a0eb49a8b33981535da1ac49070570787}{get\+\_\+vp\+\_\+matrix}} () const
+\begin{DoxyCompactList}\small\item\em Get the vp matrix object. \end{DoxyCompactList}\item 
+glm\+::vec3 \mbox{\hyperlink{class_ragot_1_1_camera_a30288032ce41c666e4fb2f37f8d168f5}{get\+\_\+view\+\_\+direction}} () const
+\begin{DoxyCompactList}\small\item\em Get the view direction object. \end{DoxyCompactList}\item 
+glm\+::vec3 \mbox{\hyperlink{class_ragot_1_1_camera_a8ca889ab3cd7c393afe45163708ef297}{get\+\_\+right\+\_\+direction}} () const
+\begin{DoxyCompactList}\small\item\em Get the right direction object. \end{DoxyCompactList}\item 
+glm\+::vec3 \mbox{\hyperlink{class_ragot_1_1_camera_a4d342cc17133f18dc93835e66975fc6c}{get\+\_\+up\+\_\+direction}} () const
+\begin{DoxyCompactList}\small\item\em Get the up direction object. \end{DoxyCompactList}\item 
+glm\+::vec3 \mbox{\hyperlink{class_ragot_1_1_camera_a49252f6f9a5e873836e42dd2a38515fd}{project\+\_\+to\+\_\+ndc}} (const glm\+::vec4 \&world\+Pos) const
+\item 
+\mbox{\hyperlink{struct_ragot_1_1vertex__t}{vertex\+\_\+t}} \mbox{\hyperlink{class_ragot_1_1_camera_a87cda7dfebac0d0310e592eea9e9c3c3}{calculate\+\_\+normal}} (const \mbox{\hyperlink{struct_ragot_1_1vertex__t}{vertex\+\_\+t}} \&v1, const \mbox{\hyperlink{struct_ragot_1_1vertex__t}{vertex\+\_\+t}} \&v2, const \mbox{\hyperlink{struct_ragot_1_1vertex__t}{vertex\+\_\+t}} \&v3)
+\begin{DoxyCompactList}\small\item\em Calculate the normal vector of a face defined by three vertices. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ragot_1_1_camera_a0b276715ecd2b50677b4cf0002847100}{is\+\_\+face\+\_\+visible}} (const \mbox{\hyperlink{struct_ragot_1_1vertex__t}{vertex\+\_\+t}} \&v1, const \mbox{\hyperlink{struct_ragot_1_1vertex__t}{vertex\+\_\+t}} \&v2, const \mbox{\hyperlink{struct_ragot_1_1vertex__t}{vertex\+\_\+t}} \&v3)
+\begin{DoxyCompactList}\small\item\em Check if a face defined by three vertices is visible from the camera\textquotesingle{}s perspective. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_camera_a9668a61516d1f807a19f007c717a3ecd}{log\+\_\+camera\+\_\+info}} () const
+\begin{DoxyCompactList}\small\item\em Logs the camera\textquotesingle{}s properties for debugging purposes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ragot_1_1_component}{Ragot\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_component_a96cadec729b1265b3f30480fb060b942}{Component}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{class_ragot_1_1_component}{Component} class. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_ragot_1_1_component_a21a3e09be8069d18aa88f5cd5be5ccb4}{\texorpdfstring{$\sim$}{\string~}\+Component}} ()=default
+\begin{DoxyCompactList}\small\item\em Default virtual destructor for the \doxylink{class_ragot_1_1_component}{Component} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_component_a44c3fa4a306939779086ebdce7574af2}{Component}} (const \mbox{\hyperlink{class_ragot_1_1_component}{Component}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy constructor for the \doxylink{class_ragot_1_1_component}{Component} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_component_ad71e3d9be704be61fdd1074b5a1d4691}{Component}} (const \mbox{\hyperlink{class_ragot_1_1_component}{Component}} \&\&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted move constructor for the \doxylink{class_ragot_1_1_component}{Component} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_component}{Component}} \& \mbox{\hyperlink{class_ragot_1_1_component_af3db7d65eeca5bd1d57309e30eb7afad}{operator=}} (const \mbox{\hyperlink{class_ragot_1_1_component}{Component}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted assignment operator for the \doxylink{class_ragot_1_1_component}{Component} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_component}{Component}} \& \mbox{\hyperlink{class_ragot_1_1_component_ac3cf10a05f5314a464f05d6aeec0b0e4}{operator=}} (const \mbox{\hyperlink{class_ragot_1_1_component}{Component}} \&\&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted move assignment operator for the \doxylink{class_ragot_1_1_component}{Component} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_component_a0185e6750172704061e5595a6281afb6}{add\+\_\+component}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_component}{Component}} $>$ component)
+\begin{DoxyCompactList}\small\item\em Adds a component to the collection. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_component_aa5027faece5c55d50eb4408ae039b81a}{remove\+\_\+component}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_component}{Component}} $>$ component)
+\begin{DoxyCompactList}\small\item\em Removes a component from the collection. \end{DoxyCompactList}\item 
+const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_component}{Component}} $>$ $>$ \mbox{\hyperlink{class_ragot_1_1_component_ad05ecadb2595b73b6fbb9643ed7473ec}{get\+\_\+components}} () const
+\begin{DoxyCompactList}\small\item\em Gets the collection of components. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ragot_1_1_node}{Ragot\+::\+Node}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_node_af950cf77621bbb3f157b7bf3852dfd2b}{Node}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor for \doxylink{class_ragot_1_1_node}{Node}. Initializes an empty node with no parent and no children. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_ragot_1_1_node_a51384a380fecebd14482c49f7fc60336}{\texorpdfstring{$\sim$}{\string~}\+Node}} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor for \doxylink{class_ragot_1_1_node}{Node}. Cleans up the node and its children. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_node_afb856f2743eed9ca04755107e5d2a49b}{Node}} (const \mbox{\hyperlink{class_ragot_1_1_node}{Node}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy constructor for \doxylink{class_ragot_1_1_node}{Node}. Prevents copying of \doxylink{class_ragot_1_1_node}{Node} instances. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_node_a2cd800085d580d594ad5cb5ea55df009}{Node}} (const \mbox{\hyperlink{class_ragot_1_1_node}{Node}} \&\&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted move constructor for \doxylink{class_ragot_1_1_node}{Node}. Prevents moving of \doxylink{class_ragot_1_1_node}{Node} instances. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_node}{Node}} \& \mbox{\hyperlink{class_ragot_1_1_node_a36d44666bd1c79342ca8e12341fd83c1}{operator=}} (const \mbox{\hyperlink{class_ragot_1_1_node}{Node}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted assignment operator for \doxylink{class_ragot_1_1_node}{Node}. Prevents assignment of \doxylink{class_ragot_1_1_node}{Node} instances. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_node}{Node}} \& \mbox{\hyperlink{class_ragot_1_1_node_aba99d61150423e3eaa0b99fe522a03a4}{operator=}} (const \mbox{\hyperlink{class_ragot_1_1_node}{Node}} \&\&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted move assignment operator for \doxylink{class_ragot_1_1_node}{Node}. Prevents moving of \doxylink{class_ragot_1_1_node}{Node} instances. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_node_a32b4ac99143d362f0f0c5176e52e39f5}{add\+\_\+child}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$ child)
+\begin{DoxyCompactList}\small\item\em Get the parent node. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_node_a83168b2c88ef5387b1e768f0a7328479}{remove\+\_\+child}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$ child)
+\begin{DoxyCompactList}\small\item\em Remove a child node. \end{DoxyCompactList}\item 
+const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$ $>$ \& \mbox{\hyperlink{class_ragot_1_1_node_a18af54a13e0c49864ac4095e1ec5f87c}{get\+\_\+children}} () const
+\begin{DoxyCompactList}\small\item\em Get the parent node. \end{DoxyCompactList}\item 
+mat4 \mbox{\hyperlink{class_ragot_1_1_node_adf704afc3b1c3ca9a9819be9e319479b}{get\+\_\+transform\+\_\+matrix}} () override
+\begin{DoxyCompactList}\small\item\em Get the transform matrix object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ragot_1_1_transform}{Ragot\+::\+Transform}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_transform_a725154a65379853ad8fcb0263fedda6c}{Transform}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{class_ragot_1_1_transform}{Transform} class. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_ragot_1_1_transform_a50798b680f8f6a40ec2c7ea9a6e1df08}{\texorpdfstring{$\sim$}{\string~}\+Transform}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{class_ragot_1_1_transform}{Transform} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_transform_a7962797afae773a25fdebf76a8404a7a}{set\+\_\+position}} (const vec3 \&pos)
+\begin{DoxyCompactList}\small\item\em Sets the position of the object. \end{DoxyCompactList}\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_a1db9f8e84315c4296dfef46f1f17ce99}{get\+\_\+position}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current position of the object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_transform_a7641b284077ae1fe1e0b7f3ffc788edb}{set\+\_\+rotation}} (const vec3 \&rot)
+\begin{DoxyCompactList}\small\item\em Moves the object by a specified vector. \end{DoxyCompactList}\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_aa9a377ee1cc5eca48f62970e3d4016ab}{get\+\_\+rotation}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current rotation of the object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_transform_a83714240213caa1528e9e75b1cb5a307}{rotate}} (const float angle, const vec3 \&axis)
+\begin{DoxyCompactList}\small\item\em Rotates the object by a specified angle around a given axis. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_transform_ace83a2bcfdaffd808a1d89fe0cb48fce}{set\+\_\+scale}} (const vec3 \&\mbox{\hyperlink{class_ragot_1_1_transform_ad7da3cfaf66f95597dfbb6fcb8f838d7}{scale}})
+\begin{DoxyCompactList}\small\item\em Sets the scale of the object. \end{DoxyCompactList}\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_a96a6f6bcff942294a7011dac4f235b92}{get\+\_\+scale}} () const
+\begin{DoxyCompactList}\small\item\em Sets the scale of the object uniformly. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ragot_1_1_transform_acf0344728a251b9e04fbfb4ab05dd450}{is\+\_\+dirty}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the transformation matrix is dirty (needs recalculation). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_ragot_1_1_camera_a3350c181d3cedae0d860b4bb50171cc8}{fov}}
+\begin{DoxyCompactList}\small\item\em vertical field of view in degrees \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_ragot_1_1_camera_a9148d7fe58ef54a6ee8e11d47f7ec8c3}{near\+\_\+plane}}
+\begin{DoxyCompactList}\small\item\em near clipping plane distance \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_ragot_1_1_camera_aee222417ed046527a02e27f2152f1840}{far\+\_\+plane}}
+\begin{DoxyCompactList}\small\item\em far clipping plane distance \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_ragot_1_1_camera_a405946f21acb2e3f44b0595cb656f104}{aspect\+\_\+ratio}}
+\begin{DoxyCompactList}\small\item\em aspect ratio (width/height) \end{DoxyCompactList}\item 
+glm\+::vec3 \mbox{\hyperlink{class_ragot_1_1_camera_a8f77af4bdf93ecf602f34fbfff4b052d}{target}}
+\begin{DoxyCompactList}\small\item\em world space look-\/at target \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_camera_a9a1fd20ff3afd39e3d078182c19515d3}{Matrix4x4}} \mbox{\hyperlink{class_ragot_1_1_camera_a59265b68a1ca7c213ad32a07c973ad1d}{projection\+\_\+matrix}}
+\begin{DoxyCompactList}\small\item\em cached projection matrix \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_camera_a9a1fd20ff3afd39e3d078182c19515d3}{Matrix4x4}} \mbox{\hyperlink{class_ragot_1_1_camera_a74e7eb7f1e77185fb1f3037b63d57386}{view\+\_\+matrix}}
+\begin{DoxyCompactList}\small\item\em cached view matrix \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_camera_a9a1fd20ff3afd39e3d078182c19515d3}{Matrix4x4}} \mbox{\hyperlink{class_ragot_1_1_camera_a14b597fb38044c9f6ef6c7dcb384882a}{vp\+\_\+matrix}}
+\begin{DoxyCompactList}\small\item\em cached view-\/projection matrix \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ragot_1_1_camera_ae0bf5665ce49ab0e93d2bf520efe19b0}{proj\+Dirty}} = true
+\begin{DoxyCompactList}\small\item\em flag to indicate if projection matrix is dirty \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ragot_1_1_camera_ad975054d4af847e32126de3dfeb4a49c}{view\+Dirty}} = true
+\begin{DoxyCompactList}\small\item\em flag to indicate if view matrix is dirty \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ragot_1_1_camera_a787eb65de35f7df16a245e96e15e16d2}{vp\+Dirty}} = true
+\begin{DoxyCompactList}\small\item\em flag to indicate if view-\/projection matrix is dirty \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_ragot_1_1_camera_ac862c34902af3d068a7a20b832bc0dfe}{CAMERA\+\_\+\+TAG}} = "{}Camera"{}
+\begin{DoxyCompactList}\small\item\em Tag for logging camera-\/related messages. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_ragot_1_1_component}{Ragot\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_component}{Component}} $>$ $>$ \mbox{\hyperlink{class_ragot_1_1_component_a8029b480482519b4a3a2885c7da21bf7}{components}}
+\begin{DoxyCompactList}\small\item\em Collection of components managed by this \doxylink{class_ragot_1_1_component}{Component} instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_ragot_1_1_node}{Ragot\+::\+Node}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$ $>$ \mbox{\hyperlink{class_ragot_1_1_node_a281bc24957901ca61a4af20346a4005d}{children}}
+\begin{DoxyCompactList}\small\item\em List of child nodes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_ragot_1_1_node_a64767f464d8abac9626bbf554de7904c}{parent}} = nullptr
+\begin{DoxyCompactList}\small\item\em Pointer to the parent node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_ragot_1_1_transform}{Ragot\+::\+Transform}}}
+\begin{DoxyCompactItemize}
+\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_a431ca8e8bacefc052302557d46559f38}{position}}
+\begin{DoxyCompactList}\small\item\em The position of the object in 3D space. \end{DoxyCompactList}\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_a54eebc0ee4f13e8c0c30777a9ea2bf02}{rotation}}
+\begin{DoxyCompactList}\small\item\em The rotation of the object in degrees around each axis (x, y, z). \end{DoxyCompactList}\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_ad7da3cfaf66f95597dfbb6fcb8f838d7}{scale}}
+\begin{DoxyCompactList}\small\item\em The scale of the object in 3D space, default is (1, 1, 1). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ragot_1_1_transform_a48016feecf3360fb60a42f48720c702f}{dirty}} = true
+\begin{DoxyCompactList}\small\item\em Flag indicating whether the transformation matrix needs to be recalculated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a camera in a 3D space, managing its properties and transformations. 
+
+The \doxylink{class_ragot_1_1_camera}{Camera} class provides functionality to set and get camera properties such as field of view, near and far planes, aspect ratio, and target position. It also computes projection, view, and combined view-\/projection matrices, and provides methods for projecting world coordinates to normalized device coordinates (NDC). 
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_ragot_1_1_camera_a9a1fd20ff3afd39e3d078182c19515d3}\index{Ragot::Camera@{Ragot::Camera}!Matrix4x4@{Matrix4x4}}
+\index{Matrix4x4@{Matrix4x4}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{Matrix4x4}{Matrix4x4}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_a9a1fd20ff3afd39e3d078182c19515d3} 
+using \mbox{\hyperlink{class_ragot_1_1_camera_a9a1fd20ff3afd39e3d078182c19515d3}{Ragot\+::\+Camera\+::\+Matrix4x4}} = glm\+::mat4}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ragot_1_1_camera_a97b635c108f59f178dfd982bd2d8d8cd}\index{Ragot::Camera@{Ragot::Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{Camera()}{Camera()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_a97b635c108f59f178dfd982bd2d8d8cd} 
+Ragot\+::\+Camera\+::\+Camera (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Delete default constructor to prevent instantiation without parameters. 
+
+\Hypertarget{class_ragot_1_1_camera_a4003c531ad3653b929bd10437f16e3e2}\index{Ragot::Camera@{Ragot::Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{Camera()}{Camera()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_a4003c531ad3653b929bd10437f16e3e2} 
+Ragot\+::\+Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{float}]{aspect\+\_\+ratio}{ = {\ttfamily 1.f}, }\item[{float}]{near\+\_\+plane}{ = {\ttfamily 1.f}, }\item[{float}]{far\+\_\+plane}{ = {\ttfamily 100.f}, }\item[{float}]{fov\+\_\+deg}{ = {\ttfamily 60.f}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \doxylink{class_ragot_1_1_camera}{Camera} object with specified parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em aspect\+\_\+ratio} & Aspect ratio of the camera (default is 1.\+0). \\
+\hline
+{\em near\+\_\+plane} & Distance to the near clipping plane (default is 1.\+0). \\
+\hline
+{\em far\+\_\+plane} & Distance to the far clipping plane (default is 100.\+0). \\
+\hline
+{\em fov\+\_\+deg} & Vertical field of view in degrees (default is 60.\+0). \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_camera_a4003c531ad3653b929bd10437f16e3e2_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_camera_a99ed38d270bc0436000e413b315e0da7}\index{Ragot::Camera@{Ragot::Camera}!````~Camera@{\texorpdfstring{$\sim$}{\string~}Camera}}
+\index{````~Camera@{\texorpdfstring{$\sim$}{\string~}Camera}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Camera()}{\string~Camera()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_a99ed38d270bc0436000e413b315e0da7} 
+Ragot\+::\+Camera\+::\texorpdfstring{$\sim$}{\string~}\+Camera (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default destructor for \doxylink{class_ragot_1_1_camera}{Camera} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ragot_1_1_camera_a87cda7dfebac0d0310e592eea9e9c3c3}\index{Ragot::Camera@{Ragot::Camera}!calculate\_normal@{calculate\_normal}}
+\index{calculate\_normal@{calculate\_normal}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{calculate\_normal()}{calculate\_normal()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_a87cda7dfebac0d0310e592eea9e9c3c3} 
+\mbox{\hyperlink{struct_ragot_1_1vertex__t}{vertex\+\_\+t}} Ragot\+::\+Camera\+::calculate\+\_\+normal (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_ragot_1_1vertex__t}{vertex\+\_\+t}} \&}]{v1}{, }\item[{const \mbox{\hyperlink{struct_ragot_1_1vertex__t}{vertex\+\_\+t}} \&}]{v2}{, }\item[{const \mbox{\hyperlink{struct_ragot_1_1vertex__t}{vertex\+\_\+t}} \&}]{v3}{}\end{DoxyParamCaption})}
+
+
+
+Calculate the normal vector of a face defined by three vertices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v1} & First vertex of the face. \\
+\hline
+{\em v2} & Second vertex of the face. \\
+\hline
+{\em v3} & Third vertex of the face. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_ragot_1_1vertex__t}{vertex\+\_\+t} 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_camera_a87cda7dfebac0d0310e592eea9e9c3c3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_camera_a043917bffed39267d3dceaad12c88427}\index{Ragot::Camera@{Ragot::Camera}!get\_aspect\_ratio@{get\_aspect\_ratio}}
+\index{get\_aspect\_ratio@{get\_aspect\_ratio}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{get\_aspect\_ratio()}{get\_aspect\_ratio()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_a043917bffed39267d3dceaad12c88427} 
+float Ragot\+::\+Camera\+::get\+\_\+aspect\+\_\+ratio (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the camera\textquotesingle{}s aspect ratio (width/height). 
+
+\begin{DoxyReturn}{Returns}
+float The aspect ratio of the camera. 
+\end{DoxyReturn}
+\Hypertarget{class_ragot_1_1_camera_aad711b75b691047d073e442b9927fbb9}\index{Ragot::Camera@{Ragot::Camera}!get\_far\_plane@{get\_far\_plane}}
+\index{get\_far\_plane@{get\_far\_plane}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{get\_far\_plane()}{get\_far\_plane()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_aad711b75b691047d073e442b9927fbb9} 
+float Ragot\+::\+Camera\+::get\+\_\+far\+\_\+plane (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the camera\textquotesingle{}s far clipping plane distance. 
+
+\begin{DoxyReturn}{Returns}
+float The distance to the far clipping plane. 
+\end{DoxyReturn}
+\Hypertarget{class_ragot_1_1_camera_a0a78fecaa405fea8a5149fa6550e99b1}\index{Ragot::Camera@{Ragot::Camera}!get\_fov@{get\_fov}}
+\index{get\_fov@{get\_fov}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{get\_fov()}{get\_fov()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_a0a78fecaa405fea8a5149fa6550e99b1} 
+float Ragot\+::\+Camera\+::get\+\_\+fov (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the camera\textquotesingle{}s field of view in degrees. 
+
+\begin{DoxyReturn}{Returns}
+float The field of view in degrees. 
+\end{DoxyReturn}
+\Hypertarget{class_ragot_1_1_camera_a48fcec455da6d500685a2f20a3431ac4}\index{Ragot::Camera@{Ragot::Camera}!get\_location@{get\_location}}
+\index{get\_location@{get\_location}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{get\_location()}{get\_location()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_a48fcec455da6d500685a2f20a3431ac4} 
+glm\+::vec3 Ragot\+::\+Camera\+::get\+\_\+location (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the camera\textquotesingle{}s position in world space. 
+
+\begin{DoxyReturn}{Returns}
+glm\+::vec3 The position of the camera. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_ragot_1_1_camera_a48fcec455da6d500685a2f20a3431ac4_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_camera_ae42df26bd7aa79759b8f736c300542d5}\index{Ragot::Camera@{Ragot::Camera}!get\_near\_plane@{get\_near\_plane}}
+\index{get\_near\_plane@{get\_near\_plane}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{get\_near\_plane()}{get\_near\_plane()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_ae42df26bd7aa79759b8f736c300542d5} 
+float Ragot\+::\+Camera\+::get\+\_\+near\+\_\+plane (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the camera\textquotesingle{}s near clipping plane distance. 
+
+\begin{DoxyReturn}{Returns}
+float The distance to the near clipping plane. 
+\end{DoxyReturn}
+\Hypertarget{class_ragot_1_1_camera_a4d9c6fd76db5bd6911281c5951cab4a9}\index{Ragot::Camera@{Ragot::Camera}!get\_projection\_matrix@{get\_projection\_matrix}}
+\index{get\_projection\_matrix@{get\_projection\_matrix}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{get\_projection\_matrix()}{get\_projection\_matrix()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_a4d9c6fd76db5bd6911281c5951cab4a9} 
+const \mbox{\hyperlink{class_ragot_1_1_camera_a9a1fd20ff3afd39e3d078182c19515d3}{Matrix4x4}} \& Ragot\+::\+Camera\+::get\+\_\+projection\+\_\+matrix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the projection matrix object. 
+
+\begin{DoxyReturn}{Returns}
+const \doxylink{class_ragot_1_1_camera_a9a1fd20ff3afd39e3d078182c19515d3}{Matrix4x4}\& 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_camera_a4d9c6fd76db5bd6911281c5951cab4a9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_camera_a8ca889ab3cd7c393afe45163708ef297}\index{Ragot::Camera@{Ragot::Camera}!get\_right\_direction@{get\_right\_direction}}
+\index{get\_right\_direction@{get\_right\_direction}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{get\_right\_direction()}{get\_right\_direction()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_a8ca889ab3cd7c393afe45163708ef297} 
+glm\+::vec3 Ragot\+::\+Camera\+::get\+\_\+right\+\_\+direction (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the right direction object. 
+
+\begin{DoxyReturn}{Returns}
+glm\+::vec3 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_camera_a8ca889ab3cd7c393afe45163708ef297_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{class_ragot_1_1_camera_a8ca889ab3cd7c393afe45163708ef297_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_camera_a81905b55fa882c4163eaddd932264ceb}\index{Ragot::Camera@{Ragot::Camera}!get\_target@{get\_target}}
+\index{get\_target@{get\_target}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{get\_target()}{get\_target()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_a81905b55fa882c4163eaddd932264ceb} 
+glm\+::vec3 Ragot\+::\+Camera\+::get\+\_\+target (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the camera\textquotesingle{}s target position in world space. 
+
+\begin{DoxyReturn}{Returns}
+glm\+::vec3 The target position of the camera. 
+\end{DoxyReturn}
+\Hypertarget{class_ragot_1_1_camera_a4d342cc17133f18dc93835e66975fc6c}\index{Ragot::Camera@{Ragot::Camera}!get\_up\_direction@{get\_up\_direction}}
+\index{get\_up\_direction@{get\_up\_direction}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{get\_up\_direction()}{get\_up\_direction()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_a4d342cc17133f18dc93835e66975fc6c} 
+glm\+::vec3 Ragot\+::\+Camera\+::get\+\_\+up\+\_\+direction (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the up direction object. 
+
+\begin{DoxyReturn}{Returns}
+glm\+::vec3 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_camera_a4d342cc17133f18dc93835e66975fc6c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_camera_a30288032ce41c666e4fb2f37f8d168f5}\index{Ragot::Camera@{Ragot::Camera}!get\_view\_direction@{get\_view\_direction}}
+\index{get\_view\_direction@{get\_view\_direction}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{get\_view\_direction()}{get\_view\_direction()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_a30288032ce41c666e4fb2f37f8d168f5} 
+glm\+::vec3 Ragot\+::\+Camera\+::get\+\_\+view\+\_\+direction (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the view direction object. 
+
+\begin{DoxyReturn}{Returns}
+glm\+::vec3 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_ragot_1_1_camera_a30288032ce41c666e4fb2f37f8d168f5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_camera_a30288032ce41c666e4fb2f37f8d168f5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_camera_aa8fc7776eff63588634df880957ed04e}\index{Ragot::Camera@{Ragot::Camera}!get\_view\_matrix@{get\_view\_matrix}}
+\index{get\_view\_matrix@{get\_view\_matrix}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{get\_view\_matrix()}{get\_view\_matrix()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_aa8fc7776eff63588634df880957ed04e} 
+const \mbox{\hyperlink{class_ragot_1_1_camera_a9a1fd20ff3afd39e3d078182c19515d3}{Matrix4x4}} \& Ragot\+::\+Camera\+::get\+\_\+view\+\_\+matrix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the view matrix object. 
+
+\begin{DoxyReturn}{Returns}
+const \doxylink{class_ragot_1_1_camera_a9a1fd20ff3afd39e3d078182c19515d3}{Matrix4x4}\& 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_ragot_1_1_camera_aa8fc7776eff63588634df880957ed04e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_camera_aa8fc7776eff63588634df880957ed04e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_camera_a0eb49a8b33981535da1ac49070570787}\index{Ragot::Camera@{Ragot::Camera}!get\_vp\_matrix@{get\_vp\_matrix}}
+\index{get\_vp\_matrix@{get\_vp\_matrix}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{get\_vp\_matrix()}{get\_vp\_matrix()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_a0eb49a8b33981535da1ac49070570787} 
+const \mbox{\hyperlink{class_ragot_1_1_camera_a9a1fd20ff3afd39e3d078182c19515d3}{Matrix4x4}} \& Ragot\+::\+Camera\+::get\+\_\+vp\+\_\+matrix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the vp matrix object. 
+
+\begin{DoxyReturn}{Returns}
+const \doxylink{class_ragot_1_1_camera_a9a1fd20ff3afd39e3d078182c19515d3}{Matrix4x4}\& 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_camera_a0eb49a8b33981535da1ac49070570787_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_ragot_1_1_camera_a0eb49a8b33981535da1ac49070570787_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_camera_aca374d52718b5cee02e9f2c62769fe47}\index{Ragot::Camera@{Ragot::Camera}!is\_dirty@{is\_dirty}}
+\index{is\_dirty@{is\_dirty}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{is\_dirty()}{is\_dirty()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_aca374d52718b5cee02e9f2c62769fe47} 
+bool Ragot\+::\+Camera\+::is\+\_\+dirty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the camera\textquotesingle{}s position in world space. 
+
+\begin{DoxyReturn}{Returns}
+glm\+::vec3 The position of the camera. 
+\end{DoxyReturn}
+\Hypertarget{class_ragot_1_1_camera_a0b276715ecd2b50677b4cf0002847100}\index{Ragot::Camera@{Ragot::Camera}!is\_face\_visible@{is\_face\_visible}}
+\index{is\_face\_visible@{is\_face\_visible}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{is\_face\_visible()}{is\_face\_visible()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_a0b276715ecd2b50677b4cf0002847100} 
+bool Ragot\+::\+Camera\+::is\+\_\+face\+\_\+visible (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_ragot_1_1vertex__t}{vertex\+\_\+t}} \&}]{v1}{, }\item[{const \mbox{\hyperlink{struct_ragot_1_1vertex__t}{vertex\+\_\+t}} \&}]{v2}{, }\item[{const \mbox{\hyperlink{struct_ragot_1_1vertex__t}{vertex\+\_\+t}} \&}]{v3}{}\end{DoxyParamCaption})}
+
+
+
+Check if a face defined by three vertices is visible from the camera\textquotesingle{}s perspective. 
+
+A face is considered visible if its normal vector points towards the camera.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v1} & First vertex of the face. \\
+\hline
+{\em v2} & Second vertex of the face. \\
+\hline
+{\em v3} & Third vertex of the face. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the face is visible, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_camera_a0b276715ecd2b50677b4cf0002847100_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_camera_a9668a61516d1f807a19f007c717a3ecd}\index{Ragot::Camera@{Ragot::Camera}!log\_camera\_info@{log\_camera\_info}}
+\index{log\_camera\_info@{log\_camera\_info}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{log\_camera\_info()}{log\_camera\_info()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_a9668a61516d1f807a19f007c717a3ecd} 
+void Ragot\+::\+Camera\+::log\+\_\+camera\+\_\+info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Logs the camera\textquotesingle{}s properties for debugging purposes. 
+
+This method logs the camera\textquotesingle{}s position, target, field of view, near and far planes, and aspect ratio. \Hypertarget{class_ragot_1_1_camera_a49252f6f9a5e873836e42dd2a38515fd}\index{Ragot::Camera@{Ragot::Camera}!project\_to\_ndc@{project\_to\_ndc}}
+\index{project\_to\_ndc@{project\_to\_ndc}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{project\_to\_ndc()}{project\_to\_ndc()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_a49252f6f9a5e873836e42dd2a38515fd} 
+glm\+::vec3 Ragot\+::\+Camera\+::project\+\_\+to\+\_\+ndc (\begin{DoxyParamCaption}\item[{const glm\+::vec4 \&}]{world\+Pos}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em world\+Pos} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+glm\+::vec3 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_camera_a49252f6f9a5e873836e42dd2a38515fd_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_camera_ac75d80a3159d1e664848c4ee192ba65c}\index{Ragot::Camera@{Ragot::Camera}!set\_aspect\_ratio@{set\_aspect\_ratio}}
+\index{set\_aspect\_ratio@{set\_aspect\_ratio}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{set\_aspect\_ratio()}{set\_aspect\_ratio()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_ac75d80a3159d1e664848c4ee192ba65c} 
+void Ragot\+::\+Camera\+::set\+\_\+aspect\+\_\+ratio (\begin{DoxyParamCaption}\item[{float}]{ar}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the aspect ratio of the camera. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & Aspect ratio (width/height). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ragot_1_1_camera_a36449c2ad1099e38751b29c737c9fe01}\index{Ragot::Camera@{Ragot::Camera}!set\_far\_plane@{set\_far\_plane}}
+\index{set\_far\_plane@{set\_far\_plane}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{set\_far\_plane()}{set\_far\_plane()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_a36449c2ad1099e38751b29c737c9fe01} 
+void Ragot\+::\+Camera\+::set\+\_\+far\+\_\+plane (\begin{DoxyParamCaption}\item[{float}]{fp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the far clipping plane distance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fp} & Distance to the far clipping plane. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ragot_1_1_camera_a8cae2e18b67fe3472c832a014ed64b6d}\index{Ragot::Camera@{Ragot::Camera}!set\_fov@{set\_fov}}
+\index{set\_fov@{set\_fov}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{set\_fov()}{set\_fov()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_a8cae2e18b67fe3472c832a014ed64b6d} 
+void Ragot\+::\+Camera\+::set\+\_\+fov (\begin{DoxyParamCaption}\item[{float}]{deg}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the fov object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em deg} & Field of view in degrees. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ragot_1_1_camera_a589b34b0d14c3c1b7e15e5388b9d0210}\index{Ragot::Camera@{Ragot::Camera}!set\_location@{set\_location}}
+\index{set\_location@{set\_location}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{set\_location()}{set\_location()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_a589b34b0d14c3c1b7e15e5388b9d0210} 
+void Ragot\+::\+Camera\+::set\+\_\+location (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the camera\textquotesingle{}s position in world space. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Position of the camera. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_ragot_1_1_camera_a589b34b0d14c3c1b7e15e5388b9d0210_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_camera_a589b34b0d14c3c1b7e15e5388b9d0210_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_camera_a3a4139c62ee5f8f61c03906a9d7e91ff}\index{Ragot::Camera@{Ragot::Camera}!set\_near\_plane@{set\_near\_plane}}
+\index{set\_near\_plane@{set\_near\_plane}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{set\_near\_plane()}{set\_near\_plane()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_a3a4139c62ee5f8f61c03906a9d7e91ff} 
+void Ragot\+::\+Camera\+::set\+\_\+near\+\_\+plane (\begin{DoxyParamCaption}\item[{float}]{np}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the near clipping plane distance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em np} & Distance to the near clipping plane. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ragot_1_1_camera_a4a6d2a312bc3ca80842770826ed3f9db}\index{Ragot::Camera@{Ragot::Camera}!set\_target@{set\_target}}
+\index{set\_target@{set\_target}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{set\_target()}{set\_target()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_a4a6d2a312bc3ca80842770826ed3f9db} 
+void Ragot\+::\+Camera\+::set\+\_\+target (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{t}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the camera\textquotesingle{}s target position in world space. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Target position of the camera. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_camera_a4a6d2a312bc3ca80842770826ed3f9db_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_ragot_1_1_camera_a405946f21acb2e3f44b0595cb656f104}\index{Ragot::Camera@{Ragot::Camera}!aspect\_ratio@{aspect\_ratio}}
+\index{aspect\_ratio@{aspect\_ratio}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{aspect\_ratio}{aspect\_ratio}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_a405946f21acb2e3f44b0595cb656f104} 
+float Ragot\+::\+Camera\+::aspect\+\_\+ratio\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+aspect ratio (width/height) 
+
+\Hypertarget{class_ragot_1_1_camera_ac862c34902af3d068a7a20b832bc0dfe}\index{Ragot::Camera@{Ragot::Camera}!CAMERA\_TAG@{CAMERA\_TAG}}
+\index{CAMERA\_TAG@{CAMERA\_TAG}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{CAMERA\_TAG}{CAMERA\_TAG}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_ac862c34902af3d068a7a20b832bc0dfe} 
+const char \texorpdfstring{$\ast$}{*} Ragot\+::\+Camera\+::\+CAMERA\+\_\+\+TAG = "{}Camera"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Tag for logging camera-\/related messages. 
+
+\Hypertarget{class_ragot_1_1_camera_aee222417ed046527a02e27f2152f1840}\index{Ragot::Camera@{Ragot::Camera}!far\_plane@{far\_plane}}
+\index{far\_plane@{far\_plane}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{far\_plane}{far\_plane}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_aee222417ed046527a02e27f2152f1840} 
+float Ragot\+::\+Camera\+::far\+\_\+plane\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+far clipping plane distance 
+
+\Hypertarget{class_ragot_1_1_camera_a3350c181d3cedae0d860b4bb50171cc8}\index{Ragot::Camera@{Ragot::Camera}!fov@{fov}}
+\index{fov@{fov}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{fov}{fov}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_a3350c181d3cedae0d860b4bb50171cc8} 
+float Ragot\+::\+Camera\+::fov\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+vertical field of view in degrees 
+
+\Hypertarget{class_ragot_1_1_camera_a9148d7fe58ef54a6ee8e11d47f7ec8c3}\index{Ragot::Camera@{Ragot::Camera}!near\_plane@{near\_plane}}
+\index{near\_plane@{near\_plane}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{near\_plane}{near\_plane}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_a9148d7fe58ef54a6ee8e11d47f7ec8c3} 
+float Ragot\+::\+Camera\+::near\+\_\+plane\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+near clipping plane distance 
+
+\Hypertarget{class_ragot_1_1_camera_ae0bf5665ce49ab0e93d2bf520efe19b0}\index{Ragot::Camera@{Ragot::Camera}!projDirty@{projDirty}}
+\index{projDirty@{projDirty}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{projDirty}{projDirty}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_ae0bf5665ce49ab0e93d2bf520efe19b0} 
+bool Ragot\+::\+Camera\+::proj\+Dirty = true\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+
+
+flag to indicate if projection matrix is dirty 
+
+\Hypertarget{class_ragot_1_1_camera_a59265b68a1ca7c213ad32a07c973ad1d}\index{Ragot::Camera@{Ragot::Camera}!projection\_matrix@{projection\_matrix}}
+\index{projection\_matrix@{projection\_matrix}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{projection\_matrix}{projection\_matrix}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_a59265b68a1ca7c213ad32a07c973ad1d} 
+\mbox{\hyperlink{class_ragot_1_1_camera_a9a1fd20ff3afd39e3d078182c19515d3}{Matrix4x4}} Ragot\+::\+Camera\+::projection\+\_\+matrix\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+
+
+cached projection matrix 
+
+\Hypertarget{class_ragot_1_1_camera_a8f77af4bdf93ecf602f34fbfff4b052d}\index{Ragot::Camera@{Ragot::Camera}!target@{target}}
+\index{target@{target}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{target}{target}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_a8f77af4bdf93ecf602f34fbfff4b052d} 
+glm\+::vec3 Ragot\+::\+Camera\+::target\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+world space look-\/at target 
+
+\Hypertarget{class_ragot_1_1_camera_a74e7eb7f1e77185fb1f3037b63d57386}\index{Ragot::Camera@{Ragot::Camera}!view\_matrix@{view\_matrix}}
+\index{view\_matrix@{view\_matrix}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{view\_matrix}{view\_matrix}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_a74e7eb7f1e77185fb1f3037b63d57386} 
+\mbox{\hyperlink{class_ragot_1_1_camera_a9a1fd20ff3afd39e3d078182c19515d3}{Matrix4x4}} Ragot\+::\+Camera\+::view\+\_\+matrix\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+
+
+cached view matrix 
+
+\Hypertarget{class_ragot_1_1_camera_ad975054d4af847e32126de3dfeb4a49c}\index{Ragot::Camera@{Ragot::Camera}!viewDirty@{viewDirty}}
+\index{viewDirty@{viewDirty}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{viewDirty}{viewDirty}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_ad975054d4af847e32126de3dfeb4a49c} 
+bool Ragot\+::\+Camera\+::view\+Dirty = true\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+
+
+flag to indicate if view matrix is dirty 
+
+\Hypertarget{class_ragot_1_1_camera_a14b597fb38044c9f6ef6c7dcb384882a}\index{Ragot::Camera@{Ragot::Camera}!vp\_matrix@{vp\_matrix}}
+\index{vp\_matrix@{vp\_matrix}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{vp\_matrix}{vp\_matrix}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_a14b597fb38044c9f6ef6c7dcb384882a} 
+\mbox{\hyperlink{class_ragot_1_1_camera_a9a1fd20ff3afd39e3d078182c19515d3}{Matrix4x4}} Ragot\+::\+Camera\+::vp\+\_\+matrix\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+
+
+cached view-\/projection matrix 
+
+\Hypertarget{class_ragot_1_1_camera_a787eb65de35f7df16a245e96e15e16d2}\index{Ragot::Camera@{Ragot::Camera}!vpDirty@{vpDirty}}
+\index{vpDirty@{vpDirty}!Ragot::Camera@{Ragot::Camera}}
+\doxysubsubsection{\texorpdfstring{vpDirty}{vpDirty}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_camera_a787eb65de35f7df16a245e96e15e16d2} 
+bool Ragot\+::\+Camera\+::vp\+Dirty = true\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+
+
+flag to indicate if view-\/projection matrix is dirty 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+main/\mbox{\hyperlink{_camera_8hpp}{Camera.\+hpp}}\item 
+main/\mbox{\hyperlink{_camera_8cpp}{Camera.\+cpp}}\end{DoxyCompactItemize}

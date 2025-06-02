@@ -1,0 +1,406 @@
+\doxysection{Ragot\+::Extrude\+Mesh Class Reference}
+\hypertarget{class_ragot_1_1_extrude_mesh}{}\label{class_ragot_1_1_extrude_mesh}\index{Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}}
+
+
+Represents a 3D mesh created by extruding a 2D shape along a specified height. This class inherits from the \doxylink{class_ragot_1_1_mesh}{Mesh} class and provides methods to generate vertices and faces for the extruded mesh. It also includes methods for culling faces based on the camera\textquotesingle{}s view direction and logging mesh information.  
+
+
+
+
+{\ttfamily \#include $<$Extrude\+Mesh.\+hpp$>$}
+
+
+
+Inheritance diagram for Ragot\+::Extrude\+Mesh\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_ragot_1_1_extrude_mesh__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ragot\+::Extrude\+Mesh\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_extrude_mesh__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_extrude_mesh_a411f2f6aa1a78393baa78148320b1394}{Extrude\+Mesh}} (\mbox{\hyperlink{struct_ragot_1_1mesh__info__t}{mesh\+\_\+info\+\_\+t}} \&\mbox{\hyperlink{class_ragot_1_1_mesh_a4404a17582591ce49c5e41c7316cf1e4}{mesh\+\_\+info}}, const \mbox{\hyperlink{class_ragot_1_1_camera}{Camera}} \&\mbox{\hyperlink{class_ragot_1_1_extrude_mesh_a88cefb17920a8eb4de3075568e38b2e4}{cam}})
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{class_ragot_1_1_extrude_mesh}{Extrude\+Mesh} object with the specified mesh information and camera reference. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_extrude_mesh_a3cfcf4a41584f7c127cc22fa6f6b6664}{\texorpdfstring{$\sim$}{\string~}\+Extrude\+Mesh}} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor for the \doxylink{class_ragot_1_1_extrude_mesh}{Extrude\+Mesh} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_extrude_mesh_a8739a5246afdef28a96782e5471042ee}{generate\+\_\+vertices}} () override
+\begin{DoxyCompactList}\small\item\em Deleted copy constructor for the \doxylink{class_ragot_1_1_extrude_mesh}{Extrude\+Mesh} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_extrude_mesh_a7433d915f8ea8a5b08b036b1d346118c}{generate\+\_\+faces}} () override
+\begin{DoxyCompactList}\small\item\em Generates the faces of the extruded mesh. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ragot_1_1_extrude_mesh_acd3bc2b69406b8155004382ba7942591}{are\+\_\+vertices\+\_\+coplanar}} (const glm\+::fvec4 \&v1, const glm\+::fvec4 \&v2, const glm\+::fvec4 \&v3, const glm\+::fvec4 \&v4, float tolerance=0.\+1f)
+\begin{DoxyCompactList}\small\item\em Verifies if four vertices are coplanar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_extrude_mesh_a3cc90144903bf48d7adc6a1b23c8ab53}{log\+\_\+mesh\+\_\+info}} () const
+\begin{DoxyCompactList}\small\item\em Logs detailed information about the mesh. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ragot_1_1_mesh}{Ragot\+::\+Mesh}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_mesh_aac138f7285e29a384d6268a9d041a1ec}{Mesh}} ()=delete
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_ragot_1_1_mesh}{Mesh} object (deleted constructor). \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_ragot_1_1_mesh_acb885fc9df54ec574e392b3c2d8ae555}{\texorpdfstring{$\sim$}{\string~}\+Mesh}} ()=default
+\begin{DoxyCompactList}\small\item\em Default virtual destructor for the \doxylink{class_ragot_1_1_mesh}{Mesh} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_mesh_a2d1a653103d8ea53107a54c26745733d}{Mesh}} (\mbox{\hyperlink{struct_ragot_1_1mesh__info__t}{mesh\+\_\+info\+\_\+t}} \&\mbox{\hyperlink{class_ragot_1_1_mesh_a4404a17582591ce49c5e41c7316cf1e4}{mesh\+\_\+info}})
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_ragot_1_1_mesh}{Mesh} object with mesh information. \end{DoxyCompactList}\item 
+const std\+::vector$<$ glm\+::fvec4 $>$ \& \mbox{\hyperlink{class_ragot_1_1_mesh_ab9d135d5f1653e6d07a4e9a269a5064b}{get\+\_\+vertices}} () const
+\begin{DoxyCompactList}\small\item\em Get the vertices object. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \mbox{\hyperlink{struct_ragot_1_1face__t}{face\+\_\+t}} $>$ \& \mbox{\hyperlink{class_ragot_1_1_mesh_a8c6fa8b74fa74ca5a2a0f399709a5af9}{get\+\_\+faces}} () const
+\begin{DoxyCompactList}\small\item\em Get the faces object. \end{DoxyCompactList}\item 
+const size\+\_\+t \mbox{\hyperlink{class_ragot_1_1_mesh_aea29fdf830f1bc4a6ee276f009d846f7}{get\+\_\+total\+\_\+vertices}} () const
+\begin{DoxyCompactList}\small\item\em Get the total vertices object. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_ragot_1_1_mesh_a3f6804a41ee9c30aa0c130b75adf4315}{get\+\_\+total\+\_\+vertices}} ()
+\begin{DoxyCompactList}\small\item\em Get the total vertices object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_mesh_a04865bef9591d2f4540a8b1d3e5f6736}{recalculate}} ()
+\begin{DoxyCompactList}\small\item\em Recalculate the mesh vertices and faces. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_mesh_ae2a6089b996177f9c207c88d6acadbe7}{apply\+\_\+transform\+\_\+to\+\_\+vertices}} ()
+\begin{DoxyCompactList}\small\item\em Apply the current transformation to the vertices of the mesh. This method applies the transformation matrix obtained from the \doxylink{class_ragot_1_1_transform}{Transform} class to each vertex in the mesh. This is useful for updating the mesh vertices after any transformation has been applied, such as translation, rotation, or scaling. It modifies the vertices in place, transforming them according to the current transformation matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_mesh_a3d12a9c802c818cbac63a10d6f32f438}{set\+\_\+color}} (uint16\+\_\+t new\+\_\+color)
+\begin{DoxyCompactList}\small\item\em Set the color of the mesh. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_ragot_1_1_mesh_af24e210c2100b02bc25f79766f98e39d}{get\+\_\+color}} () const
+\begin{DoxyCompactList}\small\item\em Get the color of the mesh. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ragot_1_1_component}{Ragot\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_component_a96cadec729b1265b3f30480fb060b942}{Component}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{class_ragot_1_1_component}{Component} class. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_ragot_1_1_component_a21a3e09be8069d18aa88f5cd5be5ccb4}{\texorpdfstring{$\sim$}{\string~}\+Component}} ()=default
+\begin{DoxyCompactList}\small\item\em Default virtual destructor for the \doxylink{class_ragot_1_1_component}{Component} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_component_a44c3fa4a306939779086ebdce7574af2}{Component}} (const \mbox{\hyperlink{class_ragot_1_1_component}{Component}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy constructor for the \doxylink{class_ragot_1_1_component}{Component} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_component_ad71e3d9be704be61fdd1074b5a1d4691}{Component}} (const \mbox{\hyperlink{class_ragot_1_1_component}{Component}} \&\&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted move constructor for the \doxylink{class_ragot_1_1_component}{Component} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_component}{Component}} \& \mbox{\hyperlink{class_ragot_1_1_component_af3db7d65eeca5bd1d57309e30eb7afad}{operator=}} (const \mbox{\hyperlink{class_ragot_1_1_component}{Component}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted assignment operator for the \doxylink{class_ragot_1_1_component}{Component} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_component}{Component}} \& \mbox{\hyperlink{class_ragot_1_1_component_ac3cf10a05f5314a464f05d6aeec0b0e4}{operator=}} (const \mbox{\hyperlink{class_ragot_1_1_component}{Component}} \&\&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted move assignment operator for the \doxylink{class_ragot_1_1_component}{Component} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_component_a0185e6750172704061e5595a6281afb6}{add\+\_\+component}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_component}{Component}} $>$ component)
+\begin{DoxyCompactList}\small\item\em Adds a component to the collection. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_component_aa5027faece5c55d50eb4408ae039b81a}{remove\+\_\+component}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_component}{Component}} $>$ component)
+\begin{DoxyCompactList}\small\item\em Removes a component from the collection. \end{DoxyCompactList}\item 
+const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_component}{Component}} $>$ $>$ \mbox{\hyperlink{class_ragot_1_1_component_ad05ecadb2595b73b6fbb9643ed7473ec}{get\+\_\+components}} () const
+\begin{DoxyCompactList}\small\item\em Gets the collection of components. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ragot_1_1_node}{Ragot\+::\+Node}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_node_af950cf77621bbb3f157b7bf3852dfd2b}{Node}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor for \doxylink{class_ragot_1_1_node}{Node}. Initializes an empty node with no parent and no children. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_ragot_1_1_node_a51384a380fecebd14482c49f7fc60336}{\texorpdfstring{$\sim$}{\string~}\+Node}} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor for \doxylink{class_ragot_1_1_node}{Node}. Cleans up the node and its children. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_node_afb856f2743eed9ca04755107e5d2a49b}{Node}} (const \mbox{\hyperlink{class_ragot_1_1_node}{Node}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy constructor for \doxylink{class_ragot_1_1_node}{Node}. Prevents copying of \doxylink{class_ragot_1_1_node}{Node} instances. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_node_a2cd800085d580d594ad5cb5ea55df009}{Node}} (const \mbox{\hyperlink{class_ragot_1_1_node}{Node}} \&\&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted move constructor for \doxylink{class_ragot_1_1_node}{Node}. Prevents moving of \doxylink{class_ragot_1_1_node}{Node} instances. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_node}{Node}} \& \mbox{\hyperlink{class_ragot_1_1_node_a36d44666bd1c79342ca8e12341fd83c1}{operator=}} (const \mbox{\hyperlink{class_ragot_1_1_node}{Node}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted assignment operator for \doxylink{class_ragot_1_1_node}{Node}. Prevents assignment of \doxylink{class_ragot_1_1_node}{Node} instances. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_node}{Node}} \& \mbox{\hyperlink{class_ragot_1_1_node_aba99d61150423e3eaa0b99fe522a03a4}{operator=}} (const \mbox{\hyperlink{class_ragot_1_1_node}{Node}} \&\&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted move assignment operator for \doxylink{class_ragot_1_1_node}{Node}. Prevents moving of \doxylink{class_ragot_1_1_node}{Node} instances. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_node_a32b4ac99143d362f0f0c5176e52e39f5}{add\+\_\+child}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$ child)
+\begin{DoxyCompactList}\small\item\em Get the parent node. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_node_a83168b2c88ef5387b1e768f0a7328479}{remove\+\_\+child}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$ child)
+\begin{DoxyCompactList}\small\item\em Remove a child node. \end{DoxyCompactList}\item 
+const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$ $>$ \& \mbox{\hyperlink{class_ragot_1_1_node_a18af54a13e0c49864ac4095e1ec5f87c}{get\+\_\+children}} () const
+\begin{DoxyCompactList}\small\item\em Get the parent node. \end{DoxyCompactList}\item 
+mat4 \mbox{\hyperlink{class_ragot_1_1_node_adf704afc3b1c3ca9a9819be9e319479b}{get\+\_\+transform\+\_\+matrix}} () override
+\begin{DoxyCompactList}\small\item\em Get the transform matrix object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ragot_1_1_transform}{Ragot\+::\+Transform}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_transform_a725154a65379853ad8fcb0263fedda6c}{Transform}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{class_ragot_1_1_transform}{Transform} class. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_ragot_1_1_transform_a50798b680f8f6a40ec2c7ea9a6e1df08}{\texorpdfstring{$\sim$}{\string~}\+Transform}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{class_ragot_1_1_transform}{Transform} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_transform_a7962797afae773a25fdebf76a8404a7a}{set\+\_\+position}} (const vec3 \&pos)
+\begin{DoxyCompactList}\small\item\em Sets the position of the object. \end{DoxyCompactList}\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_a1db9f8e84315c4296dfef46f1f17ce99}{get\+\_\+position}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current position of the object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_transform_a7641b284077ae1fe1e0b7f3ffc788edb}{set\+\_\+rotation}} (const vec3 \&rot)
+\begin{DoxyCompactList}\small\item\em Moves the object by a specified vector. \end{DoxyCompactList}\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_aa9a377ee1cc5eca48f62970e3d4016ab}{get\+\_\+rotation}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current rotation of the object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_transform_a83714240213caa1528e9e75b1cb5a307}{rotate}} (const float angle, const vec3 \&axis)
+\begin{DoxyCompactList}\small\item\em Rotates the object by a specified angle around a given axis. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_transform_ace83a2bcfdaffd808a1d89fe0cb48fce}{set\+\_\+scale}} (const vec3 \&\mbox{\hyperlink{class_ragot_1_1_transform_ad7da3cfaf66f95597dfbb6fcb8f838d7}{scale}})
+\begin{DoxyCompactList}\small\item\em Sets the scale of the object. \end{DoxyCompactList}\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_a96a6f6bcff942294a7011dac4f235b92}{get\+\_\+scale}} () const
+\begin{DoxyCompactList}\small\item\em Sets the scale of the object uniformly. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ragot_1_1_transform_acf0344728a251b9e04fbfb4ab05dd450}{is\+\_\+dirty}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the transformation matrix is dirty (needs recalculation). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_ragot_1_1_extrude_mesh_a1f8612cc963aa07dc7e62dfc36c460aa}{height}} = 1.\+0f
+\begin{DoxyCompactList}\small\item\em Height of the extrusion. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ragot_1_1_extrude_mesh_addfa9632beaa009c94118c79fb3af13a}{faces\+\_\+can\+\_\+be\+\_\+quads}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating whether the faces can be quads. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_ragot_1_1_camera}{Camera}} \& \mbox{\hyperlink{class_ragot_1_1_extrude_mesh_a88cefb17920a8eb4de3075568e38b2e4}{cam}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_ragot_1_1_camera}{Camera} reference for culling faces based on the camera\textquotesingle{}s view direction. \end{DoxyCompactList}\item 
+glm\+::vec4 \mbox{\hyperlink{class_ragot_1_1_extrude_mesh_a3f46a4d183d813f7455e5f7b1835e102}{planes}} \mbox{[}4\mbox{]}
+\begin{DoxyCompactList}\small\item\em Array of planes used for culling faces. \end{DoxyCompactList}\item 
+glm\+::vec3 \mbox{\hyperlink{class_ragot_1_1_extrude_mesh_a567856c0a37422ce7a53848bcc280a90}{cam\+Pos}}
+\begin{DoxyCompactList}\small\item\em Position of the camera in world space. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_ragot_1_1_mesh}{Ragot\+::\+Mesh}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_ragot_1_1mesh__info__t}{mesh\+\_\+info\+\_\+t}} \mbox{\hyperlink{class_ragot_1_1_mesh_a4404a17582591ce49c5e41c7316cf1e4}{mesh\+\_\+info}}
+\begin{DoxyCompactList}\small\item\em Information about the mesh, including coordinates and rendering type. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_ragot_1_1_mesh_a4605a0ac952bd7e21966866a18ea1d6c}{color}} = 0x\+FFFF
+\begin{DoxyCompactList}\small\item\em Color of the mesh, default is white (0x\+FFFF). \end{DoxyCompactList}\item 
+std\+::vector$<$ glm\+::fvec4 $>$ \mbox{\hyperlink{class_ragot_1_1_mesh_a707a1ddfc3419edf404b26a06d655ccb}{vertices}}
+\begin{DoxyCompactList}\small\item\em Vector of vertices representing the mesh in 3D space. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_ragot_1_1face__t}{face\+\_\+t}} $>$ \mbox{\hyperlink{class_ragot_1_1_mesh_a0dd6468b18ce988a6c542efb4eb0c97e}{faces}}
+\begin{DoxyCompactList}\small\item\em Vector of faces representing the mesh, each face can be a triangle or a quad. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_ragot_1_1_mesh_a8cab67a3713ecc68ffe4896e6c1bdefc}{slices}} = 16
+\begin{DoxyCompactList}\small\item\em Number of slices for generating the mesh, default is 16. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_ragot_1_1_component}{Ragot\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_component}{Component}} $>$ $>$ \mbox{\hyperlink{class_ragot_1_1_component_a8029b480482519b4a3a2885c7da21bf7}{components}}
+\begin{DoxyCompactList}\small\item\em Collection of components managed by this \doxylink{class_ragot_1_1_component}{Component} instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_ragot_1_1_node}{Ragot\+::\+Node}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$ $>$ \mbox{\hyperlink{class_ragot_1_1_node_a281bc24957901ca61a4af20346a4005d}{children}}
+\begin{DoxyCompactList}\small\item\em List of child nodes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_ragot_1_1_node_a64767f464d8abac9626bbf554de7904c}{parent}} = nullptr
+\begin{DoxyCompactList}\small\item\em Pointer to the parent node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_ragot_1_1_transform}{Ragot\+::\+Transform}}}
+\begin{DoxyCompactItemize}
+\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_a431ca8e8bacefc052302557d46559f38}{position}}
+\begin{DoxyCompactList}\small\item\em The position of the object in 3D space. \end{DoxyCompactList}\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_a54eebc0ee4f13e8c0c30777a9ea2bf02}{rotation}}
+\begin{DoxyCompactList}\small\item\em The rotation of the object in degrees around each axis (x, y, z). \end{DoxyCompactList}\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_ad7da3cfaf66f95597dfbb6fcb8f838d7}{scale}}
+\begin{DoxyCompactList}\small\item\em The scale of the object in 3D space, default is (1, 1, 1). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ragot_1_1_transform_a48016feecf3360fb60a42f48720c702f}{dirty}} = true
+\begin{DoxyCompactList}\small\item\em Flag indicating whether the transformation matrix needs to be recalculated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_ragot_1_1_extrude_mesh_aa5042e1c9693caf71869b18d0e07fd76}{EXTRUDE\+\_\+\+TAG}} = "{}Extrude\+Mesh"{}
+\begin{DoxyCompactList}\small\item\em Tag for logging messages related to the \doxylink{class_ragot_1_1_extrude_mesh}{Extrude\+Mesh} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a 3D mesh created by extruding a 2D shape along a specified height. This class inherits from the \doxylink{class_ragot_1_1_mesh}{Mesh} class and provides methods to generate vertices and faces for the extruded mesh. It also includes methods for culling faces based on the camera\textquotesingle{}s view direction and logging mesh information. 
+
+The \doxylink{class_ragot_1_1_extrude_mesh}{Extrude\+Mesh} class is designed to create a 3D mesh by extruding a 2D shape along a specified height. It uses the GLM library for vector and matrix operations, and includes functionality for face culling based on the camera\textquotesingle{}s view direction. The class also provides a method to log detailed information about the mesh, including its position, rotation, scale, and vertex data. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ragot_1_1_extrude_mesh_a411f2f6aa1a78393baa78148320b1394}\index{Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}!ExtrudeMesh@{ExtrudeMesh}}
+\index{ExtrudeMesh@{ExtrudeMesh}!Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}}
+\doxysubsubsection{\texorpdfstring{ExtrudeMesh()}{ExtrudeMesh()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_extrude_mesh_a411f2f6aa1a78393baa78148320b1394} 
+Ragot\+::\+Extrude\+Mesh\+::\+Extrude\+Mesh (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_ragot_1_1mesh__info__t}{mesh\+\_\+info\+\_\+t}} \&}]{mesh\+\_\+info}{, }\item[{const \mbox{\hyperlink{class_ragot_1_1_camera}{Camera}} \&}]{cam}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs an \doxylink{class_ragot_1_1_extrude_mesh}{Extrude\+Mesh} object with the specified mesh information and camera reference. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh\+\_\+info} & Information about the mesh to be extruded. \\
+\hline
+{\em cam} & Reference to the camera used for culling faces. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_extrude_mesh_a411f2f6aa1a78393baa78148320b1394_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_extrude_mesh_a3cfcf4a41584f7c127cc22fa6f6b6664}\index{Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}!````~ExtrudeMesh@{\texorpdfstring{$\sim$}{\string~}ExtrudeMesh}}
+\index{````~ExtrudeMesh@{\texorpdfstring{$\sim$}{\string~}ExtrudeMesh}!Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ExtrudeMesh()}{\string~ExtrudeMesh()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_extrude_mesh_a3cfcf4a41584f7c127cc22fa6f6b6664} 
+Ragot\+::\+Extrude\+Mesh\+::\texorpdfstring{$\sim$}{\string~}\+Extrude\+Mesh (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default destructor for the \doxylink{class_ragot_1_1_extrude_mesh}{Extrude\+Mesh} class. 
+
+This destructor is used to clean up resources when the \doxylink{class_ragot_1_1_extrude_mesh}{Extrude\+Mesh} object is destroyed. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ragot_1_1_extrude_mesh_acd3bc2b69406b8155004382ba7942591}\index{Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}!are\_vertices\_coplanar@{are\_vertices\_coplanar}}
+\index{are\_vertices\_coplanar@{are\_vertices\_coplanar}!Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}}
+\doxysubsubsection{\texorpdfstring{are\_vertices\_coplanar()}{are\_vertices\_coplanar()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_extrude_mesh_acd3bc2b69406b8155004382ba7942591} 
+bool Ragot\+::\+Extrude\+Mesh\+::are\+\_\+vertices\+\_\+coplanar (\begin{DoxyParamCaption}\item[{const glm\+::fvec4 \&}]{v1}{, }\item[{const glm\+::fvec4 \&}]{v2}{, }\item[{const glm\+::fvec4 \&}]{v3}{, }\item[{const glm\+::fvec4 \&}]{v4}{, }\item[{float}]{tolerance}{ = {\ttfamily 0.1f}}\end{DoxyParamCaption})}
+
+
+
+Verifies if four vertices are coplanar. 
+
+This method checks if the four vertices v1, v2, v3, and v4 are coplanar within a specified tolerance. It uses the scalar triple product to determine coplanarity. 
+\begin{DoxyParams}{Parameters}
+{\em v1} & First vertex in homogeneous coordinates. \\
+\hline
+{\em v2} & Second vertex in homogeneous coordinates. \\
+\hline
+{\em v3} & Third vertex in homogeneous coordinates. \\
+\hline
+{\em v4} & Fourth vertex in homogeneous coordinates. \\
+\hline
+{\em tolerance} & Tolerance value for coplanarity check (default is 0.\+1). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the vertices are coplanar, false otherwise.
+\end{DoxyReturn}
+The method calculates the scalar triple product of the vectors formed by the vertices and checks if it is close to zero within the specified tolerance. The scalar triple product is computed as the dot product of the first vector with the cross product of the other two vectors. This method is useful for determining if a set of vertices can form a valid face in the mesh. \begin{DoxyNote}{Note}
+This method assumes that the vertices are provided in homogeneous coordinates (4D vectors). 
+\end{DoxyNote}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_extrude_mesh_acd3bc2b69406b8155004382ba7942591_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_extrude_mesh_a7433d915f8ea8a5b08b036b1d346118c}\index{Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}!generate\_faces@{generate\_faces}}
+\index{generate\_faces@{generate\_faces}!Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}}
+\doxysubsubsection{\texorpdfstring{generate\_faces()}{generate\_faces()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_extrude_mesh_a7433d915f8ea8a5b08b036b1d346118c} 
+void Ragot\+::\+Extrude\+Mesh\+::generate\+\_\+faces (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Generates the faces of the extruded mesh. 
+
+This method creates the faces of the mesh based on the vertices generated by the generate\+\_\+vertices method. It checks if the vertices are coplanar and creates either quads or triangles accordingly. 
+
+Implements \mbox{\hyperlink{class_ragot_1_1_mesh_a0c569357f4cac6c8612b3dcc4b6ab3b5}{Ragot\+::\+Mesh}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{class_ragot_1_1_extrude_mesh_a7433d915f8ea8a5b08b036b1d346118c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_ragot_1_1_extrude_mesh_a7433d915f8ea8a5b08b036b1d346118c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_extrude_mesh_a8739a5246afdef28a96782e5471042ee}\index{Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}!generate\_vertices@{generate\_vertices}}
+\index{generate\_vertices@{generate\_vertices}!Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}}
+\doxysubsubsection{\texorpdfstring{generate\_vertices()}{generate\_vertices()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_extrude_mesh_a8739a5246afdef28a96782e5471042ee} 
+void Ragot\+::\+Extrude\+Mesh\+::generate\+\_\+vertices (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Deleted copy constructor for the \doxylink{class_ragot_1_1_extrude_mesh}{Extrude\+Mesh} class. 
+
+This constructor is deleted to prevent copying of \doxylink{class_ragot_1_1_extrude_mesh}{Extrude\+Mesh} objects. 
+
+Implements \mbox{\hyperlink{class_ragot_1_1_mesh_a54b4d342f8fb1e51c9e0ad218340b4fa}{Ragot\+::\+Mesh}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_ragot_1_1_extrude_mesh_a8739a5246afdef28a96782e5471042ee_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_extrude_mesh_a3cc90144903bf48d7adc6a1b23c8ab53}\index{Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}!log\_mesh\_info@{log\_mesh\_info}}
+\index{log\_mesh\_info@{log\_mesh\_info}!Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}}
+\doxysubsubsection{\texorpdfstring{log\_mesh\_info()}{log\_mesh\_info()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_extrude_mesh_a3cc90144903bf48d7adc6a1b23c8ab53} 
+void Ragot\+::\+Extrude\+Mesh\+::log\+\_\+mesh\+\_\+info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Logs detailed information about the mesh. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_extrude_mesh_a3cc90144903bf48d7adc6a1b23c8ab53_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_ragot_1_1_extrude_mesh_a88cefb17920a8eb4de3075568e38b2e4}\index{Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}!cam@{cam}}
+\index{cam@{cam}!Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}}
+\doxysubsubsection{\texorpdfstring{cam}{cam}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_extrude_mesh_a88cefb17920a8eb4de3075568e38b2e4} 
+const \mbox{\hyperlink{class_ragot_1_1_camera}{Camera}}\& Ragot\+::\+Extrude\+Mesh\+::cam\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxylink{class_ragot_1_1_camera}{Camera} reference for culling faces based on the camera\textquotesingle{}s view direction. 
+
+This reference is used to determine which faces of the mesh are visible from the camera\textquotesingle{}s perspective. \Hypertarget{class_ragot_1_1_extrude_mesh_a567856c0a37422ce7a53848bcc280a90}\index{Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}!camPos@{camPos}}
+\index{camPos@{camPos}!Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}}
+\doxysubsubsection{\texorpdfstring{camPos}{camPos}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_extrude_mesh_a567856c0a37422ce7a53848bcc280a90} 
+glm\+::vec3 Ragot\+::\+Extrude\+Mesh\+::cam\+Pos\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Position of the camera in world space. 
+
+This vector represents the position of the camera in the 3D world. It is used to calculate the visibility of faces based on the camera\textquotesingle{}s position. \Hypertarget{class_ragot_1_1_extrude_mesh_aa5042e1c9693caf71869b18d0e07fd76}\index{Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}!EXTRUDE\_TAG@{EXTRUDE\_TAG}}
+\index{EXTRUDE\_TAG@{EXTRUDE\_TAG}!Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}}
+\doxysubsubsection{\texorpdfstring{EXTRUDE\_TAG}{EXTRUDE\_TAG}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_extrude_mesh_aa5042e1c9693caf71869b18d0e07fd76} 
+const char \texorpdfstring{$\ast$}{*} Ragot\+::\+Extrude\+Mesh\+::\+EXTRUDE\+\_\+\+TAG = "{}Extrude\+Mesh"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Tag for logging messages related to the \doxylink{class_ragot_1_1_extrude_mesh}{Extrude\+Mesh} class. 
+
+\Hypertarget{class_ragot_1_1_extrude_mesh_addfa9632beaa009c94118c79fb3af13a}\index{Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}!faces\_can\_be\_quads@{faces\_can\_be\_quads}}
+\index{faces\_can\_be\_quads@{faces\_can\_be\_quads}!Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}}
+\doxysubsubsection{\texorpdfstring{faces\_can\_be\_quads}{faces\_can\_be\_quads}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_extrude_mesh_addfa9632beaa009c94118c79fb3af13a} 
+bool Ragot\+::\+Extrude\+Mesh\+::faces\+\_\+can\+\_\+be\+\_\+quads = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Flag indicating whether the faces can be quads. 
+
+This flag is set to true if the number of vertices is a multiple of 8 or if it is exactly 4. It determines how faces are generated in the mesh. \Hypertarget{class_ragot_1_1_extrude_mesh_a1f8612cc963aa07dc7e62dfc36c460aa}\index{Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}!height@{height}}
+\index{height@{height}!Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_extrude_mesh_a1f8612cc963aa07dc7e62dfc36c460aa} 
+float Ragot\+::\+Extrude\+Mesh\+::height = 1.\+0f\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Height of the extrusion. 
+
+This value determines how far the 2D shape is extruded in the Z direction. \Hypertarget{class_ragot_1_1_extrude_mesh_a3f46a4d183d813f7455e5f7b1835e102}\index{Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}!planes@{planes}}
+\index{planes@{planes}!Ragot::ExtrudeMesh@{Ragot::ExtrudeMesh}}
+\doxysubsubsection{\texorpdfstring{planes}{planes}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_extrude_mesh_a3f46a4d183d813f7455e5f7b1835e102} 
+glm\+::vec4 Ragot\+::\+Extrude\+Mesh\+::planes\mbox{[}4\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Array of planes used for culling faces. 
+
+This array contains the planes that define the view frustum of the camera. It is used to determine which faces are visible and which can be culled. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+main/\mbox{\hyperlink{_extrude_mesh_8hpp}{Extrude\+Mesh.\+hpp}}\item 
+main/\mbox{\hyperlink{_extrude_mesh_8cpp}{Extrude\+Mesh.\+cpp}}\end{DoxyCompactItemize}

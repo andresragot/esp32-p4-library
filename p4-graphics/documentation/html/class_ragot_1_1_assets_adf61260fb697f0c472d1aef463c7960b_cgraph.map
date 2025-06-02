@@ -1,0 +1,5 @@
+<map id="Ragot::Assets::instance" name="Ragot::Assets::instance">
+<area shape="rect" id="Node000001" title="Returns the singleton instance of the Assets class." alt="" coords="5,5,168,31"/>
+<area shape="rect" id="Node000002" href="$class_ragot_1_1_assets.html#a2387c9d5b1229e353c6ee063f2e77aa7" title="Construct a new Assets object." alt="" coords="216,5,370,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,16,201,16,201,21,168,21"/>
+</map>

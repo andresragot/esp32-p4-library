@@ -1,7 +1,0 @@
-<map id="Ragot::MeshSerializer::save_to_obj" name="Ragot::MeshSerializer::save_to_obj">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,23,156,64"/>
-<area shape="rect" id="Node000002" href="$class_ragot_1_1_mesh.html#a8c6fa8b74fa74ca5a2a0f399709a5af9" title=" " alt="" coords="211,5,372,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="155,32,195,27,196,32,156,37"/>
-<area shape="rect" id="Node000003" href="$class_ragot_1_1_mesh.html#ab9d135d5f1653e6d07a4e9a269a5064b" title=" " alt="" coords="204,55,379,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="156,49,188,53,188,58,156,55"/>
-</map>

@@ -1,0 +1,5 @@
+<map id="Ragot::Renderer::initFullScreenQuad" name="Ragot::Renderer::initFullScreenQuad">
+<area shape="rect" id="Node000001" title="Initializes the full&#45;screen quad for rendering, used in non&#45;ESP platforms." alt="" coords="232,5,395,46"/>
+<area shape="rect" id="Node000002" href="$class_ragot_1_1_renderer.html#a72e42229b1c05ab0ae910b20b6f41453" title="Constructs a Renderer with the specified width and height." alt="" coords="5,13,184,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="216,28,184,28,184,23,216,23"/>
+</map>

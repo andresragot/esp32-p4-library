@@ -1,0 +1,49 @@
+\doxysection{main/\+Logger.cpp File Reference}
+\hypertarget{_logger_8cpp}{}\label{_logger_8cpp}\index{main/Logger.cpp@{main/Logger.cpp}}
+
+
+This file implements the Logger class, which provides a singleton logger for the \doxylink{namespace_ragot}{Ragot} engine.  
+
+
+{\ttfamily \#include "{}Logger.\+hpp"{}}\newline
+Include dependency graph for Logger.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{_logger_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_ragot}{Ragot}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_logger}{Logger}} \& \mbox{\hyperlink{namespace_ragot_aaf684bb5c8c5ae2ecdea7c93fa40b9e3}{Ragot\+::logger}} = \mbox{\hyperlink{class_ragot_1_1_logger_a2542d6b1f1cf400a69f5e8dd767d065f}{Logger\+::instance}}()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file implements the Logger class, which provides a singleton logger for the \doxylink{namespace_ragot}{Ragot} engine. 
+
+\begin{DoxyAuthor}{Author}
+Andrés \doxylink{namespace_ragot}{Ragot} (github.\+com/andresragot)
+\end{DoxyAuthor}
+The Logger class allows logging messages with different severity levels (INFO, WARNING, ERROR). It supports formatted logging using printf-\/style format strings and can be used across different platforms. The logger can be configured to set the log level, and it uses the ESP-\/\+IDF logging system on ESP platforms. \begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/06-\/01
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 MIT License
+\end{DoxyCopyright}
+Copyright (c) 2025 Andrés \doxylink{namespace_ragot}{Ragot}
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "{}\+Software"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\+:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "{}\+AS IS"{}, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 

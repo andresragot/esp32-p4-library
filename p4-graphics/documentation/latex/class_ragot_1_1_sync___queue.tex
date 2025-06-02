@@ -1,0 +1,416 @@
+\doxysection{Ragot\+::Sync\+\_\+\+Queue\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_ragot_1_1_sync___queue}{}\label{class_ragot_1_1_sync___queue}\index{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}}
+
+
+A thread-\/safe queue implementation.  
+
+
+
+
+{\ttfamily \#include $<$Sync\+\_\+\+Queue.\+hpp$>$}
+
+
+
+Inheritance diagram for Ragot\+::Sync\+\_\+\+Queue\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_ragot_1_1_sync___queue__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ragot\+::Sync\+\_\+\+Queue\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{class_ragot_1_1_sync___queue__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{class_ragot_1_1_sync___queue_adaa6b1aec1b54d8b22f323dfa0380907}{value\+\_\+type}} = T
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_sync___queue_af28a8d17f5b8161457e7f907e61c402d}{Sync\+\_\+\+Queue}} ()=default
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_ragot_1_1_sync___queue}{Sync\+\_\+\+Queue} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_sync___queue_aef33769179162e8ec64dfbce8f080f65}{\texorpdfstring{$\sim$}{\string~}\+Sync\+\_\+\+Queue}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{class_ragot_1_1_sync___queue}{Sync\+\_\+\+Queue} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_sync___queue_af47b08330016093fc31aa40278a81d86}{Sync\+\_\+\+Queue}} (const \mbox{\hyperlink{class_ragot_1_1_sync___queue}{Sync\+\_\+\+Queue}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_ragot_1_1_sync___queue}{Sync\+\_\+\+Queue} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_sync___queue}{Sync\+\_\+\+Queue}} \& \mbox{\hyperlink{class_ragot_1_1_sync___queue_a2ab2ead3c0ef565076007b5fbd473c5b}{operator=}} (const \mbox{\hyperlink{class_ragot_1_1_sync___queue}{Sync\+\_\+\+Queue}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Assignment operator for \doxylink{class_ragot_1_1_sync___queue}{Sync\+\_\+\+Queue}. \end{DoxyCompactList}\item 
+std\+::optional$<$ \mbox{\hyperlink{class_ragot_1_1_sync___queue_adaa6b1aec1b54d8b22f323dfa0380907}{value\+\_\+type}} $>$ \mbox{\hyperlink{class_ragot_1_1_sync___queue_aad4e87aa0fc1dccb917d082ddaf92e18}{get}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves an element from the queue. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_sync___queue_ae329ef44313f0b193206fe215b17b8f1}{push}} (const \mbox{\hyperlink{class_ragot_1_1_sync___queue_adaa6b1aec1b54d8b22f323dfa0380907}{value\+\_\+type}} \&value)
+\begin{DoxyCompactList}\small\item\em Pushes an element into the queue. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename ... ARGUMENTS$>$ }\\void \mbox{\hyperlink{class_ragot_1_1_sync___queue_a6a6857e6b4f081c051cc350adad77d79}{push}} (ARGUMENTS \&\&...arguments)
+\begin{DoxyCompactList}\small\item\em Pushes an element into the queue. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename ... ARGUMENTS$>$ }\\void \mbox{\hyperlink{class_ragot_1_1_sync___queue_a7f390cf6a19fe5c1f785e5f8ffbaeb96}{emplace}} (ARGUMENTS \&\&...arguments)
+\begin{DoxyCompactList}\small\item\em Emplaces an element into the queue. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_sync___queue_adaa6b1aec1b54d8b22f323dfa0380907}{value\+\_\+type}} \& \mbox{\hyperlink{class_ragot_1_1_sync___queue_a9d6be9759ebb9e02541dc1883da30b54}{back}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the front element of the queue without removing it. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_sync___queue_a24f7d5fd8bcaeca82aca743fc19cbd72}{close}} ()
+\begin{DoxyCompactList}\small\item\em Closes the queue. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_sync___queue_a14a13fb1bdf611a72c83341e2d4c23f6}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clears the queue. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_sync___queue_ae46e206be00102715d6647e5e3bc4571}{swap}} (\mbox{\hyperlink{class_ragot_1_1_sync___queue}{Sync\+\_\+\+Queue}} \&other)
+\begin{DoxyCompactList}\small\item\em Swaps the contents of this queue with another queue. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ragot_1_1_sync___queue_aa4c259b216de114396b0430611ab7dae}{empty}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the queue is empty. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_ragot_1_1_sync___queue_a82a62dc029ea468a5d0d11ffbde0901b}{size}} () const
+\begin{DoxyCompactList}\small\item\em Gets the size of the queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::queue$<$ T $>$ \mbox{\hyperlink{class_ragot_1_1_sync___queue_a47f093eee0959fa7f60ff609f0f71dd5}{queue}}
+\begin{DoxyCompactList}\small\item\em The underlying queue to store elements, used for thread-\/safe operations. \end{DoxyCompactList}\item 
+std\+::mutex \mbox{\hyperlink{class_ragot_1_1_sync___queue_a5d4425295a44d1de5ac244aa93c844c2}{mutex}}
+\begin{DoxyCompactList}\small\item\em Mutex to protect access to the queue, ensuring that only one thread can modify the queue at a time. \end{DoxyCompactList}\item 
+std\+::condition\+\_\+variable \mbox{\hyperlink{class_ragot_1_1_sync___queue_af22a2cf014f431cae6a910d2ae5776a8}{condition}}
+\begin{DoxyCompactList}\small\item\em Condition variable to notify waiting threads when elements are available in the queue or when the queue is closed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ragot_1_1_sync___queue_aed13181f04ebfcd78f3e7d0332164cfd}{closed}} = false
+\begin{DoxyCompactList}\small\item\em Flag to indicate whether the queue is closed, preventing further pushes and allowing threads to exit gracefully when the queue is empty. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Ragot\+::\+Sync\+\_\+\+Queue$<$ T $>$}
+A thread-\/safe queue implementation. 
+
+This class provides a synchronized queue that allows multiple threads to safely push and pop elements. It uses mutexes and condition variables to ensure thread safety. 
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_ragot_1_1_sync___queue_adaa6b1aec1b54d8b22f323dfa0380907}\index{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!value\_type@{value\_type}}
+\index{value\_type@{value\_type}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{value\_type}{value\_type}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_sync___queue_adaa6b1aec1b54d8b22f323dfa0380907} 
+template$<$typename T$>$ \\
+using \mbox{\hyperlink{class_ragot_1_1_sync___queue}{Ragot\+::\+Sync\+\_\+\+Queue}}$<$ T $>$\+::value\+\_\+type = T}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ragot_1_1_sync___queue_af28a8d17f5b8161457e7f907e61c402d}\index{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!Sync\_Queue@{Sync\_Queue}}
+\index{Sync\_Queue@{Sync\_Queue}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Sync\_Queue()}{Sync\_Queue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_sync___queue_af28a8d17f5b8161457e7f907e61c402d} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_ragot_1_1_sync___queue}{Ragot\+::\+Sync\+\_\+\+Queue}}$<$ T $>$\+::\+Sync\+\_\+\+Queue (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Construct a new \doxylink{class_ragot_1_1_sync___queue}{Sync\+\_\+\+Queue} object. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_sync___queue_af28a8d17f5b8161457e7f907e61c402d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_sync___queue_aef33769179162e8ec64dfbce8f080f65}\index{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!````~Sync\_Queue@{\texorpdfstring{$\sim$}{\string~}Sync\_Queue}}
+\index{````~Sync\_Queue@{\texorpdfstring{$\sim$}{\string~}Sync\_Queue}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Sync\_Queue()}{\string~Sync\_Queue()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_sync___queue_aef33769179162e8ec64dfbce8f080f65} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_ragot_1_1_sync___queue}{Ragot\+::\+Sync\+\_\+\+Queue}}$<$ T $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{class_ragot_1_1_sync___queue}{Sync\+\_\+\+Queue}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroy the \doxylink{class_ragot_1_1_sync___queue}{Sync\+\_\+\+Queue} object. 
+
+Closes the queue and releases any resources held by it. Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{class_ragot_1_1_sync___queue_aef33769179162e8ec64dfbce8f080f65_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_sync___queue_af47b08330016093fc31aa40278a81d86}\index{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!Sync\_Queue@{Sync\_Queue}}
+\index{Sync\_Queue@{Sync\_Queue}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Sync\_Queue()}{Sync\_Queue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_sync___queue_af47b08330016093fc31aa40278a81d86} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_ragot_1_1_sync___queue}{Ragot\+::\+Sync\+\_\+\+Queue}}$<$ T $>$\+::\+Sync\+\_\+\+Queue (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ragot_1_1_sync___queue}{Sync\+\_\+\+Queue}}$<$ T $>$ \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Construct a new \doxylink{class_ragot_1_1_sync___queue}{Sync\+\_\+\+Queue} object. 
+
+This constructor is deleted to prevent copying of the \doxylink{class_ragot_1_1_sync___queue}{Sync\+\_\+\+Queue} object. It ensures that the queue cannot be copied, which is important for thread safety. Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{class_ragot_1_1_sync___queue_af47b08330016093fc31aa40278a81d86_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ragot_1_1_sync___queue_a9d6be9759ebb9e02541dc1883da30b54}\index{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!back@{back}}
+\index{back@{back}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{back()}{back()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_sync___queue_a9d6be9759ebb9e02541dc1883da30b54} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_ragot_1_1_sync___queue_adaa6b1aec1b54d8b22f323dfa0380907}{value\+\_\+type}} \& \mbox{\hyperlink{class_ragot_1_1_sync___queue}{Ragot\+::\+Sync\+\_\+\+Queue}}$<$ T $>$\+::back (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the front element of the queue without removing it. 
+
+This method returns a reference to the front element of the queue. It is not thread-\/safe and should be used with caution.
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_ragot_1_1_sync___queue_adaa6b1aec1b54d8b22f323dfa0380907}{value\+\_\+type}\& A reference to the front element of the queue. 
+\end{DoxyReturn}
+\Hypertarget{class_ragot_1_1_sync___queue_a14a13fb1bdf611a72c83341e2d4c23f6}\index{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!clear@{clear}}
+\index{clear@{clear}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_sync___queue_a14a13fb1bdf611a72c83341e2d4c23f6} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{class_ragot_1_1_sync___queue}{Ragot\+::\+Sync\+\_\+\+Queue}}$<$ T $>$\+::clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Clears the queue. 
+
+This method removes all elements from the queue and resets it to an empty state. It is thread-\/safe and can be called while other threads are accessing the queue. Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{class_ragot_1_1_sync___queue_a14a13fb1bdf611a72c83341e2d4c23f6_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_sync___queue_a24f7d5fd8bcaeca82aca743fc19cbd72}\index{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!close@{close}}
+\index{close@{close}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_sync___queue_a24f7d5fd8bcaeca82aca743fc19cbd72} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{class_ragot_1_1_sync___queue}{Ragot\+::\+Sync\+\_\+\+Queue}}$<$ T $>$\+::close (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Closes the queue. 
+
+This method sets the closed flag to true and notifies all waiting threads. After closing, no more elements can be pushed into the queue. Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{class_ragot_1_1_sync___queue_a24f7d5fd8bcaeca82aca743fc19cbd72_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_sync___queue_a7f390cf6a19fe5c1f785e5f8ffbaeb96}\index{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!emplace@{emplace}}
+\index{emplace@{emplace}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{emplace()}{emplace()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_sync___queue_a7f390cf6a19fe5c1f785e5f8ffbaeb96} 
+template$<$typename T$>$ \\
+template$<$typename ... ARGUMENTS$>$ \\
+void \mbox{\hyperlink{class_ragot_1_1_sync___queue}{Ragot\+::\+Sync\+\_\+\+Queue}}$<$ T $>$\+::emplace (\begin{DoxyParamCaption}\item[{ARGUMENTS \&\&...}]{arguments}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Emplaces an element into the queue. 
+
+This method constructs an element in place and adds it to the queue if it is not closed. It notifies one waiting thread that an element is available.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em ARGUMENTS} & The types of arguments used to construct the element. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em arguments} & The arguments used to construct the element. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ragot_1_1_sync___queue_aa4c259b216de114396b0430611ab7dae}\index{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!empty@{empty}}
+\index{empty@{empty}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_sync___queue_aa4c259b216de114396b0430611ab7dae} 
+template$<$typename T$>$ \\
+bool \mbox{\hyperlink{class_ragot_1_1_sync___queue}{Ragot\+::\+Sync\+\_\+\+Queue}}$<$ T $>$\+::empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if the queue is empty. 
+
+This method checks if the queue is empty by acquiring a lock on the mutex. It returns true if the queue is empty, false otherwise.
+
+\begin{DoxyReturn}{Returns}
+true if the queue is empty, false otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{class_ragot_1_1_sync___queue_aa4c259b216de114396b0430611ab7dae_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_sync___queue_aad4e87aa0fc1dccb917d082ddaf92e18}\index{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!get@{get}}
+\index{get@{get}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_sync___queue_aad4e87aa0fc1dccb917d082ddaf92e18} 
+template$<$typename T$>$ \\
+std\+::optional$<$ \mbox{\hyperlink{class_ragot_1_1_sync___queue_adaa6b1aec1b54d8b22f323dfa0380907}{value\+\_\+type}} $>$ \mbox{\hyperlink{class_ragot_1_1_sync___queue}{Ragot\+::\+Sync\+\_\+\+Queue}}$<$ T $>$\+::get (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves an element from the queue. 
+
+This method blocks until an element is available or the queue is closed. If the queue is closed and empty, it returns std\+::nullopt.
+
+\begin{DoxyReturn}{Returns}
+std\+::optional$<$value\+\_\+type$>$ The retrieved element or std\+::nullopt if the queue is closed and empty. 
+\end{DoxyReturn}
+\Hypertarget{class_ragot_1_1_sync___queue_a2ab2ead3c0ef565076007b5fbd473c5b}\index{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_sync___queue_a2ab2ead3c0ef565076007b5fbd473c5b} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_ragot_1_1_sync___queue}{Sync\+\_\+\+Queue}} \& \mbox{\hyperlink{class_ragot_1_1_sync___queue}{Ragot\+::\+Sync\+\_\+\+Queue}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ragot_1_1_sync___queue}{Sync\+\_\+\+Queue}}$<$ T $>$ \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Assignment operator for \doxylink{class_ragot_1_1_sync___queue}{Sync\+\_\+\+Queue}. 
+
+This assignment operator is deleted to prevent copying of the \doxylink{class_ragot_1_1_sync___queue}{Sync\+\_\+\+Queue} object. It ensures that the queue cannot be assigned, which is important for thread safety. Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{class_ragot_1_1_sync___queue_a2ab2ead3c0ef565076007b5fbd473c5b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_sync___queue_a6a6857e6b4f081c051cc350adad77d79}\index{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!push@{push}}
+\index{push@{push}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_sync___queue_a6a6857e6b4f081c051cc350adad77d79} 
+template$<$typename T$>$ \\
+template$<$typename ... ARGUMENTS$>$ \\
+void \mbox{\hyperlink{class_ragot_1_1_sync___queue}{Ragot\+::\+Sync\+\_\+\+Queue}}$<$ T $>$\+::push (\begin{DoxyParamCaption}\item[{ARGUMENTS \&\&...}]{arguments}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Pushes an element into the queue. 
+
+This method adds an element to the queue if it is not closed. It notifies one waiting thread that an element is available.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The value to be pushed into the queue. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ragot_1_1_sync___queue_ae329ef44313f0b193206fe215b17b8f1}\index{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!push@{push}}
+\index{push@{push}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_sync___queue_ae329ef44313f0b193206fe215b17b8f1} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{class_ragot_1_1_sync___queue}{Ragot\+::\+Sync\+\_\+\+Queue}}$<$ T $>$\+::push (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ragot_1_1_sync___queue_adaa6b1aec1b54d8b22f323dfa0380907}{value\+\_\+type}} \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Pushes an element into the queue. 
+
+This method adds an element to the queue if it is not closed. It notifies one waiting thread that an element is available.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The value to be pushed into the queue. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ragot_1_1_sync___queue_a82a62dc029ea468a5d0d11ffbde0901b}\index{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!size@{size}}
+\index{size@{size}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_sync___queue_a82a62dc029ea468a5d0d11ffbde0901b} 
+template$<$typename T$>$ \\
+size\+\_\+t \mbox{\hyperlink{class_ragot_1_1_sync___queue}{Ragot\+::\+Sync\+\_\+\+Queue}}$<$ T $>$\+::size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the size of the queue. 
+
+This method returns the number of elements in the queue by acquiring a lock on the mutex. It is thread-\/safe and can be called while other threads are accessing the queue.
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+t The number of elements in the queue. 
+\end{DoxyReturn}
+\Hypertarget{class_ragot_1_1_sync___queue_ae46e206be00102715d6647e5e3bc4571}\index{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!swap@{swap}}
+\index{swap@{swap}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_sync___queue_ae46e206be00102715d6647e5e3bc4571} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{class_ragot_1_1_sync___queue}{Ragot\+::\+Sync\+\_\+\+Queue}}$<$ T $>$\+::swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ragot_1_1_sync___queue}{Sync\+\_\+\+Queue}}$<$ T $>$ \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Swaps the contents of this queue with another queue. 
+
+This method swaps the contents of this queue with another \doxylink{class_ragot_1_1_sync___queue}{Sync\+\_\+\+Queue}. It locks both mutexes to ensure thread safety during the swap operation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The other \doxylink{class_ragot_1_1_sync___queue}{Sync\+\_\+\+Queue} to swap with. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_sync___queue_ae46e206be00102715d6647e5e3bc4571_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_ragot_1_1_sync___queue_aed13181f04ebfcd78f3e7d0332164cfd}\index{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!closed@{closed}}
+\index{closed@{closed}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{closed}{closed}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_sync___queue_aed13181f04ebfcd78f3e7d0332164cfd} 
+template$<$typename T$>$ \\
+bool \mbox{\hyperlink{class_ragot_1_1_sync___queue}{Ragot\+::\+Sync\+\_\+\+Queue}}$<$ T $>$\+::closed = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag to indicate whether the queue is closed, preventing further pushes and allowing threads to exit gracefully when the queue is empty. 
+
+\Hypertarget{class_ragot_1_1_sync___queue_af22a2cf014f431cae6a910d2ae5776a8}\index{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!condition@{condition}}
+\index{condition@{condition}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{condition}{condition}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_sync___queue_af22a2cf014f431cae6a910d2ae5776a8} 
+template$<$typename T$>$ \\
+std\+::condition\+\_\+variable \mbox{\hyperlink{class_ragot_1_1_sync___queue}{Ragot\+::\+Sync\+\_\+\+Queue}}$<$ T $>$\+::condition\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Condition variable to notify waiting threads when elements are available in the queue or when the queue is closed. 
+
+\Hypertarget{class_ragot_1_1_sync___queue_a5d4425295a44d1de5ac244aa93c844c2}\index{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!mutex@{mutex}}
+\index{mutex@{mutex}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{mutex}{mutex}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_sync___queue_a5d4425295a44d1de5ac244aa93c844c2} 
+template$<$typename T$>$ \\
+std\+::mutex \mbox{\hyperlink{class_ragot_1_1_sync___queue}{Ragot\+::\+Sync\+\_\+\+Queue}}$<$ T $>$\+::mutex\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+
+
+Mutex to protect access to the queue, ensuring that only one thread can modify the queue at a time. 
+
+\Hypertarget{class_ragot_1_1_sync___queue_a47f093eee0959fa7f60ff609f0f71dd5}\index{Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}!queue@{queue}}
+\index{queue@{queue}!Ragot::Sync\_Queue$<$ T $>$@{Ragot::Sync\_Queue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{queue}{queue}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_sync___queue_a47f093eee0959fa7f60ff609f0f71dd5} 
+template$<$typename T$>$ \\
+std\+::queue$<$T$>$ \mbox{\hyperlink{class_ragot_1_1_sync___queue}{Ragot\+::\+Sync\+\_\+\+Queue}}$<$ T $>$\+::queue\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The underlying queue to store elements, used for thread-\/safe operations. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+main/\mbox{\hyperlink{_sync___queue_8hpp}{Sync\+\_\+\+Queue.\+hpp}}\end{DoxyCompactItemize}

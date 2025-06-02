@@ -1,0 +1,12 @@
+<map id="main/Scene.hpp" name="main/Scene.hpp">
+<area shape="rect" id="Node000001" title="Implementation of the Scene class for managing 3D scenes." alt="" coords="156,5,271,31"/>
+<area shape="rect" id="Node000002" href="$_renderer_8hpp.html" title="Implementation of the Renderer class for rendering scenes in the Ragot engine." alt="" coords="45,79,176,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,42,130,81,126,76,182,38"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html" title="This file contains the main function for the Ragot engine, which initializes the renderer and scene,..." alt="" coords="160,153,266,178"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="216,47,216,152,210,152,210,47"/>
+<area shape="rect" id="Node000005" href="$_scene_8cpp.html" title="Implementation of the Scene class for managing 3D scenes." alt="" coords="250,79,366,105"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="243,39,294,77,290,81,240,43"/>
+<area shape="rect" id="Node000003" href="$_renderer_8cpp.html" title="Implementation of the Renderer class for rendering scenes in the Ragot engine." alt="" coords="5,153,136,178"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="99,120,80,153,75,151,94,117"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="142,111,197,150,194,154,139,116"/>
+</map>

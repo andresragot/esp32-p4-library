@@ -1,0 +1,81 @@
+\doxysection{main/\+Common\+Types.hpp File Reference}
+\hypertarget{_common_types_8hpp}{}\label{_common_types_8hpp}\index{main/CommonTypes.hpp@{main/CommonTypes.hpp}}
+
+
+This file defines common types and structures used in the \doxylink{namespace_ragot}{Ragot} engine, including camera transformations, mesh information, and rendering flags.  
+
+
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+Include dependency graph for Common\+Types.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{_common_types_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_common_types_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_ragot_1_1_camera___transform}{Ragot\+::\+Camera\+\_\+\+Transform}}
+\begin{DoxyCompactList}\small\item\em Represents the transformation of a camera in 3D space. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_ragot_1_1transform__t}{Ragot\+::transform\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Represents a transformation in 3D space. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_ragot_1_1vertex__t}{Ragot\+::vertex\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Represents a vertex in 3D space. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_ragot_1_1face__t}{Ragot\+::face\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Represents a face in a 3D mesh. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_ragot_1_1coordinates__t}{Ragot\+::coordinates\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Represents 2D coordinates. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_ragot_1_1mesh__info__t}{Ragot\+::mesh\+\_\+info\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Represents information about a mesh. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_ragot}{Ragot}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_ragot_a7ba6b91cb6986ec3940eb8fedfca418e}{Ragot\+::render\+\_\+flag\+\_\+t}} \+: uint8\+\_\+t \{ \mbox{\hyperlink{namespace_ragot_a7ba6b91cb6986ec3940eb8fedfca418ea6bb042dae2cdbf2a1b43f320c3b6fe13}{Ragot\+::\+RENDER\+\_\+\+NONE}}
+, \mbox{\hyperlink{namespace_ragot_a7ba6b91cb6986ec3940eb8fedfca418eabf44a076a12e74a1a974a05b4ccc410a}{Ragot\+::\+RENDER\+\_\+\+REVOLUTION}}
+, \mbox{\hyperlink{namespace_ragot_a7ba6b91cb6986ec3940eb8fedfca418ea01359aec681ecfefcaafd3d95030a7ba}{Ragot\+::\+RENDER\+\_\+\+EXTRUDE}}
+, \mbox{\hyperlink{namespace_ragot_a7ba6b91cb6986ec3940eb8fedfca418ea0785411d5c9efbdcc51ba25cb4b69178}{Ragot\+::\+RENDER\+\_\+\+MAX}}
+ \}
+\begin{DoxyCompactList}\small\item\em Flags for rendering types. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr float \mbox{\hyperlink{namespace_ragot_abc5d69f401576c2da05dc2a28bef679a}{Ragot\+::\+PI}} = 3.\+141592653f
+\begin{DoxyCompactList}\small\item\em Mathematical constant PI. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file defines common types and structures used in the \doxylink{namespace_ragot}{Ragot} engine, including camera transformations, mesh information, and rendering flags. 
+
+\begin{DoxyAuthor}{Author}
+Andrés \doxylink{namespace_ragot}{Ragot} (github.\+com/andresragot)
+\end{DoxyAuthor}
+The \doxylink{_common_types_8hpp}{Common\+Types.\+hpp} file provides essential data structures for representing camera transformations, vertex and face definitions, rendering flags, and mesh information. It includes structures for camera position and direction, vertex coordinates, face definitions (triangles and quads), and rendering flags for different mesh types. The file also defines a constant for the mathematical constant PI. \begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/06-\/01
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 MIT License
+\end{DoxyCopyright}
+Copyright (c) 2025 Andrés \doxylink{namespace_ragot}{Ragot}
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "{}\+Software"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\+:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "{}\+AS IS"{}, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 

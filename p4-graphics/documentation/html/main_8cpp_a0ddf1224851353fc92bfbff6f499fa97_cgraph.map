@@ -1,0 +1,32 @@
+<map id="main" name="main">
+<area shape="rect" id="Node000001" title="Main function for the Ragot engine." alt="" coords="5,216,55,242"/>
+<area shape="rect" id="Node000002" href="$class_ragot_1_1_renderer.html#a514b54e15d0a6750797d397cccde4ef8" title="Gets the current scene being rendered." alt="" coords="521,15,663,41"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="31,215,38,186,50,149,71,111,101,79,148,51,200,30,254,16,309,7,415,4,506,11,505,16,415,9,309,13,255,21,202,35,151,55,104,83,75,114,55,151,43,188,36,216"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#a987c89a3f1d482254025c345f19b183a" title="Main loop for the Ragot engine on non&#45;ESP platforms." alt="" coords="138,94,218,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="35,214,60,173,79,150,101,130,122,118,125,123,104,134,83,153,65,176,40,217"/>
+<area shape="rect" id="Node000010" href="$class_ragot_1_1_camera.html#a589b34b0d14c3c1b7e15e5388b9d0210" title="Set the camera&#39;s position in world space." alt="" coords="110,144,246,184"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="54,216,116,188,118,193,56,221"/>
+<area shape="rect" id="Node000012" href="$class_ragot_1_1_renderer.html#aadafbf7ac26aedbf95b75dec92b691ad" title="Sets the current scene to be rendered." alt="" coords="107,209,250,250"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="55,227,91,227,91,232,55,232"/>
+<area shape="rect" id="Node000013" href="$class_ragot_1_1_camera.html#a4a6d2a312bc3ca80842770826ed3f9db" title="Set the camera&#39;s target position in world space." alt="" coords="110,274,246,315"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="56,237,118,265,116,270,54,242"/>
+<area shape="rect" id="Node000014" href="$class_ragot_1_1_renderer.html#a798e4d2d5e94ad001db5c508625d86f4" title="Starts the rendering process." alt="" coords="103,339,254,365"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="40,241,65,282,83,305,104,324,112,329,109,334,101,329,79,309,60,285,35,244"/>
+<area shape="rect" id="Node000015" href="$class_ragot_1_1_scene.html#a4f90507572175cc171fad04dbfb05075" title="Starts the scene, setting the running flag to true." alt="" coords="111,388,246,414"/>
+<area shape="poly" id="edge15_Node000001_Node000015" title=" " alt="" coords="37,242,57,306,77,343,105,375,108,378,104,382,101,379,73,346,52,308,31,243"/>
+<area shape="rect" id="Node000004" href="$class_ragot_1_1_renderer.html#acc3bbc330b23f454ed5d01b85d4f8e98" title="Renders the current scene." alt="" coords="302,66,463,91"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="219,98,286,89,287,94,219,104"/>
+<area shape="rect" id="Node000009" href="$class_ragot_1_1_window.html#aeec6ac78cbd86cb88b5f574f980b1417" title="Swaps the OpenGL buffers." alt="" coords="308,116,458,156"/>
+<area shape="poly" id="edge9_Node000003_Node000009" title=" " alt="" coords="219,110,292,120,292,126,219,115"/>
+<area shape="poly" id="edge8_Node000004_Node000002" title=" " alt="" coords="438,62,520,42,522,48,439,68"/>
+<area shape="rect" id="Node000005" href="$namespace_ragot.html#a4e4e92c27d1e87745116770411dacb3f" title=" " alt="" coords="511,64,673,90"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="464,75,496,75,496,80,464,81"/>
+<area shape="rect" id="Node000006" href="$class_ragot_1_1_camera.html#a4d9c6fd76db5bd6911281c5951cab4a9" title="Get the projection matrix object." alt="" coords="524,114,660,155"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="434,89,509,110,508,115,433,94"/>
+<area shape="rect" id="Node000007" href="$class_ragot_1_1_camera.html#aa8fc7776eff63588634df880957ed04e" title="Get the view matrix object." alt="" coords="524,180,660,220"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="442,90,465,102,481,118,490,133,498,149,513,164,520,169,517,174,510,169,494,152,485,136,477,121,462,106,439,94"/>
+<area shape="rect" id="Node000008" href="$class_ragot_1_1_transform.html#a1db9f8e84315c4296dfef46f1f17ce99" title="Gets the current position of the object." alt="" coords="721,180,870,220"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="661,197,705,197,705,203,661,203"/>
+<area shape="rect" id="Node000011" href="$class_ragot_1_1_transform.html#a7962797afae773a25fdebf76a8404a7a" title="Sets the position of the object." alt="" coords="308,181,457,222"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="247,174,293,182,292,187,246,179"/>
+</map>

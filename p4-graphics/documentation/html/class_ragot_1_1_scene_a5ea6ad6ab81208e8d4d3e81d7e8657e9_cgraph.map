@@ -1,0 +1,17 @@
+<map id="Ragot::Scene::Scene" name="Ragot::Scene::Scene">
+<area shape="rect" id="Node000001" title="Default constructor for the Scene class." alt="" coords="5,112,152,137"/>
+<area shape="rect" id="Node000002" href="$class_ragot_1_1_scene.html#a625a17c7c3602bb5e779a8a64792d874" title="Task to update the scene in a separate thread." alt="" coords="200,104,334,145"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="152,122,184,122,184,127,152,127"/>
+<area shape="rect" id="Node000003" href="$class_ragot_1_1_scene.html#a7a1dcaed66fa5eb3af89519a7f4f9c8f" title="Collects all components of a specified type from the scene." alt="" coords="390,5,537,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="301,101,381,57,394,50,396,55,383,61,303,106"/>
+<area shape="rect" id="Node000005" href="$class_ragot_1_1_scene.html#af788c910cd73bf3265901862d32113ba" title="Gets the main camera of the scene." alt="" coords="382,71,544,111"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="334,110,366,105,367,110,335,116"/>
+<area shape="rect" id="Node000006" href="$class_ragot_1_1_camera.html#a589b34b0d14c3c1b7e15e5388b9d0210" title="Set the camera&#39;s position in world space." alt="" coords="395,136,531,177"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="335,133,380,140,379,145,334,138"/>
+<area shape="rect" id="Node000008" href="$class_ragot_1_1_camera.html#a4a6d2a312bc3ca80842770826ed3f9db" title="Set the camera&#39;s target position in world space." alt="" coords="395,201,531,242"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="304,143,383,186,397,192,394,197,381,191,302,148"/>
+<area shape="rect" id="Node000004" href="$class_ragot_1_1_scene.html#a11db92312f88cbc07fa66bdc07cbfc48" title="Traverses the scene graph and applies a callback function to each node." alt="" coords="592,13,749,38"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="537,23,577,23,577,28,537,28"/>
+<area shape="rect" id="Node000007" href="$class_ragot_1_1_transform.html#a7962797afae773a25fdebf76a8404a7a" title="Sets the position of the object." alt="" coords="596,136,745,177"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="532,154,580,154,580,159,532,159"/>
+</map>

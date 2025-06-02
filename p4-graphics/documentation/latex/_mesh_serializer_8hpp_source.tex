@@ -1,0 +1,44 @@
+\doxysection{Mesh\+Serializer.\+hpp}
+\hypertarget{_mesh_serializer_8hpp_source}{}\label{_mesh_serializer_8hpp_source}\index{main/MeshSerializer.hpp@{main/MeshSerializer.hpp}}
+\mbox{\hyperlink{_mesh_serializer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_mesh_8hpp}{Mesh.hpp}}"{}}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ragot}{Ragot}}}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{//\ Vamos\ a\ hacer\ un\ Singleton.}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ragot_1_1_mesh_serializer_afe266bf200ea6d94313dc4ae581ef394}{MeshSerializer}}}
+\DoxyCodeLine{00047\ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_ragot_1_1_mesh_serializer_afe266bf200ea6d94313dc4ae581ef394}{MeshSerializer}}\ \&\ \mbox{\hyperlink{class_ragot_1_1_mesh_serializer_a011ab2e4148165ae8828bb08af31c0ca}{instance}}()}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_ragot_1_1_mesh_serializer_afe266bf200ea6d94313dc4ae581ef394}{MeshSerializer}}\ \mbox{\hyperlink{namespace_ragot_aaf4ca170b0b74dd28659bac5e4ff08db}{serializer}};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespace_ragot_aaf4ca170b0b74dd28659bac5e4ff08db}{serializer}};}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_mesh_serializer_afe266bf200ea6d94313dc4ae581ef394}{MeshSerializer}}\ ()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_mesh_serializer_a284acadf6f4f2857044b69d622e63262}{MeshSerializer}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_mesh_serializer_afe266bf200ea6d94313dc4ae581ef394}{MeshSerializer}}\ \&)\ \ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_mesh_serializer_aadb1892c9c433279c8ff1d8b2387c42e}{MeshSerializer}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_mesh_serializer_afe266bf200ea6d94313dc4ae581ef394}{MeshSerializer}}\ \&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_mesh_serializer_afe266bf200ea6d94313dc4ae581ef394}{MeshSerializer}}\ \&\ \mbox{\hyperlink{class_ragot_1_1_mesh_serializer_a3741b9197ade45e64780f3257d3b897e}{operator\ =\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_mesh_serializer_afe266bf200ea6d94313dc4ae581ef394}{MeshSerializer}}\ \&)\ \ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_mesh_serializer_afe266bf200ea6d94313dc4ae581ef394}{MeshSerializer}}\ \&\ \mbox{\hyperlink{class_ragot_1_1_mesh_serializer_a3741b9197ade45e64780f3257d3b897e}{operator\ =\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_mesh_serializer_afe266bf200ea6d94313dc4ae581ef394}{MeshSerializer}}\ \&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ragot_1_1_mesh_serializer_a1e8df730096f1c6739d4da0be75730f2}{save\_to\_obj}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ragot_1_1_mesh}{Mesh}}\ \&\ mesh,\ \textcolor{keyword}{const}\ std::filesystem::path\ \&\ path);}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00114\ \ \ \ \ \};}
+\DoxyCodeLine{00115\ \ \ \ \ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keyword}{extern}\ \mbox{\hyperlink{class_ragot_1_1_mesh_serializer}{MeshSerializer}}\ \&\ \mbox{\hyperlink{namespace_ragot_aaf4ca170b0b74dd28659bac5e4ff08db}{serializer}};}
+\DoxyCodeLine{00117\ \}}
+
+\end{DoxyCode}

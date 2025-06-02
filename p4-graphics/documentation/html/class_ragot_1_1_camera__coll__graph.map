@@ -1,0 +1,27 @@
+<map id="Ragot::Camera" name="Ragot::Camera">
+<area shape="rect" id="Node000001" title="Represents a camera in a 3D space, managing its properties and transformations." alt="" coords="546,1147,702,1721"/>
+<area shape="rect" id="Node000002" href="$class_ragot_1_1_component.html" title="Base class for components in the Ragot engine." alt="" coords="278,810,424,1039"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="421,1050,548,1287,544,1289,416,1053"/>
+<area shape="rect" id="Node000003" href="$class_ragot_1_1_node.html" title="Represents a node in a scene graph for 3D rendering." alt="" coords="273,497,428,747"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="353,762,353,810,348,810,348,762"/>
+<area shape="poly" id="edge8_Node000003_Node000003" title=" " alt="" coords="429,592,447,602,455,622,452,635,445,644,441,641,447,632,450,622,443,606,427,597"/>
+<area shape="rect" id="Node000004" href="$class_ragot_1_1_transform.html" title="A class representing a 3D transformation with position, rotation, and scale." alt="" coords="342,165,498,434"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="390,450,380,498,375,497,385,448"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="69,5,107,72"/>
+<area shape="poly" id="edge12_Node000001_Node000005" title=" " alt="" coords="73,73,53,116,32,172,15,234,8,298,8,925,12,974,23,1020,41,1063,65,1104,94,1142,128,1177,204,1241,289,1295,376,1340,459,1375,531,1402,529,1407,457,1380,374,1345,287,1300,201,1246,124,1181,90,1145,61,1107,37,1065,18,1021,7,975,3,926,3,298,10,233,26,170,48,114,68,70"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="108,43,151,59,209,85,272,119,331,163,332,164,329,168,328,167,269,124,207,90,149,64,106,48"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="641,5,676,72"/>
+<area shape="poly" id="edge14_Node000001_Node000006" title=" " alt="" coords="670,71,692,171,700,234,704,298,704,926,700,1028,688,1130,683,1130,694,1027,699,925,699,298,695,235,686,172,665,72"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="643,60,511,204,507,200,640,57"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="463,5,502,72"/>
+<area shape="poly" id="edge13_Node000001_Node000007" title=" " alt="" coords="504,56,519,74,530,95,548,149,553,194,549,298,549,925,554,1027,565,1130,560,1130,548,1028,544,926,544,298,547,195,543,150,526,97,514,77,500,60"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="465,53,442,72,424,97,416,122,410,148,405,147,411,120,420,94,439,68,462,49"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="175,259,318,340"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="262,339,308,481,303,482,257,341"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="71,581,249,663"/>
+<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="187,661,272,795,268,797,183,664"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="739,891,856,957"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="789,958,710,1189,705,1188,784,956"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="894,891,930,957"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="908,958,888,1035,872,1080,853,1124,822,1179,787,1234,715,1331,710,1328,783,1231,818,1177,848,1121,867,1078,883,1033,903,956"/>
+</map>

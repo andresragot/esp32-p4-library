@@ -1,0 +1,235 @@
+\doxysection{Ragot\+::Shader Class Reference}
+\hypertarget{class_ragot_1_1_shader}{}\label{class_ragot_1_1_shader}\index{Ragot::Shader@{Ragot::Shader}}
+
+
+Class for managing an Open\+GL shader.  
+
+
+
+
+{\ttfamily \#include $<$Shader\+\_\+\+Program.\+hpp$>$}
+
+
+
+Inheritance diagram for Ragot\+::Shader\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{class_ragot_1_1_shader__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ragot\+::Shader\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{class_ragot_1_1_shader__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_shader_a5222f6344bc49011ae900aec54e79c80}{Shader}} ()=delete
+\begin{DoxyCompactList}\small\item\em Deleted default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_shader_aa93ddc91b6d5177f585dc95bcc1831d5}{\texorpdfstring{$\sim$}{\string~}\+Shader}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{class_ragot_1_1_shader}{Shader} class. \end{DoxyCompactList}\item 
+GLuint \mbox{\hyperlink{class_ragot_1_1_shader_aca28b2f89fb5d6b8ff3250e507bb25a2}{get\+\_\+id}} () const
+\begin{DoxyCompactList}\small\item\em Gets the shader ID. \end{DoxyCompactList}\item 
+string \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_ragot_1_1_shader_ac6fe6ea9a5bfda816c10b5e760f69194}{get\+\_\+error}} ()
+\begin{DoxyCompactList}\small\item\em Gets the compilation error message. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ragot_1_1_shader_a0b59e1cbc6484766fda1982bfc67d4a3}{is\+\_\+ok}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the shader is compiled successfully. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_shader_afbc73bebee2deef956a80794aea9d26a}{Shader}} (const vector$<$ string $>$ \&source\+\_\+code, GLenum type)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_ragot_1_1_shader}{Shader} class. \end{DoxyCompactList}\item 
+GLuint \mbox{\hyperlink{class_ragot_1_1_shader_a6f5cb04ecb8f3c615107137b3e1ba63b}{compile\+\_\+shader}} ()
+\begin{DoxyCompactList}\small\item\em Compiles the shader. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_shader_ae99131dd0fee5e4c4ced5b3a89f005ed}{show\+\_\+compilation\+\_\+error}} ()
+\begin{DoxyCompactList}\small\item\em Displays compilation errors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+GLuint \mbox{\hyperlink{class_ragot_1_1_shader_a3dacf1967c7e037f40b9c4f1fd8e470c}{id}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_ragot_1_1_shader}{Shader} ID. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_ragot_1_1_shader_a806c58b34fa1fba13b9986b28aaba1e3}{error}}
+\begin{DoxyCompactList}\small\item\em Compilation error message. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ragot_1_1_shader_a625a8c7f6fae2c7b1f61de3ff23b1569}{compilation\+\_\+succeeded}}
+\begin{DoxyCompactList}\small\item\em Flag indicating if compilation succeeded. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for managing an Open\+GL shader. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ragot_1_1_shader_afbc73bebee2deef956a80794aea9d26a}\index{Ragot::Shader@{Ragot::Shader}!Shader@{Shader}}
+\index{Shader@{Shader}!Ragot::Shader@{Ragot::Shader}}
+\doxysubsubsection{\texorpdfstring{Shader()}{Shader()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_shader_afbc73bebee2deef956a80794aea9d26a} 
+Ragot\+::\+Shader\+::\+Shader (\begin{DoxyParamCaption}\item[{const vector$<$ string $>$ \&}]{source\+\_\+code}{, }\item[{GLenum}]{type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Constructor for the \doxylink{class_ragot_1_1_shader}{Shader} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source\+\_\+code} & Vector of shader source code. \\
+\hline
+{\em type} & \doxylink{class_ragot_1_1_shader}{Shader} type (e.\+g., GL\+\_\+\+VERTEX\+\_\+\+SHADER, GL\+\_\+\+FRAGMENT\+\_\+\+SHADER). \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{class_ragot_1_1_shader_afbc73bebee2deef956a80794aea9d26a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_shader_afbc73bebee2deef956a80794aea9d26a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_shader_a5222f6344bc49011ae900aec54e79c80}\index{Ragot::Shader@{Ragot::Shader}!Shader@{Shader}}
+\index{Shader@{Shader}!Ragot::Shader@{Ragot::Shader}}
+\doxysubsubsection{\texorpdfstring{Shader()}{Shader()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_shader_a5222f6344bc49011ae900aec54e79c80} 
+Ragot\+::\+Shader\+::\+Shader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Deleted default constructor. 
+
+\Hypertarget{class_ragot_1_1_shader_aa93ddc91b6d5177f585dc95bcc1831d5}\index{Ragot::Shader@{Ragot::Shader}!````~Shader@{\texorpdfstring{$\sim$}{\string~}Shader}}
+\index{````~Shader@{\texorpdfstring{$\sim$}{\string~}Shader}!Ragot::Shader@{Ragot::Shader}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Shader()}{\string~Shader()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_shader_aa93ddc91b6d5177f585dc95bcc1831d5} 
+Ragot\+::\+Shader\+::\texorpdfstring{$\sim$}{\string~}\+Shader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor for the \doxylink{class_ragot_1_1_shader}{Shader} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ragot_1_1_shader_a6f5cb04ecb8f3c615107137b3e1ba63b}\index{Ragot::Shader@{Ragot::Shader}!compile\_shader@{compile\_shader}}
+\index{compile\_shader@{compile\_shader}!Ragot::Shader@{Ragot::Shader}}
+\doxysubsubsection{\texorpdfstring{compile\_shader()}{compile\_shader()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_shader_a6f5cb04ecb8f3c615107137b3e1ba63b} 
+GLuint Ragot\+::\+Shader\+::compile\+\_\+shader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Compiles the shader. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_ragot_1_1_shader}{Shader} ID. 
+\end{DoxyReturn}
+\Hypertarget{class_ragot_1_1_shader_ac6fe6ea9a5bfda816c10b5e760f69194}\index{Ragot::Shader@{Ragot::Shader}!get\_error@{get\_error}}
+\index{get\_error@{get\_error}!Ragot::Shader@{Ragot::Shader}}
+\doxysubsubsection{\texorpdfstring{get\_error()}{get\_error()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_shader_ac6fe6ea9a5bfda816c10b5e760f69194} 
+string \texorpdfstring{$\ast$}{*} Ragot\+::\+Shader\+::get\+\_\+error (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the compilation error message. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the error message string. 
+\end{DoxyReturn}
+\Hypertarget{class_ragot_1_1_shader_aca28b2f89fb5d6b8ff3250e507bb25a2}\index{Ragot::Shader@{Ragot::Shader}!get\_id@{get\_id}}
+\index{get\_id@{get\_id}!Ragot::Shader@{Ragot::Shader}}
+\doxysubsubsection{\texorpdfstring{get\_id()}{get\_id()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_shader_aca28b2f89fb5d6b8ff3250e507bb25a2} 
+GLuint Ragot\+::\+Shader\+::get\+\_\+id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the shader ID. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_ragot_1_1_shader}{Shader} ID. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_shader_aca28b2f89fb5d6b8ff3250e507bb25a2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_shader_a0b59e1cbc6484766fda1982bfc67d4a3}\index{Ragot::Shader@{Ragot::Shader}!is\_ok@{is\_ok}}
+\index{is\_ok@{is\_ok}!Ragot::Shader@{Ragot::Shader}}
+\doxysubsubsection{\texorpdfstring{is\_ok()}{is\_ok()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_shader_a0b59e1cbc6484766fda1982bfc67d4a3} 
+bool Ragot\+::\+Shader\+::is\+\_\+ok (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if the shader is compiled successfully. 
+
+\begin{DoxyReturn}{Returns}
+True if compilation succeeded, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_ragot_1_1_shader_ae99131dd0fee5e4c4ced5b3a89f005ed}\index{Ragot::Shader@{Ragot::Shader}!show\_compilation\_error@{show\_compilation\_error}}
+\index{show\_compilation\_error@{show\_compilation\_error}!Ragot::Shader@{Ragot::Shader}}
+\doxysubsubsection{\texorpdfstring{show\_compilation\_error()}{show\_compilation\_error()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_shader_ae99131dd0fee5e4c4ced5b3a89f005ed} 
+void Ragot\+::\+Shader\+::show\+\_\+compilation\+\_\+error (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Displays compilation errors. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_shader_ae99131dd0fee5e4c4ced5b3a89f005ed_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_ragot_1_1_shader_a625a8c7f6fae2c7b1f61de3ff23b1569}\index{Ragot::Shader@{Ragot::Shader}!compilation\_succeeded@{compilation\_succeeded}}
+\index{compilation\_succeeded@{compilation\_succeeded}!Ragot::Shader@{Ragot::Shader}}
+\doxysubsubsection{\texorpdfstring{compilation\_succeeded}{compilation\_succeeded}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_shader_a625a8c7f6fae2c7b1f61de3ff23b1569} 
+bool Ragot\+::\+Shader\+::compilation\+\_\+succeeded\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag indicating if compilation succeeded. 
+
+\Hypertarget{class_ragot_1_1_shader_a806c58b34fa1fba13b9986b28aaba1e3}\index{Ragot::Shader@{Ragot::Shader}!error@{error}}
+\index{error@{error}!Ragot::Shader@{Ragot::Shader}}
+\doxysubsubsection{\texorpdfstring{error}{error}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_shader_a806c58b34fa1fba13b9986b28aaba1e3} 
+string Ragot\+::\+Shader\+::error\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Compilation error message. 
+
+\Hypertarget{class_ragot_1_1_shader_a3dacf1967c7e037f40b9c4f1fd8e470c}\index{Ragot::Shader@{Ragot::Shader}!id@{id}}
+\index{id@{id}!Ragot::Shader@{Ragot::Shader}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_shader_a3dacf1967c7e037f40b9c4f1fd8e470c} 
+GLuint Ragot\+::\+Shader\+::id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{class_ragot_1_1_shader}{Shader} ID. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+main/\mbox{\hyperlink{_shader___program_8hpp}{Shader\+\_\+\+Program.\+hpp}}\item 
+main/\mbox{\hyperlink{_shader___program_8cpp}{Shader\+\_\+\+Program.\+cpp}}\end{DoxyCompactItemize}

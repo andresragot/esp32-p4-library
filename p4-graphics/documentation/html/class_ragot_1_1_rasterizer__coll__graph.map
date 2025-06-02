@@ -1,0 +1,15 @@
+<map id="Ragot::Rasterizer&lt; Color &gt;" name="Ragot::Rasterizer&lt; Color &gt;">
+<area shape="rect" id="Node000001" title="Class for rasterizing polygons in a frame buffer." alt="" coords="284,195,430,591"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,13,156,79"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,78,100,123,121,169,154,215,192,257,272,328,269,332,188,261,150,218,116,172,95,125,83,80"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="180,13,205,79"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="200,79,210,122,225,170,249,221,277,271,273,273,245,223,220,172,205,124,195,80"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="270,13,355,79"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="318,79,327,170,328,177,323,178,322,171,313,79"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="378,13,420,79"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="398,79,386,178,380,178,393,79"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="444,5,584,87"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="503,88,470,172,439,238,434,235,465,170,498,86"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="617,13,651,79"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="630,80,616,125,594,172,560,217,522,259,444,330,440,326,519,255,556,214,589,169,611,123,625,78"/>
+</map>

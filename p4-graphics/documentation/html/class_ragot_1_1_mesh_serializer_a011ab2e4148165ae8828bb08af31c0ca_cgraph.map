@@ -1,0 +1,5 @@
+<map id="Ragot::MeshSerializer::instance" name="Ragot::MeshSerializer::instance">
+<area shape="rect" id="Node000001" title="Gets the singleton instance of the MeshSerializer class." alt="" coords="5,5,156,46"/>
+<area shape="rect" id="Node000002" href="$class_ragot_1_1_mesh_serializer.html#afe266bf200ea6d94313dc4ae581ef394" title="Private constructor to prevent instantiation from outside the class." alt="" coords="204,5,354,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,23,188,23,188,28,156,28"/>
+</map>

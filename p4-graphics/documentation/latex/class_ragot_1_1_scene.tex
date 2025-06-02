@@ -1,0 +1,434 @@
+\doxysection{Ragot\+::Scene Class Reference}
+\hypertarget{class_ragot_1_1_scene}{}\label{class_ragot_1_1_scene}\index{Ragot::Scene@{Ragot::Scene}}
+
+
+Class for managing a 3D scene.  
+
+
+
+
+{\ttfamily \#include $<$Scene.\+hpp$>$}
+
+
+
+Collaboration diagram for Ragot\+::Scene\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_ragot_1_1_scene__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_scene_a5ea6ad6ab81208e8d4d3e81d7e8657e9}{Scene}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{class_ragot_1_1_scene}{Scene} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_scene_aa3a52fe2e10ca16bc23a5ad9472e981e}{\texorpdfstring{$\sim$}{\string~}\+Scene}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{class_ragot_1_1_scene}{Scene} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_scene_a30ec692ca4bade6d6a1a08aaea7dc730}{Scene}} (\mbox{\hyperlink{class_ragot_1_1_camera}{Camera}} \texorpdfstring{$\ast$}{*}camera)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_ragot_1_1_scene}{Scene} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_scene_adc84d8a6d23a38bc213e12356db8328e}{add\+\_\+node}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$ node, const \mbox{\hyperlink{namespacebasics_a302199d491be70388c151446cbbd92c8}{basics\+::\+Id}} name)
+\begin{DoxyCompactList}\small\item\em Adds a node to the scene with a specified name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_scene_a26456d81a591afeaa167ed803ef397b6}{remove\+\_\+node}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$ node)
+\begin{DoxyCompactList}\small\item\em Removes a node from the scene. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$ \mbox{\hyperlink{class_ragot_1_1_scene_add27a1ec3347b79b384db0b6b91262fa}{find\+\_\+node}} (const \mbox{\hyperlink{namespacebasics_a302199d491be70388c151446cbbd92c8}{basics\+::\+Id}} name)
+\begin{DoxyCompactList}\small\item\em Finds a node in the scene by its name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_scene_aa472d87b474a956decab5b86be2c0f0c}{set\+\_\+main\+\_\+camera}} (\mbox{\hyperlink{class_ragot_1_1_camera}{Camera}} \texorpdfstring{$\ast$}{*}camera)
+\begin{DoxyCompactList}\small\item\em Sets the main camera for the scene. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_camera}{Camera}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_ragot_1_1_scene_af788c910cd73bf3265901862d32113ba}{get\+\_\+main\+\_\+camera}} () const
+\begin{DoxyCompactList}\small\item\em Gets the main camera of the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_scene_a11db92312f88cbc07fa66bdc07cbfc48}{traverse}} (const std\+::function$<$ void(std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$) $>$ \&callback)
+\begin{DoxyCompactList}\small\item\em Traverses the scene graph and applies a callback function to each node. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\std\+::vector$<$ std\+::shared\+\_\+ptr$<$ T $>$ $>$ \mbox{\hyperlink{class_ragot_1_1_scene_a7a1dcaed66fa5eb3af89519a7f4f9c8f}{collect\+\_\+components}} ()
+\begin{DoxyCompactList}\small\item\em Collects all components of a specified type from the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_scene_a2ff6f1b1c88e31f6e9e04ddb98021efe}{update}} (float delta\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Updates the scene with a specified delta time. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$ \mbox{\hyperlink{class_ragot_1_1_scene_a453ac93381ff7b7f1f387c62b933c37d}{get\+\_\+root}} ()
+\begin{DoxyCompactList}\small\item\em Get the root object. \end{DoxyCompactList}\item 
+const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$ \mbox{\hyperlink{class_ragot_1_1_scene_ab995ac535d181c2890d7b8c7f51b5ebe}{get\+\_\+root}} () const
+\begin{DoxyCompactList}\small\item\em Get the root object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_scene_a4f90507572175cc171fad04dbfb05075}{start}} ()
+\begin{DoxyCompactList}\small\item\em Starts the scene, setting the running flag to true. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_scene_a8401b63fe0a26ccd0d75bca9d2e8eb06}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Stops the scene, setting the running flag to false. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_ragot_1_1_scene_a625a17c7c3602bb5e779a8a64792d874}{task\+\_\+update}} (std\+::stop\+\_\+token, float delta\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Task to update the scene in a separate thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_camera}{Camera}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_ragot_1_1_scene_a238411f32f8d5c8071fc842c0be07ac7}{main\+\_\+camera}} = nullptr
+\begin{DoxyCompactList}\small\item\em Pointer to the main camera used for rendering the scene. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$ \mbox{\hyperlink{class_ragot_1_1_scene_a48a1aeacd4f272d71982d38984565eba}{root\+\_\+node}}
+\begin{DoxyCompactList}\small\item\em Shared pointer to the root node of the scene graph. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{namespacebasics_a302199d491be70388c151446cbbd92c8}{basics\+::\+Id}}, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$ $>$ \mbox{\hyperlink{class_ragot_1_1_scene_a4a9193649eb27ffac2dccae7c3d4b22b}{named\+\_\+nodes}}
+\begin{DoxyCompactList}\small\item\em Map of named nodes for quick access by name. \end{DoxyCompactList}\item 
+std\+::atomic$<$ bool $>$ \mbox{\hyperlink{class_ragot_1_1_scene_ae1c7592dd90c6c3f52f7af1cfef58793}{running}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating whether the scene is currently running or not. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for managing a 3D scene. 
+
+The \doxylink{class_ragot_1_1_scene}{Scene} class provides methods to manage nodes, cameras, and scene traversal. It allows adding and removing nodes, setting the main camera, and traversing the scene graph. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ragot_1_1_scene_a5ea6ad6ab81208e8d4d3e81d7e8657e9}\index{Ragot::Scene@{Ragot::Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!Ragot::Scene@{Ragot::Scene}}
+\doxysubsubsection{\texorpdfstring{Scene()}{Scene()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_scene_a5ea6ad6ab81208e8d4d3e81d7e8657e9} 
+Ragot\+::\+Scene\+::\+Scene (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor for the \doxylink{class_ragot_1_1_scene}{Scene} class. 
+
+Initializes the scene with a root node and prepares it for use. Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_scene_a5ea6ad6ab81208e8d4d3e81d7e8657e9_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_scene_aa3a52fe2e10ca16bc23a5ad9472e981e}\index{Ragot::Scene@{Ragot::Scene}!````~Scene@{\texorpdfstring{$\sim$}{\string~}Scene}}
+\index{````~Scene@{\texorpdfstring{$\sim$}{\string~}Scene}!Ragot::Scene@{Ragot::Scene}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Scene()}{\string~Scene()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_scene_aa3a52fe2e10ca16bc23a5ad9472e981e} 
+Ragot\+::\+Scene\+::\texorpdfstring{$\sim$}{\string~}\+Scene (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destructor for the \doxylink{class_ragot_1_1_scene}{Scene} class. 
+
+\Hypertarget{class_ragot_1_1_scene_a30ec692ca4bade6d6a1a08aaea7dc730}\index{Ragot::Scene@{Ragot::Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!Ragot::Scene@{Ragot::Scene}}
+\doxysubsubsection{\texorpdfstring{Scene()}{Scene()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_scene_a30ec692ca4bade6d6a1a08aaea7dc730} 
+Ragot\+::\+Scene\+::\+Scene (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ragot_1_1_camera}{Camera}} \texorpdfstring{$\ast$}{*}}]{camera}{}\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{class_ragot_1_1_scene}{Scene} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em camera} & Pointer to the \doxylink{class_ragot_1_1_camera}{Camera} object to be used as the main camera for the scene. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_scene_a30ec692ca4bade6d6a1a08aaea7dc730_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ragot_1_1_scene_adc84d8a6d23a38bc213e12356db8328e}\index{Ragot::Scene@{Ragot::Scene}!add\_node@{add\_node}}
+\index{add\_node@{add\_node}!Ragot::Scene@{Ragot::Scene}}
+\doxysubsubsection{\texorpdfstring{add\_node()}{add\_node()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_scene_adc84d8a6d23a38bc213e12356db8328e} 
+void Ragot\+::\+Scene\+::add\+\_\+node (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$}]{node}{, }\item[{const \mbox{\hyperlink{namespacebasics_a302199d491be70388c151446cbbd92c8}{basics\+::\+Id}}}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Adds a node to the scene with a specified name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & Shared pointer to the \doxylink{class_ragot_1_1_node}{Node} object to be added to the scene. \\
+\hline
+{\em name} & Unique identifier for the node, used for quick access. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ragot_1_1_scene_a7a1dcaed66fa5eb3af89519a7f4f9c8f}\index{Ragot::Scene@{Ragot::Scene}!collect\_components@{collect\_components}}
+\index{collect\_components@{collect\_components}!Ragot::Scene@{Ragot::Scene}}
+\doxysubsubsection{\texorpdfstring{collect\_components()}{collect\_components()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_scene_a7a1dcaed66fa5eb3af89519a7f4f9c8f} 
+template$<$typename T$>$ \\
+template std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_camera}{Camera}} $>$ $>$ Ragot\+::\+Scene\+::collect\+\_\+components$<$ \mbox{\hyperlink{class_ragot_1_1_camera}{Camera}} $>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Collects all components of a specified type from the scene. 
+
+This method traverses the scene graph and collects all components of the specified type.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of component to collect. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::shared\+\_\+ptr$<$\+T$>$$>$ A vector containing shared pointers to the collected components. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{class_ragot_1_1_scene_a7a1dcaed66fa5eb3af89519a7f4f9c8f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_scene_a7a1dcaed66fa5eb3af89519a7f4f9c8f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_scene_add27a1ec3347b79b384db0b6b91262fa}\index{Ragot::Scene@{Ragot::Scene}!find\_node@{find\_node}}
+\index{find\_node@{find\_node}!Ragot::Scene@{Ragot::Scene}}
+\doxysubsubsection{\texorpdfstring{find\_node()}{find\_node()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_scene_add27a1ec3347b79b384db0b6b91262fa} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$ Ragot\+::\+Scene\+::find\+\_\+node (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacebasics_a302199d491be70388c151446cbbd92c8}{basics\+::\+Id}}}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Finds a node in the scene by its name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Unique identifier for the node to be found. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$\+Node$>$ Shared pointer to the found \doxylink{class_ragot_1_1_node}{Node} object, or nullptr if not found. 
+\end{DoxyReturn}
+\Hypertarget{class_ragot_1_1_scene_af788c910cd73bf3265901862d32113ba}\index{Ragot::Scene@{Ragot::Scene}!get\_main\_camera@{get\_main\_camera}}
+\index{get\_main\_camera@{get\_main\_camera}!Ragot::Scene@{Ragot::Scene}}
+\doxysubsubsection{\texorpdfstring{get\_main\_camera()}{get\_main\_camera()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_scene_af788c910cd73bf3265901862d32113ba} 
+\mbox{\hyperlink{class_ragot_1_1_camera}{Camera}} \texorpdfstring{$\ast$}{*} Ragot\+::\+Scene\+::get\+\_\+main\+\_\+camera (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the main camera of the scene. 
+
+\begin{DoxyReturn}{Returns}
+Camera\texorpdfstring{$\ast$}{*} Pointer to the main \doxylink{class_ragot_1_1_camera}{Camera} object used for rendering the scene. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_scene_af788c910cd73bf3265901862d32113ba_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_scene_a453ac93381ff7b7f1f387c62b933c37d}\index{Ragot::Scene@{Ragot::Scene}!get\_root@{get\_root}}
+\index{get\_root@{get\_root}!Ragot::Scene@{Ragot::Scene}}
+\doxysubsubsection{\texorpdfstring{get\_root()}{get\_root()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_scene_a453ac93381ff7b7f1f387c62b933c37d} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$ Ragot\+::\+Scene\+::get\+\_\+root (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the root object. 
+
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr \texorpdfstring{$<$}{<} \doxylink{class_ragot_1_1_node}{Node} \texorpdfstring{$>$}{>} 
+\end{DoxyReturn}
+\Hypertarget{class_ragot_1_1_scene_ab995ac535d181c2890d7b8c7f51b5ebe}\index{Ragot::Scene@{Ragot::Scene}!get\_root@{get\_root}}
+\index{get\_root@{get\_root}!Ragot::Scene@{Ragot::Scene}}
+\doxysubsubsection{\texorpdfstring{get\_root()}{get\_root()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_scene_ab995ac535d181c2890d7b8c7f51b5ebe} 
+const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$ Ragot\+::\+Scene\+::get\+\_\+root (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the root object. 
+
+\begin{DoxyReturn}{Returns}
+const std\+::shared\+\_\+ptr \texorpdfstring{$<$}{<} \doxylink{class_ragot_1_1_node}{Node} \texorpdfstring{$>$}{>} 
+\end{DoxyReturn}
+\Hypertarget{class_ragot_1_1_scene_a26456d81a591afeaa167ed803ef397b6}\index{Ragot::Scene@{Ragot::Scene}!remove\_node@{remove\_node}}
+\index{remove\_node@{remove\_node}!Ragot::Scene@{Ragot::Scene}}
+\doxysubsubsection{\texorpdfstring{remove\_node()}{remove\_node()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_scene_a26456d81a591afeaa167ed803ef397b6} 
+void Ragot\+::\+Scene\+::remove\+\_\+node (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$}]{node}{}\end{DoxyParamCaption})}
+
+
+
+Removes a node from the scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & Shared pointer to the \doxylink{class_ragot_1_1_node}{Node} object to be removed from the scene. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ragot_1_1_scene_aa472d87b474a956decab5b86be2c0f0c}\index{Ragot::Scene@{Ragot::Scene}!set\_main\_camera@{set\_main\_camera}}
+\index{set\_main\_camera@{set\_main\_camera}!Ragot::Scene@{Ragot::Scene}}
+\doxysubsubsection{\texorpdfstring{set\_main\_camera()}{set\_main\_camera()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_scene_aa472d87b474a956decab5b86be2c0f0c} 
+void Ragot\+::\+Scene\+::set\+\_\+main\+\_\+camera (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ragot_1_1_camera}{Camera}} \texorpdfstring{$\ast$}{*}}]{camera}{}\end{DoxyParamCaption})}
+
+
+
+Sets the main camera for the scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em camera} & Pointer to the \doxylink{class_ragot_1_1_camera}{Camera} object to be set as the main camera for the scene. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ragot_1_1_scene_a4f90507572175cc171fad04dbfb05075}\index{Ragot::Scene@{Ragot::Scene}!start@{start}}
+\index{start@{start}!Ragot::Scene@{Ragot::Scene}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_scene_a4f90507572175cc171fad04dbfb05075} 
+void Ragot\+::\+Scene\+::start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Starts the scene, setting the running flag to true. 
+
+This method is used to indicate that the scene is active and should be updated. Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{class_ragot_1_1_scene_a4f90507572175cc171fad04dbfb05075_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_scene_a8401b63fe0a26ccd0d75bca9d2e8eb06}\index{Ragot::Scene@{Ragot::Scene}!stop@{stop}}
+\index{stop@{stop}!Ragot::Scene@{Ragot::Scene}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_scene_a8401b63fe0a26ccd0d75bca9d2e8eb06} 
+void Ragot\+::\+Scene\+::stop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Stops the scene, setting the running flag to false. 
+
+This method is used to indicate that the scene is no longer active and should not be updated. \Hypertarget{class_ragot_1_1_scene_a625a17c7c3602bb5e779a8a64792d874}\index{Ragot::Scene@{Ragot::Scene}!task\_update@{task\_update}}
+\index{task\_update@{task\_update}!Ragot::Scene@{Ragot::Scene}}
+\doxysubsubsection{\texorpdfstring{task\_update()}{task\_update()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_scene_a625a17c7c3602bb5e779a8a64792d874} 
+void Ragot\+::\+Scene\+::task\+\_\+update (\begin{DoxyParamCaption}\item[{std\+::stop\+\_\+token}]{stop\+\_\+token}{, }\item[{float}]{delta\+\_\+time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Task to update the scene in a separate thread. 
+
+This method runs in a separate thread and updates the scene based on the delta time. It uses a stop token to allow for graceful termination of the task.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stop\+\_\+token} & Token to signal when the task should stop. \\
+\hline
+{\em delta\+\_\+time} & The time elapsed since the last update, in seconds. \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Espera inicial para asegurar que la cámara esté lista.
+
+\texorpdfstring{$<$}{<} Espera inicial para asegurar que la cámara esté lista.Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_scene_a625a17c7c3602bb5e779a8a64792d874_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{class_ragot_1_1_scene_a625a17c7c3602bb5e779a8a64792d874_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_scene_a11db92312f88cbc07fa66bdc07cbfc48}\index{Ragot::Scene@{Ragot::Scene}!traverse@{traverse}}
+\index{traverse@{traverse}!Ragot::Scene@{Ragot::Scene}}
+\doxysubsubsection{\texorpdfstring{traverse()}{traverse()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_scene_a11db92312f88cbc07fa66bdc07cbfc48} 
+void Ragot\+::\+Scene\+::traverse (\begin{DoxyParamCaption}\item[{const std\+::function$<$ void(std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$) $>$ \&}]{callback}{}\end{DoxyParamCaption})}
+
+
+
+Traverses the scene graph and applies a callback function to each node. 
+
+This method allows for custom operations on each node in the scene graph.
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & Function to be called for each node in the scene graph. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_scene_a11db92312f88cbc07fa66bdc07cbfc48_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_scene_a2ff6f1b1c88e31f6e9e04ddb98021efe}\index{Ragot::Scene@{Ragot::Scene}!update@{update}}
+\index{update@{update}!Ragot::Scene@{Ragot::Scene}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_scene_a2ff6f1b1c88e31f6e9e04ddb98021efe} 
+void Ragot\+::\+Scene\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+\_\+time}{}\end{DoxyParamCaption})}
+
+
+
+Updates the scene with a specified delta time. 
+
+This method updates the scene, allowing for animations or other time-\/based changes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+\_\+time} & The time elapsed since the last update, in seconds. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_scene_a2ff6f1b1c88e31f6e9e04ddb98021efe_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_ragot_1_1_scene_a238411f32f8d5c8071fc842c0be07ac7}\index{Ragot::Scene@{Ragot::Scene}!main\_camera@{main\_camera}}
+\index{main\_camera@{main\_camera}!Ragot::Scene@{Ragot::Scene}}
+\doxysubsubsection{\texorpdfstring{main\_camera}{main\_camera}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_scene_a238411f32f8d5c8071fc842c0be07ac7} 
+\mbox{\hyperlink{class_ragot_1_1_camera}{Camera}}\texorpdfstring{$\ast$}{*} Ragot\+::\+Scene\+::main\+\_\+camera = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to the main camera used for rendering the scene. 
+
+\Hypertarget{class_ragot_1_1_scene_a4a9193649eb27ffac2dccae7c3d4b22b}\index{Ragot::Scene@{Ragot::Scene}!named\_nodes@{named\_nodes}}
+\index{named\_nodes@{named\_nodes}!Ragot::Scene@{Ragot::Scene}}
+\doxysubsubsection{\texorpdfstring{named\_nodes}{named\_nodes}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_scene_a4a9193649eb27ffac2dccae7c3d4b22b} 
+std\+::unordered\+\_\+map$<$\mbox{\hyperlink{namespacebasics_a302199d491be70388c151446cbbd92c8}{basics\+::\+Id}}, std\+::shared\+\_\+ptr $<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$ $>$ Ragot\+::\+Scene\+::named\+\_\+nodes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Map of named nodes for quick access by name. 
+
+\Hypertarget{class_ragot_1_1_scene_a48a1aeacd4f272d71982d38984565eba}\index{Ragot::Scene@{Ragot::Scene}!root\_node@{root\_node}}
+\index{root\_node@{root\_node}!Ragot::Scene@{Ragot::Scene}}
+\doxysubsubsection{\texorpdfstring{root\_node}{root\_node}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_scene_a48a1aeacd4f272d71982d38984565eba} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$ Ragot\+::\+Scene\+::root\+\_\+node\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Shared pointer to the root node of the scene graph. 
+
+\Hypertarget{class_ragot_1_1_scene_ae1c7592dd90c6c3f52f7af1cfef58793}\index{Ragot::Scene@{Ragot::Scene}!running@{running}}
+\index{running@{running}!Ragot::Scene@{Ragot::Scene}}
+\doxysubsubsection{\texorpdfstring{running}{running}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_scene_ae1c7592dd90c6c3f52f7af1cfef58793} 
+std\+::atomic$<$bool$>$ Ragot\+::\+Scene\+::running = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag indicating whether the scene is currently running or not. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+main/\mbox{\hyperlink{_scene_8hpp}{Scene.\+hpp}}\item 
+main/\mbox{\hyperlink{_scene_8cpp}{Scene.\+cpp}}\end{DoxyCompactItemize}

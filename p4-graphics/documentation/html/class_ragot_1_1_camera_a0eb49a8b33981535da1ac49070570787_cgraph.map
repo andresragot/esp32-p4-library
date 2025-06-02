@@ -1,0 +1,9 @@
+<map id="Ragot::Camera::get_vp_matrix" name="Ragot::Camera::get_vp_matrix">
+<area shape="rect" id="Node000001" title="Get the vp matrix object." alt="" coords="5,39,142,79"/>
+<area shape="rect" id="Node000002" href="$class_ragot_1_1_camera.html#a4d9c6fd76db5bd6911281c5951cab4a9" title="Get the projection matrix object." alt="" coords="190,5,326,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="141,44,174,38,175,43,142,49"/>
+<area shape="rect" id="Node000003" href="$class_ragot_1_1_camera.html#aa8fc7776eff63588634df880957ed04e" title="Get the view matrix object." alt="" coords="190,71,326,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="142,68,174,74,174,79,142,73"/>
+<area shape="rect" id="Node000004" href="$class_ragot_1_1_transform.html#a1db9f8e84315c4296dfef46f1f17ce99" title="Gets the current position of the object." alt="" coords="374,71,523,111"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="327,88,358,88,358,94,327,94"/>
+</map>

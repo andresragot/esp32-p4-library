@@ -1,0 +1,533 @@
+\doxysection{Ragot\+::Renderer Class Reference}
+\hypertarget{class_ragot_1_1_renderer}{}\label{class_ragot_1_1_renderer}\index{Ragot::Renderer@{Ragot::Renderer}}
+
+
+Class for rendering scenes in the \doxylink{namespace_ragot}{Ragot} engine.  
+
+
+
+
+{\ttfamily \#include $<$Renderer.\+hpp$>$}
+
+
+
+Collaboration diagram for Ragot\+::Renderer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_renderer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_renderer_a7b014b41ad61fce011463868b91ebf79}{Renderer}} ()=delete
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_ragot_1_1_renderer}{Renderer} object (Deleted). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_renderer_a72e42229b1c05ab0ae910b20b6f41453}{Renderer}} (unsigned \mbox{\hyperlink{class_ragot_1_1_renderer_a1bdab02cd188930abd66ff311397658e}{width}}, unsigned \mbox{\hyperlink{class_ragot_1_1_renderer_aaadcb26ff7c8502d4dfdfae706d77610}{height}})
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_ragot_1_1_renderer}{Renderer} with the specified width and height. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_renderer_a0537d592db6f461dfafa9a2175b609b6}{\texorpdfstring{$\sim$}{\string~}\+Renderer}} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor for the \doxylink{class_ragot_1_1_renderer}{Renderer} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_renderer_aadafbf7ac26aedbf95b75dec92b691ad}{set\+\_\+scene}} (\mbox{\hyperlink{class_ragot_1_1_scene}{Scene}} \texorpdfstring{$\ast$}{*}scene)
+\begin{DoxyCompactList}\small\item\em Sets the current scene to be rendered. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_renderer_a514b54e15d0a6750797d397cccde4ef8}{init}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current scene being rendered. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_renderer_acc3bbc330b23f454ed5d01b85d4f8e98}{render}} ()
+\begin{DoxyCompactList}\small\item\em Renders the current scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_renderer_a30c9db3883dcb090d6ddebd972809d55}{task\+\_\+render}} (std\+::stop\+\_\+token stop\+\_\+token)
+\begin{DoxyCompactList}\small\item\em Performs the rendering task in a separate thread. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ragot_1_1_renderer_ab2a21ea68f4dd927733084e6b043ed50}{is\+\_\+frontface}} (const glm\+::fvec4 \texorpdfstring{$\ast$}{*}const projected\+\_\+vertices, const \mbox{\hyperlink{struct_ragot_1_1face__t}{face\+\_\+t}} \texorpdfstring{$\ast$}{*}const indices)
+\begin{DoxyCompactList}\small\item\em Checks if the face defined by the indices is front-\/facing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_renderer_a798e4d2d5e94ad001db5c508625d86f4}{start}} ()
+\begin{DoxyCompactList}\small\item\em Starts the rendering process. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_renderer_a3701f47c3ad377fcc73a41106e6c15d0}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Stops the rendering process. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ glm\+::fvec4 $>$ \mbox{\hyperlink{class_ragot_1_1_renderer_a38457ae0ab7e3abe2615dc32eb63bac9}{transformed\+\_\+vertices}}
+\begin{DoxyCompactList}\small\item\em Vector to store transformed vertices for rendering, used to hold the vertices after applying transformations such as model, view, and projection matrices. \end{DoxyCompactList}\item 
+std\+::vector$<$ glm\+::ivec4 $>$ \mbox{\hyperlink{class_ragot_1_1_renderer_a9190a22a63b5d5a32bcf4a20db22cc38}{display\+\_\+vertices}}
+\begin{DoxyCompactList}\small\item\em Vector to store display vertices for rendering, used to hold the vertices after applying viewport transformations and clipping. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_ragot_1_1_renderer_a6adf243a9b8bdb60cc962affc5ba4e9f}{init\+Full\+Screen\+Quad}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the full-\/screen quad for rendering, used in non-\/\+ESP platforms. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_ragot_1_1_renderer_a2b221c8714215ff28aa5d045bda2bb69}{accumulated\+\_\+time}} = 0.f
+\begin{DoxyCompactList}\small\item\em Accumulated time for rendering frames, used for timing and performance measurement. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_ragot_1_1_renderer_a81019c395b15cc01e73494c77e304aa2}{iterations}} = 0
+\begin{DoxyCompactList}\small\item\em Number of iterations for rendering, used for performance testing and optimization. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ \mbox{\hyperlink{class_ragot_1_1_renderer_aaef638571592dc30d0b75ae1c533ef8b}{quad\+Shader}} = nullptr
+\begin{DoxyCompactList}\small\item\em Number of iterations for performance testing, can be adjusted for different scenarios. \end{DoxyCompactList}\item 
+GLuint \mbox{\hyperlink{class_ragot_1_1_renderer_a4fb1cb268b0a5b5a4bd5b9bbce2e5aaf}{quad\+VAO}} = 0
+\begin{DoxyCompactList}\small\item\em Vertex Array Object for the full-\/screen quad, used in non-\/\+ESP platforms. \end{DoxyCompactList}\item 
+GLuint \mbox{\hyperlink{class_ragot_1_1_renderer_a89d49bae23a921bb4b249ce51711dd10}{quad\+VBO}} = 0
+\begin{DoxyCompactList}\small\item\em Vertex \doxylink{namespace_ragot_ada28c33d8bad9f3d54d75d7996467b77}{Buffer} Object for the full-\/screen quad, used in non-\/\+ESP platforms. \end{DoxyCompactList}\item 
+GLuint \mbox{\hyperlink{class_ragot_1_1_renderer_a91830f9674076ff1af547feead7db823}{quad\+EBO}} = 0
+\begin{DoxyCompactList}\small\item\em Element \doxylink{namespace_ragot_ada28c33d8bad9f3d54d75d7996467b77}{Buffer} Object for the full-\/screen quad, used in non-\/\+ESP platforms. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_frame_buffer}{Frame\+Buffer}}$<$ \mbox{\hyperlink{namespace_ragot_a30e07cad21ef68ef55cfdeb31712febd}{RGB565}} $>$ \mbox{\hyperlink{class_ragot_1_1_renderer_a89d4039e9bef0c938d1209c9284069b7}{frame\+\_\+buffer}}
+\begin{DoxyCompactList}\small\item\em Frame buffer for rendering, used to store pixel data for the rendered scene. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_scene}{Scene}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_ragot_1_1_renderer_a70f783d1156fda99eaeb383f093b83c2}{current\+\_\+scene}} = nullptr
+\begin{DoxyCompactList}\small\item\em Pointer to the current scene being rendered, allows access to scene data and objects. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_rasterizer}{Rasterizer}}$<$ \mbox{\hyperlink{namespace_ragot_a30e07cad21ef68ef55cfdeb31712febd}{RGB565}} $>$ \mbox{\hyperlink{class_ragot_1_1_renderer_ab9d54c2c1f9a93672063348de383d084}{rasterizer}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_ragot_1_1_rasterizer}{Rasterizer} for rendering polygons in the frame buffer, responsible for filling polygons with color and handling depth testing. \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{class_ragot_1_1_renderer_a1bdab02cd188930abd66ff311397658e}{width}}
+\begin{DoxyCompactList}\small\item\em Width of the rendering area in pixels, used to define the size of the frame buffer and viewport. \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{class_ragot_1_1_renderer_aaadcb26ff7c8502d4dfdfae706d77610}{height}}
+\begin{DoxyCompactList}\small\item\em Height of the rendering area in pixels, used to define the size of the frame buffer and viewport. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ragot_1_1_renderer_a79599c95067b2ebef99577e339493742}{initialized}} = false
+\begin{DoxyCompactList}\small\item\em Flag to indicate if the renderer has been initialized, used to prevent re-\/initialization and ensure resources are set up correctly. \end{DoxyCompactList}\item 
+std\+::atomic$<$ bool $>$ \mbox{\hyperlink{class_ragot_1_1_renderer_a3cab3010f89d323c417da2882ff3a767}{running}} = false
+\begin{DoxyCompactList}\small\item\em Flag to indicate if the renderer is currently running, used to control rendering tasks and stop them gracefully. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr size\+\_\+t \mbox{\hyperlink{class_ragot_1_1_renderer_a5e9254923457cc88f1b417796cddf8a9}{number\+\_\+of\+\_\+iterations}} = 10000000000000000
+\item 
+static const std\+::string \mbox{\hyperlink{class_ragot_1_1_renderer_a978ef8c3fa30f678457ab0e67de5161e}{vertex\+\_\+shader\+\_\+code}}
+\begin{DoxyCompactList}\small\item\em Vertex shader code for rendering, used in non-\/\+ESP platforms. \end{DoxyCompactList}\item 
+static const std\+::string \mbox{\hyperlink{class_ragot_1_1_renderer_a1f8a8bc2e32acbbfea95542be4df1288}{fragment\+\_\+shader\+\_\+code}}
+\begin{DoxyCompactList}\small\item\em Fragment shader code for rendering, used in non-\/\+ESP platforms. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for rendering scenes in the \doxylink{namespace_ragot}{Ragot} engine. 
+
+This class is responsible for rendering 3D scenes using a rasterization approach. It manages the frame buffer, rasterizer, and scene to be rendered. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ragot_1_1_renderer_a7b014b41ad61fce011463868b91ebf79}\index{Ragot::Renderer@{Ragot::Renderer}!Renderer@{Renderer}}
+\index{Renderer@{Renderer}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{Renderer()}{Renderer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a7b014b41ad61fce011463868b91ebf79} 
+Ragot\+::\+Renderer\+::\+Renderer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Construct a new \doxylink{class_ragot_1_1_renderer}{Renderer} object (Deleted). 
+
+This constructor is deleted to prevent default construction of the \doxylink{class_ragot_1_1_renderer}{Renderer} class. \Hypertarget{class_ragot_1_1_renderer_a72e42229b1c05ab0ae910b20b6f41453}\index{Ragot::Renderer@{Ragot::Renderer}!Renderer@{Renderer}}
+\index{Renderer@{Renderer}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{Renderer()}{Renderer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a72e42229b1c05ab0ae910b20b6f41453} 
+Ragot\+::\+Renderer\+::\+Renderer (\begin{DoxyParamCaption}\item[{unsigned}]{width}{, }\item[{unsigned}]{height}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_ragot_1_1_renderer}{Renderer} with the specified width and height. 
+
+Initializes the renderer with the given dimensions and prepares the frame buffer and rasterizer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the rendering area in pixels. \\
+\hline
+{\em height} & The height of the rendering area in pixels. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_renderer_a72e42229b1c05ab0ae910b20b6f41453_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_renderer_a0537d592db6f461dfafa9a2175b609b6}\index{Ragot::Renderer@{Ragot::Renderer}!````~Renderer@{\texorpdfstring{$\sim$}{\string~}Renderer}}
+\index{````~Renderer@{\texorpdfstring{$\sim$}{\string~}Renderer}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Renderer()}{\string~Renderer()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a0537d592db6f461dfafa9a2175b609b6} 
+Ragot\+::\+Renderer\+::\texorpdfstring{$\sim$}{\string~}\+Renderer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default destructor for the \doxylink{class_ragot_1_1_renderer}{Renderer} class. 
+
+Cleans up resources used by the renderer. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ragot_1_1_renderer_a514b54e15d0a6750797d397cccde4ef8}\index{Ragot::Renderer@{Ragot::Renderer}!init@{init}}
+\index{init@{init}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a514b54e15d0a6750797d397cccde4ef8} 
+void Ragot\+::\+Renderer\+::init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the current scene being rendered. 
+
+This method returns a pointer to the current scene being rendered by the renderer. It allows access to the scene\textquotesingle{}s objects and properties for rendering.
+
+\begin{DoxyReturn}{Returns}
+Scene\texorpdfstring{$\ast$}{*} Pointer to the current \doxylink{class_ragot_1_1_scene}{Scene} object. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_renderer_a514b54e15d0a6750797d397cccde4ef8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_renderer_a6adf243a9b8bdb60cc962affc5ba4e9f}\index{Ragot::Renderer@{Ragot::Renderer}!initFullScreenQuad@{initFullScreenQuad}}
+\index{initFullScreenQuad@{initFullScreenQuad}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{initFullScreenQuad()}{initFullScreenQuad()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a6adf243a9b8bdb60cc962affc5ba4e9f} 
+void Ragot\+::\+Renderer\+::init\+Full\+Screen\+Quad (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initializes the full-\/screen quad for rendering, used in non-\/\+ESP platforms. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_renderer_a6adf243a9b8bdb60cc962affc5ba4e9f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_renderer_ab2a21ea68f4dd927733084e6b043ed50}\index{Ragot::Renderer@{Ragot::Renderer}!is\_frontface@{is\_frontface}}
+\index{is\_frontface@{is\_frontface}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{is\_frontface()}{is\_frontface()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_ab2a21ea68f4dd927733084e6b043ed50} 
+bool Ragot\+::\+Renderer\+::is\+\_\+frontface (\begin{DoxyParamCaption}\item[{const glm\+::fvec4 \texorpdfstring{$\ast$}{*}const}]{projected\+\_\+vertices}{, }\item[{const \mbox{\hyperlink{struct_ragot_1_1face__t}{face\+\_\+t}} \texorpdfstring{$\ast$}{*}const}]{indices}{}\end{DoxyParamCaption})}
+
+
+
+Checks if the face defined by the indices is front-\/facing. 
+
+This method checks if the face defined by the indices is front-\/facing based on the projected vertices. It uses the area of the face to determine its orientation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em projected\+\_\+vertices} & Pointer to an array of projected vertices in clip space. \\
+\hline
+{\em indices} & Pointer to the face structure containing vertex indices. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the face is front-\/facing, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_ragot_1_1_renderer_acc3bbc330b23f454ed5d01b85d4f8e98}\index{Ragot::Renderer@{Ragot::Renderer}!render@{render}}
+\index{render@{render}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_acc3bbc330b23f454ed5d01b85d4f8e98} 
+void Ragot\+::\+Renderer\+::render (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Renders the current scene. 
+
+This method performs the rendering of the current scene by preparing matrices, transforming vertices, and filling polygons in the frame buffer using the rasterizer. It also handles depth testing and color filling for polygons. Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_renderer_acc3bbc330b23f454ed5d01b85d4f8e98_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_renderer_acc3bbc330b23f454ed5d01b85d4f8e98_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_renderer_aadafbf7ac26aedbf95b75dec92b691ad}\index{Ragot::Renderer@{Ragot::Renderer}!set\_scene@{set\_scene}}
+\index{set\_scene@{set\_scene}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{set\_scene()}{set\_scene()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_aadafbf7ac26aedbf95b75dec92b691ad} 
+void Ragot\+::\+Renderer\+::set\+\_\+scene (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ragot_1_1_scene}{Scene}} \texorpdfstring{$\ast$}{*}}]{scene}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the current scene to be rendered. 
+
+This method sets the current scene to be rendered by the renderer. It allows the renderer to access the scene\textquotesingle{}s objects and properties for rendering.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & Pointer to the \doxylink{class_ragot_1_1_scene}{Scene} object to be set as the current scene. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{class_ragot_1_1_renderer_aadafbf7ac26aedbf95b75dec92b691ad_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_renderer_a798e4d2d5e94ad001db5c508625d86f4}\index{Ragot::Renderer@{Ragot::Renderer}!start@{start}}
+\index{start@{start}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a798e4d2d5e94ad001db5c508625d86f4} 
+void Ragot\+::\+Renderer\+::start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Starts the rendering process. 
+
+This method sets the running flag to true, indicating that the renderer is ready to start rendering. Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{class_ragot_1_1_renderer_a798e4d2d5e94ad001db5c508625d86f4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_renderer_a3701f47c3ad377fcc73a41106e6c15d0}\index{Ragot::Renderer@{Ragot::Renderer}!stop@{stop}}
+\index{stop@{stop}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a3701f47c3ad377fcc73a41106e6c15d0} 
+void Ragot\+::\+Renderer\+::stop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Stops the rendering process. 
+
+This method sets the running flag to false, indicating that the renderer should stop rendering. \Hypertarget{class_ragot_1_1_renderer_a30c9db3883dcb090d6ddebd972809d55}\index{Ragot::Renderer@{Ragot::Renderer}!task\_render@{task\_render}}
+\index{task\_render@{task\_render}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{task\_render()}{task\_render()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a30c9db3883dcb090d6ddebd972809d55} 
+void Ragot\+::\+Renderer\+::task\+\_\+render (\begin{DoxyParamCaption}\item[{std\+::stop\+\_\+token}]{stop\+\_\+token}{}\end{DoxyParamCaption})}
+
+
+
+Performs the rendering task in a separate thread. 
+
+This method runs the rendering task in a separate thread, allowing for asynchronous rendering.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stop\+\_\+token} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_renderer_a30c9db3883dcb090d6ddebd972809d55_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_renderer_a30c9db3883dcb090d6ddebd972809d55_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_ragot_1_1_renderer_a2b221c8714215ff28aa5d045bda2bb69}\index{Ragot::Renderer@{Ragot::Renderer}!accumulated\_time@{accumulated\_time}}
+\index{accumulated\_time@{accumulated\_time}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{accumulated\_time}{accumulated\_time}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a2b221c8714215ff28aa5d045bda2bb69} 
+float Ragot\+::\+Renderer\+::accumulated\+\_\+time = 0.f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Accumulated time for rendering frames, used for timing and performance measurement. 
+
+\Hypertarget{class_ragot_1_1_renderer_a70f783d1156fda99eaeb383f093b83c2}\index{Ragot::Renderer@{Ragot::Renderer}!current\_scene@{current\_scene}}
+\index{current\_scene@{current\_scene}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{current\_scene}{current\_scene}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a70f783d1156fda99eaeb383f093b83c2} 
+\mbox{\hyperlink{class_ragot_1_1_scene}{Scene}}\texorpdfstring{$\ast$}{*} Ragot\+::\+Renderer\+::current\+\_\+scene = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to the current scene being rendered, allows access to scene data and objects. 
+
+\Hypertarget{class_ragot_1_1_renderer_a9190a22a63b5d5a32bcf4a20db22cc38}\index{Ragot::Renderer@{Ragot::Renderer}!display\_vertices@{display\_vertices}}
+\index{display\_vertices@{display\_vertices}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{display\_vertices}{display\_vertices}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a9190a22a63b5d5a32bcf4a20db22cc38} 
+std\+::vector$<$ glm\+::ivec4 $>$ Ragot\+::\+Renderer\+::display\+\_\+vertices}
+
+
+
+Vector to store display vertices for rendering, used to hold the vertices after applying viewport transformations and clipping. 
+
+\Hypertarget{class_ragot_1_1_renderer_a1f8a8bc2e32acbbfea95542be4df1288}\index{Ragot::Renderer@{Ragot::Renderer}!fragment\_shader\_code@{fragment\_shader\_code}}
+\index{fragment\_shader\_code@{fragment\_shader\_code}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{fragment\_shader\_code}{fragment\_shader\_code}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a1f8a8bc2e32acbbfea95542be4df1288} 
+const string Ragot\+::\+Renderer\+::fragment\+\_\+shader\+\_\+code\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}\#version\ 330\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}in\ vec2\ vTex;"{}}}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}out\ vec4\ FragColor;"{}}}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}"{}}}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}uniform\ sampler2D\ uSampler;"{}}}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}"{}}}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}void\ main()"{}}}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}\{"{}}}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}\ \ \ \ FragColor\ =\ texture(uSampler,\ vTex);"{}}}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}\}"{}}}
+
+\end{DoxyCode}
+
+
+Fragment shader code for rendering, used in non-\/\+ESP platforms. 
+
+\Hypertarget{class_ragot_1_1_renderer_a89d4039e9bef0c938d1209c9284069b7}\index{Ragot::Renderer@{Ragot::Renderer}!frame\_buffer@{frame\_buffer}}
+\index{frame\_buffer@{frame\_buffer}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{frame\_buffer}{frame\_buffer}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a89d4039e9bef0c938d1209c9284069b7} 
+\mbox{\hyperlink{class_ragot_1_1_frame_buffer}{Frame\+Buffer}}$<$ \mbox{\hyperlink{namespace_ragot_a30e07cad21ef68ef55cfdeb31712febd}{RGB565}} $>$ Ragot\+::\+Renderer\+::frame\+\_\+buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Frame buffer for rendering, used to store pixel data for the rendered scene. 
+
+\Hypertarget{class_ragot_1_1_renderer_aaadcb26ff7c8502d4dfdfae706d77610}\index{Ragot::Renderer@{Ragot::Renderer}!height@{height}}
+\index{height@{height}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_aaadcb26ff7c8502d4dfdfae706d77610} 
+unsigned Ragot\+::\+Renderer\+::height\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Height of the rendering area in pixels, used to define the size of the frame buffer and viewport. 
+
+\Hypertarget{class_ragot_1_1_renderer_a79599c95067b2ebef99577e339493742}\index{Ragot::Renderer@{Ragot::Renderer}!initialized@{initialized}}
+\index{initialized@{initialized}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{initialized}{initialized}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a79599c95067b2ebef99577e339493742} 
+bool Ragot\+::\+Renderer\+::initialized = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag to indicate if the renderer has been initialized, used to prevent re-\/initialization and ensure resources are set up correctly. 
+
+\Hypertarget{class_ragot_1_1_renderer_a81019c395b15cc01e73494c77e304aa2}\index{Ragot::Renderer@{Ragot::Renderer}!iterations@{iterations}}
+\index{iterations@{iterations}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{iterations}{iterations}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a81019c395b15cc01e73494c77e304aa2} 
+size\+\_\+t Ragot\+::\+Renderer\+::iterations = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of iterations for rendering, used for performance testing and optimization. 
+
+\Hypertarget{class_ragot_1_1_renderer_a5e9254923457cc88f1b417796cddf8a9}\index{Ragot::Renderer@{Ragot::Renderer}!number\_of\_iterations@{number\_of\_iterations}}
+\index{number\_of\_iterations@{number\_of\_iterations}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{number\_of\_iterations}{number\_of\_iterations}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a5e9254923457cc88f1b417796cddf8a9} 
+size\+\_\+t Ragot\+::\+Renderer\+::number\+\_\+of\+\_\+iterations = 10000000000000000\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\Hypertarget{class_ragot_1_1_renderer_a91830f9674076ff1af547feead7db823}\index{Ragot::Renderer@{Ragot::Renderer}!quadEBO@{quadEBO}}
+\index{quadEBO@{quadEBO}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{quadEBO}{quadEBO}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a91830f9674076ff1af547feead7db823} 
+GLuint Ragot\+::\+Renderer\+::quad\+EBO = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Element \doxylink{namespace_ragot_ada28c33d8bad9f3d54d75d7996467b77}{Buffer} Object for the full-\/screen quad, used in non-\/\+ESP platforms. 
+
+\Hypertarget{class_ragot_1_1_renderer_aaef638571592dc30d0b75ae1c533ef8b}\index{Ragot::Renderer@{Ragot::Renderer}!quadShader@{quadShader}}
+\index{quadShader@{quadShader}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{quadShader}{quadShader}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_aaef638571592dc30d0b75ae1c533ef8b} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ Ragot\+::\+Renderer\+::quad\+Shader = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of iterations for performance testing, can be adjusted for different scenarios. 
+
+\doxylink{class_ragot_1_1_shader}{Shader} program for rendering a full-\/screen quad, used in non-\/\+ESP platforms. \Hypertarget{class_ragot_1_1_renderer_a4fb1cb268b0a5b5a4bd5b9bbce2e5aaf}\index{Ragot::Renderer@{Ragot::Renderer}!quadVAO@{quadVAO}}
+\index{quadVAO@{quadVAO}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{quadVAO}{quadVAO}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a4fb1cb268b0a5b5a4bd5b9bbce2e5aaf} 
+GLuint Ragot\+::\+Renderer\+::quad\+VAO = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vertex Array Object for the full-\/screen quad, used in non-\/\+ESP platforms. 
+
+\Hypertarget{class_ragot_1_1_renderer_a89d49bae23a921bb4b249ce51711dd10}\index{Ragot::Renderer@{Ragot::Renderer}!quadVBO@{quadVBO}}
+\index{quadVBO@{quadVBO}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{quadVBO}{quadVBO}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a89d49bae23a921bb4b249ce51711dd10} 
+GLuint Ragot\+::\+Renderer\+::quad\+VBO = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vertex \doxylink{namespace_ragot_ada28c33d8bad9f3d54d75d7996467b77}{Buffer} Object for the full-\/screen quad, used in non-\/\+ESP platforms. 
+
+\Hypertarget{class_ragot_1_1_renderer_ab9d54c2c1f9a93672063348de383d084}\index{Ragot::Renderer@{Ragot::Renderer}!rasterizer@{rasterizer}}
+\index{rasterizer@{rasterizer}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{rasterizer}{rasterizer}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_ab9d54c2c1f9a93672063348de383d084} 
+\mbox{\hyperlink{class_ragot_1_1_rasterizer}{Rasterizer}}$<$ \mbox{\hyperlink{namespace_ragot_a30e07cad21ef68ef55cfdeb31712febd}{RGB565}} $>$ Ragot\+::\+Renderer\+::rasterizer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{class_ragot_1_1_rasterizer}{Rasterizer} for rendering polygons in the frame buffer, responsible for filling polygons with color and handling depth testing. 
+
+\Hypertarget{class_ragot_1_1_renderer_a3cab3010f89d323c417da2882ff3a767}\index{Ragot::Renderer@{Ragot::Renderer}!running@{running}}
+\index{running@{running}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{running}{running}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a3cab3010f89d323c417da2882ff3a767} 
+std\+::atomic$<$bool$>$ Ragot\+::\+Renderer\+::running = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag to indicate if the renderer is currently running, used to control rendering tasks and stop them gracefully. 
+
+\Hypertarget{class_ragot_1_1_renderer_a38457ae0ab7e3abe2615dc32eb63bac9}\index{Ragot::Renderer@{Ragot::Renderer}!transformed\_vertices@{transformed\_vertices}}
+\index{transformed\_vertices@{transformed\_vertices}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{transformed\_vertices}{transformed\_vertices}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a38457ae0ab7e3abe2615dc32eb63bac9} 
+std\+::vector$<$ glm\+::fvec4 $>$ Ragot\+::\+Renderer\+::transformed\+\_\+vertices}
+
+
+
+Vector to store transformed vertices for rendering, used to hold the vertices after applying transformations such as model, view, and projection matrices. 
+
+\Hypertarget{class_ragot_1_1_renderer_a978ef8c3fa30f678457ab0e67de5161e}\index{Ragot::Renderer@{Ragot::Renderer}!vertex\_shader\_code@{vertex\_shader\_code}}
+\index{vertex\_shader\_code@{vertex\_shader\_code}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{vertex\_shader\_code}{vertex\_shader\_code}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a978ef8c3fa30f678457ab0e67de5161e} 
+const string Ragot\+::\+Renderer\+::vertex\+\_\+shader\+\_\+code\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}\#version\ 330\(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}layout(location\ =\ 0)\ in\ vec2\ aPos;"{}}\ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}layout(location\ =\ 1)\ in\ vec2\ aTex;"{}}\ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}"{}}}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}out\ vec2\ vTex;"{}}}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}"{}}}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}void\ main()"{}}}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}\{"{}}}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}\ \ \ vTex\ =\ aTex;"{}}}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}\ \ \ gl\_Position\ =\ vec4(aPos,\ 0.0,\ 1.0);"{}}}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}\}"{}}}
+
+\end{DoxyCode}
+
+
+Vertex shader code for rendering, used in non-\/\+ESP platforms. 
+
+\Hypertarget{class_ragot_1_1_renderer_a1bdab02cd188930abd66ff311397658e}\index{Ragot::Renderer@{Ragot::Renderer}!width@{width}}
+\index{width@{width}!Ragot::Renderer@{Ragot::Renderer}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_renderer_a1bdab02cd188930abd66ff311397658e} 
+unsigned Ragot\+::\+Renderer\+::width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Width of the rendering area in pixels, used to define the size of the frame buffer and viewport. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+main/\mbox{\hyperlink{_renderer_8hpp}{Renderer.\+hpp}}\item 
+main/\mbox{\hyperlink{_renderer_8cpp}{Renderer.\+cpp}}\end{DoxyCompactItemize}

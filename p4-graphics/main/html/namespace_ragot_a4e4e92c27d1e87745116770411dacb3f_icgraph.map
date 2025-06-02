@@ -1,7 +1,0 @@
-<map id="Ragot::clipAgainstPlane" name="Ragot::clipAgainstPlane">
-<area shape="rect" id="Node000001" title=" " alt="" coords="430,13,591,38"/>
-<area shape="rect" id="Node000002" href="$class_ragot_1_1_renderer.html#a30c9db3883dcb090d6ddebd972809d55" title=" " alt="" coords="232,5,382,46"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="415,28,383,28,383,23,415,23"/>
-<area shape="rect" id="Node000003" href="$class_ragot_1_1_renderer.html#a72e42229b1c05ab0ae910b20b6f41453" title=" " alt="" coords="5,13,184,38"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="216,28,184,28,184,23,216,23"/>
-</map>

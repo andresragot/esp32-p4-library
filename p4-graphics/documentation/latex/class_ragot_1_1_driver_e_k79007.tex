@@ -1,0 +1,464 @@
+\doxysection{Ragot\+::Driver\+EK79007 Class Reference}
+\hypertarget{class_ragot_1_1_driver_e_k79007}{}\label{class_ragot_1_1_driver_e_k79007}\index{Ragot::DriverEK79007@{Ragot::DriverEK79007}}
+
+
+Driver for the EK79007 LCD panel.  
+
+
+
+
+{\ttfamily \#include $<$driver\+\_\+ek79007.\+hpp$>$}
+
+
+
+Inheritance diagram for Ragot\+::Driver\+EK79007\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_ragot_1_1_driver_e_k79007__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ragot\+::Driver\+EK79007\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_driver_e_k79007__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a02dd8232c19c145a5dbf6c6df52aa1d4}{Driver\+EK79007}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{class_ragot_1_1_driver_e_k79007}{Driver\+EK79007} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a86f8d6b197d81cb5d93948f0f161a2e3}{\texorpdfstring{$\sim$}{\string~}\+Driver\+EK79007}} () override
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{class_ragot_1_1_driver_e_k79007}{Driver\+EK79007} class. \end{DoxyCompactList}\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a8a1c7407a748ab546693e98d8193fe99}{init}} (gpio\+\_\+num\+\_\+t reset\+\_\+pin, gpio\+\_\+num\+\_\+t bk\+\_\+pin) override
+\begin{DoxyCompactList}\small\item\em Initializes the EK79007 LCD panel driver. \end{DoxyCompactList}\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a2ce6b59a5dbbeea913ecc838e60ce225}{deinit}} () override
+\begin{DoxyCompactList}\small\item\em Deinitializes the EK79007 LCD panel driver. \end{DoxyCompactList}\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a10f42392e8a22a31f58c25cf347c135c}{set\+\_\+pixel}} (uint32\+\_\+t x, uint32\+\_\+t y, uint32\+\_\+t color) override
+\begin{DoxyCompactList}\small\item\em Sets a pixel at the specified coordinates to the given color. \end{DoxyCompactList}\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a322d5272daf6853beda488ac5d378251}{send\+\_\+frame\+\_\+buffer}} (const void \texorpdfstring{$\ast$}{*}frame\+\_\+buffer) override
+\begin{DoxyCompactList}\small\item\em Sends a frame buffer to the EK79007 LCD panel. \end{DoxyCompactList}\item 
+IRAM\+\_\+\+ATTR bool \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a98d423f9e1b66912256d7dc7466d1bcc}{refresh\+\_\+frame\+\_\+buffer}} (esp\+\_\+lcd\+\_\+panel\+\_\+handle\+\_\+t panel, esp\+\_\+lcd\+\_\+dpi\+\_\+panel\+\_\+event\+\_\+data\+\_\+t \texorpdfstring{$\ast$}{*}edata, void \texorpdfstring{$\ast$}{*}user\+\_\+ctx)
+\begin{DoxyCompactList}\small\item\em Refreshes the frame buffer for the EK79007 LCD panel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d}{Ragot\+::\+Driver\+LCD}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a5d59da0a6fe68f5ceaa2bb2cf0116c93}{Driver\+LCD}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{class_ragot_1_1_driver_l_c_d}{Driver\+LCD} class. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a93e4f7281b161d888363133e670b4fd3}{\texorpdfstring{$\sim$}{\string~}\+Driver\+LCD}} ()=default
+\begin{DoxyCompactList}\small\item\em Default virtual destructor for the \doxylink{class_ragot_1_1_driver_l_c_d}{Driver\+LCD} class. \end{DoxyCompactList}\item 
+const size\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a8de7acc7c2526478dc7e365d5ce9a023}{get\+\_\+width}} () const
+\begin{DoxyCompactList}\small\item\em Gets the width of the LCD panel. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_ac64b56d5d57abad2ad607da03ef6f802}{get\+\_\+width}} ()
+\begin{DoxyCompactList}\small\item\em Gets the height of the LCD panel. \end{DoxyCompactList}\item 
+const size\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a27a7bca69f4e4f6a91e855bc380d4114}{get\+\_\+height}} () const
+\begin{DoxyCompactList}\small\item\em Gets the height of the LCD panel. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a5b01bf60de32f1804a6bf0590c96e77e}{get\+\_\+height}} ()
+\begin{DoxyCompactList}\small\item\em Gets the height of the LCD panel. \end{DoxyCompactList}\item 
+const lcd\+\_\+color\+\_\+rgb\+\_\+pixel\+\_\+format\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a9b0b1572929a769d1dd33e58b6591b39}{get\+\_\+pixel\+\_\+format}} () const
+\begin{DoxyCompactList}\small\item\em Get the pixel format object. \end{DoxyCompactList}\item 
+lcd\+\_\+color\+\_\+rgb\+\_\+pixel\+\_\+format\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_acee901748eb441a4e8b2957679190893}{get\+\_\+pixel\+\_\+format}} ()
+\begin{DoxyCompactList}\small\item\em Get the pixel format object. \end{DoxyCompactList}\item 
+const esp\+\_\+lcd\+\_\+panel\+\_\+handle\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a908e3da421ac831ecfebf95743744757}{get\+\_\+handler}} () const
+\begin{DoxyCompactList}\small\item\em Get the handler object. \end{DoxyCompactList}\item 
+esp\+\_\+lcd\+\_\+panel\+\_\+handle\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a955026607dfec2c8f2d420a19e57fda8}{get\+\_\+handler}} ()
+\begin{DoxyCompactList}\small\item\em Get the handler object. \end{DoxyCompactList}\item 
+const bool \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a816d9d9f589aa8eb0e5d5255b16d00bf}{is\+\_\+initialized}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the LCD driver is initialized. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a9455a2ac06d5dfcb2d1c3a583ee567e0}{is\+\_\+initialized}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the LCD driver is initialized. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Semaphore\+Handle\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a8c8f46fa1ebe0c01fb5e214ec432efe3}{refresh\+\_\+semaphore}}
+\begin{DoxyCompactList}\small\item\em Refresh semaphore for synchronizing frame buffer updates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_ae73131f8390097da642d352474a4c2bd}{bsp\+\_\+enable\+\_\+dsi\+\_\+phy\+\_\+power}} ()
+\begin{DoxyCompactList}\small\item\em Enables the MIPI DSI PHY power. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a11876c2b65d5592bb71df4677e2752fc}{bsp\+\_\+init\+\_\+lcd\+\_\+backlight}} (gpio\+\_\+num\+\_\+t bk\+\_\+pin)
+\begin{DoxyCompactList}\small\item\em Initializes the LCD backlight. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_ae1c63f956a4c16bfc8e8d6e6e8066608}{panel\+\_\+clk\+\_\+freq\+\_\+mhz}}
+\begin{DoxyCompactList}\small\item\em Horizontal pixel clock frequency in MHz. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a9a94e06d0f241425a34e68c1db73bbf1}{hsync\+\_\+pulse\+\_\+width}}
+\begin{DoxyCompactList}\small\item\em Horizontal sync width, in pixel clock. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a880e510ccc235bf2d70753efc963b04f}{hsync\+\_\+back\+\_\+porch}}
+\begin{DoxyCompactList}\small\item\em Horizontal back porch, number of pixel clock between hsync and start of line active data. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a1a252b6e4a658f5a6584656b0c364204}{hsync\+\_\+front\+\_\+porch}}
+\begin{DoxyCompactList}\small\item\em Horizontal front porch, number of pixel clock between the end of active data and the next hsync. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a84b2e66d6d3a35fc594f1c2b7077c4ec}{vsync\+\_\+pulse\+\_\+width}}
+\begin{DoxyCompactList}\small\item\em Vertical sync width, in number of lines. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a740baa7482d5788f82c5766fa52038f1}{vsync\+\_\+back\+\_\+porch}}
+\begin{DoxyCompactList}\small\item\em Vertical back porch, number of invalid lines between vsync and start of frame. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a58120575ce06414bc2df4477e0e17160}{vsync\+\_\+front\+\_\+porch}}
+\begin{DoxyCompactList}\small\item\em Vertical front porch, number of invalid lines between the end of frame and the next vsync. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a35fa4a94a39f7d2345a6939ce4da26a2}{mipi\+\_\+lane\+\_\+num}}
+\begin{DoxyCompactList}\small\item\em Number of MIPI DSI lanes used for the panel. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_e_k79007_a8723b29e136bcdb95d65c4e0149488a6}{mipi\+\_\+dsi\+\_\+max\+\_\+data\+\_\+rate\+\_\+mbps}}
+\begin{DoxyCompactList}\small\item\em Maximum data rate of MIPI DSI in Mbps. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d}{Ragot\+::\+Driver\+LCD}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a6be782d59665875e378e4d2d302139a0}{initialized}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating if the LCD driver is initialized. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_aca57cd81e8f72097133fac225042e862}{width}}
+\begin{DoxyCompactList}\small\item\em Width of the LCD panel in pixels. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_af4948a7d9e6fc0a95b8ad9f87cd79650}{height}}
+\begin{DoxyCompactList}\small\item\em Height of the LCD panel in pixels. \end{DoxyCompactList}\item 
+lcd\+\_\+color\+\_\+rgb\+\_\+pixel\+\_\+format\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_ae11560e32f9d316196d353014303e1f1}{pixel\+\_\+format}}
+\begin{DoxyCompactList}\small\item\em Pixel format of the LCD panel. \end{DoxyCompactList}\item 
+esp\+\_\+lcd\+\_\+panel\+\_\+handle\+\_\+t \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_ace26f4ba9ac1e2424bf618b39299ed85}{handler}}
+\begin{DoxyCompactList}\small\item\em Handle to the LCD panel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Driver for the EK79007 LCD panel. 
+
+This class provides methods to initialize, deinitialize, and send frame buffers to the EK79007 LCD panel. It inherits from the \doxylink{class_ragot_1_1_driver_l_c_d}{Driver\+LCD} class and implements the necessary methods for LCD operations. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ragot_1_1_driver_e_k79007_a02dd8232c19c145a5dbf6c6df52aa1d4}\index{Ragot::DriverEK79007@{Ragot::DriverEK79007}!DriverEK79007@{DriverEK79007}}
+\index{DriverEK79007@{DriverEK79007}!Ragot::DriverEK79007@{Ragot::DriverEK79007}}
+\doxysubsubsection{\texorpdfstring{DriverEK79007()}{DriverEK79007()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_e_k79007_a02dd8232c19c145a5dbf6c6df52aa1d4} 
+Ragot\+::\+Driver\+EK79007\+::\+Driver\+EK79007 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor for the \doxylink{class_ragot_1_1_driver_e_k79007}{Driver\+EK79007} class. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_driver_e_k79007_a02dd8232c19c145a5dbf6c6df52aa1d4_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_driver_e_k79007_a86f8d6b197d81cb5d93948f0f161a2e3}\index{Ragot::DriverEK79007@{Ragot::DriverEK79007}!````~DriverEK79007@{\texorpdfstring{$\sim$}{\string~}DriverEK79007}}
+\index{````~DriverEK79007@{\texorpdfstring{$\sim$}{\string~}DriverEK79007}!Ragot::DriverEK79007@{Ragot::DriverEK79007}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DriverEK79007()}{\string~DriverEK79007()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_e_k79007_a86f8d6b197d81cb5d93948f0f161a2e3} 
+Ragot\+::\+Driver\+EK79007\+::\texorpdfstring{$\sim$}{\string~}\+Driver\+EK79007 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Destructor for the \doxylink{class_ragot_1_1_driver_e_k79007}{Driver\+EK79007} class. 
+
+Cleans up resources used by the driver. Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_ragot_1_1_driver_e_k79007_a86f8d6b197d81cb5d93948f0f161a2e3_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ragot_1_1_driver_e_k79007_ae73131f8390097da642d352474a4c2bd}\index{Ragot::DriverEK79007@{Ragot::DriverEK79007}!bsp\_enable\_dsi\_phy\_power@{bsp\_enable\_dsi\_phy\_power}}
+\index{bsp\_enable\_dsi\_phy\_power@{bsp\_enable\_dsi\_phy\_power}!Ragot::DriverEK79007@{Ragot::DriverEK79007}}
+\doxysubsubsection{\texorpdfstring{bsp\_enable\_dsi\_phy\_power()}{bsp\_enable\_dsi\_phy\_power()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_e_k79007_ae73131f8390097da642d352474a4c2bd} 
+void Ragot\+::\+Driver\+EK79007\+::bsp\+\_\+enable\+\_\+dsi\+\_\+phy\+\_\+power (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Enables the MIPI DSI PHY power. 
+
+This method powers on the MIPI DSI PHY by acquiring the appropriate LDO channel. Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_driver_e_k79007_ae73131f8390097da642d352474a4c2bd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_driver_e_k79007_a11876c2b65d5592bb71df4677e2752fc}\index{Ragot::DriverEK79007@{Ragot::DriverEK79007}!bsp\_init\_lcd\_backlight@{bsp\_init\_lcd\_backlight}}
+\index{bsp\_init\_lcd\_backlight@{bsp\_init\_lcd\_backlight}!Ragot::DriverEK79007@{Ragot::DriverEK79007}}
+\doxysubsubsection{\texorpdfstring{bsp\_init\_lcd\_backlight()}{bsp\_init\_lcd\_backlight()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_e_k79007_a11876c2b65d5592bb71df4677e2752fc} 
+void Ragot\+::\+Driver\+EK79007\+::bsp\+\_\+init\+\_\+lcd\+\_\+backlight (\begin{DoxyParamCaption}\item[{gpio\+\_\+num\+\_\+t}]{bk\+\_\+pin}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initializes the LCD backlight. 
+
+This method configures the GPIO pin for the backlight and sets it to high to turn on the backlight.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bk\+\_\+pin} & GPIO pin number for the backlight control. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_driver_e_k79007_a11876c2b65d5592bb71df4677e2752fc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_driver_e_k79007_a2ce6b59a5dbbeea913ecc838e60ce225}\index{Ragot::DriverEK79007@{Ragot::DriverEK79007}!deinit@{deinit}}
+\index{deinit@{deinit}!Ragot::DriverEK79007@{Ragot::DriverEK79007}}
+\doxysubsubsection{\texorpdfstring{deinit()}{deinit()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_e_k79007_a2ce6b59a5dbbeea913ecc838e60ce225} 
+esp\+\_\+err\+\_\+t Ragot\+::\+Driver\+EK79007\+::deinit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Deinitializes the EK79007 LCD panel driver. 
+
+This method cleans up resources used by the driver, including deleting the panel handler and freeing the refresh semaphore.
+
+\begin{DoxyReturn}{Returns}
+esp\+\_\+err\+\_\+t ESP\+\_\+\+OK on success, or an error code on failure. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a338f115108d3d08feae810ac8bca895b}{Ragot\+::\+Driver\+LCD}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_ragot_1_1_driver_e_k79007_a2ce6b59a5dbbeea913ecc838e60ce225_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_driver_e_k79007_a8a1c7407a748ab546693e98d8193fe99}\index{Ragot::DriverEK79007@{Ragot::DriverEK79007}!init@{init}}
+\index{init@{init}!Ragot::DriverEK79007@{Ragot::DriverEK79007}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_e_k79007_a8a1c7407a748ab546693e98d8193fe99} 
+esp\+\_\+err\+\_\+t Ragot\+::\+Driver\+EK79007\+::init (\begin{DoxyParamCaption}\item[{gpio\+\_\+num\+\_\+t}]{reset\+\_\+pin}{, }\item[{gpio\+\_\+num\+\_\+t}]{bk\+\_\+pin}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Initializes the EK79007 LCD panel driver. 
+
+This method sets up the panel with the specified reset and backlight GPIO pins, configures the panel parameters, and registers the refresh callback.
+
+
+\begin{DoxyParams}{Parameters}
+{\em reset\+\_\+pin} & GPIO pin for panel reset. \\
+\hline
+{\em bk\+\_\+pin} & GPIO pin for backlight control. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+esp\+\_\+err\+\_\+t ESP\+\_\+\+OK on success, or an error code on failure. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_acfe2fda139ba2b052f0ce4b28e26a980}{Ragot\+::\+Driver\+LCD}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_driver_e_k79007_a8a1c7407a748ab546693e98d8193fe99_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_ragot_1_1_driver_e_k79007_a8a1c7407a748ab546693e98d8193fe99_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_driver_e_k79007_a98d423f9e1b66912256d7dc7466d1bcc}\index{Ragot::DriverEK79007@{Ragot::DriverEK79007}!refresh\_frame\_buffer@{refresh\_frame\_buffer}}
+\index{refresh\_frame\_buffer@{refresh\_frame\_buffer}!Ragot::DriverEK79007@{Ragot::DriverEK79007}}
+\doxysubsubsection{\texorpdfstring{refresh\_frame\_buffer()}{refresh\_frame\_buffer()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_e_k79007_a98d423f9e1b66912256d7dc7466d1bcc} 
+IRAM\+\_\+\+ATTR bool Ragot\+::\+Driver\+EK79007\+::refresh\+\_\+frame\+\_\+buffer (\begin{DoxyParamCaption}\item[{esp\+\_\+lcd\+\_\+panel\+\_\+handle\+\_\+t}]{panel}{, }\item[{esp\+\_\+lcd\+\_\+dpi\+\_\+panel\+\_\+event\+\_\+data\+\_\+t \texorpdfstring{$\ast$}{*}}]{edata}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{user\+\_\+ctx}{}\end{DoxyParamCaption})}
+
+
+
+Refreshes the frame buffer for the EK79007 LCD panel. 
+
+This method is called when the panel refresh is done. It handles the actual drawing of the frame buffer to the panel and releases the refresh semaphore.
+
+
+\begin{DoxyParams}{Parameters}
+{\em panel} & Pointer to the LCD panel handle. \\
+\hline
+{\em edata} & Pointer to the event data for the DPI panel. \\
+\hline
+{\em user\+\_\+ctx} & User context pointer, which is this driver instance. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful, false otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_driver_e_k79007_a98d423f9e1b66912256d7dc7466d1bcc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_driver_e_k79007_a322d5272daf6853beda488ac5d378251}\index{Ragot::DriverEK79007@{Ragot::DriverEK79007}!send\_frame\_buffer@{send\_frame\_buffer}}
+\index{send\_frame\_buffer@{send\_frame\_buffer}!Ragot::DriverEK79007@{Ragot::DriverEK79007}}
+\doxysubsubsection{\texorpdfstring{send\_frame\_buffer()}{send\_frame\_buffer()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_e_k79007_a322d5272daf6853beda488ac5d378251} 
+esp\+\_\+err\+\_\+t Ragot\+::\+Driver\+EK79007\+::send\+\_\+frame\+\_\+buffer (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{frame\+\_\+buffer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sends a frame buffer to the EK79007 LCD panel. 
+
+This method sends the provided frame buffer to the panel for display. It waits for the refresh semaphore to be available before sending the frame buffer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame\+\_\+buffer} & Pointer to the frame buffer data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+esp\+\_\+err\+\_\+t ESP\+\_\+\+OK on success, or an error code on failure. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a183dc9f5770163e5815528978e9be89a}{Ragot\+::\+Driver\+LCD}}.
+
+\Hypertarget{class_ragot_1_1_driver_e_k79007_a10f42392e8a22a31f58c25cf347c135c}\index{Ragot::DriverEK79007@{Ragot::DriverEK79007}!set\_pixel@{set\_pixel}}
+\index{set\_pixel@{set\_pixel}!Ragot::DriverEK79007@{Ragot::DriverEK79007}}
+\doxysubsubsection{\texorpdfstring{set\_pixel()}{set\_pixel()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_e_k79007_a10f42392e8a22a31f58c25cf347c135c} 
+esp\+\_\+err\+\_\+t Ragot\+::\+Driver\+EK79007\+::set\+\_\+pixel (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{x}{, }\item[{uint32\+\_\+t}]{y}{, }\item[{uint32\+\_\+t}]{color}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets a pixel at the specified coordinates to the given color. 
+
+This method is not implemented for the EK79007 driver and will return ESP\+\_\+\+FAIL.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate of the pixel. \\
+\hline
+{\em y} & Y coordinate of the pixel. \\
+\hline
+{\em color} & Color value to set the pixel to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+esp\+\_\+err\+\_\+t ESP\+\_\+\+FAIL as this method is not implemented. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_ragot_1_1_driver_l_c_d_a290a043148c1a35cb6321b9d2f87a771}{Ragot\+::\+Driver\+LCD}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_ragot_1_1_driver_e_k79007_a880e510ccc235bf2d70753efc963b04f}\index{Ragot::DriverEK79007@{Ragot::DriverEK79007}!hsync\_back\_porch@{hsync\_back\_porch}}
+\index{hsync\_back\_porch@{hsync\_back\_porch}!Ragot::DriverEK79007@{Ragot::DriverEK79007}}
+\doxysubsubsection{\texorpdfstring{hsync\_back\_porch}{hsync\_back\_porch}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_e_k79007_a880e510ccc235bf2d70753efc963b04f} 
+uint32\+\_\+t Ragot\+::\+Driver\+EK79007\+::hsync\+\_\+back\+\_\+porch\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Horizontal back porch, number of pixel clock between hsync and start of line active data. 
+
+\Hypertarget{class_ragot_1_1_driver_e_k79007_a1a252b6e4a658f5a6584656b0c364204}\index{Ragot::DriverEK79007@{Ragot::DriverEK79007}!hsync\_front\_porch@{hsync\_front\_porch}}
+\index{hsync\_front\_porch@{hsync\_front\_porch}!Ragot::DriverEK79007@{Ragot::DriverEK79007}}
+\doxysubsubsection{\texorpdfstring{hsync\_front\_porch}{hsync\_front\_porch}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_e_k79007_a1a252b6e4a658f5a6584656b0c364204} 
+uint32\+\_\+t Ragot\+::\+Driver\+EK79007\+::hsync\+\_\+front\+\_\+porch\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Horizontal front porch, number of pixel clock between the end of active data and the next hsync. 
+
+\Hypertarget{class_ragot_1_1_driver_e_k79007_a9a94e06d0f241425a34e68c1db73bbf1}\index{Ragot::DriverEK79007@{Ragot::DriverEK79007}!hsync\_pulse\_width@{hsync\_pulse\_width}}
+\index{hsync\_pulse\_width@{hsync\_pulse\_width}!Ragot::DriverEK79007@{Ragot::DriverEK79007}}
+\doxysubsubsection{\texorpdfstring{hsync\_pulse\_width}{hsync\_pulse\_width}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_e_k79007_a9a94e06d0f241425a34e68c1db73bbf1} 
+uint32\+\_\+t Ragot\+::\+Driver\+EK79007\+::hsync\+\_\+pulse\+\_\+width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Horizontal sync width, in pixel clock. 
+
+\Hypertarget{class_ragot_1_1_driver_e_k79007_a8723b29e136bcdb95d65c4e0149488a6}\index{Ragot::DriverEK79007@{Ragot::DriverEK79007}!mipi\_dsi\_max\_data\_rate\_mbps@{mipi\_dsi\_max\_data\_rate\_mbps}}
+\index{mipi\_dsi\_max\_data\_rate\_mbps@{mipi\_dsi\_max\_data\_rate\_mbps}!Ragot::DriverEK79007@{Ragot::DriverEK79007}}
+\doxysubsubsection{\texorpdfstring{mipi\_dsi\_max\_data\_rate\_mbps}{mipi\_dsi\_max\_data\_rate\_mbps}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_e_k79007_a8723b29e136bcdb95d65c4e0149488a6} 
+uint16\+\_\+t Ragot\+::\+Driver\+EK79007\+::mipi\+\_\+dsi\+\_\+max\+\_\+data\+\_\+rate\+\_\+mbps\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Maximum data rate of MIPI DSI in Mbps. 
+
+\Hypertarget{class_ragot_1_1_driver_e_k79007_a35fa4a94a39f7d2345a6939ce4da26a2}\index{Ragot::DriverEK79007@{Ragot::DriverEK79007}!mipi\_lane\_num@{mipi\_lane\_num}}
+\index{mipi\_lane\_num@{mipi\_lane\_num}!Ragot::DriverEK79007@{Ragot::DriverEK79007}}
+\doxysubsubsection{\texorpdfstring{mipi\_lane\_num}{mipi\_lane\_num}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_e_k79007_a35fa4a94a39f7d2345a6939ce4da26a2} 
+uint8\+\_\+t Ragot\+::\+Driver\+EK79007\+::mipi\+\_\+lane\+\_\+num\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of MIPI DSI lanes used for the panel. 
+
+\Hypertarget{class_ragot_1_1_driver_e_k79007_ae1c63f956a4c16bfc8e8d6e6e8066608}\index{Ragot::DriverEK79007@{Ragot::DriverEK79007}!panel\_clk\_freq\_mhz@{panel\_clk\_freq\_mhz}}
+\index{panel\_clk\_freq\_mhz@{panel\_clk\_freq\_mhz}!Ragot::DriverEK79007@{Ragot::DriverEK79007}}
+\doxysubsubsection{\texorpdfstring{panel\_clk\_freq\_mhz}{panel\_clk\_freq\_mhz}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_e_k79007_ae1c63f956a4c16bfc8e8d6e6e8066608} 
+uint16\+\_\+t Ragot\+::\+Driver\+EK79007\+::panel\+\_\+clk\+\_\+freq\+\_\+mhz\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Horizontal pixel clock frequency in MHz. 
+
+\Hypertarget{class_ragot_1_1_driver_e_k79007_a8c8f46fa1ebe0c01fb5e214ec432efe3}\index{Ragot::DriverEK79007@{Ragot::DriverEK79007}!refresh\_semaphore@{refresh\_semaphore}}
+\index{refresh\_semaphore@{refresh\_semaphore}!Ragot::DriverEK79007@{Ragot::DriverEK79007}}
+\doxysubsubsection{\texorpdfstring{refresh\_semaphore}{refresh\_semaphore}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_e_k79007_a8c8f46fa1ebe0c01fb5e214ec432efe3} 
+Semaphore\+Handle\+\_\+t Ragot\+::\+Driver\+EK79007\+::refresh\+\_\+semaphore}
+
+
+
+Refresh semaphore for synchronizing frame buffer updates. 
+
+This semaphore is used to ensure that the frame buffer is updated only when it is safe to do so. \Hypertarget{class_ragot_1_1_driver_e_k79007_a740baa7482d5788f82c5766fa52038f1}\index{Ragot::DriverEK79007@{Ragot::DriverEK79007}!vsync\_back\_porch@{vsync\_back\_porch}}
+\index{vsync\_back\_porch@{vsync\_back\_porch}!Ragot::DriverEK79007@{Ragot::DriverEK79007}}
+\doxysubsubsection{\texorpdfstring{vsync\_back\_porch}{vsync\_back\_porch}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_e_k79007_a740baa7482d5788f82c5766fa52038f1} 
+uint32\+\_\+t Ragot\+::\+Driver\+EK79007\+::vsync\+\_\+back\+\_\+porch\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vertical back porch, number of invalid lines between vsync and start of frame. 
+
+\Hypertarget{class_ragot_1_1_driver_e_k79007_a58120575ce06414bc2df4477e0e17160}\index{Ragot::DriverEK79007@{Ragot::DriverEK79007}!vsync\_front\_porch@{vsync\_front\_porch}}
+\index{vsync\_front\_porch@{vsync\_front\_porch}!Ragot::DriverEK79007@{Ragot::DriverEK79007}}
+\doxysubsubsection{\texorpdfstring{vsync\_front\_porch}{vsync\_front\_porch}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_e_k79007_a58120575ce06414bc2df4477e0e17160} 
+uint32\+\_\+t Ragot\+::\+Driver\+EK79007\+::vsync\+\_\+front\+\_\+porch\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vertical front porch, number of invalid lines between the end of frame and the next vsync. 
+
+\Hypertarget{class_ragot_1_1_driver_e_k79007_a84b2e66d6d3a35fc594f1c2b7077c4ec}\index{Ragot::DriverEK79007@{Ragot::DriverEK79007}!vsync\_pulse\_width@{vsync\_pulse\_width}}
+\index{vsync\_pulse\_width@{vsync\_pulse\_width}!Ragot::DriverEK79007@{Ragot::DriverEK79007}}
+\doxysubsubsection{\texorpdfstring{vsync\_pulse\_width}{vsync\_pulse\_width}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_driver_e_k79007_a84b2e66d6d3a35fc594f1c2b7077c4ec} 
+uint32\+\_\+t Ragot\+::\+Driver\+EK79007\+::vsync\+\_\+pulse\+\_\+width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vertical sync width, in number of lines. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+main/\mbox{\hyperlink{driver__ek79007_8hpp}{driver\+\_\+ek79007.\+hpp}}\item 
+main/\mbox{\hyperlink{driver__ek79007_8cpp}{driver\+\_\+ek79007.\+cpp}}\end{DoxyCompactItemize}

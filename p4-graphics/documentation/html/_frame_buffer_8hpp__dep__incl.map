@@ -1,0 +1,16 @@
+<map id="main/FrameBuffer.hpp" name="main/FrameBuffer.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="173,5,323,31"/>
+<area shape="rect" id="Node000002" href="$_frame_buffer_8cpp.html" title="This file implements the FrameBuffer class, which manages a frame buffer for rendering graphics." alt="" coords="5,79,155,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="207,40,110,81,108,76,204,35"/>
+<area shape="rect" id="Node000003" href="$_rasterizer_8hpp.html" title="Implementation of the Rasterizer class for rendering polygons in a frame buffer." alt="" coords="179,79,317,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="251,46,251,79,245,79,245,46"/>
+<area shape="rect" id="Node000005" href="$_renderer_8hpp.html" title="Implementation of the Renderer class for rendering scenes in the Ragot engine." alt="" coords="290,153,420,178"/>
+<area shape="poly" id="edge7_Node000001_Node000005" title=" " alt="" coords="287,37,311,55,332,78,349,117,356,152,351,153,344,118,327,80,307,59,284,42"/>
+<area shape="rect" id="Node000004" href="$_rasterizer_8cpp.html" title="Implementation of the Rasterizer class for rendering polygons in a frame buffer." alt="" coords="129,153,266,178"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="233,119,208,154,204,151,229,116"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="280,111,338,150,335,154,277,116"/>
+<area shape="rect" id="Node000006" href="$_renderer_8cpp.html" title="Implementation of the Renderer class for rendering scenes in the Ragot engine." alt="" coords="218,226,348,252"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="334,191,297,228,293,224,330,187"/>
+<area shape="rect" id="Node000007" href="$main_8cpp.html" title="This file contains the main function for the Ragot engine, which initializes the renderer and scene,..." alt="" coords="372,226,478,252"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="379,187,415,224,412,228,375,191"/>
+</map>

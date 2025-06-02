@@ -1,0 +1,13 @@
+<map id="Ragot::clipAgainstPlane" name="Ragot::clipAgainstPlane">
+<area shape="rect" id="Node000001" title=" " alt="" coords="639,35,801,60"/>
+<area shape="rect" id="Node000002" href="$class_ragot_1_1_renderer.html#acc3bbc330b23f454ed5d01b85d4f8e98" title="Renders the current scene." alt="" coords="430,35,591,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="624,50,592,50,592,45,624,45"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#a987c89a3f1d482254025c345f19b183a" title="Main loop for the Ragot engine on non&#45;ESP platforms." alt="" coords="267,5,347,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="414,36,347,27,348,21,415,31"/>
+<area shape="rect" id="Node000005" href="$class_ragot_1_1_renderer.html#a30c9db3883dcb090d6ddebd972809d55" title="Performs the rendering task in a separate thread." alt="" coords="232,55,382,96"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="415,63,383,68,382,63,414,58"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main function for the Ragot engine." alt="" coords="70,5,119,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="251,21,119,21,119,16,251,16"/>
+<area shape="rect" id="Node000006" href="$class_ragot_1_1_renderer.html#a72e42229b1c05ab0ae910b20b6f41453" title="Constructs a Renderer with the specified width and height." alt="" coords="5,63,184,88"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="216,78,184,78,184,73,216,73"/>
+</map>

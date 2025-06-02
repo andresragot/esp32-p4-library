@@ -1,0 +1,304 @@
+\doxysection{Ragot\+::Node Class Reference}
+\hypertarget{class_ragot_1_1_node}{}\label{class_ragot_1_1_node}\index{Ragot::Node@{Ragot::Node}}
+
+
+Represents a node in a scene graph for 3D rendering.  
+
+
+
+
+{\ttfamily \#include $<$Node.\+hpp$>$}
+
+
+
+Inheritance diagram for Ragot\+::Node\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_ragot_1_1_node__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ragot\+::Node\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_ragot_1_1_node__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_node_af950cf77621bbb3f157b7bf3852dfd2b}{Node}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor for \doxylink{class_ragot_1_1_node}{Node}. Initializes an empty node with no parent and no children. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_ragot_1_1_node_a51384a380fecebd14482c49f7fc60336}{\texorpdfstring{$\sim$}{\string~}\+Node}} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor for \doxylink{class_ragot_1_1_node}{Node}. Cleans up the node and its children. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_node_afb856f2743eed9ca04755107e5d2a49b}{Node}} (const \mbox{\hyperlink{class_ragot_1_1_node}{Node}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy constructor for \doxylink{class_ragot_1_1_node}{Node}. Prevents copying of \doxylink{class_ragot_1_1_node}{Node} instances. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_node_a2cd800085d580d594ad5cb5ea55df009}{Node}} (const \mbox{\hyperlink{class_ragot_1_1_node}{Node}} \&\&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted move constructor for \doxylink{class_ragot_1_1_node}{Node}. Prevents moving of \doxylink{class_ragot_1_1_node}{Node} instances. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_node}{Node}} \& \mbox{\hyperlink{class_ragot_1_1_node_a36d44666bd1c79342ca8e12341fd83c1}{operator=}} (const \mbox{\hyperlink{class_ragot_1_1_node}{Node}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted assignment operator for \doxylink{class_ragot_1_1_node}{Node}. Prevents assignment of \doxylink{class_ragot_1_1_node}{Node} instances. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_node}{Node}} \& \mbox{\hyperlink{class_ragot_1_1_node_aba99d61150423e3eaa0b99fe522a03a4}{operator=}} (const \mbox{\hyperlink{class_ragot_1_1_node}{Node}} \&\&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted move assignment operator for \doxylink{class_ragot_1_1_node}{Node}. Prevents moving of \doxylink{class_ragot_1_1_node}{Node} instances. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_node_a32b4ac99143d362f0f0c5176e52e39f5}{add\+\_\+child}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$ child)
+\begin{DoxyCompactList}\small\item\em Get the parent node. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_node_a83168b2c88ef5387b1e768f0a7328479}{remove\+\_\+child}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$ child)
+\begin{DoxyCompactList}\small\item\em Remove a child node. \end{DoxyCompactList}\item 
+const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$ $>$ \& \mbox{\hyperlink{class_ragot_1_1_node_a18af54a13e0c49864ac4095e1ec5f87c}{get\+\_\+children}} () const
+\begin{DoxyCompactList}\small\item\em Get the parent node. \end{DoxyCompactList}\item 
+mat4 \mbox{\hyperlink{class_ragot_1_1_node_adf704afc3b1c3ca9a9819be9e319479b}{get\+\_\+transform\+\_\+matrix}} () override
+\begin{DoxyCompactList}\small\item\em Get the transform matrix object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ragot_1_1_transform}{Ragot\+::\+Transform}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ragot_1_1_transform_a725154a65379853ad8fcb0263fedda6c}{Transform}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{class_ragot_1_1_transform}{Transform} class. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_ragot_1_1_transform_a50798b680f8f6a40ec2c7ea9a6e1df08}{\texorpdfstring{$\sim$}{\string~}\+Transform}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{class_ragot_1_1_transform}{Transform} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_transform_a7962797afae773a25fdebf76a8404a7a}{set\+\_\+position}} (const vec3 \&pos)
+\begin{DoxyCompactList}\small\item\em Sets the position of the object. \end{DoxyCompactList}\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_a1db9f8e84315c4296dfef46f1f17ce99}{get\+\_\+position}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current position of the object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_transform_a7641b284077ae1fe1e0b7f3ffc788edb}{set\+\_\+rotation}} (const vec3 \&rot)
+\begin{DoxyCompactList}\small\item\em Moves the object by a specified vector. \end{DoxyCompactList}\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_aa9a377ee1cc5eca48f62970e3d4016ab}{get\+\_\+rotation}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current rotation of the object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_transform_a83714240213caa1528e9e75b1cb5a307}{rotate}} (const float angle, const vec3 \&axis)
+\begin{DoxyCompactList}\small\item\em Rotates the object by a specified angle around a given axis. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ragot_1_1_transform_ace83a2bcfdaffd808a1d89fe0cb48fce}{set\+\_\+scale}} (const vec3 \&\mbox{\hyperlink{class_ragot_1_1_transform_ad7da3cfaf66f95597dfbb6fcb8f838d7}{scale}})
+\begin{DoxyCompactList}\small\item\em Sets the scale of the object. \end{DoxyCompactList}\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_a96a6f6bcff942294a7011dac4f235b92}{get\+\_\+scale}} () const
+\begin{DoxyCompactList}\small\item\em Sets the scale of the object uniformly. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ragot_1_1_transform_acf0344728a251b9e04fbfb4ab05dd450}{is\+\_\+dirty}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the transformation matrix is dirty (needs recalculation). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$ $>$ \mbox{\hyperlink{class_ragot_1_1_node_a281bc24957901ca61a4af20346a4005d}{children}}
+\begin{DoxyCompactList}\small\item\em List of child nodes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ragot_1_1_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_ragot_1_1_node_a64767f464d8abac9626bbf554de7904c}{parent}} = nullptr
+\begin{DoxyCompactList}\small\item\em Pointer to the parent node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_ragot_1_1_transform}{Ragot\+::\+Transform}}}
+\begin{DoxyCompactItemize}
+\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_a431ca8e8bacefc052302557d46559f38}{position}}
+\begin{DoxyCompactList}\small\item\em The position of the object in 3D space. \end{DoxyCompactList}\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_a54eebc0ee4f13e8c0c30777a9ea2bf02}{rotation}}
+\begin{DoxyCompactList}\small\item\em The rotation of the object in degrees around each axis (x, y, z). \end{DoxyCompactList}\item 
+vec3 \mbox{\hyperlink{class_ragot_1_1_transform_ad7da3cfaf66f95597dfbb6fcb8f838d7}{scale}}
+\begin{DoxyCompactList}\small\item\em The scale of the object in 3D space, default is (1, 1, 1). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ragot_1_1_transform_a48016feecf3360fb60a42f48720c702f}{dirty}} = true
+\begin{DoxyCompactList}\small\item\em Flag indicating whether the transformation matrix needs to be recalculated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a node in a scene graph for 3D rendering. 
+
+The \doxylink{class_ragot_1_1_node}{Node} class extends the \doxylink{class_ragot_1_1_transform}{Transform} class to include child nodes, allowing for hierarchical transformations and management of child nodes. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ragot_1_1_node_af950cf77621bbb3f157b7bf3852dfd2b}\index{Ragot::Node@{Ragot::Node}!Node@{Node}}
+\index{Node@{Node}!Ragot::Node@{Ragot::Node}}
+\doxysubsubsection{\texorpdfstring{Node()}{Node()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_node_af950cf77621bbb3f157b7bf3852dfd2b} 
+Ragot\+::\+Node\+::\+Node (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor for \doxylink{class_ragot_1_1_node}{Node}. Initializes an empty node with no parent and no children. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_ragot_1_1_node_af950cf77621bbb3f157b7bf3852dfd2b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_node_a51384a380fecebd14482c49f7fc60336}\index{Ragot::Node@{Ragot::Node}!````~Node@{\texorpdfstring{$\sim$}{\string~}Node}}
+\index{````~Node@{\texorpdfstring{$\sim$}{\string~}Node}!Ragot::Node@{Ragot::Node}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Node()}{\string~Node()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_node_a51384a380fecebd14482c49f7fc60336} 
+virtual Ragot\+::\+Node\+::\texorpdfstring{$\sim$}{\string~}\+Node (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Default destructor for \doxylink{class_ragot_1_1_node}{Node}. Cleans up the node and its children. 
+
+\Hypertarget{class_ragot_1_1_node_afb856f2743eed9ca04755107e5d2a49b}\index{Ragot::Node@{Ragot::Node}!Node@{Node}}
+\index{Node@{Node}!Ragot::Node@{Ragot::Node}}
+\doxysubsubsection{\texorpdfstring{Node()}{Node()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_node_afb856f2743eed9ca04755107e5d2a49b} 
+Ragot\+::\+Node\+::\+Node (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ragot_1_1_node}{Node}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Deleted copy constructor for \doxylink{class_ragot_1_1_node}{Node}. Prevents copying of \doxylink{class_ragot_1_1_node}{Node} instances. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{class_ragot_1_1_node_afb856f2743eed9ca04755107e5d2a49b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_node_a2cd800085d580d594ad5cb5ea55df009}\index{Ragot::Node@{Ragot::Node}!Node@{Node}}
+\index{Node@{Node}!Ragot::Node@{Ragot::Node}}
+\doxysubsubsection{\texorpdfstring{Node()}{Node()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_node_a2cd800085d580d594ad5cb5ea55df009} 
+Ragot\+::\+Node\+::\+Node (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ragot_1_1_node}{Node}} \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Deleted move constructor for \doxylink{class_ragot_1_1_node}{Node}. Prevents moving of \doxylink{class_ragot_1_1_node}{Node} instances. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{class_ragot_1_1_node_a2cd800085d580d594ad5cb5ea55df009_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ragot_1_1_node_a32b4ac99143d362f0f0c5176e52e39f5}\index{Ragot::Node@{Ragot::Node}!add\_child@{add\_child}}
+\index{add\_child@{add\_child}!Ragot::Node@{Ragot::Node}}
+\doxysubsubsection{\texorpdfstring{add\_child()}{add\_child()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_node_a32b4ac99143d362f0f0c5176e52e39f5} 
+void Ragot\+::\+Node\+::add\+\_\+child (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$}]{child}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the parent node. 
+
+\begin{DoxyReturn}{Returns}
+Node\texorpdfstring{$\ast$}{*} Pointer to the parent node, or nullptr if no parent exists. 
+\end{DoxyReturn}
+\Hypertarget{class_ragot_1_1_node_a18af54a13e0c49864ac4095e1ec5f87c}\index{Ragot::Node@{Ragot::Node}!get\_children@{get\_children}}
+\index{get\_children@{get\_children}!Ragot::Node@{Ragot::Node}}
+\doxysubsubsection{\texorpdfstring{get\_children()}{get\_children()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_node_a18af54a13e0c49864ac4095e1ec5f87c} 
+const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$ $>$ \& Ragot\+::\+Node\+::get\+\_\+children (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the parent node. 
+
+\begin{DoxyReturn}{Returns}
+Node\texorpdfstring{$\ast$}{*} Pointer to the parent node, or nullptr if no parent exists. 
+\end{DoxyReturn}
+\Hypertarget{class_ragot_1_1_node_adf704afc3b1c3ca9a9819be9e319479b}\index{Ragot::Node@{Ragot::Node}!get\_transform\_matrix@{get\_transform\_matrix}}
+\index{get\_transform\_matrix@{get\_transform\_matrix}!Ragot::Node@{Ragot::Node}}
+\doxysubsubsection{\texorpdfstring{get\_transform\_matrix()}{get\_transform\_matrix()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_node_adf704afc3b1c3ca9a9819be9e319479b} 
+mat4 Ragot\+::\+Node\+::get\+\_\+transform\+\_\+matrix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the transform matrix object. 
+
+\begin{DoxyReturn}{Returns}
+mat4 The transformation matrix of the node, including its parent\textquotesingle{}s transformation. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_ragot_1_1_transform_a039cc1705ced81a3491e8ecd504c3942}{Ragot\+::\+Transform}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_node_adf704afc3b1c3ca9a9819be9e319479b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ragot_1_1_node_adf704afc3b1c3ca9a9819be9e319479b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_node_aba99d61150423e3eaa0b99fe522a03a4}\index{Ragot::Node@{Ragot::Node}!operator=@{operator=}}
+\index{operator=@{operator=}!Ragot::Node@{Ragot::Node}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_node_aba99d61150423e3eaa0b99fe522a03a4} 
+\mbox{\hyperlink{class_ragot_1_1_node}{Node}} \& Ragot\+::\+Node\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ragot_1_1_node}{Node}} \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Deleted move assignment operator for \doxylink{class_ragot_1_1_node}{Node}. Prevents moving of \doxylink{class_ragot_1_1_node}{Node} instances. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_ragot_1_1_node}{Node}\& Reference to the current object. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_ragot_1_1_node_aba99d61150423e3eaa0b99fe522a03a4_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_node_a36d44666bd1c79342ca8e12341fd83c1}\index{Ragot::Node@{Ragot::Node}!operator=@{operator=}}
+\index{operator=@{operator=}!Ragot::Node@{Ragot::Node}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_node_a36d44666bd1c79342ca8e12341fd83c1} 
+\mbox{\hyperlink{class_ragot_1_1_node}{Node}} \& Ragot\+::\+Node\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ragot_1_1_node}{Node}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Deleted assignment operator for \doxylink{class_ragot_1_1_node}{Node}. Prevents assignment of \doxylink{class_ragot_1_1_node}{Node} instances. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_ragot_1_1_node_a36d44666bd1c79342ca8e12341fd83c1_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_ragot_1_1_node_a83168b2c88ef5387b1e768f0a7328479}\index{Ragot::Node@{Ragot::Node}!remove\_child@{remove\_child}}
+\index{remove\_child@{remove\_child}!Ragot::Node@{Ragot::Node}}
+\doxysubsubsection{\texorpdfstring{remove\_child()}{remove\_child()}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_node_a83168b2c88ef5387b1e768f0a7328479} 
+void Ragot\+::\+Node\+::remove\+\_\+child (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$}]{child}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Remove a child node. 
+
+This method removes the specified child node from the list of children. If the child exists, it is removed and its parent pointer is set to nullptr.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & The child node to remove. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_ragot_1_1_node_a281bc24957901ca61a4af20346a4005d}\index{Ragot::Node@{Ragot::Node}!children@{children}}
+\index{children@{children}!Ragot::Node@{Ragot::Node}}
+\doxysubsubsection{\texorpdfstring{children}{children}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_node_a281bc24957901ca61a4af20346a4005d} 
+std\+::vector$<$ std\+::shared\+\_\+ptr $<$ \mbox{\hyperlink{class_ragot_1_1_node}{Node}} $>$ $>$ Ragot\+::\+Node\+::children\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+List of child nodes. 
+
+\Hypertarget{class_ragot_1_1_node_a64767f464d8abac9626bbf554de7904c}\index{Ragot::Node@{Ragot::Node}!parent@{parent}}
+\index{parent@{parent}!Ragot::Node@{Ragot::Node}}
+\doxysubsubsection{\texorpdfstring{parent}{parent}}
+{\footnotesize\ttfamily \label{class_ragot_1_1_node_a64767f464d8abac9626bbf554de7904c} 
+\mbox{\hyperlink{class_ragot_1_1_node}{Node}}\texorpdfstring{$\ast$}{*} Ragot\+::\+Node\+::parent = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Pointer to the parent node. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+main/\mbox{\hyperlink{_node_8hpp}{Node.\+hpp}}\end{DoxyCompactItemize}

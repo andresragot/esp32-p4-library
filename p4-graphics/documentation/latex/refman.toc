@@ -1,0 +1,753 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Namespace Index}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Namespace List}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Hierarchical Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Class Hierarchy}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Class Index}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Class List}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}File Index}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}File List}{7}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Namespace Documentation}{11}{chapter.5}%
+\contentsline {section}{\numberline {5.1}basics Namespace Reference}{11}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Typedef Documentation}{11}{subsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.1.1}Id}{11}{subsubsection.5.1.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Function Documentation}{11}{subsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.2.1}fnv32()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{11}{subsubsection.5.1.2.1}%
+\contentsline {subsubsection}{\numberline {5.1.2.2}fnv32()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{12}{subsubsection.5.1.2.2}%
+\contentsline {subsubsection}{\numberline {5.1.2.3}static\_fnv()}{12}{subsubsection.5.1.2.3}%
+\contentsline {subsubsection}{\numberline {5.1.2.4}static\_fnv32()}{12}{subsubsection.5.1.2.4}%
+\contentsline {subsubsection}{\numberline {5.1.2.5}static\_fnv64()}{13}{subsubsection.5.1.2.5}%
+\contentsline {section}{\numberline {5.2}basics\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::internal Namespace Reference}{13}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Function Documentation}{14}{subsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.1.1}static\_fnv32()}{14}{subsubsection.5.2.1.1}%
+\contentsline {subsubsection}{\numberline {5.2.1.2}static\_fnv32$<$ 1 $>$()}{14}{subsubsection.5.2.1.2}%
+\contentsline {subsubsection}{\numberline {5.2.1.3}static\_fnv64()}{15}{subsubsection.5.2.1.3}%
+\contentsline {subsubsection}{\numberline {5.2.1.4}static\_fnv64$<$ 1 $>$()}{15}{subsubsection.5.2.1.4}%
+\contentsline {subsection}{\numberline {5.2.2}Variable Documentation}{15}{subsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.2.1}fnv\_basis\_32}{15}{subsubsection.5.2.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2.2}fnv\_basis\_64}{15}{subsubsection.5.2.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.2.3}fnv\_prime\_32}{16}{subsubsection.5.2.2.3}%
+\contentsline {subsubsection}{\numberline {5.2.2.4}fnv\_prime\_64}{16}{subsubsection.5.2.2.4}%
+\contentsline {section}{\numberline {5.3}Ragot Namespace Reference}{16}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Typedef Documentation}{18}{subsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.1.1}Matrix4x4}{18}{subsubsection.5.3.1.1}%
+\contentsline {subsubsection}{\numberline {5.3.1.2}RGB565}{18}{subsubsection.5.3.1.2}%
+\contentsline {subsubsection}{\numberline {5.3.1.3}RGB8}{18}{subsubsection.5.3.1.3}%
+\contentsline {subsubsection}{\numberline {5.3.1.4}RGB888}{19}{subsubsection.5.3.1.4}%
+\contentsline {subsubsection}{\numberline {5.3.1.5}RGBA8888}{19}{subsubsection.5.3.1.5}%
+\contentsline {subsection}{\numberline {5.3.2}Enumeration Type Documentation}{19}{subsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.2.1}Buffer}{19}{subsubsection.5.3.2.1}%
+\contentsline {subsubsection}{\numberline {5.3.2.2}render\_flag\_t}{19}{subsubsection.5.3.2.2}%
+\contentsline {subsection}{\numberline {5.3.3}Function Documentation}{20}{subsection.5.3.3}%
+\contentsline {subsubsection}{\numberline {5.3.3.1}clipAgainstPlane()}{20}{subsubsection.5.3.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.3.2}operator"!=()}{20}{subsubsection.5.3.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.3.3}operator==()}{20}{subsubsection.5.3.3.3}%
+\contentsline {subsubsection}{\numberline {5.3.3.4}panel\_refresh\_callback()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{21}{subsubsection.5.3.3.4}%
+\contentsline {subsubsection}{\numberline {5.3.3.5}panel\_refresh\_callback()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{22}{subsubsection.5.3.3.5}%
+\contentsline {subsection}{\numberline {5.3.4}Variable Documentation}{22}{subsection.5.3.4}%
+\contentsline {subsubsection}{\numberline {5.3.4.1}assets}{22}{subsubsection.5.3.4.1}%
+\contentsline {subsubsection}{\numberline {5.3.4.2}logger}{22}{subsubsection.5.3.4.2}%
+\contentsline {subsubsection}{\numberline {5.3.4.3}MAIN\_TAG}{22}{subsubsection.5.3.4.3}%
+\contentsline {subsubsection}{\numberline {5.3.4.4}PI}{22}{subsubsection.5.3.4.4}%
+\contentsline {subsubsection}{\numberline {5.3.4.5}Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$::offset\_cache0}{22}{subsubsection.5.3.4.5}%
+\contentsline {subsubsection}{\numberline {5.3.4.6}Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$::offset\_cache1}{23}{subsubsection.5.3.4.6}%
+\contentsline {subsubsection}{\numberline {5.3.4.7}Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$::z\_cache0}{23}{subsubsection.5.3.4.7}%
+\contentsline {subsubsection}{\numberline {5.3.4.8}Rasterizer$<$ COLOR\_BUFFER\_TYPE $>$::z\_cache1}{23}{subsubsection.5.3.4.8}%
+\contentsline {subsubsection}{\numberline {5.3.4.9}RENDERER\_TAG}{23}{subsubsection.5.3.4.9}%
+\contentsline {subsubsection}{\numberline {5.3.4.10}serializer}{23}{subsubsection.5.3.4.10}%
+\contentsline {subsubsection}{\numberline {5.3.4.11}TAG}{23}{subsubsection.5.3.4.11}%
+\contentsline {subsubsection}{\numberline {5.3.4.12}thread\_pool}{23}{subsubsection.5.3.4.12}%
+\contentsline {chapter}{\numberline {6}Class Documentation}{25}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Ragot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Assets Class Reference}{25}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Detailed Description}{26}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Constructor \& Destructor Documentation}{27}{subsection.6.1.2}%
+\contentsline {subsubsection}{\numberline {6.1.2.1}Assets()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{27}{subsubsection.6.1.2.1}%
+\contentsline {subsubsection}{\numberline {6.1.2.2}Assets()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{27}{subsubsection.6.1.2.2}%
+\contentsline {subsubsection}{\numberline {6.1.2.3}Assets()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{28}{subsubsection.6.1.2.3}%
+\contentsline {subsection}{\numberline {6.1.3}Member Function Documentation}{28}{subsection.6.1.3}%
+\contentsline {subsubsection}{\numberline {6.1.3.1}get\_asset\_path()}{28}{subsubsection.6.1.3.1}%
+\contentsline {subsubsection}{\numberline {6.1.3.2}initialize()}{28}{subsubsection.6.1.3.2}%
+\contentsline {subsubsection}{\numberline {6.1.3.3}instance()}{29}{subsubsection.6.1.3.3}%
+\contentsline {subsubsection}{\numberline {6.1.3.4}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{29}{subsubsection.6.1.3.4}%
+\contentsline {subsubsection}{\numberline {6.1.3.5}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{29}{subsubsection.6.1.3.5}%
+\contentsline {subsection}{\numberline {6.1.4}Member Data Documentation}{30}{subsection.6.1.4}%
+\contentsline {subsubsection}{\numberline {6.1.4.1}base\_path}{30}{subsubsection.6.1.4.1}%
+\contentsline {section}{\numberline {6.2}Ragot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Camera Class Reference}{30}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Detailed Description}{36}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Member Typedef Documentation}{36}{subsection.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.2.1}Matrix4x4}{36}{subsubsection.6.2.2.1}%
+\contentsline {subsection}{\numberline {6.2.3}Constructor \& Destructor Documentation}{37}{subsection.6.2.3}%
+\contentsline {subsubsection}{\numberline {6.2.3.1}Camera()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{37}{subsubsection.6.2.3.1}%
+\contentsline {subsubsection}{\numberline {6.2.3.2}Camera()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{37}{subsubsection.6.2.3.2}%
+\contentsline {subsubsection}{\numberline {6.2.3.3}$\sim $Camera()}{37}{subsubsection.6.2.3.3}%
+\contentsline {subsection}{\numberline {6.2.4}Member Function Documentation}{37}{subsection.6.2.4}%
+\contentsline {subsubsection}{\numberline {6.2.4.1}calculate\_normal()}{37}{subsubsection.6.2.4.1}%
+\contentsline {subsubsection}{\numberline {6.2.4.2}get\_aspect\_ratio()}{38}{subsubsection.6.2.4.2}%
+\contentsline {subsubsection}{\numberline {6.2.4.3}get\_far\_plane()}{38}{subsubsection.6.2.4.3}%
+\contentsline {subsubsection}{\numberline {6.2.4.4}get\_fov()}{38}{subsubsection.6.2.4.4}%
+\contentsline {subsubsection}{\numberline {6.2.4.5}get\_location()}{39}{subsubsection.6.2.4.5}%
+\contentsline {subsubsection}{\numberline {6.2.4.6}get\_near\_plane()}{39}{subsubsection.6.2.4.6}%
+\contentsline {subsubsection}{\numberline {6.2.4.7}get\_projection\_matrix()}{39}{subsubsection.6.2.4.7}%
+\contentsline {subsubsection}{\numberline {6.2.4.8}get\_right\_direction()}{40}{subsubsection.6.2.4.8}%
+\contentsline {subsubsection}{\numberline {6.2.4.9}get\_target()}{40}{subsubsection.6.2.4.9}%
+\contentsline {subsubsection}{\numberline {6.2.4.10}get\_up\_direction()}{41}{subsubsection.6.2.4.10}%
+\contentsline {subsubsection}{\numberline {6.2.4.11}get\_view\_direction()}{41}{subsubsection.6.2.4.11}%
+\contentsline {subsubsection}{\numberline {6.2.4.12}get\_view\_matrix()}{42}{subsubsection.6.2.4.12}%
+\contentsline {subsubsection}{\numberline {6.2.4.13}get\_vp\_matrix()}{42}{subsubsection.6.2.4.13}%
+\contentsline {subsubsection}{\numberline {6.2.4.14}is\_dirty()}{43}{subsubsection.6.2.4.14}%
+\contentsline {subsubsection}{\numberline {6.2.4.15}is\_face\_visible()}{43}{subsubsection.6.2.4.15}%
+\contentsline {subsubsection}{\numberline {6.2.4.16}log\_camera\_info()}{44}{subsubsection.6.2.4.16}%
+\contentsline {subsubsection}{\numberline {6.2.4.17}project\_to\_ndc()}{44}{subsubsection.6.2.4.17}%
+\contentsline {subsubsection}{\numberline {6.2.4.18}set\_aspect\_ratio()}{45}{subsubsection.6.2.4.18}%
+\contentsline {subsubsection}{\numberline {6.2.4.19}set\_far\_plane()}{45}{subsubsection.6.2.4.19}%
+\contentsline {subsubsection}{\numberline {6.2.4.20}set\_fov()}{45}{subsubsection.6.2.4.20}%
+\contentsline {subsubsection}{\numberline {6.2.4.21}set\_location()}{45}{subsubsection.6.2.4.21}%
+\contentsline {subsubsection}{\numberline {6.2.4.22}set\_near\_plane()}{46}{subsubsection.6.2.4.22}%
+\contentsline {subsubsection}{\numberline {6.2.4.23}set\_target()}{46}{subsubsection.6.2.4.23}%
+\contentsline {subsection}{\numberline {6.2.5}Member Data Documentation}{47}{subsection.6.2.5}%
+\contentsline {subsubsection}{\numberline {6.2.5.1}aspect\_ratio}{47}{subsubsection.6.2.5.1}%
+\contentsline {subsubsection}{\numberline {6.2.5.2}CAMERA\_TAG}{47}{subsubsection.6.2.5.2}%
+\contentsline {subsubsection}{\numberline {6.2.5.3}far\_plane}{47}{subsubsection.6.2.5.3}%
+\contentsline {subsubsection}{\numberline {6.2.5.4}fov}{47}{subsubsection.6.2.5.4}%
+\contentsline {subsubsection}{\numberline {6.2.5.5}near\_plane}{48}{subsubsection.6.2.5.5}%
+\contentsline {subsubsection}{\numberline {6.2.5.6}projDirty}{48}{subsubsection.6.2.5.6}%
+\contentsline {subsubsection}{\numberline {6.2.5.7}projection\_matrix}{48}{subsubsection.6.2.5.7}%
+\contentsline {subsubsection}{\numberline {6.2.5.8}target}{48}{subsubsection.6.2.5.8}%
+\contentsline {subsubsection}{\numberline {6.2.5.9}view\_matrix}{48}{subsubsection.6.2.5.9}%
+\contentsline {subsubsection}{\numberline {6.2.5.10}viewDirty}{48}{subsubsection.6.2.5.10}%
+\contentsline {subsubsection}{\numberline {6.2.5.11}vp\_matrix}{48}{subsubsection.6.2.5.11}%
+\contentsline {subsubsection}{\numberline {6.2.5.12}vpDirty}{49}{subsubsection.6.2.5.12}%
+\contentsline {section}{\numberline {6.3}Ragot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Camera\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Transform Struct Reference}{49}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Detailed Description}{50}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Member Data Documentation}{50}{subsection.6.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.2.1}dir\_x}{50}{subsubsection.6.3.2.1}%
+\contentsline {subsubsection}{\numberline {6.3.2.2}dir\_y}{50}{subsubsection.6.3.2.2}%
+\contentsline {subsubsection}{\numberline {6.3.2.3}dir\_z}{50}{subsubsection.6.3.2.3}%
+\contentsline {subsubsection}{\numberline {6.3.2.4}x}{50}{subsubsection.6.3.2.4}%
+\contentsline {subsubsection}{\numberline {6.3.2.5}y}{50}{subsubsection.6.3.2.5}%
+\contentsline {subsubsection}{\numberline {6.3.2.6}z}{50}{subsubsection.6.3.2.6}%
+\contentsline {section}{\numberline {6.4}Ragot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Component Class Reference}{51}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Detailed Description}{54}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Constructor \& Destructor Documentation}{55}{subsection.6.4.2}%
+\contentsline {subsubsection}{\numberline {6.4.2.1}Component()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{55}{subsubsection.6.4.2.1}%
+\contentsline {subsubsection}{\numberline {6.4.2.2}$\sim $Component()}{55}{subsubsection.6.4.2.2}%
+\contentsline {subsubsection}{\numberline {6.4.2.3}Component()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{55}{subsubsection.6.4.2.3}%
+\contentsline {subsubsection}{\numberline {6.4.2.4}Component()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{56}{subsubsection.6.4.2.4}%
+\contentsline {subsection}{\numberline {6.4.3}Member Function Documentation}{56}{subsection.6.4.3}%
+\contentsline {subsubsection}{\numberline {6.4.3.1}add\_component()}{56}{subsubsection.6.4.3.1}%
+\contentsline {subsubsection}{\numberline {6.4.3.2}get\_components()}{56}{subsubsection.6.4.3.2}%
+\contentsline {subsubsection}{\numberline {6.4.3.3}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{57}{subsubsection.6.4.3.3}%
+\contentsline {subsubsection}{\numberline {6.4.3.4}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{57}{subsubsection.6.4.3.4}%
+\contentsline {subsubsection}{\numberline {6.4.3.5}remove\_component()}{57}{subsubsection.6.4.3.5}%
+\contentsline {subsection}{\numberline {6.4.4}Member Data Documentation}{58}{subsection.6.4.4}%
+\contentsline {subsubsection}{\numberline {6.4.4.1}components}{58}{subsubsection.6.4.4.1}%
+\contentsline {section}{\numberline {6.5}Ragot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::coordinates\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{58}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Detailed Description}{58}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}Member Data Documentation}{59}{subsection.6.5.2}%
+\contentsline {subsubsection}{\numberline {6.5.2.1}x}{59}{subsubsection.6.5.2.1}%
+\contentsline {subsubsection}{\numberline {6.5.2.2}y}{59}{subsubsection.6.5.2.2}%
+\contentsline {section}{\numberline {6.6}Ragot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Driver\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ST7789 Class Reference}{59}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}Detailed Description}{63}{subsection.6.6.1}%
+\contentsline {subsection}{\numberline {6.6.2}Constructor \& Destructor Documentation}{63}{subsection.6.6.2}%
+\contentsline {subsubsection}{\numberline {6.6.2.1}Driver\_ST7789()}{63}{subsubsection.6.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.6.2.2}$\sim $Driver\_ST7789()}{63}{subsubsection.6.6.2.2}%
+\contentsline {subsection}{\numberline {6.6.3}Member Function Documentation}{63}{subsection.6.6.3}%
+\contentsline {subsubsection}{\numberline {6.6.3.1}bsp\_init\_lcd\_backlight()}{63}{subsubsection.6.6.3.1}%
+\contentsline {subsubsection}{\numberline {6.6.3.2}deinit()}{64}{subsubsection.6.6.3.2}%
+\contentsline {subsubsection}{\numberline {6.6.3.3}init()}{64}{subsubsection.6.6.3.3}%
+\contentsline {subsubsection}{\numberline {6.6.3.4}refresh\_frame\_buffer()}{65}{subsubsection.6.6.3.4}%
+\contentsline {subsubsection}{\numberline {6.6.3.5}send\_frame\_buffer()}{65}{subsubsection.6.6.3.5}%
+\contentsline {subsubsection}{\numberline {6.6.3.6}set\_pixel()}{66}{subsubsection.6.6.3.6}%
+\contentsline {subsection}{\numberline {6.6.4}Member Data Documentation}{66}{subsection.6.6.4}%
+\contentsline {subsubsection}{\numberline {6.6.4.1}refresh\_semaphore}{66}{subsubsection.6.6.4.1}%
+\contentsline {subsubsection}{\numberline {6.6.4.2}TAG}{66}{subsubsection.6.6.4.2}%
+\contentsline {section}{\numberline {6.7}Ragot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Driver\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}EK79007 Class Reference}{67}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}Detailed Description}{70}{subsection.6.7.1}%
+\contentsline {subsection}{\numberline {6.7.2}Constructor \& Destructor Documentation}{70}{subsection.6.7.2}%
+\contentsline {subsubsection}{\numberline {6.7.2.1}DriverEK79007()}{70}{subsubsection.6.7.2.1}%
+\contentsline {subsubsection}{\numberline {6.7.2.2}$\sim $DriverEK79007()}{71}{subsubsection.6.7.2.2}%
+\contentsline {subsection}{\numberline {6.7.3}Member Function Documentation}{71}{subsection.6.7.3}%
+\contentsline {subsubsection}{\numberline {6.7.3.1}bsp\_enable\_dsi\_phy\_power()}{71}{subsubsection.6.7.3.1}%
+\contentsline {subsubsection}{\numberline {6.7.3.2}bsp\_init\_lcd\_backlight()}{71}{subsubsection.6.7.3.2}%
+\contentsline {subsubsection}{\numberline {6.7.3.3}deinit()}{72}{subsubsection.6.7.3.3}%
+\contentsline {subsubsection}{\numberline {6.7.3.4}init()}{72}{subsubsection.6.7.3.4}%
+\contentsline {subsubsection}{\numberline {6.7.3.5}refresh\_frame\_buffer()}{73}{subsubsection.6.7.3.5}%
+\contentsline {subsubsection}{\numberline {6.7.3.6}send\_frame\_buffer()}{74}{subsubsection.6.7.3.6}%
+\contentsline {subsubsection}{\numberline {6.7.3.7}set\_pixel()}{74}{subsubsection.6.7.3.7}%
+\contentsline {subsection}{\numberline {6.7.4}Member Data Documentation}{75}{subsection.6.7.4}%
+\contentsline {subsubsection}{\numberline {6.7.4.1}hsync\_back\_porch}{75}{subsubsection.6.7.4.1}%
+\contentsline {subsubsection}{\numberline {6.7.4.2}hsync\_front\_porch}{75}{subsubsection.6.7.4.2}%
+\contentsline {subsubsection}{\numberline {6.7.4.3}hsync\_pulse\_width}{75}{subsubsection.6.7.4.3}%
+\contentsline {subsubsection}{\numberline {6.7.4.4}mipi\_dsi\_max\_data\_rate\_mbps}{75}{subsubsection.6.7.4.4}%
+\contentsline {subsubsection}{\numberline {6.7.4.5}mipi\_lane\_num}{75}{subsubsection.6.7.4.5}%
+\contentsline {subsubsection}{\numberline {6.7.4.6}panel\_clk\_freq\_mhz}{76}{subsubsection.6.7.4.6}%
+\contentsline {subsubsection}{\numberline {6.7.4.7}refresh\_semaphore}{76}{subsubsection.6.7.4.7}%
+\contentsline {subsubsection}{\numberline {6.7.4.8}vsync\_back\_porch}{76}{subsubsection.6.7.4.8}%
+\contentsline {subsubsection}{\numberline {6.7.4.9}vsync\_front\_porch}{76}{subsubsection.6.7.4.9}%
+\contentsline {subsubsection}{\numberline {6.7.4.10}vsync\_pulse\_width}{76}{subsubsection.6.7.4.10}%
+\contentsline {section}{\numberline {6.8}Ragot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Driver\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LCD Class Reference}{77}{section.6.8}%
+\contentsline {subsection}{\numberline {6.8.1}Detailed Description}{79}{subsection.6.8.1}%
+\contentsline {subsection}{\numberline {6.8.2}Constructor \& Destructor Documentation}{79}{subsection.6.8.2}%
+\contentsline {subsubsection}{\numberline {6.8.2.1}DriverLCD()}{79}{subsubsection.6.8.2.1}%
+\contentsline {subsubsection}{\numberline {6.8.2.2}$\sim $DriverLCD()}{80}{subsubsection.6.8.2.2}%
+\contentsline {subsection}{\numberline {6.8.3}Member Function Documentation}{80}{subsection.6.8.3}%
+\contentsline {subsubsection}{\numberline {6.8.3.1}deinit()}{80}{subsubsection.6.8.3.1}%
+\contentsline {subsubsection}{\numberline {6.8.3.2}get\_handler()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{80}{subsubsection.6.8.3.2}%
+\contentsline {subsubsection}{\numberline {6.8.3.3}get\_handler()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{80}{subsubsection.6.8.3.3}%
+\contentsline {subsubsection}{\numberline {6.8.3.4}get\_height()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{81}{subsubsection.6.8.3.4}%
+\contentsline {subsubsection}{\numberline {6.8.3.5}get\_height()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{81}{subsubsection.6.8.3.5}%
+\contentsline {subsubsection}{\numberline {6.8.3.6}get\_pixel\_format()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{81}{subsubsection.6.8.3.6}%
+\contentsline {subsubsection}{\numberline {6.8.3.7}get\_pixel\_format()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{81}{subsubsection.6.8.3.7}%
+\contentsline {subsubsection}{\numberline {6.8.3.8}get\_width()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{81}{subsubsection.6.8.3.8}%
+\contentsline {subsubsection}{\numberline {6.8.3.9}get\_width()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{82}{subsubsection.6.8.3.9}%
+\contentsline {subsubsection}{\numberline {6.8.3.10}init()}{82}{subsubsection.6.8.3.10}%
+\contentsline {subsubsection}{\numberline {6.8.3.11}is\_initialized()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{82}{subsubsection.6.8.3.11}%
+\contentsline {subsubsection}{\numberline {6.8.3.12}is\_initialized()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{82}{subsubsection.6.8.3.12}%
+\contentsline {subsubsection}{\numberline {6.8.3.13}send\_frame\_buffer()}{82}{subsubsection.6.8.3.13}%
+\contentsline {subsubsection}{\numberline {6.8.3.14}set\_pixel()}{83}{subsubsection.6.8.3.14}%
+\contentsline {subsection}{\numberline {6.8.4}Member Data Documentation}{83}{subsection.6.8.4}%
+\contentsline {subsubsection}{\numberline {6.8.4.1}handler}{83}{subsubsection.6.8.4.1}%
+\contentsline {subsubsection}{\numberline {6.8.4.2}height}{83}{subsubsection.6.8.4.2}%
+\contentsline {subsubsection}{\numberline {6.8.4.3}initialized}{84}{subsubsection.6.8.4.3}%
+\contentsline {subsubsection}{\numberline {6.8.4.4}pixel\_format}{84}{subsubsection.6.8.4.4}%
+\contentsline {subsubsection}{\numberline {6.8.4.5}width}{84}{subsubsection.6.8.4.5}%
+\contentsline {section}{\numberline {6.9}Ragot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Extrude\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mesh Class Reference}{84}{section.6.9}%
+\contentsline {subsection}{\numberline {6.9.1}Detailed Description}{90}{subsection.6.9.1}%
+\contentsline {subsection}{\numberline {6.9.2}Constructor \& Destructor Documentation}{90}{subsection.6.9.2}%
+\contentsline {subsubsection}{\numberline {6.9.2.1}ExtrudeMesh()}{90}{subsubsection.6.9.2.1}%
+\contentsline {subsubsection}{\numberline {6.9.2.2}$\sim $ExtrudeMesh()}{90}{subsubsection.6.9.2.2}%
+\contentsline {subsection}{\numberline {6.9.3}Member Function Documentation}{91}{subsection.6.9.3}%
+\contentsline {subsubsection}{\numberline {6.9.3.1}are\_vertices\_coplanar()}{91}{subsubsection.6.9.3.1}%
+\contentsline {subsubsection}{\numberline {6.9.3.2}generate\_faces()}{92}{subsubsection.6.9.3.2}%
+\contentsline {subsubsection}{\numberline {6.9.3.3}generate\_vertices()}{92}{subsubsection.6.9.3.3}%
+\contentsline {subsubsection}{\numberline {6.9.3.4}log\_mesh\_info()}{93}{subsubsection.6.9.3.4}%
+\contentsline {subsection}{\numberline {6.9.4}Member Data Documentation}{93}{subsection.6.9.4}%
+\contentsline {subsubsection}{\numberline {6.9.4.1}cam}{93}{subsubsection.6.9.4.1}%
+\contentsline {subsubsection}{\numberline {6.9.4.2}camPos}{93}{subsubsection.6.9.4.2}%
+\contentsline {subsubsection}{\numberline {6.9.4.3}EXTRUDE\_TAG}{94}{subsubsection.6.9.4.3}%
+\contentsline {subsubsection}{\numberline {6.9.4.4}faces\_can\_be\_quads}{94}{subsubsection.6.9.4.4}%
+\contentsline {subsubsection}{\numberline {6.9.4.5}height}{94}{subsubsection.6.9.4.5}%
+\contentsline {subsubsection}{\numberline {6.9.4.6}planes}{94}{subsubsection.6.9.4.6}%
+\contentsline {section}{\numberline {6.10}Ragot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::face\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{95}{section.6.10}%
+\contentsline {subsection}{\numberline {6.10.1}Detailed Description}{95}{subsection.6.10.1}%
+\contentsline {subsection}{\numberline {6.10.2}Member Data Documentation}{95}{subsection.6.10.2}%
+\contentsline {subsubsection}{\numberline {6.10.2.1}is\_quad}{95}{subsubsection.6.10.2.1}%
+\contentsline {subsubsection}{\numberline {6.10.2.2}v1}{96}{subsubsection.6.10.2.2}%
+\contentsline {subsubsection}{\numberline {6.10.2.3}v2}{96}{subsubsection.6.10.2.3}%
+\contentsline {subsubsection}{\numberline {6.10.2.4}v3}{96}{subsubsection.6.10.2.4}%
+\contentsline {subsubsection}{\numberline {6.10.2.5}v4}{96}{subsubsection.6.10.2.5}%
+\contentsline {section}{\numberline {6.11}Ragot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Fragment\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Shader Class Reference}{96}{section.6.11}%
+\contentsline {subsection}{\numberline {6.11.1}Detailed Description}{99}{subsection.6.11.1}%
+\contentsline {subsection}{\numberline {6.11.2}Constructor \& Destructor Documentation}{99}{subsection.6.11.2}%
+\contentsline {subsubsection}{\numberline {6.11.2.1}Fragment\_Shader()}{99}{subsubsection.6.11.2.1}%
+\contentsline {section}{\numberline {6.12}Ragot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Frame\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Buffer$<$ Color $>$ Class Template Reference}{100}{section.6.12}%
+\contentsline {subsection}{\numberline {6.12.1}Detailed Description}{103}{subsection.6.12.1}%
+\contentsline {subsection}{\numberline {6.12.2}Member Typedef Documentation}{103}{subsection.6.12.2}%
+\contentsline {subsubsection}{\numberline {6.12.2.1}ColorVector}{103}{subsubsection.6.12.2.1}%
+\contentsline {subsubsection}{\numberline {6.12.2.2}TYPE}{103}{subsubsection.6.12.2.2}%
+\contentsline {subsection}{\numberline {6.12.3}Constructor \& Destructor Documentation}{104}{subsection.6.12.3}%
+\contentsline {subsubsection}{\numberline {6.12.3.1}FrameBuffer()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{104}{subsubsection.6.12.3.1}%
+\contentsline {subsubsection}{\numberline {6.12.3.2}FrameBuffer()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{105}{subsubsection.6.12.3.2}%
+\contentsline {subsubsection}{\numberline {6.12.3.3}$\sim $FrameBuffer()}{106}{subsubsection.6.12.3.3}%
+\contentsline {subsubsection}{\numberline {6.12.3.4}FrameBuffer()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{106}{subsubsection.6.12.3.4}%
+\contentsline {subsubsection}{\numberline {6.12.3.5}FrameBuffer()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{106}{subsubsection.6.12.3.5}%
+\contentsline {subsection}{\numberline {6.12.4}Member Function Documentation}{107}{subsection.6.12.4}%
+\contentsline {subsubsection}{\numberline {6.12.4.1}blit\_to\_window()}{107}{subsubsection.6.12.4.1}%
+\contentsline {subsubsection}{\numberline {6.12.4.2}clear\_buffer()}{107}{subsubsection.6.12.4.2}%
+\contentsline {subsubsection}{\numberline {6.12.4.3}fill()}{107}{subsubsection.6.12.4.3}%
+\contentsline {subsubsection}{\numberline {6.12.4.4}get\_buffer()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{108}{subsubsection.6.12.4.4}%
+\contentsline {subsubsection}{\numberline {6.12.4.5}get\_buffer()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{108}{subsubsection.6.12.4.5}%
+\contentsline {subsubsection}{\numberline {6.12.4.6}get\_height()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{108}{subsubsection.6.12.4.6}%
+\contentsline {subsubsection}{\numberline {6.12.4.7}get\_height()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{109}{subsubsection.6.12.4.7}%
+\contentsline {subsubsection}{\numberline {6.12.4.8}get\_pixel()}{109}{subsubsection.6.12.4.8}%
+\contentsline {subsubsection}{\numberline {6.12.4.9}get\_width()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{109}{subsubsection.6.12.4.9}%
+\contentsline {subsubsection}{\numberline {6.12.4.10}get\_width()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{110}{subsubsection.6.12.4.10}%
+\contentsline {subsubsection}{\numberline {6.12.4.11}getGLFormat()}{110}{subsubsection.6.12.4.11}%
+\contentsline {subsubsection}{\numberline {6.12.4.12}getGLTex()}{110}{subsubsection.6.12.4.12}%
+\contentsline {subsubsection}{\numberline {6.12.4.13}getGLType()}{110}{subsubsection.6.12.4.13}%
+\contentsline {subsubsection}{\numberline {6.12.4.14}initGLTexture()}{111}{subsubsection.6.12.4.14}%
+\contentsline {subsubsection}{\numberline {6.12.4.15}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{111}{subsubsection.6.12.4.15}%
+\contentsline {subsubsection}{\numberline {6.12.4.16}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{112}{subsubsection.6.12.4.16}%
+\contentsline {subsubsection}{\numberline {6.12.4.17}sendGL()}{112}{subsubsection.6.12.4.17}%
+\contentsline {subsubsection}{\numberline {6.12.4.18}set\_color()}{112}{subsubsection.6.12.4.18}%
+\contentsline {subsubsection}{\numberline {6.12.4.19}set\_pixel()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{112}{subsubsection.6.12.4.19}%
+\contentsline {subsubsection}{\numberline {6.12.4.20}set\_pixel()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{113}{subsubsection.6.12.4.20}%
+\contentsline {subsubsection}{\numberline {6.12.4.21}set\_pixel()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{113}{subsubsection.6.12.4.21}%
+\contentsline {subsubsection}{\numberline {6.12.4.22}swap\_buffers()}{113}{subsubsection.6.12.4.22}%
+\contentsline {subsection}{\numberline {6.12.5}Member Data Documentation}{113}{subsection.6.12.5}%
+\contentsline {subsubsection}{\numberline {6.12.5.1}buffer\_1}{113}{subsubsection.6.12.5.1}%
+\contentsline {subsubsection}{\numberline {6.12.5.2}buffer\_2}{114}{subsubsection.6.12.5.2}%
+\contentsline {subsubsection}{\numberline {6.12.5.3}color}{114}{subsubsection.6.12.5.3}%
+\contentsline {subsubsection}{\numberline {6.12.5.4}current\_buffer}{114}{subsubsection.6.12.5.4}%
+\contentsline {subsubsection}{\numberline {6.12.5.5}double\_buffer}{114}{subsubsection.6.12.5.5}%
+\contentsline {subsubsection}{\numberline {6.12.5.6}gl\_tex}{114}{subsubsection.6.12.5.6}%
+\contentsline {subsubsection}{\numberline {6.12.5.7}height}{114}{subsubsection.6.12.5.7}%
+\contentsline {subsubsection}{\numberline {6.12.5.8}next\_buffer}{115}{subsubsection.6.12.5.8}%
+\contentsline {subsubsection}{\numberline {6.12.5.9}width}{115}{subsubsection.6.12.5.9}%
+\contentsline {section}{\numberline {6.13}Ragot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Logger Class Reference}{115}{section.6.13}%
+\contentsline {subsection}{\numberline {6.13.1}Detailed Description}{116}{subsection.6.13.1}%
+\contentsline {subsection}{\numberline {6.13.2}Constructor \& Destructor Documentation}{117}{subsection.6.13.2}%
+\contentsline {subsubsection}{\numberline {6.13.2.1}Logger()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{117}{subsubsection.6.13.2.1}%
+\contentsline {subsubsection}{\numberline {6.13.2.2}$\sim $Logger()}{117}{subsubsection.6.13.2.2}%
+\contentsline {subsubsection}{\numberline {6.13.2.3}Logger()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{117}{subsubsection.6.13.2.3}%
+\contentsline {subsubsection}{\numberline {6.13.2.4}Logger()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{118}{subsubsection.6.13.2.4}%
+\contentsline {subsection}{\numberline {6.13.3}Member Function Documentation}{118}{subsection.6.13.3}%
+\contentsline {subsubsection}{\numberline {6.13.3.1}getLogLevel()}{118}{subsubsection.6.13.3.1}%
+\contentsline {subsubsection}{\numberline {6.13.3.2}instance()}{118}{subsubsection.6.13.3.2}%
+\contentsline {subsubsection}{\numberline {6.13.3.3}Log()}{119}{subsubsection.6.13.3.3}%
+\contentsline {subsubsection}{\numberline {6.13.3.4}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{120}{subsubsection.6.13.3.4}%
+\contentsline {subsubsection}{\numberline {6.13.3.5}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{120}{subsubsection.6.13.3.5}%
+\contentsline {subsubsection}{\numberline {6.13.3.6}setLogLevel()}{120}{subsubsection.6.13.3.6}%
+\contentsline {subsection}{\numberline {6.13.4}Member Data Documentation}{121}{subsection.6.13.4}%
+\contentsline {subsubsection}{\numberline {6.13.4.1}logLevel}{121}{subsubsection.6.13.4.1}%
+\contentsline {section}{\numberline {6.14}Ragot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Mesh Class Reference}{121}{section.6.14}%
+\contentsline {subsection}{\numberline {6.14.1}Detailed Description}{126}{subsection.6.14.1}%
+\contentsline {subsection}{\numberline {6.14.2}Constructor \& Destructor Documentation}{126}{subsection.6.14.2}%
+\contentsline {subsubsection}{\numberline {6.14.2.1}Mesh()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{126}{subsubsection.6.14.2.1}%
+\contentsline {subsubsection}{\numberline {6.14.2.2}$\sim $Mesh()}{127}{subsubsection.6.14.2.2}%
+\contentsline {subsubsection}{\numberline {6.14.2.3}Mesh()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{127}{subsubsection.6.14.2.3}%
+\contentsline {subsection}{\numberline {6.14.3}Member Function Documentation}{127}{subsection.6.14.3}%
+\contentsline {subsubsection}{\numberline {6.14.3.1}apply\_transform\_to\_vertices()}{127}{subsubsection.6.14.3.1}%
+\contentsline {subsubsection}{\numberline {6.14.3.2}generate\_faces()}{128}{subsubsection.6.14.3.2}%
+\contentsline {subsubsection}{\numberline {6.14.3.3}generate\_vertices()}{128}{subsubsection.6.14.3.3}%
+\contentsline {subsubsection}{\numberline {6.14.3.4}get\_color()}{129}{subsubsection.6.14.3.4}%
+\contentsline {subsubsection}{\numberline {6.14.3.5}get\_faces()}{129}{subsubsection.6.14.3.5}%
+\contentsline {subsubsection}{\numberline {6.14.3.6}get\_total\_vertices()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{129}{subsubsection.6.14.3.6}%
+\contentsline {subsubsection}{\numberline {6.14.3.7}get\_total\_vertices()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{130}{subsubsection.6.14.3.7}%
+\contentsline {subsubsection}{\numberline {6.14.3.8}get\_vertices()}{130}{subsubsection.6.14.3.8}%
+\contentsline {subsubsection}{\numberline {6.14.3.9}recalculate()}{131}{subsubsection.6.14.3.9}%
+\contentsline {subsubsection}{\numberline {6.14.3.10}set\_color()}{131}{subsubsection.6.14.3.10}%
+\contentsline {subsection}{\numberline {6.14.4}Member Data Documentation}{131}{subsection.6.14.4}%
+\contentsline {subsubsection}{\numberline {6.14.4.1}color}{131}{subsubsection.6.14.4.1}%
+\contentsline {subsubsection}{\numberline {6.14.4.2}faces}{131}{subsubsection.6.14.4.2}%
+\contentsline {subsubsection}{\numberline {6.14.4.3}mesh\_info}{132}{subsubsection.6.14.4.3}%
+\contentsline {subsubsection}{\numberline {6.14.4.4}slices}{132}{subsubsection.6.14.4.4}%
+\contentsline {subsubsection}{\numberline {6.14.4.5}vertices}{132}{subsubsection.6.14.4.5}%
+\contentsline {section}{\numberline {6.15}Ragot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::mesh\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}info\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{132}{section.6.15}%
+\contentsline {subsection}{\numberline {6.15.1}Detailed Description}{133}{subsection.6.15.1}%
+\contentsline {subsection}{\numberline {6.15.2}Constructor \& Destructor Documentation}{133}{subsection.6.15.2}%
+\contentsline {subsubsection}{\numberline {6.15.2.1}mesh\_info\_t()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{133}{subsubsection.6.15.2.1}%
+\contentsline {subsubsection}{\numberline {6.15.2.2}mesh\_info\_t()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{133}{subsubsection.6.15.2.2}%
+\contentsline {subsection}{\numberline {6.15.3}Member Data Documentation}{133}{subsection.6.15.3}%
+\contentsline {subsubsection}{\numberline {6.15.3.1}coordinates}{133}{subsubsection.6.15.3.1}%
+\contentsline {subsubsection}{\numberline {6.15.3.2}render\_flag}{133}{subsubsection.6.15.3.2}%
+\contentsline {subsubsection}{\numberline {6.15.3.3}vertex\_amount}{133}{subsubsection.6.15.3.3}%
+\contentsline {section}{\numberline {6.16}Ragot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Mesh\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Serializer Class Reference}{134}{section.6.16}%
+\contentsline {subsection}{\numberline {6.16.1}Detailed Description}{135}{subsection.6.16.1}%
+\contentsline {subsection}{\numberline {6.16.2}Constructor \& Destructor Documentation}{135}{subsection.6.16.2}%
+\contentsline {subsubsection}{\numberline {6.16.2.1}MeshSerializer()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{135}{subsubsection.6.16.2.1}%
+\contentsline {subsubsection}{\numberline {6.16.2.2}MeshSerializer()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{135}{subsubsection.6.16.2.2}%
+\contentsline {subsubsection}{\numberline {6.16.2.3}MeshSerializer()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{136}{subsubsection.6.16.2.3}%
+\contentsline {subsection}{\numberline {6.16.3}Member Function Documentation}{136}{subsection.6.16.3}%
+\contentsline {subsubsection}{\numberline {6.16.3.1}instance()}{136}{subsubsection.6.16.3.1}%
+\contentsline {subsubsection}{\numberline {6.16.3.2}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{137}{subsubsection.6.16.3.2}%
+\contentsline {subsubsection}{\numberline {6.16.3.3}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{137}{subsubsection.6.16.3.3}%
+\contentsline {subsubsection}{\numberline {6.16.3.4}save\_to\_obj()}{137}{subsubsection.6.16.3.4}%
+\contentsline {section}{\numberline {6.17}Ragot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Node Class Reference}{138}{section.6.17}%
+\contentsline {subsection}{\numberline {6.17.1}Detailed Description}{142}{subsection.6.17.1}%
+\contentsline {subsection}{\numberline {6.17.2}Constructor \& Destructor Documentation}{142}{subsection.6.17.2}%
+\contentsline {subsubsection}{\numberline {6.17.2.1}Node()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{142}{subsubsection.6.17.2.1}%
+\contentsline {subsubsection}{\numberline {6.17.2.2}$\sim $Node()}{142}{subsubsection.6.17.2.2}%
+\contentsline {subsubsection}{\numberline {6.17.2.3}Node()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{143}{subsubsection.6.17.2.3}%
+\contentsline {subsubsection}{\numberline {6.17.2.4}Node()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{143}{subsubsection.6.17.2.4}%
+\contentsline {subsection}{\numberline {6.17.3}Member Function Documentation}{143}{subsection.6.17.3}%
+\contentsline {subsubsection}{\numberline {6.17.3.1}add\_child()}{143}{subsubsection.6.17.3.1}%
+\contentsline {subsubsection}{\numberline {6.17.3.2}get\_children()}{144}{subsubsection.6.17.3.2}%
+\contentsline {subsubsection}{\numberline {6.17.3.3}get\_transform\_matrix()}{144}{subsubsection.6.17.3.3}%
+\contentsline {subsubsection}{\numberline {6.17.3.4}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{145}{subsubsection.6.17.3.4}%
+\contentsline {subsubsection}{\numberline {6.17.3.5}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{145}{subsubsection.6.17.3.5}%
+\contentsline {subsubsection}{\numberline {6.17.3.6}remove\_child()}{145}{subsubsection.6.17.3.6}%
+\contentsline {subsection}{\numberline {6.17.4}Member Data Documentation}{146}{subsection.6.17.4}%
+\contentsline {subsubsection}{\numberline {6.17.4.1}children}{146}{subsubsection.6.17.4.1}%
+\contentsline {subsubsection}{\numberline {6.17.4.2}parent}{146}{subsubsection.6.17.4.2}%
+\contentsline {section}{\numberline {6.18}Ragot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Window\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Open\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}GL\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Context\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Settings Struct Reference}{146}{section.6.18}%
+\contentsline {subsection}{\numberline {6.18.1}Detailed Description}{147}{subsection.6.18.1}%
+\contentsline {subsection}{\numberline {6.18.2}Member Data Documentation}{147}{subsection.6.18.2}%
+\contentsline {subsubsection}{\numberline {6.18.2.1}core\_profile}{147}{subsubsection.6.18.2.1}%
+\contentsline {subsubsection}{\numberline {6.18.2.2}depth\_buffer\_size}{147}{subsubsection.6.18.2.2}%
+\contentsline {subsubsection}{\numberline {6.18.2.3}enable\_vsync}{147}{subsubsection.6.18.2.3}%
+\contentsline {subsubsection}{\numberline {6.18.2.4}stencil\_buffer\_size}{147}{subsubsection.6.18.2.4}%
+\contentsline {subsubsection}{\numberline {6.18.2.5}version\_major}{148}{subsubsection.6.18.2.5}%
+\contentsline {subsubsection}{\numberline {6.18.2.6}version\_minor}{148}{subsubsection.6.18.2.6}%
+\contentsline {section}{\numberline {6.19}Ragot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::PSRAMAllocator$<$ T, Flag $>$ Class Template Reference}{148}{section.6.19}%
+\contentsline {subsection}{\numberline {6.19.1}Detailed Description}{149}{subsection.6.19.1}%
+\contentsline {subsection}{\numberline {6.19.2}Member Typedef Documentation}{150}{subsection.6.19.2}%
+\contentsline {subsubsection}{\numberline {6.19.2.1}pointer}{150}{subsubsection.6.19.2.1}%
+\contentsline {subsubsection}{\numberline {6.19.2.2}size\_type}{150}{subsubsection.6.19.2.2}%
+\contentsline {subsubsection}{\numberline {6.19.2.3}value\_type}{150}{subsubsection.6.19.2.3}%
+\contentsline {subsection}{\numberline {6.19.3}Constructor \& Destructor Documentation}{150}{subsection.6.19.3}%
+\contentsline {subsubsection}{\numberline {6.19.3.1}PSRAMAllocator()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{150}{subsubsection.6.19.3.1}%
+\contentsline {subsubsection}{\numberline {6.19.3.2}PSRAMAllocator()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{150}{subsubsection.6.19.3.2}%
+\contentsline {subsection}{\numberline {6.19.4}Member Function Documentation}{151}{subsection.6.19.4}%
+\contentsline {subsubsection}{\numberline {6.19.4.1}allocate()}{151}{subsubsection.6.19.4.1}%
+\contentsline {subsubsection}{\numberline {6.19.4.2}deallocate()}{151}{subsubsection.6.19.4.2}%
+\contentsline {section}{\numberline {6.20}Ragot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Rasterizer$<$ Color $>$ Class Template Reference}{152}{section.6.20}%
+\contentsline {subsection}{\numberline {6.20.1}Detailed Description}{154}{subsection.6.20.1}%
+\contentsline {subsection}{\numberline {6.20.2}Constructor \& Destructor Documentation}{155}{subsection.6.20.2}%
+\contentsline {subsubsection}{\numberline {6.20.2.1}Rasterizer()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{155}{subsubsection.6.20.2.1}%
+\contentsline {subsubsection}{\numberline {6.20.2.2}Rasterizer()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{155}{subsubsection.6.20.2.2}%
+\contentsline {subsubsection}{\numberline {6.20.2.3}$\sim $Rasterizer()}{155}{subsubsection.6.20.2.3}%
+\contentsline {subsection}{\numberline {6.20.3}Member Function Documentation}{155}{subsection.6.20.3}%
+\contentsline {subsubsection}{\numberline {6.20.3.1}clear()}{155}{subsubsection.6.20.3.1}%
+\contentsline {subsubsection}{\numberline {6.20.3.2}fill\_convex\_polygon()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{156}{subsubsection.6.20.3.2}%
+\contentsline {subsubsection}{\numberline {6.20.3.3}fill\_convex\_polygon()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{156}{subsubsection.6.20.3.3}%
+\contentsline {subsubsection}{\numberline {6.20.3.4}fill\_convex\_polygon\_z\_buffer()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{156}{subsubsection.6.20.3.4}%
+\contentsline {subsubsection}{\numberline {6.20.3.5}fill\_convex\_polygon\_z\_buffer()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{157}{subsubsection.6.20.3.5}%
+\contentsline {subsubsection}{\numberline {6.20.3.6}fill\_row()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{157}{subsubsection.6.20.3.6}%
+\contentsline {subsubsection}{\numberline {6.20.3.7}fill\_row()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{158}{subsubsection.6.20.3.7}%
+\contentsline {subsubsection}{\numberline {6.20.3.8}fill\_row\_zbuffer()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{158}{subsubsection.6.20.3.8}%
+\contentsline {subsubsection}{\numberline {6.20.3.9}fill\_row\_zbuffer()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{159}{subsubsection.6.20.3.9}%
+\contentsline {subsubsection}{\numberline {6.20.3.10}get\_frame\_buffer()}{159}{subsubsection.6.20.3.10}%
+\contentsline {subsubsection}{\numberline {6.20.3.11}interpolate()}{159}{subsubsection.6.20.3.11}%
+\contentsline {subsubsection}{\numberline {6.20.3.12}set\_color()}{160}{subsubsection.6.20.3.12}%
+\contentsline {subsection}{\numberline {6.20.4}Member Data Documentation}{160}{subsection.6.20.4}%
+\contentsline {subsubsection}{\numberline {6.20.4.1}clear\_color}{160}{subsubsection.6.20.4.1}%
+\contentsline {subsubsection}{\numberline {6.20.4.2}color}{160}{subsubsection.6.20.4.2}%
+\contentsline {subsubsection}{\numberline {6.20.4.3}debug\_enabled}{161}{subsubsection.6.20.4.3}%
+\contentsline {subsubsection}{\numberline {6.20.4.4}frame\_buffer}{161}{subsubsection.6.20.4.4}%
+\contentsline {subsubsection}{\numberline {6.20.4.5}offset\_cache0}{161}{subsubsection.6.20.4.5}%
+\contentsline {subsubsection}{\numberline {6.20.4.6}offset\_cache1}{161}{subsubsection.6.20.4.6}%
+\contentsline {subsubsection}{\numberline {6.20.4.7}RASTER\_TAG}{161}{subsubsection.6.20.4.7}%
+\contentsline {subsubsection}{\numberline {6.20.4.8}z\_buffer}{161}{subsubsection.6.20.4.8}%
+\contentsline {subsubsection}{\numberline {6.20.4.9}z\_cache0}{161}{subsubsection.6.20.4.9}%
+\contentsline {subsubsection}{\numberline {6.20.4.10}z\_cache1}{162}{subsubsection.6.20.4.10}%
+\contentsline {section}{\numberline {6.21}Ragot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::PSRAMAllocator$<$ T, Flag $>$\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::rebind$<$ U $>$ Struct Template Reference}{162}{section.6.21}%
+\contentsline {subsection}{\numberline {6.21.1}Detailed Description}{162}{subsection.6.21.1}%
+\contentsline {subsection}{\numberline {6.21.2}Member Typedef Documentation}{163}{subsection.6.21.2}%
+\contentsline {subsubsection}{\numberline {6.21.2.1}other}{163}{subsubsection.6.21.2.1}%
+\contentsline {section}{\numberline {6.22}Ragot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Renderer Class Reference}{163}{section.6.22}%
+\contentsline {subsection}{\numberline {6.22.1}Detailed Description}{166}{subsection.6.22.1}%
+\contentsline {subsection}{\numberline {6.22.2}Constructor \& Destructor Documentation}{166}{subsection.6.22.2}%
+\contentsline {subsubsection}{\numberline {6.22.2.1}Renderer()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{166}{subsubsection.6.22.2.1}%
+\contentsline {subsubsection}{\numberline {6.22.2.2}Renderer()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{166}{subsubsection.6.22.2.2}%
+\contentsline {subsubsection}{\numberline {6.22.2.3}$\sim $Renderer()}{167}{subsubsection.6.22.2.3}%
+\contentsline {subsection}{\numberline {6.22.3}Member Function Documentation}{167}{subsection.6.22.3}%
+\contentsline {subsubsection}{\numberline {6.22.3.1}init()}{167}{subsubsection.6.22.3.1}%
+\contentsline {subsubsection}{\numberline {6.22.3.2}initFullScreenQuad()}{167}{subsubsection.6.22.3.2}%
+\contentsline {subsubsection}{\numberline {6.22.3.3}is\_frontface()}{168}{subsubsection.6.22.3.3}%
+\contentsline {subsubsection}{\numberline {6.22.3.4}render()}{168}{subsubsection.6.22.3.4}%
+\contentsline {subsubsection}{\numberline {6.22.3.5}set\_scene()}{169}{subsubsection.6.22.3.5}%
+\contentsline {subsubsection}{\numberline {6.22.3.6}start()}{169}{subsubsection.6.22.3.6}%
+\contentsline {subsubsection}{\numberline {6.22.3.7}stop()}{169}{subsubsection.6.22.3.7}%
+\contentsline {subsubsection}{\numberline {6.22.3.8}task\_render()}{170}{subsubsection.6.22.3.8}%
+\contentsline {subsection}{\numberline {6.22.4}Member Data Documentation}{170}{subsection.6.22.4}%
+\contentsline {subsubsection}{\numberline {6.22.4.1}accumulated\_time}{170}{subsubsection.6.22.4.1}%
+\contentsline {subsubsection}{\numberline {6.22.4.2}current\_scene}{170}{subsubsection.6.22.4.2}%
+\contentsline {subsubsection}{\numberline {6.22.4.3}display\_vertices}{171}{subsubsection.6.22.4.3}%
+\contentsline {subsubsection}{\numberline {6.22.4.4}fragment\_shader\_code}{171}{subsubsection.6.22.4.4}%
+\contentsline {subsubsection}{\numberline {6.22.4.5}frame\_buffer}{171}{subsubsection.6.22.4.5}%
+\contentsline {subsubsection}{\numberline {6.22.4.6}height}{171}{subsubsection.6.22.4.6}%
+\contentsline {subsubsection}{\numberline {6.22.4.7}initialized}{171}{subsubsection.6.22.4.7}%
+\contentsline {subsubsection}{\numberline {6.22.4.8}iterations}{171}{subsubsection.6.22.4.8}%
+\contentsline {subsubsection}{\numberline {6.22.4.9}number\_of\_iterations}{172}{subsubsection.6.22.4.9}%
+\contentsline {subsubsection}{\numberline {6.22.4.10}quadEBO}{172}{subsubsection.6.22.4.10}%
+\contentsline {subsubsection}{\numberline {6.22.4.11}quadShader}{172}{subsubsection.6.22.4.11}%
+\contentsline {subsubsection}{\numberline {6.22.4.12}quadVAO}{172}{subsubsection.6.22.4.12}%
+\contentsline {subsubsection}{\numberline {6.22.4.13}quadVBO}{172}{subsubsection.6.22.4.13}%
+\contentsline {subsubsection}{\numberline {6.22.4.14}rasterizer}{172}{subsubsection.6.22.4.14}%
+\contentsline {subsubsection}{\numberline {6.22.4.15}running}{172}{subsubsection.6.22.4.15}%
+\contentsline {subsubsection}{\numberline {6.22.4.16}transformed\_vertices}{173}{subsubsection.6.22.4.16}%
+\contentsline {subsubsection}{\numberline {6.22.4.17}vertex\_shader\_code}{173}{subsubsection.6.22.4.17}%
+\contentsline {subsubsection}{\numberline {6.22.4.18}width}{173}{subsubsection.6.22.4.18}%
+\contentsline {section}{\numberline {6.23}Ragot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Revolution\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mesh Class Reference}{173}{section.6.23}%
+\contentsline {subsection}{\numberline {6.23.1}Detailed Description}{178}{subsection.6.23.1}%
+\contentsline {subsection}{\numberline {6.23.2}Constructor \& Destructor Documentation}{179}{subsection.6.23.2}%
+\contentsline {subsubsection}{\numberline {6.23.2.1}RevolutionMesh()}{179}{subsubsection.6.23.2.1}%
+\contentsline {subsubsection}{\numberline {6.23.2.2}$\sim $RevolutionMesh()}{179}{subsubsection.6.23.2.2}%
+\contentsline {subsection}{\numberline {6.23.3}Member Function Documentation}{180}{subsection.6.23.3}%
+\contentsline {subsubsection}{\numberline {6.23.3.1}generate\_faces()}{180}{subsubsection.6.23.3.1}%
+\contentsline {subsubsection}{\numberline {6.23.3.2}generate\_vertices()}{180}{subsubsection.6.23.3.2}%
+\contentsline {subsection}{\numberline {6.23.4}Member Data Documentation}{181}{subsection.6.23.4}%
+\contentsline {subsubsection}{\numberline {6.23.4.1}cam}{181}{subsubsection.6.23.4.1}%
+\contentsline {subsubsection}{\numberline {6.23.4.2}faces\_can\_be\_quads}{181}{subsubsection.6.23.4.2}%
+\contentsline {subsubsection}{\numberline {6.23.4.3}PI}{181}{subsubsection.6.23.4.3}%
+\contentsline {section}{\numberline {6.24}Ragot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Scene Class Reference}{181}{section.6.24}%
+\contentsline {subsection}{\numberline {6.24.1}Detailed Description}{183}{subsection.6.24.1}%
+\contentsline {subsection}{\numberline {6.24.2}Constructor \& Destructor Documentation}{184}{subsection.6.24.2}%
+\contentsline {subsubsection}{\numberline {6.24.2.1}Scene()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{184}{subsubsection.6.24.2.1}%
+\contentsline {subsubsection}{\numberline {6.24.2.2}$\sim $Scene()}{184}{subsubsection.6.24.2.2}%
+\contentsline {subsubsection}{\numberline {6.24.2.3}Scene()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{184}{subsubsection.6.24.2.3}%
+\contentsline {subsection}{\numberline {6.24.3}Member Function Documentation}{185}{subsection.6.24.3}%
+\contentsline {subsubsection}{\numberline {6.24.3.1}add\_node()}{185}{subsubsection.6.24.3.1}%
+\contentsline {subsubsection}{\numberline {6.24.3.2}collect\_components()}{185}{subsubsection.6.24.3.2}%
+\contentsline {subsubsection}{\numberline {6.24.3.3}find\_node()}{186}{subsubsection.6.24.3.3}%
+\contentsline {subsubsection}{\numberline {6.24.3.4}get\_main\_camera()}{186}{subsubsection.6.24.3.4}%
+\contentsline {subsubsection}{\numberline {6.24.3.5}get\_root()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{186}{subsubsection.6.24.3.5}%
+\contentsline {subsubsection}{\numberline {6.24.3.6}get\_root()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{187}{subsubsection.6.24.3.6}%
+\contentsline {subsubsection}{\numberline {6.24.3.7}remove\_node()}{187}{subsubsection.6.24.3.7}%
+\contentsline {subsubsection}{\numberline {6.24.3.8}set\_main\_camera()}{187}{subsubsection.6.24.3.8}%
+\contentsline {subsubsection}{\numberline {6.24.3.9}start()}{187}{subsubsection.6.24.3.9}%
+\contentsline {subsubsection}{\numberline {6.24.3.10}stop()}{188}{subsubsection.6.24.3.10}%
+\contentsline {subsubsection}{\numberline {6.24.3.11}task\_update()}{188}{subsubsection.6.24.3.11}%
+\contentsline {subsubsection}{\numberline {6.24.3.12}traverse()}{189}{subsubsection.6.24.3.12}%
+\contentsline {subsubsection}{\numberline {6.24.3.13}update()}{189}{subsubsection.6.24.3.13}%
+\contentsline {subsection}{\numberline {6.24.4}Member Data Documentation}{190}{subsection.6.24.4}%
+\contentsline {subsubsection}{\numberline {6.24.4.1}main\_camera}{190}{subsubsection.6.24.4.1}%
+\contentsline {subsubsection}{\numberline {6.24.4.2}named\_nodes}{190}{subsubsection.6.24.4.2}%
+\contentsline {subsubsection}{\numberline {6.24.4.3}root\_node}{190}{subsubsection.6.24.4.3}%
+\contentsline {subsubsection}{\numberline {6.24.4.4}running}{190}{subsubsection.6.24.4.4}%
+\contentsline {section}{\numberline {6.25}Ragot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Shader Class Reference}{190}{section.6.25}%
+\contentsline {subsection}{\numberline {6.25.1}Detailed Description}{193}{subsection.6.25.1}%
+\contentsline {subsection}{\numberline {6.25.2}Constructor \& Destructor Documentation}{193}{subsection.6.25.2}%
+\contentsline {subsubsection}{\numberline {6.25.2.1}Shader()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{193}{subsubsection.6.25.2.1}%
+\contentsline {subsubsection}{\numberline {6.25.2.2}Shader()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{194}{subsubsection.6.25.2.2}%
+\contentsline {subsubsection}{\numberline {6.25.2.3}$\sim $Shader()}{194}{subsubsection.6.25.2.3}%
+\contentsline {subsection}{\numberline {6.25.3}Member Function Documentation}{194}{subsection.6.25.3}%
+\contentsline {subsubsection}{\numberline {6.25.3.1}compile\_shader()}{194}{subsubsection.6.25.3.1}%
+\contentsline {subsubsection}{\numberline {6.25.3.2}get\_error()}{194}{subsubsection.6.25.3.2}%
+\contentsline {subsubsection}{\numberline {6.25.3.3}get\_id()}{194}{subsubsection.6.25.3.3}%
+\contentsline {subsubsection}{\numberline {6.25.3.4}is\_ok()}{195}{subsubsection.6.25.3.4}%
+\contentsline {subsubsection}{\numberline {6.25.3.5}show\_compilation\_error()}{195}{subsubsection.6.25.3.5}%
+\contentsline {subsection}{\numberline {6.25.4}Member Data Documentation}{195}{subsection.6.25.4}%
+\contentsline {subsubsection}{\numberline {6.25.4.1}compilation\_succeeded}{195}{subsubsection.6.25.4.1}%
+\contentsline {subsubsection}{\numberline {6.25.4.2}error}{195}{subsubsection.6.25.4.2}%
+\contentsline {subsubsection}{\numberline {6.25.4.3}id}{195}{subsubsection.6.25.4.3}%
+\contentsline {section}{\numberline {6.26}Ragot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Shader\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Program Class Reference}{196}{section.6.26}%
+\contentsline {subsection}{\numberline {6.26.1}Detailed Description}{197}{subsection.6.26.1}%
+\contentsline {subsection}{\numberline {6.26.2}Constructor \& Destructor Documentation}{197}{subsection.6.26.2}%
+\contentsline {subsubsection}{\numberline {6.26.2.1}Shader\_Program()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{197}{subsubsection.6.26.2.1}%
+\contentsline {subsubsection}{\numberline {6.26.2.2}Shader\_Program()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{198}{subsubsection.6.26.2.2}%
+\contentsline {subsubsection}{\numberline {6.26.2.3}$\sim $Shader\_Program()}{198}{subsubsection.6.26.2.3}%
+\contentsline {subsubsection}{\numberline {6.26.2.4}Shader\_Program()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{198}{subsubsection.6.26.2.4}%
+\contentsline {subsection}{\numberline {6.26.3}Member Function Documentation}{199}{subsection.6.26.3}%
+\contentsline {subsubsection}{\numberline {6.26.3.1}get\_id()}{199}{subsubsection.6.26.3.1}%
+\contentsline {subsubsection}{\numberline {6.26.3.2}get\_uniform\_location()}{199}{subsubsection.6.26.3.2}%
+\contentsline {subsubsection}{\numberline {6.26.3.3}initialize()}{199}{subsubsection.6.26.3.3}%
+\contentsline {subsubsection}{\numberline {6.26.3.4}operator=()}{200}{subsubsection.6.26.3.4}%
+\contentsline {subsubsection}{\numberline {6.26.3.5}show\_linkage\_error()}{200}{subsubsection.6.26.3.5}%
+\contentsline {subsubsection}{\numberline {6.26.3.6}use()}{200}{subsubsection.6.26.3.6}%
+\contentsline {subsection}{\numberline {6.26.4}Member Data Documentation}{201}{subsection.6.26.4}%
+\contentsline {subsubsection}{\numberline {6.26.4.1}program\_id}{201}{subsubsection.6.26.4.1}%
+\contentsline {section}{\numberline {6.27}Ragot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Sync\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Queue$<$ T $>$ Class Template Reference}{201}{section.6.27}%
+\contentsline {subsection}{\numberline {6.27.1}Detailed Description}{204}{subsection.6.27.1}%
+\contentsline {subsection}{\numberline {6.27.2}Member Typedef Documentation}{204}{subsection.6.27.2}%
+\contentsline {subsubsection}{\numberline {6.27.2.1}value\_type}{204}{subsubsection.6.27.2.1}%
+\contentsline {subsection}{\numberline {6.27.3}Constructor \& Destructor Documentation}{205}{subsection.6.27.3}%
+\contentsline {subsubsection}{\numberline {6.27.3.1}Sync\_Queue()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{205}{subsubsection.6.27.3.1}%
+\contentsline {subsubsection}{\numberline {6.27.3.2}$\sim $Sync\_Queue()}{205}{subsubsection.6.27.3.2}%
+\contentsline {subsubsection}{\numberline {6.27.3.3}Sync\_Queue()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{206}{subsubsection.6.27.3.3}%
+\contentsline {subsection}{\numberline {6.27.4}Member Function Documentation}{206}{subsection.6.27.4}%
+\contentsline {subsubsection}{\numberline {6.27.4.1}back()}{206}{subsubsection.6.27.4.1}%
+\contentsline {subsubsection}{\numberline {6.27.4.2}clear()}{206}{subsubsection.6.27.4.2}%
+\contentsline {subsubsection}{\numberline {6.27.4.3}close()}{207}{subsubsection.6.27.4.3}%
+\contentsline {subsubsection}{\numberline {6.27.4.4}emplace()}{207}{subsubsection.6.27.4.4}%
+\contentsline {subsubsection}{\numberline {6.27.4.5}empty()}{207}{subsubsection.6.27.4.5}%
+\contentsline {subsubsection}{\numberline {6.27.4.6}get()}{208}{subsubsection.6.27.4.6}%
+\contentsline {subsubsection}{\numberline {6.27.4.7}operator=()}{208}{subsubsection.6.27.4.7}%
+\contentsline {subsubsection}{\numberline {6.27.4.8}push()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{209}{subsubsection.6.27.4.8}%
+\contentsline {subsubsection}{\numberline {6.27.4.9}push()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{209}{subsubsection.6.27.4.9}%
+\contentsline {subsubsection}{\numberline {6.27.4.10}size()}{209}{subsubsection.6.27.4.10}%
+\contentsline {subsubsection}{\numberline {6.27.4.11}swap()}{209}{subsubsection.6.27.4.11}%
+\contentsline {subsection}{\numberline {6.27.5}Member Data Documentation}{210}{subsection.6.27.5}%
+\contentsline {subsubsection}{\numberline {6.27.5.1}closed}{210}{subsubsection.6.27.5.1}%
+\contentsline {subsubsection}{\numberline {6.27.5.2}condition}{210}{subsubsection.6.27.5.2}%
+\contentsline {subsubsection}{\numberline {6.27.5.3}mutex}{210}{subsubsection.6.27.5.3}%
+\contentsline {subsubsection}{\numberline {6.27.5.4}queue}{210}{subsubsection.6.27.5.4}%
+\contentsline {section}{\numberline {6.28}Ragot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Thread\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Pool Class Reference}{211}{section.6.28}%
+\contentsline {subsection}{\numberline {6.28.1}Detailed Description}{213}{subsection.6.28.1}%
+\contentsline {subsection}{\numberline {6.28.2}Member Typedef Documentation}{213}{subsection.6.28.2}%
+\contentsline {subsubsection}{\numberline {6.28.2.1}Task}{213}{subsubsection.6.28.2.1}%
+\contentsline {subsection}{\numberline {6.28.3}Constructor \& Destructor Documentation}{213}{subsection.6.28.3}%
+\contentsline {subsubsection}{\numberline {6.28.3.1}Thread\_Pool()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{213}{subsubsection.6.28.3.1}%
+\contentsline {subsubsection}{\numberline {6.28.3.2}$\sim $Thread\_Pool()}{214}{subsubsection.6.28.3.2}%
+\contentsline {subsubsection}{\numberline {6.28.3.3}Thread\_Pool()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{215}{subsubsection.6.28.3.3}%
+\contentsline {subsubsection}{\numberline {6.28.3.4}Thread\_Pool()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{215}{subsubsection.6.28.3.4}%
+\contentsline {subsection}{\numberline {6.28.4}Member Function Documentation}{215}{subsection.6.28.4}%
+\contentsline {subsubsection}{\numberline {6.28.4.1}instance()}{215}{subsubsection.6.28.4.1}%
+\contentsline {subsubsection}{\numberline {6.28.4.2}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{216}{subsubsection.6.28.4.2}%
+\contentsline {subsubsection}{\numberline {6.28.4.3}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{217}{subsubsection.6.28.4.3}%
+\contentsline {subsubsection}{\numberline {6.28.4.4}start()}{217}{subsubsection.6.28.4.4}%
+\contentsline {subsubsection}{\numberline {6.28.4.5}stop()}{217}{subsubsection.6.28.4.5}%
+\contentsline {subsubsection}{\numberline {6.28.4.6}submit()}{218}{subsubsection.6.28.4.6}%
+\contentsline {subsubsection}{\numberline {6.28.4.7}submit\_with\_stop()}{218}{subsubsection.6.28.4.7}%
+\contentsline {subsubsection}{\numberline {6.28.4.8}thread\_function()}{219}{subsubsection.6.28.4.8}%
+\contentsline {subsection}{\numberline {6.28.5}Member Data Documentation}{219}{subsection.6.28.5}%
+\contentsline {subsubsection}{\numberline {6.28.5.1}sem\_mesh\_ready}{219}{subsubsection.6.28.5.1}%
+\contentsline {subsubsection}{\numberline {6.28.5.2}sem\_render\_done}{220}{subsubsection.6.28.5.2}%
+\contentsline {subsubsection}{\numberline {6.28.5.3}started}{220}{subsubsection.6.28.5.3}%
+\contentsline {subsubsection}{\numberline {6.28.5.4}tasks}{220}{subsubsection.6.28.5.4}%
+\contentsline {subsubsection}{\numberline {6.28.5.5}threads}{220}{subsubsection.6.28.5.5}%
+\contentsline {section}{\numberline {6.29}Ragot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Transform Class Reference}{221}{section.6.29}%
+\contentsline {subsection}{\numberline {6.29.1}Detailed Description}{223}{subsection.6.29.1}%
+\contentsline {subsection}{\numberline {6.29.2}Constructor \& Destructor Documentation}{223}{subsection.6.29.2}%
+\contentsline {subsubsection}{\numberline {6.29.2.1}Transform()}{223}{subsubsection.6.29.2.1}%
+\contentsline {subsubsection}{\numberline {6.29.2.2}$\sim $Transform()}{223}{subsubsection.6.29.2.2}%
+\contentsline {subsection}{\numberline {6.29.3}Member Function Documentation}{224}{subsection.6.29.3}%
+\contentsline {subsubsection}{\numberline {6.29.3.1}get\_position()}{224}{subsubsection.6.29.3.1}%
+\contentsline {subsubsection}{\numberline {6.29.3.2}get\_rotation()}{224}{subsubsection.6.29.3.2}%
+\contentsline {subsubsection}{\numberline {6.29.3.3}get\_scale()}{224}{subsubsection.6.29.3.3}%
+\contentsline {subsubsection}{\numberline {6.29.3.4}get\_transform\_matrix()}{225}{subsubsection.6.29.3.4}%
+\contentsline {subsubsection}{\numberline {6.29.3.5}is\_dirty()}{225}{subsubsection.6.29.3.5}%
+\contentsline {subsubsection}{\numberline {6.29.3.6}rotate()}{225}{subsubsection.6.29.3.6}%
+\contentsline {subsubsection}{\numberline {6.29.3.7}set\_position()}{226}{subsubsection.6.29.3.7}%
+\contentsline {subsubsection}{\numberline {6.29.3.8}set\_rotation()}{226}{subsubsection.6.29.3.8}%
+\contentsline {subsubsection}{\numberline {6.29.3.9}set\_scale()}{226}{subsubsection.6.29.3.9}%
+\contentsline {subsection}{\numberline {6.29.4}Member Data Documentation}{227}{subsection.6.29.4}%
+\contentsline {subsubsection}{\numberline {6.29.4.1}dirty}{227}{subsubsection.6.29.4.1}%
+\contentsline {subsubsection}{\numberline {6.29.4.2}position}{227}{subsubsection.6.29.4.2}%
+\contentsline {subsubsection}{\numberline {6.29.4.3}rotation}{227}{subsubsection.6.29.4.3}%
+\contentsline {subsubsection}{\numberline {6.29.4.4}scale}{227}{subsubsection.6.29.4.4}%
+\contentsline {subsubsection}{\numberline {6.29.4.5}transform\_matrix}{227}{subsubsection.6.29.4.5}%
+\contentsline {section}{\numberline {6.30}Ragot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::transform\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{228}{section.6.30}%
+\contentsline {subsection}{\numberline {6.30.1}Detailed Description}{228}{subsection.6.30.1}%
+\contentsline {subsection}{\numberline {6.30.2}Member Data Documentation}{229}{subsection.6.30.2}%
+\contentsline {subsubsection}{\numberline {6.30.2.1}alpha}{229}{subsubsection.6.30.2.1}%
+\contentsline {subsubsection}{\numberline {6.30.2.2}beta}{229}{subsubsection.6.30.2.2}%
+\contentsline {subsubsection}{\numberline {6.30.2.3}gamma}{229}{subsubsection.6.30.2.3}%
+\contentsline {subsubsection}{\numberline {6.30.2.4}scale}{229}{subsubsection.6.30.2.4}%
+\contentsline {subsubsection}{\numberline {6.30.2.5}x}{229}{subsubsection.6.30.2.5}%
+\contentsline {subsubsection}{\numberline {6.30.2.6}y}{229}{subsubsection.6.30.2.6}%
+\contentsline {subsubsection}{\numberline {6.30.2.7}z}{229}{subsubsection.6.30.2.7}%
+\contentsline {section}{\numberline {6.31}Ragot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Vertex\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Shader Class Reference}{230}{section.6.31}%
+\contentsline {subsection}{\numberline {6.31.1}Detailed Description}{232}{subsection.6.31.1}%
+\contentsline {subsection}{\numberline {6.31.2}Constructor \& Destructor Documentation}{232}{subsection.6.31.2}%
+\contentsline {subsubsection}{\numberline {6.31.2.1}Vertex\_Shader()}{232}{subsubsection.6.31.2.1}%
+\contentsline {section}{\numberline {6.32}Ragot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::vertex\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{233}{section.6.32}%
+\contentsline {subsection}{\numberline {6.32.1}Detailed Description}{233}{subsection.6.32.1}%
+\contentsline {subsection}{\numberline {6.32.2}Member Data Documentation}{233}{subsection.6.32.2}%
+\contentsline {subsubsection}{\numberline {6.32.2.1}x}{233}{subsubsection.6.32.2.1}%
+\contentsline {subsubsection}{\numberline {6.32.2.2}y}{233}{subsubsection.6.32.2.2}%
+\contentsline {subsubsection}{\numberline {6.32.2.3}z}{234}{subsubsection.6.32.2.3}%
+\contentsline {section}{\numberline {6.33}Ragot\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::Window Class Reference}{234}{section.6.33}%
+\contentsline {subsection}{\numberline {6.33.1}Detailed Description}{235}{subsection.6.33.1}%
+\contentsline {subsection}{\numberline {6.33.2}Member Enumeration Documentation}{235}{subsection.6.33.2}%
+\contentsline {subsubsection}{\numberline {6.33.2.1}Position}{235}{subsubsection.6.33.2.1}%
+\contentsline {subsection}{\numberline {6.33.3}Constructor \& Destructor Documentation}{236}{subsection.6.33.3}%
+\contentsline {subsubsection}{\numberline {6.33.3.1}Window()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{236}{subsubsection.6.33.3.1}%
+\contentsline {subsubsection}{\numberline {6.33.3.2}Window()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{237}{subsubsection.6.33.3.2}%
+\contentsline {subsubsection}{\numberline {6.33.3.3}$\sim $Window()}{237}{subsubsection.6.33.3.3}%
+\contentsline {subsubsection}{\numberline {6.33.3.4}Window()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{238}{subsubsection.6.33.3.4}%
+\contentsline {subsubsection}{\numberline {6.33.3.5}Window()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{238}{subsubsection.6.33.3.5}%
+\contentsline {subsection}{\numberline {6.33.4}Member Function Documentation}{238}{subsection.6.33.4}%
+\contentsline {subsubsection}{\numberline {6.33.4.1}get\_height()}{238}{subsubsection.6.33.4.1}%
+\contentsline {subsubsection}{\numberline {6.33.4.2}get\_width()}{239}{subsubsection.6.33.4.2}%
+\contentsline {subsubsection}{\numberline {6.33.4.3}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{239}{subsubsection.6.33.4.3}%
+\contentsline {subsubsection}{\numberline {6.33.4.4}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{239}{subsubsection.6.33.4.4}%
+\contentsline {subsubsection}{\numberline {6.33.4.5}swap\_buffers()}{240}{subsubsection.6.33.4.5}%
+\contentsline {subsection}{\numberline {6.33.5}Member Data Documentation}{240}{subsection.6.33.5}%
+\contentsline {subsubsection}{\numberline {6.33.5.1}height}{240}{subsubsection.6.33.5.1}%
+\contentsline {subsubsection}{\numberline {6.33.5.2}opengl\_context}{240}{subsubsection.6.33.5.2}%
+\contentsline {subsubsection}{\numberline {6.33.5.3}width}{240}{subsubsection.6.33.5.3}%
+\contentsline {subsubsection}{\numberline {6.33.5.4}window\_handle}{240}{subsubsection.6.33.5.4}%
+\contentsline {chapter}{\numberline {7}File Documentation}{241}{chapter.7}%
+\contentsline {section}{\numberline {7.1}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Assets.cpp File Reference}{241}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Detailed Description}{242}{subsection.7.1.1}%
+\contentsline {section}{\numberline {7.2}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Assets.hpp File Reference}{242}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Detailed Description}{243}{subsection.7.2.1}%
+\contentsline {section}{\numberline {7.3}Assets.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{244}{section.7.3}%
+\contentsline {section}{\numberline {7.4}main/atomic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}stubs.c File Reference}{245}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Detailed Description}{245}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}Function Documentation}{246}{subsection.7.4.2}%
+\contentsline {subsubsection}{\numberline {7.4.2.1}\_\_atomic\_clear()}{246}{subsubsection.7.4.2.1}%
+\contentsline {subsubsection}{\numberline {7.4.2.2}\_\_atomic\_test\_and\_set()}{246}{subsubsection.7.4.2.2}%
+\contentsline {section}{\numberline {7.5}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Camera.cpp File Reference}{247}{section.7.5}%
+\contentsline {subsection}{\numberline {7.5.1}Detailed Description}{247}{subsection.7.5.1}%
+\contentsline {subsection}{\numberline {7.5.2}Macro Definition Documentation}{248}{subsection.7.5.2}%
+\contentsline {subsubsection}{\numberline {7.5.2.1}GLM\_ENABLE\_EXPERIMENTAL}{248}{subsubsection.7.5.2.1}%
+\contentsline {section}{\numberline {7.6}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Camera.hpp File Reference}{248}{section.7.6}%
+\contentsline {subsection}{\numberline {7.6.1}Detailed Description}{249}{subsection.7.6.1}%
+\contentsline {section}{\numberline {7.7}Camera.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{250}{section.7.7}%
+\contentsline {section}{\numberline {7.8}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Common\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Types.hpp File Reference}{251}{section.7.8}%
+\contentsline {subsection}{\numberline {7.8.1}Detailed Description}{253}{subsection.7.8.1}%
+\contentsline {section}{\numberline {7.9}Common\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Types.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{254}{section.7.9}%
+\contentsline {section}{\numberline {7.10}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Components.hpp File Reference}{254}{section.7.10}%
+\contentsline {subsection}{\numberline {7.10.1}Detailed Description}{255}{subsection.7.10.1}%
+\contentsline {section}{\numberline {7.11}Components.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{256}{section.7.11}%
+\contentsline {section}{\numberline {7.12}main/driver\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ek79007.cpp File Reference}{257}{section.7.12}%
+\contentsline {subsection}{\numberline {7.12.1}Detailed Description}{258}{subsection.7.12.1}%
+\contentsline {section}{\numberline {7.13}main/driver\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ek79007.hpp File Reference}{258}{section.7.13}%
+\contentsline {subsection}{\numberline {7.13.1}Detailed Description}{259}{subsection.7.13.1}%
+\contentsline {section}{\numberline {7.14}driver\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ek79007.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{260}{section.7.14}%
+\contentsline {section}{\numberline {7.15}main/driver\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lcd.hpp File Reference}{261}{section.7.15}%
+\contentsline {subsection}{\numberline {7.15.1}Detailed Description}{262}{subsection.7.15.1}%
+\contentsline {section}{\numberline {7.16}driver\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lcd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{263}{section.7.16}%
+\contentsline {section}{\numberline {7.17}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Driver\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ST7789.cpp File Reference}{263}{section.7.17}%
+\contentsline {subsection}{\numberline {7.17.1}Detailed Description}{264}{subsection.7.17.1}%
+\contentsline {section}{\numberline {7.18}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Driver\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ST7789.hpp File Reference}{265}{section.7.18}%
+\contentsline {subsection}{\numberline {7.18.1}Detailed Description}{265}{subsection.7.18.1}%
+\contentsline {section}{\numberline {7.19}Driver\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ST7789.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{266}{section.7.19}%
+\contentsline {section}{\numberline {7.20}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Extrude\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mesh.cpp File Reference}{267}{section.7.20}%
+\contentsline {subsection}{\numberline {7.20.1}Detailed Description}{267}{subsection.7.20.1}%
+\contentsline {section}{\numberline {7.21}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Extrude\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mesh.hpp File Reference}{268}{section.7.21}%
+\contentsline {subsection}{\numberline {7.21.1}Detailed Description}{269}{subsection.7.21.1}%
+\contentsline {section}{\numberline {7.22}Extrude\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mesh.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{270}{section.7.22}%
+\contentsline {section}{\numberline {7.23}main/fnv.hpp File Reference}{271}{section.7.23}%
+\contentsline {subsection}{\numberline {7.23.1}Macro Definition Documentation}{273}{subsection.7.23.1}%
+\contentsline {subsubsection}{\numberline {7.23.1.1}FNV}{273}{subsubsection.7.23.1.1}%
+\contentsline {subsubsection}{\numberline {7.23.1.2}FNV32}{273}{subsubsection.7.23.1.2}%
+\contentsline {subsubsection}{\numberline {7.23.1.3}FNV64}{273}{subsubsection.7.23.1.3}%
+\contentsline {subsection}{\numberline {7.23.2}Function Documentation}{273}{subsection.7.23.2}%
+\contentsline {subsubsection}{\numberline {7.23.2.1}operator""""\_fnv()}{273}{subsubsection.7.23.2.1}%
+\contentsline {section}{\numberline {7.24}fnv.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{274}{section.7.24}%
+\contentsline {section}{\numberline {7.25}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Frame\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Buffer.cpp File Reference}{275}{section.7.25}%
+\contentsline {subsection}{\numberline {7.25.1}Detailed Description}{276}{subsection.7.25.1}%
+\contentsline {section}{\numberline {7.26}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Frame\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Buffer.hpp File Reference}{277}{section.7.26}%
+\contentsline {section}{\numberline {7.27}Frame\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Buffer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{278}{section.7.27}%
+\contentsline {section}{\numberline {7.28}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Id.hpp File Reference}{280}{section.7.28}%
+\contentsline {subsection}{\numberline {7.28.1}Macro Definition Documentation}{281}{subsection.7.28.1}%
+\contentsline {subsubsection}{\numberline {7.28.1.1}ID}{281}{subsubsection.7.28.1.1}%
+\contentsline {section}{\numberline {7.29}Id.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{281}{section.7.29}%
+\contentsline {section}{\numberline {7.30}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logger.cpp File Reference}{281}{section.7.30}%
+\contentsline {subsection}{\numberline {7.30.1}Detailed Description}{282}{subsection.7.30.1}%
+\contentsline {section}{\numberline {7.31}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logger.hpp File Reference}{283}{section.7.31}%
+\contentsline {subsection}{\numberline {7.31.1}Detailed Description}{284}{subsection.7.31.1}%
+\contentsline {section}{\numberline {7.32}Logger.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{285}{section.7.32}%
+\contentsline {section}{\numberline {7.33}main/main.cpp File Reference}{286}{section.7.33}%
+\contentsline {subsection}{\numberline {7.33.1}Detailed Description}{286}{subsection.7.33.1}%
+\contentsline {subsection}{\numberline {7.33.2}Function Documentation}{287}{subsection.7.33.2}%
+\contentsline {subsubsection}{\numberline {7.33.2.1}main()}{287}{subsubsection.7.33.2.1}%
+\contentsline {subsubsection}{\numberline {7.33.2.2}main\_loop()}{288}{subsubsection.7.33.2.2}%
+\contentsline {subsection}{\numberline {7.33.3}Variable Documentation}{288}{subsection.7.33.3}%
+\contentsline {subsubsection}{\numberline {7.33.3.1}MAIN\_TAG}{288}{subsubsection.7.33.3.1}%
+\contentsline {section}{\numberline {7.34}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mesh.cpp File Reference}{289}{section.7.34}%
+\contentsline {subsection}{\numberline {7.34.1}Detailed Description}{289}{subsection.7.34.1}%
+\contentsline {section}{\numberline {7.35}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mesh.hpp File Reference}{290}{section.7.35}%
+\contentsline {subsection}{\numberline {7.35.1}Detailed Description}{291}{subsection.7.35.1}%
+\contentsline {section}{\numberline {7.36}Mesh.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{292}{section.7.36}%
+\contentsline {section}{\numberline {7.37}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mesh\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Serializer.cpp File Reference}{293}{section.7.37}%
+\contentsline {subsection}{\numberline {7.37.1}Detailed Description}{293}{subsection.7.37.1}%
+\contentsline {section}{\numberline {7.38}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mesh\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Serializer.hpp File Reference}{294}{section.7.38}%
+\contentsline {subsection}{\numberline {7.38.1}Detailed Description}{295}{subsection.7.38.1}%
+\contentsline {section}{\numberline {7.39}Mesh\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Serializer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{296}{section.7.39}%
+\contentsline {section}{\numberline {7.40}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Node.hpp File Reference}{297}{section.7.40}%
+\contentsline {subsection}{\numberline {7.40.1}Detailed Description}{298}{subsection.7.40.1}%
+\contentsline {section}{\numberline {7.41}Node.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{299}{section.7.41}%
+\contentsline {section}{\numberline {7.42}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Ram\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Allocator.hpp File Reference}{299}{section.7.42}%
+\contentsline {subsection}{\numberline {7.42.1}Detailed Description}{300}{subsection.7.42.1}%
+\contentsline {section}{\numberline {7.43}Ram\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Allocator.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{301}{section.7.43}%
+\contentsline {section}{\numberline {7.44}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Rasterizer.cpp File Reference}{302}{section.7.44}%
+\contentsline {subsection}{\numberline {7.44.1}Detailed Description}{303}{subsection.7.44.1}%
+\contentsline {section}{\numberline {7.45}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Rasterizer.hpp File Reference}{303}{section.7.45}%
+\contentsline {subsection}{\numberline {7.45.1}Detailed Description}{304}{subsection.7.45.1}%
+\contentsline {section}{\numberline {7.46}Rasterizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{305}{section.7.46}%
+\contentsline {section}{\numberline {7.47}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Renderer.cpp File Reference}{307}{section.7.47}%
+\contentsline {subsection}{\numberline {7.47.1}Detailed Description}{308}{subsection.7.47.1}%
+\contentsline {section}{\numberline {7.48}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Renderer.hpp File Reference}{309}{section.7.48}%
+\contentsline {subsection}{\numberline {7.48.1}Detailed Description}{310}{subsection.7.48.1}%
+\contentsline {section}{\numberline {7.49}Renderer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{310}{section.7.49}%
+\contentsline {section}{\numberline {7.50}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Revolution\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mesh.cpp File Reference}{311}{section.7.50}%
+\contentsline {subsection}{\numberline {7.50.1}Detailed Description}{312}{subsection.7.50.1}%
+\contentsline {section}{\numberline {7.51}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Revolution\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mesh.hpp File Reference}{313}{section.7.51}%
+\contentsline {subsection}{\numberline {7.51.1}Detailed Description}{314}{subsection.7.51.1}%
+\contentsline {section}{\numberline {7.52}Revolution\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mesh.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{315}{section.7.52}%
+\contentsline {section}{\numberline {7.53}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scene.cpp File Reference}{316}{section.7.53}%
+\contentsline {subsection}{\numberline {7.53.1}Detailed Description}{316}{subsection.7.53.1}%
+\contentsline {section}{\numberline {7.54}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scene.hpp File Reference}{317}{section.7.54}%
+\contentsline {subsection}{\numberline {7.54.1}Detailed Description}{318}{subsection.7.54.1}%
+\contentsline {section}{\numberline {7.55}Scene.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{319}{section.7.55}%
+\contentsline {section}{\numberline {7.56}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Shader\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Program.cpp File Reference}{320}{section.7.56}%
+\contentsline {section}{\numberline {7.57}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Shader\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Program.hpp File Reference}{320}{section.7.57}%
+\contentsline {section}{\numberline {7.58}Shader\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Program.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{322}{section.7.58}%
+\contentsline {section}{\numberline {7.59}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Sync\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Queue.hpp File Reference}{323}{section.7.59}%
+\contentsline {subsection}{\numberline {7.59.1}Detailed Description}{324}{subsection.7.59.1}%
+\contentsline {section}{\numberline {7.60}Sync\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Queue.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{325}{section.7.60}%
+\contentsline {section}{\numberline {7.61}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Thread\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Pool.cpp File Reference}{327}{section.7.61}%
+\contentsline {subsection}{\numberline {7.61.1}Detailed Description}{327}{subsection.7.61.1}%
+\contentsline {section}{\numberline {7.62}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Thread\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Pool.hpp File Reference}{328}{section.7.62}%
+\contentsline {section}{\numberline {7.63}Thread\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Pool.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{329}{section.7.63}%
+\contentsline {section}{\numberline {7.64}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Transform.hpp File Reference}{331}{section.7.64}%
+\contentsline {subsection}{\numberline {7.64.1}Detailed Description}{332}{subsection.7.64.1}%
+\contentsline {section}{\numberline {7.65}Transform.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{333}{section.7.65}%
+\contentsline {section}{\numberline {7.66}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Window.cpp File Reference}{334}{section.7.66}%
+\contentsline {section}{\numberline {7.67}main/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Window.hpp File Reference}{335}{section.7.67}%
+\contentsline {section}{\numberline {7.68}Window.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{336}{section.7.68}%

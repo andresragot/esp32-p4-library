@@ -1,0 +1,160 @@
+\doxysection{Thread\+\_\+\+Pool.\+hpp}
+\hypertarget{_thread___pool_8hpp_source}{}\label{_thread___pool_8hpp_source}\index{main/Thread\_Pool.hpp@{main/Thread\_Pool.hpp}}
+\mbox{\hyperlink{_thread___pool_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00032\ \ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <future>}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_sync___queue_8hpp}{Sync\_Queue.hpp}}"{}}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ <semaphore>}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ragot}{Ragot}}}
+\DoxyCodeLine{00046\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ragot_1_1_thread___pool_a9c6809ce2a430abef3fbf5162ceb76bc}{Thread\_Pool}}}
+\DoxyCodeLine{00055\ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_ragot_1_1_thread___pool_ab5043941a4baee7d04479ce9e094bfce}{Task}}\ =\ std::function\ <\ \ void\ (std::stop\_token)\ >;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ std::binary\_semaphore\ \mbox{\hyperlink{class_ragot_1_1_thread___pool_a9afa50e6c51fd779eccb251780ace924}{sem\_mesh\_ready}}\ \{0\};\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ std::binary\_semaphore\ \mbox{\hyperlink{class_ragot_1_1_thread___pool_ab47666b5161db650d86600322909a285}{sem\_render\_done}}\ \{0\};\ }
+\DoxyCodeLine{00060\ \ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ Sync\_Queue\ <\ Task\ >\ \mbox{\hyperlink{class_ragot_1_1_thread___pool_a88de646cfc8a988eea17d6f5b3b7e8cc}{tasks}};}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ std::vector\ <\ std::unique\_ptr\ <\ std::jthread\ >\ >\ \mbox{\hyperlink{class_ragot_1_1_thread___pool_a08d480fb91e3549504c3e12935bdd57c}{threads}};}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ std::atomic\ <\ bool\ >\ \mbox{\hyperlink{class_ragot_1_1_thread___pool_a371ee38f9573f68e5c96bcc7da19400d}{started}};\ }
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_ragot_1_1_thread___pool_a9c6809ce2a430abef3fbf5162ceb76bc}{Thread\_Pool}}\ \&\ \mbox{\hyperlink{class_ragot_1_1_thread___pool_a5ea82f25ae6c96c6e0770392b349eb34}{instance}}\ ()}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_ragot_1_1_thread___pool_a9c6809ce2a430abef3fbf5162ceb76bc}{Thread\_Pool}}\ \mbox{\hyperlink{class_ragot_1_1_thread___pool_a5ea82f25ae6c96c6e0770392b349eb34}{instance}};}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_ragot_1_1_thread___pool_a5ea82f25ae6c96c6e0770392b349eb34}{instance}};}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00094\ \ \ \ \ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_thread___pool_a9c6809ce2a430abef3fbf5162ceb76bc}{Thread\_Pool}}()}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ cores\ =\ std::thread::hardware\_concurrency();}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Thread\ pool\ initialized\ with\ "{}}\ <<\ cores\ <<\ \textcolor{stringliteral}{"{}\ threads."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cores\ ==\ 0)}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cores\ =\ 2;\ \textcolor{comment}{//\ Default\ to\ 2\ threads\ if\ hardware\ concurrency\ is\ not\ available}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_thread___pool_a08d480fb91e3549504c3e12935bdd57c}{threads}}.resize\ (cores);}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_thread___pool_a371ee38f9573f68e5c96bcc7da19400d}{started}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_thread___pool_a20ecf9ad7f5c3323855f4b4afe51bf9b}{\string~Thread\_Pool}}()}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_thread___pool_a9afa50e6c51fd779eccb251780ace924}{sem\_mesh\_ready}}.release();}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_thread___pool_ab47666b5161db650d86600322909a285}{sem\_render\_done}}.release();}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_ragot_1_1_thread___pool_a371ee38f9573f68e5c96bcc7da19400d}{started}})}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_thread___pool_ae53b45f5a0f794f023bffb9abefb9645}{stop}}();}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_thread___pool_a91256e522a6b6a2f262a2757a8f8e774}{Thread\_Pool}}\ (\mbox{\hyperlink{class_ragot_1_1_thread___pool_a9c6809ce2a430abef3fbf5162ceb76bc}{Thread\_Pool}}\ \&\ )\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_thread___pool_a00cde0b5d885dc0b2dfc9e74de3f26d6}{Thread\_Pool}}\ (\mbox{\hyperlink{class_ragot_1_1_thread___pool_a9c6809ce2a430abef3fbf5162ceb76bc}{Thread\_Pool}}\ \&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_thread___pool_a9c6809ce2a430abef3fbf5162ceb76bc}{Thread\_Pool}}\ \&\ \mbox{\hyperlink{class_ragot_1_1_thread___pool_acf9fa7585a967a07e940b476492a7fff}{operator\ =\ }}(\mbox{\hyperlink{class_ragot_1_1_thread___pool_a9c6809ce2a430abef3fbf5162ceb76bc}{Thread\_Pool}}\ \&\ )\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_thread___pool_a9c6809ce2a430abef3fbf5162ceb76bc}{Thread\_Pool}}\ \&\ \mbox{\hyperlink{class_ragot_1_1_thread___pool_acf9fa7585a967a07e940b476492a7fff}{operator\ =\ }}(\mbox{\hyperlink{class_ragot_1_1_thread___pool_a9c6809ce2a430abef3fbf5162ceb76bc}{Thread\_Pool}}\ \&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_thread___pool_ab9bdd9f1fb4c1caeb0294c2f31419c70}{start}}\ ()}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ assert\ (not\ \mbox{\hyperlink{class_ragot_1_1_thread___pool_a371ee38f9573f68e5c96bcc7da19400d}{started}});}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Starting\ thread\ pool..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\ thread\ :\ \mbox{\hyperlink{class_ragot_1_1_thread___pool_a08d480fb91e3549504c3e12935bdd57c}{threads}})}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ thread\ =\ std::make\_unique\ <\ std::jthread\ >\ (\ std::bind\ (\&\mbox{\hyperlink{class_ragot_1_1_thread___pool_a2b539fc1c1f96647c4d7bb8a0c502e37}{Thread\_Pool::thread\_function}},\ \textcolor{keyword}{this},\ std::placeholders::\_1)\ );}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_thread___pool_a371ee38f9573f68e5c96bcc7da19400d}{started}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_thread___pool_ae53b45f5a0f794f023bffb9abefb9645}{stop}}\ ()}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ assert\ (\mbox{\hyperlink{class_ragot_1_1_thread___pool_a371ee38f9573f68e5c96bcc7da19400d}{started}}\ ==\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_thread___pool_a371ee38f9573f68e5c96bcc7da19400d}{started}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_thread___pool_a88de646cfc8a988eea17d6f5b3b7e8cc}{tasks}}.close\ ();}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\ thread\ :\ \mbox{\hyperlink{class_ragot_1_1_thread___pool_a08d480fb91e3549504c3e12935bdd57c}{threads}})}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ thread-\/>request\_stop();}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_thread___pool_a08d480fb91e3549504c3e12935bdd57c}{threads}}.clear();}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ F,\ \textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ std::future\ <\ std::invoke\_result\_t\ <\ F,\ Args...\ >\ >\ \mbox{\hyperlink{class_ragot_1_1_thread___pool_a82b0be885444a8e6100d61f3b44e5a8f}{submit}}\ (F\ \&\&\ f,\ Args\ \&\&\ ...\ args)}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}submit"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }ReturnType\ =\ std::invoke\_result\_t\ <\ F,\ Args...\ >;}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ task\_ptr\ =\ std::make\_shared\ <\ std::packaged\_task\ <\ ReturnType()\ >\ >\ (}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::bind\ (std::forward\ <\ F\ >\ (f),\ std::forward\ <\ Args\ >\ (args)...)}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ std::future<ReturnType>\ res\ =\ task\_ptr-\/>get\_future();}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_thread___pool_a88de646cfc8a988eea17d6f5b3b7e8cc}{tasks}}.push\ ([task\_ptr](std::stop\_token)\ \{}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (*task\_ptr)();}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ F,\ \textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ std::future<std::invoke\_result\_t<F,\ std::stop\_token,\ Args...>>}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_thread___pool_a9bf4077a299c94e78c09e7523391e426}{submit\_with\_stop}}(F\&\&\ f,\ Args\&\&...\ args)}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}submit\_with\_stop"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }ReturnType\ =\ std::invoke\_result\_t<F,\ std::stop\_token,\ Args...>;}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ task\_ptr\ =\ std::make\_shared<std::packaged\_task<ReturnType(std::stop\_token)>>(}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::bind(std::forward<F>(f),\ std::placeholders::\_1,\ std::forward<Args>(args)...)}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ std::future<ReturnType>\ res\ =\ task\_ptr-\/>get\_future();}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ragot_1_1_thread___pool_a88de646cfc8a988eea17d6f5b3b7e8cc}{tasks}}.push([task\_ptr](std::stop\_token\ tok)\ \{}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (*task\_ptr)(tok);}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ragot_1_1_thread___pool_a2b539fc1c1f96647c4d7bb8a0c502e37}{thread\_function}}\ (std::stop\_token);}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00280\ \ \ \ \ \};}
+\DoxyCodeLine{00281\ \ \ \ \ }
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{keyword}{extern}\ Thread\_Pool\ \&\ \mbox{\hyperlink{namespace_ragot_a0684b7c6a175402e04efb8dfedb7552c}{thread\_pool}};}
+\DoxyCodeLine{00283\ \}}
+
+\end{DoxyCode}

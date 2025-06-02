@@ -1,0 +1,36 @@
+<map id="Ragot::Mesh" name="Ragot::Mesh">
+<area shape="rect" id="Node000001" title="Represents a 3D mesh in the Ragot engine." alt="" coords="777,1102,912,1427"/>
+<area shape="rect" id="Node000002" href="$class_ragot_1_1_component.html" title="Base class for components in the Ragot engine." alt="" coords="386,810,532,1039"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="545,997,779,1202,775,1206,542,1001"/>
+<area shape="rect" id="Node000003" href="$class_ragot_1_1_node.html" title="Represents a node in a scene graph for 3D rendering." alt="" coords="120,497,276,747"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="287,722,389,838,385,841,283,725"/>
+<area shape="poly" id="edge8_Node000003_Node000003" title=" " alt="" coords="277,592,295,602,302,622,300,635,293,644,289,641,295,632,297,622,291,606,274,597"/>
+<area shape="rect" id="Node000004" href="$class_ragot_1_1_transform.html" title="A class representing a 3D transformation with position, rotation, and scale." alt="" coords="34,165,189,434"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="154,448,167,497,162,498,149,449"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,5,44,72"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="34,71,53,140,55,148,50,149,47,141,29,72"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="94,5,129,72"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="114,72,114,148,109,148,109,72"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="158,5,198,72"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="172,72,153,149,148,147,167,71"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="213,259,356,340"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="277,341,238,482,233,480,271,339"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="370,581,549,663"/>
+<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="462,662,462,793,457,793,457,662"/>
+<area shape="rect" id="Node000010" href="$struct_ragot_1_1mesh__info__t.html" title="Represents information about a mesh." alt="" coords="609,881,734,968"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="689,966,736,1077,771,1141,766,1143,731,1079,684,968"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="572,589,618,655"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="593,655,588,716,590,751,596,785,612,827,633,865,628,868,607,829,591,786,585,752,583,716,587,655"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="682,589,768,655"/>
+<area shape="poly" id="edge12_Node000010_Node000012" title=" " alt="" coords="722,655,684,865,679,864,716,654"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="792,589,983,655"/>
+<area shape="poly" id="edge13_Node000010_Node000013" title=" " alt="" coords="873,656,835,720,809,755,781,788,764,800,748,812,705,868,701,864,744,808,761,795,778,784,805,752,830,717,869,654"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="758,891,814,957"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="794,957,816,1085,811,1085,789,958"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="839,891,970,957"/>
+<area shape="poly" id="edge15_Node000001_Node000015" title=" " alt="" coords="902,958,879,1085,874,1085,896,957"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="995,891,1145,957"/>
+<area shape="poly" id="edge16_Node000001_Node000016" title=" " alt="" coords="1051,959,924,1149,919,1146,1047,956"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="1168,891,1193,957"/>
+<area shape="poly" id="edge17_Node000001_Node000017" title=" " alt="" coords="1183,958,1176,998,1169,1020,1159,1040,1136,1072,1109,1101,1050,1152,987,1195,929,1228,926,1223,984,1190,1046,1148,1105,1097,1132,1068,1154,1037,1164,1018,1171,997,1177,957"/>
+</map>
