@@ -1,0 +1,90 @@
+@startuml
+' Definición de clases principales
+class Renderer {
+    - current_scene : Scene*
+    - frame_buffer : FrameBuffer
+    - logger : Logger
+    + render() : void
+    + init() : void
+    + set_scene(scene : Scene*) : void
+    + start() : void
+}
+
+class Scene {
+    - main_camera : Camera*
+    + get_main_camera() : Camera*
+    + collect_components<T>() : vector<T>
+    + add_node(node : Node, name : Id) : void
+    + remove_node(node : Node) : void
+    + traverse(callback : function) : void
+    + update(delta_time : float) : void
+}
+
+class Camera {
+    + get_view_matrix() : Matrix4x4
+    + get_projection_matrix() : Matrix4x4
+    + set_target(target : vec3) : void
+}
+
+class Mesh {
+    + is_dirty() : bool
+    + recalculate() : void
+}
+
+class ExtrudeMesh extends Mesh
+class RevolutionMesh extends Mesh
+
+class FrameBuffer {
+    + swap_buffers() : void
+    + clear_buffer() : void
+}
+
+class Logger {
+    + Log(tag : string, level : int, message : string) : void
+}
+
+class Thread_Pool {
+    + sem_mesh_ready : Semaphore
+    + sem_render_done : Semaphore
+}
+
+class DriverLCD {
+    + init(reset_pin : gpio_num_t, bk_pin : gpio_num_t) : esp_err_t
+    + deinit() : esp_err_t
+    + send_frame_buffer(frame_buffer : void*) : esp_err_t
+}
+
+class Driver_ST7789 extends DriverLCD {
+    + init(reset_pin : gpio_num_t, bk_pin : gpio_num_t) : esp_err_t
+    + deinit() : esp_err_t
+    + send_frame_buffer(frame_buffer : void*) : esp_err_t
+}
+
+class DriverEK79007 extends DriverLCD {
+    + init(reset_pin : gpio_num_t, bk_pin : gpio_num_t) : esp_err_t
+    + deinit() : esp_err_t
+    + send_frame_buffer(frame_buffer : void*) : esp_err_t
+}
+
+class Main {
+    + main_loop(renderer : Renderer, scene : Scene) : void
+    + setupScene(scene : Scene, camera : Camera) : void
+}
+
+' Relaciones entre clases
+Renderer --> Scene
+Scene --> Camera
+Renderer --> FrameBuffer
+Renderer --> Logger
+Renderer --> Thread_Pool
+Scene --> Mesh
+Mesh <|-- ExtrudeMesh
+Mesh <|-- RevolutionMesh
+Renderer --> DriverLCD
+DriverLCD <|-- Driver_ST7789
+DriverLCD <|-- DriverEK79007
+Main --> Renderer
+Main --> Scene
+Main --> Camera
+
+@enduml
