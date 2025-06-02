@@ -1,4 +1,4 @@
-# ESP32 3D Graphics Library
+# ESP32 3D Graphics Library 🖥️
 A lightweight 3D graphics rendering engine optimized for ESP32-P4 microcontrollers, with additional support for ESP32-S3 and desktop platforms.
 
 <img alt="License" src="https://img.shields.io/badge/license-MIT-blue.svg">
