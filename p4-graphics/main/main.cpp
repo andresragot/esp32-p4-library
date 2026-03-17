@@ -405,8 +405,8 @@ int main(int argc, char * argv[])
     // logger.Log (MAIN_TAG, 3, "Memoria libre inicial: %u bytes", esp_get_free_heap_size());
     
 #if ESP_PLATFORM == 1
-    constexpr unsigned SCREEN_W = 320;
-    constexpr unsigned SCREEN_H = 240;
+    constexpr unsigned SCREEN_W = 1024;
+    constexpr unsigned SCREEN_H = 600;
 #else
     constexpr unsigned SCREEN_W = 1024;
     constexpr unsigned SCREEN_H = 600;
@@ -462,8 +462,8 @@ int main(int argc, char * argv[])
     // As the camera orbits, the lighting naturally evolves on each face.
     renderer.set_light(Ragot::DirectionalLight(
         glm::vec3(0.4f, 0.6f, -0.8f),  // view-space: upper-left, mostly frontal
-        0.05f,                           // ambient  – keeps shadowed faces visible
-        0.30f                            // diffuse  – strong directional component
+        0.50f,                           // ambient  – keeps shadowed faces visible
+        1.0f                            // diffuse  – strong directional component
     ));
 
     scene.start ();

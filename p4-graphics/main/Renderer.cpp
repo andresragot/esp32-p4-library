@@ -44,6 +44,10 @@
 
 #ifdef CONFIG_GRAPHICS_PARALLEL_ENABLED
 #include "Thread_Pool.hpp"
+#ifdef ESP_PLATFORM == 1
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#endif
 #endif
 
 namespace Ragot
@@ -868,8 +872,9 @@ namespace Ragot
             // logger.Log (MAIN_TAG, 1, "Frames renderizados: %u\n", frame_count);
             // logger.Log (MAIN_TAG, 1, "FPS: %.2f\n", 1.f / std::chrono::duration<float>(elapsed_time).count());
             // logger.Log (MAIN_TAG, 1, "Uso de RAM: %zu bytes\n", ram_usage);
-            
-            // std::this_thread::sleep_for(std::chrono::milliseconds(1)); // Simula un frame de 60 FPS
+#ifdef ESP_PLATFORM == 1
+            vTaskDelay(1); // Yield to IDLE task to feed the Task WDT
+#endif
         }
 
     }

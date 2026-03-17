@@ -37,6 +37,10 @@
 #include "Logger.hpp"
 #ifdef CONFIG_GRAPHICS_PARALLEL_ENABLED
 #include "Thread_Pool.hpp"
+#ifdef ESP_PLATFORM == 1
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#endif
 #endif
 
 namespace Ragot
@@ -312,8 +316,9 @@ namespace Ragot
 #endif
             
             meshes = collect_components<Mesh>();
-
-            // std::this_thread::sleep_for(std::chrono::milliseconds(1)); ///< Espera para evitar saturar el CPU
+#ifdef ESP_PLATFORM == 1
+            vTaskDelay(1); // Yield to IDLE task to feed the Task WDT
+#endif
         }
     }
     
