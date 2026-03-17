@@ -123,6 +123,7 @@ namespace Ragot
             .dpi_clk_src = MIPI_DSI_DPI_CLK_SRC_DEFAULT,
             .dpi_clock_freq_mhz = panel_clk_freq_mhz,
             .pixel_format = pixel_format,
+            .num_fbs = 2,
             .video_timing = {
                 .h_size = width,
                 .v_size = height,
@@ -164,6 +165,7 @@ namespace Ragot
         {
             return ESP_ERR_NO_MEM;
         }
+        xSemaphoreGive(refresh_semaphore);
 
         esp_lcd_dpi_panel_event_callbacks_t cbs = {
             .on_refresh_done = panel_refresh_callback,

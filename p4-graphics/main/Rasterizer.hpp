@@ -137,7 +137,7 @@ namespace Ragot
         void clear ()
         {
             logger.Log (RASTER_TAG, 3, "Limpiando framebuffer");
-            frame_buffer.clear_buffer();
+            frame_buffer.clear_buffer(CURRENT_BUFFER);
             
 #ifndef CONFIG_GRAPHICS_PAINTER_ALGO_ENABLED
             for (int * z = z_buffer.data(), * end = z + z_buffer.size(); z != end; ++z)

@@ -41,6 +41,7 @@
 #include "Id.hpp"
 #include "Logger.hpp"
 #include "Thread_Pool.hpp"
+#include "Light.hpp"
 
 #if ESP_PLATFORM != 1
 #include "Window.hpp"
@@ -71,7 +72,7 @@ void main_loop (Renderer & renderer, Scene & scene)
     while (true)
     {
         current_tick = std::chrono::high_resolution_clock::now();
-        logger.Log (MAIN_TAG, 3, "\n--- Frame %u ---", frame_count);
+        // logger.Log (MAIN_TAG, 3, "\n--- Frame %u ---", frame_count);
         if (update)
         {
 #ifndef CONFIG_GRAPHICS_PARALLEL_ENABLED
@@ -92,15 +93,15 @@ void main_loop (Renderer & renderer, Scene & scene)
         elapsed_time = current_tick - last_tick;
         last_tick = current_tick;
         ram_usage = esp_get_free_heap_size();
-        logger.Log (MAIN_TAG, 1, "Tiempo transcurrido: %.6f segundos\n", std::chrono::duration<float>(elapsed_time).count());
-        logger.Log (MAIN_TAG, 1, "Frames renderizados: %u\n", frame_count);
-        logger.Log (MAIN_TAG, 1, "FPS: %.2f\n", 1.f / std::chrono::duration<float>(elapsed_time).count());
-        logger.Log (MAIN_TAG, 1, "Uso de RAM: %zu bytes\n", ram_usage);
+        // logger.Log (MAIN_TAG, 1, "Tiempo transcurrido: %.6f segundos\n", std::chrono::duration<float>(elapsed_time).count());
+        // logger.Log (MAIN_TAG, 1, "Frames renderizados: %u\n", frame_count);
+        // logger.Log (MAIN_TAG, 1, "FPS: %.2f\n", 1.f / std::chrono::duration<float>(elapsed_time).count());
+        // logger.Log (MAIN_TAG, 1, "Uso de RAM: %zu bytes\n", ram_usage);
         
         // Log periódico del estado de memoria
         if (frame_count % 100 == 0)
         {
-            logger.Log (MAIN_TAG, 3, "Estado después de %u frames:", frame_count);
+            // logger.Log (MAIN_TAG, 3, "Estado después de %u frames:", frame_count);
         }
         // std::this_thread::sleep_for(std::chrono::milliseconds(1)); // Simula un frame rate de 10 FPS
     }
@@ -115,7 +116,7 @@ void main_loop (Renderer & renderer, Scene & scene)
  */
 void main_loop (Renderer & renderer, Scene & scene, Window & window)
 {
-    glViewport (0, 0, 1024, 600);
+    glViewport (0, 0, SCREEN_W, SCREEN_H);
     
     static bool update = true;
 
@@ -174,8 +175,8 @@ namespace
             mesh_info_t mesh_info_cilindro(coords_cilindro, RENDER_REVOLUTION);
             std::shared_ptr < RevolutionMesh > mesh_cilindro = std::make_shared < RevolutionMesh >(mesh_info_cilindro, camera);
             mesh_cilindro->set_position(vec3( 0.0f, 0.0f,  0.0f));  // centro de la escena
-            mesh_cilindro->set_color (0x0000);
-            // scene.add_node(mesh_cilindro, ID(CILINDRO));
+            mesh_cilindro->set_color (0xb56a2d);
+            scene.add_node(mesh_cilindro, ID(CILINDRO));
         }
 
         // ---------------------------------------------------
@@ -191,7 +192,7 @@ namespace
             std::shared_ptr < RevolutionMesh > mesh_cono = std::make_shared < RevolutionMesh > (mesh_info_cono, camera);
             mesh_cono->set_position(vec3( 3.0f, 0.0f,  0.0f));  // a la derecha del cilindro
             mesh_cono->set_color (0x8410); // Color cono (gris)
-            // scene.add_node(mesh_cono, ID(CONO));
+            scene.add_node(mesh_cono, ID(CONO));
         }
 
         // ---------------------------------------------------
@@ -303,7 +304,7 @@ namespace
             mesh_prisma_rect->set_position(vec3( 0.0f,  0.0f, -3.0f)); // “atrás” de la fila principal
             mesh_prisma_rect->set_scale(vec3(1.0f));                   // escala base
             mesh_prisma_rect->set_color (0x07FF); // Color prisma rectangular (Cian claro)
-            // scene.add_node(mesh_prisma_rect, ID(PRISMA_RECT));
+            scene.add_node(mesh_prisma_rect, ID(PRISMA_RECT));
         }
 
         // ---------------------------------------------------
@@ -374,7 +375,7 @@ namespace
             mesh_hexagono->set_position(vec3( 3.0f, -2.5f,  0.0f)); // esquina inferior derecha
             mesh_hexagono->set_scale(vec3(1.0f));
             mesh_hexagono->set_color (0xF80F); // Color hexágono (Purpura)
-            // scene.add_node(mesh_hexagono, ID(HEXAGONO));
+            scene.add_node(mesh_hexagono, ID(HEXAGONO));
         }
     }
 
@@ -403,16 +404,24 @@ int main(int argc, char * argv[])
     logger.Log (MAIN_TAG, 3, "Iniciando aplicación");
     // logger.Log (MAIN_TAG, 3, "Memoria libre inicial: %u bytes", esp_get_free_heap_size());
     
+#if ESP_PLATFORM == 1
+    constexpr unsigned SCREEN_W = 1024;
+    constexpr unsigned SCREEN_H = 600;
+#else
+    constexpr unsigned SCREEN_W = 1024;
+    constexpr unsigned SCREEN_H = 600;
+#endif
+
     logger.Log (MAIN_TAG, 3, "Iniciando Window");
 #if ESP_PLATFORM != 1
     assets.initialize(argv[0]);
 
-    Ragot::Window window ("P4-Test", Ragot::Window::Position::CENTERED, Ragot::Window::Position::CENTERED, 1024, 600, { 3, 3 });
+    Ragot::Window window ("P4-Test", Ragot::Window::Position::CENTERED, Ragot::Window::Position::CENTERED, SCREEN_W, SCREEN_H, { 3, 3 });
 #endif
     
     logger.Log (MAIN_TAG, 3, "Entrando en bucle de renderizado");
 
-    Camera camera(float (1024) / 600.f);
+    Camera camera(float (SCREEN_W) / SCREEN_H);
     camera.set_location(glm::vec3(0.f, 0.f, -15.f));
     camera.set_target(glm::vec3(0.f, 0.f, 0.f));
 
@@ -443,10 +452,19 @@ int main(int argc, char * argv[])
     
     setupScene(scene, camera);
 
-    logger.Log (MAIN_TAG, 3, "Creando renderer (600x1024)");
-    Ragot::Renderer renderer(1024, 600);
+    logger.Log (MAIN_TAG, 3, "Creando renderer (%ux%u)", SCREEN_W, SCREEN_H);
+    Ragot::Renderer renderer(SCREEN_W, SCREEN_H);
     renderer.set_scene(&scene);
     renderer.init();
+
+    // Configure directional light in view/screen space:
+    // (0.4, 0.6, -0.8) = light from upper-left-back relative to the camera.
+    // As the camera orbits, the lighting naturally evolves on each face.
+    renderer.set_light(Ragot::DirectionalLight(
+        glm::vec3(0.4f, 0.6f, -0.8f),  // view-space: upper-left, mostly frontal
+        0.50f,                           // ambient  – keeps shadowed faces visible
+        1.0f                            // diffuse  – strong directional component
+    ));
 
     scene.start ();
     renderer.start ();

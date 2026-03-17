@@ -10,7 +10,7 @@ dependencies:
       type: service
     version: 0.5.3
   espressif/esp_lcd_ek79007:
-    component_hash: 07c1afab7e9fd4dd2fd06ff9245e65327c5bbd5485efec199496e19a9304d47b
+    component_hash: 8005700b7f10c7136b6e2a3f19a48f972aa1d13ed107ed298574e8d24d17ea83
     dependencies:
     - name: espressif/cmake_utilities
       registry_url: https://components.espressif.com
@@ -24,7 +24,7 @@ dependencies:
       type: service
     targets:
     - esp32p4
-    version: 1.0.2
+    version: 1.0.4
   idf:
     source:
       type: idf
@@ -32,6 +32,6 @@ dependencies:
 direct_dependencies:
 - espressif/esp_lcd_ek79007
 - idf
-manifest_hash: 43a119546b59fb1fba9f7dbd542ecd46b8f1e3d835e39db6883da87df1a7ac09
+manifest_hash: 288320a7f66fe4810596c19fcc7b24455b4b5abcbaaecd21e27608b9d67f51d4
 target: esp32p4
 version: 2.0.0

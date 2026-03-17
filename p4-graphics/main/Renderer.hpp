@@ -37,6 +37,7 @@
 #include "Rasterizer.hpp"
 #include "Node.hpp"
 #include "Scene.hpp"
+#include "Light.hpp"
 #include <memory>
 #include <string>
 
@@ -44,7 +45,7 @@
 #ifdef CONFIG_IDF_TARGET_ESP32P4
 #include "driver_ek79007.hpp"
 #elif CONFIG_IDF_TARGET_ESP32S3
-#include "Driver_ST7789.hpp"
+#include "Driver_ST7262.hpp"
 #endif
 #else
 #include "Shader_Program.hpp"
@@ -71,7 +72,7 @@ namespace Ragot
         #ifdef CONFIG_IDF_TARGET_ESP32P4
         DriverEK79007 driver; ///< Driver for the EK79007 display controller, used for rendering on ESP32-P4 devices.
         #elif CONFIG_IDF_TARGET_ESP32S3
-        Driver_ST7789 driver; ///< Driver for the ST7789 display controller, used for rendering on ESP32-S3 devices.
+        Driver_ST7262 driver; ///< Driver for the ST7262 display controller, used for rendering on ESP32-S3 devices.
         #endif
         #else
         std::unique_ptr < Shader_Program > quadShader       = nullptr; ///< Shader program for rendering a full-screen quad, used in non-ESP platforms.
@@ -91,6 +92,8 @@ namespace Ragot
         unsigned  width; ///< Width of the rendering area in pixels, used to define the size of the frame buffer and viewport.
         unsigned height; ///< Height of the rendering area in pixels, used to define the size of the frame buffer and viewport.
         
+        DirectionalLight light; ///< Directional light for per-face diffuse shading.
+
         bool initialized = false; ///< Flag to indicate if the renderer has been initialized, used to prevent re-initialization and ensure resources are set up correctly.
 
         std::atomic<bool> running = false; ///< Flag to indicate if the renderer is currently running, used to control rendering tasks and stop them gracefully.
@@ -186,6 +189,18 @@ namespace Ragot
          * This method sets the running flag to false, indicating that the renderer should stop rendering.
          */
         void  stop() { running = false; }
+
+        /**
+         * @brief Sets the directional light for the scene.
+         * @param l The directional light parameters.
+         */
+        void set_light(const DirectionalLight & l) { light = l; }
+
+        /**
+         * @brief Gets the current directional light.
+         * @return const DirectionalLight& Reference to the current light.
+         */
+        const DirectionalLight & get_light() const { return light; }
     };
 }
 

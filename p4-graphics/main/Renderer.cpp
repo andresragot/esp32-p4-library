@@ -44,6 +44,10 @@
 
 #ifdef CONFIG_GRAPHICS_PARALLEL_ENABLED
 #include "Thread_Pool.hpp"
+#ifdef ESP_PLATFORM == 1
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#endif
 #endif
 
 namespace Ragot
@@ -473,30 +477,43 @@ namespace Ragot
             thread_pool.sem_mesh_ready.acquire ();
 #endif
         auto meshes = current_scene->collect_components<Mesh>();
+
+        // 2) Construir lista GLOBAL de caras visibles de TODOS los meshes
+        std::vector<FaceToDraw> drawList;
+
         for (auto mesh : meshes)
         {
             const auto &srcVerts = mesh->get_vertices();
             Matrix4x4 model = mesh->get_transform_matrix();
-            Matrix4x4 clipM  = proj * view * model;
+            Matrix4x4 viewModel = view * model;
+            Matrix4x4 clipM  = proj * viewModel;
 
             // Pre-transformar todos los vértices a clip-space
             std::vector<glm::fvec4> clipVerts(srcVerts.size());
             for (size_t i = 0; i < srcVerts.size(); ++i)
                 clipVerts[i] = clipM * srcVerts[i];
 
-            // 2) Construir lista de caras visibles + polígonos recortados + depth
-            std::vector<FaceToDraw> drawList;
-            drawList.reserve(mesh->get_faces().size());
+            // View-space normal matrix: normals change as camera orbits
+            glm::mat3 viewNormalMatrix = glm::transpose(glm::inverse(glm::mat3(viewModel)));
 
             for (auto &face : mesh->get_faces())
             {
                 // Back-face culling en view-space
-                glm::fvec4 Av = view * model * srcVerts[face.v1];
-                glm::fvec4 Bv = view * model * srcVerts[face.v2];
-                glm::fvec4 Cv = view * model * srcVerts[face.v3];
+                glm::fvec4 Av = viewModel * srcVerts[face.v1];
+                glm::fvec4 Bv = viewModel * srcVerts[face.v2];
+                glm::fvec4 Cv = viewModel * srcVerts[face.v3];
                 glm::fvec3 A3(Av.x, Av.y, Av.z), B3(Bv.x, Bv.y, Bv.z), C3(Cv.x, Cv.y, Cv.z);
                 glm::fvec3 normal = glm::cross(B3 - A3, C3 - A3);
-                if (normal.z >= 0.0f) continue;
+                if (normal.z <= 0.0f) continue;
+
+                // Per-face diffuse lighting in view space (evolves as camera orbits)
+                glm::fvec3 face_normal_local = glm::cross(
+                    glm::fvec3(srcVerts[face.v2]) - glm::fvec3(srcVerts[face.v1]),
+                    glm::fvec3(srcVerts[face.v3]) - glm::fvec3(srcVerts[face.v1])
+                );
+                glm::fvec3 view_normal = glm::normalize(viewNormalMatrix * face_normal_local);
+                float intensity = compute_diffuse_intensity(view_normal, light);
+                uint16_t lit_color = apply_light_rgb565(mesh->get_color(), intensity);
 
                 // 2.1) Inicializar polígono en clip-space
                 std::vector<glm::fvec4> poly = {
@@ -536,57 +553,57 @@ namespace Ragot
                     depth += (v.z / v.w);
                 depth /= float(poly.size());
 
-                drawList.push_back({ std::move(poly), depth, mesh->get_color() });
+                drawList.push_back({ std::move(poly), depth, lit_color });
             }
+        }
 
-            // 3) Ordenar de menor a mayor depth (más lejano primero)
-            std::sort(drawList.begin(), drawList.end(),
-                      [](auto &a, auto &b){ return a.depth < b.depth; });
+        // 3) Ordenar GLOBALMENTE de mayor a menor depth (más lejano primero)
+        std::sort(drawList.begin(), drawList.end(),
+                  [](auto &a, auto &b){ return a.depth > b.depth; });
 
-            // 4) Rasterizar en orden
-            for (auto &fd : drawList)
+        // 4) Rasterizar en orden
+        for (auto &fd : drawList)
+        {
+            // 4.1) Proyección a pantalla
+            std::vector<glm::ivec4> screenPoly;
+            screenPoly.reserve(fd.poly.size());
+            for (auto &v : fd.poly)
             {
-                // 4.1) Proyección a pantalla
-                std::vector<glm::ivec4> screenPoly;
-                screenPoly.reserve(fd.poly.size());
-                for (auto &v : fd.poly)
-                {
-                    glm::fvec4 ndc = v / v.w;
-                    glm::vec4  scr = screenTransform * glm::vec4(ndc.x, ndc.y, ndc.z, 1.f);
-                    screenPoly.emplace_back(int(scr.x), int(scr.y), int(ndc.z * 1e8f), 1);
-                }
-                
-                // Después de llenar `screenPoly`:
-                auto area2 = 0.f;
-                for (size_t i = 0, n = screenPoly.size(); i < n; ++i)
-                {
-                    auto &A = screenPoly[i];
-                    auto &B = screenPoly[(i+1)%n];
-                    area2 += float(A.x)*B.y - float(A.y)*B.x;
-                }
-                
-                if (std::abs(area2) < 1e-2f)
-                    continue;  // polígono degenerado, no rasterizar
+                glm::fvec4 ndc = v / v.w;
+                glm::vec4  scr = screenTransform * glm::vec4(ndc.x, ndc.y, ndc.z, 1.f);
+                screenPoly.emplace_back(int(scr.x), int(scr.y), int(ndc.z * 1e8f), 1);
+            }
+            
+            // Después de llenar `screenPoly`:
+            auto area2 = 0.f;
+            for (size_t i = 0, n = screenPoly.size(); i < n; ++i)
+            {
+                auto &A = screenPoly[i];
+                auto &B = screenPoly[(i+1)%n];
+                area2 += float(A.x)*B.y - float(A.y)*B.x;
+            }
+            
+            if (std::abs(area2) < 1e-2f)
+                continue;  // polígono degenerado, no rasterizar
 
-                rasterizer.set_color(fd.color);
-                // 4.2) Llamada al rasterizer
-                if (screenPoly.size() == 4)
+            rasterizer.set_color(fd.color);
+            // 4.2) Llamada al rasterizer
+            if (screenPoly.size() == 4)
+            {
+                face_t q{ true, 0,1,2,3 };
+                rasterizer.fill_convex_polygon(screenPoly.data(), &q);
+            }
+            else if (screenPoly.size() == 3)
+            {
+                face_t t{ false, 0,1,2,0 };
+                rasterizer.fill_convex_polygon(screenPoly.data(), &t);
+            }
+            else
+            {
+                for (size_t i = 1; i + 1 < screenPoly.size(); ++i)
                 {
-                    face_t q{ true, 0,1,2,3 };
-                    rasterizer.fill_convex_polygon(screenPoly.data(), &q);
-                }
-                else if (screenPoly.size() == 3)
-                {
-                    face_t t{ false, 0,1,2,0 };
+                    face_t t{ false, 0, int(i), int(i + 1), 0 };
                     rasterizer.fill_convex_polygon(screenPoly.data(), &t);
-                }
-                else
-                {
-                    for (size_t i = 1; i + 1 < screenPoly.size(); ++i)
-                    {
-                        face_t t{ false, 0, int(i), int(i + 1), 0 };
-                        rasterizer.fill_convex_polygon(screenPoly.data(), &t);
-                    }
                 }
             }
         }
@@ -606,6 +623,8 @@ namespace Ragot
         {
             logger.Log (RENDERER_TAG, 3, "Error al enviar framebuffer: %s", esp_err_to_name(result));
         }
+
+        frame_buffer.swap_buffers();
         #else
         // En Renderer::render(), en la sección #else de ESP_PLATFORM
         frame_buffer.sendGL();
@@ -625,16 +644,9 @@ namespace Ragot
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
         glBindVertexArray(0);
 
-        // Swap de buffers y limpieza de tu framebuffer
         frame_buffer.swap_buffers();
         frame_buffer.clear_buffer();
-
-        
         #endif
-        
-        logger.Log (RENDERER_TAG, 3, "Swapping y limpiando buffers");
-        frame_buffer.swap_buffers();
-        frame_buffer.clear_buffer();
     }
 #else
     void Renderer::render()
@@ -667,14 +679,15 @@ namespace Ragot
 
         for (auto mesh : meshes)
         {
-            rasterizer.set_color(mesh->get_color());
             const auto &srcVerts = mesh->get_vertices();
             logger.Log(RENDERER_TAG, 2, "Mesh tiene %zu vértices y %zu caras",
                         srcVerts.size(), mesh->get_faces().size());
             
             // 2) Transformar a clip-space
             Matrix4x4 model = mesh->get_transform_matrix();
-            Matrix4x4 clipM = proj * view * model;
+            Matrix4x4 viewModel = view * model;
+            Matrix4x4 clipM = proj * viewModel;
+            glm::mat3 viewNormalMatrix = glm::transpose(glm::inverse(glm::mat3(viewModel)));
             std::vector<glm::fvec4> clipVerts;
             clipVerts.reserve(srcVerts.size());
             for (size_t i = 0; i < srcVerts.size(); ++i)
@@ -688,6 +701,15 @@ namespace Ragot
             // 3) Para cada cara: clipping, pantalla, raster
             for (const auto &face : mesh->get_faces())
             {
+                // Per-face diffuse lighting in view space
+                glm::fvec3 face_normal_local = glm::cross(
+                    glm::fvec3(srcVerts[face.v2]) - glm::fvec3(srcVerts[face.v1]),
+                    glm::fvec3(srcVerts[face.v3]) - glm::fvec3(srcVerts[face.v1])
+                );
+                glm::fvec3 view_normal = glm::normalize(viewNormalMatrix * face_normal_local);
+                float intensity = compute_diffuse_intensity(view_normal, light);
+                uint16_t lit_color = apply_light_rgb565(mesh->get_color(), intensity);
+                rasterizer.set_color(lit_color);
                 
                 // 3.1 Montar el polígono inicial
                 std::vector<glm::fvec4> poly {
@@ -795,7 +817,6 @@ namespace Ragot
         }
 
         frame_buffer.swap_buffers();
-        frame_buffer.clear_buffer();
         #else
         logger.Log (RENDERER_TAG, 3, "Enviando framebuffer al driver");
         
@@ -817,7 +838,6 @@ namespace Ragot
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
         glBindVertexArray(0);
                 
-        logger.Log (RENDERER_TAG, 3, "Swapping y limpiando buffers");
         frame_buffer.swap_buffers();
         frame_buffer.clear_buffer();
         #endif
@@ -848,12 +868,13 @@ namespace Ragot
             elapsed_time = current_tick - last_tick;
             last_tick = current_tick;
             ram_usage = esp_get_free_heap_size();
-            logger.Log (MAIN_TAG, 1, "Tiempo transcurrido: %.6f segundos\n", std::chrono::duration<float>(elapsed_time).count());
-            logger.Log (MAIN_TAG, 1, "Frames renderizados: %u\n", frame_count);
-            logger.Log (MAIN_TAG, 1, "FPS: %.2f\n", 1.f / std::chrono::duration<float>(elapsed_time).count());
-            logger.Log (MAIN_TAG, 1, "Uso de RAM: %zu bytes\n", ram_usage);
-            
-            // std::this_thread::sleep_for(std::chrono::milliseconds(1)); // Simula un frame de 60 FPS
+            // logger.Log (MAIN_TAG, 1, "Tiempo transcurrido: %.6f segundos\n", std::chrono::duration<float>(elapsed_time).count());
+            // logger.Log (MAIN_TAG, 1, "Frames renderizados: %u\n", frame_count);
+            // logger.Log (MAIN_TAG, 1, "FPS: %.2f\n", 1.f / std::chrono::duration<float>(elapsed_time).count());
+            // logger.Log (MAIN_TAG, 1, "Uso de RAM: %zu bytes\n", ram_usage);
+#ifdef ESP_PLATFORM == 1
+            vTaskDelay(1); // Yield to IDLE task to feed the Task WDT
+#endif
         }
 
     }

@@ -59,7 +59,7 @@ namespace Ragot
 
     Driver_ST7789::Driver_ST7789 ()
     {
-        init (GPIO_NUM_17, GPIO_NUM_1); // Default reset pin and no backlight pin
+        init (GPIO_NUM_1, GPIO_NUM_15); // Default reset pin and no backlight pin
     }
 
     esp_err_t Driver_ST7789::init (gpio_num_t rest_pin, gpio_num_t bk_pin)
@@ -69,9 +69,9 @@ namespace Ragot
 
         ESP_LOGI ( TAG, "Initializing LCD panel...");
         spi_bus_config_t buscfg = {
-            .mosi_io_num = GPIO_NUM_16,
+            .mosi_io_num = GPIO_NUM_4,
             .miso_io_num = -1,
-            .sclk_io_num = GPIO_NUM_15,
+            .sclk_io_num = GPIO_NUM_5,
             .quadwp_io_num = -1,
             .quadhd_io_num = -1,
             .max_transfer_sz = 4000
@@ -83,8 +83,8 @@ namespace Ragot
         esp_lcd_panel_io_handle_t io_handle = nullptr;
 
         esp_lcd_panel_io_spi_config_t io_config = {
-            .cs_gpio_num = GPIO_NUM_8 ,
-            .dc_gpio_num = GPIO_NUM_18,
+            .cs_gpio_num = GPIO_NUM_3 ,
+            .dc_gpio_num = GPIO_NUM_2,
             .spi_mode = 0,
             .pclk_hz = (80 * 1000 * 1000),
             .trans_queue_depth = 10,
@@ -115,7 +115,7 @@ namespace Ragot
         esp_lcd_panel_init         (handler);
         esp_lcd_panel_swap_xy      (handler, true );
         esp_lcd_panel_disp_on_off  (handler, true );
-        esp_lcd_panel_invert_color (handler, false);
+        esp_lcd_panel_invert_color (handler, true );
         esp_lcd_panel_mirror       (handler, false, true);
 
         refresh_semaphore = xSemaphoreCreateBinary();
