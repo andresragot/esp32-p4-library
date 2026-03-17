@@ -42,7 +42,7 @@
 
 #if ESP_PLATFORM == 1
 #ifdef CONFIG_IDF_TARGET_ESP32P4
-#include "driver_ek79007.hpp"
+#include "Driver_ST7789.hpp"
 #elif CONFIG_IDF_TARGET_ESP32S3
 #include "Driver_ST7789.hpp"
 #endif
@@ -69,7 +69,7 @@ namespace Ragot
         
         #if ESP_PLATFORM == 1
         #ifdef CONFIG_IDF_TARGET_ESP32P4
-        DriverEK79007 driver; ///< Driver for the EK79007 display controller, used for rendering on ESP32-P4 devices.
+        Driver_ST7789 driver; ///< Driver for the ST7789 display controller, used for rendering on ESP32-P4 devices.
         #elif CONFIG_IDF_TARGET_ESP32S3
         Driver_ST7789 driver; ///< Driver for the ST7789 display controller, used for rendering on ESP32-S3 devices.
         #endif
