@@ -403,16 +403,24 @@ int main(int argc, char * argv[])
     logger.Log (MAIN_TAG, 3, "Iniciando aplicación");
     // logger.Log (MAIN_TAG, 3, "Memoria libre inicial: %u bytes", esp_get_free_heap_size());
     
+#if ESP_PLATFORM == 1
+    constexpr unsigned SCREEN_W = 320;
+    constexpr unsigned SCREEN_H = 240;
+#else
+    constexpr unsigned SCREEN_W = 1024;
+    constexpr unsigned SCREEN_H = 600;
+#endif
+
     logger.Log (MAIN_TAG, 3, "Iniciando Window");
 #if ESP_PLATFORM != 1
     assets.initialize(argv[0]);
 
-    Ragot::Window window ("P4-Test", Ragot::Window::Position::CENTERED, Ragot::Window::Position::CENTERED, 1024, 600, { 3, 3 });
+    Ragot::Window window ("P4-Test", Ragot::Window::Position::CENTERED, Ragot::Window::Position::CENTERED, SCREEN_W, SCREEN_H, { 3, 3 });
 #endif
     
     logger.Log (MAIN_TAG, 3, "Entrando en bucle de renderizado");
 
-    Camera camera(float (1024) / 600.f);
+    Camera camera(float (SCREEN_W) / SCREEN_H);
     camera.set_location(glm::vec3(0.f, 0.f, -15.f));
     camera.set_target(glm::vec3(0.f, 0.f, 0.f));
 
@@ -443,8 +451,8 @@ int main(int argc, char * argv[])
     
     setupScene(scene, camera);
 
-    logger.Log (MAIN_TAG, 3, "Creando renderer (600x1024)");
-    Ragot::Renderer renderer(1024, 600);
+    logger.Log (MAIN_TAG, 3, "Creando renderer (%ux%u)", SCREEN_W, SCREEN_H);
+    Ragot::Renderer renderer(SCREEN_W, SCREEN_H);
     renderer.set_scene(&scene);
     renderer.init();
 

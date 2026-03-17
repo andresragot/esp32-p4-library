@@ -96,7 +96,7 @@ namespace Ragot
             if (   next_index == indices_begin) next_index = indices_back; else next_index--;
             
             y0 = y1;
-            y1 = vertices[*current_index][1];
+            y1 = vertices[*next_index][1];
             o0 = o1;
             o1 = vertices[*next_index][0] + y1 * pitch;
         }
@@ -119,30 +119,39 @@ namespace Ragot
             if (   next_index == indices_back) next_index = indices_begin; else next_index++;
             
             y0 = y1;
-            y1 = vertices[*current_index][1];
+            y1 = vertices[*next_index][1];
             o0 = o1;
             o1 = vertices[*next_index][0] + y1 * pitch;
         }
         
         if (o1 > end_offset) end_offset = o1;
         
-        offset_cache0 += start_y;
-        offset_cache1 += start_y;
+        // Clamp Y range to screen bounds and cache array bounds
+        int height = static_cast < int > (frame_buffer.get_height ());
+        int y_min = std::max(start_y, 0);
+        int y_max = std::min(end_y, height);
+        if (y_min >= y_max) return;
+        
+        offset_cache0 += y_min;
+        offset_cache1 += y_min;
         
         auto pixels = frame_buffer.get_buffer();
-        for (int y = start_y; y < end_y; ++y)
+        for (int y = y_min; y < y_max; ++y)
         {
             o0 = *offset_cache0++;
             o1 = *offset_cache1++;
             
-            if (o0 < o1)
-            {
-                fill_row < sizeof (COLOR) > (pixels, o0, o1, color);
-            }
-            else
-            {
-                fill_row < sizeof (COLOR) > (pixels, o1, o0, color);
-            }
+            if (o0 > o1) std::swap(o0, o1);
+            
+            // Clamp per-scanline: offsets must stay within [y*pitch, (y+1)*pitch)
+            int row_start = y * pitch;
+            int row_end   = row_start + pitch;
+            
+            if (o0 < row_start) o0 = row_start;
+            if (o1 > row_end)   o1 = row_end;
+            if (o0 >= o1) continue;
+            
+            fill_row < sizeof (COLOR) > (pixels, o0, o1, color);
         }
     }
     
@@ -330,7 +339,7 @@ namespace Ragot
     {
         // Se cachean algunos valores de interés:
 
-                int   pitch         = static_cast< int >(frame_buffer.get_height ());
+                int   pitch         = static_cast< int >(frame_buffer.get_width ());
                 int * offset_cache0 = this->offset_cache0;
                 int * offset_cache1 = this->offset_cache1;
                 int * z_cache0      = this->z_cache0;
@@ -495,9 +504,10 @@ namespace Ragot
         // Ajuste de límites para el array de 1024
         int ym = std::clamp(y_min, 0, 1023);
         int yM = std::clamp(y_max, 0, 1023);
+        if (ym > yM) return;
 
-        VALUE_TYPE value = static_cast<VALUE_TYPE>(v0) << SHIFT;
         VALUE_TYPE step  = (static_cast<VALUE_TYPE>(v1 - v0) << SHIFT) / (y_max - y_min);
+        VALUE_TYPE value = (static_cast<VALUE_TYPE>(v0) << SHIFT) + step * (ym - y_min);
         for (int y = ym; y <= yM; ++y)
         {
             cache[y] = static_cast<int>(value >> SHIFT);
