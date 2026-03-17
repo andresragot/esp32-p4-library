@@ -45,7 +45,7 @@
 #ifdef CONFIG_IDF_TARGET_ESP32P4
 #include "Driver_ST7789.hpp"
 #elif CONFIG_IDF_TARGET_ESP32S3
-#include "Driver_ST7789.hpp"
+#include "Driver_ST7262.hpp"
 #endif
 #else
 #include "Shader_Program.hpp"
@@ -72,7 +72,7 @@ namespace Ragot
         #ifdef CONFIG_IDF_TARGET_ESP32P4
         Driver_ST7789 driver; ///< Driver for the ST7789 display controller, used for rendering on ESP32-P4 devices.
         #elif CONFIG_IDF_TARGET_ESP32S3
-        Driver_ST7789 driver; ///< Driver for the ST7789 display controller, used for rendering on ESP32-S3 devices.
+        Driver_ST7262 driver; ///< Driver for the ST7262 display controller, used for rendering on ESP32-S3 devices.
         #endif
         #else
         std::unique_ptr < Shader_Program > quadShader       = nullptr; ///< Shader program for rendering a full-screen quad, used in non-ESP platforms.
