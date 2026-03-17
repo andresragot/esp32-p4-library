@@ -37,6 +37,7 @@
 #include "Rasterizer.hpp"
 #include "Node.hpp"
 #include "Scene.hpp"
+#include "Light.hpp"
 #include <memory>
 #include <string>
 
@@ -91,6 +92,8 @@ namespace Ragot
         unsigned  width; ///< Width of the rendering area in pixels, used to define the size of the frame buffer and viewport.
         unsigned height; ///< Height of the rendering area in pixels, used to define the size of the frame buffer and viewport.
         
+        DirectionalLight light; ///< Directional light for per-face diffuse shading.
+
         bool initialized = false; ///< Flag to indicate if the renderer has been initialized, used to prevent re-initialization and ensure resources are set up correctly.
 
         std::atomic<bool> running = false; ///< Flag to indicate if the renderer is currently running, used to control rendering tasks and stop them gracefully.
@@ -186,6 +189,18 @@ namespace Ragot
          * This method sets the running flag to false, indicating that the renderer should stop rendering.
          */
         void  stop() { running = false; }
+
+        /**
+         * @brief Sets the directional light for the scene.
+         * @param l The directional light parameters.
+         */
+        void set_light(const DirectionalLight & l) { light = l; }
+
+        /**
+         * @brief Gets the current directional light.
+         * @return const DirectionalLight& Reference to the current light.
+         */
+        const DirectionalLight & get_light() const { return light; }
     };
 }
 

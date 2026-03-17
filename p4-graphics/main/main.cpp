@@ -41,6 +41,7 @@
 #include "Id.hpp"
 #include "Logger.hpp"
 #include "Thread_Pool.hpp"
+#include "Light.hpp"
 
 #if ESP_PLATFORM != 1
 #include "Window.hpp"
@@ -455,6 +456,15 @@ int main(int argc, char * argv[])
     Ragot::Renderer renderer(SCREEN_W, SCREEN_H);
     renderer.set_scene(&scene);
     renderer.init();
+
+    // Configure directional light in view/screen space:
+    // (0.4, 0.6, -0.8) = light from upper-left-back relative to the camera.
+    // As the camera orbits, the lighting naturally evolves on each face.
+    renderer.set_light(Ragot::DirectionalLight(
+        glm::vec3(0.4f, 0.6f, -0.8f),  // view-space: upper-left, mostly frontal
+        0.05f,                           // ambient  – keeps shadowed faces visible
+        0.30f                            // diffuse  – strong directional component
+    ));
 
     scene.start ();
     renderer.start ();

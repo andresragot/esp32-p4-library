@@ -481,22 +481,35 @@ namespace Ragot
         {
             const auto &srcVerts = mesh->get_vertices();
             Matrix4x4 model = mesh->get_transform_matrix();
-            Matrix4x4 clipM  = proj * view * model;
+            Matrix4x4 viewModel = view * model;
+            Matrix4x4 clipM  = proj * viewModel;
 
             // Pre-transformar todos los vértices a clip-space
             std::vector<glm::fvec4> clipVerts(srcVerts.size());
             for (size_t i = 0; i < srcVerts.size(); ++i)
                 clipVerts[i] = clipM * srcVerts[i];
 
+            // View-space normal matrix: normals change as camera orbits
+            glm::mat3 viewNormalMatrix = glm::transpose(glm::inverse(glm::mat3(viewModel)));
+
             for (auto &face : mesh->get_faces())
             {
                 // Back-face culling en view-space
-                glm::fvec4 Av = view * model * srcVerts[face.v1];
-                glm::fvec4 Bv = view * model * srcVerts[face.v2];
-                glm::fvec4 Cv = view * model * srcVerts[face.v3];
+                glm::fvec4 Av = viewModel * srcVerts[face.v1];
+                glm::fvec4 Bv = viewModel * srcVerts[face.v2];
+                glm::fvec4 Cv = viewModel * srcVerts[face.v3];
                 glm::fvec3 A3(Av.x, Av.y, Av.z), B3(Bv.x, Bv.y, Bv.z), C3(Cv.x, Cv.y, Cv.z);
                 glm::fvec3 normal = glm::cross(B3 - A3, C3 - A3);
                 if (normal.z <= 0.0f) continue;
+
+                // Per-face diffuse lighting in view space (evolves as camera orbits)
+                glm::fvec3 face_normal_local = glm::cross(
+                    glm::fvec3(srcVerts[face.v2]) - glm::fvec3(srcVerts[face.v1]),
+                    glm::fvec3(srcVerts[face.v3]) - glm::fvec3(srcVerts[face.v1])
+                );
+                glm::fvec3 view_normal = glm::normalize(viewNormalMatrix * face_normal_local);
+                float intensity = compute_diffuse_intensity(view_normal, light);
+                uint16_t lit_color = apply_light_rgb565(mesh->get_color(), intensity);
 
                 // 2.1) Inicializar polígono en clip-space
                 std::vector<glm::fvec4> poly = {
@@ -536,7 +549,7 @@ namespace Ragot
                     depth += (v.z / v.w);
                 depth /= float(poly.size());
 
-                drawList.push_back({ std::move(poly), depth, mesh->get_color() });
+                drawList.push_back({ std::move(poly), depth, lit_color });
             }
         }
 
@@ -662,14 +675,15 @@ namespace Ragot
 
         for (auto mesh : meshes)
         {
-            rasterizer.set_color(mesh->get_color());
             const auto &srcVerts = mesh->get_vertices();
             logger.Log(RENDERER_TAG, 2, "Mesh tiene %zu vértices y %zu caras",
                         srcVerts.size(), mesh->get_faces().size());
             
             // 2) Transformar a clip-space
             Matrix4x4 model = mesh->get_transform_matrix();
-            Matrix4x4 clipM = proj * view * model;
+            Matrix4x4 viewModel = view * model;
+            Matrix4x4 clipM = proj * viewModel;
+            glm::mat3 viewNormalMatrix = glm::transpose(glm::inverse(glm::mat3(viewModel)));
             std::vector<glm::fvec4> clipVerts;
             clipVerts.reserve(srcVerts.size());
             for (size_t i = 0; i < srcVerts.size(); ++i)
@@ -683,6 +697,15 @@ namespace Ragot
             // 3) Para cada cara: clipping, pantalla, raster
             for (const auto &face : mesh->get_faces())
             {
+                // Per-face diffuse lighting in view space
+                glm::fvec3 face_normal_local = glm::cross(
+                    glm::fvec3(srcVerts[face.v2]) - glm::fvec3(srcVerts[face.v1]),
+                    glm::fvec3(srcVerts[face.v3]) - glm::fvec3(srcVerts[face.v1])
+                );
+                glm::fvec3 view_normal = glm::normalize(viewNormalMatrix * face_normal_local);
+                float intensity = compute_diffuse_intensity(view_normal, light);
+                uint16_t lit_color = apply_light_rgb565(mesh->get_color(), intensity);
+                rasterizer.set_color(lit_color);
                 
                 // 3.1 Montar el polígono inicial
                 std::vector<glm::fvec4> poly {
