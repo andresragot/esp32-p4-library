@@ -540,9 +540,9 @@ namespace Ragot
             }
         }
 
-        // 3) Ordenar GLOBALMENTE de menor a mayor depth (más lejano primero)
+        // 3) Ordenar GLOBALMENTE de mayor a menor depth (más lejano primero)
         std::sort(drawList.begin(), drawList.end(),
-                  [](auto &a, auto &b){ return a.depth < b.depth; });
+                  [](auto &a, auto &b){ return a.depth > b.depth; });
 
         // 4) Rasterizar en orden
         for (auto &fd : drawList)
