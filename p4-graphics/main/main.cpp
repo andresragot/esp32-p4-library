@@ -48,6 +48,13 @@
 #endif
 
 static const char* MAIN_TAG = "Main";
+#if ESP_PLATFORM == 1
+    constexpr unsigned SCREEN_W = 1024;
+    constexpr unsigned SCREEN_H = 600;
+#else
+    constexpr unsigned SCREEN_W = 1024;
+    constexpr unsigned SCREEN_H = 600;
+#endif
 
 using namespace std;
 using namespace Ragot;
@@ -403,18 +410,10 @@ int main(int argc, char * argv[])
 
     logger.Log (MAIN_TAG, 3, "Iniciando aplicación");
     // logger.Log (MAIN_TAG, 3, "Memoria libre inicial: %u bytes", esp_get_free_heap_size());
-    
-#if ESP_PLATFORM == 1
-    constexpr unsigned SCREEN_W = 1024;
-    constexpr unsigned SCREEN_H = 600;
-#else
-    constexpr unsigned SCREEN_W = 1024;
-    constexpr unsigned SCREEN_H = 600;
-#endif
 
     logger.Log (MAIN_TAG, 3, "Iniciando Window");
 #if ESP_PLATFORM != 1
-    assets.initialize(argv[0]);
+    // assets.initialize(argv[0]);
 
     Ragot::Window window ("P4-Test", Ragot::Window::Position::CENTERED, Ragot::Window::Position::CENTERED, SCREEN_W, SCREEN_H, { 3, 3 });
 #endif
@@ -461,9 +460,9 @@ int main(int argc, char * argv[])
     // (0.4, 0.6, -0.8) = light from upper-left-back relative to the camera.
     // As the camera orbits, the lighting naturally evolves on each face.
     renderer.set_light(Ragot::DirectionalLight(
-        glm::vec3(0.4f, 0.6f, -0.8f),  // view-space: upper-left, mostly frontal
+        glm::vec3(-0.4f, 0.6f, 0.8f),  // view-space: upper-left, mostly frontal
         0.50f,                           // ambient  – keeps shadowed faces visible
-        1.0f                            // diffuse  – strong directional component
+        0.80f                            // diffuse  – strong directional component
     ));
 
     scene.start ();
