@@ -154,16 +154,16 @@ namespace Ragot
             /**
              * @brief Get the pixel format object
              * 
-             * @return const lcd_color_rgb_pixel_format_t 
+             * @return const lcd_color_format_t 
              */
-            const lcd_color_rgb_pixel_format_t get_pixel_format() const { return pixel_format; }
+            const lcd_color_format_t get_pixel_format() const { return pixel_format; }
 
             /**
              * @brief Get the pixel format object
              * 
-             * @return lcd_color_rgb_pixel_format_t 
+             * @return lcd_color_format_t 
              */
-                  lcd_color_rgb_pixel_format_t get_pixel_format()       { return pixel_format; }
+                  lcd_color_format_t get_pixel_format()       { return pixel_format; }
             
             /**
              * @brief Get the handler object
@@ -199,7 +199,7 @@ namespace Ragot
             bool initialized = false; ///< Flag indicating if the LCD driver is initialized.
             size_t width; ///< Width of the LCD panel in pixels.
             size_t height; ///< Height of the LCD panel in pixels.
-            lcd_color_rgb_pixel_format_t pixel_format; ///< Pixel format of the LCD panel.
+            lcd_color_format_t pixel_format; ///< Pixel format of the LCD panel.
             esp_lcd_panel_handle_t handler; ///< Handle to the LCD panel.
     };
 }

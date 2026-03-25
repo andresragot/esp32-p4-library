@@ -79,7 +79,7 @@ namespace Ragot
         // Initialize the driver with the given parameters
         width = 1024;
         height = 600;
-        pixel_format = LCD_COLOR_PIXEL_FORMAT_RGB565;
+        pixel_format = LCD_COLOR_FMT_RGB565;
 
         panel_clk_freq_mhz = 52;
         hsync_pulse_width  = 20;
@@ -122,7 +122,8 @@ namespace Ragot
             .virtual_channel = 0,
             .dpi_clk_src = MIPI_DSI_DPI_CLK_SRC_DEFAULT,
             .dpi_clock_freq_mhz = panel_clk_freq_mhz,
-            .pixel_format = pixel_format,
+            .in_color_format = pixel_format,
+            .out_color_format = pixel_format,
             .num_fbs = 2,
             .video_timing = {
                 .h_size = width,
@@ -135,7 +136,6 @@ namespace Ragot
                 .vsync_front_porch = vsync_front_porch
             },
             .flags = {
-                .use_dma2d = true,
                 .disable_lp = false
             }
         };
@@ -148,9 +148,9 @@ namespace Ragot
         };
 
         const esp_lcd_panel_dev_config_t lcd_dev_config = {
-            .reset_gpio_num = reset_pin,
-            .rgb_ele_order = LCD_RGB_ELEMENT_ORDER_RGB,
+            .data_endian = LCD_RGB_DATA_ENDIAN_BIG,
             .bits_per_pixel = 16,
+            .reset_gpio_num = reset_pin,
             .vendor_config = &vendor_config,
         };
         ESP_ERROR_CHECK(esp_lcd_new_panel_ek79007(mipi_dbi_io, &lcd_dev_config, &handler));

@@ -97,9 +97,9 @@ namespace Ragot
        ret = esp_lcd_new_panel_io_spi(SPI3_HOST, &io_config, &io_handle);
 
         esp_lcd_panel_dev_config_t panel_config = {
-            .reset_gpio_num = rest_pin,
-            .rgb_ele_order = LCD_RGB_ELEMENT_ORDER_RGB,
+            .data_endian = LCD_RGB_DATA_ENDIAN_BIG,
             .bits_per_pixel = 16,
+            .reset_gpio_num = rest_pin,
         };
 
         ESP_LOGD ( TAG, "esp_lcd_new_panel_io_spi ret: %d", ret);

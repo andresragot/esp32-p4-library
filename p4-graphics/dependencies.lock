@@ -28,10 +28,10 @@ dependencies:
   idf:
     source:
       type: idf
-    version: 5.5.3
+    version: 6.0.0
 direct_dependencies:
 - espressif/esp_lcd_ek79007
 - idf
 manifest_hash: 288320a7f66fe4810596c19fcc7b24455b4b5abcbaaecd21e27608b9d67f51d4
 target: esp32p4
-version: 2.0.0
+version: 3.0.0
