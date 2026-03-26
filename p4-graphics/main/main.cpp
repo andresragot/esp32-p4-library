@@ -70,7 +70,6 @@ void main_loop (Renderer & renderer, Scene & scene)
 {
     bool update = true;
     unsigned frame_count = 0;
-    size_t ram_usage = 0;
 
     std::chrono::high_resolution_clock::time_point last_tick = std::chrono::high_resolution_clock::now();
     std::chrono::high_resolution_clock::time_point current_tick;
@@ -99,18 +98,6 @@ void main_loop (Renderer & renderer, Scene & scene)
 
         elapsed_time = current_tick - last_tick;
         last_tick = current_tick;
-        ram_usage = esp_get_free_heap_size();
-        // logger.Log (MAIN_TAG, 1, "Tiempo transcurrido: %.6f segundos\n", std::chrono::duration<float>(elapsed_time).count());
-        // logger.Log (MAIN_TAG, 1, "Frames renderizados: %u\n", frame_count);
-        // logger.Log (MAIN_TAG, 1, "FPS: %.2f\n", 1.f / std::chrono::duration<float>(elapsed_time).count());
-        // logger.Log (MAIN_TAG, 1, "Uso de RAM: %zu bytes\n", ram_usage);
-        
-        // Log periódico del estado de memoria
-        if (frame_count % 100 == 0)
-        {
-            // logger.Log (MAIN_TAG, 3, "Estado después de %u frames:", frame_count);
-        }
-        // std::this_thread::sleep_for(std::chrono::milliseconds(1)); // Simula un frame rate de 10 FPS
     }
 }
 #else
@@ -182,7 +169,7 @@ namespace
             mesh_info_t mesh_info_cilindro(coords_cilindro, RENDER_REVOLUTION);
             std::shared_ptr < RevolutionMesh > mesh_cilindro = std::make_shared < RevolutionMesh >(mesh_info_cilindro, camera);
             mesh_cilindro->set_position(vec3( 0.0f, 0.0f,  0.0f));  // centro de la escena
-            mesh_cilindro->set_color (0xb56a2d);
+            mesh_cilindro->set_color (0xB345); // RGB565 equivalent of 0xb56a2d
             scene.add_node(mesh_cilindro, ID(CILINDRO));
         }
 

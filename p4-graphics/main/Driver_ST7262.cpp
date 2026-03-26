@@ -69,43 +69,54 @@ namespace Ragot
         ESP_LOGI (TAG, "Installing RGB LCD panel driver");
         handler = nullptr;
 
-        esp_lcd_rgb_panel_config_t panel_config = {
-            .clk_src = LCD_CLK_SRC_DEFAULT,
-            .timings = {
-                .pclk_hz = LCD_PIXEL_CLOCK_HZ,
-                .h_res = (uint32_t)width,
-                .v_res = (uint32_t)height,
-                .hsync_pulse_width = 162,
-                .hsync_back_porch = 152,
-                .hsync_front_porch = 48,
-                .vsync_pulse_width = 45,
-                .vsync_back_porch = 13,
-                .vsync_front_porch = 3,
-                .flags = {
-                    .pclk_active_neg = 1,
-                },
-            },
-            .data_width = RGB_DATA_WIDTH,
-            .in_color_format = RGB_BITS_PER_PIXEL,
-            .out_color_format = RGB_BITS_PER_PIXEL,
-            .num_fbs = 2,
-            .bounce_buffer_size_px = 600 * 32,
-            .dma_burst_size = 4,
-            .hsync_gpio_num = LCD_IO_RGB_HSYNC,
-            .vsync_gpio_num = LCD_IO_RGB_VSYNC,
-            .de_gpio_num = LCD_IO_RGB_DE,
-            .pclk_gpio_num = LCD_IO_RGB_PCLK,
-            .disp_gpio_num = LCD_IO_RGB_DISP,
-            .data_gpio_nums = {
-                LCD_IO_RGB_DATA0,  LCD_IO_RGB_DATA1,  LCD_IO_RGB_DATA2,  LCD_IO_RGB_DATA3,
-                LCD_IO_RGB_DATA4,  LCD_IO_RGB_DATA5,  LCD_IO_RGB_DATA6,  LCD_IO_RGB_DATA7,
-                LCD_IO_RGB_DATA8,  LCD_IO_RGB_DATA9,  LCD_IO_RGB_DATA10, LCD_IO_RGB_DATA11,
-                LCD_IO_RGB_DATA12, LCD_IO_RGB_DATA13, LCD_IO_RGB_DATA14, LCD_IO_RGB_DATA15,
-            },
-            .flags = {
-                .fb_in_psram = 1,
-            }
-        };
+        esp_lcd_rgb_panel_config_t panel_config = {};
+        panel_config.clk_src = LCD_CLK_SRC_DEFAULT;
+        
+        panel_config.timings = {};
+        panel_config.timings.pclk_hz = LCD_PIXEL_CLOCK_HZ;
+        panel_config.timings.h_res = (uint32_t)width;
+        panel_config.timings.v_res = (uint32_t)height;
+        panel_config.timings.hsync_pulse_width = 162;
+        panel_config.timings.hsync_back_porch = 152;
+        panel_config.timings.hsync_front_porch = 48;
+        panel_config.timings.vsync_pulse_width = 45;
+        panel_config.timings.vsync_back_porch = 13;
+        panel_config.timings.vsync_front_porch = 3;
+        
+        panel_config.timings.flags = {};
+        panel_config.timings.flags.pclk_active_neg = 1;
+        
+        panel_config.data_width = RGB_DATA_WIDTH;
+        panel_config.in_color_format = RGB_BITS_PER_PIXEL;
+        panel_config.out_color_format = RGB_BITS_PER_PIXEL;
+        panel_config.num_fbs = 2;
+        panel_config.bounce_buffer_size_px = 600 * 32;
+        panel_config.dma_burst_size = 4;
+        panel_config.hsync_gpio_num = LCD_IO_RGB_HSYNC;
+        panel_config.vsync_gpio_num = LCD_IO_RGB_VSYNC;
+        panel_config.de_gpio_num = LCD_IO_RGB_DE;
+        panel_config.pclk_gpio_num = LCD_IO_RGB_PCLK;
+        panel_config.disp_gpio_num = LCD_IO_RGB_DISP;
+        
+        panel_config.data_gpio_nums[0]  = LCD_IO_RGB_DATA0;
+        panel_config.data_gpio_nums[1]  = LCD_IO_RGB_DATA1;
+        panel_config.data_gpio_nums[2]  = LCD_IO_RGB_DATA2;
+        panel_config.data_gpio_nums[3]  = LCD_IO_RGB_DATA3;
+        panel_config.data_gpio_nums[4]  = LCD_IO_RGB_DATA4;
+        panel_config.data_gpio_nums[5]  = LCD_IO_RGB_DATA5;
+        panel_config.data_gpio_nums[6]  = LCD_IO_RGB_DATA6;
+        panel_config.data_gpio_nums[7]  = LCD_IO_RGB_DATA7;
+        panel_config.data_gpio_nums[8]  = LCD_IO_RGB_DATA8;
+        panel_config.data_gpio_nums[9]  = LCD_IO_RGB_DATA9;
+        panel_config.data_gpio_nums[10] = LCD_IO_RGB_DATA10;
+        panel_config.data_gpio_nums[11] = LCD_IO_RGB_DATA11;
+        panel_config.data_gpio_nums[12] = LCD_IO_RGB_DATA12;
+        panel_config.data_gpio_nums[13] = LCD_IO_RGB_DATA13;
+        panel_config.data_gpio_nums[14] = LCD_IO_RGB_DATA14;
+        panel_config.data_gpio_nums[15] = LCD_IO_RGB_DATA15;
+        
+        panel_config.flags = {};
+        panel_config.flags.fb_in_psram = 1;
 
         esp_err_t err = esp_lcd_new_rgb_panel (&panel_config, &handler);
         if (err != ESP_OK) 
@@ -190,7 +201,7 @@ namespace Ragot
         return ret;
     }
 
-    IRAM_ATTR bool Driver_ST7262::refresh_frame_buffer (void * user_ctx)
+    bool Driver_ST7262::refresh_frame_buffer (void * user_ctx)
     {
         SemaphoreHandle_t refresh_sem = static_cast<SemaphoreHandle_t> (user_ctx);
         if (!refresh_sem)

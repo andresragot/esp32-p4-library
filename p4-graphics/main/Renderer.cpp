@@ -44,7 +44,7 @@
 
 #ifdef CONFIG_GRAPHICS_PARALLEL_ENABLED
 #include "Thread_Pool.hpp"
-#ifdef ESP_PLATFORM == 1
+#if defined(ESP_PLATFORM) && ESP_PLATFORM == 1
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #endif
@@ -55,9 +55,8 @@ namespace Ragot
     using Matrix4x4 = glm::mat4;
     using glm::fvec4;
     static const char* RENDERER_TAG = "Renderer";
-    static const char* MAIN_TAG = "Main";
     
-#if ESP_PLATFORM != 1
+#if !defined(ESP_PLATFORM) || ESP_PLATFORM != 1
     
     const string Renderer::vertex_shader_code =
     "#version 330\n"
@@ -570,7 +569,6 @@ namespace Ragot
         }
 
         unsigned frame_count = 0;
-        size_t ram_usage = 0;
 
         std::chrono::high_resolution_clock::time_point last_tick = std::chrono::high_resolution_clock::now();
         std::chrono::high_resolution_clock::time_point current_tick;
@@ -585,11 +583,6 @@ namespace Ragot
 
             elapsed_time = current_tick - last_tick;
             last_tick = current_tick;
-            // ram_usage = esp_get_free_heap_size();
-            // logger.Log (MAIN_TAG, 1, "Tiempo transcurrido: %.6f segundos\n", std::chrono::duration<float>(elapsed_time).count());
-            // logger.Log (MAIN_TAG, 1, "Frames renderizados: %u\n", frame_count);
-            // logger.Log (MAIN_TAG, 1, "FPS: %.2f\n", 1.f / std::chrono::duration<float>(elapsed_time).count());
-            // logger.Log (MAIN_TAG, 1, "Uso de RAM: %zu bytes\n", ram_usage);
 #if defined(ESP_PLATFORM) && ESP_PLATFORM == 1
             vTaskDelay(1); // Yield to IDLE task to feed the Task WDT
 #endif

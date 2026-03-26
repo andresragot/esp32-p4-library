@@ -33,9 +33,9 @@
 #include <stdint.h>
 
 // Definimos __atomic_test_and_set usando __sync_lock_test_and_set de GCC
-int __atomic_test_and_set(volatile void *ptr, int memorder) {
+_Bool __atomic_test_and_set(volatile void *ptr, int memorder) {
     // reinterpretamos ptr como un int y hacemos la operación atómica
-    return __sync_lock_test_and_set((volatile int *)ptr, 1);
+    return __sync_lock_test_and_set((volatile int *)ptr, 1) != 0;
 }
 
 // Definimos __atomic_clear usando __sync_lock_release

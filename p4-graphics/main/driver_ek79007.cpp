@@ -81,7 +81,7 @@ namespace Ragot
         height = 600;
         pixel_format = LCD_COLOR_FMT_RGB565;
 
-        panel_clk_freq_mhz = 52;
+        panel_clk_freq_mhz = 52.0f;
         hsync_pulse_width  = 20;
         hsync_back_porch   = 100;
         hsync_front_porch  = 100;
@@ -89,24 +89,24 @@ namespace Ragot
         vsync_back_porch   = 10;
         vsync_front_porch  = 10;
         mipi_lane_num      = 2;
-        mipi_dsi_max_data_rate_mbps = 1000;
+        mipi_dsi_max_data_rate_mbps = 1000.0f;
 
         // Encender la fuente de alimentación de MIPI DSI PHY
         esp_ldo_channel_handle_t ldo_mipi_phy = nullptr;
-        esp_ldo_channel_config_t ldo_mipi_phy_config ={
-            .chan_id = 3,
-            .voltage_mv = 2500
-        };
+        esp_ldo_channel_config_t ldo_mipi_phy_config ={};
+        ldo_mipi_phy_config.chan_id = 3;
+        ldo_mipi_phy_config.voltage_mv = 2500;
+
         ESP_ERROR_CHECK (esp_ldo_acquire_channel (&ldo_mipi_phy_config, &ldo_mipi_phy));
         ESP_LOGI (TAG, "MIPI DSI PHY Powered on");
 
         // Crear el bus MIPI DSI
         esp_lcd_dsi_bus_handle_t mipi_dsi_bus = nullptr;
-        esp_lcd_dsi_bus_config_t bus_config = {
-            .bus_id = 0,
-            .num_data_lanes = mipi_lane_num,
-            .lane_bit_rate_mbps = mipi_dsi_max_data_rate_mbps
-        };
+        esp_lcd_dsi_bus_config_t bus_config = {};
+        bus_config.bus_id = 0;
+        bus_config.num_data_lanes = mipi_lane_num;
+        bus_config.lane_bit_rate_mbps = mipi_dsi_max_data_rate_mbps;
+
         ESP_ERROR_CHECK (esp_lcd_new_dsi_bus (&bus_config, &mipi_dsi_bus));
 
         // Configurar y crear el IO de control del panel
@@ -140,19 +140,17 @@ namespace Ragot
             }
         };
 
-        ek79007_vendor_config_t vendor_config = {
-            .mipi_config = {
-                .dsi_bus = mipi_dsi_bus,
-                .dpi_config = &panel_config,
-            },
-        };
+        ek79007_vendor_config_t vendor_config = {};
+        vendor_config.mipi_config = {};
+        vendor_config.mipi_config.dsi_bus = mipi_dsi_bus;
+        vendor_config.mipi_config.dpi_config = &panel_config;
 
-        const esp_lcd_panel_dev_config_t lcd_dev_config = {
-            .data_endian = LCD_RGB_DATA_ENDIAN_BIG,
-            .bits_per_pixel = 16,
-            .reset_gpio_num = reset_pin,
-            .vendor_config = &vendor_config,
-        };
+        esp_lcd_panel_dev_config_t lcd_dev_config = {};
+        lcd_dev_config.data_endian = LCD_RGB_DATA_ENDIAN_BIG;
+        lcd_dev_config.bits_per_pixel = 16;
+        lcd_dev_config.reset_gpio_num = reset_pin;
+        lcd_dev_config.vendor_config = &vendor_config;
+
         ESP_ERROR_CHECK(esp_lcd_new_panel_ek79007(mipi_dbi_io, &lcd_dev_config, &handler));
     
         // Resetear e inicializar el panel
@@ -167,9 +165,9 @@ namespace Ragot
         }
         xSemaphoreGive(refresh_semaphore);
 
-        esp_lcd_dpi_panel_event_callbacks_t cbs = {
-            .on_refresh_done = panel_refresh_callback,
-        };
+        esp_lcd_dpi_panel_event_callbacks_t cbs = {};
+        cbs.on_refresh_done = panel_refresh_callback;
+
         ESP_ERROR_CHECK(esp_lcd_dpi_panel_register_event_callbacks(handler, &cbs, this));
 
         bsp_enable_dsi_phy_power();
@@ -245,17 +243,17 @@ namespace Ragot
     void DriverEK79007::bsp_enable_dsi_phy_power()
     {
         esp_ldo_channel_handle_t ldo_mipi_phy = nullptr;
-        esp_ldo_channel_config_t ldo_mipi_phy_config ={
-            .chan_id = 3,
-            .voltage_mv = 2500
-        };
+        esp_ldo_channel_config_t ldo_mipi_phy_config ={};
+        ldo_mipi_phy_config.chan_id = 3;
+        ldo_mipi_phy_config.voltage_mv = 2500;
+
         ESP_ERROR_CHECK (esp_ldo_acquire_channel (&ldo_mipi_phy_config, &ldo_mipi_phy));
         ESP_LOGI (TAG, "MIPI DSI PHY Powered on");
     }
 
     void DriverEK79007::bsp_init_lcd_backlight(gpio_num_t bk_pin)
     {
-        gpio_config_t bk_gpio_config = { 0 };
+        gpio_config_t bk_gpio_config = {};
         bk_gpio_config.mode = GPIO_MODE_OUTPUT;
         bk_gpio_config.pin_bit_mask = (1ULL << bk_pin);
         
@@ -265,7 +263,7 @@ namespace Ragot
         ESP_LOGI(TAG, "Backlight powered on");
     }
 
-    IRAM_ATTR bool DriverEK79007::refresh_frame_buffer(esp_lcd_panel_handle_t panel, 
+    bool DriverEK79007::refresh_frame_buffer(esp_lcd_panel_handle_t panel, 
                                                  esp_lcd_dpi_panel_event_data_t* edata, 
                                                  void* user_ctx)
     {        

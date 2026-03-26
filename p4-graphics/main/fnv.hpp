@@ -127,9 +127,9 @@
 
     }
 
-    constexpr unsigned operator "" _fnv (const char * c)
+    constexpr unsigned operator ""_fnv (const char * c)
     {
-        return c ? 1 : operator "" _fnv ("2");
+        return c ? 1 : operator ""_fnv ("2");
     }
 
     // ---------------------------------------------------------------------------------------------

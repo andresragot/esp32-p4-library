@@ -196,77 +196,6 @@ namespace Ragot
         cam->set_target(centro);
     }
 
-
-    // void Scene::update(float delta_time)
-    // {
-    //     // 1. Recolectamos todas las meshes
-    //     auto meshes = collect_components<Mesh>();
-
-    //     // 2. Si no hay meshes, no hay nada que orbitar
-    //     if (meshes.empty())
-    //         return;
-
-    //     // 3. Calculamos el “centro” como promedio de posiciones
-    //     glm::vec3 centro(0.0f);
-    //     for (auto mesh : meshes)
-    //     {
-    //         // get_position() es del Transform, devuelve vec3
-    //         centro += mesh->get_position();
-    //     }
-    //     centro /= static_cast<float>(meshes.size());
-
-    //     // 4. Definimos un ángulo estático para que persista entre cuadros
-    //     static float anguloCam = 0.0f;             // en radianes
-    //     const float velocidadAngular = 0.5f;       // radianes por segundo (ajusta a tu gusto)
-    //     // O, si prefieres “radianes por frame” fijo en lugar de delta_time:
-    //     // const float velocidadXFrame = 0.02f;     // radianes por cuadro, fijo
-
-    //     // 5. Actualizamos ángulo usando delta_time para velocidad constante en segundos
-    //     anguloCam += velocidadAngular * delta_time;
-    //     // Si usaras “por cuadro” en vez de “por segundo”:
-    //     // anguloCam += velocidadXFrame;
-
-    //     // 6. Elegimos un radio y una altura de la órbita
-    //     const float radio = 10.0f;   // distancia constante entre cámara y centro
-    //     const float altura = 3.0f;   // eleva la cámara sobre el centro en Y
-
-    //     // 7. Calculamos la nueva posición de la cámara en coordenadas polares (XZ)
-    //     float camX = centro.x + radio * cos(anguloCam);
-    //     float camZ = centro.z + radio * sin(anguloCam);
-    //     float camY = centro.y + altura;
-
-    //     // 8. Obtenemos el puntero a la cámara principal
-    //     Camera* cam = get_main_camera();
-    //     if (!cam)
-    //         return; // Si no hay cámara, devolvemos
-
-    //     // 9. Asignamos la posición y el target (mirar siempre al centro)
-    //     cam->set_location(glm::vec3(camX, camY, camZ));
-    //     cam->set_target(centro);
-
-    //     // 10. Marcamos dirty (aunque set_location y set_target ya lo hacen internamente)
-    //     //    para que las matrices se recalculen cuando se necesite.
-    // }
-
-    
-//     void Scene::update(float delta_time)
-//     {
-//         static auto meshes = collect_components<Mesh>();
-
-//         static float angle = 0.f;
-//         static int frame_count = 0;
-//         frame_count++;
-//         angle += 0.025f * (1 + sin(angle * 0.1f)); // Varying rotation speed
-//         float z_pos = +5.f * sin(frame_count * 0.1f);
-
-//         for (auto mesh : meshes)
-//         {
-//             mesh->rotate(angle, glm::fvec3(0.f, 1.f, 0.f));
-//             mesh->set_position(glm::fvec3(0.f, -1.f, z_pos));
-//             mesh->recalculate ();
-//         }
-//     }
-    
     void Scene::task_update (std::stop_token stop_token, float delta_time)
     {    
         while (not running)
@@ -284,8 +213,6 @@ namespace Ragot
         const float radio = 10.0f;
         const float altura = 3.0f;
         
-        float angle = 0.f;
-        int frame_count = 0;
 
         Camera * cam = nullptr;
 

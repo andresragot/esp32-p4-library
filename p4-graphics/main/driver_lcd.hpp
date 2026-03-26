@@ -127,28 +127,28 @@ namespace Ragot
              * 
              * @return size_t Width of the LCD panel in pixels.
              */
-            const size_t  get_width() const { return width; }
+            size_t  get_width() const { return width; }
 
             /**
              * @brief Gets the height of the LCD panel.
              * 
              * @return size_t Height of the LCD panel in pixels.
              */
-                  size_t  get_width()       { return width; }
+            size_t  get_width()       { return width; }
 
             /**
              * @brief Gets the height of the LCD panel.
              * 
              * @return size_t Height of the LCD panel in pixels.
              */
-            const size_t get_height() const { return height; }
+            size_t get_height() const { return height; }
 
             /**
              * @brief Gets the height of the LCD panel.
              * 
              * @return size_t Height of the LCD panel in pixels.
              */
-                  size_t get_height()       { return height; }
+            size_t get_height()       { return height; }
 
 
             /**
@@ -156,28 +156,28 @@ namespace Ragot
              * 
              * @return const lcd_color_format_t 
              */
-            const lcd_color_format_t get_pixel_format() const { return pixel_format; }
+            lcd_color_format_t get_pixel_format() const { return pixel_format; }
 
             /**
              * @brief Get the pixel format object
              * 
              * @return lcd_color_format_t 
              */
-                  lcd_color_format_t get_pixel_format()       { return pixel_format; }
+            lcd_color_format_t get_pixel_format()       { return pixel_format; }
             
             /**
              * @brief Get the handler object
              * 
              * @return const esp_lcd_panel_handle_t 
              */
-            const esp_lcd_panel_handle_t get_handler() const { return handler; }
+            esp_lcd_panel_handle_t get_handler() const { return handler; }
 
             /**
              * @brief Get the handler object
              * 
              * @return esp_lcd_panel_handle_t 
              */
-                  esp_lcd_panel_handle_t get_handler()       { return handler; }
+            esp_lcd_panel_handle_t get_handler()       { return handler; }
 
             /**
              * @brief Checks if the LCD driver is initialized.
@@ -185,7 +185,7 @@ namespace Ragot
              * @return true 
              * @return false 
              */
-            const bool is_initialized() const { return initialized; }
+            bool is_initialized() const { return initialized; }
 
             /**
              * @brief Checks if the LCD driver is initialized.
@@ -193,7 +193,7 @@ namespace Ragot
              * @return true 
              * @return false 
              */
-                  bool is_initialized()       { return initialized; }
+            bool is_initialized()       { return initialized; }
 
       protected:
             bool initialized = false; ///< Flag indicating if the LCD driver is initialized.

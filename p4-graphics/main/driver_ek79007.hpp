@@ -120,7 +120,8 @@ namespace Ragot
         IRAM_ATTR bool refresh_frame_buffer( esp_lcd_panel_handle_t panel, esp_lcd_dpi_panel_event_data_t * edata, void * user_ctx);
 
     private:
-        uint16_t panel_clk_freq_mhz; ///< Horizontal pixel clock frequency in MHz
+        float panel_clk_freq_mhz; ///< Horizontal pixel clock frequency in MHz
+        float mipi_dsi_max_data_rate_mbps; ///< Maximum data rate of MIPI DSI in Mbps
         uint32_t hsync_pulse_width; ///< Horizontal sync width, in pixel clock
         uint32_t hsync_back_porch;  ///< Horizontal back porch, number of pixel clock between hsync and start of line active data
         uint32_t hsync_front_porch; ///< Horizontal front porch, number of pixel clock between the end of active data and the next hsync
@@ -128,7 +129,6 @@ namespace Ragot
         uint32_t vsync_back_porch;  ///< Vertical back porch, number of invalid lines between vsync and start of frame
         uint32_t vsync_front_porch; ///< Vertical front porch, number of invalid lines between the end of frame and the next vsync
         uint8_t  mipi_lane_num;     ///< Number of MIPI DSI lanes used for the panel    
-        uint16_t mipi_dsi_max_data_rate_mbps; ///< Maximum data rate of MIPI DSI in Mbps
 
     private:
         /**

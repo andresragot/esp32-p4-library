@@ -120,14 +120,14 @@ namespace Ragot
          * 
          * @return const size_t 
          */
-        const size_t get_total_vertices() const { return vertices.size(); }
+        size_t get_total_vertices() const { return vertices.size(); }
 
         /**
          * @brief Get the total vertices object
          * 
          * @return size_t 
          */
-              size_t get_total_vertices()       { return vertices.size(); }
+        size_t get_total_vertices()       { return vertices.size(); }
 
         /**
          * @brief Recalculate the mesh vertices and faces.

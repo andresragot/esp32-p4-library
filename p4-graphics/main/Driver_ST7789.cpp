@@ -68,39 +68,37 @@ namespace Ragot
         height = 240;
 
         ESP_LOGI ( TAG, "Initializing LCD panel...");
-        spi_bus_config_t buscfg = {
-            .mosi_io_num = GPIO_NUM_4,
-            .miso_io_num = -1,
-            .sclk_io_num = GPIO_NUM_5,
-            .quadwp_io_num = -1,
-            .quadhd_io_num = -1,
-            .max_transfer_sz = 4000
-        };
+        spi_bus_config_t buscfg = {};
+        buscfg.mosi_io_num = GPIO_NUM_4;
+        buscfg.miso_io_num = -1;
+        buscfg.sclk_io_num = GPIO_NUM_5;
+        buscfg.quadwp_io_num = -1;
+        buscfg.quadhd_io_num = -1;
+        buscfg.max_transfer_sz = 4000;
 
         esp_err_t ret = spi_bus_initialize (SPI3_HOST, &buscfg, SPI_DMA_CH_AUTO);
         ESP_LOGD ( TAG, "spi_bus_initialize ret: %d", ret);
 
         esp_lcd_panel_io_handle_t io_handle = nullptr;
 
-        esp_lcd_panel_io_spi_config_t io_config = {
-            .cs_gpio_num = GPIO_NUM_3 ,
-            .dc_gpio_num = GPIO_NUM_2,
-            .spi_mode = 0,
-            .pclk_hz = (80 * 1000 * 1000),
-            .trans_queue_depth = 10,
-            .on_color_trans_done = panel_refresh_callback,
-            .user_ctx = this,
-            .lcd_cmd_bits = 8,
-            .lcd_param_bits = 8,
-        };
+        esp_lcd_panel_io_spi_config_t io_config = {};
+        io_config.cs_gpio_num = GPIO_NUM_3;
+        io_config.dc_gpio_num = GPIO_NUM_2;
+        io_config.spi_mode = 0;
+        io_config.pclk_hz = (80 * 1000 * 1000);
+        io_config.trans_queue_depth = 10;
+        io_config.on_color_trans_done = panel_refresh_callback;
+        io_config.user_ctx = this;
+        io_config.lcd_cmd_bits = 8;
+        io_config.lcd_param_bits = 8;
+
 
        ret = esp_lcd_new_panel_io_spi(SPI3_HOST, &io_config, &io_handle);
 
-        esp_lcd_panel_dev_config_t panel_config = {
-            .data_endian = LCD_RGB_DATA_ENDIAN_BIG,
-            .bits_per_pixel = 16,
-            .reset_gpio_num = rest_pin,
-        };
+        esp_lcd_panel_dev_config_t panel_config = {};
+        panel_config.data_endian = LCD_RGB_DATA_ENDIAN_BIG;
+        panel_config.bits_per_pixel = 16;
+        panel_config.reset_gpio_num = rest_pin;
 
         ESP_LOGD ( TAG, "esp_lcd_new_panel_io_spi ret: %d", ret);
 
@@ -199,7 +197,7 @@ namespace Ragot
         return ret;
     }
     
-    IRAM_ATTR bool Driver_ST7789::refresh_frame_buffer(void* user_ctx)
+    bool Driver_ST7789::refresh_frame_buffer(void* user_ctx)
     {        
         // Para usar el semáforo necesitamos castearlo desde el void*
         SemaphoreHandle_t refresh_sem = static_cast<SemaphoreHandle_t>(user_ctx);
