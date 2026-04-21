@@ -16,5 +16,5 @@ dependencies:
     version: ">=5.4.1"
   andresragot/driver_lcd:
     version: "^1.0.0"
-  glm:
-    git: https://github.com/andresragot/glm.git
+  andresragot/glm:
+    version: "^1.0.3"
