@@ -8,7 +8,7 @@
 # Ignore build folder
 */build/
 */.cache
-*/managed_components/
+**/managed_components/
 
 #Ignore files built by Visual Studio/Visual Micro
 [Dd]debug/
