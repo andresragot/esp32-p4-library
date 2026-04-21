@@ -1,0 +1,9 @@
+dependencies:
+  idf:
+    version: ">=5.4.1"
+  andresragot/esp32_3d_engine:
+    version: "^1.0.0"
+  andresragot/driver_ek79007:
+    version: "^1.0.0"
+  andresragot/driver_st7262:
+    version: "^1.0.0"

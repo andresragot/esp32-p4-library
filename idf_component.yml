@@ -1,0 +1,20 @@
+version: "1.0.0"
+description: "Software 3D rendering engine for ESP32. Includes scene graph, camera, rasterizer, lighting, and mesh generation (revolution & extrusion)."
+license: "MIT"
+url: "https://github.com/andresragot/ESP32-3D-Engine"
+repository: "https://github.com/andresragot/ESP32-3D-Engine.git"
+examples:
+  - path: examples/basic_scene
+targets:
+  - esp32
+  - esp32s2
+  - esp32s3
+  - esp32c3
+  - esp32p4
+dependencies:
+  idf:
+    version: ">=5.4.1"
+  andresragot/driver_lcd:
+    version: "^1.0.0"
+  glm:
+    git: https://github.com/andresragot/glm.git
