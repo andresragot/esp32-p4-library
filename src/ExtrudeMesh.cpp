@@ -191,7 +191,7 @@ namespace Ragot
                 {
                     int v1 = addVertex(i,     height, topIndex);
                     int v2 = addVertex(i + 1, height, topIndex);
-                    faces.emplace_back(face_t{ false, center, v2, v1, 0 });
+                    faces.emplace_back(face_t{ false, center, v1, v2, 0 });
                 }
             }
         }
@@ -225,24 +225,39 @@ namespace Ragot
     void ExtrudeMesh::generate_faces()
     {
         faces.clear();
-        
+
         int vertices_per_layer = int(mesh_info.coordinates.size());
         int top_offset = vertices_per_layer;
 
-        // Generar caras laterales
-        for (int i = 0; i < vertices_per_layer - 1; ++i)
+        // Detecta cierre explícito (coord[0] == coord[n-1]) para no generar
+        // caras con vértices duplicados.
+        const auto & cs = mesh_info.coordinates;
+        const int cn = vertices_per_layer;
+        bool closed_profile =
+            cn >= 2 &&
+            std::abs(cs[0].x - cs[cn - 1].x) < 1e-6f &&
+            std::abs(cs[0].y - cs[cn - 1].y) < 1e-6f;
+        int unique_n = closed_profile ? cn - 1 : cn;
+
+        // Generar caras laterales: iteramos sobre las aristas únicas del perfil.
+        // Si el perfil cierra explícitamente, la última arista usa el vértice
+        // duplicado, que es geométricamente idéntico a la arista (n-1, 0).
+        for (int i = 0; i < unique_n; ++i)
         {
+            int j = closed_profile ? (i + 1) : ((i + 1) % unique_n);
+            if (!closed_profile && j == 0) break; // perfil abierto: no cerrar
+
             const fvec4 & v1 = vertices [i];
-            const fvec4 & v2 = vertices [i + 1];
+            const fvec4 & v2 = vertices [j];
             const fvec4 & v3 = vertices [top_offset + i];
-            const fvec4 & v4 = vertices [top_offset + i + 1];
-        
+            const fvec4 & v4 = vertices [top_offset + j];
+
             if (are_vertices_coplanar(v1, v2, v3, v4))
             {
                 face_t quad;
                 quad.v1 = i;
-                quad.v2 = i + 1;
-                quad.v3 = top_offset + i + 1;
+                quad.v2 = j;
+                quad.v3 = top_offset + j;
                 quad.v4 = top_offset + i;
                 quad.is_quad = true;
                 faces.emplace_back(quad);
@@ -251,15 +266,15 @@ namespace Ragot
             {
                 face_t tri1;
                 tri1.v1 = i;
-                tri1.v2 = i + 1;
+                tri1.v2 = j;
                 tri1.v3 = top_offset + i;
                 tri1.v4 = 0;
                 tri1.is_quad = false;
                 faces.emplace_back(tri1);
-                
+
                 face_t tri2;
-                tri2.v1 = i + 1;
-                tri2.v2 = top_offset + i + 1;
+                tri2.v1 = j;
+                tri2.v2 = top_offset + j;
                 tri2.v3 = top_offset + i;
                 tri2.v4 = 0;
                 tri2.is_quad = false;
@@ -268,18 +283,19 @@ namespace Ragot
         }
 
         // Generar caras extremas (top y bottom)
-        if (faces_can_be_quads)
+        if (faces_can_be_quads && unique_n == 4)
         {
-            // Bottom face como un único quad
+            // Bottom face como un único quad (winding CW desde +Z = CCW desde -Z,
+            // que es la dirección de la normal exterior de la tapa inferior)
             face_t bottom_quad;
-            bottom_quad.v1 = 1;
-            bottom_quad.v2 = 0;
-            bottom_quad.v3 = 3;
-            bottom_quad.v4 = 2;
+            bottom_quad.v1 = 0;
+            bottom_quad.v2 = 3;
+            bottom_quad.v3 = 2;
+            bottom_quad.v4 = 1;
             bottom_quad.is_quad = true;
             faces.emplace_back(bottom_quad);
 
-            // Top face como un único quad
+            // Top face como un único quad (CCW desde +Z = normal exterior +Z)
             face_t top_quad;
             top_quad.v1 = top_offset + 0;
             top_quad.v2 = top_offset + 1;
@@ -290,8 +306,11 @@ namespace Ragot
         }
         else
         {
-            for (int i = 0; i < vertices_per_layer - 1; ++i)
+            // Triangle fan correcto: n-2 triángulos para n vértices únicos,
+            // empezando en i=1 para evitar el degenerado (0,1,0).
+            for (int i = 1; i + 1 < unique_n; ++i)
             {
+                // Bottom fan: winding (0, i+1, i) -> normal -Z (exterior)
                 face_t bottom_tri;
                 bottom_tri.v1 = 0;
                 bottom_tri.v2 = i + 1;
@@ -299,7 +318,8 @@ namespace Ragot
                 bottom_tri.v4 = 0;
                 bottom_tri.is_quad = false;
                 faces.emplace_back(bottom_tri);
-            
+
+                // Top fan: winding (0, i, i+1) -> normal +Z (exterior)
                 face_t top_tri;
                 top_tri.v1 = top_offset;
                 top_tri.v2 = top_offset + i;

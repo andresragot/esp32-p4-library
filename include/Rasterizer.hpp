@@ -144,6 +144,41 @@ namespace Ragot
             }
 #endif // CONFIG_GRAPHICS_PAINTER_ALGO_ENABLED
         }
+
+        /**
+         * @brief Draws a single pixel at (x, y) with the given color.
+         *
+         * Clipped against the framebuffer dimensions. Used by overlay/debug
+         * features (wireframe, HUD text, normal visualization).
+         */
+        void draw_pixel (int x, int y, const Color & c)
+        {
+            if (x < 0 || y < 0) return;
+            const int w = int(frame_buffer.get_width());
+            const int h = int(frame_buffer.get_height());
+            if (x >= w || y >= h) return;
+            frame_buffer.set_pixel(size_t(x), size_t(y), c);
+        }
+
+        /**
+         * @brief Draws a line from (x0, y0) to (x1, y1) using Bresenham's algorithm.
+         *
+         * Used by wireframe rendering, normal visualization and HUD outlines.
+         */
+        void draw_line (int x0, int y0, int x1, int y1, const Color & c)
+        {
+            int dx =  std::abs(x1 - x0), sx = x0 < x1 ? 1 : -1;
+            int dy = -std::abs(y1 - y0), sy = y0 < y1 ? 1 : -1;
+            int err = dx + dy;
+            while (true)
+            {
+                draw_pixel(x0, y0, c);
+                if (x0 == x1 && y0 == y1) break;
+                int e2 = 2 * err;
+                if (e2 >= dy) { err += dy; x0 += sx; }
+                if (e2 <= dx) { err += dx; y0 += sy; }
+            }
+        }
         
         /**
          * @brief Fills a convex polygon defined by its vertices and indices.

@@ -1,4 +1,5 @@
 version: "1.0.0"
+name: "esp32_3d_engine"
 description: "Software 3D rendering engine for ESP32. Includes scene graph, camera, rasterizer, lighting, and mesh generation (revolution & extrusion)."
 license: "MIT"
 url: "https://github.com/andresragot/ESP32-3D-Engine"

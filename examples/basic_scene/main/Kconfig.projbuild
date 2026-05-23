@@ -1,14 +1,14 @@
 menu "ESP32 3D Engine - Graphics Library Options"
     config GRAPHICS_PARALLEL_ENABLED
         bool "Enable Parallel Graphics"
-        default y
+        default n
         help
             Enable the parallel graphics library for ESP32. This allows for faster rendering
             on displays that support parallel communication.
     
     config GRAPHICS_PAINTER_ALGO_ENABLED
         bool "Enable Painter Algorithm"
-        default y
+        default n
         help
             Enable the painter algorithm for rendering graphics. This is useful for drawing
             shapes and images on the display.
@@ -48,7 +48,7 @@ menu "ESP32 3D Engine - Graphics Library Options"
     menu "Debug Overlay (target only)"
         config GRAPHICS_DEBUG_OVERLAY
             bool "Enable on-screen debug overlay"
-            default y
+            default n
             help
                 Enables a HUD with FPS, frame time and engine stats drawn directly on
                 the framebuffer. Only active on the ESP32-P4 target build.
@@ -70,14 +70,14 @@ menu "ESP32 3D Engine - Graphics Library Options"
 
         config GRAPHICS_DEBUG_WIREFRAME
             bool "Render in wireframe mode (Bresenham edges)"
-            default y
+            default n
             help
                 Replaces polygon fill with edge drawing. Useful for debugging
                 geometry, culling and clipping.
 
         config GRAPHICS_DEBUG_SHOW_NORMALS
             bool "Draw per-face normals as yellow lines"
-            default y
+            default n
             help
                 Draws each visible face's normal as a short line from the face
                 centroid. Useful for spotting inverted windings.

@@ -26,8 +26,16 @@
 #endif
 
 static const char* MAIN_TAG = "Main";
+#ifdef CONFIG_IDF_TARGET_ESP32P4
+constexpr unsigned SCREEN_W = 1024;
+constexpr unsigned SCREEN_H = 600;
+#elif CONFIG_IDF_TARGET_ESP32S3
+constexpr unsigned SCREEN_W = 800;
+constexpr unsigned SCREEN_H = 480;
+#else
 constexpr unsigned SCREEN_W = 320;
 constexpr unsigned SCREEN_H = 240;
+#endif
 
 using namespace std;
 using namespace Ragot;

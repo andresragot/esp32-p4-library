@@ -39,6 +39,8 @@
 #include "Mesh.hpp"
 #include "Camera.hpp"
 #include <iostream>
+#include <cmath>
+#include <cstddef>
 
 namespace Ragot
 {
@@ -108,15 +110,22 @@ namespace Ragot
         {
             vertices.reserve (mesh_info.coordinates.size() * 2    );
                faces.reserve (mesh_info.coordinates.size() * 3 - 3);
-            // Si son 14 vertices -> 39 - 28 = 11
-            // Si son 12 vertices -> 33 - 24 = 9
-            // Si son 10 vertices -> 27 - 20 = 7
-            // Si son  8 vertices ->  9 - 16 = -7
-            // Si son  6 vertices -> 15 - 12 = 3
-            // Si son 4 vertices ->   9 -  5 = 4
-            
-            // % 8 porque como están las coordenadas duplicadas...
-            faces_can_be_quads = (mesh_info.vertex_amount % 8 == 0 || mesh_info.vertex_amount == 4);
+
+            // Detecta si el polígono cierra explícitamente con coord[0]==coord[n-1].
+            // Se usa para calcular el número real de vértices únicos del perfil.
+            const auto & cs = mesh_info.coordinates;
+            const size_t cn = cs.size();
+            bool closed_profile =
+                cn >= 2 &&
+                std::abs(cs[0].x - cs[cn - 1].x) < 1e-6f &&
+                std::abs(cs[0].y - cs[cn - 1].y) < 1e-6f;
+            size_t unique_n = closed_profile ? cn - 1 : cn;
+
+            // Solo tratamos las tapas como un único quad si el perfil es realmente
+            // un cuadrilátero (4 vértices únicos). El criterio anterior basado en
+            // `vertex_amount % 8` producía quads degenerados en triángulos y
+            // polígonos con vértice de cierre duplicado.
+            faces_can_be_quads = (unique_n == 4);
             generate_vertices();
             generate_faces();
             

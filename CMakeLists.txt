@@ -9,6 +9,8 @@ idf_component_register(
          "src/FrameBuffer.cpp"
          "src/Logger.cpp"
          "src/Thread_Pool.cpp"
+         "src/DebugOverlay.cpp"
+         "src/Font5x7.cpp"
          "src/atomic_stubs.c"
     INCLUDE_DIRS "include"
     REQUIRES andresragot__driver_lcd glm esp_timer freertos

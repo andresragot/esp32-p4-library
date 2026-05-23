@@ -37,6 +37,7 @@
 #include "CommonTypes.hpp"
 #include "Camera.hpp"
 #include <vector>
+#include <cmath>
 #include "Components.hpp"
 #include <glm.hpp>
 
@@ -61,6 +62,12 @@ namespace Ragot
         std::vector <   face_t > faces; ///< Vector of faces representing the mesh, each face can be a triangle or a quad.
         
         int slices = 16; ///< Number of slices for generating the mesh, default is 16.
+
+        // Bounding sphere in the same space as `vertices` (usually world space
+        // after apply_transform_to_vertices). Computed lazily on first request
+        // or whenever recalculate() runs.
+        mutable glm::vec3 bounding_center { 0.f };
+        mutable float     bounding_radius = -1.f; ///< <0 means "not computed yet".
         
     public:
         /**
@@ -141,6 +148,7 @@ namespace Ragot
             generate_faces();
             
             apply_transform_to_vertices();
+            invalidate_bounding_sphere();
         }
         
         /**
@@ -156,7 +164,60 @@ namespace Ragot
             {
                 v = M * v;
             }
+            invalidate_bounding_sphere();
         }
+
+        /**
+         * @brief Marks the cached bounding sphere as dirty so it is recomputed
+         * the next time it is requested.
+         */
+        void invalidate_bounding_sphere() const { bounding_radius = -1.f; }
+
+        /**
+         * @brief Returns the bounding sphere center (in the same space as
+         * `vertices`). Computed lazily on first request.
+         */
+        const glm::vec3 & get_bounding_center() const
+        {
+            ensure_bounding_sphere();
+            return bounding_center;
+        }
+
+        /**
+         * @brief Returns the bounding sphere radius (in the same space as
+         * `vertices`). Computed lazily on first request.
+         */
+        float get_bounding_radius() const
+        {
+            ensure_bounding_sphere();
+            return bounding_radius;
+        }
+
+    private:
+        void ensure_bounding_sphere() const
+        {
+            if (bounding_radius >= 0.f) return;
+            if (vertices.empty())
+            {
+                bounding_center = glm::vec3(0.f);
+                bounding_radius = 0.f;
+                return;
+            }
+            glm::vec3 c(0.f);
+            for (auto & v : vertices) c += glm::vec3(v);
+            c /= float(vertices.size());
+            float r2 = 0.f;
+            for (auto & v : vertices)
+            {
+                glm::vec3 d = glm::vec3(v) - c;
+                float l2 = d.x * d.x + d.y * d.y + d.z * d.z;
+                if (l2 > r2) r2 = l2;
+            }
+            bounding_center = c;
+            bounding_radius = std::sqrt(r2);
+        }
+
+    public:
 
         /**
          * @brief Set the color of the mesh.

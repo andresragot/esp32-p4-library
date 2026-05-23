@@ -35,12 +35,13 @@
 #include <queue>
 #include <algorithm>
 #include "Logger.hpp"
-#ifdef CONFIG_GRAPHICS_PARALLEL_ENABLED
-#include "Thread_Pool.hpp"
-#if defined(ESP_PLATFORM) && ESP_PLATFORM == 1
+#if ESP_PLATFORM == 1
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #endif
+
+#ifdef CONFIG_GRAPHICS_PARALLEL_ENABLED
+#include "Thread_Pool.hpp"
 #endif
 
 #ifndef ESP_PLATFORM

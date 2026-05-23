@@ -41,6 +41,9 @@
 #include <memory>
 #include <string>
 #include "driver_lcd.hpp"
+#ifdef CONFIG_GRAPHICS_DEBUG_OVERLAY
+#include "DebugOverlay.hpp"
+#endif
 
 namespace Ragot
 {
@@ -72,7 +75,11 @@ namespace Ragot
         bool initialized = false; ///< Flag to indicate if the renderer has been initialized, used to prevent re-initialization and ensure resources are set up correctly.
 
         std::atomic<bool> running = false; ///< Flag to indicate if the renderer is currently running, used to control rendering tasks and stop them gracefully.
-        
+
+#ifdef CONFIG_GRAPHICS_DEBUG_OVERLAY
+        DebugOverlay debug_overlay; ///< Optional on-screen HUD for FPS, stats and memory (target-only).
+#endif
+
     public:
         /**
          * @brief Construct a new Renderer object (Deleted).

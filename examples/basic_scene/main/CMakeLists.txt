@@ -1,6 +1,22 @@
-idf_component_register(SRCS "main.cpp"
-                    INCLUDE_DIRS "."
-                    REQUIRES andresragot__esp32_3d_engine
-                             andresragot__driver_ek79007
-                             andresragot__driver_st7262
-                    )
+idf_component_register(
+    SRCS
+        "main.cpp"
+        "../../../src/Renderer.cpp"
+        "../../../src/Scene.cpp"
+        "../../../src/Camera.cpp"
+        "../../../src/Mesh.cpp"
+        "../../../src/ExtrudeMesh.cpp"
+        "../../../src/RevolutionMesh.cpp"
+        "../../../src/Rasterizer.cpp"
+        "../../../src/FrameBuffer.cpp"
+        "../../../src/Logger.cpp"
+        "../../../src/Thread_Pool.cpp"
+        "../../../src/DebugOverlay.cpp"
+        "../../../src/Font5x7.cpp"
+        "../../../src/atomic_stubs.c"
+    INCLUDE_DIRS "." "../../../include"
+    REQUIRES
+        andresragot__driver_ek79007
+        andresragot__driver_st7262
+        glm
+)
