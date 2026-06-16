@@ -290,6 +290,18 @@ All dependencies are resolved automatically by the ESP-IDF Component Manager.
 
 Contributions are welcome. Please open an issue or submit a Pull Request.
 
+## Star History
+
+## Star History
+
+<a href="https://www.star-history.com/?repos=andresragot%2Fesp32_3d_engine&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=andresragot/esp32_3d_engine&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=andresragot/esp32_3d_engine&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=andresragot/esp32_3d_engine&type=date&legend=top-left" />
+ </picture>
+</a>
+
 ## License
 
 MIT — see [LICENSE](LICENSE) for details.
